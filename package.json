@@ -1,0 +1,53 @@
+{
+  "name": "website",
+  "homepage": "https://alexandrosshomper.de",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.4.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "framer-motion": "^3.2.1",
+    "react": "^16.14.0",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-animations": "^1.0.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^8.31.0",
+    "react-player": "^2.9.0",
+    "react-reveal": "^1.2.2",
+    "react-rotating-text": "^1.4.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "react-spinner-material": "^1.3.1",
+    "react-trend": "^1.2.5",
+    "react-typist": "^2.0.5",
+    "typewriter-effect": "^2.17.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+import React from "react";
+import MenuItem from "./MenuItem";
+import MenuItemSoon from "./MenuItemSoon";
+import { Devices } from "../DesignSystem";
+
+import styled from "@emotion/styled";
+
+const Menu = (props) => {
+  const Menu = styled.div`
+    text-align: left;
+    height: 145px;
+    float: left;
+    top: -4px;
+
+    ${Devices.tabletS} {
+      width: 130px;
+    }
+    ${Devices.tabletM} {
+      width: 204px;
+    }
+    ${Devices.laptopS} {
+      width: 204px;
+    }
+    ${Devices.laptopM} {
+      width: 276px;
+    }
+  `;
+
+  return (
+    <Menu className="Menu">
+      <MenuItem title="Profile" link="/" />
+      <MenuItem title="Portfolio" link="/portfolio" />
+      <MenuItemSoon title="Journal" />
+      <MenuItem title="Contact" link="/contact" />
+    </Menu>
+  );
+};
+
+export default Menu;
