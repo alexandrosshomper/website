@@ -20,7 +20,7 @@ const CaseCard = ({
   link,
   comingSoon,
 }) => {
-  const CaseCard = styled(motion.li)`
+  const CaseCard = styled(motion.div)`
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     border-top-left-radius: 12px;
@@ -38,13 +38,16 @@ const CaseCard = ({
     -webkit-font-smoothing: antialiased;
 
     ${Devices.tabletS} {
-      width: 492px;
+      width: 100%;
     }
     ${Devices.tabletM} {
+      width: 330px;
     }
     ${Devices.laptopS} {
+      width: 400px;
     }
     ${Devices.laptopM} {
+      width: 558px;
     }
   `;
 
@@ -79,7 +82,8 @@ const CaseCard = ({
   };
 
   const CaseCardLink = styled.a`
-    cursor: pointer;
+    cursor: ${!comingSoon ?? "pointer"};
+    cursor: ${comingSoon && "wait"};
     direction: ltr;
     display: block;
     height: 400px;
@@ -110,7 +114,6 @@ const CaseCard = ({
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     box-shadow: none;
-    cursor: pointer;
     direction: ltr;
     display: flex;
     flex-direction: column;
@@ -132,7 +135,6 @@ const CaseCard = ({
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 
-    cursor: pointer;
     direction: ltr;
     display: flex;
     flex-direction: column;
@@ -152,7 +154,6 @@ const CaseCard = ({
   `;
 
   const CaseCardHeaderContainer = styled.div`
-    cursor: pointer;
     direction: ltr;
     display: flex;
     flex-grow: 1;
@@ -173,7 +174,6 @@ const CaseCard = ({
   `;
 
   const CaseCardHeader = styled.div`
-    cursor: pointer;
     direction: ltr;
     display: flex;
     flex-grow: 1;

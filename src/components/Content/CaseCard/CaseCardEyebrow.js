@@ -9,7 +9,6 @@ const CaseCardEyebrow = ({ text, color1, color2 }) => {
     csscolor = `background-image: linear-gradient(to right, #ff1744, #ff616f);`;
   }
   const CaseCardEyebrow = styled.p`
-    cursor: pointer;
     direction: ltr;
     display: block;
 

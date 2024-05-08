@@ -212,8 +212,8 @@ const Contact = (props) => {
       </Helmet>
       <Name>Alexandros Shomper</Name>
       <ContactInfo>
-        <ContactInfoLink href="tel:+4915237814818">
-          +49 152 378 148 18
+        <ContactInfoLink href="tel:+491608382263">
+          +49 160 838 22 63
         </ContactInfoLink>
       </ContactInfo>
       <ContactInfo>

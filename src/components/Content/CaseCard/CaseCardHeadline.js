@@ -5,7 +5,6 @@ import { Devices, Colors } from "../../DesignSystem";
 
 const CaseCardHeadline = ({ text }) => {
   const CaseCardHeadline = styled.h3`
-    cursor: pointer;
     direction: ltr;
     display: block;
 

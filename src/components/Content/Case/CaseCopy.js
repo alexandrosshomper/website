@@ -15,9 +15,10 @@ const CaseCopy = ({ copy }) => {
     /* Inside Auto Layout */
 
     font-size: 24px;
-    line-height: 142%;
+    line-height: 132%;
 
     margin: 0 auto;
+    margin-bottom: 40px;
     width: 90%;
 
     ${Devices.tabletS} {

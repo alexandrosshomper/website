@@ -6,6 +6,7 @@ import { Devices } from "../../DesignSystem";
 import SectionHeadline from "./SectionHeadline";
 import SectionSubline from "./SectionSubline";
 import SectionCopy from "./SectionCopy";
+import SectionDivider from "./SectionDivider";
 
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -44,7 +45,7 @@ function FadeInWhenVisible({ children }) {
   );
 }
 
-const SectionHead = ({ headline, subline, copy }) => {
+const SectionHead = ({ divider, headline, subline, copy }) => {
   const SectionHead = styled.div`
     /* Auto Layout */
     display: flex;
@@ -67,7 +68,7 @@ const SectionHead = ({ headline, subline, copy }) => {
     ${Devices.tabletS} {
       margin: 0px 24px 80px 24px;
       width: 564px;
-      align-items: center;
+      align-items: flex-start;
       align-content: flex-start;
     }
     ${Devices.tabletM} {
@@ -77,12 +78,13 @@ const SectionHead = ({ headline, subline, copy }) => {
       width: 852px;
     }
     ${Devices.laptopM} {
-      width: 996px;
+      width: 1141px;
     }
   `;
   return (
     <FadeInWhenVisible>
       <SectionHead>
+        {divider && <SectionDivider text={divider} />}
         {headline && <SectionHeadline headline={headline} />}
         {subline && <SectionSubline subline={subline} />}
         {copy && <SectionCopy copy={copy} />}

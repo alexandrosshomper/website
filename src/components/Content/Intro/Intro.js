@@ -25,7 +25,7 @@ const Intro = (props) => {
       height: 188px;
       font-size: 44px;
       line-height: 107%;
-      text-align: center;
+      text-align: left;
       margin-bottom: 320px;
     }
     ${Devices.tabletM} {
@@ -59,15 +59,15 @@ const Intro = (props) => {
         onInit={(typewriter) => {
           typewriter
             .typeString(
-              "Hi! I'm a product <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>designer</span>"
+              "Hi! I'm a product <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>lead</span>"
+            )
+            .pauseFor(2000)
+            .deleteChars(4)
+            .typeString(
+              "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>designer</span>"
             )
             .pauseFor(2000)
             .deleteChars(8)
-            .typeString(
-              "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>manager</span>"
-            )
-            .pauseFor(2000)
-            .deleteChars(7)
             .typeString(
               "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>consultant</span>"
             )
@@ -76,7 +76,7 @@ const Intro = (props) => {
             .start();
         }}
       />
-      solving problems with meaningful, useful experiences that people love.
+      <br />I help you make customer-centric & data-driven product decisions.
     </Intro>
   );
 };

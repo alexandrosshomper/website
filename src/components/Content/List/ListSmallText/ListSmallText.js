@@ -19,7 +19,7 @@ const ListSmallText = ({ eyebrow, eyebrowColor1, eyebrowColor2, copy }) => {
     width: 100%;
     //padding-right: 12px;
     ${Devices.tabletS} {
-      width: 420px;
+      width: 564px;
     }
     ${Devices.tabletM} {
       width: 348px;

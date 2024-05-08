@@ -12,7 +12,7 @@ const CaseImage = ({ imgURL, alt, color1, color2, size }) => {
 
   const CaseImage = styled.div`
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     direction: ltr;
 
@@ -40,9 +40,22 @@ const CaseImage = ({ imgURL, alt, color1, color2, size }) => {
       width: 564px;
     }
     ${Devices.tabletM} {
-      width: 80%;
+      width: ${size === "L"
+        ? "80%"
+        : size === "M"
+        ? "708px"
+        : size === "S"
+        ? "564px"
+        : "80%"};
     }
     ${Devices.laptopS} {
+      width: ${size === "L"
+        ? "80%"
+        : size === "M"
+        ? "740px"
+        : size === "S"
+        ? "564px"
+        : "80%"};
     }
     ${Devices.laptopM} {
     }

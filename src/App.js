@@ -14,11 +14,17 @@ const Home = lazy(() => import("./components/Pages/Home/Home"));
 //import Contact from "./components/Pages/Contact/Contact";
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 //import Portfolio from "./components/Pages/Portfolio/Portfolio";
-const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
   import("./components/Pages/Portfolio/KnaufExplorations")
 );
+const KnaufAccount = lazy(() =>
+  import("./components/Pages/Portfolio/KnaufAccount")
+);
+const KnaufOrderOverview = lazy(() =>
+  import("./components/Pages/Portfolio/KnaufOrderOverview")
+);
+const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 
 const NFTAnalyzer = lazy(() =>
@@ -72,14 +78,21 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/profile" component={Home} />
-            <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/portfolio" component={Home} />
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact
               path="/knauf-explorations"
               component={KnaufExplorations}
             />
+            <Route exact path="/knauf-account" component={KnaufAccount} />
+            <Route
+              exact
+              path="/knauf-orderoverview"
+              component={KnaufOrderOverview}
+            />
+            <Route exact path="/myknauf" component={MyKnauf} />
+
             <Route exact path="/heraklit" component={Heraklit} />
             <Route exact path="/nftanalyzer" component={NFTAnalyzer} />
           </Switch>

@@ -53,11 +53,14 @@ const Bio = (props) => {
 
   return (
     <Bio>
-      <span style={{ fontWeight: "600" }}>Digital Anthropologist </span>{" "}
-      Experienced Product-, Service & Business Designer with demonstrated track
-      record of successfully developing meaningful experiences that people love
-      by using emerging technology, solid company purpose, and a strong brand to
-      elevate human experiences and interactions.
+      <span style={{ fontWeight: "600" }}>Product & Growth</span>
+      <br />
+      Experienced in core and growth initiatives from acquisition to retention &
+      engagement.
+      <br />
+      <br />
+      Bridging business, design, and tech to create awesome solutions people
+      love.
     </Bio>
   );
 };

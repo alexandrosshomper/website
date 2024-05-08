@@ -14,8 +14,6 @@ const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
-    cursor: pointer;
-
     direction: ltr;
     display: block;
 
@@ -36,7 +34,6 @@ const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
     -webkit-font-smoothing: antialiased;
   `;
   const Picture = styled.picture`
-    cursor: pointer;
     direction: ltr;
     display: block;
     max-width: 100%;
@@ -52,7 +49,8 @@ const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
 
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
-    // ${csscolorbackground};
+
+    background-color: black;
 
     ${Devices.tabletS} {
       height: auto;
@@ -68,10 +66,10 @@ const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
   const imgStyle = {
     width: "100%",
     height: "auto",
+    opacity: `${comingSoon ? 0.3 : 1}`,
   };
 
   const Title = styled.p`
-    cursor: pointer;
     direction: ltr;
     display: block;
     font-size: 36px;

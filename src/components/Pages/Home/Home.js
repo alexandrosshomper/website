@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Trend from "react-trend";
 
 //Components
 import { Devices, Colors } from "../../DesignSystem";
@@ -12,9 +13,9 @@ import SectionHead from "../../Content/Section/SectionHead";
 import ListBigText from "../../Content/List/ListBigText/ListBigText";
 import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
-//import CaseCard from "../../Content/CaseCard/CaseCard";
 
-import Trend from "react-trend";
+import CaseCard from "../../Content/CaseCard/CaseCard";
+import SectionDetails from "../../Content/Section/SectionDetails";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -122,9 +123,10 @@ const Content = (props) => {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     align-items: flex-start;
+    padding-bottom: 48px;
     --gap: 12px;
     margin-left: calc(1 * var(--gap));
     margin-right: calc(1 * var(--gap));
@@ -232,17 +234,48 @@ const Content = (props) => {
     }
   `;*/
 
+  const CaseCardGrid = styled.section`
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: calc(-1 * var(--gap));
+
+    & > * {
+      margin-left: var(--gap);
+      margin-bottom: var(--gap);
+    }
+
+    ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+    }
+    ${Devices.laptopM} {
+      width: 1140px;
+    }
+  `;
+
   return (
     <Content>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Alexandros Shomper</title>
         <description>
-          Digital Anthopologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
+          Experienced in core and growth initiatives from acquisition to
+          retention & engagement. Bridging business, design, and tech to create
+          awesome solutions people love.
         </description>
       </Helmet>
       <Intro></Intro>
@@ -276,17 +309,14 @@ const Content = (props) => {
       </Section>*/}
 
       <Section>
-        <SectionHead
-          headline="What I do"
-          subline="Building brands, digital products & businesses."
-        />
+        <SectionHead subline="3 ways I can halp you with" />
         <Panels>
           <FadeInWhenVisible>
             <ListPanel
-              eyebrow="Understand. Customers."
+              eyebrow="Product"
               eyebrowColor1={Colors.orange}
               eyebrowColor2={Colors.red}
-              copy="Generate insights and find out what moves your customers."
+              copy="Create meaningful and useful tools your customers will love."
               webp="./img/PanelTestImages/square.webp"
               png="./img/PanelTestImages/square.png"
               jpg="./img/PanelTestImages/square.jpg"
@@ -294,27 +324,291 @@ const Content = (props) => {
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <ListPanel
-              eyebrow="Build. Better. Products."
+              eyebrow="Growth"
               eyebrowColor1={Colors.red}
               eyebrowColor2={Colors.purple}
-              copy="Create meaningful and useful tools your customers will love."
-              webp="./img/PanelTestImages/circle.webp"
-              png="./img/PanelTestImages/circle.png"
-              jpg="./img/PanelTestImages/circle.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Grow. Business."
-              eyebrowColor1={Colors.purple}
-              eyebrowColor2={Colors.blue}
-              copy="Leverage new-found opportunities to disrupt your market."
+              copy="Get more customers and keep them longer. Retention, activation, & engagement."
               webp="./img/PanelTestImages/triangle.webp"
               png="./img/PanelTestImages/triangle.png"
               jpg="./img/PanelTestImages/triangle.jpg"
             />
           </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Consulting"
+              eyebrowColor1={Colors.purple}
+              eyebrowColor2={Colors.blue}
+              copy="Sharing 15+ years of expertise in marketing & product"
+              webp="./img/PanelTestImages/circle.webp"
+              png="./img/PanelTestImages/circle.png"
+              jpg="./img/PanelTestImages/circle.jpg"
+            />
+          </FadeInWhenVisible>
         </Panels>
+      </Section>
+      <Section>
+        <SectionHead
+          divider="Selected projects"
+          headline="Knauf Construction Apps"
+          subline="Building a global apps platform, from scratch."
+        />
+        <Panels>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Summary"
+              eyebrowColor1="#10d5f5"
+              eyebrowColor2="#231768"
+              copy="
+I spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
+              //imgURL="./img/PanelTestImages/one.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Role"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              copy="Chapter Lead Product Design"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Team"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              copy="3 PO
+2 UX Designer
+2 UI Designer
+3 Solution Architects
+10 Dev"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+        </Panels>
+        <CaseCardGrid>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Case Study"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              headline="Knauf Digital Transformation & Business Design"
+              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
+              imgURL="./img/Knauf/CoverKnaufTransformation.png"
+              link="/knauf-explorations"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Case Study"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              headline="myKnauf: Building a global construction app platform"
+              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
+              imgURL="./img/Knauf/CoverMyKnauf.png"
+              link="/myKnauf"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Deep Dive"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              headline="Product Analytics: How to analyze and define retention & engagement metrics for an app platform"
+              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
+              imgURL="./img/Knauf/CoverProductAnalytics.png"
+              comingSoon="true"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Deep Dive"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              headline="User Acquisition: How to develop a marketing messaging framework for an app platform"
+              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
+              imgURL="./img/Knauf/CoverUserAcquisition.png"
+              comingSoon="true"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Deep Dive"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              headline="Signups: How to increase signups with user psychology and data analysis"
+              copy="Increasing signups for Knauf Account. Reducing signup friction by applying user psychology on registration flows."
+              imgURL="./img/Knauf/CoverSignup.png"
+              link="/knauf-account"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Deep Dive"
+              eyebrowColor2="#231768"
+              eyebrowColor1="#10d5f5"
+              headline="User Retention: How to increase user engagement & activation by analyzing featuer adoption"
+              copy="Increasing user engagement & activation for Knauf Digital's app. An unexpected finding: a neglected feature used by 7% of users, accounting for 20% of total traffic."
+              imgURL="./img/Knauf/CoverUserRetention.png"
+              link="/knauf-orderoverview"
+            />
+          </FadeInWhenVisible>
+        </CaseCardGrid>
+      </Section>
+      <Section>
+        <SectionHead
+          headline="Knauf Corporate Website"
+          subline="Unifying the user experience of a global conglomerate."
+        />
+        <Panels>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Summary"
+              eyebrowColor1="#3b177d"
+              eyebrowColor2="#73b9df"
+              copy="
+I directed the digital unification of Knauf's global brands, establishing a cohesive design system across 4 product teams and the corporate website. This strategy led to the successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
+              //imgURL="./img/PanelTestImages/one.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Role"
+              eyebrowColor1="#3b177d"
+              eyebrowColor2="#73b9df"
+              copy="Chapter Lead Product Design"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Team"
+              eyebrowColor1="#3b177d"
+              eyebrowColor2="#73b9df"
+              copy="4 PO
+3 UX Designer
+2 UI Designer
+4 Solution Architects
+15 Dev"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+        </Panels>
+        <CaseCardGrid>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Case Study"
+              eyebrowColor1="#3b177d"
+              eyebrowColor2="#73b9df"
+              headline="knauf.com: Information Architecture & navigation for digital future of the construction business"
+              copy="Building the digital future of the construction business. The roadmap is there, now we need to get tracktion."
+              imgURL="./img/Knauf/CoverKnaufCom.png"
+              comingSoon="true"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Deep Dive"
+              eyebrowColor1="#3b177d"
+              eyebrowColor2="#73b9df"
+              headline="Product Workflow: How to streamline gloabl product demands and make sure they have business- & customer value"
+              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
+              imgURL="./img/Knauf/KnaufExplorations.png"
+              comingSoon="true"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Deep Dive"
+              eyebrowColor1="#3b177d"
+              eyebrowColor2="#73b9df"
+              headline="UX Metrics: How to enable data-driven product decisions with a UX Metrics framework"
+              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
+              imgURL="./img/Knauf/KnaufExplorations.png"
+              comingSoon="true"
+            />
+          </FadeInWhenVisible>
+        </CaseCardGrid>
+      </Section>
+      <Section>
+        <SectionHead
+          headline="Occhio Website & eCommerce"
+          subline="Leading the digital relaunch of a premium lighting brand."
+        />
+        <Panels>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Summary"
+              eyebrowColor2="#cfcef2"
+              eyebrowColor1="#231768"
+              copy="I led Occhio's website relaunch and e-commerce debut, blending brand identity with user experience and performance, which redefined its digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
+              //imgURL="./img/PanelTestImages/one.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Role"
+              eyebrowColor2="#cfcef2"
+              eyebrowColor1="#231768"
+              copy="Product Owner & UX Manager"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListSmallText
+              eyebrow="Team"
+              eyebrowColor2="#cfcef2"
+              eyebrowColor1="#231768"
+              copy="CMO
+CRM Manager
+Social Media Manager
+4 Designers
+4 Developers"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+        </Panels>
+        <CaseCardGrid>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Case Study"
+              eyebrowColor1="#FF0000"
+              eyebrowColor2="#FFCC00"
+              headline="Occhio Website Relaunch and eCommerce Launch"
+              copy="Occhio relaunches its Website and establishes it's first e-commerce while simultaneously redefining its brand for a digital world"
+              //copy="Auf Basis umfangreicher Marktforschung und einer neuen Digitalstrategie entwickelte Alexandros Shomper das nutzerzentrierte Konzept sowie das UX/UI Design für den Website-Relaunch und eCommerce Launch von Occhio. Dabei standen ein begeisterndes, interaktives Markenerlebnis und die intuitive Führung der Nutzer von der Inspiration hin zum Konfigurations- und Kaufprozess im Vordergrund."
+              imgURL="./img/Occhio/Occhio-Website.png"
+              link="/occhio"
+            />
+          </FadeInWhenVisible>
+        </CaseCardGrid>
+      </Section>
+      <Section>
+        <SectionHead divider="Side Projects" />
+        <CaseCardGrid>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="Website / eCommerce"
+              eyebrowColor2="#d9edca"
+              eyebrowColor1="#206405"
+              headline="The elegant art of topic authority for fly fishing"
+              copy="Feathered Hooks: My blog/eCommerce for fly fishing. A SEO experiment on achieving & monetizing topic authority as quick as possible."
+              imgURL="./img/FeatheredHooks/CoverFeatheredHooks.png"
+              link="https://www.featheredhooks.com/"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <CaseCard
+              eyebrow="App"
+              eyebrowColor2="#6a210d"
+              eyebrowColor1="#ffb700"
+              headline="CookCook: The Video Recipe Social Network"
+              copy="My very own MERN stack app. A technical excercise and solution to a real problem I have: Find easy to follow video recipes."
+              imgURL="./img/CookCook/CoverCookCook.png"
+              link="https://www.cookcook.it/"
+            />
+          </FadeInWhenVisible>
+        </CaseCardGrid>
       </Section>
       <Section>
         <SectionHead

@@ -145,28 +145,8 @@ const Footer = (props) => {
                 textDecoration: "none",
               }}
             >
-              Profile
-            </Link>
-          </SitemapItem>
-          <SitemapItem>
-            <Link
-              to={`/portfolio`}
-              style={{
-                color: Colors.primaryText.highEmphasis,
-                textDecoration: "none",
-              }}
-            >
               Portfolio
             </Link>
-          </SitemapItem>
-
-          <SitemapItem
-            style={{
-              color: Colors.primaryText.mediumEmphasis,
-              textDecoration: "line-through",
-            }}
-          >
-            Journal
           </SitemapItem>
           <SitemapItem>
             <Link
@@ -205,7 +185,7 @@ const Footer = (props) => {
           {/*<LegalsItem href="/contact">Terms</LegalsItem>
           <LegalsItem href="/contact">Privacy</LegalsItem>
           <LegalsItem href="/contact">Cookies</LegalsItem>*/}
-          <Copyright>© 2020 Alexandros Shomper. All rights reserved.</Copyright>
+          <Copyright>© 2024 Alexandros Shomper. All rights reserved.</Copyright>
         </Legals>
       </FooterBody>
     </Footer>

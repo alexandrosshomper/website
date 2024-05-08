@@ -16,9 +16,10 @@ const SectionSubline = ({ subline }) => {
     font-size: 32px;
     line-height: 112%;
     text-align: left;
+    width: 100%;
 
     ${Devices.tabletS} {
-      text-align: center;
+      text-align: left;
       width: 564px;
     }
     ${Devices.tabletM} {
@@ -34,7 +35,7 @@ const SectionSubline = ({ subline }) => {
       line-height: 100%;
     }
     ${Devices.laptopM} {
-      width: 996px;
+      width: 1141px;
 
       font-size: 60px;
       line-height: 113%;

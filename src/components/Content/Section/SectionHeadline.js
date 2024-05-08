@@ -17,7 +17,7 @@ const SectionHeadline = ({ headline }) => {
     line-height: 109%;
     text-align: left;
     ${Devices.tabletS} {
-      text-align: center;
+      text-align: left;
       width: 564px;
     }
     ${Devices.tabletM} {

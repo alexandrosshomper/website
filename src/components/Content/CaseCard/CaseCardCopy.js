@@ -8,7 +8,6 @@ const CaseCardCopy = ({ text, motionVariants }) => {
     bottom: -24px;
 
     color: rgba(0, 0, 0, 0.86);
-    cursor: pointer;
 
     direction: ltr;
     display: --webkit-box;

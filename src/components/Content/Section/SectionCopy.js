@@ -17,7 +17,7 @@ const SectionCopy = ({ copy }) => {
     text-align: left;
 
     ${Devices.tabletS} {
-      text-align: center;
+      text-align: left;
       width: 564px;
     }
     ${Devices.tabletS} {
