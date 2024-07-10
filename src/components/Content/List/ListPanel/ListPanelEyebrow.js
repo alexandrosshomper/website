@@ -12,7 +12,7 @@ const ListPanelEyebrow = ({ text, color1, color2 }) => {
   }
   const ListPanelEyebrow = styled.h3`
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 120%;
 
     text-align: left;
@@ -26,13 +26,10 @@ const ListPanelEyebrow = ({ text, color1, color2 }) => {
     margin-bottom: 4px;
 
     ${Devices.tabletS} {
-      font-size: 16px;
     }
     ${Devices.tabletM} {
-      font-size: 16px;
     }
     ${Devices.laptopS} {
-      font-size: 20px;
     }
   `;
 

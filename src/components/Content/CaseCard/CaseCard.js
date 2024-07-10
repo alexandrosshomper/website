@@ -1,14 +1,14 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+import React from "react";
 
-import { Devices, Colors } from "../../DesignSystem";
+import { Colors, Devices } from "../../DesignSystem";
 
 //Components
+import Copy from "./CaseCardCopy";
 import Eyebrow from "./CaseCardEyebrow";
 import Headline from "./CaseCardHeadline";
 import Image from "./CaseCardImage";
-import Copy from "./CaseCardCopy";
 
 const CaseCard = ({
   eyebrow,
@@ -36,6 +36,7 @@ const CaseCard = ({
     text-size-adjust: 100%;
     width: 327px;
     -webkit-font-smoothing: antialiased;
+    margin: 0px;
 
     ${Devices.tabletS} {
       width: 100%;

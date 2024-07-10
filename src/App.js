@@ -1,12 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import Spinner from "react-spinner-material";
 //import React from "react";
-import { Devices, Colors } from "../src/components/DesignSystem";
 import styled from "@emotion/styled";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Colors, Devices } from "../src/components/DesignSystem";
 import ScrollToTop from "./functions/ScrollToTop";
-
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 //import Home from "./components/Pages/Home/Home";
@@ -25,10 +23,12 @@ const KnaufOrderOverview = lazy(() =>
   import("./components/Pages/Portfolio/KnaufOrderOverview")
 );
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
-const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
-
 const NFTAnalyzer = lazy(() =>
   import("./components/Pages/NFTAnalyzer/NFTAnalyzer")
+);
+const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
+const FeatheredHooks = lazy(() =>
+  import("./components/Pages/SideProjects/FeatheredHooks")
 );
 //import Navigation from "./components/Navigation/Navigation";
 const Navigation = lazy(() => import("./components/Navigation/Navigation"));
@@ -48,12 +48,10 @@ const renderLoader = () => (
     <Spinner radius={120} color={Colors.front} stroke={2} visible={true} />
   </div>
 );
-
 function App() {
   const App = styled.div`
     text-align: center;
     margin: 0 auto;
-
     ${Devices.tabletS} {
       //width: 564px;
     }
@@ -67,7 +65,6 @@ function App() {
       //width: 1140px;
     }
   `;
-
   return (
     <Router>
       <ScrollToTop />
@@ -92,7 +89,7 @@ function App() {
               component={KnaufOrderOverview}
             />
             <Route exact path="/myknauf" component={MyKnauf} />
-
+            <Route exact path="/feathered-hooks" component={FeatheredHooks} />
             <Route exact path="/heraklit" component={Heraklit} />
             <Route exact path="/nftanalyzer" component={NFTAnalyzer} />
           </Switch>
@@ -102,5 +99,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

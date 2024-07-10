@@ -11,7 +11,6 @@ const Intro = (props) => {
 
     font-style: normal;
     font-weight: bold;
-    font-size: 22px;
     line-height: 142%;
 
     text-align: left;
@@ -51,6 +50,7 @@ const Intro = (props) => {
 
   return (
     <Intro>
+      Hi! I'm a product
       <Typewriter
         options={{
           autoStart: true,
@@ -59,7 +59,7 @@ const Intro = (props) => {
         onInit={(typewriter) => {
           typewriter
             .typeString(
-              "Hi! I'm a product <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>lead</span>"
+              " <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>lead</span>"
             )
             .pauseFor(2000)
             .deleteChars(4)
@@ -72,7 +72,6 @@ const Intro = (props) => {
               "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>consultant</span>"
             )
             .pauseFor(2500)
-            .deleteAll()
             .start();
         }}
       />

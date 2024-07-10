@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "@emotion/styled";
+import React from "react";
 
-import { Devices, Colors } from "../../DesignSystem";
+import { Colors, Devices } from "../../DesignSystem";
 
 const CaseCardHeadline = ({ text }) => {
   const CaseCardHeadline = styled.h3`

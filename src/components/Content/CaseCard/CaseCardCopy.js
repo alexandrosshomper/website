@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+import React from "react";
 
 const CaseCardCopy = ({ text, motionVariants }) => {
   const CaseCardCopy = styled(motion.p)`

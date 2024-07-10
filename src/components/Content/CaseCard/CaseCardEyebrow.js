@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "@emotion/styled";
+import React from "react";
 
 const CaseCardEyebrow = ({ text, color1, color2 }) => {
   let csscolor = null;

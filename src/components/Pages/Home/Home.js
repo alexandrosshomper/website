@@ -1,21 +1,20 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 import { motion, useAnimation } from "framer-motion";
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useInView } from "react-intersection-observer";
 import Trend from "react-trend";
 
 //Components
-import { Devices, Colors } from "../../DesignSystem";
-import Intro from "../../Content/Intro/Intro";
-import ListPanel from "../../Content/List/ListPanel/ListPanel";
-import SectionHead from "../../Content/Section/SectionHead";
-import ListBigText from "../../Content/List/ListBigText/ListBigText";
-import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
+import Intro from "../../Content/Intro/Intro";
+import ListBigText from "../../Content/List/ListBigText/ListBigText";
+import ListPanel from "../../Content/List/ListPanel/ListPanel";
+import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
+import SectionHead from "../../Content/Section/SectionHead";
+import { Colors, Devices } from "../../DesignSystem";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
-import SectionDetails from "../../Content/Section/SectionDetails";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -105,7 +104,7 @@ const Content = (props) => {
     /* Auto Layout */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
 
     /* Inside Auto Layout */
@@ -118,6 +117,15 @@ const Content = (props) => {
       align-items: center;
     }
   `;
+  const ChapterDetails2 = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    gap: 24px;
+  `;
 
   const Panels = styled.section`
     display: flex;
@@ -128,8 +136,8 @@ const Content = (props) => {
     align-items: flex-start;
     padding-bottom: 48px;
     --gap: 12px;
-    margin-left: calc(1 * var(--gap));
-    margin-right: calc(1 * var(--gap));
+    margin-left: calc(2 * var(--gap));
+    margin-right: calc(2 * var(--gap));
     margin-bottom: calc(1 * var(--gap));
 
     ${Devices.tabletS} {
@@ -235,20 +243,18 @@ const Content = (props) => {
   `;*/
 
   const CaseCardGrid = styled.section`
-    margin: 0px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     align-items: center;
+    align-self: center;
     gap: 24px;
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
+    --gap: 12px;
+    padding-left: calc(1 * var(--gap));
+    padding-right: calc(1 * var(--gap));
+    margin-bottom: calc(1 * var(--gap));
 
     ${Devices.tabletS} {
       width: 564px;
@@ -309,7 +315,7 @@ const Content = (props) => {
       </Section>*/}
 
       <Section>
-        <SectionHead subline="3 ways I can halp you with" />
+        <SectionHead subline="3 ways I can help you with" />
         <Panels>
           <FadeInWhenVisible>
             <ListPanel
@@ -352,7 +358,7 @@ const Content = (props) => {
           headline="Knauf Construction Apps"
           subline="Building a global apps platform, from scratch."
         />
-        <Panels>
+        <Panels style={{ marginBottom: "48px" }}>
           <FadeInWhenVisible>
             <ListSmallText
               eyebrow="Summary"
@@ -363,28 +369,30 @@ I spearheaded the design and UX for four Knauf construction apps, creating a uni
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Role"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              copy="Chapter Lead Product Design"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Team"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              copy="3 PO
-2 UX Designer
-2 UI Designer
-3 Solution Architects
+          <ChapterDetails2>
+            <FadeInWhenVisible>
+              <ListSmallText
+                eyebrow="Role"
+                eyebrowColor2="#231768"
+                eyebrowColor1="#10d5f5"
+                copy="Chapter Lead Product Design"
+                //imgURL="./img/PanelTestImages/two.jpg"
+              />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
+              <ListSmallText
+                eyebrow="Team"
+                eyebrowColor2="#231768"
+                eyebrowColor1="#10d5f5"
+                copy="3 PO,
+2 UX Designer,
+2 UI Designer,
+3 Solution Architects,
 10 Dev"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
+                //imgURL="./img/PanelTestImages/two.jpg"
+              />
+            </FadeInWhenVisible>
+          </ChapterDetails2>
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
@@ -403,7 +411,7 @@ I spearheaded the design and UX for four Knauf construction apps, creating a uni
               eyebrow="Case Study"
               eyebrowColor2="#231768"
               eyebrowColor1="#10d5f5"
-              headline="myKnauf: Building a global construction app platform"
+              headline="myKnauf: A global construction app platform"
               copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
               imgURL="./img/Knauf/CoverMyKnauf.png"
               link="/myKnauf"
@@ -460,39 +468,46 @@ I spearheaded the design and UX for four Knauf construction apps, creating a uni
           headline="Knauf Corporate Website"
           subline="Unifying the user experience of a global conglomerate."
         />
-        <Panels>
+        <Panels
+          style={{
+            marginBottom: "48px",
+            gap: "24px",
+          }}
+        >
           <FadeInWhenVisible>
             <ListSmallText
               eyebrow="Summary"
               eyebrowColor1="#3b177d"
               eyebrowColor2="#73b9df"
               copy="
-I directed the digital unification of Knauf's global brands, establishing a cohesive design system across 4 product teams and the corporate website. This strategy led to the successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
+I led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Role"
-              eyebrowColor1="#3b177d"
-              eyebrowColor2="#73b9df"
-              copy="Chapter Lead Product Design"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Team"
-              eyebrowColor1="#3b177d"
-              eyebrowColor2="#73b9df"
-              copy="4 PO
-3 UX Designer
-2 UI Designer
-4 Solution Architects
+          <ChapterDetails2>
+            <FadeInWhenVisible>
+              <ListSmallText
+                eyebrow="Role"
+                eyebrowColor1="#3b177d"
+                eyebrowColor2="#73b9df"
+                copy="Chapter Lead Product Design"
+                //imgURL="./img/PanelTestImages/two.jpg"
+              />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
+              <ListSmallText
+                eyebrow="Team"
+                eyebrowColor1="#3b177d"
+                eyebrowColor2="#73b9df"
+                copy="4 PO,
+3 UX Designer,
+2 UI Designer,
+4 Solution Architects,
 15 Dev"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
+                //imgURL="./img/PanelTestImages/two.jpg"
+              />
+            </FadeInWhenVisible>
+          </ChapterDetails2>
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
@@ -511,9 +526,9 @@ I directed the digital unification of Knauf's global brands, establishing a cohe
               eyebrow="Deep Dive"
               eyebrowColor1="#3b177d"
               eyebrowColor2="#73b9df"
-              headline="Product Workflow: How to streamline gloabl product demands and make sure they have business- & customer value"
+              headline="Product Workflow: How to streamline data-driven and customer-centric product decisions."
               copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/KnaufExplorations.png"
+              imgURL="./img/Knauf/CoverProductWorkflow.png"
               comingSoon="true"
             />
           </FadeInWhenVisible>
@@ -524,7 +539,7 @@ I directed the digital unification of Knauf's global brands, establishing a cohe
               eyebrowColor2="#73b9df"
               headline="UX Metrics: How to enable data-driven product decisions with a UX Metrics framework"
               copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/KnaufExplorations.png"
+              imgURL="./img/Knauf/CoverUXMetrics.png"
               comingSoon="true"
             />
           </FadeInWhenVisible>
@@ -535,7 +550,7 @@ I directed the digital unification of Knauf's global brands, establishing a cohe
           headline="Occhio Website & eCommerce"
           subline="Leading the digital relaunch of a premium lighting brand."
         />
-        <Panels>
+        <Panels style={{ marginBottom: "48px" }}>
           <FadeInWhenVisible>
             <ListSmallText
               eyebrow="Summary"
@@ -545,28 +560,26 @@ I directed the digital unification of Knauf's global brands, establishing a cohe
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Role"
-              eyebrowColor2="#cfcef2"
-              eyebrowColor1="#231768"
-              copy="Product Owner & UX Manager"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Team"
-              eyebrowColor2="#cfcef2"
-              eyebrowColor1="#231768"
-              copy="CMO
-CRM Manager
-Social Media Manager
-4 Designers
-4 Developers"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
+          <ChapterDetails2>
+            <FadeInWhenVisible>
+              <ListSmallText
+                eyebrow="Role"
+                eyebrowColor2="#cfcef2"
+                eyebrowColor1="#231768"
+                copy="Product Owner & UX Manager"
+                //imgURL="./img/PanelTestImages/two.jpg"
+              />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
+              <ListSmallText
+                eyebrow="Team"
+                eyebrowColor2="#cfcef2"
+                eyebrowColor1="#231768"
+                copy="CMO, CRM Manager, Social Media Manager, 4 Designers, 4 Developers"
+                //imgURL="./img/PanelTestImages/two.jpg"
+              />
+            </FadeInWhenVisible>
+          </ChapterDetails2>
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
@@ -594,7 +607,7 @@ Social Media Manager
               headline="The elegant art of topic authority for fly fishing"
               copy="Feathered Hooks: My blog/eCommerce for fly fishing. A SEO experiment on achieving & monetizing topic authority as quick as possible."
               imgURL="./img/FeatheredHooks/CoverFeatheredHooks.png"
-              link="https://www.featheredhooks.com/"
+              link="/feathered-hooks"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>
@@ -613,7 +626,7 @@ Social Media Manager
       <Section>
         <SectionHead
           headline="Skill Set"
-          subline="Design, Brand, and Business."
+          subline="Design, Brand, and Growth."
         />
         <Polaroids>
           <ListSmallText

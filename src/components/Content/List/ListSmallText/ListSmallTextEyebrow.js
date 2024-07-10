@@ -14,7 +14,7 @@ const ListSmallTextEyebrow = ({ text, color1, color2 }) => {
     font-weight: 700;
     font-size: 16px;
     line-height: 120%;
-
+    margin-right: 24px;
     text-align: left;
     color: transparent;
     ${csscolor};

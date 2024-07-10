@@ -9,6 +9,7 @@ const ListSmallTextCopy = ({ text }) => {
     font-size: 20px;
     line-height: 142%;
 
+    margin-right: 24px;
     text-align: left;
     color: ${Colors.primaryText.highEmphasis};
 

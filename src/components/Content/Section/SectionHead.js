@@ -63,7 +63,7 @@ const SectionHead = ({ divider, headline, subline, copy }) => {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0px 12px 80px 12px;
+    margin: 0px 24px 80px 24px;
 
     ${Devices.tabletS} {
       margin: 0px 24px 80px 24px;
@@ -73,12 +73,15 @@ const SectionHead = ({ divider, headline, subline, copy }) => {
     }
     ${Devices.tabletM} {
       width: 708px;
+      margin: 0px 12px 80px 12px;
     }
     ${Devices.laptopS} {
       width: 852px;
+      margin: 0px 12px 80px 12px;
     }
     ${Devices.laptopM} {
       width: 1141px;
+      margin: 0px 12px 80px 12px;
     }
   `;
   return (

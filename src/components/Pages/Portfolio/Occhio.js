@@ -1,99 +1,18 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { Helmet } from "react-helmet";
 
 //Components
-import { Devices, Colors } from "../../DesignSystem";
-import SectionHead from "../../Content/Section/SectionHead";
+import { Colors, Devices } from "../../DesignSystem";
 
-import CaseSectionHead from "../../Content/Case/CaseSectionHead";
-import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
-import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseCopy from "../../Content/Case/CaseCopy";
-import CaseVideo from "../../Content/Case/CaseVideo";
 import CaseCover from "../../Content/Case/CaseCover";
-import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
+import CaseSectionHead from "../../Content/Case/CaseSectionHead";
+import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+25%",
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function MoveUpWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.6 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+100%",
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+import CaseVideo from "../../Content/Case/CaseVideo";
 
 const Content = (props) => {
   const Content = styled.div`

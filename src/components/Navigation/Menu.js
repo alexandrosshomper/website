@@ -1,7 +1,6 @@
 import React from "react";
-import MenuItem from "./MenuItem";
-import MenuItemSoon from "./MenuItemSoon";
 import { Devices } from "../DesignSystem";
+import MenuItem from "./MenuItem";
 
 import styled from "@emotion/styled";
 

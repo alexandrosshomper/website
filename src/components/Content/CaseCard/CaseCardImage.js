@@ -1,15 +1,8 @@
-import React from "react";
 import styled from "@emotion/styled";
+import React from "react";
 import { Colors, Devices } from "../../DesignSystem";
 
-const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
-  let csscolorbackground = null;
-  if (color1 && color2) {
-    csscolorbackground = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
-  } else {
-    csscolorbackground = `background-image: linear-gradient(to right, ${Colors.red}, ${Colors.redLight});`;
-  }
-
+const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
   const CaseCardImage = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -35,7 +28,6 @@ const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
   `;
   const Picture = styled.picture`
     direction: ltr;
-    display: block;
     max-width: 100%;
     height: 300px;
 
@@ -50,7 +42,7 @@ const CaseCardImage = ({ imgURL, alt, color1, color2, comingSoon }) => {
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
 
-    background-color: black;
+    background-color: none;
 
     ${Devices.tabletS} {
       height: auto;
