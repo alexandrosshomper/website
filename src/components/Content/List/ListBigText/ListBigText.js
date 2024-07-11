@@ -24,7 +24,7 @@ const ListBigText = ({ headline, copy }) => {
 
     ${Devices.tabletS} {
       margin: 0px 24px 80px 24px;
-      width: 460px;
+      width: 100%;
     }
     ${Devices.tabletM} {
       width: 708px;
