@@ -24,6 +24,8 @@ const ListSmallTextEyebrow = ({ text, color1, color2 }) => {
     margin-top: 0px;
     margin-bottom: 4px;
 
+    width: 100%;
+
     ${Devices.tabletS} {
       font-size: 16px;
     }

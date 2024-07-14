@@ -130,11 +130,6 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        <CaseSectionHead
-          headline="Summary"
-          subline="Occhio is one of the most innovative interior companies in the world and also one of the most successful luxury brands of Germany. 
-In the course of the brand redefinition and digitization Alexandros led the relaunch of the website and launch of the e-commerce in 2019."
-        />
         {/* <Paragraph>
           <CaseHeadlineThree headline={"At a glance"} />
           <CaseUnorderedList>
@@ -145,73 +140,140 @@ In the course of the brand redefinition and digitization Alexandros led the rela
           </CaseUnorderedList>
        </Paragraph>*/}
         <Paragraph>
-          <CaseHeadlineThree headline={"Problem"} />
-          <CaseSublineTwo subline={"Brand vs User Experience vs Performance"} />
+          <CaseHeadlineThree headline={"Situation"} />
+          <CaseSectionHead
+            headline={"Occhio's Digital Overhaul: Light Meets Luxury"}
+            subline={
+              "In 2019, Occhio needed a website relaunch and e-commerce launch for their brand redefinition"
+            }
+          />
           <CaseCopy
             copy={
-              "Occhio stands for perfection, highest quality, and pure design. Occhio also believes that light-quality is living-quality. That are high standards."
+              "In 2019, Occhio, a leading luxury interior and lighting brand in Germany, embarked on a brand redefinition and digitization journey."
             }
           />
           <br />
           <CaseCopy
             copy={
-              "The main challenge was finding perfect balance between Brand, User Experience, and Performance. Combining the pursuit of perfection with agile product development methods. And in the end, presenting the medium of light and its effect on living-quality."
+              "As part of this initiative, the company needed to relaunch its website and introduce an e-commerce platform. Occhio's reputation for perfection, highest quality, and pure design posed a significant challenge: balancing these high standards with user experience and website performance."
             }
           />
           <br />
           <CaseCopy
             copy={
-              "Also, the website had to fit in and augment a new brand direction of Occhio and it's whole customer experience. Luckily Alexandros was part of a broad set of initiatives on the customer journey. "
-            }
-          />
-          <br />
-          <CaseCopy
-            copy={
-              "Occhio's product range consists of several modular, configurable product systems. Counting for effectively several thousands of products. Which makes product discoverability but also product consultancy a challenge."
-            }
-          />
-          <br />
-          <CaseCopy
-            copy={
-              "The digital ecosystem of Occhio consisted of several products of a variety of heritage and tech stacks. Making an integration or connection into the new website real fun for devs."
+              "I served as the UX/UI Manager and Product Owner for this project, collaborating with stakeholders including the CEO, CMO, and CTO, and leading a team comprising development, design, CRM, and social media experts."
             }
           />
         </Paragraph>
         <Paragraph>
-          <CaseHeadlineThree headline={"Solution"} />
-          <CaseSublineTwo subline={"New Brand. New Direction. New Website."} />
+          <CaseHeadlineThree headline={"Task"} />
+          <CaseSectionHead
+            headline={
+              "Mission Impossible: Perfecting Brand, UX, and Performance"
+            }
+            subline={
+              "Led website and e-commerce relaunch to enhance digital presence and improve product discoverability"
+            }
+          />
           <CaseCopy
             copy={
-              "The brand re-definition, the digitization initiative, and the technical situation. It was clear. Occhio needed a complete relaunch of the website."
+              "My primary task was to lead the relaunch of Occhio's website and the launch of its e-commerce platform."
             }
           />
           <br />
           <CaseCopy
             copy={
-              "In order to not only re-define the brand of Occhio, but also for the first time actually define the digital brand of Occhio, we needed a blank canvas to start from, and free us from all that has already been done or defined."
+              "The goals were to enhance the digital brand presence, align with the new brand direction, improve product discoverability, and integrate various products from different tech stacks seamlessly."
             }
           />
           <br />
           <CaseCopy
             copy={
-              "For the Design we cooperated with the award-winning Brand Consultancy & Design Agency Martin et Karzinski. For the Development we cooperated with the Tech Consultancy & Agency Inviqa. In close collaboration and with an agile method, we took on the challenge."
+              "Additionally, the website needed to support a broad set of initiatives across the customer journey and cater to Occhio's extensive range of modular and configurable products."
             }
           />
           <br />
-          <CaseCopy
-            copy={
-              "We already had some quantitative data from a market-research we did some months before. Now we needed to gather qualitative data, and validate our hypotheses. With that setup, we kicked it off in a  workshop to discover our goals, customers personae, the journey, and the value proposition."
+        </Paragraph>
+        <Paragraph>
+          <CaseHeadlineThree headline={"Action"} />
+          <CaseSectionHead
+            headline={"From Blank Canvas to Digital Masterpiece"}
+            subline={
+              "Partnered with top agencies, adopted agile methods, conducted research, and redefined Occhio's digital brand experience"
             }
           />
+          <CaseCopy
+            copy={"To achieve these goals, we took the following steps:"}
+          />
+          <CaseUnorderedList style={{ listStyleType: "circle" }}>
+            <li>
+              <b>Research and Persona Development:</b> <br />
+              Conducted extensive market and brand equity research, including
+              secondary research in Munich stores, speaking directly with
+              customers and sales teams. Identified key personas based on Sigma
+              Milieus of Social Climbers and the Established, understanding
+              their values, needs, and behaviors.
+            </li>
+            <li>
+              <b>User Journey Mapping:</b> <br />
+              Visualized and prioritized user needs throughout their journey,
+              addressing pain points such as difficulty in imagining products at
+              home, getting an overview of available product variants, and fear
+              of making wrong decisions.
+            </li>
+            <li>
+              <b>Sitemap and Navigation:</b> <br />
+              Developed a comprehensive sitemap to guide user experience, SEO,
+              social media strategy, and marketing. Designed navigation that
+              catered to different mental models, allowing users to search by
+              room, luminaire type, or specific products.
+            </li>
+            <li>
+              <b>Product Detail Page Optimization:</b> <br />
+              Initially used lavish renderings to impress users but pivoted to a
+              more functional design with a mini-configurator for color and
+              size, value proposition, price, and a buy button to enhance
+              performance.
+            </li>
+            <li>
+              <b>Interactive Features and AR:</b> <br />
+              Implemented interactive components and animations to educate users
+              about product features, making the process entertaining and
+              informative. Introduced WebAR to help users visualize products in
+              their own homes, addressing concerns about fit and placement, and
+              reducing fear of making wrong decisions.
+            </li>
+            <li>
+              <b>Design and Development Collaboration:</b>
+              <br />
+              Partnered with the award-winning Brand Consultancy & Design Agency
+              Martin et Karzinski for design and Tech Consultancy & Agency
+              Inviqa for development. Adopted an agile product development
+              approach to ensure flexibility and responsiveness throughout the
+              project.
+            </li>
+          </CaseUnorderedList>
+          <br />
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Results"} />
+          <CaseSectionHead
+            headline={"A Bright Future: Awards and Engagement Soar"}
+            subline={
+              "Created an engaging, stunning website, boosting conversion rates, engagement, visitors, and newsletter sign-ups, winning awards"
+            }
+          />
           <CaseCopy
             copy={
-              "The result was a distinct, exciting, and interactive brand experience and the intuitive structure from inspiration, over configuration, to purchase."
+              "The relaunch resulted in a highly engaging and visually appealing website that seamlessly integrated Occhio's new brand direction with an enhanced user experience."
             }
           />
           <br />
+          <CaseCopy
+            copy={
+              "The new e-commerce platform significantly improved product discoverability and consultancy, leading to:"
+            }
+          />
           <CaseSublineTwo subline={"Awards"} />
           <CaseUnorderedList>
             <li>
@@ -227,6 +289,7 @@ In the course of the brand redefinition and digitization Alexandros led the rela
               </CaseListItemLink>
             </li>
           </CaseUnorderedList>
+          <br />
           <br />
           <CaseSublineTwo subline={"KPI (Numbers confidential)"} />
           <CaseUnorderedList>

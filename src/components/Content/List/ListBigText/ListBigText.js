@@ -14,7 +14,7 @@ const ListBigText = ({ headline, copy }) => {
     padding: 0px;
 
     position: static;
-    margin: 0px 12px 80px 12px;
+    margin: 0px 24px 80px 24px;
     /* Inside Auto Layout */
 
     flex: none;

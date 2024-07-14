@@ -213,10 +213,9 @@ const Content = (props) => {
        </Paragraph>*/}
         <Paragraph>
           <CaseHeadlineThree headline={"Situation"} />
-          <CaseSubline
-            subline={
-              "Change of direction: From a products to a platform strategy"
-            }
+          <CaseSectionHead
+            headline={"Change of direction"}
+            subline={"From a products to a platform strategy"}
           />
           <CaseCopy
             copy={
@@ -262,6 +261,10 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Task"} />
+          <CaseSectionHead
+            headline={"Shaping our apps offering"}
+            subline={"Suiting the diverse needs of construction customer types"}
+          />
           <CaseCopy
             copy={
               "To create a platform strategy that would allow us to offer our apps to multiple customer types and generate synergies between the single apps. This would involve reshaping our apps offering to suit the diverse needs of construction site participants and ensure that our apps could be effectively used by different customer types."
@@ -280,16 +283,16 @@ const Content = (props) => {
             color1="#00b8d4"
             color2="#62ebff"
           />
-          <CaseSubline subline={"User Research"} />
-          <CaseHeadlineTwo
+          <CaseSectionHead
             headline={"Revisiting Interviews and talking to users"}
+            subline={"User Research"}
           />
           <CaseCopy
             copy={
               "Over the years we gathered a vast repository of research and interviews for the different customer types and products. With this new objective, we were able to look at the bigger picture. Discover bigger problems and opportunities."
             }
           />
-          <CaseCopy copy={"Two Pattern occurred:"} />
+          <CaseCopy copy={"Two Patterns occurred:"} />
           <CaseUnorderedList
             style={{ marginBottom: "24px", listStyleType: "circle" }}
           >

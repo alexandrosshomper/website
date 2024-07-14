@@ -117,6 +117,23 @@ const Content = (props) => {
       align-items: center;
     }
   `;
+  const CardSection = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 24px 200px 24px;
+    ${Devices.tabletS} {
+      align-items: center;
+    }
+  `;
   const ChapterDetails2 = styled.div`
     display: flex;
     flex-direction: column;
@@ -131,13 +148,50 @@ const Content = (props) => {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: auto;
     justify-content: flex-start;
     align-content: center;
     align-items: flex-start;
-    padding-bottom: 48px;
     --gap: 12px;
-    margin-left: calc(2 * var(--gap));
-    margin-right: calc(2 * var(--gap));
+
+    margin-bottom: calc(1 * var(--gap));
+
+    ${Devices.tabletS} {
+      width: 576px;
+      margin-left: calc(-1 * var(--gap));
+      margin-right: 0px;
+      margin-bottom: calc(-1 * var(--gap));
+
+      & > * {
+        margin-left: var(--gap);
+        margin-bottom: var(--gap);
+      }
+      & > * :last-child {
+        margin-bottom: 0px;
+      }
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      flex-direction: row;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+    }
+  `;
+  const CardPanels = styled.section`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: auto;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    --gap: 12px;
+    margin-left: calc(1.6 * var(--gap));
+    margin-right: calc(1.6 * var(--gap));
     margin-bottom: calc(1 * var(--gap));
 
     ${Devices.tabletS} {
@@ -173,8 +227,7 @@ const Content = (props) => {
     align-content: center;
     align-items: flex-start;
     --gap: 12px;
-    margin-left: calc(1 * var(--gap));
-    margin-right: calc(1 * var(--gap));
+
     margin-bottom: calc(1 * var(--gap));
 
     ${Devices.tabletS} {
@@ -316,7 +369,7 @@ const Content = (props) => {
 
       <Section>
         <SectionHead subline="3 ways I can help you with" />
-        <Panels>
+        <CardPanels>
           <FadeInWhenVisible>
             <ListPanel
               eyebrow="Product"
@@ -350,7 +403,7 @@ const Content = (props) => {
               jpg="./img/PanelTestImages/circle.jpg"
             />
           </FadeInWhenVisible>
-        </Panels>
+        </CardPanels>
       </Section>
       <Section>
         <SectionHead
@@ -671,7 +724,7 @@ I led the product design of Knauf's global websites unification, establishing a 
           headline="Human Centered Leadership"
           subline="Don't believe in the king. Believe in the kingdom."
         />
-        <Panels>
+        <CardPanels>
           <FadeInWhenVisible>
             <ListPanel
               eyebrow="Compassion"
@@ -699,7 +752,7 @@ I led the product design of Knauf's global websites unification, establishing a 
               //imgURL="./img/PanelTestImages/two.jpg"
             />
           </FadeInWhenVisible>
-        </Panels>
+        </CardPanels>
       </Section>
 
       <Section>
@@ -779,7 +832,7 @@ I led the product design of Knauf's global websites unification, establishing a 
           headline="Principles"
           subline="Give meaning to actions and ideas."
         />
-        <Panels>
+        <CardPanels>
           <FadeInWhenVisible>
             <ListPanel
               eyebrow="Data Driven/Informed"
@@ -843,7 +896,7 @@ I led the product design of Knauf's global websites unification, establishing a 
               //imgURL="./img/PanelTestImages/two.jpg"
             />
           </FadeInWhenVisible>
-        </Panels>
+        </CardPanels>
       </Section>
     </Content>
   );

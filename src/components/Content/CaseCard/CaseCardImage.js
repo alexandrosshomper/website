@@ -62,11 +62,11 @@ const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
   };
 
   const Title = styled.p`
+    z-index: 2;
     direction: ltr;
     display: block;
     font-size: 36px;
     color: ${Colors.textWhite.highEmphasis};
-    object-fit: cover;
     position: absolute;
     top: 20%;
 
@@ -80,8 +80,6 @@ const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
     width: 100%;
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
-
-    src: url(${imgURL});
   `;
 
   return (

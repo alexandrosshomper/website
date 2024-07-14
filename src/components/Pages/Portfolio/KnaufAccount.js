@@ -127,6 +127,10 @@ const Content = (props) => {
         <br />
         <Paragraph>
           <CaseHeadlineThree headline={"Situation"} />
+          <CaseSectionHead
+            headline="Knauf Account – Ready for Takeoff, But Not Quite There Yet"
+            subline="Knauf Account set to launch globally with enhancements, but user signups are surprisingly low."
+          />
           <CaseCopy
             subline={
               "We've launched a new account system for our apps, the Knauf Account. This account is designed to unify our diverse company and simplify our customers' experience. Now, users only need a single account, which helps us create a better, more connected customer journey - laying out the foundation for product qualified leads."
@@ -165,6 +169,12 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Task"} />
+          <CaseSectionHead
+            headline="Increase account registrations"
+            subline={
+              "Reduce friction and personalize user experiences, crucial for lead generation and user retention."
+            }
+          />
           <CaseCopy
             copy={
               "The more customers use our account in the apps and website, the better we can connect the dots, generate insights, and offer a more personalized experience & offerings. This is crucial for our product qualified leads and our customer journey."
@@ -177,6 +187,12 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Action"} />
+          <CaseSectionHead
+            headline="Psychology Meets Data: Cracking the Signup Code"
+            subline={
+              "Conducted user psychology and data analysis to identify friction points and improve the signup process."
+            }
+          />
           <CaseCopy
             copy={
               "To boost our account registration rate, we first needed to understand our current situation. We used two research methods for this. The first was a qualitative Psych Analysis, where we applied user psychology to the registration screens and flows. The second was a quantitative funnel analysis, which tracked step-by-step user losses."
@@ -212,6 +228,12 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Results"} />
+          <CaseSectionHead
+            headline="Bug Bust and Insights: A User Behavior Twist"
+            subline={
+              "Discovered a bug in delivery notifications and realized the true drivers of engagement were our power users' preferences."
+            }
+          />
           <CaseCopy
             copy={
               "Well, here is where things got interesting and took a turn. When we analyzed the data, we found that the Delivery Notifications were not triggering - at all."

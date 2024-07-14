@@ -16,19 +16,13 @@ const ListSmallTextCopy = ({ text }) => {
     margin-top: 0px;
     margin-bottom: 0px;
 
-    ${Devices.tabletS} {
-      width: 420px;
-    }
-    ${Devices.tabletM} {
-      width: 348px;
-    }
+    width: 100%;
+
     ${Devices.laptopS} {
-      width: 420px;
       font-size: 24px;
       line-height: 117%;
     }
     ${Devices.laptopM} {
-      width: 100%;
       font-size: 24px;
       line-height: 117%;
     }

@@ -139,6 +139,12 @@ const Content = (props) => {
        </Paragraph>*/}
         <Paragraph>
           <CaseHeadlineThree headline={"Situation"} />
+          <CaseSectionHead
+            headline={"Knauf's Order Overview: Simple Outside, Complex Inside"}
+            subline={
+              "Mission to centralize processes and enhance delivery transparency; a complex low hanging fruit with huge potential."
+            }
+          />
           <CaseSublineTwo
             subline={
               "Knauf Digital’s mission is to digitalize Knauf’s business and digitize & centralize existing processes - for all Knauf brands and subsidiaries. "
@@ -182,6 +188,12 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Task"} />
+          <CaseSectionHead
+            headline={"Boosting Active Users: The Unmet Challenge"}
+            subline={
+              "Despite a slight increase, the app struggled to achieve significant user growth"
+            }
+          />
           <CaseCopy
             copy={
               "We had a slight increase of Active users every month since the launch of the pilot, however the product struggled to grow as we’d expected. "
@@ -196,6 +208,12 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Action"} />
+          <CaseSectionHead
+            headline={"Feature Focus: From Marginal to Essential"}
+            subline={
+              "Analyzed feature engagement, discovering that the 7% using Delivery Notifications were our power users"
+            }
+          />
           <CaseCopy
             copy={
               "Analyze the User Behaviour and find areas of improvements with huge impact on user activation."
@@ -252,6 +270,12 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Results"} />
+          <CaseSectionHead
+            headline={"Bug Bust and Insights: Power Users Hold the Key"}
+            subline={
+              "Found a bug in notifications; realized true engagement drivers were our power users' habits, not the feature itself"
+            }
+          />
           <CaseCopy
             copy={
               "Well, here is where things got interesting and took a turn. When we analyzed the data, we found that the Delivery Notifications were not triggering - at all."

@@ -135,7 +135,7 @@ const Content = (props) => {
        </Paragraph>*/}
         <Paragraph>
           <CaseHeadlineThree headline={"Situation"} />
-          <CaseSublineTwo subline={"Sleeping Giants"} />
+          <CaseSectionHead headline={"Sleeping Giants"} />
           <CaseCopy
             copy={
               "The construction industry is no exception of the German Mittelstand. It’s decentralized. Has no applied standards across markets. Has a heterogeneous tech stack across markets. Heterogeneous customer types across markets. Mainly offline. Bad data quality."
@@ -179,6 +179,7 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Task"} />
+          <CaseSectionHead headline={"Digital Transformation"} />
           <CaseCopy
             copy={
               "Secure Knaufs success and lead position by helping Knauf becoming the driving force of the digital transformation in the global construction industry."
@@ -201,6 +202,7 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Action"} />
+          <CaseSectionHead headline={"Launch to learn."} />
           <CaseSublineTwo
             subline={
               "Using Silicon Valley’s secrets to disrupt the construction industry"
@@ -218,7 +220,7 @@ const Content = (props) => {
           <br />
           <CaseCopy
             copy={
-              "Traditional Business Strategies are no longer relevant in the new economy.Top performing, innovative companies are using new and efficient methods to understand customers, build innovative products & services, and to grow their business – and so did we."
+              "Traditional Business Strategies are no longer relevant in the new economy. Top performing, innovative companies are using new and efficient methods to understand customers, build innovative products & services, and to grow their business – and so did we."
             }
           />
           <br />
@@ -237,6 +239,7 @@ const Content = (props) => {
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Results"} />
+          <CaseSectionHead headline={"The Roadmap"} />
           <CaseCopy
             copy={
               "At the end of this initiative we had a 5 years global roadmap for 3 customer types, validated in 4 key markets."
@@ -257,6 +260,7 @@ const Content = (props) => {
               <span style={greenArrowStyle}> 👍 </span>5 Year Roadmap
             </li>
           </CaseUnorderedList>
+          <br />
           <br />
           <CaseSublineTwo subline={"Facit"} />
           <CaseCopy

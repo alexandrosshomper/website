@@ -9,6 +9,7 @@ import Copy from "./CaseCardCopy";
 import Eyebrow from "./CaseCardEyebrow";
 import Headline from "./CaseCardHeadline";
 import Image from "./CaseCardImage";
+import CaseCardImage from "./CaseCardImage";
 
 const CaseCard = ({
   eyebrow,
@@ -224,7 +225,7 @@ const CaseCard = ({
   const CaseCardCopyMotion = {
     rest: {
       opacity: 0,
-      visibility: "hidden",
+      visibility: Devices.desktopL || Devices.desktopM ? "hidden" : "visible",
       transition: {
         duration: 0.2,
         type: "tween",
@@ -262,7 +263,11 @@ const CaseCard = ({
       <CaseCardLink href={link}>
         <CaseCardArticle>
           {imgURL && (
-            <Image imgURL={imgURL} alt={headline} comingSoon={comingSoon} />
+            <CaseCardImage
+              imgURL={imgURL}
+              alt={headline}
+              comingSoon={comingSoon}
+            />
           )}
           <CaseCardContent variants={CaseCardContentMotion}>
             <CaseCardHeaderContainer>
