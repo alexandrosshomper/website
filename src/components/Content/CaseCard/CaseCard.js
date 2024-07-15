@@ -88,7 +88,6 @@ const CaseCard = ({
     cursor: ${comingSoon && "wait"};
     direction: ltr;
     display: block;
-    height: 400px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -119,7 +118,7 @@ const CaseCard = ({
     direction: ltr;
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 300px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -131,6 +130,18 @@ const CaseCard = ({
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-font-smoothing: antialiased;
+    ${Devices.tabletS} {
+      height: 300px;
+    }
+    ${Devices.tabletM} {
+      height: 300px;
+    }
+    ${Devices.laptopS} {
+      height: 330px;
+    }
+    ${Devices.laptopM} {
+      height: 400px;
+    }
   `;
   const CaseCardContent = styled(motion.div)`
     background-color: white;
@@ -225,7 +236,7 @@ const CaseCard = ({
   const CaseCardCopyMotion = {
     rest: {
       opacity: 0,
-      visibility: Devices.desktopL || Devices.desktopM ? "hidden" : "visible",
+      visibility: "hidden",
       transition: {
         duration: 0.2,
         type: "tween",
@@ -269,7 +280,11 @@ const CaseCard = ({
               comingSoon={comingSoon}
             />
           )}
-          <CaseCardContent variants={CaseCardContentMotion}>
+          <CaseCardContent
+            variants={
+              !Devices.tabletS || (!Devices.tabletM && CaseCardContentMotion)
+            }
+          >
             <CaseCardHeaderContainer>
               <CaseCardHeader>
                 {eyebrow && (
@@ -281,7 +296,12 @@ const CaseCard = ({
                 )}
                 {headline && <Headline text={headline} />}
               </CaseCardHeader>
-              {copy && <Copy motionVariants={CaseCardCopyMotion} text={copy} />}
+              {/*Devices.tabletS && (
+                <Copy
+                  motionVariants={Devices.tabletS && CaseCardCopyMotion}
+                  text={copy}
+                />
+              )*/}
             </CaseCardHeaderContainer>
           </CaseCardContent>
         </CaseCardArticle>
