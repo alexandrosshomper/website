@@ -61,7 +61,7 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
     flex-grow: 0;
     width: 100%;
 
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 
     ${Devices.tabletS} {
       width: 564px;

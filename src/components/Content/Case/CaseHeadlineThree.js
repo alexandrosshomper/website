@@ -20,7 +20,6 @@ const CaseHeadlineThree = ({ headline }) => {
     line-height: 115%;
 
     margin: 0px;
-    margin-bottom: 20px;
 
     color: transparent;
     background-image: linear-gradient(
