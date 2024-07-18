@@ -8,7 +8,6 @@ import { Colors, Devices } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
-import CaseImage from "../../Content/Case/CaseImage";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";

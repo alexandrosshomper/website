@@ -9,9 +9,10 @@ import ScrollToTop from "./functions/ScrollToTop";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 //import Home from "./components/Pages/Home/Home";
 const Home = lazy(() => import("./components/Pages/Home/Home"));
-//import Contact from "./components/Pages/Contact/Contact";
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
-//import Portfolio from "./components/Pages/Portfolio/Portfolio";
+const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
+const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
+
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
   import("./components/Pages/Portfolio/KnaufExplorations")
@@ -75,7 +76,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/portfolio" component={Home} />
+            <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/writing" component={Writing} />
+
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact

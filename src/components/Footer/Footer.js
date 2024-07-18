@@ -145,7 +145,29 @@ const Footer = (props) => {
                 textDecoration: "none",
               }}
             >
+              Profile
+            </Link>
+          </SitemapItem>
+          <SitemapItem>
+            <Link
+              to={`/portfolio`}
+              style={{
+                color: Colors.primaryText.highEmphasis,
+                textDecoration: "none",
+              }}
+            >
               Portfolio
+            </Link>
+          </SitemapItem>
+          <SitemapItem>
+            <Link
+              to={`/writing`}
+              style={{
+                color: Colors.primaryText.highEmphasis,
+                textDecoration: "none",
+              }}
+            >
+              Writing
             </Link>
           </SitemapItem>
           <SitemapItem>

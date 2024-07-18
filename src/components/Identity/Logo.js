@@ -6,7 +6,7 @@ const Logo = (props) => {
   const Logo = styled.div`
     width: 60px;
     height: 60px;
-    background-image: url("./img/Identity/Logo/portrait.png");
+    background-image: url("./img/Identity/Logo/alexandros shomper logo@2x.png");
     background-size: contain;
     border-radius: 30px;
     cursor: grab;

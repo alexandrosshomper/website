@@ -27,7 +27,9 @@ const Menu = (props) => {
 
   return (
     <Menu className="Menu">
-      <MenuItem title="Portfolio" link="/" />
+      <MenuItem title="Profile" link="/" />
+      <MenuItem title="Portfolio" link="/portfolio" />
+      <MenuItem title="Writing" link="/writing" />
       <MenuItem title="Contact" link="/contact" />
     </Menu>
   );
