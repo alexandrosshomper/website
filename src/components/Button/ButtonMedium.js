@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import Icon from "@mdi/react";
 
-const ButtonMedium = ({ href, text, color1, color2, icon }) => {
+const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   console.log(`color:${color1};`);
   let csscolor = null;
   if (color1 && color2) {
@@ -103,10 +103,10 @@ const ButtonMedium = ({ href, text, color1, color2, icon }) => {
         borderStyle: "none",
         padding: 0,
       }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
-      <ButtonMedium href={href}>
+      <ButtonMedium href={href} onClick={clickAction}>
         {text}
         {icon && <Icon path={icon} title={text} size={"16px"} />}
       </ButtonMedium>

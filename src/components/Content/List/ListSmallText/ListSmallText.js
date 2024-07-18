@@ -14,16 +14,12 @@ const ListSmallText = ({ eyebrow, eyebrowColor1, eyebrowColor2, copy }) => {
 
     text-align: left;
 
-    margin: 0px 24px 60px 24px;
     &:last-child {
       margin-bottom: 0px;
     }
 
-    //padding-right: 12px;
-
     ${Devices.tabletS} {
       width: 460px;
-      margin: 0px 0px 60px 0px;
     }
     ${Devices.tabletM} {
       width: 228px;

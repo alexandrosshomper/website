@@ -20,19 +20,23 @@ const SectionCopy = ({ copy }) => {
       text-align: left;
       width: 564px;
     }
-    ${Devices.tabletS} {
+    ${Devices.tabletM} {
       width: 708px;
 
-      font-size: 20px;
-      line-height: 120%;
+      font-size: 36px;
+      line-height: 111%;
     }
-    ${Devices.tabletS} {
-      font-size: 24px;
-      line-height: 133%;
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 48px;
+      line-height: 100%;
     }
-    ${Devices.tabletS} {
-      font-size: 24px;
-      line-height: 133%;
+    ${Devices.laptopM} {
+      width: 1141px;
+
+      font-size: 60px;
+      line-height: 113%;
     }
   `;
 

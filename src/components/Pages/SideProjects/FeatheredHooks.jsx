@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 //Components
 import { Colors, Devices } from "../../DesignSystem";
+import { mdiOpenInNew } from "@mdi/js";
 
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 
@@ -19,6 +20,8 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseHeadlineTwo from "../../Content/Case/CaseHeadlineTwo";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseCard from "../../Content/CaseCard/CaseCard";
+
+import ButtonMedium from "../../Button/ButtonMedium";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -184,6 +187,15 @@ const Content = (props) => {
         <br />
 
         <br />
+        <ButtonMedium
+          text="Visit Feathered Hooks"
+          href="https://featheredhooks.com"
+          color1={Colors.green}
+          color2={Colors.greenDark}
+          icon={mdiOpenInNew}
+        />
+        <br />
+        <br />
         <CaseSectionHead
           headline="Hello, fellow fly fishing enthusiasts or Marketing adventurers! Today, I'm excited to introduce you to a new side project of mine, the 'Feathered Hooks' blog."
           subline="This isn't just a fly fishing blog, mind you - it's an experiment in SEO Topical Authority. What's that, you ask? Well, grab your favorite fishing hat, and let's dive in."
@@ -284,6 +296,14 @@ const Content = (props) => {
               "Ideally those Topic Clusters make sense to your visitors aswell, so they can sort it in their mind. Therefor I prefer to take Mental Models with clear intent as the first Cluster - the Top Level Topic Clusters. But I’ll come to them later."
             }
           />
+          <br />
+          <ButtonMedium
+            text="Visit Feathered Hooks"
+            href="https://featheredhooks.com"
+            color1={Colors.green}
+            color2={Colors.greenDark}
+            icon={mdiOpenInNew}
+          />
         </Paragraph>
         <Paragraph>
           <CaseHeadlineTwo headline={"The Bait: Content Strategy"} />
@@ -322,6 +342,14 @@ const Content = (props) => {
               less competition for keywords and search rankings.
             </li>
           </CaseUnorderedList>
+          <br />
+          <ButtonMedium
+            text="Visit Feathered Hooks"
+            href="https://featheredhooks.com"
+            color1={Colors.green}
+            color2={Colors.greenDark}
+            icon={mdiOpenInNew}
+          />
         </Paragraph>
         <Paragraph>
           <CaseHeadlineTwo headline={"The Line: Tactics"} />
@@ -426,6 +454,14 @@ const Content = (props) => {
             copy={
               "Considering condensed information format of the content, that can be displayed in FAQ & tables making it Search Engine Results Page (SERP) snippet-friendly."
             }
+          />
+          <br />
+          <ButtonMedium
+            text="Visit Feathered Hooks"
+            href="https://featheredhooks.com"
+            color1={Colors.green}
+            color2={Colors.greenDark}
+            icon={mdiOpenInNew}
           />
         </Paragraph>
         <Paragraph>
@@ -614,6 +650,14 @@ const Content = (props) => {
               <b>SEObility</b> for structural and technical analysis
             </li>
           </CaseUnorderedList>
+          <br />
+          <ButtonMedium
+            text="Visit Feathered Hooks"
+            href="https://featheredhooks.com"
+            color1={Colors.green}
+            color2={Colors.greenDark}
+            icon={mdiOpenInNew}
+          />
         </Paragraph>
         <Paragraph>
           <CaseHeadlineTwo headline={"The Release: Go-to-Market Plan"} />
@@ -645,6 +689,14 @@ const Content = (props) => {
           />
           <CaseImage imgURL="./img/FeatheredHooks/GTM.png" size="M" />
           <br />
+          <br />
+          <ButtonMedium
+            text="Visit Feathered Hooks"
+            href="https://featheredhooks.com"
+            color1={Colors.green}
+            color2={Colors.greenDark}
+            icon={mdiOpenInNew}
+          />
         </Paragraph>
         <Paragraph>
           <CaseSectionHead headline={"Other Projects"} />
@@ -716,6 +768,14 @@ const Content = (props) => {
               />
             </FadeInWhenVisible>
           </CaseCardGrid>
+          <br />
+          <ButtonMedium
+            text="Visit Feathered Hooks"
+            href="https://featheredhooks.com"
+            color1={Colors.green}
+            color2={Colors.greenDark}
+            icon={mdiOpenInNew}
+          />
         </Paragraph>
       </Section>
     </Content>

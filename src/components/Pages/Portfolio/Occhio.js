@@ -13,8 +13,46 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseVideo from "../../Content/Case/CaseVideo";
+import Drawer from "../../Content/Drawer/Drawer";
 
 const Content = (props) => {
+  const galleryItems = [
+    {
+      id: 1,
+      imgURL: "./img/Occhio/Personae.jpg",
+      imgMobileURL: "./img/Occhio/Personae-mobile.png",
+      headline: "Research and Persona Development",
+      copy: "Conducted extensive market and brand equity research, including secondary research in Munich stores, speaking directly with customers and sales teams. Identified key personas based on Sigma Milieus of Social Climbers and the Established, understanding their values, needs, and behaviors.",
+    },
+    {
+      id: 2,
+      imgURL: "./img/Occhio/CustomerJourney.png",
+      imgMobileURL: "./img/Occhio/CustomerJourney-mobile.png",
+      headline: "User Journey Mapping",
+      copy: "Visualized and prioritized user needs throughout their journey, addressing pain points such as difficulty in imagining products at home, getting an overview of available product variants, and fear of making wrong decisions.",
+    },
+    {
+      id: 3,
+      imgURL: "./img/Occhio/Sitemap.png",
+      imgMobileURL: "./img/Occhio/Sitemap-mobile.png",
+      headline: "Sitemap and Navigation",
+      copy: "Developed a comprehensive sitemap to guide user experience, SEO, social media strategy, and marketing. Designed navigation that catered to different mental models, allowing users to search by room, luminaire type, or specific products.",
+    },
+    {
+      id: 4,
+      imgURL: "./img/Occhio/PDP.png",
+      imgMobileURL: "./img/Occhio/PDP-mobile.png",
+      headline: "Product Detail Page Optimization",
+      copy: "Initially used lavish renderings to impress users but pivoted to a more functional design with a mini-configurator for color and size, value proposition, price, and a buy button to enhance performance.",
+    },
+    {
+      id: 5,
+      imgURL: "./img/Occhio/AR.png",
+      imgMobileURL: "./img/Occhio/AR-mobile.png",
+      headline: "Interactive Features and AR",
+      copy: "Implemented interactive components and animations to educate users about product features, making the process entertaining and informative. Introduced WebAR to help users visualize products in their own homes, addressing concerns about fit and placement, and reducing fear of making wrong decisions.",
+    },
+  ];
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -142,9 +180,9 @@ const Content = (props) => {
         <Paragraph>
           <CaseHeadlineThree headline={"Situation"} />
           <CaseSectionHead
-            headline={"Occhio's Digital Overhaul: Light Meets Luxury"}
+            headline={"Occhio's Digital Overhaul"}
             subline={
-              "In 2019, Occhio needed a website relaunch and e-commerce launch for their brand redefinition"
+              "Occhio needed a website relaunch and e-commerce launch for their brand redefinition"
             }
           />
           <CaseCopy
@@ -203,56 +241,22 @@ const Content = (props) => {
             }
           />
           <CaseCopy
-            copy={"To achieve these goals, we took the following steps:"}
+            copy={
+              "In Munich stores, I engaged with customers and sales teams to identify key personas, uncovering insights about Social Climbers and the Established. Mapping their user journeys, I addressed pain points like visualizing products at home and decision-making anxiety."
+            }
           />
-          <CaseUnorderedList style={{ listStyleType: "circle" }}>
-            <li>
-              <b>Research and Persona Development:</b> <br />
-              Conducted extensive market and brand equity research, including
-              secondary research in Munich stores, speaking directly with
-              customers and sales teams. Identified key personas based on Sigma
-              Milieus of Social Climbers and the Established, understanding
-              their values, needs, and behaviors.
-            </li>
-            <li>
-              <b>User Journey Mapping:</b> <br />
-              Visualized and prioritized user needs throughout their journey,
-              addressing pain points such as difficulty in imagining products at
-              home, getting an overview of available product variants, and fear
-              of making wrong decisions.
-            </li>
-            <li>
-              <b>Sitemap and Navigation:</b> <br />
-              Developed a comprehensive sitemap to guide user experience, SEO,
-              social media strategy, and marketing. Designed navigation that
-              catered to different mental models, allowing users to search by
-              room, luminaire type, or specific products.
-            </li>
-            <li>
-              <b>Product Detail Page Optimization:</b> <br />
-              Initially used lavish renderings to impress users but pivoted to a
-              more functional design with a mini-configurator for color and
-              size, value proposition, price, and a buy button to enhance
-              performance.
-            </li>
-            <li>
-              <b>Interactive Features and AR:</b> <br />
-              Implemented interactive components and animations to educate users
-              about product features, making the process entertaining and
-              informative. Introduced WebAR to help users visualize products in
-              their own homes, addressing concerns about fit and placement, and
-              reducing fear of making wrong decisions.
-            </li>
-            <li>
-              <b>Design and Development Collaboration:</b>
-              <br />
-              Partnered with the award-winning Brand Consultancy & Design Agency
-              Martin et Karzinski for design and Tech Consultancy & Agency
-              Inviqa for development. Adopted an agile product development
-              approach to ensure flexibility and responsiveness throughout the
-              project.
-            </li>
-          </CaseUnorderedList>
+          <CaseCopy
+            copy={
+              "Partnered with the award-winning Brand Consultancy & Design Agency Martin et Karzinski for design and Tech Consultancy & Agency Inviqa for development. Adopted an agile product development approach to ensure flexibility and responsiveness throughout the project."
+            }
+          />
+          <CaseCopy
+            copy={
+              "I developed a comprehensive sitemap and intuitive navigation, and pivoted our product detail pages from lavish renderings to a functional design featuring a mini-configurator. Interactive features and WebAR were introduced to educate users and help them visualize products in their homes. Collaborating with Martin et Karzinski for design and Inviqa for development, we used an agile approach to ensure flexibility and responsiveness."
+            }
+          />
+
+          <Drawer items={galleryItems} />
           <br />
         </Paragraph>
         <Paragraph>
@@ -271,7 +275,7 @@ const Content = (props) => {
           <br />
           <CaseCopy
             copy={
-              "The new e-commerce platform significantly improved product discoverability and consultancy, leading to:"
+              "The new e-commerce platform significantly improved product discoverability and consultancy, leading to e-commerce gaining a significant revenue-share, and:"
             }
           />
           <CaseSublineTwo subline={"Awards"} />

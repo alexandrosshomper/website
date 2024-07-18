@@ -63,25 +63,25 @@ const SectionHead = ({ divider, headline, subline, copy }) => {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0px 24px 80px 24px;
+    margin: 0px 24px 40px 24px;
 
     ${Devices.tabletS} {
-      margin: 0px 24px 80px 24px;
-      width: 564px;
+      margin: 0px 0px 60px 0px;
+      width: 576px;
       align-items: flex-start;
       align-content: flex-start;
     }
     ${Devices.tabletM} {
-      width: 708px;
-      margin: 0px 12px 80px 12px;
+      width: 720px;
+      margin: 0px 0px 60px 0px;
     }
     ${Devices.laptopS} {
-      width: 852px;
-      margin: 0px 12px 80px 12px;
+      width: 864px;
+      margin: 0px 0px 60px 0px;
     }
     ${Devices.laptopM} {
-      width: 1141px;
-      margin: 0px 12px 80px 12px;
+      width: 1152px;
+      margin: 0px 0px 60px 0px;
     }
   `;
   return (

@@ -103,8 +103,8 @@ const Content = (props) => {
           color1="#00b8d4"
           color2="#62ebff"
         />
-        <CaseTitle headline={"Knauf Explorations"} />
-        <CaseCover imgURL="./img/Knauf/KnaufExplorations.png" />
+        <CaseTitle headline={"Knauf Transformation"} />
+        <CaseCover imgURL="./img/Knauf/HeroKnaufTransformation.png" />
         <br />
         <br />
         <br />

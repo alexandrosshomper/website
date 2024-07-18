@@ -13,8 +13,40 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+import Drawer from "../../Content/Drawer/Drawer";
 
 const Content = (props) => {
+  const galleryItems = [
+    {
+      id: 1,
+      imgURL: "./img/Knauf/FeatureAdoption.png",
+      imgMobileURL: "./img/Knauf/FeatureAdoption-mobile.png",
+      headline: "The data",
+      copy: "That 7% of users that used the Delivery Notification, turned out to make 20% of the overall traffic on the product. Three times more actions per session.",
+    },
+    {
+      id: 2,
+      imgURL: "./img/Knauf/UserRetention.png",
+      imgMobileURL: "./img/Knauf/UserRetention-mobile.png",
+      headline: "User Retention Correlation",
+      copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
+    },
+    {
+      id: 3,
+      imgURL: "./img/Knauf/HabitLoop.png",
+      imgMobileURL: "./img/Knauf/HabitLoop-mobile.png",
+      headline: "Hypothesis",
+      copy: "We believe that more users adopting the Delivery Notifications will result in better overall user activation, retention, and engagement. The hypothesis is based on a user behaviour principle: Habit Formation. Our users already have an established habit of solving their problem (emails & calls). Our product requires them to change their habit, and adopt a new heabit. Repeating a new habit early on, maximizes the chance of adoption. By regularly reminding our users of our new solution, the Delivery Notifications help our users adopt a new habit.",
+    },
+
+    {
+      id: 4,
+      imgURL: "./img/Knauf/Experiments.png",
+      imgMobileURL: "./img/Knauf/Experiments-mobile.png",
+      headline: "Experiments",
+      copy: "We created 4 experiments to improve the adoption of the Delivery Notifications, from which we would learn whether this will have the impact on user activation, retention, and engagement that we think.",
+    },
+  ];
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -114,10 +146,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        <CaseSectionHead
-          headline="A globally successful company needs to find new ways to compete by fulfilling a digital transformation and applying customer centricity. The best way to benefit from a digital transformation of an industry is to lead it. "
-          subline="But what does this mean for Knauf and the Construction Industry? And how could I help?"
-        />
+
         <CaseSublineTwo
           subline={
             "I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Knauf."
@@ -214,8 +243,8 @@ const Content = (props) => {
               "Analyzed feature engagement, discovering that the 7% using Delivery Notifications were our power users"
             }
           />
-          <CaseCopy
-            copy={
+          <CaseSublineTwo
+            subline={
               "Analyze the User Behaviour and find areas of improvements with huge impact on user activation."
             }
           />
@@ -229,44 +258,7 @@ const Content = (props) => {
               "However, that segment of users proofed to be our power users."
             }
           />
-          <CaseSublineTwo subline={"The data"} />
-          <CaseCopy
-            copy={
-              "That 7% of users that used the Delivery Notification, turned out to make 20% of the overall traffic on the product. Three times more actions per session."
-            }
-          />
-          <CaseImage imgURL="./img/Knauf/FeatureAdoption.png" />
-          <CaseCopy
-            copy={
-              "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months."
-            }
-          />
-          <CaseImage imgURL="./img/Knauf/UserRetention.png" />
-
-          <CaseSublineTwo subline={"Hypothesis"} />
-          <CaseCopy
-            copy={
-              "We believe that more users adopting the Delivery Notifications will result in better overall user activation, retention, and engagement."
-            }
-          />
-          <CaseCopy
-            copy={
-              "The hypothesis is based on a user behaviour principle: Habit Formation. Our users already have an established habit of solving their problem (emails & calls). Our product requires them to change their habit, and adopt a new heabit. Repeating a new habit early on, maximizes the chance of adoption."
-            }
-          />
-          <CaseCopy
-            copy={
-              "By regularly reminding our users of our new solution, the Delivery Notifications help our users adopt a new habit."
-            }
-          />
-          <CaseImage imgURL="./img/Knauf/HabitLoop.png" />
-          <CaseSublineTwo subline={"Experiments"} />
-          <CaseCopy
-            copy={
-              "We created 4 experiments to improve the adoption of the Delivery Notifications, from which we would learn whether this will have the impact on user activation, retention, and engagement that we think."
-            }
-          />
-          <CaseImage imgURL="./img/Knauf/OrderOverviewExperiments.png" />
+          <Drawer items={galleryItems} />
         </Paragraph>
         <Paragraph>
           <CaseHeadlineThree headline={"Results"} />

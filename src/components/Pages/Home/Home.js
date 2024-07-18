@@ -15,6 +15,11 @@ import SectionHead from "../../Content/Section/SectionHead";
 import { Colors, Devices } from "../../DesignSystem";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
+import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
+import Article from "../../Content/Article/Article";
+import ButtonMedium from "../../Button/ButtonMedium";
+import SectionSubline from "../../Content/Section/SectionSubline";
+import SectionOverline from "../../Content/Section/SectionOverline";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -152,23 +157,11 @@ const Content = (props) => {
     justify-content: flex-start;
     align-content: center;
     align-items: flex-start;
-    --gap: 12px;
+    gap: 12px;
 
-    margin-bottom: calc(1 * var(--gap));
-
+    margin: 0px;
     ${Devices.tabletS} {
       width: 576px;
-      margin-left: calc(-1 * var(--gap));
-      margin-right: 0px;
-      margin-bottom: calc(-1 * var(--gap));
-
-      & > * {
-        margin-left: var(--gap);
-        margin-bottom: var(--gap);
-      }
-      & > * :last-child {
-        margin-bottom: 0px;
-      }
     }
     ${Devices.tabletM} {
       width: 720px;
@@ -226,23 +219,11 @@ const Content = (props) => {
     justify-content: center;
     align-content: center;
     align-items: flex-start;
-    --gap: 12px;
-
-    margin-bottom: calc(1 * var(--gap));
+    column-gap: 16px;
+    row-gap: 24px;
 
     ${Devices.tabletS} {
       width: 576px;
-      margin-left: calc(-1 * var(--gap));
-      margin-right: 0px;
-      margin-bottom: calc(-1 * var(--gap));
-
-      & > * {
-        margin-left: var(--gap);
-        margin-bottom: var(--gap);
-      }
-      & > * :last-child {
-        margin-bottom: 0px;
-      }
     }
     ${Devices.tabletM} {
       width: 720px;
@@ -386,7 +367,7 @@ const Content = (props) => {
               eyebrow="Growth"
               eyebrowColor1={Colors.red}
               eyebrowColor2={Colors.purple}
-              copy="Get more customers and keep them longer. Retention, activation, & engagement."
+              copy="Acquire more customers, get them engaged, and keep them longer."
               webp="./img/PanelTestImages/triangle.webp"
               png="./img/PanelTestImages/triangle.png"
               jpg="./img/PanelTestImages/triangle.jpg"
@@ -407,45 +388,89 @@ const Content = (props) => {
       </Section>
       <Section>
         <SectionHead
+          divider="Community Service"
+          headline="Writing on Product, Design, Marketing and Growth"
+          subline="Sharing articles, insights, and frameworks with the product community."
+        />
+        <SectionOverline subline="Articles on Medium.com" />
+
+        <Article
+          headline="Is the Customer always right? It depends …"
+          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
+        />
+        <Article
+          headline="Change Aversion and what now?"
+          subline="Users hate when products are a changing: Overcoming Change Aversion in Digital Product Design and Development."
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://bootcamp.uxdesign.cc/change-aversion-and-what-now-55024604096a"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*Xd_nD0ZaWHnDvhViZfxDng.png"
+        />
+        <Article
+          headline="Redundancy is not your enemy"
+          subline="How Redundancy Helps You Cater to Different Customers."
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://bootcamp.uxdesign.cc/redundancy-is-not-your-enemy-892226f87271"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*03GSdQoQns5lgSpW30J_bw.png"
+        />
+        <br />
+        <ButtonMedium
+          href="https://medium.com/@alexandrosshomper"
+          text="See all my articles on Medium"
+          color1={Colors.greyDark}
+          color2={Colors.black}
+        />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <SectionOverline subline="Artifacts on Reforge.com" />
+        <Article
+          headline="UX explainer presentation"
+          subline="An explainer presentation meant to introduce actionable concepts around UX and what it means for our organization."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/ux-explainer-presentation-at-knauf"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/6787514e3743e00c0e414a4e1775b903887238b4-528x343.png?w=2200&q=80&fit=max&auto=format"
+        />
+        <Article
+          headline="UX maturity assessment workshop"
+          subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
+        />
+        <Article
+          headline="Use case marketing messaging map"
+          subline="A use case marketing messaging map and product marketing map we use to help inform our efforts and align messaging and marketing."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/use-case-marketing-messaging-map"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/7d8cb395214411450f7d051f6bfae06e83788459-528x343.png?w=2200&q=80&fit=max&auto=format"
+        />
+        <br />
+        <ButtonMedium
+          href="https://www.reforge.com/profiles/alexandros-shomper"
+          text="See all my artifacts on Reforge"
+          color1={Colors.greyDark}
+          color2={Colors.black}
+        />
+      </Section>
+      <Section>
+        <SectionHead
           divider="Selected projects"
           headline="Knauf Construction Apps"
           subline="Building a global apps platform, from scratch."
         />
         <Panels style={{ marginBottom: "48px" }}>
           <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Summary"
-              eyebrowColor1="#10d5f5"
-              eyebrowColor2="#231768"
+            <CaseSectionSummary
               copy="
-I spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
+Spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <ChapterDetails2>
-            <FadeInWhenVisible>
-              <ListSmallText
-                eyebrow="Role"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                copy="Chapter Lead Product Design"
-                //imgURL="./img/PanelTestImages/two.jpg"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <ListSmallText
-                eyebrow="Team"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                copy="3 PO,
-2 UX Designer,
-2 UI Designer,
-3 Solution Architects,
-10 Dev"
-                //imgURL="./img/PanelTestImages/two.jpg"
-              />
-            </FadeInWhenVisible>
-          </ChapterDetails2>
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
@@ -516,6 +541,7 @@ I spearheaded the design and UX for four Knauf construction apps, creating a uni
           </FadeInWhenVisible>
         </CaseCardGrid>
       </Section>
+
       <Section>
         <SectionHead
           headline="Knauf Corporate Website"
@@ -528,39 +554,12 @@ I spearheaded the design and UX for four Knauf construction apps, creating a uni
           }}
         >
           <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Summary"
-              eyebrowColor1="#3b177d"
-              eyebrowColor2="#73b9df"
+            <CaseSectionSummary
               copy="
-I led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
+Led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <ChapterDetails2>
-            <FadeInWhenVisible>
-              <ListSmallText
-                eyebrow="Role"
-                eyebrowColor1="#3b177d"
-                eyebrowColor2="#73b9df"
-                copy="Chapter Lead Product Design"
-                //imgURL="./img/PanelTestImages/two.jpg"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <ListSmallText
-                eyebrow="Team"
-                eyebrowColor1="#3b177d"
-                eyebrowColor2="#73b9df"
-                copy="4 PO,
-3 UX Designer,
-2 UI Designer,
-4 Solution Architects,
-15 Dev"
-                //imgURL="./img/PanelTestImages/two.jpg"
-              />
-            </FadeInWhenVisible>
-          </ChapterDetails2>
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
@@ -605,34 +604,11 @@ I led the product design of Knauf's global websites unification, establishing a 
         />
         <Panels style={{ marginBottom: "48px" }}>
           <FadeInWhenVisible>
-            <ListSmallText
-              eyebrow="Summary"
-              eyebrowColor2="#cfcef2"
-              eyebrowColor1="#231768"
-              copy="I led Occhio's website relaunch and e-commerce debut, blending brand identity with user experience and performance, which redefined its digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
+            <CaseSectionSummary
+              copy="Led Occhio's website relaunch and e-commerce debut, blending brand identity with user experience and performance, which redefined its digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <ChapterDetails2>
-            <FadeInWhenVisible>
-              <ListSmallText
-                eyebrow="Role"
-                eyebrowColor2="#cfcef2"
-                eyebrowColor1="#231768"
-                copy="Product Owner & UX Manager"
-                //imgURL="./img/PanelTestImages/two.jpg"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <ListSmallText
-                eyebrow="Team"
-                eyebrowColor2="#cfcef2"
-                eyebrowColor1="#231768"
-                copy="CMO, CRM Manager, Social Media Manager, 4 Designers, 4 Developers"
-                //imgURL="./img/PanelTestImages/two.jpg"
-              />
-            </FadeInWhenVisible>
-          </ChapterDetails2>
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
@@ -773,7 +749,7 @@ I led the product design of Knauf's global websites unification, establishing a 
         <SectionHead
           headline="Process"
           subline="Iterative. Agile. Customer-centric."
-          copy="Innovative products need a process creating a consistent brand experience across many touchpoints."
+          copy="Innovative products need a flexible but repeatable process of making data-driven & customer-centric product decisions."
           //copy="Aproaching problems creatively with well-though and well-executed solutions. Developing feasibility, desirability and viability ideas that improve people's life in some manner, but at the same time it needs to be work and make business sense."
         />
         <MoveUpWhenVisible>
