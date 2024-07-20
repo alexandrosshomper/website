@@ -85,6 +85,7 @@ export const Colors = {
   blue: `#304ffe`,
   blueLight: `#7a7cff`,
   blueDark: `#0026ca`,
+  blueBackground: `rgb(213 244 255)`,
   green: `#00c853`,
   greenLight: `#5efc82`,
   greenDark: `#009624`,

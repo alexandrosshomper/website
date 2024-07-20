@@ -101,7 +101,9 @@ const FlipCard = ({
     }
   `;
   const FlipButton = styled.button`
-    background-color: ${Colors.background};
+    background-color: ${isFlipped
+      ? Colors.textWhite.highEmphasis
+      : Colors.background};
     color: ${Colors.primaryText.mediumEmphasis};
     border: none;
     width: 40px;

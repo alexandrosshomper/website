@@ -256,9 +256,9 @@ const Content = (props) => {
         <FlipCardPanels>
           <FlipCard
             eyebrow="Product"
-            eyebrowColor1={Colors.orangeDark}
-            eyebrowColor2={Colors.redLight}
-            backgroundColor={Colors.orangeBackground}
+            eyebrowColor1={Colors.blueDark}
+            eyebrowColor2={Colors.blueLight}
+            backgroundColor={Colors.blueBackground}
             copy={[
               "Create meaningful & useful products your customers will love.",
             ]}
