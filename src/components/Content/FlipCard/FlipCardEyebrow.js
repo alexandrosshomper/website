@@ -1,0 +1,39 @@
+import React from "react";
+import styled from "@emotion/styled";
+
+import { Devices, Colors } from "../../DesignSystem";
+
+const FlipCardEyebrow = ({ text, color1, color2 }) => {
+  let csscolor = null;
+  if (color1 && color2) {
+    csscolor = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
+  } else {
+    csscolor = `background-image: linear-gradient(to right, ${Colors.orange}, ${Colors.orangeLight});`;
+  }
+  const FlipCardEyebrow = styled.h3`
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+
+    text-align: left;
+
+    color: transparent;
+    ${csscolor};
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    margin-top: 0px;
+    margin-bottom: 4px;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+  `;
+
+  return <FlipCardEyebrow>{text}</FlipCardEyebrow>;
+};
+
+export default FlipCardEyebrow;

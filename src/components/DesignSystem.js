@@ -88,6 +88,7 @@ export const Colors = {
   green: `#00c853`,
   greenLight: `#5efc82`,
   greenDark: `#009624`,
+  greenBackground: `rgb(192 246 166)`,
   yellow: `#ffc400`,
   yellowLight: `#fff64f`,
   yellowDark: `#c79400`,
@@ -100,6 +101,7 @@ export const Colors = {
   orange: `#ff6d00`,
   orangeLight: `#ff9e40`,
   orangeDark: `#c43c00`,
+  orangeBackground: `rgb(255 235 202)`,
 };
 
 export const Gradients = {

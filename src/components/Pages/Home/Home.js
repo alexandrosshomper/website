@@ -13,6 +13,7 @@ import ListPanel from "../../Content/List/ListPanel/ListPanel";
 import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
 import SectionHead from "../../Content/Section/SectionHead";
 import { Colors, Devices } from "../../DesignSystem";
+import FlipCard from "../../Content/FlipCard/FlipCard";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -154,6 +155,36 @@ const Content = (props) => {
       width: 1152px;
     }
   `;
+  const FlipCardPanels = styled.section`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: auto;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    --gap: 12px;
+    margin-left: calc(1.6 * var(--gap));
+    margin-right: calc(1.6 * var(--gap));
+    margin-bottom: calc(1 * var(--gap));
+
+    ${Devices.tabletS} {
+      width: 576px;
+
+      margin-bottom: calc(-1 * var(--gap));
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+    }
+  `;
   const Polaroids = styled.section`
     display: flex;
     flex-direction: column;
@@ -221,42 +252,44 @@ const Content = (props) => {
       </Section>*/}
 
       <Section>
-        <SectionHead subline="3 ways I can help you with" />
-        <CardPanels>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Product"
-              eyebrowColor1={Colors.orange}
-              eyebrowColor2={Colors.red}
-              copy="Create meaningful and useful tools your customers will love."
-              webp="./img/PanelTestImages/square.webp"
-              png="./img/PanelTestImages/square.png"
-              jpg="./img/PanelTestImages/square.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Growth"
-              eyebrowColor1={Colors.red}
-              eyebrowColor2={Colors.purple}
-              copy="Acquire more customers, get them engaged, and keep them longer."
-              webp="./img/PanelTestImages/triangle.webp"
-              png="./img/PanelTestImages/triangle.png"
-              jpg="./img/PanelTestImages/triangle.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Consulting"
-              eyebrowColor1={Colors.purple}
-              eyebrowColor2={Colors.blue}
-              copy="Sharing 15+ years of expertise in marketing & product"
-              webp="./img/PanelTestImages/circle.webp"
-              png="./img/PanelTestImages/circle.png"
-              jpg="./img/PanelTestImages/circle.jpg"
-            />
-          </FadeInWhenVisible>
-        </CardPanels>
+        <SectionHead subline="2 ways I can help you with" />
+        <FlipCardPanels>
+          <FlipCard
+            eyebrow="Product"
+            eyebrowColor1={Colors.orangeDark}
+            eyebrowColor2={Colors.redLight}
+            backgroundColor={Colors.orangeBackground}
+            copy={[
+              "Create meaningful & useful products your customers will love.",
+            ]}
+            copyBack={[
+              "I can help you enhance your product effectively by increasing task success rates, customer satisfaction, and adoption.",
+              "Develop and improve a workflow to validate, design, develop, and distribute core product improvements.",
+              "Assess and track usability and product performance on your core features and value proposition.",
+            ]}
+            webp="./img/PanelTestImages/square.webp"
+            png="./img/PanelTestImages/square.png"
+            jpg="./img/PanelTestImages/square.jpg"
+          />
+
+          <FlipCard
+            eyebrow="Product Lead Growth"
+            eyebrowColor1={Colors.greenDark}
+            eyebrowColor2={Colors.greenLight}
+            backgroundColor={Colors.greenBackground}
+            copy={[
+              "Acquire more customers, get them engaged, and keep them longer.",
+            ]}
+            copyBack={[
+              "I can help you scale your product quickly and efficiently with PLG by increasing acquisition, activation, and retention.",
+              "Develop and improve a workflow to analyze, define, and execute growth strategies. ",
+              "Leverage user data, user behavior and user psychology.",
+            ]}
+            webp="./img/PanelTestImages/triangle.webp"
+            png="./img/PanelTestImages/triangle.png"
+            jpg="./img/PanelTestImages/triangle.jpg"
+          />
+        </FlipCardPanels>
       </Section>
 
       <Section>
@@ -468,7 +501,7 @@ const Content = (props) => {
           <FadeInWhenVisible>
             <ListPanel
               eyebrow="Realism. Optimism. Pessimism."
-              copy="Assess the problem realistically. Plan the project pessimistically. Pursue the solution optimistically."
+              copy="Assess the problem realistically. Plan pessimistically. Pursue the solution optimistically."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
           </FadeInWhenVisible>

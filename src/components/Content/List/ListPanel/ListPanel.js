@@ -19,10 +19,7 @@ const ListPanel = ({
   const ListPanel = styled.div`
     text-align: left;
 
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    border-radius: 30px;
 
     margin-bottom: 12px;
     width: 100%;
@@ -45,19 +42,19 @@ const ListPanel = ({
 
   const PanelContent = styled.div`
     text-align: left;
-    padding: 43px 30px 72px 30px;
+    padding: 30px 30px 72px 30px;
 
     ${Devices.tabletS} {
-      padding: 43px 30px 72px 30px;
+      padding: 30px 30px 72px 30px;
     }
     ${Devices.tabletM} {
-      padding: 47px 20px 72px 20px;
+      padding: 30px 20px 72px 20px;
     }
     ${Devices.laptopS} {
-      padding: 42px 20px 72px 20px;
+      padding: 30px 20px 72px 20px;
     }
     ${Devices.laptopM} {
-      padding: 40px 30px 71px 30px;
+      padding: 30px 30px 71px 30px;
     }
   `;
 
