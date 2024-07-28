@@ -22,7 +22,7 @@ const Bio = (props) => {
     column-count: 1;
     column-gap: 12px;
     column-width: 100px;
-    height: 140px;
+    height: 80px;
     width: 130px;
 
     display: none;
@@ -37,6 +37,8 @@ const Bio = (props) => {
     }
     ${Devices.tabletL} {
       width: 204px;
+      height: 100px;
+
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
@@ -47,6 +49,8 @@ const Bio = (props) => {
       font-size: 20px;
       line-height: 115%;
       width: 276px;
+      height: 120px;
+
       display: block;
     }
   `;

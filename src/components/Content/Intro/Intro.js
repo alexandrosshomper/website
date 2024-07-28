@@ -64,13 +64,14 @@ const Intro = (props) => {
             .pauseFor(2000)
             .deleteChars(4)
             .typeString(
-              "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>designer</span>"
-            )
-            .pauseFor(2000)
-            .deleteChars(8)
-            .typeString(
               "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>consultant</span>"
             )
+            .pauseFor(2000)
+            .deleteChars(10)
+            .typeString(
+              "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>designer</span>"
+            )
+
             .pauseFor(2500)
             .start();
         }}

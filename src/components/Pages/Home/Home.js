@@ -21,6 +21,10 @@ import { mdiPlus } from "@mdi/js";
 import { mdiReminder } from "@mdi/js";
 import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
+import ButtonMedium from "../../Button/ButtonMedium";
+import { mdiFilePdfBox } from "@mdi/js";
+import BusinessCard from "../../Content/BusinessCard/BusinessCard";
+import { mdiEmail } from "@mdi/js";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -169,27 +173,20 @@ const Content = (props) => {
     flex-direction: column;
     flex-wrap: wrap;
     gap: auto;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     --gap: 12px;
-    margin-left: calc(1.6 * var(--gap));
-    margin-right: calc(1.6 * var(--gap));
+
     margin-bottom: calc(1 * var(--gap));
+    margin-right: 12px;
+    margin-left: 12px;
 
     ${Devices.tabletS} {
       width: 576px;
-      margin-left: calc(-1 * var(--gap));
       margin-right: 0px;
+      margin-left: 0px;
       margin-bottom: calc(-1 * var(--gap));
-
-      & > * {
-        margin-left: var(--gap);
-        margin-bottom: var(--gap);
-      }
-      & > * :last-child {
-        margin-bottom: 0px;
-      }
     }
     ${Devices.tabletM} {
       width: 720px;
@@ -211,8 +208,8 @@ const Content = (props) => {
     align-content: center;
     align-items: flex-start;
     --gap: 12px;
-    margin-left: calc(1.6 * var(--gap));
-    margin-right: calc(1.6 * var(--gap));
+    margin-left: 12px;
+    margin-right: 12px;
     margin-bottom: calc(1 * var(--gap));
 
     ${Devices.tabletS} {
@@ -224,6 +221,8 @@ const Content = (props) => {
     }
     ${Devices.tabletM} {
       width: 720px;
+      margin-left: calc(1.6 * var(--gap));
+      margin-right: calc(1.6 * var(--gap));
     }
     ${Devices.laptopS} {
       width: 864px;
@@ -282,7 +281,6 @@ const Content = (props) => {
     gap: 16px;
     margin: 0px 24px 24px 24px;
 
-    width: 100%;
     ${Devices.tabletS} {
       width: 576px;
     }
@@ -333,7 +331,7 @@ const Content = (props) => {
           />
 
           <FlipCard
-            eyebrow="Product Lead Growth"
+            eyebrow="Growth"
             eyebrowColor1={Colors.greenDark}
             eyebrowColor2={Colors.greenLight}
             backgroundColor={Colors.greenBackground}
@@ -353,7 +351,10 @@ const Content = (props) => {
       </Section>
       <Section>
         <SectionHead headline="A little bit about me" />
-        <SectionCopy copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate." />
+        <BusinessCard
+          headline={"Alexandros Shomper"}
+          copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
+        />
         <RevealWhenVisible>
           <SectionDivider text={"Here’s a TL;DR of my career:"} />
         </RevealWhenVisible>
@@ -413,80 +414,105 @@ const Content = (props) => {
               .
             </Annotation>
           </AnnotationWrapper>
+          <AnnotationWrapper
+            style={{ color: Colors.primaryText.mediumEmphasis }}
+          >
+            <ButtonMedium
+              href="mailto:alexandros@alexandrosshomper.de"
+              text="Email Me"
+              color1={Colors.blue}
+              color2={Colors.blueDark}
+              icon={mdiEmail}
+            />
+            <ButtonMedium
+              href="../cv/AlexandrosShomper–CirriculumVitae.pdf"
+              text="Download CV"
+              color1={Colors.black}
+              color2={Colors.greyDark}
+              icon={mdiFilePdfBox}
+            />
+          </AnnotationWrapper>
         </RevealWhenVisible>
       </Section>
-
       <Section>
         <SectionHead
-          headline="Principles"
+          headline="Human Centered Leadership"
+          subline="I believe happy and healthy teams are the most productive, and innovative teams."
+        />
+        <FadeInWhenVisible>
+          <CardPanels>
+            <ListPanel
+              eyebrow="Autonomy"
+              eyebrowColor1={Colors.green}
+              eyebrowColor2={Colors.greenLight}
+              copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+
+            <ListPanel
+              eyebrow="Mastery"
+              eyebrowColor1={Colors.green}
+              eyebrowColor2={Colors.greenLight}
+              copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+
+            <ListPanel
+              eyebrow="Purpouse"
+              eyebrowColor1={Colors.green}
+              eyebrowColor2={Colors.greenLight}
+              copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </CardPanels>
+        </FadeInWhenVisible>
+      </Section>
+      <Section>
+        <SectionHead
+          headline="My Principles"
           subline="Give meaning to actions and ideas."
         />
-        <CardPanels>
-          <FadeInWhenVisible>
+        <FadeInWhenVisible>
+          <CardPanels>
             <ListPanel
               eyebrow="Data Driven/Informed"
               copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+
             <ListPanel
               eyebrow="Aesthetics"
               copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+
             <ListPanel
               eyebrow="Quality"
               copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+
             <ListPanel
               eyebrow="Holistic"
               copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+
             <ListPanel
               eyebrow="Innovative & Brave"
               copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+
             <ListPanel
               eyebrow="Long Term"
               copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Dream Big"
-              copy="Get wild. If you only aim for what is possible, you will never reach what is thought to be impossible."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Realism. Optimism. Pessimism."
-              copy="Assess the problem realistically. Plan pessimistically. Pursue the solution optimistically."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Focus"
-              copy="Keep your mission & vision in mind. Do only few things. But the right things. And do them exceptionally well."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-        </CardPanels>
+          </CardPanels>
+        </FadeInWhenVisible>
       </Section>
+
       <Section>
         <BlackQuote
           //quote="I want to use technological developments, a solid company purpose, and a strong brand to elevate experiences and give meaning to actions and ideas."
@@ -494,42 +520,6 @@ const Content = (props) => {
           and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
         />
       </Section>
-      <Section>
-        <SectionHead
-          headline="Human Centered Leadership"
-          subline="Don't believe in the king. Believe in the kingdom."
-        />
-        <CardPanels>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Compassion"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="We hear a lot about the importance of emphasizing with our customers. Why not with our colleagues?"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Trust"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="To achieve a lot in a short time, you have to believe in your team. Sometimes more than in yourself."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Collaboration"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="Managing Top-Down is so 90'. Leadership has to happen from within the team. With the team."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-        </CardPanels>
-      </Section>
-
       <Section>
         <SectionHead
           headline="Skill Set"

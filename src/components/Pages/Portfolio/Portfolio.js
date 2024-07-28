@@ -100,6 +100,7 @@ const Content = (props) => {
     }
     ${Devices.laptopM} {
       width: 1140px;
+      --gap: 12px;
     }
   `;
   const Panels = styled.section`
@@ -141,8 +142,6 @@ const Content = (props) => {
           and interactions.
         </description>
       </Helmet>
-      <Section>test</Section>
-
       <Section>
         <SectionHead
           divider="Selected projects"
@@ -153,7 +152,7 @@ const Content = (props) => {
           <FadeInWhenVisible>
             <CaseSectionSummary
               copy="
-Spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
+As the Chapter Lead UX I spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
@@ -242,7 +241,7 @@ Spearheaded the design and UX for four Knauf construction apps, creating a unifi
           <FadeInWhenVisible>
             <CaseSectionSummary
               copy="
-Led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
+As the Chapter Lead UX I led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
@@ -291,7 +290,7 @@ Led the product design of Knauf's global websites unification, establishing a co
         <Panels style={{ marginBottom: "48px" }}>
           <FadeInWhenVisible>
             <CaseSectionSummary
-              copy="Led Occhio's website relaunch and e-commerce debut, blending brand identity with user experience and performance, which redefined its digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
+              copy="As the UX Manager & Product Owner I led Occhio's website relaunch and e-commerce debut, blending brand identity with user experience and performance, which redefined its digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>

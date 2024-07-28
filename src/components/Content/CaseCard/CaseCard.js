@@ -74,7 +74,7 @@ const CaseCard = ({
     },
     click: {
       boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
-      scale: 0.9,
+      scale: 0.99,
       transition: {
         duration: 0.2,
         type: "tween",

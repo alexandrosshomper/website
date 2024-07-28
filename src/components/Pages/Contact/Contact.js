@@ -231,13 +231,6 @@ const Contact = (props) => {
             icon={mdiLinkedin}
           />
           <ButtonMedium
-            href="https://www.xing.com/profile/Alexandros_Shomper"
-            text="Xing"
-            color1={Colors.green}
-            color2={Colors.greenLight}
-            icon={mdiXing}
-          />
-          <ButtonMedium
             href="../vCard/AlexandrosShomper.vcf"
             text="vCard"
             color1={Colors.orange}

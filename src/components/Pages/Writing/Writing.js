@@ -49,7 +49,7 @@ const Content = () => {
           headline="Writing on Product, Design, Marketing and Growth"
           subline="Sharing articles, insights, and frameworks with the product community."
         />
-        <SectionOverline subline="Articles on Medium.com" />
+        <SectionOverline subline="My articles on Medium.com" />
 
         <Article
           headline="Is the Customer always right? It depends …"
@@ -84,7 +84,7 @@ const Content = () => {
         <br />
         <br />
         <br />
-        <SectionOverline subline="Artifacts on Reforge.com" />
+        <SectionOverline subline="My artifacts on Reforge.com" />
         <Article
           headline="UX explainer presentation"
           subline="An explainer presentation meant to introduce actionable concepts around UX and what it means for our organization."

@@ -15,11 +15,12 @@ const SectionDivider = ({ text }) => {
     font-size: 20px;
     line-height: 112%;
     text-align: left;
-    width: 100%;
 
     ${Devices.tabletS} {
       text-align: left;
       width: 576px;
+      margin-left: 0px;
+      margin-right: 0px;
     }
     ${Devices.tabletM} {
       width: 720px;
