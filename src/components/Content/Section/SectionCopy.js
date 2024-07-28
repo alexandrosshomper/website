@@ -9,8 +9,7 @@ const SectionCopy = ({ copy }) => {
     font-style: normal;
     font-weight: normal;
     color: ${Colors.primaryText.highEmphasis};
-    margin-bottom: 8px;
-    margin-top: 0px;
+    margin: 0px 24px 24px 24px;
 
     font-size: 20px;
     line-height: 120%;
@@ -18,25 +17,30 @@ const SectionCopy = ({ copy }) => {
 
     ${Devices.tabletS} {
       text-align: left;
-      width: 564px;
+      width: 576px;
     }
     ${Devices.tabletM} {
-      width: 708px;
+      width: 720px;
 
       font-size: 36px;
       line-height: 111%;
+      margin-bottom: 32px;
+      margin-left: 0px;
+      margin-right: 0px;
     }
     ${Devices.laptopS} {
-      width: 852px;
+      width: 864px;
 
-      font-size: 48px;
+      font-size: 36px;
       line-height: 100%;
+      margin-bottom: 38px;
     }
     ${Devices.laptopM} {
-      width: 1141px;
+      width: 1152px;
 
-      font-size: 60px;
+      font-size: 42px;
       line-height: 113%;
+      margin-bottom: 46px;
     }
   `;
 

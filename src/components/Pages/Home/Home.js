@@ -14,6 +14,13 @@ import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
 import SectionHead from "../../Content/Section/SectionHead";
 import { Colors, Devices } from "../../DesignSystem";
 import FlipCard from "../../Content/FlipCard/FlipCard";
+import CaseUnorderdList from "../../Content/Case/CaseUnorderedList";
+import CaseUnorderedList from "../../Content/Case/CaseUnorderedList";
+import Icon from "@mdi/react";
+import { mdiPlus } from "@mdi/js";
+import { mdiReminder } from "@mdi/js";
+import SectionCopy from "../../Content/Section/SectionCopy";
+import SectionDivider from "../../Content/Section/SectionDivider";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -93,6 +100,45 @@ function MoveUpWhenVisible({ children }) {
   );
 }
 
+function RevealWhenVisible({ children }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      transition={{ duration: 0.9 }}
+      variants={{
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.3,
+          },
+        },
+        hidden: {
+          opacity: 0,
+          x: "5%",
+          transition: {
+            when: "afterChildren",
+          },
+        },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 const Content = (props) => {
   const Content = styled.div`
     text-align: left;
@@ -110,6 +156,7 @@ const Content = (props) => {
     flex: none;
     order: 3;
     align-self: stretch;
+    align-items: stretch;
     flex-grow: 0;
     margin-bottom: 200px;
     ${Devices.tabletS} {
@@ -210,6 +257,47 @@ const Content = (props) => {
     }
   `;
 
+  const Annotation = styled.p`
+    max-width: 280px;
+
+    ${Devices.tabletS} {
+      max-width: 280px;
+    }
+    ${Devices.tabletM} {
+      max-width: 280px;
+    }
+    ${Devices.laptopS} {
+      max-width: 42%;
+    }
+    ${Devices.laptopM} {
+      max-width: 33%;
+    }
+  `;
+  const AnnotationWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0px 24px 24px 24px;
+
+    width: 100%;
+    ${Devices.tabletS} {
+      width: 576px;
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      flex-direction: row;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+    }
+  `;
+
   return (
     <Content>
       <Helmet>
@@ -222,34 +310,6 @@ const Content = (props) => {
         </description>
       </Helmet>
       <Intro></Intro>
-      {/*<Section>
-        <CaseCardGallery>
-          <CaseCard
-            eyebrow="Case"
-            eyebrowColor1="#FF0000"
-            eyebrowColor2="#FFCC00"
-            headline="Occhio relaunches it's Website and establishes it's first eCommerce"
-            copy="Lorem Ipsum Dolor Sit. Lorem Ipsum Dolor Sit. Lorem Ipsum Dolor Sit. "
-            imgURL="./img/BlackQuoteTextBackgroundImage/GradBGTiny.png"
-          />
-          <CaseCard
-            eyebrow="Case"
-            eyebrowColor1="#00b8d4"
-            eyebrowColor2="#62ebff"
-            headline="Knauf want's to explore the opportunities of digitizing the construction business"
-            copy="Lorem Ipsum Dolor Sit. Lorem Ipsum Dolor Sit. Lorem Ipsum Dolor Sit. "
-            imgURL="./img/BlackQuoteTextBackgroundImage/GradBGTiny.png"
-          />
-          <CaseCard
-            eyebrow="Article"
-            eyebrowColor1="#ffc400"
-            eyebrowColor2="#fff64f"
-            headline="Problem/Solution Fit or Product/Market Fit. What's the difference? What's more important?"
-            copy="Lorem Ipsum Dolor Sit. Lorem Ipsum Dolor Sit. Lorem Ipsum Dolor Sit. "
-            imgURL="./img/BlackQuoteTextBackgroundImage/GradBGTiny.png"
-          />
-        </CaseCardGallery>
-      </Section>*/}
 
       <Section>
         <SectionHead subline="2 ways I can help you with" />
@@ -291,48 +351,147 @@ const Content = (props) => {
           />
         </FlipCardPanels>
       </Section>
+      <Section>
+        <SectionHead headline="A little bit about me" />
+        <SectionCopy copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate." />
+        <RevealWhenVisible>
+          <SectionDivider text={"Here’s a TL;DR of my career:"} />
+        </RevealWhenVisible>
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "Education in Arts & Marketing, and self-taught developer 👨🏻‍💻 (still building own side projects)"
+            }
+          />
+        </RevealWhenVisible>
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "Successful career in advertising and marketing, creating global marketing campaigns and brand experiences"
+            }
+          />
+        </RevealWhenVisible>
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
+            }
+          />
+        </RevealWhenVisible>
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
+            }
+          />
+        </RevealWhenVisible>
+
+        <RevealWhenVisible>
+          <AnnotationWrapper
+            style={{ color: Colors.primaryText.mediumEmphasis }}
+          >
+            <Annotation>
+              There’s a bunch more detail below, but you can also view a summary
+              on{" "}
+              <a
+                href="https://www.linkedin.com/in/alexshomper/"
+                style={{ color: Colors.turkish }}
+              >
+                LinkedIn
+              </a>{" "}
+              and take a look at my{" "}
+              <a
+                href="https://github.com/alexandrosshomper"
+                style={{ color: Colors.turkish }}
+              >
+                Manager README on Github
+              </a>
+              . If you like side projects, check out my{" "}
+              <a href="https://cookcook.it" style={{ color: Colors.turkish }}>
+                Cooking Social Network
+              </a>
+              .
+            </Annotation>
+          </AnnotationWrapper>
+        </RevealWhenVisible>
+      </Section>
 
       <Section>
         <SectionHead
-          headline="Skill Set"
-          subline="Design, Brand, and Growth."
+          headline="Principles"
+          subline="Give meaning to actions and ideas."
         />
-        <Polaroids>
-          <ListSmallText
-            eyebrow="Design Thinking"
-            copy="Emphasizing with your customers is the first principle of innovative products. Get in their shoes, and derive powerful insights to transform the business."
-          />
-
-          <ListSmallText
-            eyebrow="Design Sprints"
-            copy="Rapidly solve big problems. Find out what works with users in weeks, instead in months. Research, prototype, test, and learn from real user data."
-          />
-          <ListSmallText
-            eyebrow="Design Systems"
-            copy="Design has to think bigger: System Thinking. Provide a shared library. A Platform to create, collaborate, build and maintain outcomes of consistent quality."
-          />
-          <ListSmallText
-            eyebrow="Business Design"
-            copy="Build innovative, desirable businesses by combining design thinking and lean startup. Create data-based and customer-centric value propositions, revenue models, and sales channels."
-          />
-
-          <ListSmallText
-            eyebrow="Brand Strategy"
-            copy="A well-defined and executed brand affects all aspects of a business. It is directly connected to consumer needs, emotions, and competitive environments."
-            //copy="Indentify problems. Frame solution options. Draft and test possible roads to success. Make informed decisions."
-          />
-          <ListSmallText
-            eyebrow="Growth Hacking"
-            copy="Continuously measuring and optimizing your customer relationship. Use creativity, analytics, and tech to heighten acquisition, activation, retention, referral, and revenue. "
-          />
-        </Polaroids>
+        <CardPanels>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Data Driven/Informed"
+              copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
+              //imgURL="./img/PanelTestImages/one.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Aesthetics"
+              copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Quality"
+              copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Holistic"
+              copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Innovative & Brave"
+              copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Long Term"
+              copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Dream Big"
+              copy="Get wild. If you only aim for what is possible, you will never reach what is thought to be impossible."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Realism. Optimism. Pessimism."
+              copy="Assess the problem realistically. Plan pessimistically. Pursue the solution optimistically."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <ListPanel
+              eyebrow="Focus"
+              copy="Keep your mission & vision in mind. Do only few things. But the right things. And do them exceptionally well."
+              //imgURL="./img/PanelTestImages/two.jpg"
+            />
+          </FadeInWhenVisible>
+        </CardPanels>
       </Section>
       <Section>
         <BlackQuote
           //quote="I want to use technological developments, a solid company purpose, and a strong brand to elevate experiences and give meaning to actions and ideas."
           quote="Building tools, communicating complex ideas, 
           and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-          quotee="Yuval Noah Harari"
         />
       </Section>
       <Section>
@@ -369,6 +528,41 @@ const Content = (props) => {
             />
           </FadeInWhenVisible>
         </CardPanels>
+      </Section>
+
+      <Section>
+        <SectionHead
+          headline="Skill Set"
+          subline="Design, Brand, and Growth."
+        />
+        <Polaroids>
+          <ListSmallText
+            eyebrow="Design Thinking"
+            copy="Emphasizing with your customers is the first principle of innovative products. Get in their shoes, and derive powerful insights to transform the business."
+          />
+
+          <ListSmallText
+            eyebrow="Design Sprints"
+            copy="Rapidly solve big problems. Find out what works with users in weeks, instead in months. Research, prototype, test, and learn from real user data."
+          />
+          <ListSmallText
+            eyebrow="Design Systems"
+            copy="Design has to think bigger: System Thinking. Provide a shared library. A Platform to create, collaborate, build and maintain outcomes of consistent quality."
+          />
+          <ListSmallText
+            eyebrow="Business Design"
+            copy="Build innovative, desirable businesses by combining design thinking and lean startup. Create data-based and customer-centric value propositions, revenue models, and sales channels."
+          />
+
+          <ListSmallText
+            eyebrow="Brand Strategy"
+            copy="A well-defined and executed brand affects all aspects of a business. It is directly connected to consumer needs, emotions, and competitive environments." //copy="Indentify problems. Frame solution options. Draft and test possible roads to success. Make informed decisions."
+          />
+          <ListSmallText
+            eyebrow="Growth Hacking"
+            copy="Continuously measuring and optimizing your customer relationship. Use creativity, analytics, and tech to heighten acquisition, activation, retention, referral, and revenue. "
+          />
+        </Polaroids>
       </Section>
 
       <Section>
@@ -442,77 +636,6 @@ const Content = (props) => {
             copy="Measure the performance of the product, and the engagement of the users. Learn. Iterate. Iterate. Iterate. Find out what attracts new users. Continuously work on the Aha-Moment & Stickiness to drive retention and loyalty."
           />
         </MoveUpWhenVisible>
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Principles"
-          subline="Give meaning to actions and ideas."
-        />
-        <CardPanels>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Data Driven/Informed"
-              copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Aesthetics"
-              copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Quality"
-              copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Holistic"
-              copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Innovative & Brave"
-              copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Long Term"
-              copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Dream Big"
-              copy="Get wild. If you only aim for what is possible, you will never reach what is thought to be impossible."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Realism. Optimism. Pessimism."
-              copy="Assess the problem realistically. Plan pessimistically. Pursue the solution optimistically."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <ListPanel
-              eyebrow="Focus"
-              copy="Keep your mission & vision in mind. Do only few things. But the right things. And do them exceptionally well."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </FadeInWhenVisible>
-        </CardPanels>
       </Section>
     </Content>
   );

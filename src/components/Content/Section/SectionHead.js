@@ -35,8 +35,8 @@ function FadeInWhenVisible({ children }) {
         },
         hidden: {
           opacity: 0,
-          scale: 0.8,
-          y: "+25%",
+          scale: 0.95,
+          y: "+5%",
         },
       }}
     >

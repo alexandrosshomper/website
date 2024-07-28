@@ -10,8 +10,7 @@ const SectionDivider = ({ text }) => {
     font-style: normal;
 
     color: ${Colors.primaryText.lowEmphasis};
-    margin-bottom: 8px;
-    margin-top: 0px;
+    margin: 0px 24px 8px 24px;
 
     font-size: 20px;
     line-height: 112%;
@@ -20,22 +19,22 @@ const SectionDivider = ({ text }) => {
 
     ${Devices.tabletS} {
       text-align: left;
-      width: 564px;
+      width: 576px;
     }
     ${Devices.tabletM} {
-      width: 708px;
+      width: 720px;
 
       font-size: 20px;
       line-height: 111%;
     }
     ${Devices.laptopS} {
-      width: 852px;
+      width: 864px;
 
       font-size: 24px;
       line-height: 100%;
     }
     ${Devices.laptopM} {
-      width: 1141px;
+      width: 1152px;
 
       font-size: 24px;
       line-height: 113%;
