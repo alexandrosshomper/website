@@ -12,6 +12,7 @@ const Home = lazy(() => import("./components/Pages/Home/Home"));
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
 const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
+const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
 
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
@@ -78,7 +79,7 @@ function App() {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/writing" component={Writing} />
-
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact

@@ -67,7 +67,7 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
 
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 17px;
     line-height: 130%;
 
     quotes: "“" "”";

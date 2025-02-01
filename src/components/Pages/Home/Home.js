@@ -11,7 +11,6 @@ import Intro from "../../Content/Intro/Intro";
 import ListBigText from "../../Content/List/ListBigText/ListBigText";
 import ListPanel from "../../Content/List/ListPanel/ListPanel";
 import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
-import SectionHead from "../../Content/Section/SectionHead";
 import { Colors, Devices } from "../../DesignSystem";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseUnorderdList from "../../Content/Case/CaseUnorderedList";
@@ -19,12 +18,20 @@ import CaseUnorderedList from "../../Content/Case/CaseUnorderedList";
 import Icon from "@mdi/react";
 import { mdiPlus } from "@mdi/js";
 import { mdiReminder } from "@mdi/js";
+import SectionHead from "../../Content/Section/SectionHead";
 import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
+import Head from "../../Content/Landingpage/Head";
+import Headline2 from "../../Content/Landingpage/Headline2";
+
 import ButtonMedium from "../../Button/ButtonMedium";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail } from "@mdi/js";
+import SectionSubline from "../../Content/Section/SectionSubline";
+import HeadSubline from "../../Content/Landingpage/HeadSubline";
+import HeadCopy from "../../Content/Landingpage/HeadCopy";
+import SectionOverline from "../../Content/Section/SectionOverline";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -295,6 +302,233 @@ const Content = (props) => {
       width: 1152px;
     }
   `;
+  const Hero = styled.div`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    padding: 0px;
+
+    position: static;
+
+    left: 0px;
+    top: 0px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 24px 40px 24px;
+
+    ${Devices.tabletS} {
+      margin: 0px 0px 60px 0px;
+      width: 576px;
+      align-items: center;
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      margin: 0px 0px 60px 0px;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+      margin: 0px 0px 60px 0px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+      margin: 0px 0px 60px 0px;
+    }
+  `;
+  const HeroHeadline = styled.h1`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.highEmphasis};
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 44px;
+    line-height: 109%;
+    text-align: center;
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 44px;
+      line-height: 114%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 64px;
+      line-height: 131%;
+    }
+    ${Devices.laptopM} {
+      width: 920px;
+
+      font-size: 80px;
+      line-height: 114%;
+    }
+  `;
+
+  const HeroSubline = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.mediumEmphasis};
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 24px;
+    line-height: 112%;
+    text-align: center;
+    width: 100%;
+
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 576px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 24px;
+      line-height: 111%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 32px;
+      line-height: 100%;
+    }
+    ${Devices.laptopM} {
+      width: 720px;
+
+      font-size: 24px;
+      line-height: 124%;
+    }
+  `;
+
+  const OnboardingGradient = styled.span`
+    color: transparent;
+    background-image: linear-gradient(to right, #ff1744, #6200ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+  `;
+
+  const ExperienceGradient = styled.span`
+    color: transparent;
+    background-image: linear-gradient(to right, #6200ea, #00b8d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+  `;
+
+  const ProblemHeadline = styled.h2`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: transparent;
+    background-image: linear-gradient(
+      129deg,
+      #e83273,
+      #e43240,
+      #dc4c24,
+      #bd271a,
+      #991e2f
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 44px;
+    line-height: 109%;
+    text-align: center;
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 44px;
+      line-height: 114%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 64px;
+      line-height: 131%;
+    }
+    ${Devices.laptopM} {
+      width: 920px;
+
+      font-size: 80px;
+      line-height: 114%;
+    }
+  `;
+  const ProblemList = styled.ul`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  `;
+  const ProblemListItem = styled.li`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    list-style-type: none;
+
+    color: ${Colors.primaryText.highEmphasis};
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 44px;
+    line-height: 109%;
+    text-align: center;
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 44px;
+      line-height: 114%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 64px;
+      line-height: 131%;
+    }
+    ${Devices.laptopM} {
+      width: 920px;
+
+      font-size: 64px;
+      line-height: 114%;
+    }
+  `;
+  const ProblemHighlight = styled.span`
+    color: transparent;
+    background-image: linear-gradient(
+      129deg,
+      #e83273,
+      #e43240,
+      #dc4c24,
+      #bd271a,
+      #991e2f
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+  `;
 
   return (
     <Content>
@@ -307,323 +541,146 @@ const Content = (props) => {
           awesome solutions people love.
         </description>
       </Helmet>
-      <Intro></Intro>
+      <Section>
+        <Hero>
+          <HeroHeadline>
+            Let's fix your <OnboardingGradient>onboarding</OnboardingGradient>{" "}
+            <ExperienceGradient>experience</ExperienceGradient>.
+          </HeroHeadline>
+          <HeroSubline>
+            Are you struggling to activate and retain new users? <br /> We help
+            you create an onboarding experience that{" "}
+            <span style={{ color: "black" }}>keeps users engaged longer</span>{" "}
+            and{" "}
+            <span style={{ color: "black" }}>converts new users faster</span>.
+          </HeroSubline>
+          <ButtonMedium
+            href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+            text={"Work with me"}
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+          />
+        </Hero>
+      </Section>
 
       <Section>
-        <SectionHead subline="2 ways I can help you with" />
-        <FlipCardPanels>
-          <FlipCard
-            eyebrow="Product"
-            eyebrowColor1={Colors.blueDark}
-            eyebrowColor2={Colors.blueLight}
-            backgroundColor={Colors.blueBackground}
-            copy={[
-              "Create meaningful & useful products your customers will love.",
-            ]}
-            copyBack={[
-              "I can help you enhance your product effectively by increasing task success rates, customer satisfaction, and adoption.",
-              "Develop and improve a workflow to validate, design, develop, and distribute core product improvements.",
-              "Assess and track usability and product performance on your core features and value proposition.",
-            ]}
-            webp="./img/PanelTestImages/square.webp"
-            png="./img/PanelTestImages/square.png"
-            jpg="./img/PanelTestImages/square.jpg"
-          />
-
-          <FlipCard
-            eyebrow="Growth"
-            eyebrowColor1={Colors.greenDark}
-            eyebrowColor2={Colors.greenLight}
-            backgroundColor={Colors.greenBackground}
-            copy={[
-              "Acquire more customers, get them engaged, and keep them longer.",
-            ]}
-            copyBack={[
-              "I can help you scale your product quickly and efficiently with PLG by increasing acquisition, activation, and retention.",
-              "Develop and improve a workflow to analyze, define, and execute growth strategies. ",
-              "Leverage user data, user behavior and user psychology.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-        </FlipCardPanels>
+        <ProblemHeadline>Problem</ProblemHeadline>
+        <HeadCopy copy="Does this sound familiar?" />
+        <ProblemList>
+          <MoveUpWhenVisible>
+            <ProblemListItem>
+              Users{" "}
+              <ProblemHighlight>abandon the registration</ProblemHighlight> or
+              account creation process
+            </ProblemListItem>
+          </MoveUpWhenVisible>
+          <MoveUpWhenVisible>
+            <ProblemListItem>
+              Users{" "}
+              <ProblemHighlight>fail to meaningfully engage</ProblemHighlight>{" "}
+              with your product
+            </ProblemListItem>
+          </MoveUpWhenVisible>
+          <MoveUpWhenVisible>
+            <ProblemListItem>
+              Users{" "}
+              <ProblemHighlight>
+                leave before discovering core features
+              </ProblemHighlight>{" "}
+              of your product
+            </ProblemListItem>
+          </MoveUpWhenVisible>
+          <MoveUpWhenVisible>
+            <ProblemListItem>
+              Users <ProblemHighlight>quickly lose interest</ProblemHighlight>{" "}
+              and stop using your product
+            </ProblemListItem>
+          </MoveUpWhenVisible>
+        </ProblemList>
       </Section>
       <Section>
-        <SectionHead headline="A little bit about me" />
+        <Headline2 headline="Solution" />
         <BusinessCard
           headline={"Alexandros Shomper"}
-          copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
+          copy="Work directly with Alexandros to upgrade your product’s onboarding."
         />
         <RevealWhenVisible>
-          <SectionDivider text={"Here’s a TL;DR of my career:"} />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
+          <SectionSubline subline="Audit your onboarding experience" />
           <SectionCopy
             copy={
-              "Education in Arts & Marketing, and self-taught developer 👨🏻‍💻 (still building own side projects)"
+              "I'll analyze your current onboarding flow, user research, and data to pinpoint key drop-off points and opportunities for improvement."
             }
           />
         </RevealWhenVisible>
         <RevealWhenVisible>
+          <SectionSubline subline="Design delightful user experiences" />
           <SectionCopy
             copy={
-              "Successful career in advertising and marketing, creating global marketing campaigns and brand experiences"
+              "I'll craft an onboarding journey that perfectly matches your core value proposition and your users' goals. The result? A personalized experience that guides new users to success—without overwhelming them."
             }
           />
         </RevealWhenVisible>
         <RevealWhenVisible>
+          <SectionSubline subline="Transform your onboarding with the new user journey" />
           <SectionCopy
             copy={
-              "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
+              "I'll deliver wireframes and detailed recommendations for your onboarding screens, flows, and empty states. You'll have everything you need to build a world-class onboarding experience."
             }
           />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
-          <SectionCopy
-            copy={
-              "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
-            }
-          />
-        </RevealWhenVisible>
-
-        <RevealWhenVisible>
-          <AnnotationWrapper
-            style={{ color: Colors.primaryText.mediumEmphasis }}
-          >
-            <Annotation>
-              There’s a bunch more detail below, but you can also view a summary
-              on{" "}
-              <a
-                href="https://www.linkedin.com/in/alexshomper/"
-                style={{ color: Colors.turkish }}
-              >
-                LinkedIn
-              </a>{" "}
-              and take a look at my{" "}
-              <a
-                href="https://github.com/alexandrosshomper"
-                style={{ color: Colors.turkish }}
-              >
-                Manager README on Github
-              </a>
-              . If you like side projects, check out my{" "}
-              <a href="https://cookcook.it" style={{ color: Colors.turkish }}>
-                Cooking Social Network
-              </a>
-              .
-            </Annotation>
-          </AnnotationWrapper>
-          <AnnotationWrapper
-            style={{ color: Colors.primaryText.mediumEmphasis }}
-          >
-            <ButtonMedium
-              href="mailto:alexandros@alexandrosshomper.de"
-              text="Email Me"
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-              icon={mdiEmail}
-            />
-            <ButtonMedium
-              href="../cv/AlexandrosShomper–CirriculumVitae.pdf"
-              text="Download CV"
-              color1={Colors.black}
-              color2={Colors.greyDark}
-              icon={mdiFilePdfBox}
-            />
-          </AnnotationWrapper>
         </RevealWhenVisible>
       </Section>
       <Section>
-        <SectionHead
-          headline="Human Centered Leadership"
-          subline="I believe happy and healthy teams are the most productive, and innovative teams."
-        />
+        <Headline2 headline="Pricing" />
+
         <FadeInWhenVisible>
           <CardPanels>
             <ListPanel
-              eyebrow="Autonomy"
+              eyebrow="Onboarding Experience Development"
               eyebrowColor1={Colors.green}
               eyebrowColor2={Colors.greenLight}
-              copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-
-            <ListPanel
-              eyebrow="Mastery"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-
-            <ListPanel
-              eyebrow="Purpouse"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
+              copy="10.000€*"
               //imgURL="./img/PanelTestImages/two.jpg"
             />
           </CardPanels>
         </FadeInWhenVisible>
       </Section>
       <Section>
-        <SectionHead
-          headline="My Principles"
-          subline="Give meaning to actions and ideas."
-        />
-        <FadeInWhenVisible>
-          <CardPanels>
-            <ListPanel
-              eyebrow="Data Driven/Informed"
-              copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
+        <Headline2 headline="FAQ" />
 
-            <ListPanel
-              eyebrow="Aesthetics"
-              copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-
-            <ListPanel
-              eyebrow="Quality"
-              copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-
-            <ListPanel
-              eyebrow="Holistic"
-              copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-
-            <ListPanel
-              eyebrow="Innovative & Brave"
-              copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-
-            <ListPanel
-              eyebrow="Long Term"
-              copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </CardPanels>
-        </FadeInWhenVisible>
-      </Section>
-
-      <Section>
-        <BlackQuote
-          //quote="I want to use technological developments, a solid company purpose, and a strong brand to elevate experiences and give meaning to actions and ideas."
-          quote="Building tools, communicating complex ideas, 
-          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-        />
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Skill Set"
-          subline="Design, Brand, and Growth."
-        />
-        <Polaroids>
-          <ListSmallText
-            eyebrow="Design Thinking"
-            copy="Emphasizing with your customers is the first principle of innovative products. Get in their shoes, and derive powerful insights to transform the business."
-          />
-
-          <ListSmallText
-            eyebrow="Design Sprints"
-            copy="Rapidly solve big problems. Find out what works with users in weeks, instead in months. Research, prototype, test, and learn from real user data."
-          />
-          <ListSmallText
-            eyebrow="Design Systems"
-            copy="Design has to think bigger: System Thinking. Provide a shared library. A Platform to create, collaborate, build and maintain outcomes of consistent quality."
-          />
-          <ListSmallText
-            eyebrow="Business Design"
-            copy="Build innovative, desirable businesses by combining design thinking and lean startup. Create data-based and customer-centric value propositions, revenue models, and sales channels."
-          />
-
-          <ListSmallText
-            eyebrow="Brand Strategy"
-            copy="A well-defined and executed brand affects all aspects of a business. It is directly connected to consumer needs, emotions, and competitive environments." //copy="Indentify problems. Frame solution options. Draft and test possible roads to success. Make informed decisions."
-          />
-          <ListSmallText
-            eyebrow="Growth Hacking"
-            copy="Continuously measuring and optimizing your customer relationship. Use creativity, analytics, and tech to heighten acquisition, activation, retention, referral, and revenue. "
-          />
-        </Polaroids>
-      </Section>
-
-      <Section>
-        <Trend
-          smooth
-          autoDraw
-          autoDrawDuration={3000}
-          autoDrawEasing="ease"
-          data={[0, 2, 7, 5, 6, 3, 2, 0, 0, 3, 1, 8, 7, 9, 15]}
-          gradient={[Colors.blue, Colors.purple, Colors.red, Colors.yellow]}
-          radius={12}
-          strokeWidth={16}
-          padding={16}
-          strokeLinecap={"round"}
-        />
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Process"
-          subline="Iterative. Agile. Customer-centric."
-          copy="Innovative products need a flexible but repeatable process of making data-driven & customer-centric product decisions."
-          //copy="Aproaching problems creatively with well-though and well-executed solutions. Developing feasibility, desirability and viability ideas that improve people's life in some manner, but at the same time it needs to be work and make business sense."
-        />
         <MoveUpWhenVisible>
           <ListBigText
             //headline="Establish empathy together as a team"
             //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
-            headline="Discover"
-            copy="It all starts with observing, learning, and understanding. Understand the business, the brand and the users. Frame the problem and validate it. Distill and weight the user insights and hypotheses. What are we aiming for?"
+            headline="Do you offer discounts for early stage companies?"
+            copy="Yes! For any companies that either 1) have 10 or less employees or 2) are doing less than $1m in ARR, the discounted price is $7,500."
           />
         </MoveUpWhenVisible>
         <MoveUpWhenVisible>
           <ListBigText
             //headline="Collectively define and agree on problems"
             //copy="Take time to understand and clearly define your user’s problems. Feeding the team solutions will only lead to demoralisation; people like being empowered and to have a chance to be creative. Let the team stretch their skills, and give them time to truly understand the problem."
-            headline="Define"
-            copy="Goals become actions. What are the Use Cases, how do the Personae & the Journey look like. Identify the most important touchpoints. Which strategic models can be used to bring business, brand, and user together."
+            headline="What do I actually get at the end of the process?"
+            copy="By the end of our project, you’ll get a Figma file including:
+
+A completed onboarding journey mapping canvas
+
+Wireframe mockups with detailed recommendations for updating your onboarding screens, user flows, and empty states."
           />
         </MoveUpWhenVisible>
         <MoveUpWhenVisible>
           <ListBigText
             //headline="Prototype and test with real users"
             //copy="Fake it until you can make it. Spend the minimum amount of time to create the closest to the real thing. You’re looking for feedback on the idea, not whether your design looks finished. Test with real representative users."
-            headline="Design"
-            copy="Pick the most important touchpoints and hypotheses. Start building and testing. Build desire and loyalty. Users will only stick around, if you can turn your findings to an unforgettable experience."
+            headline="How long does the process take?"
+            copy="End-to-end, the process takes roughly one month to complete. However, this timeline is highly dependent on how quick and timely your team can provide feedback on our iterations. Be prepared to sync with your team in a timely manner in order to keep the final stage of the process moving forward."
           />
         </MoveUpWhenVisible>
         <MoveUpWhenVisible>
           <ListBigText
             //headline="Group ideation"
             //copy="Good ideas can come from anyone. Waiting for one member of the team to create the best idea will take time, and will be biassed towards their experience. It doesn’t have to take long, there are exercises designed to generate lots of ideas quickly."
-            headline="Develop"
-            copy="Now it's time to manifest the user experience. Pick an essential set of features to launch the product with to get the ball rolling. Translate the design into code, and keep an eye on the quality of the outcome. Learn. Iterate."
-          />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
-          <ListBigText
-            //headline="Establish empathy together as a team"
-            //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
-
-            headline="Deliver"
-            copy="It's about implementing the product in the operating team. Put the pieces in place so that everybody is on board and speaks the same language. Create style guides, user experience guidelines, and documentation. Bring clarity without being too restrictive."
-          />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
-          <ListBigText
-            //headline="Iterate, iterate, iterate"
-            //copy="It isn’t enough to run through a design process once. Learn from your users, learn from your team, and iterate. Your process will mature and you’ll be able to run through it easier and faster on each pass. Being agile is to be set up to react to new information fast."
-
-            headline="Distribute"
-            copy="Measure the performance of the product, and the engagement of the users. Learn. Iterate. Iterate. Iterate. Find out what attracts new users. Continuously work on the Aha-Moment & Stickiness to drive retention and loyalty."
+            headline="Can you also help with ongoing optimizations?"
+            copy="Yes, I offer a retainer service to continuously refine, test and optimize your onboarding flow and other user journeys based on real user data and feedback. I also advise in other areas of product-led growth."
           />
         </MoveUpWhenVisible>
       </Section>

@@ -3,47 +3,48 @@ import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
 
-const SectionOverline = ({ text }) => {
-  const SectionOverline = styled.p`
+const HeadCopy = ({ copy }) => {
+  const HeadCopy = styled.p`
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
     font-style: normal;
-
+    font-weight: normal;
     color: ${Colors.primaryText.highEmphasis};
-    max-width: 680px;
-    margin: 0px 24px 8px 24px;
+    margin: 0px 24px 24px 24px;
 
-    font-size: 32px;
-    line-height: 112%;
-    text-align: left;
-    padding-bottom: 24px;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+
     ${Devices.tabletS} {
-      text-align: left;
+      text-align: center;
       width: 576px;
     }
     ${Devices.tabletM} {
-      min-width: 720px;
-      margin-left: 0px;
-      margin-right: 0px;
+      width: 720px;
 
       font-size: 36px;
       line-height: 111%;
+      margin-bottom: 32px;
+      margin-left: 0px;
+      margin-right: 0px;
     }
     ${Devices.laptopS} {
-      min-width: 864px;
+      width: 864px;
 
-      font-size: 48px;
+      font-size: 36px;
       line-height: 100%;
+      margin-bottom: 38px;
     }
     ${Devices.laptopM} {
       width: 1152px;
 
-      font-size: 60px;
+      font-size: 42px;
       line-height: 113%;
+      margin-bottom: 46px;
     }
   `;
 
-  return <SectionOverline>{text}</SectionOverline>;
+  return <HeadCopy>{copy}</HeadCopy>;
 };
 
-export default SectionOverline;
+export default HeadCopy;
