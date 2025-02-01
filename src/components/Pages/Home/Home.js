@@ -180,7 +180,7 @@ const Content = (props) => {
     flex-direction: column;
     flex-wrap: wrap;
     gap: auto;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
     align-items: stretch;
     --gap: 12px;
@@ -469,7 +469,7 @@ const Content = (props) => {
     ${Devices.laptopM} {
       width: 920px;
 
-      font-size: 80px;
+      font-size: 72px;
       line-height: 114%;
     }
   `;
@@ -478,7 +478,7 @@ const Content = (props) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 48px;
   `;
   const ProblemListItem = styled.li`
     font-family: "Roboto", sans-serif;
@@ -512,7 +512,7 @@ const Content = (props) => {
     ${Devices.laptopM} {
       width: 920px;
 
-      font-size: 64px;
+      font-size: 52px;
       line-height: 114%;
     }
   `;
@@ -528,6 +528,308 @@ const Content = (props) => {
     );
     -webkit-background-clip: text;
     background-clip: text;
+  `;
+  const SolutionHeadline = styled.h2`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: transparent;
+    background-image: linear-gradient(
+      129deg,
+      #00d959,
+      #13bb58,
+      #1aad35,
+      #1cac36,
+      #1d9a0f
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 44px;
+    line-height: 109%;
+    text-align: center;
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 44px;
+      line-height: 114%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 64px;
+      line-height: 131%;
+    }
+    ${Devices.laptopM} {
+      width: 920px;
+
+      font-size: 72px;
+      line-height: 114%;
+    }
+  `;
+
+  const SolutionTitle = styled.h3`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: transparent;
+    background-image: linear-gradient(
+      129deg,
+      #00d959,
+      #13bb58,
+      #1aad35,
+      #1cac36,
+      #1d9a0f
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 44px;
+    line-height: 109%;
+    text-align: center;
+
+    width: 100%;
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+      font-size: 44px;
+      line-height: 114%;
+    }
+    ${Devices.laptopS} {
+      text-align: left;
+
+      font-size: 52px;
+      line-height: 131%;
+    }
+    ${Devices.laptopM} {
+      font-size: 36px;
+      line-height: 114%;
+    }
+  `;
+  const SolutionCopy = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.mediumEmphasis};
+    margin-bottom: 8px;
+    margin-top: 0px;
+
+    font-size: 18px;
+    line-height: 112%;
+    text-align: center;
+    width: 100%;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+
+      font-size: 21px;
+      line-height: 111%;
+    }
+    ${Devices.laptopS} {
+      text-align: left;
+
+      font-size: 21px;
+      line-height: 124%;
+    }
+    ${Devices.laptopM} 
+      font-size: 21px;
+      line-height: 147%;
+    }
+  `;
+  const SolutionCards = styled.ul`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  `;
+  const SolutionCard = styled.div`
+    border-radius: 30px;
+    margin-bottom: 12px;
+    float: left;
+    background-color: ${Colors.back};
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: auto;
+    justify-content: space-between;
+    align-content: center;
+    align-items: stretch;
+    --gap: 12px;
+
+    margin-bottom: calc(1 * var(--gap));
+    margin-right: 12px;
+    margin-left: 12px;
+
+    ${Devices.tabletS} {
+      width: 576px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: calc(-1 * var(--gap));
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      flex-direction: row;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+    }
+  `;
+  const SolutionBody = styled.div`
+    /* Auto Layout */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 85px;
+
+    height: 100%;
+    padding-left: 85px;
+    padding-right: 85px;
+
+    width: 100%;
+  `;
+  const SolutionParagraph = styled.div`
+    min-height: 80px;
+    min-width: 80px;
+    width: 100%;
+    flex: flex-grow;
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    align-self: center;
+  `;
+
+  const SolutionPicture = styled.img`
+    width: 390px;
+    height: 608px;
+    flex: flex-grow;
+    /* Auto Layout */
+
+    align-items: left;
+    align-self: flex-end;
+    margin-top: 85px;
+  `;
+
+  const PricePanel = styled.div`
+    text-align: left;
+
+    border-radius: 30px;
+
+    margin-bottom: 12px;
+    width: 100%;
+    float: left;
+    background-color: ${Colors.back};
+
+    ${Devices.tabletS} {
+      width: 460px;
+    }
+    ${Devices.tabletM} {
+      width: 228px;
+    }
+    ${Devices.laptopS} {
+      width: 276px;
+    }
+    ${Devices.laptopM} {
+      width: 372px;
+    }
+  `;
+
+  const PanelContent = styled.div`
+    text-align: center;
+    padding: 30px 30px 42px 30px;
+  `;
+  const PanelBody = styled.div`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  `;
+  const PanelCopy = styled.p`
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+
+    text-align: left;
+    color: ${Colors.primaryText.highEmphasis};
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    ${Devices.tabletS} {
+      font-size: 20px;
+      line-height: 117%;
+    }
+    ${Devices.tabletM} {
+      font-size: 20px;
+      line-height: 117%;
+    }
+    ${Devices.laptopS} {
+      font-size: 20px;
+      line-height: 117%;
+    }
+  `;
+  const PanelEyebrow = styled.p`
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+
+    text-align: center;
+
+    color: grey;
+
+    margin-top: 0px;
+    margin-bottom: 4px;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+  `;
+  const PricePanelTitle = styled.p`
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+
+    text-align: center;
+
+    color: black;
+
+    margin-top: 0px;
+    margin-bottom: 24px;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid black;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
   `;
 
   return (
@@ -599,48 +901,93 @@ const Content = (props) => {
         </ProblemList>
       </Section>
       <Section>
-        <Headline2 headline="Solution" />
-        <BusinessCard
-          headline={"Alexandros Shomper"}
-          copy="Work directly with Alexandros to upgrade your product’s onboarding."
-        />
-        <RevealWhenVisible>
-          <SectionSubline subline="Audit your onboarding experience" />
-          <SectionCopy
-            copy={
-              "I'll analyze your current onboarding flow, user research, and data to pinpoint key drop-off points and opportunities for improvement."
-            }
-          />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
-          <SectionSubline subline="Design delightful user experiences" />
-          <SectionCopy
-            copy={
-              "I'll craft an onboarding journey that perfectly matches your core value proposition and your users' goals. The result? A personalized experience that guides new users to success—without overwhelming them."
-            }
-          />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
-          <SectionSubline subline="Transform your onboarding with the new user journey" />
-          <SectionCopy
-            copy={
-              "I'll deliver wireframes and detailed recommendations for your onboarding screens, flows, and empty states. You'll have everything you need to build a world-class onboarding experience."
-            }
-          />
-        </RevealWhenVisible>
+        <SolutionHeadline>Solution</SolutionHeadline>
+        <HeadCopy copy="Work directly with Alexandros to upgrade your product’s onboarding." />
+        <SolutionCards>
+          <RevealWhenVisible>
+            <SolutionCard>
+              <SolutionBody>
+                <SolutionParagraph>
+                  <SolutionTitle>
+                    Audit your onboarding experience
+                  </SolutionTitle>
+                  <SolutionCopy>
+                    I'll analyze your current onboarding flow, user research,
+                    and data to pinpoint key drop-off points and opportunities
+                    for improvement.
+                  </SolutionCopy>
+                </SolutionParagraph>
+                <SolutionPicture src="./img/Landingpage/Solutions/image.png" />
+              </SolutionBody>
+            </SolutionCard>
+          </RevealWhenVisible>
+          <RevealWhenVisible>
+            <SolutionCard>
+              <SolutionBody>
+                <SolutionParagraph style={{ order: "2" }}>
+                  <SolutionTitle>
+                    Design delightful user experiences
+                  </SolutionTitle>
+                  <SolutionCopy>
+                    I'll craft an onboarding journey that perfectly matches your
+                    core value proposition and your users' goals. The result? A
+                    personalized experience that guides new users to
+                    success—without overwhelming them.
+                  </SolutionCopy>
+                </SolutionParagraph>
+                <SolutionPicture src="./img/Landingpage/Solutions/image.png" />
+              </SolutionBody>
+            </SolutionCard>
+          </RevealWhenVisible>
+          <RevealWhenVisible>
+            <SolutionCard>
+              <SolutionBody>
+                <SolutionParagraph>
+                  <SolutionTitle>
+                    Transform your onboarding with the new user journey
+                  </SolutionTitle>
+                  <SolutionCopy>
+                    I'll deliver wireframes and detailed recommendations for
+                    your onboarding screens, flows, and empty states. You'll
+                    have everything you need to build a world-class onboarding
+                    experience.
+                  </SolutionCopy>
+                </SolutionParagraph>
+                <SolutionPicture src="./img/Landingpage/Solutions/image.png" />
+              </SolutionBody>
+            </SolutionCard>
+          </RevealWhenVisible>
+        </SolutionCards>
       </Section>
       <Section>
         <Headline2 headline="Pricing" />
 
         <FadeInWhenVisible>
           <CardPanels>
-            <ListPanel
-              eyebrow="Onboarding Experience Development"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="10.000€*"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
+            <PricePanel>
+              <PanelContent>
+                <PricePanelTitle>
+                  <PanelEyebrow>Onboarding Experience Development</PanelEyebrow>
+                  10.000€*
+                </PricePanelTitle>
+                <PanelBody>
+                  <PanelCopy>Three 90-minute Consulting Sessions</PanelCopy>
+                  <PanelCopy>
+                    Onboarding Assessment - Onboarding Journey Mapping Canvas
+                  </PanelCopy>
+                  <PanelCopy>
+                    Wireframes for Onboarding Screens, Getting Started Page +
+                    Empty States
+                  </PanelCopy>
+                </PanelBody>
+                <ButtonMedium
+                  href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                  text={"Work with me"}
+                  color1={Colors.blue}
+                  color2={Colors.blueDark}
+                />
+              </PanelContent>
+            </PricePanel>
           </CardPanels>
         </FadeInWhenVisible>
       </Section>
