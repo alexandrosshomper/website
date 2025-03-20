@@ -10,7 +10,7 @@ const Headline2 = ({ headline }) => {
     font-style: normal;
 
     color: ${Colors.primaryText.highEmphasis};
-    margin-bottom: 8px;
+    margin-bottom: 64px;
     margin-top: 0px;
 
     font-size: 44px;

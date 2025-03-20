@@ -27,11 +27,22 @@ import Headline2 from "../../Content/Landingpage/Headline2";
 import ButtonMedium from "../../Button/ButtonMedium";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
-import { mdiEmail } from "@mdi/js";
+import { mdiEmail, mdiAbTesting } from "@mdi/js";
 import SectionSubline from "../../Content/Section/SectionSubline";
 import HeadSubline from "../../Content/Landingpage/HeadSubline";
 import HeadCopy from "../../Content/Landingpage/HeadCopy";
 import SectionOverline from "../../Content/Section/SectionOverline";
+import IconHeadlineCopyCard from "../../Content/IconHeadlineCopyCard/IconHeadlineCopyCard";
+
+import {
+  ClipboardList,
+  Waypoints,
+  Presentation,
+  ListTodo,
+  PanelsTopLeft,
+  FileText,
+  MessagesSquare,
+} from "lucide-react";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -247,8 +258,12 @@ const Content = (props) => {
     align-items: flex-start;
     column-gap: 16px;
     row-gap: 24px;
+    margin-left: 12px;
+    margin-right: 12px;
 
     ${Devices.tabletS} {
+      margin-left: 0px;
+      margin-right: 0px;
       width: 576px;
     }
     ${Devices.tabletM} {
@@ -349,7 +364,7 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 44px;
+    font-size: 64px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
@@ -359,7 +374,6 @@ const Content = (props) => {
     ${Devices.tabletM} {
       width: 708px;
 
-      font-size: 44px;
       line-height: 114%;
     }
     ${Devices.laptopS} {
@@ -447,7 +461,7 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 44px;
+    font-size: 52px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
@@ -457,13 +471,12 @@ const Content = (props) => {
     ${Devices.tabletM} {
       width: 708px;
 
-      font-size: 44px;
+      font-size: 64px;
       line-height: 114%;
     }
     ${Devices.laptopS} {
       width: 852px;
 
-      font-size: 64px;
       line-height: 131%;
     }
     ${Devices.laptopM} {
@@ -479,6 +492,7 @@ const Content = (props) => {
     flex-direction: column;
     align-items: center;
     gap: 48px;
+    padding-inline-start: 0px;
   `;
   const ProblemListItem = styled.li`
     font-family: "Roboto", sans-serif;
@@ -548,7 +562,7 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 44px;
+    font-size: 52px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
@@ -558,13 +572,12 @@ const Content = (props) => {
     ${Devices.tabletM} {
       width: 708px;
 
-      font-size: 44px;
+      font-size: 64px;
       line-height: 114%;
     }
     ${Devices.laptopS} {
       width: 852px;
 
-      font-size: 64px;
       line-height: 131%;
     }
     ${Devices.laptopM} {
@@ -608,8 +621,8 @@ const Content = (props) => {
     ${Devices.laptopS} {
       text-align: left;
 
-      font-size: 52px;
-      line-height: 131%;
+      font-size: 36px;
+      line-height: 114%;
     }
     ${Devices.laptopM} {
       font-size: 36px;
@@ -654,6 +667,7 @@ const Content = (props) => {
     flex-direction: column;
     align-items: center;
     gap: 48px;
+    padding-inline-start: 0px;
   `;
   const SolutionCard = styled.div`
     border-radius: 30px;
@@ -683,9 +697,9 @@ const Content = (props) => {
     }
     ${Devices.tabletM} {
       width: 720px;
-      flex-direction: row;
     }
     ${Devices.laptopS} {
+      flex-direction: row;
       width: 864px;
     }
     ${Devices.laptopM} {
@@ -695,38 +709,132 @@ const Content = (props) => {
   const SolutionBody = styled.div`
     /* Auto Layout */
     display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
     gap: 85px;
 
     height: 100%;
-    padding-left: 85px;
-    padding-right: 85px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-top: 24px;
 
     width: 100%;
+    ${Devices.tabletS} {
+      padding-left: 85px;
+      padding-right: 85px;
+      padding-bottom: 85px;
+      padding-top: 85px;
+    }
+    ${Devices.laptopS} {
+      flex-direction: row;
+    }
+    ${Devices.laptopM} {
+    }
+  `;
+
+  const SolutionBodyMac = styled.div`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 85px;
+
+    height: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+
+    width: 100%;
+    ${Devices.tabletS} {
+      padding-left: 85px;
+      padding-right: 85px;
+      padding-bottom: 85px;
+      padding-top: 85px;
+    }
+    ${Devices.laptopS} {
+      flex-direction: row;
+      padding-right: 0px;
+    }
+    ${Devices.laptopM} {
+    }
   `;
   const SolutionParagraph = styled.div`
     min-height: 80px;
     min-width: 80px;
     width: 100%;
     flex: flex-grow;
+
     /* Auto Layout */
     display: flex;
     flex-direction: column;
     align-items: left;
     align-self: center;
+
+    ${Devices.tabletS} {
+      min-width: 300px;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+      margin-top: 85px;
+      margin-bottom: 85px;
+    }
   `;
 
   const SolutionPicture = styled.img`
-    width: 390px;
-    height: 608px;
+    width: 350px;
+    height: 280px;
     flex: flex-grow;
     /* Auto Layout */
 
     align-items: left;
-    align-self: flex-end;
-    margin-top: 85px;
+    align-self: center;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+      margin-top: 85px;
+      margin-bottom: 85px;
+    }
+    ${Devices.laptopM} {
+      width: 450px;
+      height: 350px;
+    }
+  `;
+  const SolutionPictureBig = styled.img`
+    width: 400px;
+    height: 300px;
+    flex: flex-grow;
+    /* Auto Layout */
+
+    align-items: left;
+    align-self: center;
+
+    margin-right: 12px;
+    ${Devices.tabletS} {
+      width: 449px;
+      height: 321px;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+      width: 800px;
+      height: 600px;
+    }
   `;
 
   const PricePanel = styled.div`
@@ -740,16 +848,13 @@ const Content = (props) => {
     background-color: ${Colors.back};
 
     ${Devices.tabletS} {
-      width: 460px;
+      width: 372px;
     }
     ${Devices.tabletM} {
-      width: 228px;
     }
     ${Devices.laptopS} {
-      width: 276px;
     }
     ${Devices.laptopM} {
-      width: 372px;
     }
   `;
 
@@ -761,13 +866,13 @@ const Content = (props) => {
     /* Auto Layout */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   `;
   const PanelCopy = styled.p`
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 130%;
 
     text-align: left;
@@ -791,10 +896,10 @@ const Content = (props) => {
   `;
   const PanelEyebrow = styled.p`
     font-weight: 700;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 120%;
 
-    text-align: center;
+    text-align: left;
 
     color: grey;
 
@@ -810,10 +915,10 @@ const Content = (props) => {
   `;
   const PricePanelTitle = styled.p`
     font-weight: 700;
-    font-size: 32px;
+    font-size: 40px;
     line-height: 120%;
 
-    text-align: center;
+    text-align: left;
 
     color: black;
 
@@ -829,6 +934,68 @@ const Content = (props) => {
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
+    }
+  `;
+  const PanelListItem = styled.div`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+  `;
+
+  const PriceBullet = styled.p`
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    text-align: center;
+
+    color: white;
+
+    margin: 0px;
+
+    background-color: blue;
+    border-radius: 17px;
+  `;
+
+  const DeliverablesHeadline = styled.h2`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.mediumEmphasis};
+    margin-bottom: 36px;
+    margin-top: 0px;
+
+    font-size: 32px;
+    line-height: 112%;
+    text-align: center;
+    width: 100%;
+
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 576px;
+      margin-bottom: 52px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 36px;
+      line-height: 111%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 48px;
+      line-height: 100%;
+    }
+    ${Devices.laptopM} {
+      width: 1141px;
+
+      font-size: 60px;
+      line-height: 113%;
     }
   `;
 
@@ -904,7 +1071,7 @@ const Content = (props) => {
         <SolutionHeadline>Solution</SolutionHeadline>
         <HeadCopy copy="Work directly with Alexandros to upgrade your product’s onboarding." />
         <SolutionCards>
-          <RevealWhenVisible>
+          <FadeInWhenVisible>
             <SolutionCard>
               <SolutionBody>
                 <SolutionParagraph>
@@ -913,15 +1080,18 @@ const Content = (props) => {
                   </SolutionTitle>
                   <SolutionCopy>
                     I'll analyze your current onboarding flow, user research,
-                    and data to pinpoint key drop-off points and opportunities
+                    and data to{" "}
+                    <span style={{ color: "black" }}>
+                      pinpoint key drop-off points and opportunities
+                    </span>
                     for improvement.
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPicture src="./img/Landingpage/Solutions/image.png" />
+                <SolutionPicture src="./img/Landingpage/Solutions/Notes.png" />
               </SolutionBody>
             </SolutionCard>
-          </RevealWhenVisible>
-          <RevealWhenVisible>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
             <SolutionCard>
               <SolutionBody>
                 <SolutionParagraph style={{ order: "2" }}>
@@ -929,38 +1099,90 @@ const Content = (props) => {
                     Design delightful user experiences
                   </SolutionTitle>
                   <SolutionCopy>
-                    I'll craft an onboarding journey that perfectly matches your
-                    core value proposition and your users' goals. The result? A
-                    personalized experience that guides new users to
-                    success—without overwhelming them.
+                    I'll craft an onboarding journey that{" "}
+                    <span style={{ color: "black" }}>
+                      perfectly matches your core value proposition
+                    </span>{" "}
+                    and your users' goals.
+                  </SolutionCopy>
+                  <SolutionCopy>
+                    The result? A personalized experience that{" "}
+                    <span style={{ color: "black" }}>
+                      guides new users to success
+                    </span>
+                    —without overwhelming them .
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPicture src="./img/Landingpage/Solutions/image.png" />
+                <SolutionPicture src="./img/Landingpage/Solutions/Wireflow.png" />
               </SolutionBody>
             </SolutionCard>
-          </RevealWhenVisible>
-          <RevealWhenVisible>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
             <SolutionCard>
-              <SolutionBody>
+              <SolutionBodyMac>
                 <SolutionParagraph>
                   <SolutionTitle>
                     Transform your onboarding with the new user journey
                   </SolutionTitle>
                   <SolutionCopy>
                     I'll deliver wireframes and detailed recommendations for
-                    your onboarding screens, flows, and empty states. You'll
-                    have everything you need to build a world-class onboarding
-                    experience.
+                    your{" "}
+                    <span style={{ color: "black" }}>
+                      onboarding screens, flows, and empty states
+                    </span>
+                    .
+                  </SolutionCopy>
+                  <SolutionCopy>
+                    You'll have everything you need to build a world-class
+                    onboarding experience.
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPicture src="./img/Landingpage/Solutions/image.png" />
-              </SolutionBody>
+                <SolutionPictureBig src="./img/Landingpage/Solutions/Assessment1.png" />
+              </SolutionBodyMac>
             </SolutionCard>
-          </RevealWhenVisible>
+          </FadeInWhenVisible>
         </SolutionCards>
       </Section>
       <Section>
-        <Headline2 headline="Pricing" />
+        <DeliverablesHeadline>What you'll get</DeliverablesHeadline>
+
+        <Polaroids>
+          <IconHeadlineCopyCard
+            icon={<MessagesSquare size={46} strokeWidth={1.5} />}
+            headline="Consultation"
+            copy="Three consulting sessions throughout the project from kickoff to handover. We'll discuss requirements, constraints, goals, progress, recommendations, and much more…"
+          />
+          <IconHeadlineCopyCard
+            icon={<Waypoints size={46} strokeWidth={1.5} />}
+            headline="Onboarding Journey Map"
+            copy="Access to a Miro file with the onboarding journey from your product including ups and lows."
+          />
+          <IconHeadlineCopyCard
+            icon={<ClipboardList size={46} strokeWidth={1.5} />}
+            headline="Onboarding Assessment"
+            copy="A detailed summary of the audit and findings and list of clear & prioritized recommendation"
+          />
+
+          <IconHeadlineCopyCard
+            icon={<Presentation size={46} strokeWidth={1.5} />}
+            headline="Strategic Onboarding Canvas"
+            copy="Access to a Miro file with the core information driving the onboarding strategy and decisions for your product."
+          />
+
+          <IconHeadlineCopyCard
+            icon={<PanelsTopLeft size={46} strokeWidth={1.5} />}
+            headline="Designs as Figma files"
+            copy="All you need to get started implementing the new onboarding flow. Wireframes of the Onboarding Flow, Getting Started Page, Empty States."
+          />
+          <IconHeadlineCopyCard
+            icon={<FileText size={46} strokeWidth={1.5} />}
+            headline="Full report"
+            copy="A detailed executive summary of the audit, findings, and next steps. "
+          />
+        </Polaroids>
+      </Section>
+      <Section>
+        <Headline2 headline="Investment" />
 
         <FadeInWhenVisible>
           <CardPanels>
@@ -971,14 +1193,23 @@ const Content = (props) => {
                   10.000€*
                 </PricePanelTitle>
                 <PanelBody>
-                  <PanelCopy>Three 90-minute Consulting Sessions</PanelCopy>
-                  <PanelCopy>
-                    Onboarding Assessment - Onboarding Journey Mapping Canvas
-                  </PanelCopy>
-                  <PanelCopy>
-                    Wireframes for Onboarding Screens, Getting Started Page +
-                    Empty States
-                  </PanelCopy>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>Three 90-minute Consulting Sessions</PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Onboarding Assessment - Onboarding Journey Mapping Canvas
+                    </PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Wireframes for Onboarding Screens, Getting Started Page +
+                      Empty States
+                    </PanelCopy>
+                  </PanelListItem>
                 </PanelBody>
                 <ButtonMedium
                   href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
@@ -986,20 +1217,24 @@ const Content = (props) => {
                   color1={Colors.blue}
                   color2={Colors.blueDark}
                 />
+                <p style={{ color: "grey" }}>
+                  *discount available for small startups and non-profits,
+                  details in FAQ
+                </p>
               </PanelContent>
             </PricePanel>
           </CardPanels>
         </FadeInWhenVisible>
       </Section>
       <Section>
-        <Headline2 headline="FAQ" />
+        <Headline2 headline="Questions? Answers." />
 
         <MoveUpWhenVisible>
           <ListBigText
             //headline="Establish empathy together as a team"
             //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
-            headline="Do you offer discounts for early stage companies?"
-            copy="Yes! For any companies that either 1) have 10 or less employees or 2) are doing less than $1m in ARR, the discounted price is $7,500."
+            headline="Do you offer discounts?"
+            copy="Yes! For any companies that either 1) have 10 or less employees or 2) are doing less than €1m in ARR, the discounted price is €7,500. For Non-Profits please schedule a call and let's talk."
           />
         </MoveUpWhenVisible>
         <MoveUpWhenVisible>
