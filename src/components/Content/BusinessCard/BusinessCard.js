@@ -61,9 +61,9 @@ const BusinessCard = ({ headline, copy }) => {
     margin-top: 0px;
     margin-bottom: 12px;
 
-    width: 265px;
-    height: 150px;
-    border-radius: 10px;
+    width: 341px;
+    height: 441px;
+    border-radius: 20px;
 
     color: transparent;
     background-color: black;
@@ -74,15 +74,140 @@ const BusinessCard = ({ headline, copy }) => {
     );
     object-fit: cover;
     ${Devices.laptopM} {
-      width: 345px;
-      height: 195px;
+      border-radius: 40px;
+
+      width: 493px;
+      height: 634px;
+    }
+  `;
+
+  const BusinessCardText = styled.div`
+    display: block;
+    gap: 12px;
+    flex-basis: 50%;
+    align-self: center;
+    padding: 0 44px 0 44px;
+  `;
+
+  const BusinessCardCopy = styled.p`
+    position: static;
+
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: ${Colors.primaryText.highEmphasis};
+
+    /* Inside Auto Layout */
+
+    font-size: 20px;
+    line-height: 140%;
+
+    margin-top: 0px;
+    margin-bottom: 20px;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+      font-size: 24px;
+      line-height: 133%;
+    }
+    ${Devices.laptopS} {
+      flex: 1;
+    }
+  `;
+
+  const Overline = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.lowEmphasis};
+    margin: 0px 24px 8px 24px;
+
+    font-size: 20px;
+    line-height: 112%;
+    text-align: left;
+
+    ${Devices.tabletS} {
+      text-align: left;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    ${Devices.tabletM} {
+      font-size: 20px;
+      line-height: 111%;
+    }
+    ${Devices.laptopS} {
+      font-size: 24px;
+      line-height: 100%;
+    }
+    ${Devices.laptopM} {
+      font-size: 24px;
+      line-height: 113%;
+    }
+  `;
+
+  const BusinessCardHeadline = styled.h3`
+    position: static;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-weight: bold;
+
+    color: rgba(0, 169, 157, 1);
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-size: 32px;
+    line-height: 115%;
+
+    margin-top: 0px;
+    margin-bottom: 20px;
+
+    color: transparent;
+    background-image: linear-gradient(
+      to right,
+      ${Colors.blue},
+      ${Colors.blueLight}
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+      font-size: 32px;
+      line-height: 115%;
+      margin-right: 84px;
     }
   `;
 
   return (
     <BusinessCard>
       <Portrait src="./img/Identity/Portrait.png" />
-      {copy && <Copy copy={copy} />}
+      <BusinessCardText>
+        <Overline>40% of startups die because of bad traction</Overline>
+        <BusinessCardHeadline>
+          I’m Alexandros Shomper, <br />
+          and I’m here to help.
+        </BusinessCardHeadline>
+        <BusinessCardCopy>
+          My super power is making <b>customer-centric and data-driven</b>{" "}
+          product decisions–fast.
+        </BusinessCardCopy>
+        <BusinessCardCopy>
+          As a product lead focused on outcome I have a unique mixture of
+          data-analysis, user psychology, marketing, and time in product
+          trenches.
+        </BusinessCardCopy>
+        <BusinessCardCopy>
+          Working on countless products I’ve learned first hand how{" "}
+          <b>user onboarding and activation can make or break your startup</b>.{" "}
+        </BusinessCardCopy>
+      </BusinessCardText>
     </BusinessCard>
   );
 };

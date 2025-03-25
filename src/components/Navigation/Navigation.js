@@ -4,7 +4,8 @@ import styled from "@emotion/styled";
 import { Devices, Colors } from "../DesignSystem";
 import Menu from "./Menu";
 import Identity from "../Identity/Identity";
-import Bio from "./Bio";
+import ButtonSmall from "../Button/ButtonSmall";
+import LandingpageMenu from "./LandingpageMenu";
 
 const Navigation = (props) => {
   const Navigation = styled.header`
@@ -30,11 +31,26 @@ const Navigation = (props) => {
     }
   `;
 
+  const CTA = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 4px;
+  `;
+
   return (
     <Navigation>
-      <Menu />
       <Identity />
-      <Bio />
+      {/*<Bio />*/}
+      <CTA>
+        {/*<LandingpageMenu />*/}
+
+        <ButtonSmall
+          href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+          text={"Book my audit"}
+          color1={Colors.blue}
+          color2={Colors.blueDark}
+        />
+      </CTA>
     </Navigation>
   );
 };

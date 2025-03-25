@@ -43,6 +43,7 @@ import {
   FileText,
   MessagesSquare,
 } from "lucide-react";
+import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -188,12 +189,12 @@ const Content = (props) => {
 
   const CardPanels = styled.section`
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
     justify-content: center;
     align-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     --gap: 12px;
 
     margin-bottom: calc(1 * var(--gap));
@@ -383,7 +384,7 @@ const Content = (props) => {
       line-height: 131%;
     }
     ${Devices.laptopM} {
-      width: 920px;
+      width: 1024px;
 
       font-size: 80px;
       line-height: 114%;
@@ -460,6 +461,8 @@ const Content = (props) => {
     background-clip: text;
     margin-bottom: 8px;
     margin-top: 0px;
+
+    padding-bottom: 80px;
 
     font-size: 52px;
     line-height: 109%;
@@ -561,6 +564,8 @@ const Content = (props) => {
     background-clip: text;
     margin-bottom: 8px;
     margin-top: 0px;
+
+    padding-bottom: 80px;
 
     font-size: 52px;
     line-height: 109%;
@@ -998,7 +1003,45 @@ const Content = (props) => {
       line-height: 113%;
     }
   `;
+  const ProblemConclusion = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: ${Colors.primaryText.lowEmphasis};
+    margin: 80px 24px 24px 24px;
 
+    font-size: 60px;
+    line-height: 120%;
+    text-align: center;
+
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 576px;
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+
+      font-size: 36px;
+      line-height: 111%;
+      margin-bottom: 32px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+
+      font-size: 36px;
+      line-height: 100%;
+      margin-bottom: 38px;
+    }
+    ${Devices.laptopM} {
+      width: 1024px;
+
+      font-size: 42px;
+      line-height: 113%;
+      margin-bottom: 46px;
+    }
+  `;
   return (
     <Content>
       <Helmet>
@@ -1010,22 +1053,28 @@ const Content = (props) => {
           awesome solutions people love.
         </description>
       </Helmet>
+
       <Section>
         <Hero>
           <HeroHeadline>
-            Let's fix your <OnboardingGradient>onboarding</OnboardingGradient>{" "}
-            <ExperienceGradient>experience</ExperienceGradient>.
+            Unlock <OnboardingGradient>sustainable growth</OnboardingGradient>{" "}
+            by improving{" "}
+            <ExperienceGradient>
+              user onboarding & activation
+            </ExperienceGradient>
+            .
           </HeroHeadline>
           <HeroSubline>
-            Are you struggling to activate and retain new users? <br /> We help
-            you create an onboarding experience that{" "}
-            <span style={{ color: "black" }}>keeps users engaged longer</span>{" "}
-            and{" "}
-            <span style={{ color: "black" }}>converts new users faster</span>.
+            My approach combines growth, UX, behavioral psychology, and
+            analytics to{" "}
+            <span style={{ color: "black" }}>
+              create long-term, compounding results
+            </span>
+            .
           </HeroSubline>
           <ButtonMedium
             href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-            text={"Work with me"}
+            text={"Book my audit"}
             color1={Colors.blue}
             color2={Colors.blueDark}
           />
@@ -1033,8 +1082,10 @@ const Content = (props) => {
       </Section>
 
       <Section>
-        <ProblemHeadline>Problem</ProblemHeadline>
-        <HeadCopy copy="Does this sound familiar?" />
+        <ProblemHeadline>
+          Bad user onboarding and activation kills startups
+        </ProblemHeadline>
+        <DeliverablesHeadline>Does this sound familiar?</DeliverablesHeadline>
         <ProblemList>
           <MoveUpWhenVisible>
             <ProblemListItem>
@@ -1066,10 +1117,46 @@ const Content = (props) => {
             </ProblemListItem>
           </MoveUpWhenVisible>
         </ProblemList>
+        <ProblemConclusion>
+          You have an user onboarding and activation problem, and we can help.
+        </ProblemConclusion>
       </Section>
       <Section>
-        <SolutionHeadline>Solution</SolutionHeadline>
-        <HeadCopy copy="Work directly with Alexandros to upgrade your product’s onboarding." />
+        <BusinessCard />
+      </Section>
+      <Section>
+        <SolutionHeadline>
+          Good user onboarding and activation makes the winners.{" "}
+        </SolutionHeadline>
+
+        <DeliverablesHeadline>
+          Why you'll love working with us
+        </DeliverablesHeadline>
+
+        <Polaroids>
+          <IconHeadlineCopyCard
+            icon={<MessagesSquare size={46} strokeWidth={1.5} />}
+            headline="Sustainable Growth"
+            copy="Get more growth. User Onboarding & Activation generates more active users that retain longer–compunding month over month. This leads to: Higher longterm user retention. Less churn. More traction."
+          />
+          <IconHeadlineCopyCard
+            icon={<Waypoints size={46} strokeWidth={1.5} />}
+            headline="Engagement"
+            copy="Get more power users. User Onboarding & Activation generates more active users which build a habit around your product. This leads to: More engagement. More interactions. More features used."
+          />
+          <IconHeadlineCopyCard
+            icon={<ClipboardList size={46} strokeWidth={1.5} />}
+            headline="Profitability"
+            copy="Get more revenue. User Onboarding & Activation generates more active users you can monetize and more plan upgrades. This leads to: More MRR & ARR. Lower CAC. Higher CLV."
+          />
+        </Polaroids>
+      </Section>
+      <Section>
+        <DeliverablesHeadline>How it works</DeliverablesHeadline>
+
+        <AccordeonVisual />
+      </Section>
+      <Section>
         <SolutionCards>
           <FadeInWhenVisible>
             <SolutionCard>
@@ -1143,71 +1230,86 @@ const Content = (props) => {
           </FadeInWhenVisible>
         </SolutionCards>
       </Section>
+
       <Section>
-        <DeliverablesHeadline>What you'll get</DeliverablesHeadline>
-
-        <Polaroids>
-          <IconHeadlineCopyCard
-            icon={<MessagesSquare size={46} strokeWidth={1.5} />}
-            headline="Consultation"
-            copy="Three consulting sessions throughout the project from kickoff to handover. We'll discuss requirements, constraints, goals, progress, recommendations, and much more…"
-          />
-          <IconHeadlineCopyCard
-            icon={<Waypoints size={46} strokeWidth={1.5} />}
-            headline="Onboarding Journey Map"
-            copy="Access to a Miro file with the onboarding journey from your product including ups and lows."
-          />
-          <IconHeadlineCopyCard
-            icon={<ClipboardList size={46} strokeWidth={1.5} />}
-            headline="Onboarding Assessment"
-            copy="A detailed summary of the audit and findings and list of clear & prioritized recommendation"
-          />
-
-          <IconHeadlineCopyCard
-            icon={<Presentation size={46} strokeWidth={1.5} />}
-            headline="Strategic Onboarding Canvas"
-            copy="Access to a Miro file with the core information driving the onboarding strategy and decisions for your product."
-          />
-
-          <IconHeadlineCopyCard
-            icon={<PanelsTopLeft size={46} strokeWidth={1.5} />}
-            headline="Designs as Figma files"
-            copy="All you need to get started implementing the new onboarding flow. Wireframes of the Onboarding Flow, Getting Started Page, Empty States."
-          />
-          <IconHeadlineCopyCard
-            icon={<FileText size={46} strokeWidth={1.5} />}
-            headline="Full report"
-            copy="A detailed executive summary of the audit, findings, and next steps. "
-          />
-        </Polaroids>
-      </Section>
-      <Section>
-        <Headline2 headline="Investment" />
-
+        <Headline2 headline="Onboarding Experience Development" />
         <FadeInWhenVisible>
           <CardPanels>
             <PricePanel>
               <PanelContent>
                 <PricePanelTitle>
-                  <PanelEyebrow>Onboarding Experience Development</PanelEyebrow>
-                  10.000€*
+                  <PanelEyebrow>Early Stage Startup</PanelEyebrow>
+                  5.000€
                 </PricePanelTitle>
                 <PanelBody>
                   <PanelListItem>
                     <PriceBullet>✓</PriceBullet>
-                    <PanelCopy>Three 90-minute Consulting Sessions</PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
                     <PanelCopy>
-                      Onboarding Assessment - Onboarding Journey Mapping Canvas
+                      <b>One</b> consulting session to map user flows and define
+                      “aha” moment
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
                     <PriceBullet>✓</PriceBullet>
                     <PanelCopy>
-                      Wireframes for Onboarding Screens, Getting Started Page +
-                      Empty States
+                      Immediate Action Plan with top 2–3 next steps for quick
+                      wins
+                    </PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Wireframe & Messaging Essentials for critical onboarding
+                      journey
+                    </PanelCopy>
+                  </PanelListItem>
+                </PanelBody>
+                <ButtonMedium
+                  href="https://calendar.notion.so/meet/alexandros/0a6mz4m5q"
+                  text={"Work with me"}
+                  color1={Colors.blue}
+                  color2={Colors.blueDark}
+                />
+                <p style={{ color: "grey" }}>
+                  Best for Pre-Seed to <b>Seed Startups</b> <br />
+                  with <b>less than 100k ARR</b>.
+                </p>
+              </PanelContent>
+            </PricePanel>
+            <PricePanel>
+              <PanelContent>
+                <PricePanelTitle>
+                  <PanelEyebrow>Growth Stage Startup</PanelEyebrow>
+                  10.000€
+                </PricePanelTitle>
+                <PanelBody>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      <b>Two</b> 90-minute consulting sessions dicussing product
+                      opportunitites, map user flows, and define “aha” moment.
+                    </PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Detailed Onboarding Audit assessing sign-up flow,
+                      activation, metrics, and user feedback
+                    </PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      End-to-end funnel design, basic segmentation, and
+                      triggered user journeys
+                    </PanelCopy>
+                  </PanelListItem>
+
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Feedback service over ~1 months to ensure best practices
+                      are implemented
                     </PanelCopy>
                   </PanelListItem>
                 </PanelBody>
@@ -1218,14 +1320,113 @@ const Content = (props) => {
                   color2={Colors.blueDark}
                 />
                 <p style={{ color: "grey" }}>
-                  *discount available for small startups and non-profits,
-                  details in FAQ
+                  Best for <b>Seed to Series A Startups</b>
+                  <br /> with <b>less than 1M ARR</b>.
+                </p>
+              </PanelContent>
+            </PricePanel>
+            <PricePanel>
+              <PanelContent>
+                <PricePanelTitle>
+                  <PanelEyebrow>Scale Stage Startup</PanelEyebrow>
+                  15.000€
+                </PricePanelTitle>
+                <PanelBody>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      <b>Three</b> 90-minute consulting sessions dicussing
+                      product opportunitites, map user flows, and define “aha”
+                      moment.
+                    </PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Detailed Onboarding Audit assessing <b>persona based</b>{" "}
+                      sign-up flow, activation, metrics, and user feedback
+                    </PanelCopy>
+                  </PanelListItem>
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      End-to-end funnel design, advanced segmentation, and
+                      triggered user journeys
+                    </PanelCopy>
+                  </PanelListItem>
+
+                  <PanelListItem>
+                    <PriceBullet>✓</PriceBullet>
+                    <PanelCopy>
+                      Feedback service over ~2 months to ensure best practices
+                      are implemented
+                    </PanelCopy>
+                  </PanelListItem>
+                </PanelBody>
+                <ButtonMedium
+                  href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                  text={"Work with me"}
+                  color1={Colors.blue}
+                  color2={Colors.blueDark}
+                />
+                <p style={{ color: "grey" }}>
+                  Best for Series A+ Startups with more than 1M ARR.
                 </p>
               </PanelContent>
             </PricePanel>
           </CardPanels>
         </FadeInWhenVisible>
       </Section>
+      {/*<Section>
+        <DeliverablesHeadline>What you'll get</DeliverablesHeadline>
+
+        <Polaroids>
+          <IconHeadlineCopyCard
+            icon={<MessagesSquare size={46} strokeWidth={1.5} />}
+            headline="Consultation"
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+            copy="Three consulting sessions throughout the project from kickoff to handover. We'll discuss requirements, constraints, goals, progress, recommendations, and much more…"
+          />
+          <IconHeadlineCopyCard
+            icon={<Waypoints size={46} strokeWidth={1.5} />}
+            headline="Onboarding Journey Map"
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+            copy="Access to a Miro file with the onboarding journey from your product including ups and lows."
+          />
+          <IconHeadlineCopyCard
+            icon={<ClipboardList size={46} strokeWidth={1.5} />}
+            headline="Onboarding Assessment"
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+            copy="A detailed summary of the audit and findings and list of clear & prioritized recommendation"
+          />
+
+          <IconHeadlineCopyCard
+            icon={<Presentation size={46} strokeWidth={1.5} />}
+            headline="Strategic Onboarding Canvas"
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+            copy="Access to a Miro file with the core information driving the onboarding strategy and decisions for your product."
+          />
+
+          <IconHeadlineCopyCard
+            icon={<PanelsTopLeft size={46} strokeWidth={1.5} />}
+            headline="Designs as Figma files"
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+            copy="All you need to get started implementing the new onboarding flow. Wireframes of the Onboarding Flow, Getting Started Page, Empty States."
+          />
+          <IconHeadlineCopyCard
+            icon={<FileText size={46} strokeWidth={1.5} />}
+            headline="Full report"
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+            copy="A detailed executive summary of the audit, findings, and next steps. "
+          />
+        </Polaroids>
+      </Section>*/}
       <Section>
         <Headline2 headline="Questions? Answers." />
 
@@ -1234,7 +1435,7 @@ const Content = (props) => {
             //headline="Establish empathy together as a team"
             //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
             headline="Do you offer discounts?"
-            copy="Yes! For any companies that either 1) have 10 or less employees or 2) are doing less than €1m in ARR, the discounted price is €7,500. For Non-Profits please schedule a call and let's talk."
+            copy="Yes! For Non-Profits I offer discounts. Please schedule a call and let's talk."
           />
         </MoveUpWhenVisible>
         <MoveUpWhenVisible>
@@ -1265,6 +1466,27 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             copy="Yes, I offer a retainer service to continuously refine, test and optimize your onboarding flow and other user journeys based on real user data and feedback. I also advise in other areas of product-led growth."
           />
         </MoveUpWhenVisible>
+      </Section>
+      <Section>
+        <Hero>
+          <HeroHeadline>
+            Let's fix your <OnboardingGradient>onboarding</OnboardingGradient>{" "}
+            <ExperienceGradient>experience</ExperienceGradient>.
+          </HeroHeadline>
+          <HeroSubline>
+            Are you struggling to activate and retain new users? <br /> We help
+            you create an onboarding experience that{" "}
+            <span style={{ color: "black" }}>keeps users engaged longer</span>{" "}
+            and{" "}
+            <span style={{ color: "black" }}>converts new users faster</span>.
+          </HeroSubline>
+          <ButtonMedium
+            href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+            text={"Book my audit"}
+            color1={Colors.blue}
+            color2={Colors.blueDark}
+          />
+        </Hero>
       </Section>
     </Content>
   );
