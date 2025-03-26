@@ -20,9 +20,11 @@ const BusinessCard = ({ headline, copy }) => {
     /* Inside Auto Layout */
 
     ${Devices.tabletS} {
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
       margin: 0px 0px 60px 0px;
       width: 576px;
-      align-items: flex-start;
       align-content: flex-start;
     }
     ${Devices.tabletM} {
@@ -31,9 +33,6 @@ const BusinessCard = ({ headline, copy }) => {
       margin: 0px 0px 60px 0px;
     }
     ${Devices.laptopS} {
-      flex-direction: row;
-      gap: 24px;
-
       width: 864px;
       margin: 0px 0px 60px 0px;
     }
@@ -61,8 +60,10 @@ const BusinessCard = ({ headline, copy }) => {
     margin-top: 0px;
     margin-bottom: 12px;
 
-    width: 341px;
-    height: 441px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+
     border-radius: 20px;
 
     color: transparent;
@@ -73,6 +74,10 @@ const BusinessCard = ({ headline, copy }) => {
       ${Colors.blueLight}
     );
     object-fit: cover;
+    ${Devices.tabletS} {
+      width: 341px;
+      height: 441px;
+    }
     ${Devices.laptopM} {
       border-radius: 40px;
 
@@ -81,12 +86,15 @@ const BusinessCard = ({ headline, copy }) => {
     }
   `;
 
-  const BusinessCardText = styled.div`
+  const BusinessCardParagraph = styled.div`
     display: block;
     gap: 12px;
     flex-basis: 50%;
     align-self: center;
-    padding: 0 44px 0 44px;
+    padding: 0 0 0 0;
+    ${Devices.laptopM} {
+      padding: 0 44px 0 44px;
+    }
   `;
 
   const BusinessCardCopy = styled.p`
@@ -99,7 +107,7 @@ const BusinessCard = ({ headline, copy }) => {
 
     /* Inside Auto Layout */
 
-    font-size: 20px;
+    font-size: 18px;
     line-height: 140%;
 
     margin-top: 0px;
@@ -108,10 +116,10 @@ const BusinessCard = ({ headline, copy }) => {
     ${Devices.tabletS} {
     }
     ${Devices.tabletM} {
+    }
+    ${Devices.laptopM} {
       font-size: 24px;
       line-height: 133%;
-    }
-    ${Devices.laptopS} {
       flex: 1;
     }
   `;
@@ -127,11 +135,11 @@ const BusinessCard = ({ headline, copy }) => {
     font-size: 20px;
     line-height: 112%;
     text-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
 
     ${Devices.tabletS} {
       text-align: left;
-      margin-left: 0px;
-      margin-right: 0px;
     }
     ${Devices.tabletM} {
       font-size: 20px;
@@ -188,7 +196,7 @@ const BusinessCard = ({ headline, copy }) => {
   return (
     <BusinessCard>
       <Portrait src="./img/Identity/Portrait.png" />
-      <BusinessCardText>
+      <BusinessCardParagraph>
         <Overline>40% of startups die because of bad traction</Overline>
         <BusinessCardHeadline>
           I’m Alexandros Shomper, <br />
@@ -207,7 +215,7 @@ const BusinessCard = ({ headline, copy }) => {
           Working on countless products I’ve learned first hand how{" "}
           <b>user onboarding and activation can make or break your startup</b>.{" "}
         </BusinessCardCopy>
-      </BusinessCardText>
+      </BusinessCardParagraph>
     </BusinessCard>
   );
 };

@@ -35,13 +35,9 @@ import SectionOverline from "../../Content/Section/SectionOverline";
 import IconHeadlineCopyCard from "../../Content/IconHeadlineCopyCard/IconHeadlineCopyCard";
 
 import {
-  ClipboardList,
-  Waypoints,
-  Presentation,
-  ListTodo,
-  PanelsTopLeft,
-  FileText,
-  MessagesSquare,
+  HandCoins,
+  MousePointerClick,
+  ChartNoAxesCombined,
 } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 
@@ -218,6 +214,39 @@ const Content = (props) => {
       width: 1152px;
     }
   `;
+
+  const PricePanels = styled.section`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 40px;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    --gap: 12px;
+
+    margin-bottom: calc(1 * var(--gap));
+    margin-right: 12px;
+    margin-left: 12px;
+
+    ${Devices.tabletS} {
+      flex-direction: row;
+      width: 576px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: calc(-1 * var(--gap));
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      flex-direction: row;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+    }
+  `;
   const FlipCardPanels = styled.section`
     display: flex;
     flex-direction: row;
@@ -365,7 +394,7 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 64px;
+    font-size: 32px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
@@ -400,12 +429,14 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 24px;
+    font-size: 16px;
     line-height: 112%;
     text-align: center;
     width: 100%;
 
     ${Devices.tabletS} {
+      font-size: 24px;
+
       text-align: center;
       width: 576px;
     }
@@ -464,10 +495,11 @@ const Content = (props) => {
 
     padding-bottom: 80px;
 
-    font-size: 52px;
+    font-size: 32px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
+      font-size: 52px;
       text-align: center;
       width: 564px;
     }
@@ -489,6 +521,47 @@ const Content = (props) => {
       line-height: 114%;
     }
   `;
+
+  const ProblemSubline = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.mediumEmphasis};
+    margin-bottom: 36px;
+    margin-top: 0px;
+
+    font-size: 24px;
+    line-height: 112%;
+    text-align: center;
+    width: 100%;
+
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 576px;
+      margin-bottom: 52px;
+      font-size: 32px;
+      line-height: 112%;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 36px;
+      line-height: 111%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 48px;
+      line-height: 100%;
+    }
+    ${Devices.laptopM} {
+      width: 1141px;
+
+      font-size: 60px;
+      line-height: 113%;
+    }
+  `;
   const ProblemList = styled.ul`
     /* Auto Layout */
     display: flex;
@@ -496,6 +569,10 @@ const Content = (props) => {
     align-items: center;
     gap: 48px;
     padding-inline-start: 0px;
+    padding: 0 12px 0 12px;
+    ${Devices.tabletS} {
+      padding: 0 0 0 0;
+    }
   `;
   const ProblemListItem = styled.li`
     font-family: "Roboto", sans-serif;
@@ -507,10 +584,12 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 44px;
+    font-size: 24px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
+      font-size: 44px;
+      line-height: 109%;
       text-align: center;
       width: 564px;
     }
@@ -567,10 +646,11 @@ const Content = (props) => {
 
     padding-bottom: 80px;
 
-    font-size: 52px;
+    font-size: 32px;
     line-height: 109%;
     text-align: center;
     ${Devices.tabletS} {
+      font-size: 52px;
       text-align: center;
       width: 564px;
     }
@@ -593,6 +673,47 @@ const Content = (props) => {
     }
   `;
 
+  const SolutionSubline = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: ${Colors.primaryText.mediumEmphasis};
+    margin-bottom: 36px;
+    margin-top: 0px;
+
+    font-size: 24px;
+    line-height: 112%;
+    text-align: center;
+    width: 100%;
+
+    ${Devices.tabletS} {
+      text-align: center;
+      width: 576px;
+      margin-bottom: 52px;
+      font-size: 32px;
+      line-height: 112%;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+
+      font-size: 36px;
+      line-height: 111%;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+
+      font-size: 48px;
+      line-height: 100%;
+    }
+    ${Devices.laptopM} {
+      width: 1141px;
+
+      font-size: 60px;
+      line-height: 113%;
+    }
+  `;
+
   const SolutionTitle = styled.h3`
     font-family: "Roboto", sans-serif;
     font-weight: bold;
@@ -612,7 +733,7 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 44px;
+    font-size: 32px;
     line-height: 109%;
     text-align: center;
 
@@ -719,7 +840,7 @@ const Content = (props) => {
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
-    gap: 85px;
+    gap: 24px;
 
     height: 100%;
     padding-left: 24px;
@@ -733,6 +854,7 @@ const Content = (props) => {
       padding-right: 85px;
       padding-bottom: 85px;
       padding-top: 85px;
+      gap: 85px;
     }
     ${Devices.laptopS} {
       flex-direction: row;
@@ -749,7 +871,7 @@ const Content = (props) => {
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
-    gap: 85px;
+    gap: 24px;
 
     height: 100%;
     padding-left: 24px;
@@ -763,6 +885,7 @@ const Content = (props) => {
       padding-right: 85px;
       padding-bottom: 85px;
       padding-top: 85px;
+      gap: 85px;
     }
     ${Devices.laptopS} {
       flex-direction: row;
@@ -797,30 +920,34 @@ const Content = (props) => {
   `;
 
   const SolutionPicture = styled.img`
-    width: 350px;
-    height: 280px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
     flex: flex-grow;
     /* Auto Layout */
-
     align-items: left;
     align-self: center;
 
     ${Devices.tabletS} {
+      width: 350px;
+      height: 280px;
     }
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
       margin-top: 85px;
       margin-bottom: 85px;
+      width: 100%;
+      height: auto;
     }
     ${Devices.laptopM} {
-      width: 450px;
-      height: 350px;
     }
   `;
   const SolutionPictureBig = styled.img`
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+
     flex: flex-grow;
     /* Auto Layout */
 
@@ -835,10 +962,13 @@ const Content = (props) => {
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
+      width: 100%;
+      height: auto;
     }
     ${Devices.laptopM} {
       width: 800px;
       height: 600px;
+      min-width: fit-content;
     }
   `;
 
@@ -1010,13 +1140,15 @@ const Content = (props) => {
     color: ${Colors.primaryText.lowEmphasis};
     margin: 80px 24px 24px 24px;
 
-    font-size: 60px;
+    font-size: 24px;
     line-height: 120%;
     text-align: center;
 
     ${Devices.tabletS} {
       text-align: center;
       width: 576px;
+      font-size: 60px;
+      line-height: 120%;
     }
     ${Devices.tabletM} {
       width: 720px;
@@ -1085,7 +1217,7 @@ const Content = (props) => {
         <ProblemHeadline>
           Bad user onboarding and activation kills startups
         </ProblemHeadline>
-        <DeliverablesHeadline>Does this sound familiar?</DeliverablesHeadline>
+        <ProblemSubline>Does this sound familiar?</ProblemSubline>
         <ProblemList>
           <MoveUpWhenVisible>
             <ProblemListItem>
@@ -1129,23 +1261,21 @@ const Content = (props) => {
           Good user onboarding and activation makes the winners.{" "}
         </SolutionHeadline>
 
-        <DeliverablesHeadline>
-          Why you'll love working with us
-        </DeliverablesHeadline>
+        <SolutionSubline>Why you'll love working with us</SolutionSubline>
 
         <Polaroids>
           <IconHeadlineCopyCard
-            icon={<MessagesSquare size={46} strokeWidth={1.5} />}
+            icon={<ChartNoAxesCombined size={46} strokeWidth={1.5} />}
             headline="Sustainable Growth"
             copy="Get more growth. User Onboarding & Activation generates more active users that retain longer–compunding month over month. This leads to: Higher longterm user retention. Less churn. More traction."
           />
           <IconHeadlineCopyCard
-            icon={<Waypoints size={46} strokeWidth={1.5} />}
+            icon={<MousePointerClick size={46} strokeWidth={1.5} />}
             headline="Engagement"
             copy="Get more power users. User Onboarding & Activation generates more active users which build a habit around your product. This leads to: More engagement. More interactions. More features used."
           />
           <IconHeadlineCopyCard
-            icon={<ClipboardList size={46} strokeWidth={1.5} />}
+            icon={<HandCoins size={46} strokeWidth={1.5} />}
             headline="Profitability"
             copy="Get more revenue. User Onboarding & Activation generates more active users you can monetize and more plan upgrades. This leads to: More MRR & ARR. Lower CAC. Higher CLV."
           />
@@ -1234,7 +1364,7 @@ const Content = (props) => {
       <Section>
         <Headline2 headline="Onboarding Experience Development" />
         <FadeInWhenVisible>
-          <CardPanels>
+          <PricePanels>
             <PricePanel>
               <PanelContent>
                 <PricePanelTitle>
@@ -1374,7 +1504,7 @@ const Content = (props) => {
                 </p>
               </PanelContent>
             </PricePanel>
-          </CardPanels>
+          </PricePanels>
         </FadeInWhenVisible>
       </Section>
       {/*<Section>
@@ -1382,21 +1512,21 @@ const Content = (props) => {
 
         <Polaroids>
           <IconHeadlineCopyCard
-            icon={<MessagesSquare size={46} strokeWidth={1.5} />}
+            icon={<ChartNoAxesCombined size={46} strokeWidth={1.5} />}
             headline="Consultation"
             color1={Colors.blue}
             color2={Colors.blueDark}
             copy="Three consulting sessions throughout the project from kickoff to handover. We'll discuss requirements, constraints, goals, progress, recommendations, and much more…"
           />
           <IconHeadlineCopyCard
-            icon={<Waypoints size={46} strokeWidth={1.5} />}
+            icon={<MousePointerClick size={46} strokeWidth={1.5} />}
             headline="Onboarding Journey Map"
             color1={Colors.blue}
             color2={Colors.blueDark}
             copy="Access to a Miro file with the onboarding journey from your product including ups and lows."
           />
           <IconHeadlineCopyCard
-            icon={<ClipboardList size={46} strokeWidth={1.5} />}
+            icon={<HandCoins size={46} strokeWidth={1.5} />}
             headline="Onboarding Assessment"
             color1={Colors.blue}
             color2={Colors.blueDark}
@@ -1474,9 +1604,11 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             <ExperienceGradient>experience</ExperienceGradient>.
           </HeroHeadline>
           <HeroSubline>
-            Are you struggling to activate and retain new users? <br /> We help
-            you create an onboarding experience that{" "}
-            <span style={{ color: "black" }}>keeps users engaged longer</span>{" "}
+            Struggling to activate and retain users? <br />
+            <br /> We help you create an onboarding experience that
+            <span style={{ color: "black" }}>
+              keeps users engaged longer
+            </span>{" "}
             and{" "}
             <span style={{ color: "black" }}>converts new users faster</span>.
           </HeroSubline>

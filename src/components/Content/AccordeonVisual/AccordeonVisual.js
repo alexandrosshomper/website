@@ -4,21 +4,23 @@ import styled from "@emotion/styled";
 import { Colors, Devices } from "../../DesignSystem";
 import ButtonSmall from "../../Button/ButtonSmall";
 
-const AccordeonVisual = ({ quote, quotee }) => {
+const AccordeonVisual = ({}) => {
   const AccordeonVisual = styled.div`
     /* Auto Layout */
     display: flex;
-    flex-direction: row;
-    gap; 40px;
+    flex-direction: column;
+    gap: 0px;
     justify-content: space-between;
-
     width: 100%;
-    
+    align-items: center;
 
     ${Devices.tabletS} {
       width: 576px;
     }
     ${Devices.tabletM} {
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 40px;
       width: 720px;
     }
     ${Devices.laptopS} {
@@ -34,16 +36,39 @@ const AccordeonVisual = ({ quote, quotee }) => {
     min-width: 352px;
     max-width: 352px;
   `;
-
-  const Visual = styled.div`
+  const VisualWrapper = styled.div`
+    max-width: 352px;
+    ${Devices.tabletS} {
+      max-width: none;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+    }
+  `;
+  const Visual = styled.img`
     /* Auto Layout */
     background-color: white;
     display: block;
-    width: 66.667%;
-    min-height: 300px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    border-radius: 12px;
 
-    border-radius: 30px;
+    ${Devices.tabletS} {
+      border-radius: 20px;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+      border-radius: 30px;
+    }
+    ${Devices.laptopM} {
+    }
   `;
+
   const Option = styled.div`
     /* Auto Layout */
     padding-bottom: 24px;
@@ -57,7 +82,6 @@ const AccordeonVisual = ({ quote, quotee }) => {
   const Copy = styled.p`
     /* Auto Layout */
   `;
-
   return (
     <AccordeonVisual>
       <Accordeon>
@@ -97,7 +121,9 @@ const AccordeonVisual = ({ quote, quotee }) => {
           </Content>
         </Option>
       </Accordeon>
-      <Visual></Visual>
+      <VisualWrapper>
+        <Visual src="./img/Landingpage/HowItWorks.png" />
+      </VisualWrapper>
     </AccordeonVisual>
   );
 };
