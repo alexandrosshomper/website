@@ -38,6 +38,7 @@ import {
   HandCoins,
   MousePointerClick,
   ChartNoAxesCombined,
+  Check,
 } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 
@@ -219,10 +220,10 @@ const Content = (props) => {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 40px;
+    gap: 12px;
     justify-content: center;
     align-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     --gap: 12px;
 
     margin-bottom: calc(1 * var(--gap));
@@ -244,6 +245,7 @@ const Content = (props) => {
       width: 864px;
     }
     ${Devices.laptopM} {
+      gap: 40px;
       width: 1152px;
     }
   `;
@@ -973,13 +975,13 @@ const Content = (props) => {
   `;
 
   const PricePanel = styled.div`
-    text-align: left;
+    display: flex;
 
-    border-radius: 30px;
+    border-radius: 20px;
 
     margin-bottom: 12px;
     width: 100%;
-    float: left;
+
     background-color: ${Colors.back};
 
     ${Devices.tabletS} {
@@ -993,7 +995,30 @@ const Content = (props) => {
     }
   `;
 
+  const PriceComment = styled.p`
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    text-align: left;
+    color: ${Colors.primaryText.highEmphasis};
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopM} {
+      font-size: 14px;
+      line-height: 130%;
+    }
+  `;
+
   const PanelContent = styled.div`
+    display: flex;
+    flex-direction: column;
     text-align: center;
     padding: 30px 30px 42px 30px;
   `;
@@ -1002,7 +1027,8 @@ const Content = (props) => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 20px;
+    flex-grow: 1;
     margin-bottom: 32px;
   `;
   const PanelCopy = styled.p`
@@ -1017,21 +1043,15 @@ const Content = (props) => {
     margin-bottom: 0px;
 
     ${Devices.tabletS} {
-      font-size: 20px;
-      line-height: 117%;
     }
     ${Devices.tabletM} {
-      font-size: 20px;
-      line-height: 117%;
     }
     ${Devices.laptopS} {
-      font-size: 20px;
-      line-height: 117%;
     }
   `;
   const PanelEyebrow = styled.p`
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 21px;
     line-height: 120%;
 
     text-align: left;
@@ -1039,7 +1059,7 @@ const Content = (props) => {
     color: grey;
 
     margin-top: 0px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 
     ${Devices.tabletS} {
     }
@@ -1047,10 +1067,16 @@ const Content = (props) => {
     }
     ${Devices.laptopS} {
     }
+    ${Devices.laptopM} {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+    }
   `;
-  const PricePanelTitle = styled.p`
+  const PricePanelTitle = styled.div`
+    min-height: 160px;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 120%;
 
     text-align: left;
@@ -1058,9 +1084,9 @@ const Content = (props) => {
     color: black;
 
     margin-top: 0px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 
-    padding-bottom: 24px;
+    padding-bottom: 12px;
 
     border-bottom: 1px solid black;
 
@@ -1068,7 +1094,10 @@ const Content = (props) => {
     }
     ${Devices.tabletM} {
     }
-    ${Devices.laptopS} {
+    ${Devices.laptopM} {
+      min-height: 180px;
+      font-weight: 700;
+      font-size: 40px;
     }
   `;
   const PanelListItem = styled.div`
@@ -1079,17 +1108,17 @@ const Content = (props) => {
     gap: 8px;
   `;
 
-  const PriceBullet = styled.p`
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    min-height: 24px;
-    min-width: 24px;
+  const PriceBullet = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20px;
+    min-width: 20px;
     text-align: center;
 
     color: white;
 
-    margin: 0px;
+    margin: 1px 0 0 0;
 
     background-color: blue;
     border-radius: 17px;
@@ -1370,24 +1399,35 @@ const Content = (props) => {
                 <PricePanelTitle>
                   <PanelEyebrow>Early Stage Startup</PanelEyebrow>
                   5.000€
+                  <PriceComment style={{ color: "grey" }}>
+                    Best for Pre-Seed to <b>Seed Startups</b> <br />
+                    with <b>less than 100k ARR</b>.
+                  </PriceComment>
                 </PricePanelTitle>
                 <PanelBody>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
+
                     <PanelCopy>
                       <b>One</b> consulting session to map user flows and define
                       “aha” moment
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       Immediate Action Plan with top 2–3 next steps for quick
                       wins
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       Wireframe & Messaging Essentials for critical onboarding
                       journey
@@ -1400,10 +1440,6 @@ const Content = (props) => {
                   color1={Colors.blue}
                   color2={Colors.blueDark}
                 />
-                <p style={{ color: "grey" }}>
-                  Best for Pre-Seed to <b>Seed Startups</b> <br />
-                  with <b>less than 100k ARR</b>.
-                </p>
               </PanelContent>
             </PricePanel>
             <PricePanel>
@@ -1411,24 +1447,34 @@ const Content = (props) => {
                 <PricePanelTitle>
                   <PanelEyebrow>Growth Stage Startup</PanelEyebrow>
                   10.000€
+                  <PriceComment style={{ color: "grey" }}>
+                    Best for <b>Seed to Series A Startups</b>
+                    <br /> with <b>less than 1M ARR</b>.
+                  </PriceComment>
                 </PricePanelTitle>
                 <PanelBody>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       <b>Two</b> 90-minute consulting sessions dicussing product
                       opportunitites, map user flows, and define “aha” moment.
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       Detailed Onboarding Audit assessing sign-up flow,
                       activation, metrics, and user feedback
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       End-to-end funnel design, basic segmentation, and
                       triggered user journeys
@@ -1436,7 +1482,9 @@ const Content = (props) => {
                   </PanelListItem>
 
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       Feedback service over ~1 months to ensure best practices
                       are implemented
@@ -1449,10 +1497,6 @@ const Content = (props) => {
                   color1={Colors.blue}
                   color2={Colors.blueDark}
                 />
-                <p style={{ color: "grey" }}>
-                  Best for <b>Seed to Series A Startups</b>
-                  <br /> with <b>less than 1M ARR</b>.
-                </p>
               </PanelContent>
             </PricePanel>
             <PricePanel>
@@ -1460,10 +1504,16 @@ const Content = (props) => {
                 <PricePanelTitle>
                   <PanelEyebrow>Scale Stage Startup</PanelEyebrow>
                   15.000€
+                  <PriceComment style={{ color: "grey" }}>
+                    Best for <b>Series A+ Startups</b> with{" "}
+                    <b>more than 1M ARR</b>.
+                  </PriceComment>
                 </PricePanelTitle>
                 <PanelBody>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       <b>Three</b> 90-minute consulting sessions dicussing
                       product opportunitites, map user flows, and define “aha”
@@ -1471,14 +1521,18 @@ const Content = (props) => {
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       Detailed Onboarding Audit assessing <b>persona based</b>{" "}
                       sign-up flow, activation, metrics, and user feedback
                     </PanelCopy>
                   </PanelListItem>
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       End-to-end funnel design, advanced segmentation, and
                       triggered user journeys
@@ -1486,7 +1540,9 @@ const Content = (props) => {
                   </PanelListItem>
 
                   <PanelListItem>
-                    <PriceBullet>✓</PriceBullet>
+                    <PriceBullet>
+                      <Check size={16} strokeWidth={2.5} />
+                    </PriceBullet>
                     <PanelCopy>
                       Feedback service over ~2 months to ensure best practices
                       are implemented
@@ -1499,9 +1555,6 @@ const Content = (props) => {
                   color1={Colors.blue}
                   color2={Colors.blueDark}
                 />
-                <p style={{ color: "grey" }}>
-                  Best for Series A+ Startups with more than 1M ARR.
-                </p>
               </PanelContent>
             </PricePanel>
           </PricePanels>
