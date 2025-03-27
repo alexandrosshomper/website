@@ -3,11 +3,138 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Devices, Colors } from "../DesignSystem";
 
-const LeadGenerationForm = ({ portalId, formId, size }) => {
+const FormHeadline = styled.h2`
+  font-size: 48px;
+  line-height: 1.0834933333;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  text-align: center;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const InputFields = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+const InputField = styled.input`
+  color: #1d1d1f;
+  border-color: #d2d2d7;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-overflow: ellipsis;
+
+  font-size: 17px;
+  line-height: 1.23536;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  width: 48%;
+  height: 3.29412rem;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  margin-bottom: 0.82353rem;
+  padding: 1.05882rem 0.94118rem 1.05882rem 0.94118rem;
+  text-align: left;
+  -moz-appearance: none;
+  appearance: none;
+`;
+
+const ButtonMedium = styled.button`
+  align-items: flex-start;
+  appearance: auto;
+  background-color: green;
+
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+
+  border-bottom-style: none;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+
+  border-bottom-width: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+
+  border-left-color: rgb(255, 255, 255);
+  border-right-color: rgb(255, 255, 255);
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255);
+
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  direction: ltr;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0px;
+  min-width: 51px;
+
+  overflow-x: visible;
+  overflow-y: visible;
+
+  padding: 16px 32px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 130%;
+
+  quotes: "“" "”";
+  text-align: center;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  text-transform: none;
+  vertical-align: baseline;
+
+  letter-spacing: -0.02em;
+
+  word-spacing: 0px;
+  writing-mode: horizontal-tb;
+  -webkit-font-smoothing: antialiased;
+  border-image: none;
+  -webkit-border-image: none;
+
+  text-decoration: none;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  &:visited {
+    text-decoration: none;
+  }
+`;
+
+const LeadGenerationForm = ({ portal, form, size }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
+
+  const handleName = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,8 +142,8 @@ const LeadGenerationForm = ({ portalId, formId, size }) => {
     setMessage(null);
 
     // Replace these with your HubSpot Portal ID and Form ID
-    const portalId = portalId;
-    const formId = formId;
+    const portalId = portal;
+    const formId = form;
 
     const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
@@ -104,127 +231,6 @@ const LeadGenerationForm = ({ portalId, formId, size }) => {
     ${Devices.laptopM} {
     }
   `;
-  const FormHeadline = styled.h2`
-    font-size: 48px;
-    line-height: 1.0834933333;
-    font-weight: 600;
-    letter-spacing: -0.003em;
-    text-align: center;
-  `;
-
-  const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-  `;
-
-  const InputFields = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  `;
-  const InputField = styled.input`
-    color: #1d1d1f;
-    border-color: #d2d2d7;
-    background-color: rgba(255, 255, 255, 0.8);
-    text-overflow: ellipsis;
-
-    font-size: 17px;
-    line-height: 1.23536;
-    font-weight: 400;
-    letter-spacing: -0.022em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-      "Arial", sans-serif;
-    width: 48%;
-    height: 3.29412rem;
-    border-radius: 12px;
-    border-width: 1px;
-    border-style: solid;
-    box-sizing: border-box;
-    margin-bottom: 0.82353rem;
-    padding: 1.05882rem 0.94118rem 1.05882rem 0.94118rem;
-    text-align: left;
-    -moz-appearance: none;
-    appearance: none;
-  `;
-
-  const ButtonMedium = styled.button`
-    align-items: flex-start;
-    appearance: auto;
-    background-color: green;
-
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
-
-    border-bottom-style: none;
-    border-top-style: none;
-    border-left-style: none;
-    border-right-style: none;
-
-    border-bottom-width: 0px;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-left-width: 0px;
-
-    border-image-outset: 0;
-    border-image-repeat: stretch;
-    border-image-slice: 100%;
-    border-image-source: none;
-    border-image-width: 1;
-
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
-
-    color: rgba(255, 255, 255, 1);
-    cursor: pointer;
-    direction: ltr;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-
-    margin: 0px;
-    min-width: 51px;
-
-    overflow-x: visible;
-    overflow-y: visible;
-
-    padding: 16px 32px;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 130%;
-
-    quotes: "“" "”";
-    text-align: center;
-    text-indent: 0px;
-    text-rendering: auto;
-    text-shadow: none;
-    text-size-adjust: 100%;
-    text-transform: none;
-    vertical-align: baseline;
-
-    letter-spacing: -0.02em;
-
-    word-spacing: 0px;
-    writing-mode: horizontal-tb;
-    -webkit-font-smoothing: antialiased;
-    border-image: none;
-    -webkit-border-image: none;
-
-    text-decoration: none;
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-    }
-    &:visited {
-      text-decoration: none;
-    }
-  `;
 
   return (
     <FormWrapper>
@@ -232,16 +238,15 @@ const LeadGenerationForm = ({ portalId, formId, size }) => {
       <Form onSubmit={handleSubmit}>
         <InputFields style={{ marginBottom: "10px" }}>
           <InputField
-            id="name"
+            key="name"
             type="text"
             placeholder="First Name*"
             value={name}
-            onChange={(e) => setName(e.target.value)}
             required
           />
 
           <InputField
-            id="email"
+            key="email"
             type="email"
             placeholder="Email*"
             value={email}
