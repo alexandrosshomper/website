@@ -42,7 +42,7 @@ const Navigation = (props) => {
       <Identity />
       {/*<Bio />*/}
       <CTA>
-        {/*<LandingpageMenu />*/}
+        <LandingpageMenu />
 
         <ButtonSmall
           href="https://calendar.app.google/qNqHiTZCN54GL2ij7"

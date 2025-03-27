@@ -1271,15 +1271,11 @@ const Content = (props) => {
               of your product
             </ProblemListItem>
           </MoveUpWhenVisible>
-          <MoveUpWhenVisible>
-            <ProblemListItem>
-              Users <ProblemHighlight>quickly lose interest</ProblemHighlight>{" "}
-              and stop using your product
-            </ProblemListItem>
-          </MoveUpWhenVisible>
         </ProblemList>
         <ProblemConclusion>
-          You have an user onboarding and activation problem, and we can help.
+          You have an user onboarding and activation problem.
+          <br />
+          It does not have to be like this and <b>we can help</b>.
         </ProblemConclusion>
       </Section>
       <Section>

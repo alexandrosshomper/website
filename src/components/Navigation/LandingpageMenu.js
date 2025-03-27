@@ -19,6 +19,8 @@ const LandingpageMenu = (props) => {
 
     margin-left: 24px;
 
+    text-decoration: none;
+
     font-weight: 400;
     color: ${Colors.primaryText.mediumEmphasis};
     &:hover {
@@ -30,7 +32,7 @@ const LandingpageMenu = (props) => {
   return (
     <LandingpageMenu className="Menu">
       <MenuItemSmall>Case Studies</MenuItemSmall>
-      <MenuItemSmall>White Papers</MenuItemSmall>
+      <MenuItemSmall href="/reports">Reports</MenuItemSmall>
     </LandingpageMenu>
   );
 };
