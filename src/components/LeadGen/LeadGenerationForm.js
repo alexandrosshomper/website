@@ -23,7 +23,7 @@ const InputFields = styled.div`
 `;
 const InputField = styled.input`
   color: #1d1d1f;
-  border-color: #d2d2d7;
+  border-color: ${({ isValid }) => (isValid === false ? "red" : "#d2d2d7")};
   background-color: rgba(255, 255, 255, 0.8);
   text-overflow: ellipsis;
 
@@ -49,7 +49,8 @@ const InputField = styled.input`
 const ButtonMedium = styled.button`
   align-items: flex-start;
   appearance: auto;
-  background-color: green;
+
+  background-color: ${({ disabled }) => (disabled ? "grey" : "green")};
 
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
@@ -78,7 +79,7 @@ const ButtonMedium = styled.button`
   border-bottom-color: rgb(255, 255, 255);
 
   color: rgba(255, 255, 255, 1);
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   direction: ltr;
   display: flex;
   flex-direction: row;
@@ -123,13 +124,74 @@ const ButtonMedium = styled.button`
   &:visited {
     text-decoration: none;
   }
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 14px;
+`;
+const FormWrapper = styled.div`
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
 
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  direction: ltr;
+
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  text-align: left;
+  text-decoration-thickness: auto;
+  text-size-adjust: 100%;
+
+  -webkit-box-direction: normal;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 90%;
+  ${Devices.tabletS} {
+    width: 564px;
+  }
+  ${Devices.tabletM} {
+    width: "708px";
+  }
+  ${Devices.laptopS} {
+    width: "740px";
+  }
+  ${Devices.laptopM} {
+  }
+`;
 const LeadGenerationForm = ({ portal, form, size }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    if (value && !validateEmail(value)) {
+      setEmailError("Please enter a valid email address.");
+    } else {
+      setEmailError(null);
+    }
+  };
 
   const handleName = (e) => {
     e.preventDefault();
@@ -138,10 +200,11 @@ const LeadGenerationForm = ({ portal, form, size }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (emailError) return; // Prevent submission if email is invalid
+
     setLoading(true);
     setMessage(null);
 
-    // Replace these with your HubSpot Portal ID and Form ID
     const portalId = portal;
     const formId = form;
 
@@ -169,6 +232,8 @@ const LeadGenerationForm = ({ portal, form, size }) => {
 
       if (response.ok) {
         setMessage("Success! Check your inbox for the document.");
+        setName("");
+        setEmail("");
       } else {
         setMessage("Something went wrong. Please try again.");
       }
@@ -177,60 +242,8 @@ const LeadGenerationForm = ({ portal, form, size }) => {
       setMessage("An error occurred. Please try again later.");
     } finally {
       setLoading(false);
-      setName("");
-      setEmail("");
     }
   };
-  const FormWrapper = styled.div`
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: white;
-
-    margin-top: 20px;
-    margin-bottom: 40px;
-
-    direction: ltr;
-
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-
-    overflow-x: hidden;
-    overflow-y: hidden;
-
-    text-align: left;
-    text-decoration-thickness: auto;
-    text-size-adjust: 100%;
-
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
-
-    max-width: 90%;
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: ${size === "L"
-        ? "80%"
-        : size === "M"
-        ? "708px"
-        : size === "S"
-        ? "564px"
-        : "80%"};
-    }
-    ${Devices.laptopS} {
-      width: ${size === "L"
-        ? "80%"
-        : size === "M"
-        ? "740px"
-        : size === "S"
-        ? "564px"
-        : "80%"};
-    }
-    ${Devices.laptopM} {
-    }
-  `;
 
   return (
     <FormWrapper>
@@ -238,22 +251,23 @@ const LeadGenerationForm = ({ portal, form, size }) => {
       <Form onSubmit={handleSubmit}>
         <InputFields style={{ marginBottom: "10px" }}>
           <InputField
-            key="name"
             type="text"
             placeholder="First Name*"
             value={name}
+            onChange={handleName}
             required
           />
-
           <InputField
-            key="email"
             type="email"
             placeholder="Email*"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
+            isValid={emailError === null}
             required
-          />
+          />{" "}
+          {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
         </InputFields>
+
         <ButtonMedium
           type="submit"
           disabled={loading}
