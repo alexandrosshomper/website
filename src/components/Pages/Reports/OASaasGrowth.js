@@ -279,7 +279,8 @@ const Content = (props) => {
               like CAC:CLV, NRR, and ARR.
             </CaseUnorderedListItem>
           </CaseUnorderedList>
-
+          <br />
+          <br />
           <CaseHeadlineThree headline={"Key Metrics You’ll Discover"} />
           <CaseUnorderedList>
             <CaseUnorderedListItem>
@@ -336,8 +337,8 @@ const Content = (props) => {
           />
 
           <LeadGenerationForm
-            platformId={"49351608"}
-            formId={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
+            portal={"49351608"}
+            form={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
             size={"M"}
           />
         </Paragraph>

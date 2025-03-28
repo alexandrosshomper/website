@@ -158,18 +158,18 @@ const Content = (props) => {
         <CaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="White Paper"
+              eyebrow="Report"
               eyebrowColor2="#231768"
               eyebrowColor1="#10d5f5"
               headline="Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth"
               copy="For early-stage and growth startup founders, retention is everything. But what if the key to higher retention and ARR isn’t just engagement or new features? Our latest whitepaper dives into why user onboarding and activation are the most powerful (and cost-effective) levers for boosting long-term retention and revenue. Discover how optimizing these critical stages can drastically reduce churn, increase customer lifetime value, and accelerate growth. Download the full report to uncover the strategies top SaaS companies use to turn new users into loyal, paying customers."
               imgURL="./img/Knauf/CoverKnaufTransformation.png"
-              link="reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
+              link="/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="White Paper"
+              eyebrow="Report"
               eyebrowColor2="#231768"
               eyebrowColor1="#10d5f5"
               headline="myKnauf: A global construction app platform"

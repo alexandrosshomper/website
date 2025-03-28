@@ -27,7 +27,7 @@ const InputFieldWrapper = styled.div`
   width: 48%;
   position: relative;
 
-  margin-bottom: 0;
+  padding-bottom: 40px;
 `;
 const InputField = styled.input`
   color: #1d1d1f;
@@ -144,6 +144,8 @@ const ButtonMedium = styled.button`
   }
 `;
 const ErrorMessage = styled.p`
+  position: absolute;
+  top: 56px;
   color: red;
   font-size: 12px;
   margin-top: 8px;
@@ -178,10 +180,10 @@ const FormWrapper = styled.div`
     width: 564px;
   }
   ${Devices.tabletM} {
-    width: "708px";
+    width: 708px;
   }
   ${Devices.laptopS} {
-    width: "740px";
+    width: 740px;
   }
   ${Devices.laptopM} {
   }
@@ -319,7 +321,7 @@ const LeadGenerationForm = ({ portal, form, size }) => {
           </InputFieldWrapper>
         </InputFields>
 
-        <ButtonMedium type="submit" disabled={buttonActive}>
+        <ButtonMedium type="submit" disabled={loading}>
           {loading ? "Submitting..." : "Submit"}
         </ButtonMedium>
       </Form>
