@@ -115,7 +115,7 @@ const ButtonMedium = styled.button`
   font-size: 17px;
   line-height: 130%;
 
-  quotes: "“" "”";
+  quotes: "" "";
   text-align: center;
   text-indent: 0px;
   text-rendering: auto;
@@ -188,7 +188,7 @@ const FormWrapper = styled.div`
   ${Devices.laptopM} {
   }
 `;
-const LeadGenerationForm = ({ portal, form, size }) => {
+const LeadGenerationForm = ({ portal, form, successLink }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -196,6 +196,7 @@ const LeadGenerationForm = ({ portal, form, size }) => {
   const [emailError, setEmailError] = useState(null);
   const [nameError, setNameError] = useState(null);
   const [buttonActive, setButtonActive] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -276,9 +277,10 @@ const LeadGenerationForm = ({ portal, form, size }) => {
       });
 
       if (response.ok) {
-        setMessage("Success! Check your inbox for the document.");
+        setMessage("Check your inbox for the document or dowload it below.");
         setName("");
         setEmail("");
+        setSuccess(true);
       } else {
         setMessage("Something went wrong. Please try again.");
       }
@@ -292,40 +294,56 @@ const LeadGenerationForm = ({ portal, form, size }) => {
 
   return (
     <FormWrapper>
-      <FormHeadline>Get your free copy of the report</FormHeadline>
-      <Form onSubmit={handleSubmit}>
-        <InputFields style={{ marginBottom: "10px" }}>
-          <InputFieldWrapper>
-            <InputField
-              type="text"
-              placeholder="First Name*"
-              value={name}
-              onChange={handleNameChange}
-              onBlur={handleNameBlur}
-              isValid={nameError === null}
-              required
-            />
-            {nameError && <ErrorMessage>{nameError}</ErrorMessage>}
-          </InputFieldWrapper>
-          <InputFieldWrapper>
-            <InputField
-              type="email"
-              placeholder="Email*"
-              value={email}
-              onChange={handleEmailChange}
-              onBlur={handleEmailBlur}
-              isValid={emailError === null}
-              required
-            />{" "}
-            {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
-          </InputFieldWrapper>
-        </InputFields>
+      {success ? (
+        <div>
+          <FormHeadline>Success!</FormHeadline>
+          <p>{message}</p>
+          <ButtonMedium
+            as="a"
+            href={successLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Begin Download
+          </ButtonMedium>
+        </div>
+      ) : (
+        <Form onSubmit={handleSubmit}>
+          <FormHeadline>Get your free copy of the report</FormHeadline>
 
-        <ButtonMedium type="submit" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
-        </ButtonMedium>
-      </Form>
-      {message && <p>{message}</p>}
+          <InputFields style={{ marginBottom: "10px" }}>
+            <InputFieldWrapper>
+              <InputField
+                type="text"
+                placeholder="First Name*"
+                value={name}
+                onChange={handleNameChange}
+                onBlur={handleNameBlur}
+                isValid={nameError === null}
+                required
+              />
+              {nameError && <ErrorMessage>{nameError}</ErrorMessage>}
+            </InputFieldWrapper>
+            <InputFieldWrapper>
+              <InputField
+                type="email"
+                placeholder="Email*"
+                value={email}
+                onChange={handleEmailChange}
+                onBlur={handleEmailBlur}
+                isValid={emailError === null}
+                required
+              />{" "}
+              {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
+            </InputFieldWrapper>
+          </InputFields>
+
+          <ButtonMedium type="submit" disabled={loading}>
+            {loading ? "Submitting..." : "Submit"}
+          </ButtonMedium>
+          {message && <p>{message}</p>}
+        </Form>
+      )}
     </FormWrapper>
   );
 };

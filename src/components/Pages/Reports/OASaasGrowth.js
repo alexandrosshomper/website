@@ -225,7 +225,7 @@ const Content = (props) => {
         </title>
         <description>
           For early-stage and growth startup founders, retention is everything.
-          But what if the key to higher retention and ARR isn’t just engagement
+          But what if the key to higher retention and ARR isn't just engagement
           or new features? Our latest whitepaper dives into why user onboarding
           and activation are the most powerful (and cost-effective) levers for
           boosting long-term retention and revenue. Discover how optimizing
@@ -254,7 +254,7 @@ const Content = (props) => {
         />
         <CaseCopy
           copy={
-            "For early-stage and growth startup founders, the path to sustainable growth isn’t just about acquiring new users – it's about keeping them. And the most powerful levers for improving retention and ARR? User Onboarding & Activation."
+            "For early-stage and growth startup founders, the path to sustainable growth isn't just about acquiring new users – it's about keeping them. And the most powerful levers for improving retention and ARR? User Onboarding & Activation."
           }
         />
         <br />
@@ -281,7 +281,7 @@ const Content = (props) => {
           </CaseUnorderedList>
           <br />
           <br />
-          <CaseHeadlineThree headline={"Key Metrics You’ll Discover"} />
+          <CaseHeadlineThree headline={"Key Metrics You'll Discover"} />
           <CaseUnorderedList>
             <CaseUnorderedListItem>
               Improving user onboarding can boost customer retention by up to
@@ -332,7 +332,7 @@ const Content = (props) => {
           <br />
           <CaseCopy
             copy={
-              "If you’re trying to turn new users into loyal, paying customers, this whitepaper is for you."
+              "If you're trying to turn new users into loyal, paying customers, this whitepaper is for you."
             }
           />
 
@@ -340,6 +340,7 @@ const Content = (props) => {
             portal={"49351608"}
             form={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
             size={"M"}
+            successLink="your-download-url-here"
           />
         </Paragraph>
       </Section>
