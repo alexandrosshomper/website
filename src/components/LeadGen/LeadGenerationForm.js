@@ -21,10 +21,20 @@ const InputFields = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+const InputFieldWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  position: relative;
+
+  margin-bottom: 0;
+`;
 const InputField = styled.input`
   color: #1d1d1f;
-  border-color: ${({ isValid }) => (isValid === false ? "red" : "#d2d2d7")};
-  background-color: rgba(255, 255, 255, 0.8);
+
+  border-color: ${({ isValid }) => (isValid === false ? "#e30000" : "#d2d2d7")};
+  background-color: ${({ isValid }) =>
+    isValid === false ? "#fff2f4" : "rgba(255, 255, 255, 0.8);"};
   text-overflow: ellipsis;
 
   font-size: 17px;
@@ -33,17 +43,22 @@ const InputField = styled.input`
   letter-spacing: -0.022em;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
-  width: 48%;
+  width: 100%;
   height: 3.29412rem;
   border-radius: 12px;
   border-width: 1px;
   border-style: solid;
   box-sizing: border-box;
-  margin-bottom: 0.82353rem;
+  margin-bottom: 0;
   padding: 1.05882rem 0.94118rem 1.05882rem 0.94118rem;
   text-align: left;
   -moz-appearance: none;
   appearance: none;
+  &:focus {
+    border-width: 2px;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 4px rgba(0, 125, 250, 0.6);
+  }
 `;
 
 const ButtonMedium = styled.button`
@@ -130,7 +145,8 @@ const ButtonMedium = styled.button`
 `;
 const ErrorMessage = styled.p`
   color: red;
-  font-size: 14px;
+  font-size: 12px;
+  margin-top: 8px;
 `;
 const FormWrapper = styled.div`
   margin: 0 auto;
@@ -176,6 +192,8 @@ const LeadGenerationForm = ({ portal, form, size }) => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const [emailError, setEmailError] = useState(null);
+  const [nameError, setNameError] = useState(null);
+  const [buttonActive, setButtonActive] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -185,17 +203,42 @@ const LeadGenerationForm = ({ portal, form, size }) => {
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
+  };
+  const handleEmailBlur = (e) => {
+    const value = e.target.value;
+    setEmail(value);
 
-    if (value && !validateEmail(value)) {
-      setEmailError("Please enter a valid email address.");
+    if (!value) {
+      setEmailError("Email address is a mandatory field.");
+    } else if (value && !validateEmail(value)) {
+      setEmailError("Enter a valid email address.");
     } else {
       setEmailError(null);
+      handleButtonActive();
     }
   };
 
-  const handleName = (e) => {
+  const handleNameChange = (e) => {
     e.preventDefault();
-    setName(e.target.value);
+    const value = e.target.value;
+    setName(value);
+  };
+  const handleNameBlur = (e) => {
+    e.preventDefault();
+    const value = e.target.value;
+    setName(value);
+    if (!value) {
+      setNameError("Name address is a mandatory field.");
+    } else {
+      setNameError(null);
+      handleButtonActive();
+    }
+  };
+
+  const handleButtonActive = async (e) => {
+    if (name && !nameError && email && !emailError && !loading) {
+      setButtonActive(true);
+    } else setButtonActive(false);
   };
 
   const handleSubmit = async (e) => {
@@ -250,32 +293,33 @@ const LeadGenerationForm = ({ portal, form, size }) => {
       <FormHeadline>Get your free copy of the report</FormHeadline>
       <Form onSubmit={handleSubmit}>
         <InputFields style={{ marginBottom: "10px" }}>
-          <InputField
-            type="text"
-            placeholder="First Name*"
-            value={name}
-            onChange={handleName}
-            required
-          />
-          <InputField
-            type="email"
-            placeholder="Email*"
-            value={email}
-            onChange={handleEmailChange}
-            isValid={emailError === null}
-            required
-          />{" "}
-          {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
+          <InputFieldWrapper>
+            <InputField
+              type="text"
+              placeholder="First Name*"
+              value={name}
+              onChange={handleNameChange}
+              onBlur={handleNameBlur}
+              isValid={nameError === null}
+              required
+            />
+            {nameError && <ErrorMessage>{nameError}</ErrorMessage>}
+          </InputFieldWrapper>
+          <InputFieldWrapper>
+            <InputField
+              type="email"
+              placeholder="Email*"
+              value={email}
+              onChange={handleEmailChange}
+              onBlur={handleEmailBlur}
+              isValid={emailError === null}
+              required
+            />{" "}
+            {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
+          </InputFieldWrapper>
         </InputFields>
 
-        <ButtonMedium
-          type="submit"
-          disabled={loading}
-          style={{
-            padding: "10px 20px",
-            cursor: loading ? "not-allowed" : "pointer",
-          }}
-        >
+        <ButtonMedium type="submit" disabled={buttonActive}>
           {loading ? "Submitting..." : "Submit"}
         </ButtonMedium>
       </Form>
