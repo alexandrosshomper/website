@@ -16,6 +16,8 @@ const LandingpageMenu = (props) => {
     top: -4px;
     padding-top: 1px;
     margin-right: 24px;
+    display: flex;
+    align-items: center;
   `;
   const MenuItemSmall = styled.div`
     font-family: "Roboto", sans-serif;
