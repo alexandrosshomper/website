@@ -20,6 +20,11 @@ const OASaasGrowth = lazy(() =>
   import("./components/Pages/Reports/OASaasGrowth.js")
 );
 
+//CASE STUDIES
+const CaseStudies = lazy(() =>
+  import("./components/Pages/CaseStudies/CaseStudies")
+);
+
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
   import("./components/Pages/Portfolio/KnaufExplorations")
@@ -84,14 +89,17 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/writing" component={Writing} />
+
+            {/*REPORTS*/}
             <Route exact path="/reports" component={Reports} />
             <Route
               exact
               path="/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
               component={OASaasGrowth}
             />
-            <Route exact path="/writing" component={Writing} />
-            <Route exact path="/profile" component={Profile} />
+            {/*CASE STUDIES*/}
+            <Route exact path="/case-studies" component={CaseStudies} />
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact
