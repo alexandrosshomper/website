@@ -27,7 +27,6 @@ const FourIndustryShifts = lazy(() =>
 const CaseStudies = lazy(() =>
   import("./components/Pages/CaseStudies/CaseStudies")
 );
-
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
   import("./components/Pages/Portfolio/KnaufExplorations")
@@ -39,9 +38,9 @@ const KnaufOrderOverview = lazy(() =>
   import("./components/Pages/Portfolio/KnaufOrderOverview")
 );
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
-const NFTAnalyzer = lazy(() =>
-  import("./components/Pages/NFTAnalyzer/NFTAnalyzer")
-);
+//GALLERY
+const Gallery = lazy(() => import("./components/Pages/Gallery/Gallery"));
+
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 const FeatheredHooks = lazy(() =>
   import("./components/Pages/SideProjects/FeatheredHooks")
@@ -121,9 +120,11 @@ function App() {
               component={KnaufOrderOverview}
             />
             <Route exact path="/myknauf" component={MyKnauf} />
+            {/*GALLERY*/}
+            <Route exact path="/gallery" component={Gallery} />
+
             <Route exact path="/feathered-hooks" component={FeatheredHooks} />
             <Route exact path="/heraklit" component={Heraklit} />
-            <Route exact path="/nftanalyzer" component={NFTAnalyzer} />
           </Switch>
           <Footer />
         </Suspense>
