@@ -163,7 +163,7 @@ const Content = (props) => {
               eyebrowColor1="#10d5f5"
               headline="Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth"
               copy="For early-stage and growth startup founders, retention is everything. But what if the key to higher retention and ARR isn’t just engagement or new features? Our latest whitepaper dives into why user onboarding and activation are the most powerful (and cost-effective) levers for boosting long-term retention and revenue. Discover how optimizing these critical stages can drastically reduce churn, increase customer lifetime value, and accelerate growth. Download the full report to uncover the strategies top SaaS companies use to turn new users into loyal, paying customers."
-              imgURL="./img/Knauf/CoverKnaufTransformation.png"
+              imgURL="./img/Reports/Cover – [Report] Why Onboarding & Activation are the ultimate levers for  SaaS Growth.png"
               link="/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
             />
           </FadeInWhenVisible>
@@ -172,10 +172,10 @@ const Content = (props) => {
               eyebrow="Report"
               eyebrowColor2="#231768"
               eyebrowColor1="#10d5f5"
-              headline="myKnauf: A global construction app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverMyKnauf.png"
-              link="/myKnauf"
+              headline="Four industry shifts making user onboarding & activation indispensible"
+              copy=""
+              imgURL="./img/Reports/Cover – [Report] Four industry shifts making User Onboarding & Activation indispensible.png"
+              link="/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
             />
           </FadeInWhenVisible>
         </CaseCardGrid>

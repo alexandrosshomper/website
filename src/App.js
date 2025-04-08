@@ -19,6 +19,9 @@ const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
 const OASaasGrowth = lazy(() =>
   import("./components/Pages/Reports/OASaasGrowth.js")
 );
+const FourIndustryShifts = lazy(() =>
+  import("./components/Pages/Reports/FourIndustryShifts.js")
+);
 
 //CASE STUDIES
 const CaseStudies = lazy(() =>
@@ -97,6 +100,11 @@ function App() {
               exact
               path="/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
               component={OASaasGrowth}
+            />
+            <Route
+              exact
+              path="/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
+              component={FourIndustryShifts}
             />
             {/*CASE STUDIES*/}
             <Route exact path="/case-studies" component={CaseStudies} />
