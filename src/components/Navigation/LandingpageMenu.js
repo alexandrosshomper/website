@@ -68,6 +68,20 @@ const LandingpageMenu = (props) => {
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
+          to={`/gallery`}
+          style={{
+            color:
+              currentPath === "/gallery"
+                ? Colors.primaryText.highEmphasis
+                : Colors.primaryText.mediumEmphasis,
+            textDecoration: "none",
+          }}
+        >
+          Gallery
+        </Link>
+      </MenuItemSmall>
+      <MenuItemSmall>
+        <Link
           to={`/writing`}
           style={{
             color:
