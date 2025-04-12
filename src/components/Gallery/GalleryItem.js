@@ -4,7 +4,7 @@ import React from "react";
 
 import { Colors, Devices } from "../DesignSystem";
 
-const GalleryItem = ({ title, desc, appLogo, coverImg, url }) => {
+const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
   const GalleryItem = styled.div`
     border-radius: 12px;
     width: 100%;
@@ -58,8 +58,6 @@ const GalleryItem = ({ title, desc, appLogo, coverImg, url }) => {
     background-color: white;
     border-radius: 22px;
 
-    height: 100%;
-
     direction: ltr;
     display: flex;
     flex-direction: column;
@@ -82,8 +80,9 @@ const GalleryItem = ({ title, desc, appLogo, coverImg, url }) => {
   const GalleryItemTitleContainer = styled.div`
     direction: ltr;
     display: flex;
-    flex-grow: 1;
-    flex-direction: column;
+    flex-grow: 0;
+    flex-direction: row;
+    gap: 12px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -102,7 +101,7 @@ const GalleryItem = ({ title, desc, appLogo, coverImg, url }) => {
   const GalleryItemTitle = styled.div`
     direction: ltr;
     display: flex;
-    flex-grow: 1;
+    flex-grow: 0;
     flex-direction: column;
 
     text-align: left;
@@ -154,10 +153,44 @@ const GalleryItem = ({ title, desc, appLogo, coverImg, url }) => {
 
   const GalleryCoverImage = styled.div`
     background-color: ${Colors.primaryText.lowEmphasis};
-    flex-grow: 2;
+    flex-grow: 0;
     direction: ltr;
     width: 100%;
-    height: 200px;
+    height: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    text-align: left;
+    text-decoration-thickness: auto;
+    text-size-adjust: 100%;
+
+    -webkit-box-direction: normal;
+    -webkit-font-smoothing: antialiased;
+
+    border-radius: 10px;
+
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+    }
+  `;
+  const GalleryItemLogo = styled.div`
+    background-color: ${Colors.primaryText.lowEmphasis};
+    flex-grow: 0;
+    flex-shrink: 0;
+    direction: ltr;
+    width: 40px;
+    height: 40px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -206,15 +239,20 @@ const GalleryItem = ({ title, desc, appLogo, coverImg, url }) => {
 
   return (
     <GalleryItem>
-      <GalleryItemLink href={url}>
+      <GalleryItemLink href={slug}>
         <GalleryItemContent>
           <GalleryCoverImage>
-            <Picture src={``} alt={""} />
+            <Picture src={thumbnail ? thumbnail : ""} alt={""} />
           </GalleryCoverImage>
           <GalleryItemTitleContainer>
+            <GalleryItemLogo>
+              <Picture src={logo ? logo : ""} alt={""} />
+            </GalleryItemLogo>
             <GalleryItemTitle>
-              <GalleryItemName>asana</GalleryItemName>
-              <GalleryItemDesc>Where work connects</GalleryItemDesc>
+              <GalleryItemName>{title ? title : "App Name"}</GalleryItemName>
+              <GalleryItemDesc>
+                {desc ? desc : "App Description"}
+              </GalleryItemDesc>
             </GalleryItemTitle>
           </GalleryItemTitleContainer>
         </GalleryItemContent>

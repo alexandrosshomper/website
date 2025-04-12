@@ -9,7 +9,9 @@ import { Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
+//GALLERY
 import GalleryList from "../../Gallery/GalleryList";
+import galleryData from "../../../data/gallery.json";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -158,7 +160,7 @@ Detailed use cases assessing the user onboarding & activation flows from differe
         </Panels>
       </Section>
       <Section>
-        <GalleryList />
+        <GalleryList data={galleryData} />
       </Section>
     </Content>
   );

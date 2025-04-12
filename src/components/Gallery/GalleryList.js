@@ -4,11 +4,11 @@ import GalleryItem from "./GalleryItem";
 
 import { Colors, Devices } from "../DesignSystem";
 
-const GalleryList = (props) => {
+const GalleryList = ({ data, filter }) => {
   const GalleryList = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: minmax(400px, auto);
+    grid-auto-rows: minmax(300px, auto);
     gap: 16px;
     width: 100%;
     padding: 24px;
@@ -32,13 +32,17 @@ const GalleryList = (props) => {
 
   return (
     <GalleryList>
-      <GalleryItem></GalleryItem>
-      <GalleryItem></GalleryItem>
-      <GalleryItem></GalleryItem>
-      <GalleryItem></GalleryItem>
-      <GalleryItem></GalleryItem>
-      <GalleryItem></GalleryItem>
-      <GalleryItem></GalleryItem>
+      {data.map((item) => (
+        <GalleryItem
+          key={item.id}
+          {...item}
+          title={item.name}
+          desc={item.desc}
+          logo={item.logo}
+          thumbnail={item.thumbnail}
+          slug={item.slug}
+        />
+      ))}
     </GalleryList>
   );
 };
