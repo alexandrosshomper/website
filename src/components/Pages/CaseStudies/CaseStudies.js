@@ -11,6 +11,9 @@ import SectionHead from "../../Content/Section/SectionHead";
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 
+import CaseStudySlider from "../../CaseStudySlider/CaseStudySlider";
+import asanaCaseStudy from "../../../data/casestudies/asanaCaseStudy.json";
+
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -155,6 +158,7 @@ Detailed use cases assessing the user onboarding & activation flows from differe
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
+          <CaseStudySlider slides={asanaCaseStudy} />
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "image": "/img/case_studies/asana/case_study-asana-01.jpeg",
+    "headline": "headline 1",
+    "caption": "Step 1: Landing page"
+  },
+  {
+    "id": 1,
+    "image": "/img/case_studies/asana/case_study-asana-02.jpeg",
+    "headline": "headline 2",
+    "caption": "Step 2: Signup form"
+  },
+  {
+    "id": 2,
+    "image": "/img/case_studies/asana/case_study-asana-03.jpeg",
+    "headline": "headline 3",
+    "caption": "Step 3: Welcome message"
+  }
+]
