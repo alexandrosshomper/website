@@ -80,7 +80,8 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
   const GalleryItemTitleContainer = styled.div`
     direction: ltr;
     display: flex;
-    flex-grow: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
     flex-direction: row;
     gap: 12px;
     list-style-image: none;
@@ -115,7 +116,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
   `;
   const GalleryItemName = styled.h3`
     color: rgba(0, 0, 0, 0.86);
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     direction: ltr;
 
     font-weight: 600;
@@ -135,6 +138,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
   `;
   const GalleryItemDesc = styled.p`
     color: ${Colors.primaryText.mediumEmphasis};
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     direction: ltr;
 
