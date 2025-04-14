@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../components/DesignSystem";
@@ -6,11 +6,26 @@ import { Colors, Devices } from "../../components/DesignSystem";
 import { mdiPlus, mdiClose } from "@mdi/js";
 
 import ButtonMedium from "../../components/Button/ButtonMedium";
-import { useState } from "react";
 
 const CaseStudySlider = ({ slides }) => {
+  const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight") {
+        goToNext();
+        sliderRef.current?.scrollIntoView({ behavior: "smooth" });
+      } else if (e.key === "ArrowLeft") {
+        goToPrev();
+        sliderRef.current?.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex]);
 
   const goToNext = () => {
     setLoading(true);
@@ -45,8 +60,19 @@ const CaseStudySlider = ({ slides }) => {
 
   const Container = styled.div`
     text-align: center;
-    width: 800px;
+    max-width: 740px;
     margin: 0 auto;
+    ${Devices.tabletS} {
+      width: 80%;
+    }
+    ${Devices.tabletM} {
+      width: 80%;
+    }
+    ${Devices.laptopS} {
+      width: 80%;
+    }
+    ${Devices.laptopM} {
+    }
   `;
 
   const ImageWrapper = styled.div`
@@ -116,7 +142,7 @@ const CaseStudySlider = ({ slides }) => {
   `;
 
   return (
-    <CaseStudySlider>
+    <CaseStudySlider ref={sliderRef}>
       <Container>
         <ImageWrapper>
           {loading && <Spinner />}
