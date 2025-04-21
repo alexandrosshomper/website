@@ -186,13 +186,16 @@ const Content = (props) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>myKnauf | Alexandros Shomper</title>
-        <description>
-          Digital Anthropologist. Experienced Product-, Service & Business
+        <meta
+          name="description"
+          content="Digital Anthropologist. Experienced Product-, Service & Business
           Designer with demonstrated track record of successfully developing
           meaningful experiences that people love by using emerging technology,
           solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
-        </description>
+          and interactions."
+        />
+        <description></description>
+        <title>Asana Case Study</title>
       </Helmet>
       <Section>
         <CaseTitleEyebrow

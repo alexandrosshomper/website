@@ -12,6 +12,18 @@ const CaseStudySlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  const preloadImage = (url) => {
+    const img = new window.Image();
+    img.src = url;
+    img.onload = () => {
+      // Optional: cache it or track if you want
+      console.log("Preloaded:", url);
+    };
+    img.onerror = () => {
+      console.warn("Failed to preload:", url);
+    };
+  };
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "ArrowRight") {
@@ -25,6 +37,18 @@ const CaseStudySlider = ({ slides }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    const nextIndex = currentIndex + 1;
+    const prevIndex = currentIndex - 1;
+
+    if (nextIndex < slides.length) {
+      preloadImage(slides[nextIndex].image);
+    }
+    if (prevIndex >= 0) {
+      preloadImage(slides[prevIndex].image);
+    }
   }, [currentIndex]);
 
   const goToNext = () => {
