@@ -159,13 +159,13 @@ Detailed use cases assessing the user onboarding & activation flows from differe
         <CaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="Deep Dive"
+              eyebrow="Case Study"
               eyebrowColor2="#231768"
               eyebrowColor1="#10d5f5"
-              headline="Product Analytics: How to analyze and define retention & engagement metrics for an app platform"
+              headline="Asana"
               copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
               imgURL="./img/Knauf/CoverProductAnalytics.png"
-              comingSoon="true"
+              link="/case-studies/asana"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>

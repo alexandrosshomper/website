@@ -14,7 +14,7 @@ const Wortmarke = (props) => {
     <Hülle href="/">
       <Wortmarke
         className="Wortmarke"
-        src="./img/Identity/Wortmarke/wortmarke.svg"
+        src="/img/Identity/Wortmarke/wortmarke.svg"
         alt="Alexandros Shomper Wortmarke"
         href="/"
       ></Wortmarke>
