@@ -109,9 +109,27 @@ const CaseStudySlider = ({ slides }) => {
       }
     }
   `;
+  const NavigationIndicator = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  `;
+  const TextGroup = styled.div`
+    display: flex;
+    flex-dricetion: row;
+    justify-content: center;
+    gap: 4px;
+  `;
+  const Headline = styled.h3`
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 500;
+  `;
   const Caption = styled.p`
-    font-style: italic;
-    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
   `;
 
   const Controls = styled.div`
@@ -136,7 +154,7 @@ const CaseStudySlider = ({ slides }) => {
   `;
 
   const SlideIndicator = styled.span`
-    font-size: 16px;
+    font-size: 14px;
     color: ${Colors.primaryText.mediumEmphasis};
     font-weight: 500;
   `;
@@ -152,16 +170,24 @@ const CaseStudySlider = ({ slides }) => {
             onLoad={() => setLoading(false)}
           />
         </ImageWrapper>
-        {slides[currentIndex].caption && (
-          <Caption>{slides[currentIndex].caption}</Caption>
-        )}
+
         <Controls>
           <NavButton onClick={goToPrev} disabled={currentIndex === 0}>
             Back
           </NavButton>
-          <SlideIndicator>
-            Slide {currentIndex + 1} of {slides.length}
-          </SlideIndicator>
+          <NavigationIndicator>
+            <TextGroup>
+              {slides[currentIndex].headline && (
+                <Headline>{slides[currentIndex].headline}</Headline>
+              )}
+              {slides[currentIndex].caption && (
+                <Caption>{slides[currentIndex].caption}</Caption>
+              )}
+            </TextGroup>
+            <SlideIndicator>
+              Slide {currentIndex + 1} of {slides.length}
+            </SlideIndicator>
+          </NavigationIndicator>
           <NavButton
             onClick={goToNext}
             disabled={currentIndex === slides.length - 1}
