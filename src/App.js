@@ -27,6 +27,9 @@ const FourIndustryShifts = lazy(() =>
 const CaseStudies = lazy(() =>
   import("./components/Pages/CaseStudies/CaseStudies")
 );
+const AsanaCaseStudy = lazy(() =>
+  import("./components/Pages/CaseStudies/AsanaCaseStudy")
+);
 
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
@@ -108,6 +111,13 @@ function App() {
             />
             {/*CASE STUDIES*/}
             <Route exact path="/case-studies" component={CaseStudies} />
+
+            <Route
+              exact
+              path="/case-studies/asana"
+              component={AsanaCaseStudy}
+            />
+
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact

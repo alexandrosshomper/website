@@ -45,6 +45,7 @@ const CaseStudySlider = ({ slides }) => {
     align-items: center;
     padding: 0px;
     margin-top: 20px;
+    margin-bottom: 40px;
 
     position: static;
     left: 0px;

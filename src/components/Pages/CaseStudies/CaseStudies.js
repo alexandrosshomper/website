@@ -11,9 +11,6 @@ import SectionHead from "../../Content/Section/SectionHead";
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 
-import CaseStudySlider from "../../CaseStudySlider/CaseStudySlider";
-import asanaCaseStudy from "../../../data/casestudies/asanaCaseStudy.json";
-
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -158,18 +155,17 @@ Detailed use cases assessing the user onboarding & activation flows from differe
               //imgURL="./img/PanelTestImages/one.jpg"
             />
           </FadeInWhenVisible>
-          <CaseStudySlider slides={asanaCaseStudy} />
         </Panels>
         <CaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="Deep Dive"
+              eyebrow="Case Study"
               eyebrowColor2="#231768"
               eyebrowColor1="#10d5f5"
-              headline="Product Analytics: How to analyze and define retention & engagement metrics for an app platform"
+              headline="Asana"
               copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
               imgURL="./img/Knauf/CoverProductAnalytics.png"
-              comingSoon="true"
+              link="/case-studies/asana"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>

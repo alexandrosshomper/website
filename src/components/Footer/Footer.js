@@ -187,19 +187,19 @@ const Footer = (props) => {
           <SocialBunch>
             <SocialLink href="https://www.linkedin.com/in/alexshomper/">
               <SocialIcon
-                src="./img/social/LinkedIn@2x.png"
+                src="/img/social/LinkedIn@2x.png"
                 alt="LinkedIn Profile of Alexandros Shomper"
               />
             </SocialLink>
             <SocialLink href="https://www.instagram.com/alexshomper">
               <SocialIcon
-                src="./img/social/Instagram@2x.png"
+                src="/img/social/Instagram@2x.png"
                 alt="Instagram Profile of Alexandros Shomper"
               />
             </SocialLink>
             <SocialLink href="https://open.spotify.com/user/1121938589">
               <SocialIcon
-                src="./img/social/Spotify@2x.png"
+                src="/img/social/Spotify@2x.png"
                 alt="Spotify Profile of Alexandros Shomper"
               />
             </SocialLink>
