@@ -99,7 +99,7 @@ const FlowCarousel = ({ data, appname }) => {
         <Titel>
           {appname} <Appendix>Onboarding & Activation Flow</Appendix>
         </Titel>
-        <Subline>{data.length}30 Screens</Subline>
+        <Subline>{data.length} Screens</Subline>
       </Text>
     </FlowCarousel>
   );

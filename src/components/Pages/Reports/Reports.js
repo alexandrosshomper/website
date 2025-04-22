@@ -133,7 +133,7 @@ const Content = (props) => {
     <Content>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>White Papers | Alexandros Shomper</title>
+        <title>Reports | Alexandros Shomper</title>
         <description>
           Digital Anthopologist. Experienced Product-, Service & Business
           Designer with demonstrated track record of successfully developing

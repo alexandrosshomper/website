@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { useInView } from "react-intersection-observer";
 
 import asanaFlow from "../../../data/flows/asana.json";
+import flows from "../../../data/flows/flows.json";
 
 // DESIGN SYSTEM
 import { Colors, Devices } from "../../DesignSystem";
@@ -67,22 +68,6 @@ function FadeInWhenVisible({ children }) {
 }
 
 const Content = (props) => {
-  const galleryItems = [
-    {
-      id: 1,
-      imgURL: "./img/Knauf/myKnaufProjectJourney.jpg",
-      imgMobileURL: "./img/Occhio/Personae-mobile.png",
-      headline: "Detailing the construction project journey",
-      copy: "We went back to the drawing board. A journey that has been created at the start of the projects, when we still aimed for separate offerings per customer type. This is not a customer journey. It covers the journey of all our customer types along the lifecycle of a construction project. Revising this journey helped us discover close interfaces between the apps, but also long gaps that could be filled. Also we could discover important handover moments between the customer types, but also where customer types repeatedly have to check into the project again.",
-    },
-    {
-      id: 2,
-      imgURL: "./img/Knauf/myKnaufProductsMicroServices.jpg",
-      imgMobileURL: "./img/Occhio/CustomerJourney-mobile.png",
-      headline: "Investigating the interfaces of the apps",
-      copy: "With that knowledge, we are able to at our apps with new eyes. What can be combined? What can be broken up? It is a difficult but also exciting opportunity to revise two years of work.",
-    },
-  ];
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -179,17 +164,38 @@ const Content = (props) => {
       width: 1140px;
     }
   `;
+  const Chips = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 90%;
 
-  const greenArrowStyle = {
-    color: Colors.green,
-    fontWeight: "bold",
-  };
-
+    ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+    }
+    ${Devices.laptopS} {
+      width: 740px;
+    }
+  `;
+  const Chip = styled.div`
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: ${Colors.primaryText.highEmphasis};
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 16px 8px 16px;
+    cursor: default;
+  `;
   return (
     <Content>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>myKnauf | Alexandros Shomper</title>
+        <title>Asana Flow | Alexandros Shomper</title>
         <meta
           name="description"
           content="Digital Anthropologist. Experienced Product-, Service & Business
@@ -199,55 +205,41 @@ const Content = (props) => {
           and interactions."
         />
         <description></description>
-        <title>Asana Case Study</title>
+        <title>Asana Flow</title>
       </Helmet>
       <Section>
-        <CaseTitleEyebrow
-          text={"Case Study"}
-          color1="#00b8d4"
-          color2="#62ebff"
-        />
-        <CaseTitle headline={"Asana – Onboarding and Activation"} />
-        <CaseSectionHead
-          subline={
-            "How positioning for teams & enterprise impacts your segmentation, setup, and plan selection"
-          }
-        />
+        <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
+        <CaseTitle headline={"Asana"} />
+        <CaseSectionHead subline={"Where work connects"} />
 
-        <CaseCopy
-          copy={
-            "In this case study we’ll take a look at asana’s onboarding and activation flow."
-          }
-        />
-        <CaseCopy
-          copy={
-            "While we’ve identified two use cases (Personal Task Management and Team Collaboration), the case study reveals a strong bias towards the team use case, occasionally at the expense of individual users."
-          }
-        />
-        <CaseCopy
-          copy={
-            "Asana has clearly positioned itself towards enterprise and team collaboration, which is reflected throughout their user onboarding journey. This strategic focus impacts everything from landing page messaging, signup, to activation metrics."
-          }
-        />
-        <CaseCopy copy={"Let’s take a look."} />
+        <Chips>
+          <Chip>Project Management</Chip>
+          <Chip>B2B</Chip>
+          <Chip>Freemium</Chip>
+        </Chips>
+        <br />
+        <br />
+        <br />
+        <FlowsCarousel data={asanaFlow} appname={"Asana"} />
         <br />
         <br />
         <br />
         <br />
-        <br />
-        {/* <Paragraph>
-          <CaseHeadlineThree headline={"At a glance"} />
-          <CaseUnorderedList>
-            <li>Digital Strategy</li>
-            <li>Information Architecture</li>
-            <li>Roadmap</li>
-            <li>Digital Branding</li>
-          </CaseUnorderedList>
-       </Paragraph>*/}
-
         <Paragraph>
-          <CaseSectionHead headline={"Audit Walkthrough"} />
-          <FlowsCarousel data={asanaFlow} appname={"Asana"} />
+          <CaseSectionHead headline={"Related Ressources"} />
+          <CaseCardGrid>
+            <FadeInWhenVisible>
+              <CaseCard
+                eyebrow="Case Study"
+                eyebrowColor2="#FFEAED"
+                eyebrowColor1="#FD594A"
+                headline="Asana – How positioning for teams & enterprise impacts your segmentation, setup, and plan selection"
+                copy=""
+                imgURL="/img/case_studies/asana/Cover@2x.png"
+                link="/case-studies/asana"
+              />
+            </FadeInWhenVisible>
+          </CaseCardGrid>
         </Paragraph>
       </Section>
     </Content>
