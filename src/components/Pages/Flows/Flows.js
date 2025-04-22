@@ -11,7 +11,7 @@ import SectionHead from "../../Content/Section/SectionHead";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 //GALLERY
 import GalleryList from "../../Gallery/GalleryList";
-import galleryData from "../../../data/gallery.json";
+import galleryData from "../../../data/flows/flows.json";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -146,7 +146,7 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <SectionHead
-          headline="Gallery"
+          headline="Flow Gallery"
           subline="A collection of user onboarding & activation flows from your favorite apps."
         />
         <Panels style={{ marginBottom: "48px" }}>

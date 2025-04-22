@@ -31,6 +31,11 @@ const AsanaCaseStudy = lazy(() =>
   import("./components/Pages/CaseStudies/AsanaCaseStudy")
 );
 
+//FLOW GALLERY
+const Flows = lazy(() => import("./components/Pages/Flows/Flows"));
+const AsanaFlow = lazy(() => import("./components/Pages/Flows/AsanaFlow"));
+
+//PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
   import("./components/Pages/Portfolio/KnaufExplorations")
@@ -42,8 +47,6 @@ const KnaufOrderOverview = lazy(() =>
   import("./components/Pages/Portfolio/KnaufOrderOverview")
 );
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
-//GALLERY
-const Gallery = lazy(() => import("./components/Pages/Gallery/Gallery"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 const FeatheredHooks = lazy(() =>
@@ -101,23 +104,25 @@ function App() {
             <Route exact path="/reports" component={Reports} />
             <Route
               exact
-              path="/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
+              path="/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
               component={OASaasGrowth}
             />
             <Route
               exact
-              path="/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
+              path="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
               component={FourIndustryShifts}
             />
             {/*CASE STUDIES*/}
             <Route exact path="/case-studies" component={CaseStudies} />
-
             <Route
               exact
               path="/case-studies/asana"
               component={AsanaCaseStudy}
             />
-
+            {/*CASE STUDIES*/}
+            <Route exact path="/flows" component={Flows} />
+            <Route exact path="/flows/asana" component={AsanaFlow} />
+            {/*PORTFOLIO*/}
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact
@@ -131,9 +136,6 @@ function App() {
               component={KnaufOrderOverview}
             />
             <Route exact path="/myknauf" component={MyKnauf} />
-            {/*GALLERY*/}
-            <Route exact path="/gallery" component={Gallery} />
-
             <Route exact path="/feathered-hooks" component={FeatheredHooks} />
             <Route exact path="/heraklit" component={Heraklit} />
           </Switch>

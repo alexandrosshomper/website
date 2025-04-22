@@ -1,5 +1,54 @@
 [
-  "/img/apps/asana/01-landing.png",
-  "/img/apps/asana/02-signup.png",
-  "/img/apps/asana/03-onboarding.png"
+  {
+    "image": "/img/flows/asana/00-landingpage.png",
+    "id": 0
+  },
+  {
+    "image": "/img/flows/asana/01-sign-up-account.png",
+    "id": 1
+  },
+  {
+    "image": "/img/flows/asana/02-sign-up-email-verification.png",
+    "id": 2
+  },
+  {
+    "image": "/img/flows/asana/03-sign-up-credentials.png",
+    "id": 3
+  },
+  {
+    "image": "/img/flows/asana/04-sign-up-segmentation.png",
+    "id": 4
+  },
+  {
+    "image": "/img/flows/asana/05-setup-project-name.png",
+    "id": 5
+  },
+  {
+    "image": "/img/flows/asana/06-setup-tasks.png",
+    "id": 6
+  },
+  {
+    "image": "/img/flows/asana/07-setup-states.png",
+    "id": 7
+  },
+  {
+    "image": "/img/flows/asana/08-setup-views.png",
+    "id": 8
+  },
+  {
+    "image": "/img/flows/asana/09-setup-team-mates.png",
+    "id": 9
+  },
+  {
+    "image": "/img/flows/asana/10-setup-success-popup.png",
+    "id": 10
+  },
+  {
+    "image": "/img/flows/asana/11-setup-success.png",
+    "id": 11
+  },
+  {
+    "image": "/img/flows/asana/12-first-screen.png",
+    "id": 12
+  }
 ]
