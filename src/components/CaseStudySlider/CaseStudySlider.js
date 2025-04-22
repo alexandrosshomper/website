@@ -79,8 +79,14 @@ const CaseStudySlider = ({ slides }) => {
     flex: none;
     order: 0;
     flex-grow: 0;
-
-    width: 100%;
+    width: 80%;
+    ${Devices.tabletS} {
+      width: 100%;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
   `;
 
   const Container = styled.div`
@@ -102,8 +108,17 @@ const CaseStudySlider = ({ slides }) => {
 
   const ImageWrapper = styled.div`
     min-width: 100%;
-    min-height: 500px;
+    min-height: 300px;
     margin-bottom: 10px;
+    ${Devices.tabletS} {
+      min-height: 500px;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+    }
   `;
 
   const Image = styled.img`

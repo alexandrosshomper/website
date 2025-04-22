@@ -17,7 +17,17 @@ const LandingpageMenu = (props) => {
     padding-top: 1px;
     margin-right: 24px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: left;
+    gap: 2px;
+    ${Devices.tabletS} {
+      flex-direction: row;
+      align-items: center;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
   `;
   const MenuItemSmall = styled.div`
     font-family: "Roboto", sans-serif;

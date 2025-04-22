@@ -44,15 +44,31 @@ const FlowCarousel = ({ data, appname, url }) => {
   const CarouselGrid = styled.div`
     display: flex;
     gap: 24px;
-    padding: 4px 330px 10px 330px;
+    padding: 4px 20px 10px 20px;
     width: min-content;
+    ${Devices.tabletS} {
+      padding: 4px 330px 10px 330px;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
   `;
   const Text = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0px;
     margin: 0px auto 0px auto;
-    width: 740px;
+    width: 90%;
+    ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+    }
+    ${Devices.laptopS} {
+      width: 740px;
+    }
   `;
   const Titel = styled.a`
     font-size: 20px;

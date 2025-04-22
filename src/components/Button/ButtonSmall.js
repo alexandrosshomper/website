@@ -59,6 +59,7 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
 
     margin: 0px;
     min-width: 51px;
+    height: fit-content;
 
     overflow-x: visible;
     overflow-y: visible;
