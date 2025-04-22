@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import FlowItem from "./FlowItem";
 
-const FlowCarousel = ({ data, appname }) => {
+const FlowCarousel = ({ data, appname, url }) => {
   const FlowCarousel = styled.div`
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@ const FlowCarousel = ({ data, appname }) => {
     margin: 0px auto 0px auto;
     width: 740px;
   `;
-  const Titel = styled.h3`
+  const Titel = styled.a`
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 0;
@@ -62,6 +62,7 @@ const FlowCarousel = ({ data, appname }) => {
     margin: 0;
     color: ${Colors.primaryText.highEmphasis};
     cursor: pointer;
+    text-decoration: none;
   `;
   const Appendix = styled.span`
     font-size: 20px;
@@ -96,7 +97,8 @@ const FlowCarousel = ({ data, appname }) => {
         </Carousel>
       </Scroller>
       <Text>
-        <Titel>
+        <Titel href="/flows/asana">
+          {" "}
           {appname} <Appendix>Onboarding & Activation Flow</Appendix>
         </Titel>
         <Subline>{data.length} Screens</Subline>

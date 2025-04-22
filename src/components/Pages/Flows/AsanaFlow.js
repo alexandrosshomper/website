@@ -28,7 +28,7 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import Drawer from "../../Content/Drawer/Drawer";
 
-import FlowsCarousel from "../../Content/FlowCarousel/FlowCarousel";
+import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -220,7 +220,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        <FlowsCarousel data={asanaFlow} appname={"Asana"} />
+        <FlowCarousel data={asanaFlow} appname={"Asana"} />
         <br />
         <br />
         <br />

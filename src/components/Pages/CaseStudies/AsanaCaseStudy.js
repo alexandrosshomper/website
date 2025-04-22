@@ -27,6 +27,9 @@ import Drawer from "../../Content/Drawer/Drawer";
 
 import BookAnAudit from "../../LeadGen/BookAnAudit";
 
+import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
+import asanaFlow from "../../../data/flows/asana.json";
+
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -413,6 +416,10 @@ const Content = (props) => {
             copy={"Activation heavily dependent on team participation"}
           />
           <br />
+        </Paragraph>
+        <Paragraph>
+          <CaseSectionHead headline={"Flow"} />{" "}
+          <FlowCarousel data={asanaFlow} appname={"Asana"} />{" "}
         </Paragraph>
         <Paragraph>
           <BookAnAudit />
