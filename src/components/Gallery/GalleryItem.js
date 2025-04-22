@@ -4,7 +4,7 @@ import React from "react";
 
 import { Colors, Devices } from "../DesignSystem";
 
-const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
+const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
   const GalleryItem = styled.div`
     border-radius: 12px;
     width: 100%;
@@ -13,6 +13,8 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    cursor: ${!comingSoon ?? "pointer"};
+    cursor: ${comingSoon && "wait"};
 
     ${Devices.tabletS} {
       width: 100%;
@@ -29,7 +31,8 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
   `;
 
   const GalleryItemLink = styled.a`
-    cursor: pointer;
+    cursor: ${!comingSoon ?? "pointer"};
+    cursor: ${comingSoon && "wait"};
     direction: ltr;
     display: block;
     height: 100%;
@@ -115,7 +118,8 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
     -webkit-font-smoothing: antialiased;
   `;
   const GalleryItemName = styled.h3`
-    color: rgba(0, 0, 0, 0.86);
+    color: ${!comingSoon ?? Colors.primaryText.highEmphasis};
+    color: ${comingSoon && Colors.primaryText.mediumEmphasis};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -225,6 +229,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
     }
   `;
   const Picture = styled.img`
+    opacity: ${comingSoon ? 0.3 : 1};
     direction: ltr;
     display: block;
     max-width: 100%;
@@ -242,12 +247,34 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug }) => {
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
   `;
+  const ComingSoon = styled.p`
+    z-index: 2;
+    direction: ltr;
+    display: block;
+    font-size: 36px;
+    color: ${Colors.textWhite.highEmphasis};
+    position: absolute;
+    top: 20%;
+
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+
+    text-align: center;
+    text-decoration-thickness: auto;
+    text-size-adjust: 100%;
+    width: 90%;
+    max-width: 100%;
+    -webkit-box-direction: normal;
+    -webkit-font-smoothing: antialiased;
+  `;
 
   return (
     <GalleryItem>
       <GalleryItemLink href={slug}>
         <GalleryItemContent>
           <GalleryCoverImage>
+            {comingSoon && <ComingSoon>Coming Soon</ComingSoon>}
             <Picture src={thumbnail ? thumbnail : ""} alt={""} />
           </GalleryCoverImage>
           <GalleryItemTitleContainer>

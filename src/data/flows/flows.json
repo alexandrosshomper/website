@@ -9,8 +9,8 @@
     "monetization": "Freemium",
     "hasSSO": true,
     "hasCaseStudy": true,
-    "logo": "/img/apps/asana/logo.png",
-    "thumbnail": "/img/apps/asana/00-landingpage.png",
+    "logo": "/img/flows/asana/logo.png",
+    "thumbnail": "/img/flows/asana/00-landingpage.png",
     "growthScore": 3,
     "landingpageScore": 2,
     "signupScore": 3,
@@ -26,12 +26,13 @@
     "monetization": "Freemium",
     "hasSSO": true,
     "hasCaseStudy": true,
-    "logo": "/img/apps/wrike/logo.png",
-    "thumbnail": "/img/apps/wrike/00-landingpage.png",
+    "logo": "/img/flows/wrike/logo.png",
+    "thumbnail": "/img/flows/wrike/00-landingpage.png",
     "growthScore": 2,
     "landingpageScore": 2,
     "signupScore": 2,
-    "ahaScore": 3
+    "ahaScore": 3,
+    "comingSoon": true
   },
   {
     "id": 3,
@@ -43,12 +44,13 @@
     "monetization": "Freemium",
     "hasSSO": true,
     "hasCaseStudy": true,
-    "logo": "/img/apps/linear/logo.png",
-    "thumbnail": "/img/apps/linear/00-landingpage.png",
+    "logo": "/img/flows/linear/logo.png",
+    "thumbnail": "/img/flows/linear/00-landingpage.png",
     "growthScore": 2,
     "landingpageScore": 2,
     "signupScore": 2,
-    "ahaScore": 3
+    "ahaScore": 3,
+    "comingSoon": true
   },
   {
     "id": 4,
@@ -60,11 +62,12 @@
     "monetization": "Freemium",
     "hasSSO": true,
     "hasCaseStudy": true,
-    "logo": "/img/apps/trello/logo.png",
-    "thumbnail": "/img/apps/trello/00-landingpage.png",
+    "logo": "/img/flows/trello/logo.png",
+    "thumbnail": "/img/flows/trello/00-landingpage.png",
     "growthScore": 2,
     "landingpageScore": 2,
     "signupScore": 2,
-    "ahaScore": 3
+    "ahaScore": 3,
+    "comingSoon": true
   }
 ]

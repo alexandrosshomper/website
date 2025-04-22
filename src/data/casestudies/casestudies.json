@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "slug": "casestudies/asana",
+    "name": "Asana",
+    "desc": "Where work connects",
+    "cover": "/img/casestudies/asana/cover.png",
+    "thumbnail": "/img/casestudies/asana/thumbnail.png"
+  },
+  {
+    "id": 2,
+    "slug": "casestudies/wrike",
+    "name": "Wrike",
+    "desc": "Where work connects",
+    "cover": "/img/casestudies/wrike/cover.png",
+    "thumbnail": "/img/casestudies/wrike/thumbnail.png"
+  },
+  {
+    "id": 3,
+    "slug": "casestudies/linear",
+    "name": "Linear",
+    "desc": "Where work connects",
+    "cover": "/img/casestudies/linear/cover.png",
+    "thumbnail": "/img/casestudies/linear/thumbnail.png"
+  },
+  {
+    "id": 4,
+    "slug": "casestudies/trello",
+    "name": "Trello",
+    "desc": "Where work connects",
+    "cover": "/img/casestudies/trello/cover.png",
+    "thumbnail": "/img/casestudies/trello/thumbnail.png"
+  }
+]

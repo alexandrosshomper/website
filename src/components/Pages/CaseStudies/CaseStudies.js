@@ -160,45 +160,45 @@ Detailed use cases assessing the user onboarding & activation flows from differe
           <FadeInWhenVisible>
             <CaseCard
               eyebrow="Case Study"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Asana"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverProductAnalytics.png"
+              eyebrowColor2="#FFEAED"
+              eyebrowColor1="#FD594A"
+              headline="Asana – How positioning for teams & enterprise impacts your segmentation, setup, and plan selection"
+              copy=""
+              imgURL="/img/case_studies/asana/Cover@2x.png"
               link="/case-studies/asana"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="User Acquisition: How to develop a marketing messaging framework for an app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverUserAcquisition.png"
+              eyebrow="Case Study"
+              eyebrowColor2="#6DFF6A"
+              eyebrowColor1="#07CE66"
+              headline="Wrike"
+              copy=""
+              imgURL="/img/case_studies/wrike/Cover@2x.png"
               comingSoon="true"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Signups: How to increase signups with user psychology and data analysis"
-              copy="Increasing signups for Knauf Account. Reducing signup friction by applying user psychology on registration flows."
-              imgURL="./img/Knauf/CoverSignup.png"
-              link="/knauf-account"
+              eyebrow="Case Study"
+              eyebrowColor2="#8BACFF"
+              eyebrowColor1="#5E6AD2"
+              headline="Linear"
+              copy=""
+              imgURL="/img/case_studies/linear/Cover@2x.png"
+              comingSoon="true"
             />
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="User Retention: How to increase user engagement & activation by analyzing featuer adoption"
-              copy="Increasing user engagement & activation for Knauf Digital's app. An unexpected finding: a neglected feature used by 7% of users, accounting for 20% of total traffic."
-              imgURL="./img/Knauf/CoverUserRetention.png"
-              link="/knauf-orderoverview"
+              eyebrow="Case Study"
+              eyebrowColor2="#9FD5FF"
+              eyebrowColor1="#126AE5"
+              headline="Trello"
+              copy=""
+              imgURL="/img/case_studies/trello/Cover@2x.png"
+              comingSoon="true"
             />
           </FadeInWhenVisible>
         </CaseCardGrid>

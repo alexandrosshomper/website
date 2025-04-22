@@ -41,6 +41,7 @@ const GalleryList = ({ data, filter }) => {
           logo={item.logo}
           thumbnail={item.thumbnail}
           slug={item.slug}
+          comingSoon={item.comingSoon}
         />
       ))}
     </GalleryList>

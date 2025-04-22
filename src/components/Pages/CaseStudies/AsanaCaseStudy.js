@@ -25,6 +25,8 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import Drawer from "../../Content/Drawer/Drawer";
 
+import BookAnAudit from "../../LeadGen/BookAnAudit";
+
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -209,7 +211,8 @@ const Content = (props) => {
             "How positioning for teams & enterprise impacts your segmentation, setup, and plan selection"
           }
         />
-        <CaseCover imgURL="./img/Knauf/OrderOverview.png" />
+
+        <CaseImage imgURL="/img/case_studies/asana/Cover@2x.png" size="M" />
         <br />
         <br />
         <br />
@@ -253,7 +256,78 @@ const Content = (props) => {
         <Paragraph>
           <CaseSectionHead
             headline={"Key Takeaways"}
-            subline={"Suiting the diverse needs of construction customer types"}
+            subline={
+              "While Asana offers a strong team-oriented setup with thorough segmentation, it provides little effort payoff for the user and misses personalization opportunities.⁠"
+            }
+          />{" "}
+          <CaseUnorderedList
+            style={{ marginBottom: "24px", listStyleType: "circle" }}
+          >
+            <li>
+              Strong team-oriented setup flow with emphasis on collaboration
+              features
+            </li>
+            <li>Complex but thorough segmentation process during onboarding</li>
+            <li>Activation heavily dependent on team participation</li>
+            <li>
+              Personal users may feel overwhelmed by enterprise-focused features
+            </li>
+          </CaseUnorderedList>
+        </Paragraph>
+        <Paragraph>
+          <CaseSectionHead
+            headline={"Onboarding Flow Evaluation"}
+            subline={
+              "The onboarding process shows both strengths and areas for improvement"
+            }
+          />{" "}
+          <CaseHeadlineThree headline={"Strengths"} />
+          <CaseUnorderedList>
+            <li>
+              <span style={greenArrowStyle}> 👍 </span>
+              Well-designed project setup with visual workspace representation
+            </li>
+            <li>
+              <span style={greenArrowStyle}> 👍 </span>
+              Strong targeting for team collaboration use case
+            </li>
+            <li>
+              <span style={greenArrowStyle}> 👍 </span>
+              Comprehensive feature introduction
+            </li>
+            <li>
+              <span style={greenArrowStyle}> 👍 </span>
+              Flexible trial period approach
+            </li>
+          </CaseUnorderedList>
+          <br />
+          <br />
+          <CaseHeadlineThree headline={"Areas for Improvement"} />
+          <CaseUnorderedList>
+            <li>
+              <span style={greenArrowStyle}>👎 </span>
+              Segmentation data not effectively utilized for personalization
+            </li>
+            <li>
+              <span style={greenArrowStyle}> 👎 </span>
+              Unclear messaging about trial period and feature availability
+            </li>
+            <li>
+              <span style={greenArrowStyle}> 👎 </span>
+              Complex first experience that may overwhelm new users
+            </li>
+            <li>
+              <span style={greenArrowStyle}> 👎 </span>
+              Limited support for personal use case activation
+            </li>
+          </CaseUnorderedList>
+        </Paragraph>
+        <Paragraph>
+          <CaseSectionHead
+            headline={"Recommendations"}
+            subline={
+              "Based on the audit findings, several opportunities for improvement exist"
+            }
           />{" "}
           <CaseHeadlineThree headline={"Landingpage"} />
           <CaseSublineTwo
@@ -302,144 +376,46 @@ const Content = (props) => {
               "But asana could also leverage it’s multi-positioning. It could use the Landingpage as a source for personalizing the onboarding flow. For example reiterating the usp for marketing on the first signup screen when the user came from the marketing Landingpage."
             }
           />
-          <CaseHeadlineThree headline={"Segmentation & Personalization"} />
-          <CaseSublineTwo
-            subline={
-              "Complex but thorough segmentation process during onboarding without much personalization payoff"
+          <CaseHeadlineThree headline={"Segmentation & Profiling"} />
+          <CaseCopy
+            copy={"Move certain profiling questions to post-commitment phase"}
+          />
+          <CaseHeadlineThree headline={"Personalization"} />
+          <CaseCopy
+            copy={
+              "Leverage segmentation data to offer personalized templates and experiences"
             }
           />
           <br />
           <CaseHeadlineThree headline={"Plan Selection"} />
-          <CaseSublineTwo
-            subline={
-              "Critical plan selection has been removed with intransparent freemium"
+          <CaseCopy
+            copy={
+              "Provide clearer communication about trial period and feature limitations"
+            }
+          />
+          <br />
+          <CaseHeadlineThree headline={"Persona & Product Markets Fit"} />
+          <CaseCopy
+            copy={
+              "Create a more streamlined experience for personal users while maintaining team functionality"
             }
           />
           <br />
           <CaseHeadlineThree headline={"First Experience"} />{" "}
-          <CaseSublineTwo
-            subline={
+          <CaseCopy
+            copy={
               "First screen is overloaded, Personal users may feel overwhelmed by enterprise-focused features"
             }
           />
           <br />
           <CaseHeadlineThree headline={"Activation"} />{" "}
-          <CaseSublineTwo
-            subline={"Activation heavily dependent on team participation"}
+          <CaseCopy
+            copy={"Activation heavily dependent on team participation"}
           />
           <br />
         </Paragraph>
         <Paragraph>
-          <CaseSectionHead
-            headline={"Recommendations & Experiments"}
-            subline={"Suiting the diverse needs of construction customer types"}
-          />
-
-          <CaseHeadlineThree
-            headline={"Experiment 1"}
-            color1="#00b8d4"
-            color2="#62ebff"
-          />
-          <CaseUnorderedList
-            style={{ marginBottom: "24px", listStyleType: "circle" }}
-          >
-            <li>
-              <b>Title:</b> Users experience inefficiencies when managing
-              projects across multiple applications or services, each with its
-              own interface and settings.
-            </li>
-            <li>
-              <b>Hypothesis:</b> Users involved in construction projects often
-              struggle with information silos, inefficient handoffs between
-              different phases and customer types, and a lack of a centralized
-              hub for project information.
-            </li>
-            <li>
-              <b>Measurement:</b> Users involved in construction projects often
-              struggle with information silos, inefficient handoffs between
-              different phases and customer types, and a lack of a centralized
-              hub for project information.
-            </li>
-            <li>
-              <b>Experiment Design:</b> Users involved in construction projects
-              often struggle with information silos, inefficient handoffs
-              between different phases and customer types, and a lack of a
-              centralized hub for project information.
-            </li>
-          </CaseUnorderedList>
-          <Drawer items={galleryItems} />
-        </Paragraph>
-
-        <Paragraph>
-          <CaseSectionHead headline={"Similar Case Studies"} />
-          <CaseCardGrid>
-            <FadeInWhenVisible>
-              <CaseCard
-                eyebrow="Case Study"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                headline="Knauf Digital Transformation & Business Design"
-                copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-                imgURL="./img/Knauf/CoverKnaufTransformation.png"
-                link="/knauf-explorations"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <CaseCard
-                eyebrow="Case Study"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                headline="myKnauf: Building a global construction app platform"
-                copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-                imgURL="./img/Knauf/CoverMyKnauf.png"
-                link="/myKnauf"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <CaseCard
-                eyebrow="Deep Dive"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                headline="Product Analytics: How to analyze and define retention & engagement metrics for an app platform"
-                copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-                imgURL="./img/Knauf/CoverProductAnalytics.png"
-                comingSoon="true"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <CaseCard
-                eyebrow="Deep Dive"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                headline="User Acquisition: How to develop a marketing messaging framework for an app platform"
-                copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-                imgURL="./img/Knauf/CoverUserAcquisition.png"
-                comingSoon="true"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <CaseCard
-                eyebrow="Deep Dive"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                headline="Signups: How to increase signups with user psychology and data analysis"
-                copy="Increasing signups for Knauf Account. Reducing signup friction by applying user psychology on registration flows."
-                imgURL="./img/Knauf/CoverSignup.png"
-                link="/knauf-account"
-              />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <CaseCard
-                eyebrow="Deep Dive"
-                eyebrowColor2="#231768"
-                eyebrowColor1="#10d5f5"
-                headline="User Retention: How to increase user engagement & activation by analyzing featuer adoption"
-                copy="Increasing user engagement & activation for Knauf Digital's app. An unexpected finding: a neglected feature used by 7% of users, accounting for 20% of total traffic."
-                imgURL="./img/Knauf/CoverUserRetention.png"
-                link="/knauf-orderoverview"
-              />
-            </FadeInWhenVisible>
-          </CaseCardGrid>
+          <BookAnAudit />
         </Paragraph>
       </Section>
     </Content>
