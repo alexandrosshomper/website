@@ -6,19 +6,77 @@ import { Devices, Colors } from "../DesignSystem";
 import ButtonMedium from "../Button/ButtonMedium";
 
 const Headline = styled.h2`
-  font-size: 48px;
-  line-height: 1.0834933333;
-  font-weight: 600;
-  letter-spacing: -0.003em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+
+  color: ${Colors.primaryText.highEmphasis};
+  margin-bottom: 8px;
+  margin-top: 0px;
+
+  font-size: 32px;
+  line-height: 109%;
   text-align: center;
+  ${Devices.tabletS} {
+    text-align: center;
+    width: 564px;
+  }
+  ${Devices.tabletM} {
+    width: 708px;
+
+    line-height: 114%;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+
+    font-size: 64px;
+    line-height: 131%;
+  }
+  ${Devices.laptopM} {
+    width: 1024px;
+
+    font-size: 80px;
+    line-height: 114%;
+  }
 `;
 const Subline = styled.p`
-  font-size: 36px;
-  line-height: 1.0834933333;
-  font-weight: 600;
-  letter-spacing: -0.003em;
-  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+
   color: ${Colors.primaryText.mediumEmphasis};
+  margin-bottom: 8px;
+  margin-top: 0px;
+
+  font-size: 16px;
+  line-height: 112%;
+  text-align: center;
+  width: 100%;
+
+  ${Devices.tabletS} {
+    font-size: 24px;
+
+    text-align: center;
+    width: 576px;
+  }
+  ${Devices.tabletM} {
+    width: 708px;
+
+    font-size: 24px;
+    line-height: 111%;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+
+    font-size: 32px;
+    line-height: 100%;
+  }
+  ${Devices.laptopM} {
+    width: 720px;
+
+    font-size: 24px;
+    line-height: 124%;
+  }
 `;
 const OnboardingGradient = styled.span`
   color: transparent;
@@ -44,8 +102,7 @@ const Wrapper = styled.div`
   border-radius: 20px;
   background-color: white;
 
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px 20px 40px 20px;
 
   direction: ltr;
 

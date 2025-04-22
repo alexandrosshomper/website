@@ -210,7 +210,7 @@ const Content = (props) => {
       <Section>
         <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
         <CaseTitle headline={"Asana"} />
-        <CaseSectionHead subline={"Where work connects"} />
+        <CaseSubline subline={"Where work connects"} />
 
         <Chips>
           <Chip>Project Management</Chip>
