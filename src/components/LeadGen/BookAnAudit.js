@@ -17,6 +17,8 @@ const Headline = styled.h2`
   font-size: 32px;
   line-height: 109%;
   text-align: center;
+  padding-top: 24px;
+  padding-bottom: 20px;
   ${Devices.tabletS} {
     text-align: center;
     width: 564px;
@@ -27,16 +29,10 @@ const Headline = styled.h2`
     line-height: 114%;
   }
   ${Devices.laptopS} {
-    width: 852px;
-
-    font-size: 64px;
-    line-height: 131%;
+    width: 80%;
+    font-size: 42px;
   }
-  ${Devices.laptopM} {
-    width: 1024px;
-
-    font-size: 80px;
-    line-height: 114%;
+  ${Devices.laptopL} {
   }
 `;
 const Subline = styled.p`
