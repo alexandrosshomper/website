@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useInView } from "react-intersection-observer";
 
-import asanaFlow from "../../../data/flows/asana.json";
+import flowData from "../../../data/flows/linear_flow.json";
 import flows from "../../../data/flows/flows.json";
 
 // DESIGN SYSTEM
@@ -195,22 +195,17 @@ const Content = (props) => {
     <Content>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Asana Onboarding Flow | Alexandros Shomper</title>
-        <meta
-          name="description"
-          content="Digital Anthropologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions."
-        />
+        <title>Linear Onboarding Flow | Alexandros Shomper</title>
+        <meta name="description" content="" />
         <description></description>
-        <title>Asana Onboarding Flow</title>
+        <title>Linear Onboarding Flow</title>
       </Helmet>
       <Section>
         <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
-        <CaseTitle headline={"Asana"} />
-        <CaseSubline subline={"Where work connects"} />
+        <CaseTitle headline={"Linear"} />
+        <CaseSubline
+          subline={"A purpouse-built tool for planning and building products"}
+        />
 
         <Chips>
           <Chip>Project Management</Chip>
@@ -220,7 +215,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        <FlowCarousel data={asanaFlow} appname={"Asana"} />
+        <FlowCarousel data={flowData} appname={"Linear"} />
         <br />
         <br />
         <br />

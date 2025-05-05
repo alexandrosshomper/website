@@ -36,7 +36,7 @@
   },
   {
     "id": 3,
-    "slug": "linear",
+    "slug": "flows/linear",
     "name": "Linear",
     "desc": "Linear is a purpose-built tool for planning and building products",
     "category": "Project Management",
@@ -49,8 +49,7 @@
     "growthScore": 2,
     "landingpageScore": 2,
     "signupScore": 2,
-    "ahaScore": 3,
-    "comingSoon": true
+    "ahaScore": 3
   },
   {
     "id": 4,

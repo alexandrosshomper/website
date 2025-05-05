@@ -34,6 +34,7 @@ const AsanaCaseStudy = lazy(() =>
 //FLOW GALLERY
 const Flows = lazy(() => import("./components/Pages/Flows/Flows"));
 const AsanaFlow = lazy(() => import("./components/Pages/Flows/AsanaFlow"));
+const LinearFlow = lazy(() => import("./components/Pages/Flows/LinearFlow"));
 
 //PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
@@ -119,9 +120,11 @@ function App() {
               path="/case-studies/asana"
               component={AsanaCaseStudy}
             />
-            {/*CASE STUDIES*/}
+            {/*FLOWS*/}
             <Route exact path="/flows" component={Flows} />
             <Route exact path="/flows/asana" component={AsanaFlow} />
+            <Route exact path="/flows/linear" component={LinearFlow} />
+
             {/*PORTFOLIO*/}
             <Route exact path="/occhio" component={Occhio} />
             <Route
