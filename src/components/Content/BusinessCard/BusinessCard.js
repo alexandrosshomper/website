@@ -16,7 +16,7 @@ const BusinessCard = ({ headline, copy }) => {
     padding: 0px;
 
     position: static;
-    margin: 0px 24px 80px 24px;
+    margin: 0px 24px 0px 24px;
     /* Inside Auto Layout */
 
     ${Devices.tabletS} {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../DesignSystem";
@@ -36,11 +36,10 @@ const Navigation = (props) => {
     justify-content: flex-end;
     padding-top: 4px;
   `;
-
   return (
     <Navigation>
       <Identity />
-      {/*<Bio />*/}
+
       <CTA>
         <LandingpageMenu />
 

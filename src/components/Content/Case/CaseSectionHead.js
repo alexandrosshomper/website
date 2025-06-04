@@ -76,13 +76,11 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
     }
   `;
   return (
-    <FadeInWhenVisible>
-      <CaseSectionHead>
-        {headline && <CaseHeadlineTwo headline={headline} />}
-        {subline && <CaseSubline subline={subline} />}
-        {/*{copy && <SectionCopy copy={copy} />}*/}
-      </CaseSectionHead>
-    </FadeInWhenVisible>
+    <CaseSectionHead>
+      {headline && <CaseHeadlineTwo headline={headline} />}
+      {subline && <CaseSubline subline={subline} />}
+      {/*{copy && <SectionCopy copy={copy} />}*/}
+    </CaseSectionHead>
   );
 };
 

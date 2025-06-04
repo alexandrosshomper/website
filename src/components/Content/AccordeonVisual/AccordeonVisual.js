@@ -11,8 +11,9 @@ const AccordeonVisual = ({}) => {
     flex-direction: column;
     gap: 0px;
     justify-content: space-between;
-    width: 100%;
+
     align-items: center;
+    margin: 0px 20px 0px 20px;
 
     ${Devices.tabletS} {
       width: 576px;
@@ -33,11 +34,12 @@ const AccordeonVisual = ({}) => {
   const Accordeon = styled.div`
     /* Auto Layout */
 
-    min-width: 352px;
-    max-width: 352px;
+    min-width: 320px;
+    max-width: 460px;
   `;
   const VisualWrapper = styled.div`
     max-width: 352px;
+
     ${Devices.tabletS} {
       max-width: none;
     }

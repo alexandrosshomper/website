@@ -1,10 +1,14 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import Spinner from "react-spinner-material";
 //import React from "react";
 import styled from "@emotion/styled";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Colors, Devices } from "../src/components/DesignSystem";
+
+//FUNCTIONS
 import ScrollToTop from "./functions/ScrollToTop";
+import NavigationSticky from "./components/Navigation/NavigationSticky.js";
+
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 //import Home from "./components/Pages/Home/Home";
@@ -19,12 +23,24 @@ const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
 const OASaasGrowth = lazy(() =>
   import("./components/Pages/Reports/OASaasGrowth.js")
 );
+const FourIndustryShifts = lazy(() =>
+  import("./components/Pages/Reports/FourIndustryShifts.js")
+);
 
 //CASE STUDIES
 const CaseStudies = lazy(() =>
   import("./components/Pages/CaseStudies/CaseStudies")
 );
+const AsanaCaseStudy = lazy(() =>
+  import("./components/Pages/CaseStudies/AsanaCaseStudy")
+);
 
+//FLOW GALLERY
+const Flows = lazy(() => import("./components/Pages/Flows/Flows"));
+const AsanaFlow = lazy(() => import("./components/Pages/Flows/AsanaFlow"));
+const LinearFlow = lazy(() => import("./components/Pages/Flows/LinearFlow"));
+
+//PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
 const KnaufExplorations = lazy(() =>
   import("./components/Pages/Portfolio/KnaufExplorations")
@@ -36,9 +52,7 @@ const KnaufOrderOverview = lazy(() =>
   import("./components/Pages/Portfolio/KnaufOrderOverview")
 );
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
-const NFTAnalyzer = lazy(() =>
-  import("./components/Pages/NFTAnalyzer/NFTAnalyzer")
-);
+
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 const FeatheredHooks = lazy(() =>
   import("./components/Pages/SideProjects/FeatheredHooks")
@@ -78,13 +92,30 @@ function App() {
       //width: 1140px;
     }
   `;
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.pageYOffset > 130) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
   return (
     <Router>
       <ScrollToTop />
       <App className="App">
         <Suspense fallback={renderLoader()}>
           <Navigation />
-          {/*<MiniNavigation />*/}
+          {isSticky && <NavigationSticky />}
+
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
@@ -95,11 +126,27 @@ function App() {
             <Route exact path="/reports" component={Reports} />
             <Route
               exact
-              path="/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
+              path="/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
               component={OASaasGrowth}
+            />
+            <Route
+              exact
+              path="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
+              component={FourIndustryShifts}
             />
             {/*CASE STUDIES*/}
             <Route exact path="/case-studies" component={CaseStudies} />
+            <Route
+              exact
+              path="/case-studies/asana"
+              component={AsanaCaseStudy}
+            />
+            {/*FLOWS*/}
+            <Route exact path="/flows" component={Flows} />
+            <Route exact path="/flows/asana" component={AsanaFlow} />
+            <Route exact path="/flows/linear" component={LinearFlow} />
+
+            {/*PORTFOLIO*/}
             <Route exact path="/occhio" component={Occhio} />
             <Route
               exact
@@ -115,7 +162,6 @@ function App() {
             <Route exact path="/myknauf" component={MyKnauf} />
             <Route exact path="/feathered-hooks" component={FeatheredHooks} />
             <Route exact path="/heraklit" component={Heraklit} />
-            <Route exact path="/nftanalyzer" component={NFTAnalyzer} />
           </Switch>
           <Footer />
         </Suspense>

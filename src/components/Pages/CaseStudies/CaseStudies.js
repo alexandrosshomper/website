@@ -78,25 +78,20 @@ const Content = (props) => {
     align-content: center;
     align-items: center;
     --gap: 24px;
-    margin-left: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
+    gap: var(--gap);
     ${Devices.tabletS} {
       width: 564px;
     }
     ${Devices.tabletM} {
+      margin: 0px 0px 0px 0px;
+
       width: 708px;
       flex-direction: row;
       align-items: center;
       justify-content: center;
     }
     ${Devices.laptopS} {
-      width: 852px;
+      width: 864px;
     }
     ${Devices.laptopM} {
       width: 1140px;
@@ -148,59 +143,52 @@ const Content = (props) => {
           subline="Studies on user onboarding & activation from various products."
         />
         <Panels style={{ marginBottom: "48px" }}>
-          <FadeInWhenVisible>
-            <CaseSectionSummary
-              copy="
+          <CaseSectionSummary
+            copy="
 Detailed use cases assessing the user onboarding & activation flows from different companies and products."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </FadeInWhenVisible>
+            //imgURL="./img/PanelTestImages/one.jpg"
+          />
         </Panels>
         <CaseCardGrid>
-          <FadeInWhenVisible>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Product Analytics: How to analyze and define retention & engagement metrics for an app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverProductAnalytics.png"
-              comingSoon="true"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="User Acquisition: How to develop a marketing messaging framework for an app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverUserAcquisition.png"
-              comingSoon="true"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Signups: How to increase signups with user psychology and data analysis"
-              copy="Increasing signups for Knauf Account. Reducing signup friction by applying user psychology on registration flows."
-              imgURL="./img/Knauf/CoverSignup.png"
-              link="/knauf-account"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="User Retention: How to increase user engagement & activation by analyzing featuer adoption"
-              copy="Increasing user engagement & activation for Knauf Digital's app. An unexpected finding: a neglected feature used by 7% of users, accounting for 20% of total traffic."
-              imgURL="./img/Knauf/CoverUserRetention.png"
-              link="/knauf-orderoverview"
-            />
-          </FadeInWhenVisible>
+          <CaseCard
+            eyebrow="Case Study"
+            eyebrowColor2="#FFEAED"
+            eyebrowColor1="#FD594A"
+            headline="Asana – How positioning for teams & enterprise impacts your segmentation, setup, and plan selection"
+            copy=""
+            imgURL="/img/case_studies/asana/Cover@2x.png"
+            link="/case-studies/asana"
+          />
+
+          <CaseCard
+            eyebrow="Case Study"
+            eyebrowColor2="#6DFF6A"
+            eyebrowColor1="#07CE66"
+            headline="Wrike"
+            copy=""
+            imgURL="/img/case_studies/wrike/Cover@2x.png"
+            comingSoon="true"
+          />
+
+          <CaseCard
+            eyebrow="Case Study"
+            eyebrowColor2="#8BACFF"
+            eyebrowColor1="#5E6AD2"
+            headline="Linear"
+            copy=""
+            imgURL="/img/case_studies/linear/Cover@2x.png"
+            comingSoon="true"
+          />
+
+          <CaseCard
+            eyebrow="Case Study"
+            eyebrowColor2="#9FD5FF"
+            eyebrowColor1="#126AE5"
+            headline="Trello"
+            copy=""
+            imgURL="/img/case_studies/trello/Cover@2x.png"
+            comingSoon="true"
+          />
         </CaseCardGrid>
       </Section>
     </Content>

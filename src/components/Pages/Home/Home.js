@@ -39,8 +39,12 @@ import {
   MousePointerClick,
   ChartNoAxesCombined,
   Check,
+  PanelsTopLeft,
+  FileText,
+  Presentation,
 } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
+import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -231,7 +235,6 @@ const Content = (props) => {
     margin-left: 12px;
 
     ${Devices.tabletS} {
-      flex-direction: row;
       width: 576px;
       margin-right: 0px;
       margin-left: 0px;
@@ -245,7 +248,6 @@ const Content = (props) => {
       width: 864px;
     }
     ${Devices.laptopM} {
-      gap: 40px;
       width: 1152px;
     }
   `;
@@ -396,10 +398,17 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 32px;
-    line-height: 109%;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.00028em;
+
     text-align: center;
     ${Devices.tabletS} {
+      font-size: 64px;
+      line-height: 1.0625;
+      font-weight: 700;
+      letter-spacing: -0.009em;
       text-align: center;
       width: 564px;
     }
@@ -492,8 +501,7 @@ const Content = (props) => {
     );
     -webkit-background-clip: text;
     background-clip: text;
-    margin-bottom: 8px;
-    margin-top: 0px;
+    margin: 0px 26px 8px 26px;
 
     padding-bottom: 80px;
 
@@ -542,25 +550,22 @@ const Content = (props) => {
       text-align: center;
       width: 576px;
       margin-bottom: 52px;
-      font-size: 32px;
+      font-size: 24px;
       line-height: 112%;
     }
     ${Devices.tabletM} {
       width: 708px;
-
-      font-size: 36px;
-      line-height: 111%;
     }
     ${Devices.laptopS} {
       width: 852px;
 
-      font-size: 48px;
+      font-size: 38px;
       line-height: 100%;
     }
     ${Devices.laptopM} {
       width: 1141px;
 
-      font-size: 60px;
+      font-size: 38px;
       line-height: 113%;
     }
   `;
@@ -571,9 +576,9 @@ const Content = (props) => {
     align-items: center;
     gap: 48px;
     padding-inline-start: 0px;
-    padding: 0 12px 0 12px;
+    margin: 0 26px 0 26px;
     ${Devices.tabletS} {
-      padding: 0 0 0 0;
+      margin: 0 80px 0 80px;
     }
   `;
   const ProblemListItem = styled.li`
@@ -586,20 +591,18 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 24px;
-    line-height: 109%;
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 700;
+    letter-spacing: 0.004em;
     text-align: center;
     ${Devices.tabletS} {
-      font-size: 44px;
-      line-height: 109%;
-      text-align: center;
-      width: 564px;
+      font-size: 32px;
+      line-height: 1.125;
+      font-weight: 700;
+      letter-spacing: 0.004em;
     }
     ${Devices.tabletM} {
-      width: 708px;
-
-      font-size: 44px;
-      line-height: 114%;
     }
     ${Devices.laptopS} {
       width: 852px;
@@ -643,14 +646,15 @@ const Content = (props) => {
     );
     -webkit-background-clip: text;
     background-clip: text;
-    margin-bottom: 8px;
-    margin-top: 0px;
 
-    padding-bottom: 80px;
+    margin: 0px 20px 8px 20px;
+
+    padding-bottom: 20px;
 
     font-size: 32px;
     line-height: 109%;
     text-align: center;
+
     ${Devices.tabletS} {
       font-size: 52px;
       text-align: center;
@@ -658,7 +662,6 @@ const Content = (props) => {
     }
     ${Devices.tabletM} {
       width: 708px;
-
       font-size: 64px;
       line-height: 114%;
     }
@@ -681,37 +684,35 @@ const Content = (props) => {
     font-style: normal;
 
     color: ${Colors.primaryText.mediumEmphasis};
-    margin-bottom: 36px;
-    margin-top: 0px;
+    margin: 0px 20px 32px 20px;
 
     font-size: 24px;
     line-height: 112%;
     text-align: center;
-    width: 100%;
 
     ${Devices.tabletS} {
       text-align: center;
       width: 576px;
       margin-bottom: 52px;
-      font-size: 32px;
+      font-size: 28px;
       line-height: 112%;
     }
     ${Devices.tabletM} {
       width: 708px;
 
-      font-size: 36px;
+      font-size: 32px;
       line-height: 111%;
     }
     ${Devices.laptopS} {
       width: 852px;
 
-      font-size: 48px;
+      font-size: 38px;
       line-height: 100%;
     }
     ${Devices.laptopM} {
       width: 1141px;
 
-      font-size: 60px;
+      font-size: 38px;
       line-height: 113%;
     }
   `;
@@ -1001,7 +1002,7 @@ const Content = (props) => {
     line-height: 130%;
 
     text-align: left;
-    color: ${Colors.primaryText.highEmphasis};
+    color: ${Colors.primaryText.lowEmphasis};
 
     margin-top: 10px;
     margin-bottom: 0px;
@@ -1020,7 +1021,10 @@ const Content = (props) => {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 30px 30px 42px 30px;
+    padding: 16px 10px 20px 10px;
+    ${Devices.laptopM} {
+      padding: 30px 30px 42px 30px;
+    }
   `;
   const PanelBody = styled.div`
     /* Auto Layout */
@@ -1176,14 +1180,12 @@ const Content = (props) => {
     ${Devices.tabletS} {
       text-align: center;
       width: 576px;
-      font-size: 60px;
+      font-size: 28px;
       line-height: 120%;
     }
     ${Devices.tabletM} {
       width: 720px;
 
-      font-size: 36px;
-      line-height: 111%;
       margin-bottom: 32px;
       margin-left: 0px;
       margin-right: 0px;
@@ -1218,20 +1220,14 @@ const Content = (props) => {
       <Section>
         <Hero>
           <HeroHeadline>
-            Unlock <OnboardingGradient>sustainable growth</OnboardingGradient>{" "}
-            by improving{" "}
-            <ExperienceGradient>
-              user onboarding & activation
-            </ExperienceGradient>
-            .
+            Let's <OnboardingGradient>fix</OnboardingGradient> your products bad{" "}
+            <ExperienceGradient>onboarding experience</ExperienceGradient>.
           </HeroHeadline>
           <HeroSubline>
-            My approach combines growth, UX, behavioral psychology, and
-            analytics to{" "}
-            <span style={{ color: "black" }}>
-              create long-term, compounding results
-            </span>
-            .
+            I'll help you{" "}
+            <span style={{ color: "black" }}>get more new users</span> and
+            <br /> make them{" "}
+            <span style={{ color: "black" }}>stick with your product</span>.
           </HeroSubline>
           <ButtonMedium
             href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
@@ -1241,9 +1237,14 @@ const Content = (props) => {
           />
         </Hero>
       </Section>
+      <Section>
+        <PricingCanvas />
+      </Section>
 
       <Section>
         <ProblemHeadline>
+          <span style={{ color: "black" }}>The Problem</span>
+          <br />
           Bad user onboarding and activation kills startups
         </ProblemHeadline>
         <ProblemSubline>Does this sound familiar?</ProblemSubline>
@@ -1271,54 +1272,38 @@ const Content = (props) => {
               of your product
             </ProblemListItem>
           </MoveUpWhenVisible>
+          <MoveUpWhenVisible>
+            <ProblemListItem>
+              Users <ProblemHighlight>are not upgarding</ProblemHighlight> their
+              plans
+            </ProblemListItem>
+          </MoveUpWhenVisible>
         </ProblemList>
-        <ProblemConclusion>
-          You have an user onboarding and activation problem.
-          <br />
-          It does not have to be like this and <b>we can help</b>.
-        </ProblemConclusion>
+        <ProblemConclusion>It doesn't have to be like this…</ProblemConclusion>
       </Section>
       <Section>
         <BusinessCard />
       </Section>
       <Section>
         <SolutionHeadline>
-          Good user onboarding and activation makes the winners.{" "}
+          <span style={{ color: "black" }}>Our Solution</span>
+          <br />
+          Book a 2–week sprint with us to fine-tune your products onboarding
+          experience{" "}
         </SolutionHeadline>
+        <SolutionSubline>
+          {" "}
+          Good user onboarding and activation makes the winners.{" "}
+        </SolutionSubline>
 
-        <SolutionSubline>Why you'll love working with us</SolutionSubline>
-
-        <Polaroids>
-          <IconHeadlineCopyCard
-            icon={<ChartNoAxesCombined size={46} strokeWidth={1.5} />}
-            headline="Sustainable Growth"
-            copy="Get more growth. User Onboarding & Activation generates more active users that retain longer–compunding month over month. This leads to: Higher longterm user retention. Less churn. More traction."
-          />
-          <IconHeadlineCopyCard
-            icon={<MousePointerClick size={46} strokeWidth={1.5} />}
-            headline="Engagement"
-            copy="Get more power users. User Onboarding & Activation generates more active users which build a habit around your product. This leads to: More engagement. More interactions. More features used."
-          />
-          <IconHeadlineCopyCard
-            icon={<HandCoins size={46} strokeWidth={1.5} />}
-            headline="Profitability"
-            copy="Get more revenue. User Onboarding & Activation generates more active users you can monetize and more plan upgrades. This leads to: More MRR & ARR. Lower CAC. Higher CLV."
-          />
-        </Polaroids>
-      </Section>
-      <Section>
-        <DeliverablesHeadline>How it works</DeliverablesHeadline>
-
-        <AccordeonVisual />
-      </Section>
-      <Section>
         <SolutionCards>
           <FadeInWhenVisible>
             <SolutionCard>
               <SolutionBody>
                 <SolutionParagraph>
                   <SolutionTitle>
-                    Audit your onboarding experience
+                    <span style={{ color: "black" }}>Step 1</span> Audit your
+                    onboarding experience
                   </SolutionTitle>
                   <SolutionCopy>
                     I'll analyze your current onboarding flow, user research,
@@ -1338,7 +1323,9 @@ const Content = (props) => {
               <SolutionBody>
                 <SolutionParagraph style={{ order: "2" }}>
                   <SolutionTitle>
-                    Design delightful user experiences
+                    {" "}
+                    <span style={{ color: "black" }}>Step 2</span> Design
+                    delightful user experiences
                   </SolutionTitle>
                   <SolutionCopy>
                     I'll craft an onboarding journey that{" "}
@@ -1364,7 +1351,9 @@ const Content = (props) => {
               <SolutionBodyMac>
                 <SolutionParagraph>
                   <SolutionTitle>
-                    Transform your onboarding with the new user journey
+                    {" "}
+                    <span style={{ color: "black" }}>Step 3</span> Transform
+                    your onboarding with the new user journey
                   </SolutionTitle>
                   <SolutionCopy>
                     I'll deliver wireframes and detailed recommendations for
@@ -1385,188 +1374,15 @@ const Content = (props) => {
           </FadeInWhenVisible>
         </SolutionCards>
       </Section>
-
       <Section>
-        <Headline2 headline="Onboarding Experience Development" />
-        <FadeInWhenVisible>
-          <PricePanels>
-            <PricePanel>
-              <PanelContent>
-                <PricePanelTitle>
-                  <PanelEyebrow>Early Stage Startup</PanelEyebrow>
-                  5.000€
-                  <PriceComment style={{ color: "grey" }}>
-                    Best for Pre-Seed to <b>Seed Startups</b> <br />
-                    with <b>less than 100k ARR</b>.
-                  </PriceComment>
-                </PricePanelTitle>
-                <PanelBody>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
+        <SolutionSubline>How it works</SolutionSubline>
 
-                    <PanelCopy>
-                      <b>One</b> consulting session to map user flows and define
-                      “aha” moment
-                    </PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      Immediate Action Plan with top 2–3 next steps for quick
-                      wins
-                    </PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      Wireframe & Messaging Essentials for critical onboarding
-                      journey
-                    </PanelCopy>
-                  </PanelListItem>
-                </PanelBody>
-                <ButtonMedium
-                  href="https://calendar.notion.so/meet/alexandros/0a6mz4m5q"
-                  text={"Work with me"}
-                  color1={Colors.blue}
-                  color2={Colors.blueDark}
-                />
-              </PanelContent>
-            </PricePanel>
-            <PricePanel>
-              <PanelContent>
-                <PricePanelTitle>
-                  <PanelEyebrow>Growth Stage Startup</PanelEyebrow>
-                  10.000€
-                  <PriceComment style={{ color: "grey" }}>
-                    Best for <b>Seed to Series A Startups</b>
-                    <br /> with <b>less than 1M ARR</b>.
-                  </PriceComment>
-                </PricePanelTitle>
-                <PanelBody>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      <b>Two</b> 90-minute consulting sessions dicussing product
-                      opportunitites, map user flows, and define “aha” moment.
-                    </PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      Detailed Onboarding Audit assessing sign-up flow,
-                      activation, metrics, and user feedback
-                    </PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      End-to-end funnel design, basic segmentation, and
-                      triggered user journeys
-                    </PanelCopy>
-                  </PanelListItem>
-
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      Feedback service over ~1 months to ensure best practices
-                      are implemented
-                    </PanelCopy>
-                  </PanelListItem>
-                </PanelBody>
-                <ButtonMedium
-                  href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-                  text={"Work with me"}
-                  color1={Colors.blue}
-                  color2={Colors.blueDark}
-                />
-              </PanelContent>
-            </PricePanel>
-            <PricePanel>
-              <PanelContent>
-                <PricePanelTitle>
-                  <PanelEyebrow>Scale Stage Startup</PanelEyebrow>
-                  15.000€
-                  <PriceComment style={{ color: "grey" }}>
-                    Best for <b>Series A+ Startups</b> with{" "}
-                    <b>more than 1M ARR</b>.
-                  </PriceComment>
-                </PricePanelTitle>
-                <PanelBody>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      <b>Three</b> 90-minute consulting sessions dicussing
-                      product opportunitites, map user flows, and define “aha”
-                      moment.
-                    </PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      Detailed Onboarding Audit assessing <b>persona based</b>{" "}
-                      sign-up flow, activation, metrics, and user feedback
-                    </PanelCopy>
-                  </PanelListItem>
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      End-to-end funnel design, advanced segmentation, and
-                      triggered user journeys
-                    </PanelCopy>
-                  </PanelListItem>
-
-                  <PanelListItem>
-                    <PriceBullet>
-                      <Check size={16} strokeWidth={2.5} />
-                    </PriceBullet>
-                    <PanelCopy>
-                      Feedback service over ~2 months to ensure best practices
-                      are implemented
-                    </PanelCopy>
-                  </PanelListItem>
-                </PanelBody>
-                <ButtonMedium
-                  href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-                  text={"Work with me"}
-                  color1={Colors.blue}
-                  color2={Colors.blueDark}
-                />
-              </PanelContent>
-            </PricePanel>
-          </PricePanels>
-        </FadeInWhenVisible>
+        <AccordeonVisual />
       </Section>
-      {/*<Section>
-        <DeliverablesHeadline>What you'll get</DeliverablesHeadline>
+      <Section>
+        <DeliverablesHeadline>Your Deliverables</DeliverablesHeadline>
 
         <Polaroids>
-          <IconHeadlineCopyCard
-            icon={<ChartNoAxesCombined size={46} strokeWidth={1.5} />}
-            headline="Consultation"
-            color1={Colors.blue}
-            color2={Colors.blueDark}
-            copy="Three consulting sessions throughout the project from kickoff to handover. We'll discuss requirements, constraints, goals, progress, recommendations, and much more…"
-          />
           <IconHeadlineCopyCard
             icon={<MousePointerClick size={46} strokeWidth={1.5} />}
             headline="Onboarding Journey Map"
@@ -1605,7 +1421,253 @@ const Content = (props) => {
             copy="A detailed executive summary of the audit, findings, and next steps. "
           />
         </Polaroids>
-      </Section>*/}
+      </Section>
+      <Section>
+        <SolutionSubline>Why you'll love working with us</SolutionSubline>
+
+        <Polaroids>
+          <IconHeadlineCopyCard
+            icon={<ChartNoAxesCombined size={46} strokeWidth={1.5} />}
+            headline="Sustainable Growth"
+            copy="Higher longterm user retention. Less churn. More traction."
+          />
+          <IconHeadlineCopyCard
+            icon={<MousePointerClick size={46} strokeWidth={1.5} />}
+            headline="Engagement"
+            copy="More engagement. More interactions. More features used."
+          />
+          <IconHeadlineCopyCard
+            icon={<HandCoins size={46} strokeWidth={1.5} />}
+            headline="Profitability"
+            copy="More MRR & ARR. Lower CAC. Higher CLV."
+          />
+        </Polaroids>
+      </Section>
+      <Section>
+        <Headline2 headline="Onboarding Development Sprint" />
+        <PricePanels>
+          <PricePanel>
+            <PanelContent>
+              <PricePanelTitle>
+                <PanelEyebrow>Early Stage Startup</PanelEyebrow>
+                5.000€
+                <PriceComment style={{ color: "grey" }}>
+                  Best for <b>Pre-Seed to Seed Startups</b> <br />
+                  with <b>less than 1M ARR</b>.
+                </PriceComment>
+              </PricePanelTitle>
+              <PanelBody>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+
+                  <PanelCopy>
+                    <b>One</b> consulting session to map user flows and define
+                    “aha” moment
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Immediate Action Plan with top 2–3 next steps for quick wins
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Wireframe & Messaging Essentials for critical onboarding
+                    journey
+                  </PanelCopy>
+                </PanelListItem>
+              </PanelBody>
+              <ButtonMedium
+                href="https://calendar.notion.so/meet/alexandros/0a6mz4m5q"
+                text={"Work with us"}
+                color1={Colors.blue}
+                color2={Colors.blueDark}
+              />
+            </PanelContent>
+          </PricePanel>
+
+          <PricePanel>
+            <PanelContent>
+              <PricePanelTitle>
+                <PanelEyebrow>Growth Stage Startup</PanelEyebrow>
+                10.000€
+                <PriceComment style={{ color: "grey" }}>
+                  Best for <b>Seed to Series A Startups</b>
+                  <br /> with <b> 1M – 5M ARR</b>.
+                </PriceComment>
+              </PricePanelTitle>
+              <PanelBody>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    <b>Two</b> 90-minute consulting sessions dicussing product
+                    opportunitites, map user flows, and define “aha” moment.
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Detailed Onboarding Audit assessing sign-up flow,
+                    activation, metrics, and user feedback
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    End-to-end funnel design, basic segmentation, and triggered
+                    user journeys
+                  </PanelCopy>
+                </PanelListItem>
+
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Feedback service over ~1 months to ensure best practices are
+                    implemented
+                  </PanelCopy>
+                </PanelListItem>
+              </PanelBody>
+              <ButtonMedium
+                href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                text={"Work with us"}
+                color1={Colors.blue}
+                color2={Colors.blueDark}
+              />
+            </PanelContent>
+          </PricePanel>
+
+          <PricePanel>
+            <PanelContent>
+              <PricePanelTitle>
+                <PanelEyebrow>Scale Stage Startup</PanelEyebrow>
+                15.000€
+                <PriceComment style={{ color: "grey" }}>
+                  Best for <b>Series A+ Startups</b> with <b>5M – 15M ARR</b>.
+                </PriceComment>
+              </PricePanelTitle>
+              <PanelBody>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    <b>Three</b> 90-minute consulting sessions dicussing product
+                    opportunitites, map user flows, and define “aha” moment.
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Detailed Onboarding Audit assessing <b>persona based</b>{" "}
+                    sign-up flow, activation, metrics, and user feedback
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    End-to-end funnel design, advanced segmentation, and
+                    triggered user journeys
+                  </PanelCopy>
+                </PanelListItem>
+
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Feedback service over ~2 months to ensure best practices are
+                    implemented
+                  </PanelCopy>
+                </PanelListItem>
+              </PanelBody>
+              <ButtonMedium
+                href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                text={"Work with us"}
+                color1={Colors.blue}
+                color2={Colors.blueDark}
+              />
+            </PanelContent>
+          </PricePanel>
+
+          <PricePanel>
+            <PanelContent>
+              <PricePanelTitle>
+                <PanelEyebrow>Mature Startup</PanelEyebrow>
+                25.000€
+                <PriceComment style={{ color: "grey" }}>
+                  Best for <b>Series A+ Startups</b> with <b>+15M ARR</b>.
+                </PriceComment>
+              </PricePanelTitle>
+              <PanelBody>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    <b>Three</b> 90-minute consulting sessions dicussing product
+                    opportunitites, map user flows, and define “aha” moment.
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Detailed Onboarding Audit assessing <b>persona based</b>{" "}
+                    sign-up flow, activation, metrics, and user feedback
+                  </PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    End-to-end funnel design, advanced segmentation, and
+                    triggered user journeys
+                  </PanelCopy>
+                </PanelListItem>
+
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>
+                    Feedback service over ~2 months to ensure best practices are
+                    implemented
+                  </PanelCopy>
+                </PanelListItem>
+              </PanelBody>
+              <ButtonMedium
+                href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                text={"Work with us"}
+                color1={Colors.blue}
+                color2={Colors.blueDark}
+              />
+            </PanelContent>
+          </PricePanel>
+        </PricePanels>
+      </Section>
+
       <Section>
         <Headline2 headline="Questions? Answers." />
 
@@ -1654,7 +1716,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroHeadline>
           <HeroSubline>
             Struggling to activate and retain users? <br />
-            <br /> We help you create an onboarding experience that
+            <br /> We help you create an onboarding experience that{" "}
             <span style={{ color: "black" }}>
               keeps users engaged longer
             </span>{" "}
