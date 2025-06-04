@@ -95,7 +95,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 20px;
   padding-bottom: 40px;
-  border-radius: 20px;
+  border-radius: 0.38rem;
   background-color: white;
 
   margin: 20px 20px 40px 20px;

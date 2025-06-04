@@ -36,7 +36,7 @@ const IconHeadlineCopyCard = ({ headline, color1, color2, copy, icon }) => {
   const IconHeadlineCopyCard = styled.div`
     text-align: left;
 
-    border-radius: 30px;
+    border-radius: 0.38rem;
 
     margin-bottom: 12px;
     width: 100%;

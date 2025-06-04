@@ -799,7 +799,7 @@ const Content = (props) => {
     padding-inline-start: 0px;
   `;
   const SolutionCard = styled.div`
-    border-radius: 30px;
+    border-radius: 0.38rem;
     margin-bottom: 12px;
     float: left;
     background-color: ${Colors.back};
@@ -978,7 +978,7 @@ const Content = (props) => {
   const PricePanel = styled.div`
     display: flex;
 
-    border-radius: 20px;
+    border-radius: 0.38rem;
 
     margin-bottom: 12px;
     width: 100%;

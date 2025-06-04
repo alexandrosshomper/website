@@ -64,7 +64,7 @@ const BusinessCard = ({ headline, copy }) => {
     min-width: 0;
     max-width: none;
 
-    border-radius: 20px;
+    border-radius: 0.38rem;
 
     color: transparent;
     background-color: black;
@@ -79,8 +79,6 @@ const BusinessCard = ({ headline, copy }) => {
       height: 441px;
     }
     ${Devices.laptopM} {
-      border-radius: 40px;
-
       width: 493px;
       height: 634px;
     }

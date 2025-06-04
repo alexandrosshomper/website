@@ -57,15 +57,13 @@ const AccordeonVisual = ({}) => {
     width: 100%;
     min-width: 0;
     max-width: none;
-    border-radius: 12px;
+    border-radius: 0.38rem;
 
     ${Devices.tabletS} {
-      border-radius: 20px;
     }
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
-      border-radius: 30px;
     }
     ${Devices.laptopM} {
     }

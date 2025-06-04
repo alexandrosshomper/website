@@ -32,7 +32,7 @@ const CaseImage = ({ imgURL, alt, color1, color2, size }) => {
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
 
-    border-radius: 10px;
+    border-radius: 0.38rem;
 
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
     max-width: 90%;

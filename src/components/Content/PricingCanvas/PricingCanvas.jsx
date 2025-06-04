@@ -5,7 +5,7 @@ import { Devices, Colors } from "../../DesignSystem";
 import { Check } from "lucide-react";
 const PricingCanvas = () => {
   const PricingCanvas = styled.div`
-    border-radius: 30px;
+    border-radius: 0.38rem;
     margin-bottom: 12px;
     background-color: ${Colors.back};
 
@@ -40,6 +40,7 @@ const PricingCanvas = () => {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 2rem;
+    border-right: 1px solid ${Colors.text.lowEmphasis};
   `;
   const PricingCanvasBody = styled.div`
     display: flex;
@@ -48,6 +49,7 @@ const PricingCanvas = () => {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 2rem;
+    border-right: 1px solid ${Colors.text.lowEmphasis};
   `;
   const PricingCanvasPricetable = styled.div`
     display: flex;
