@@ -68,7 +68,7 @@ const MiniNavigation = (props) => {
   const Logo = styled.div`
     width: 60px;
     height: 60px;
-    background-image: url("/img/Identity/Logo/alexandros shomper logo@2x.png");
+    background-image: url("./img/Identity/Logo/alexandros shomper logo@2x.png");
     background-size: contain;
     box-shadow: 0px 1px 0.1em black, 0 2px 0.2em black;
     border-radius: 60px;

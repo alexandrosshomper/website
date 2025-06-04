@@ -6,19 +6,19 @@ const Wortmarke = (props) => {
     width: 60.98px;
     height: 28.44px;
   `;
-  const Wrapper = styled.a`
+  const Hülle = styled.a`
     width: 60.98px;
   `;
 
   return (
-    <Wrapper href="/">
+    <Hülle href="/">
       <Wortmarke
         className="Wortmarke"
-        src="/img/Identity/Wortmarke/wortmarke.svg"
+        src="./img/Identity/Wortmarke/wortmarke.svg"
         alt="Alexandros Shomper Wortmarke"
         href="/"
       ></Wortmarke>
-    </Wrapper>
+    </Hülle>
   );
 };
 

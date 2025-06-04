@@ -17,7 +17,7 @@ const IdentitySmall = (props) => {
   const Logo = styled.div`
     width: 33px;
     height: 33px;
-    background-image: url("/img/Identity/Logo/alexandros shomper logo@2x.png");
+    background-image: url("./img/Identity/Logo/alexandros shomper logo@2x.png");
     background-size: contain;
     box-shadow: 0px 1px 0.1em black, 0 2px 0.2em black;
     border-radius: 30px;

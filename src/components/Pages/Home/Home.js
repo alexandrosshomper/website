@@ -1654,7 +1654,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroHeadline>
           <HeroSubline>
             Struggling to activate and retain users? <br />
-            <br /> We help you create an onboarding experience that{" "}
+            <br /> We help you create an onboarding experience that
             <span style={{ color: "black" }}>
               keeps users engaged longer
             </span>{" "}

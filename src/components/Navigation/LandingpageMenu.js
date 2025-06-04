@@ -17,17 +17,7 @@ const LandingpageMenu = (props) => {
     padding-top: 1px;
     margin-right: 24px;
     display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 2px;
-    ${Devices.tabletS} {
-      flex-direction: row;
-      align-items: center;
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
+    align-items: center;
   `;
   const MenuItemSmall = styled.div`
     font-family: "Roboto", sans-serif;
@@ -74,20 +64,6 @@ const LandingpageMenu = (props) => {
           }}
         >
           Reports
-        </Link>
-      </MenuItemSmall>
-      <MenuItemSmall>
-        <Link
-          to={`/flows`}
-          style={{
-            color:
-              currentPath === "/flows"
-                ? Colors.primaryText.highEmphasis
-                : Colors.primaryText.mediumEmphasis,
-            textDecoration: "none",
-          }}
-        >
-          Flow Gallery
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>
