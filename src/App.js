@@ -8,6 +8,7 @@ import { Colors, Devices } from "../src/components/DesignSystem";
 //FUNCTIONS
 import ScrollToTop from "./functions/ScrollToTop";
 import NavigationSticky from "./components/Navigation/NavigationSticky.js";
+import NavigationMenuMobile from "./components/Navigation/NavigationMenuMobile.js";
 
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));

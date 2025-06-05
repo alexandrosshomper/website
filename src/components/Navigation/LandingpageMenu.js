@@ -16,13 +16,18 @@ const LandingpageMenu = (props) => {
     top: -4px;
     padding-top: 1px;
     margin-right: 24px;
-    display: flex;
     flex-direction: column;
     align-items: left;
     gap: 2px;
+    visibility: hidden;
+    display: none;
     ${Devices.tabletS} {
+      display: flex;
+
       flex-direction: row;
       align-items: center;
+
+      visibility: visible;
     }
     ${Devices.tabletM} {
     }

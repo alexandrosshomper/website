@@ -196,6 +196,10 @@ const CaseStudySlider = ({ slides }) => {
     border-radius: 1px;
     position: relative;
     margin-top: 8px;
+    display: none;
+    ${Devices.tabletS} {
+      display: block;
+    }
   `;
 
   const ProgressFill = styled.div`
