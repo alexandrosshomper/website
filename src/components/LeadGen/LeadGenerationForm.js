@@ -151,13 +151,10 @@ const ErrorMessage = styled.p`
   margin-top: 8px;
 `;
 const FormWrapper = styled.div`
-  margin: 0 auto;
+  margin: 20px 20px 40px 20px;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 0.38rem;
   background-color: white;
-
-  margin-top: 20px;
-  margin-bottom: 40px;
 
   direction: ltr;
 

@@ -11,8 +11,24 @@ import { X, Menu } from "lucide-react";
 const Navigation = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [pageLoaded, setPageLoaded] = useState(false);
+
   const [menuOpen, setMenuOpen] = useState(false);
 
+  //PAGE RELOAD LOGIC
+  useEffect(() => {
+    // Perform actions when the route changes
+    console.log("New page loaded:", location.pathname);
+    setPageLoaded(true); // Set a flag indicating the page has loaded
+    setMenuOpen(false);
+
+    // Cleanup function to run when the component unmounts
+    return () => {
+      console.log("Component is unmounting");
+    };
+  }, [location]); // Dependency array includes location to trigger effect on route changes
+
+  //MENU OPEN LOGIC
   const menuButtonClick = (e) => {
     console.log("menuButtonClick 1");
 

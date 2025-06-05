@@ -103,7 +103,7 @@ function App() {
   }, []);
 
   const handleScroll = () => {
-    if (window.pageYOffset > 130) {
+    if (window.pageYOffset > 152) {
       setIsSticky(true);
     } else {
       setIsSticky(false);

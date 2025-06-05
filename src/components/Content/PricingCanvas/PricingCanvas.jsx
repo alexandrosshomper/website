@@ -40,7 +40,11 @@ const PricingCanvas = () => {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 2rem;
-    border-right: 1px solid ${Colors.text.lowEmphasis};
+    border-right: none;
+
+    ${Devices.laptopS} {
+      border-right: 1px solid ${Colors.text.lowEmphasis};
+    }
   `;
   const PricingCanvasBody = styled.div`
     display: flex;
@@ -49,7 +53,11 @@ const PricingCanvas = () => {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 2rem;
-    border-right: 1px solid ${Colors.text.lowEmphasis};
+    border-right: none;
+
+    ${Devices.laptopS} {
+      border-right: 1px solid ${Colors.text.lowEmphasis};
+    }
   `;
   const PricingCanvasPricetable = styled.div`
     display: flex;

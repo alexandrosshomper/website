@@ -1224,7 +1224,7 @@ const Content = (props) => {
             <ExperienceGradient>onboarding experience</ExperienceGradient>.
           </HeroHeadline>
           <HeroSubline>
-            I'll help you{" "}
+            I help startups{" "}
             <span style={{ color: "black" }}>get more new users</span> and
             <br /> make them{" "}
             <span style={{ color: "black" }}>stick with your product</span>.
@@ -1245,7 +1245,7 @@ const Content = (props) => {
         <ProblemHeadline>
           <span style={{ color: "black" }}>The Problem</span>
           <br />
-          Bad user onboarding and activation kills startups
+          Bad user onboarding and activation kills your startup
         </ProblemHeadline>
         <ProblemSubline>Does this sound familiar?</ProblemSubline>
         <ProblemList>
@@ -1288,8 +1288,7 @@ const Content = (props) => {
         <SolutionHeadline>
           <span style={{ color: "black" }}>Our Solution</span>
           <br />
-          Book a 2–week sprint with us to fine-tune your products onboarding
-          experience{" "}
+          Book a 2–week sprint to fine-tune your products onboarding experience{" "}
         </SolutionHeadline>
         <SolutionSubline>
           {" "}
