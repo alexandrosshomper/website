@@ -12,7 +12,20 @@ const NavigationSticky = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const { menuOpen, setMenuOpen } = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonClick = (e) => {
+    console.log("menuButtonClick 1");
+
+    e.preventDefault();
+    setMenuOpen(true);
+    console.log("menuButtonClick 2");
+  };
+  const closeButtonClick = (e) => {
+    console.log("closeButtonClick 1");
+    e.preventDefault();
+    setMenuOpen(false);
+    console.log("closeButtonClick 2");
+  };
 
   const NavigationWrapper = styled.header`
     position: fixed;
@@ -161,14 +174,14 @@ const NavigationSticky = (props) => {
 
   const MenuList = styled.ul`
     position: fixed;
-    top: 0;
+    top: 48;
     left: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 48px 24px 0 24px;
+    padding: 0px 24px 0 24px;
     gap: 16px;
     z-index: 9999;
   `;
@@ -208,8 +221,11 @@ const NavigationSticky = (props) => {
     <NavigationWrapper>
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CTA>
-            <X size={24} strokeWidth={1} />
+          <CTA onClick={closeButtonClick}>
+            <MenuButton>
+              {" "}
+              <X size={24} strokeWidth={1} onClick={closeButtonClick} />
+            </MenuButton>
           </CTA>
           <MenuList>
             <MenuItem>
@@ -268,12 +284,13 @@ const NavigationSticky = (props) => {
               color1={Colors.blue}
               color2={Colors.blueDark}
             />
-            <MenuButton>
+            <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>
           </CTA>
         </NavigationSticky>
       )}
+      {menuOpen && <GlobalNavCurtain />}
     </NavigationWrapper>
   );
 };

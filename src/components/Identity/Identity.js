@@ -14,7 +14,7 @@ const Identity = (props) => {
     justify-content: space-between;
     align-items: left;
     margin-left: 12px;
-    margin-top: 4px;
+    margin-top: 15px;
 
     width: 60px;
     ${Devices.tabletS} {
