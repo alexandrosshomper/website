@@ -362,8 +362,28 @@ const PricingCanvas = () => {
     pointer-events: auto;
     z-index: 1;
     transition: background-color 120ms ease, box-shadow 120ms ease;
+    will-change: backdrop-filter;
+    animation: blurPulse 2.4s ease-in-out infinite;
     &:hover {
       background: rgba(255, 255, 255, 0.95);
+    }
+
+    @keyframes blurPulse {
+      0% {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        background: rgba(255, 255, 255, 0.8);
+      }
+      50% {
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.6);
+      }
+      100% {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        background: rgba(255, 255, 255, 0.8);
+      }
     }
   `;
 
