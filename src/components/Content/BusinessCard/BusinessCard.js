@@ -193,7 +193,7 @@ const BusinessCard = ({ headline, copy }) => {
 
   return (
     <BusinessCard>
-      <Portrait src="./img/Identity/Portrait.png" />
+      <Portrait src="./img/Identity/PortraitProSE.png" />
       <BusinessCardParagraph>
         <Overline>40% of startups die because of bad traction</Overline>
         <BusinessCardHeadline>

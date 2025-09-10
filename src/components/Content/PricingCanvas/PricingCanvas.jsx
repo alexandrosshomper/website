@@ -320,6 +320,112 @@ const PricingCanvas = () => {
     ${Devices.laptopS} {
     }
   `;
+
+  const PricingVideo = styled.video`
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    border: 1px solid ${Colors.textWhite.highEmphasis};
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  `;
+
+  const PricingVideoWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  `;
+
+  const PlayOverlayButton = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    z-index: 1;
+    transition: background-color 120ms ease, box-shadow 120ms ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+  `;
+
+  const LightboxOverlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+  `;
+
+  const LightboxContent = styled.div`
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+  `;
+
+  const CloseLightboxButton = styled.button`
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  `;
+
+  const LOOM_VIDEO_URL =
+    "https://www.loom.com/embed/94ad4dc7e038465a81e930c05aa4c21a";
+
+  const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsLightboxOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
     <PricingCanvas>
       <PricingCanvasHeader>
@@ -331,6 +437,53 @@ const PricingCanvas = () => {
           help you <b>get more new users</b> and make them{" "}
           <b>stick with your product</b>.
         </PricingCanvasCopy>
+        <PricingVideoWrapper onClick={() => setIsLightboxOpen(true)}>
+          <PricingVideo autoPlay loop muted playsInline>
+            <source
+              src="/img/SalesPitch/OnboardingDevelopmentSprint-SalesPitch-Cover.mp4"
+              type="video/mp4"
+            />
+          </PricingVideo>
+          <PlayOverlayButton aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 56 56"
+              width="40"
+              height="40"
+              style={{ color: Colors.primaryText.highEmphasis }}
+            >
+              <path
+                fill="currentColor"
+                d="m23.7555 36.6237c.4478 0 .8598-.1343 1.4241-.4568l10.9178-6.3322c.8598-.5016 1.3614-1.021 1.3614-1.8361 0-.8061-.5016-1.3255-1.3614-1.8271l-10.9178-6.3322c-.5643-.3314-.9762-.4657-1.4241-.4657-.9315 0-1.7555.7165-1.7555 1.9435v13.3629c0 1.227.824 1.9435 1.7555 1.9435z"
+              />
+            </svg>
+          </PlayOverlayButton>
+        </PricingVideoWrapper>
+        {isLightboxOpen && (
+          <LightboxOverlay onClick={() => setIsLightboxOpen(false)}>
+            <LightboxContent onClick={(e) => e.stopPropagation()}>
+              <CloseLightboxButton
+                onClick={() => setIsLightboxOpen(false)}
+                aria-label="Close video"
+              >
+                ×
+              </CloseLightboxButton>
+              <iframe
+                src={LOOM_VIDEO_URL}
+                title="Loom video"
+                allow="autoplay; fullscreen; clipboard-write"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                  display: "block",
+                }}
+              />
+            </LightboxContent>
+          </LightboxOverlay>
+        )}
       </PricingCanvasHeader>
       <PricingCanvasBody>
         <PricingCanvasHeadline3>What you'll get</PricingCanvasHeadline3>
