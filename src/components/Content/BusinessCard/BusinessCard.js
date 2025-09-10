@@ -204,11 +204,7 @@ const BusinessCard = ({ headline, copy }) => {
           My super power is making <b>customer-centric and data-driven</b>{" "}
           product decisions–fast.
         </BusinessCardCopy>
-        <BusinessCardCopy>
-          As a product lead focused on outcome I have a unique mixture of
-          data-analysis, user psychology, marketing, and time in product
-          trenches.
-        </BusinessCardCopy>
+
         <BusinessCardCopy>
           Working on countless products I’ve learned first hand how{" "}
           <b>user onboarding and activation can make or break your startup</b>.{" "}

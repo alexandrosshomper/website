@@ -1456,35 +1456,7 @@ const Content = (props) => {
                   with <b>less than 1M ARR</b>.
                 </PriceComment>
               </PricePanelTitle>
-              <PanelBody>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-
-                  <PanelCopy>
-                    <b>One</b> consulting session to map user flows and define
-                    “aha” moment
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    Immediate Action Plan with top 2–3 next steps for quick wins
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    Wireframe & Messaging Essentials for critical onboarding
-                    journey
-                  </PanelCopy>
-                </PanelListItem>
-              </PanelBody>
+              <PanelBody></PanelBody>
               <ButtonMedium
                 href="https://calendar.notion.so/meet/alexandros/0a6mz4m5q"
                 text={"Work with us"}
@@ -1505,34 +1477,6 @@ const Content = (props) => {
                 </PriceComment>
               </PricePanelTitle>
               <PanelBody>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    <b>Two</b> 90-minute consulting sessions dicussing product
-                    opportunitites, map user flows, and define “aha” moment.
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    Detailed Onboarding Audit assessing sign-up flow,
-                    activation, metrics, and user feedback
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    End-to-end funnel design, basic segmentation, and triggered
-                    user journeys
-                  </PanelCopy>
-                </PanelListItem>
-
                 <PanelListItem>
                   <PriceBullet>
                     <Check size={16} strokeWidth={2.5} />
@@ -1567,34 +1511,6 @@ const Content = (props) => {
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
                   <PanelCopy>
-                    <b>Three</b> 90-minute consulting sessions dicussing product
-                    opportunitites, map user flows, and define “aha” moment.
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    Detailed Onboarding Audit assessing <b>persona based</b>{" "}
-                    sign-up flow, activation, metrics, and user feedback
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    End-to-end funnel design, advanced segmentation, and
-                    triggered user journeys
-                  </PanelCopy>
-                </PanelListItem>
-
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
                     Feedback service over ~2 months to ensure best practices are
                     implemented
                   </PanelCopy>
@@ -1624,35 +1540,7 @@ const Content = (props) => {
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
                   <PanelCopy>
-                    <b>Three</b> 90-minute consulting sessions dicussing product
-                    opportunitites, map user flows, and define “aha” moment.
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    Detailed Onboarding Audit assessing <b>persona based</b>{" "}
-                    sign-up flow, activation, metrics, and user feedback
-                  </PanelCopy>
-                </PanelListItem>
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    End-to-end funnel design, advanced segmentation, and
-                    triggered user journeys
-                  </PanelCopy>
-                </PanelListItem>
-
-                <PanelListItem>
-                  <PriceBullet>
-                    <Check size={16} strokeWidth={2.5} />
-                  </PriceBullet>
-                  <PanelCopy>
-                    Feedback service over ~2 months to ensure best practices are
+                    Feedback service over ~4 months to ensure best practices are
                     implemented
                   </PanelCopy>
                 </PanelListItem>
