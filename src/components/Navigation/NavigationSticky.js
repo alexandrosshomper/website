@@ -41,6 +41,7 @@ const NavigationSticky = (props) => {
     border-bottom: 1px solid;
     border-color: ${Colors.primaryText.highEmphasis};
     background-color: ${Colors.background};
+   
     z-index: 1000;
     animation: moveDown 0.5s ease-in-out;
     ${Devices.tabletS} {

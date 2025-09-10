@@ -102,7 +102,7 @@ const AccordeonVisual = ({}) => {
           </Content>
         </Option>
         <Option>
-          <Title>2. Let us do the magic</Title>
+          <Title>2. Let me do the magic</Title>
           <Content>
             <Copy>
               We’ll develop your user onboarding and activation journey. Well

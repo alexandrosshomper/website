@@ -1,4 +1,5 @@
 // BookAnAudit.jsx
+import ReactGA from "react-ga4";
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Devices, Colors } from "../DesignSystem";
@@ -129,7 +130,19 @@ const Wrapper = styled.div`
   ${Devices.laptopM} {
   }
 `;
+
 const BookAnAudit = ({}) => {
+  const bookAuditHandler = (e) => {
+    e.preventDefault();
+    console.log("Click Book Audit");
+    ReactGA.event({
+      category: "User Interaction",
+      action: "Clicked Button",
+      label: "Book Audit",
+      nonInteraction: false,
+      transport: "beacon",
+    });
+  };
   return (
     <Wrapper>
       <Headline>
@@ -138,7 +151,7 @@ const BookAnAudit = ({}) => {
       </Headline>
       <Subline>
         Struggling to activate and retain users? <br />
-        <br /> We help you create an onboarding experience that{" "}
+        <br /> I'll help you create an onboarding experience that{" "}
         <span style={{ color: "black" }}>
           keeps users engaged longer
         </span> and{" "}
@@ -150,6 +163,7 @@ const BookAnAudit = ({}) => {
         text={"Book my audit"}
         color1={Colors.blue}
         color2={Colors.blueDark}
+        onClick={bookAuditHandler}
       />
     </Wrapper>
   );

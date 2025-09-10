@@ -11,43 +11,6 @@ import SectionHead from "../../Content/Section/SectionHead";
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+25%",
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 const Content = (props) => {
   const Content = styled.div`
     text-align: left;
@@ -148,36 +111,31 @@ const Content = (props) => {
           subline="Data and anecdotes from industry research & use cases about user onboarding & activation, user retention, and growth."
         />
         <Panels style={{ marginBottom: "48px" }}>
-          <FadeInWhenVisible>
-            <CaseSectionSummary
-              copy="In a complex, uncertain and volatile world, the pace of digital change is faster than ever. Looking ahead is critical to success. These reports provide insights into major business and technology trends that will help you stay ahead and make smarter decisions for your organization."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </FadeInWhenVisible>
+          <CaseSectionSummary
+            copy="In a complex, uncertain and volatile world, the pace of digital change is faster than ever. Looking ahead is critical to success. These reports provide insights into major business and technology trends that will help you stay ahead and make smarter decisions for your organization."
+            //imgURL="./img/PanelTestImages/one.jpg"
+          />
         </Panels>
         <CaseCardGrid>
-          <FadeInWhenVisible>
-            <CaseCard
-              eyebrow="Report"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth"
-              copy="For early-stage and growth startup founders, retention is everything. But what if the key to higher retention and ARR isn’t just engagement or new features? Our latest whitepaper dives into why user onboarding and activation are the most powerful (and cost-effective) levers for boosting long-term retention and revenue. Discover how optimizing these critical stages can drastically reduce churn, increase customer lifetime value, and accelerate growth. Download the full report to uncover the strategies top SaaS companies use to turn new users into loyal, paying customers."
-              imgURL="./img/Reports/Cover – [Report] Why Onboarding & Activation are the ultimate levers for  SaaS Growth.png"
-              link="/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
-            />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <CaseCard
-              eyebrow="Report"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Four industry shifts making user onboarding & activation indispensible"
-              copy=""
-              imgURL="./img/Reports/Cover – [Report] Four industry shifts making User Onboarding & Activation indispensible.png"
-              link="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
-            />
-          </FadeInWhenVisible>
+          <CaseCard
+            eyebrow="Report"
+            eyebrowColor2="#231768"
+            eyebrowColor1="#10d5f5"
+            headline="Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth"
+            copy="For early-stage and growth startup founders, retention is everything. But what if the key to higher retention and ARR isn’t just engagement or new features? Our latest whitepaper dives into why user onboarding and activation are the most powerful (and cost-effective) levers for boosting long-term retention and revenue. Discover how optimizing these critical stages can drastically reduce churn, increase customer lifetime value, and accelerate growth. Download the full report to uncover the strategies top SaaS companies use to turn new users into loyal, paying customers."
+            imgURL="./img/Reports/Cover – [Report] Why Onboarding & Activation are the ultimate levers for  SaaS Growth.png"
+            link="/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
+          />
+
+          <CaseCard
+            eyebrow="Report"
+            eyebrowColor2="#231768"
+            eyebrowColor1="#10d5f5"
+            headline="Four industry shifts making user onboarding & activation indispensible"
+            copy=""
+            imgURL="./img/Reports/Cover – [Report] Four industry shifts making User Onboarding & Activation indispensible.png"
+            link="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
+          />
         </CaseCardGrid>
       </Section>
     </Content>

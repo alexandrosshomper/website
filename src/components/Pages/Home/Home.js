@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useInView } from "react-intersection-observer";
 import Trend from "react-trend";
+import ReactGA from "react-ga4";
 
 //Components
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
@@ -164,6 +165,15 @@ function RevealWhenVisible({ children }) {
 }
 
 const Content = (props) => {
+  const handleBookAudit = (e) => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "Button",
+      action: "Click",
+      label: "Book Audit",
+    });
+    console.log("Book Audit");
+  };
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -1205,18 +1215,9 @@ const Content = (props) => {
       margin-bottom: 46px;
     }
   `;
+
   return (
     <Content>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Alexandros Shomper</title>
-        <description>
-          Experienced in core and growth initiatives from acquisition to
-          retention & engagement. Bridging business, design, and tech to create
-          awesome solutions people love.
-        </description>
-      </Helmet>
-
       <Section>
         <Hero>
           <HeroHeadline>
@@ -1715,7 +1716,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroHeadline>
           <HeroSubline>
             Struggling to activate and retain users? <br />
-            <br /> We help you create an onboarding experience that{" "}
+            <br /> I'll help you create an onboarding experience that{" "}
             <span style={{ color: "black" }}>
               keeps users engaged longer
             </span>{" "}
@@ -1727,6 +1728,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             text={"Book my audit"}
             color1={Colors.blue}
             color2={Colors.blueDark}
+            onClick={handleBookAudit}
           />
         </Hero>
       </Section>

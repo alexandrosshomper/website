@@ -346,7 +346,7 @@ const Content = (props) => {
             portal={"49351608"}
             form={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
             size={"M"}
-            successLink="./reports/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf"
+            successLink="./report-docs/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf"
           />
         </Paragraph>
       </Section>

@@ -2,8 +2,15 @@ import React, { lazy, Suspense, useState, useEffect } from "react";
 import Spinner from "react-spinner-material";
 //import React from "react";
 import styled from "@emotion/styled";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  useLocation,
+} from "react-router-dom";
 import { Colors, Devices } from "../src/components/DesignSystem";
+import ReactGA from "react-ga4";
 
 //FUNCTIONS
 import ScrollToTop from "./functions/ScrollToTop";
@@ -55,9 +62,7 @@ const KnaufOrderOverview = lazy(() =>
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
-const FeatheredHooks = lazy(() =>
-  import("./components/Pages/SideProjects/FeatheredHooks")
-);
+
 //import Navigation from "./components/Navigation/Navigation";
 const Navigation = lazy(() => import("./components/Navigation/Navigation"));
 /*const MiniNavigation = lazy(() =>
@@ -76,6 +81,26 @@ const renderLoader = () => (
     <Spinner radius={120} color={Colors.front} stroke={2} visible={true} />
   </div>
 );
+
+// Initialize Google Analytics
+ReactGA.initialize("G-6BNG13DFW0"); // Replace with your Google Analytics tracking ID
+
+// Page View Tracker Component
+const PageViewTracker = () => {
+  const location = useLocation();
+  console.log("Pageview");
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname + location.search,
+      title: document.title,
+    });
+  }, [location]);
+
+  return null;
+};
+
 function App() {
   const App = styled.div`
     text-align: center;
@@ -109,10 +134,21 @@ function App() {
       setIsSticky(false);
     }
   };
+
   return (
     <Router>
       <ScrollToTop />
+      <PageViewTracker />
       <App className="App">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Alexandros Shomper</title>
+          <description>
+            Experienced in core and growth initiatives from acquisition to
+            retention & engagement. Bridging business, design, and tech to
+            create awesome solutions people love.
+          </description>
+        </Helmet>
         <Suspense fallback={renderLoader()}>
           <Navigation />
           {isSticky && <NavigationSticky />}
@@ -161,7 +197,6 @@ function App() {
               component={KnaufOrderOverview}
             />
             <Route exact path="/myknauf" component={MyKnauf} />
-            <Route exact path="/feathered-hooks" component={FeatheredHooks} />
             <Route exact path="/heraklit" component={Heraklit} />
           </Switch>
           <Footer />
