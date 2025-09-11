@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
@@ -218,6 +219,15 @@ const Navigation = (props) => {
       align-items: center;
     }
   `;
+  const hanldeBookAudit = () => {
+    ReactGA.event({
+      category: "User",
+      action: "Clicked Book Audit",
+      label: "Book Audit",
+      value: 10,
+      nonInteraction: false,
+    });
+  };
   return (
     <NavigationWrapper>
       {menuOpen ? (
@@ -282,6 +292,7 @@ const Navigation = (props) => {
 
             <ButtonSmall
               href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+              clickAction={() => hanldeBookAudit()}
               text={"Book my audit"}
               color1={Colors.blue}
               color2={Colors.blueDark}

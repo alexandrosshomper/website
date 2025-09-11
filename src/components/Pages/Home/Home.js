@@ -1283,6 +1283,30 @@ const Content = (props) => {
 
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
 
+  const hanldeWatchDemo = () => {
+    ReactGA.event({
+      category: "User",
+      action: "Clicked Watch Demo",
+      label: "Watch Demo",
+      value: 10,
+      nonInteraction: false,
+    });
+
+    setTimeout(() => {
+      setIsLightboxOpen(true);
+    }, 150);
+    console.log("Clicked Watch Demo");
+  };
+
+  const hanldeBookAudit = (e, href) => {
+    e.preventDefault();
+    ReactGA.event("book_audit_click", { link_url: href });
+    setTimeout(() => {
+      window.location.href = href;
+    }, 150);
+    console.log("Clicked Book Audit");
+  };
+
   React.useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -1309,12 +1333,13 @@ const Content = (props) => {
           <ButtonWrapper>
             <ButtonMedium
               href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+              clickAction={() => hanldeBookAudit()}
               text={"Book my audit"}
               color1={Colors.blue}
               color2={Colors.blueDark}
             />
             <ButtonMediumSecondary
-              clickAction={() => setIsLightboxOpen(true)}
+              clickAction={() => hanldeWatchDemo()}
               text={"Watch a Demo"}
               color1={Colors.blue}
               color2={Colors.blueDark}
@@ -1405,7 +1430,7 @@ const Content = (props) => {
               <SolutionBody>
                 <SolutionParagraph>
                   <SolutionTitle>
-                    <span style={{ color: "black" }}>Step 1</span> Audit your
+                    <span style={{ color: "black" }}>Week 1</span> Audit your
                     onboarding experience
                   </SolutionTitle>
                   <SolutionCopy>
@@ -1427,7 +1452,7 @@ const Content = (props) => {
                 <SolutionParagraph style={{ order: "2" }}>
                   <SolutionTitle>
                     {" "}
-                    <span style={{ color: "black" }}>Step 2</span> Design
+                    <span style={{ color: "black" }}>Week 2</span> Design
                     delightful user experiences
                   </SolutionTitle>
                   <SolutionCopy>
@@ -1455,7 +1480,7 @@ const Content = (props) => {
                 <SolutionParagraph>
                   <SolutionTitle>
                     {" "}
-                    <span style={{ color: "black" }}>Step 3</span> Transform
+                    <span style={{ color: "black" }}>Results</span> Transform
                     your onboarding with the new user journey
                   </SolutionTitle>
                   <SolutionCopy>
@@ -1525,27 +1550,7 @@ const Content = (props) => {
           />
         </Polaroids>
       </Section>
-      <Section>
-        <SolutionSubline>Why you'll love working with us</SolutionSubline>
 
-        <Polaroids>
-          <IconHeadlineCopyCard
-            icon={<ChartNoAxesCombined size={46} strokeWidth={1.5} />}
-            headline="Sustainable Growth"
-            copy="Higher longterm user retention. Less churn. More traction."
-          />
-          <IconHeadlineCopyCard
-            icon={<MousePointerClick size={46} strokeWidth={1.5} />}
-            headline="Engagement"
-            copy="More engagement. More interactions. More features used."
-          />
-          <IconHeadlineCopyCard
-            icon={<HandCoins size={46} strokeWidth={1.5} />}
-            headline="Profitability"
-            copy="More MRR & ARR. Lower CAC. Higher CLV."
-          />
-        </Polaroids>
-      </Section>
       <Section>
         <Headline2 headline="Onboarding Development Sprint" />
         <PricePanels>
@@ -1562,6 +1567,7 @@ const Content = (props) => {
               <PanelBody></PanelBody>
               <ButtonMedium
                 href="https://calendar.notion.so/meet/alexandros/0a6mz4m5q"
+                clickAction={() => hanldeBookAudit()}
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1592,6 +1598,7 @@ const Content = (props) => {
               </PanelBody>
               <ButtonMedium
                 href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                clickAction={() => hanldeBookAudit()}
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1621,6 +1628,7 @@ const Content = (props) => {
               </PanelBody>
               <ButtonMedium
                 href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                clickAction={() => hanldeBookAudit()}
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1650,6 +1658,7 @@ const Content = (props) => {
               </PanelBody>
               <ButtonMedium
                 href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                clickAction={() => hanldeBookAudit()}
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1716,10 +1725,10 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroSubline>
           <ButtonMedium
             href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+            clickAction={() => hanldeBookAudit()}
             text={"Book my audit"}
             color1={Colors.blue}
             color2={Colors.blueDark}
-            onClick={handleBookAudit}
           />
         </Hero>
       </Section>
