@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 import Icon from "@mdi/react";
+import { Colors } from "../DesignSystem";
 
-const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
+const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   console.log(`color:${color1};`);
   let csscolor = null;
   if (color1 && color2) {
@@ -11,21 +11,22 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
   } else {
     csscolor = `background-image: linear-gradient(to right, #ff6d00, #ff9e40);`;
   }
-  const ButtonSmall = styled.a`
+  const ButtonMedium = styled.a`
     align-items: flex-start;
     appearance: auto;
     background-attachment: scroll;
     background-clip: border-box;
-    ${csscolor};
+
+    background-color: ${Colors.blueVeryLight};
     background-origin: padding-box;
     background-position-x: 0%;
     background-position-y: 0%;
     background-size: auto;
 
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 
     border-bottom-style: none;
     border-top-style: none;
@@ -48,7 +49,7 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
 
-    color: rgba(255, 255, 255, 1);
+    color: linear-gradient(to right, ${color1}, ${color2});
     cursor: pointer;
     direction: ltr;
     display: flex;
@@ -59,17 +60,16 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
 
     margin: 0px;
     min-width: 51px;
-    height: fit-content;
 
     overflow-x: visible;
     overflow-y: visible;
 
-    padding: 4px 10px;
+    padding: 16px 32px;
 
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 133%;
+    font-size: 17px;
+    line-height: 130%;
 
     quotes: "“" "”";
     text-align: center;
@@ -80,7 +80,7 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
     text-transform: none;
     vertical-align: baseline;
 
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
 
     word-spacing: 0px;
     writing-mode: horizontal-tb;
@@ -90,7 +90,7 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
 
     text-decoration: none;
     &:hover {
-      color: rgba(255, 255, 255, 1);
+      background-color: ${Colors.blueLight};
     }
     &:visited {
       text-decoration: none;
@@ -98,11 +98,11 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
   `;
 
   return (
-    <ButtonSmall href={href} onClick={clickAction}>
+    <ButtonMedium href={href} onClick={clickAction}>
       {text}
       {icon && <Icon path={icon} title={text} size={"16px"} />}
-    </ButtonSmall>
+    </ButtonMedium>
   );
 };
 
-export default ButtonSmall;
+export default ButtonMedium;

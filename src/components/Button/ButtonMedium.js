@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 import Icon from "@mdi/react";
+import { Colors } from "../DesignSystem";
 
 const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   console.log(`color:${color1};`);
@@ -22,10 +22,10 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     background-position-y: 0%;
     background-size: auto;
 
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 
     border-bottom-style: none;
     border-top-style: none;
@@ -66,7 +66,7 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     padding: 16px 32px;
 
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 17px;
     line-height: 130%;
 
@@ -79,7 +79,7 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     text-transform: none;
     vertical-align: baseline;
 
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
 
     word-spacing: 0px;
     writing-mode: horizontal-tb;
@@ -89,7 +89,8 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
 
     text-decoration: none;
     &:hover {
-      color: rgba(255, 255, 255, 1);
+      background-color: ${Colors.blueDark};
+      background-image: none;
     }
     &:visited {
       text-decoration: none;
@@ -97,20 +98,10 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   `;
 
   return (
-    <motion.button
-      style={{
-        backgroundColor: "transparent",
-        borderStyle: "none",
-        padding: 0,
-      }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <ButtonMedium href={href} onClick={clickAction}>
-        {text}
-        {icon && <Icon path={icon} title={text} size={"16px"} />}
-      </ButtonMedium>
-    </motion.button>
+    <ButtonMedium href={href} onClick={clickAction}>
+      {text}
+      {icon && <Icon path={icon} title={text} size={"16px"} />}
+    </ButtonMedium>
   );
 };
 

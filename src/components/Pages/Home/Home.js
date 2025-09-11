@@ -26,6 +26,7 @@ import Head from "../../Content/Landingpage/Head";
 import Headline2 from "../../Content/Landingpage/Headline2";
 
 import ButtonMedium from "../../Button/ButtonMedium";
+import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail, mdiAbTesting } from "@mdi/js";
@@ -1216,6 +1217,82 @@ const Content = (props) => {
     }
   `;
 
+  const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+    }
+  `;
+
+  const LightboxOverlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+  `;
+
+  const LightboxContent = styled.div`
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+  `;
+
+  const CloseLightboxButton = styled.button`
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  `;
+  const LOOM_VIDEO_URL =
+    "https://www.loom.com/embed/94ad4dc7e038465a81e930c05aa4c21a";
+
+  const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsLightboxOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
     <Content>
       <Section>
@@ -1227,15 +1304,47 @@ const Content = (props) => {
           <HeroSubline>
             I help startups{" "}
             <span style={{ color: "black" }}>get more new users</span> and
-            <br /> make them{" "}
-            <span style={{ color: "black" }}>stick with your product</span>.
+            <br /> make them <span style={{ color: "black" }}>stick</span>.
           </HeroSubline>
-          <ButtonMedium
-            href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-            text={"Book my audit"}
-            color1={Colors.blue}
-            color2={Colors.blueDark}
-          />
+          <ButtonWrapper>
+            <ButtonMedium
+              href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+              text={"Book my audit"}
+              color1={Colors.blue}
+              color2={Colors.blueDark}
+            />
+            <ButtonMediumSecondary
+              clickAction={() => setIsLightboxOpen(true)}
+              text={"Watch a Demo"}
+              color1={Colors.blue}
+              color2={Colors.blueDark}
+            />
+          </ButtonWrapper>
+          {isLightboxOpen && (
+            <LightboxOverlay onClick={() => setIsLightboxOpen(false)}>
+              <LightboxContent onClick={(e) => e.stopPropagation()}>
+                <CloseLightboxButton
+                  onClick={() => setIsLightboxOpen(false)}
+                  aria-label="Close video"
+                >
+                  ×
+                </CloseLightboxButton>
+                <iframe
+                  src={LOOM_VIDEO_URL}
+                  title="Loom video"
+                  allow="autoplay; fullscreen; clipboard-write"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: 0,
+                    display: "block",
+                  }}
+                />
+              </LightboxContent>
+            </LightboxOverlay>
+          )}
         </Hero>
       </Section>
       <Section>
@@ -1257,13 +1366,7 @@ const Content = (props) => {
               account creation process
             </ProblemListItem>
           </MoveUpWhenVisible>
-          <MoveUpWhenVisible>
-            <ProblemListItem>
-              Users{" "}
-              <ProblemHighlight>fail to meaningfully engage</ProblemHighlight>{" "}
-              with your product
-            </ProblemListItem>
-          </MoveUpWhenVisible>
+
           <MoveUpWhenVisible>
             <ProblemListItem>
               Users{" "}
