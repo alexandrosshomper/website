@@ -1,40 +1,24 @@
 import styled from "@emotion/styled";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+
 import { useInView } from "react-intersection-observer";
-import Trend from "react-trend";
+
 import ReactGA from "react-ga4";
 
 //Components
-import BlackQuote from "../../Content/BlackQuote/BlackQuote";
-import Intro from "../../Content/Intro/Intro";
+
 import ListBigText from "../../Content/List/ListBigText/ListBigText";
-import ListPanel from "../../Content/List/ListPanel/ListPanel";
-import ListSmallText from "../../Content/List/ListSmallText/ListSmallText";
+
 import { Colors, Devices } from "../../DesignSystem";
-import FlipCard from "../../Content/FlipCard/FlipCard";
-import CaseUnorderdList from "../../Content/Case/CaseUnorderedList";
-import CaseUnorderedList from "../../Content/Case/CaseUnorderedList";
-import Icon from "@mdi/react";
-import { mdiPlus } from "@mdi/js";
-import { mdiReminder } from "@mdi/js";
-import SectionHead from "../../Content/Section/SectionHead";
-import SectionCopy from "../../Content/Section/SectionCopy";
-import SectionDivider from "../../Content/Section/SectionDivider";
-import Head from "../../Content/Landingpage/Head";
+
 import Headline2 from "../../Content/Landingpage/Headline2";
 
 import ButtonMedium from "../../Button/ButtonMedium";
 import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
-import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
-import { mdiEmail, mdiAbTesting } from "@mdi/js";
-import SectionSubline from "../../Content/Section/SectionSubline";
-import HeadSubline from "../../Content/Landingpage/HeadSubline";
-import HeadCopy from "../../Content/Landingpage/HeadCopy";
-import SectionOverline from "../../Content/Section/SectionOverline";
-import IconHeadlineCopyCard from "../../Content/IconHeadlineCopyCard/IconHeadlineCopyCard";
+
+import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
 
 import {
   HandCoins,
@@ -67,16 +51,14 @@ function FadeInWhenVisible({ children }) {
       variants={{
         visible: {
           opacity: 1,
-          scale: 1,
           y: 0,
           transition: {
             staggerChildren: 0.3,
           },
         },
         hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+25%",
+          opacity: 0.5,
+          y: "+15%",
         },
       }}
     >
@@ -294,7 +276,7 @@ const Content = (props) => {
       width: 1152px;
     }
   `;
-  const Polaroids = styled.section`
+  const DeliverablesCards = styled.section`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -302,7 +284,7 @@ const Content = (props) => {
     align-content: center;
     align-items: flex-start;
     column-gap: 16px;
-    row-gap: 24px;
+    row-gap: 16px;
     margin-left: 12px;
     margin-right: 12px;
 
@@ -811,7 +793,6 @@ const Content = (props) => {
   `;
   const SolutionCard = styled.div`
     border-radius: 0.38rem;
-    margin-bottom: 12px;
     float: left;
     background-color: ${Colors.back};
     flex-grow: 1;
@@ -866,8 +847,8 @@ const Content = (props) => {
     ${Devices.tabletS} {
       padding-left: 85px;
       padding-right: 85px;
-      padding-bottom: 85px;
-      padding-top: 85px;
+      padding-bottom: 24px;
+      padding-top: 24px;
       gap: 85px;
     }
     ${Devices.laptopS} {
@@ -897,8 +878,8 @@ const Content = (props) => {
     ${Devices.tabletS} {
       padding-left: 85px;
       padding-right: 85px;
-      padding-bottom: 85px;
-      padding-top: 85px;
+      padding-bottom: 24px;
+      padding-top: 24px;
       gap: 85px;
     }
     ${Devices.laptopS} {
@@ -942,6 +923,10 @@ const Content = (props) => {
     align-items: left;
     align-self: center;
 
+    border-radius: 8px;
+    border: 2px ${Colors.primaryText.lowEmphasis} solid;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+
     ${Devices.tabletS} {
       width: 350px;
       height: 280px;
@@ -949,8 +934,8 @@ const Content = (props) => {
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
-      margin-top: 85px;
-      margin-bottom: 85px;
+      margin-top: 24px;
+      margin-bottom: 24px;
       width: 100%;
       height: auto;
     }
@@ -1429,8 +1414,8 @@ const Content = (props) => {
       <Section>
         <SolutionHeadline>
           <span style={{ color: "black" }}>Our Solution</span>
-          <br />
-          Book a 2–week sprint to fine-tune your product’s onboarding experience{" "}
+          <br />A 2–week sprint to fine-tune your product’s onboarding
+          experience{" "}
         </SolutionHeadline>
         <SolutionSubline>
           {" "}
@@ -1447,12 +1432,21 @@ const Content = (props) => {
                     Discovery
                   </SolutionTitle>
                   <SolutionCopy>
-                    We'll analyze your current onboarding flow, user research,
-                    and data to{" "}
+                    I'll diagnose your current onboarding by reviewing data and
+                    user research to{" "}
                     <span style={{ color: "black" }}>
-                      pinpoint key drop-off points and opportunities{" "}
+                      pinpoint key drop-off points map value moments, and
+                      refining website positioning{" "}
                     </span>
-                    for improvement.
+                    set the foundation for change.
+                  </SolutionCopy>
+                  <SolutionCopy>
+                    The outcome? Clear understanding of where users drop off,
+                    what value moments matter most, and{" "}
+                    <span style={{ color: "black" }}>
+                      how your onboarding should evolve
+                    </span>
+                    .
                   </SolutionCopy>
                 </SolutionParagraph>
                 <SolutionPicture src="./img/Landingpage/Solutions/Notes.png" />
@@ -1469,21 +1463,23 @@ const Content = (props) => {
                     Development
                   </SolutionTitle>
                   <SolutionCopy>
-                    We'll craft an onboarding journey that{" "}
+                    I'll design and deliver a new onboarding flow with
+                    wireframes, and copy that{" "}
                     <span style={{ color: "black" }}>
                       perfectly matches your core value proposition
                     </span>{" "}
                     and your users' goals.
                   </SolutionCopy>
                   <SolutionCopy>
-                    The result? A personalized experience that{" "}
+                    The outcome? A ready-to-implement onboarding flow that helps{" "}
                     <span style={{ color: "black" }}>
-                      guides new users to success
+                      more sign-ups reach their Aha Moment and form lasting
+                      habits
                     </span>
-                    —without overwhelming them .
+                    .
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPicture src="./img/Landingpage/Solutions/Wireflow.png" />
+                <SolutionPicture src="./img/Landingpage/Solutions/Week2.png" />
               </SolutionBody>
             </SolutionCard>
           </FadeInWhenVisible>
@@ -1493,20 +1489,26 @@ const Content = (props) => {
                 <SolutionParagraph>
                   <SolutionTitle>
                     {" "}
-                    <span style={{ color: "black" }}>Results</span> Transform
-                    your onboarding with the new user journey
+                    <span style={{ color: "black" }}>Results</span> A
+                    Ready-to-Implement Onboarding Flow
                   </SolutionTitle>
                   <SolutionCopy>
-                    We'll deliver wireframes and detailed recommendations for
-                    your{" "}
+                    By the end of the sprint, you’ll walk away with{" "}
                     <span style={{ color: "black" }}>
-                      onboarding screens, flows, and empty states
+                      a redesigned onboarding journey that turns more sign-ups
+                      into activated, retained users
                     </span>
                     .
                   </SolutionCopy>
                   <SolutionCopy>
-                    You'll have everything you need to build a world-class
-                    onboarding experience.
+                    You’ll have high-level wireframes with copy, defined value
+                    moment metrics, and a prioritized experiment
+                    backlog—everything your team needs to{" "}
+                    <span style={{ color: "black" }}>
+                      boost activation, shorten time-to-value, and drive
+                      long-term retention
+                    </span>
+                    .
                   </SolutionCopy>
                 </SolutionParagraph>
                 <SolutionPictureBig src="./img/Landingpage/Solutions/Assessment1.png" />
@@ -1519,45 +1521,38 @@ const Content = (props) => {
       <Section>
         <DeliverablesHeadline>Your Deliverables</DeliverablesHeadline>
 
-        <Polaroids>
-          <IconHeadlineCopyCard
-            icon={<MousePointerClick size={46} strokeWidth={1.5} />}
-            headline="Onboarding Journey Map"
+        <DeliverablesCards>
+          <DeliverablesCard
+            headline="New Positioning"
+            img="../img/Landingpage/Deliverables/Positioning.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
-            copy="Access to a Miro file with the onboarding journey from your product including ups and lows."
+            copy="A light-weight positioning for your website, that communicates the right message to the right customer to ensure customers get your product at the first touchpoint."
           />
-          <IconHeadlineCopyCard
-            icon={<HandCoins size={46} strokeWidth={1.5} />}
-            headline="Onboarding Assessment"
+          <DeliverablesCard
+            headline="New Onboarding Journey"
+            img="../img/Landingpage/Deliverables/NewOnboardingJourney.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
-            copy="A detailed summary of the audit and findings and list of clear & prioritized recommendation"
-          />
-
-          <IconHeadlineCopyCard
-            icon={<Presentation size={46} strokeWidth={1.5} />}
-            headline="Strategic Onboarding Canvas"
-            color1={Colors.blue}
-            color2={Colors.blueDark}
-            copy="Access to a Miro file with the core information driving the onboarding strategy and decisions for your product."
+            copy="A new onboarding journey for your product with clear value moments (conversions, setup moment, aha moment, habit moment), and their metrics for you to implement."
           />
 
-          <IconHeadlineCopyCard
-            icon={<PanelsTopLeft size={46} strokeWidth={1.5} />}
-            headline="Designs as Figma files"
+          <DeliverablesCard
+            headline="Wireframes + Copy"
+            img="../img/Landingpage/Deliverables/WireFrames.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
-            copy="All you need to get started implementing the new onboarding flow. Wireframes of the Onboarding Flow, Getting Started Page, Empty States."
+            copy="Ready to work with Wireframes for each step of the new onboarding journey (from Landingpage to First Experience) including copy, empty states, and flow-variants."
           />
-          <IconHeadlineCopyCard
-            icon={<FileText size={46} strokeWidth={1.5} />}
-            headline="Full report"
+
+          <DeliverablesCard
+            headline="Prioritized List of Improvements"
+            img="../img/Landingpage/Deliverables/PrioritizedList.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
-            copy="A detailed executive summary of the audit, findings, and next steps. "
+            copy="A prioritized list of improvements and experiments for you to get started and plan implementation right away."
           />
-        </Polaroids>
+        </DeliverablesCards>
       </Section>
       <Section>
         <SolutionSubline>How it works</SolutionSubline>
@@ -1604,7 +1599,7 @@ const Content = (props) => {
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
                   <PanelCopy>
-                    Feedback support over ~1 months to ensure best practices are
+                    Feedback support over ~1 month to ensure best practices are
                     implemented
                   </PanelCopy>
                 </PanelListItem>
@@ -1729,7 +1724,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroHeadline>
           <HeroSubline>
             Struggling to activate and retain users? <br />
-            <br /> We'll help you create an onboarding experience that{" "}
+            <br /> I'll help you create an onboarding experience that{" "}
             <span style={{ color: "black" }}>
               keeps users engaged longer
             </span>{" "}

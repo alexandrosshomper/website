@@ -89,7 +89,7 @@ const AccordeonVisual = ({}) => {
           <Title>1. Book intro call</Title>
           <Content>
             <Copy>
-              Book an intro call. We’ll chat about your current product problems
+              Book an intro call. I’ll chat about your current product problems
               and how user onboarding and activation can solve them.
             </Copy>
             <ButtonSmall
@@ -104,8 +104,8 @@ const AccordeonVisual = ({}) => {
           <Title>2. Let me do the magic</Title>
           <Content>
             <Copy>
-              We’ll develop your user onboarding and activation journey. We'll
-              audit and design an user onboarding and activation journey that
+              I’ll develop your user onboarding and activation journey. I'll
+              audit and design a user onboarding and activation journey that
               it’s clear and converts.
             </Copy>
           </Content>
