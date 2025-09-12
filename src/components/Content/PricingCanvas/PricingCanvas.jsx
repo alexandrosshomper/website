@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
@@ -435,6 +436,20 @@ const PricingCanvas = () => {
     "https://www.loom.com/embed/94ad4dc7e038465a81e930c05aa4c21a";
 
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+  const hanldeWatchDemo = () => {
+    ReactGA.event({
+      category: "User",
+      action: "watch_demo_clicked",
+      label: "Watch Demo",
+      value: 10,
+      nonInteraction: false,
+    });
+
+    setTimeout(() => {
+      setIsLightboxOpen(true);
+    }, 150);
+    console.log("Clicked Watch Demo");
+  };
 
   React.useEffect(() => {
     const onKeyDown = (event) => {
@@ -457,7 +472,7 @@ const PricingCanvas = () => {
           help you <b>get more new users</b> and make them{" "}
           <b>stick with your product</b>.
         </PricingCanvasCopy>
-        <PricingVideoWrapper onClick={() => setIsLightboxOpen(true)}>
+        <PricingVideoWrapper onClick={() => hanldeWatchDemo()}>
           <PricingVideo autoPlay loop muted playsInline>
             <source
               src="/img/SalesPitch/OnboardingDevelopmentSprint-SalesPitch-Cover.mp4"
@@ -468,8 +483,8 @@ const PricingCanvas = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 56 56"
-              width="40"
-              height="40"
+              width="60"
+              height="60"
               style={{ color: Colors.primaryText.highEmphasis }}
             >
               <path

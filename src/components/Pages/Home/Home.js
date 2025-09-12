@@ -1219,8 +1219,8 @@ const Content = (props) => {
 
   const ButtonWrapper = styled.div`
     display: flex;
-    flex-direction: row;
-    gap: 16px;
+    flex-direction: column;
+    gap: 8px;
     justify-content: center;
     align-content: center;
     align-items: flex-start;
@@ -1228,6 +1228,8 @@ const Content = (props) => {
     ${Devices.tabletS} {
     }
     ${Devices.tabletM} {
+      flex-direction: row;
+      gap: 16px;
     }
     ${Devices.laptopS} {
     }
@@ -1286,7 +1288,7 @@ const Content = (props) => {
   const hanldeWatchDemo = () => {
     ReactGA.event({
       category: "User",
-      action: "Clicked Watch Demo",
+      action: "watch_demo_clicked",
       label: "Watch Demo",
       value: 10,
       nonInteraction: false,
@@ -1300,7 +1302,13 @@ const Content = (props) => {
 
   const hanldeBookAudit = (e, href) => {
     e.preventDefault();
-    ReactGA.event("book_audit_click", { link_url: href });
+    ReactGA.event({
+      category: "User",
+      action: "book_audit_click",
+      label: "Book Audit",
+      value: 10,
+      nonInteraction: false,
+    });
     setTimeout(() => {
       window.location.href = href;
     }, 150);
@@ -1322,13 +1330,16 @@ const Content = (props) => {
       <Section>
         <Hero>
           <HeroHeadline>
-            Let's <OnboardingGradient>fix</OnboardingGradient> your products bad{" "}
-            <ExperienceGradient>onboarding experience</ExperienceGradient>.
+            I help startups
+            <br /> <OnboardingGradient>
+              get more new users
+            </OnboardingGradient>{" "}
+            and make them <ExperienceGradient>stick</ExperienceGradient>.
           </HeroHeadline>
           <HeroSubline>
-            I help startups{" "}
-            <span style={{ color: "black" }}>get more new users</span> and
-            <br /> make them <span style={{ color: "black" }}>stick</span>.
+            Let's <span style={{ color: "black" }}>fix</span> your products
+            <br /> leaky{" "}
+            <span style={{ color: "black" }}>onboarding experience</span>.
           </HeroSubline>
           <ButtonWrapper>
             <ButtonMedium
@@ -1434,7 +1445,7 @@ const Content = (props) => {
                     onboarding experience
                   </SolutionTitle>
                   <SolutionCopy>
-                    I'll analyze your current onboarding flow, user research,
+                    We'll analyze your current onboarding flow, user research,
                     and data to{" "}
                     <span style={{ color: "black" }}>
                       pinpoint key drop-off points and opportunities
@@ -1456,7 +1467,7 @@ const Content = (props) => {
                     delightful user experiences
                   </SolutionTitle>
                   <SolutionCopy>
-                    I'll craft an onboarding journey that{" "}
+                    We'll craft an onboarding journey that{" "}
                     <span style={{ color: "black" }}>
                       perfectly matches your core value proposition
                     </span>{" "}
@@ -1484,7 +1495,7 @@ const Content = (props) => {
                     your onboarding with the new user journey
                   </SolutionTitle>
                   <SolutionCopy>
-                    I'll deliver wireframes and detailed recommendations for
+                    We'll deliver wireframes and detailed recommendations for
                     your{" "}
                     <span style={{ color: "black" }}>
                       onboarding screens, flows, and empty states
@@ -1502,11 +1513,7 @@ const Content = (props) => {
           </FadeInWhenVisible>
         </SolutionCards>
       </Section>
-      <Section>
-        <SolutionSubline>How it works</SolutionSubline>
 
-        <AccordeonVisual />
-      </Section>
       <Section>
         <DeliverablesHeadline>Your Deliverables</DeliverablesHeadline>
 
@@ -1550,7 +1557,11 @@ const Content = (props) => {
           />
         </Polaroids>
       </Section>
+      <Section>
+        <SolutionSubline>How it works</SolutionSubline>
 
+        <AccordeonVisual />
+      </Section>
       <Section>
         <Headline2 headline="Onboarding Development Sprint" />
         <PricePanels>
@@ -1716,7 +1727,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroHeadline>
           <HeroSubline>
             Struggling to activate and retain users? <br />
-            <br /> I'll help you create an onboarding experience that{" "}
+            <br /> We'll help you create an onboarding experience that{" "}
             <span style={{ color: "black" }}>
               keeps users engaged longer
             </span>{" "}

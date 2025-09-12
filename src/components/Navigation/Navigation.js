@@ -222,7 +222,7 @@ const Navigation = (props) => {
   const hanldeBookAudit = () => {
     ReactGA.event({
       category: "User",
-      action: "Clicked Book Audit",
+      action: "book_audit_click",
       label: "Book Audit",
       value: 10,
       nonInteraction: false,

@@ -85,22 +85,6 @@ const renderLoader = () => (
 // Initialize Google Analytics
 ReactGA.initialize("G-6BNG13DFW0"); // Replace with your Google Analytics tracking ID
 
-// Page View Tracker Component
-const PageViewTracker = () => {
-  const location = useLocation();
-  console.log("Pageview");
-
-  useEffect(() => {
-    ReactGA.send({
-      hitType: "pageview",
-      page: location.pathname + location.search,
-      title: document.title,
-    });
-  }, [location]);
-
-  return null;
-};
-
 function App() {
   const App = styled.div`
     text-align: center;
@@ -138,7 +122,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <PageViewTracker />
+
       <App className="App">
         <Helmet>
           <meta charSet="utf-8" />

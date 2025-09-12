@@ -105,7 +105,7 @@ const AccordeonVisual = ({}) => {
           <Title>2. Let me do the magic</Title>
           <Content>
             <Copy>
-              We’ll develop your user onboarding and activation journey. Well
+              We’ll develop your user onboarding and activation journey. We'll
               audit and design an user onboarding and activation journey that
               it’s clear and converts.
             </Copy>
