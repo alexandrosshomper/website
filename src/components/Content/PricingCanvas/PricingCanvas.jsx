@@ -322,6 +322,25 @@ const PricingCanvas = () => {
     }
   `;
 
+  const PanelComment = styled.p`
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+
+    text-align: left;
+    color: ${Colors.primaryText.mediumEmphasis};
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+  `;
+
   const PricingVideo = styled.video`
     width: 100%;
     height: auto;
@@ -468,7 +487,7 @@ const PricingCanvas = () => {
           Onboarding Development Sprint
         </PricingCanvasHeadline2>
         <PricingCanvasCopy>
-          A deep dive analysis of your products onboarding journey. <br /> I'll
+          A deep dive analysis of your product’s onboarding journey. <br /> I'll
           help you <b>get more new users</b> and make them{" "}
           <b>stick with your product</b>.
         </PricingCanvasCopy>
@@ -569,6 +588,10 @@ const PricingCanvas = () => {
               </PanelCopy>
             </PanelListItem>
           </PanelList>
+          <PanelComment>
+            If you’re not satisfied with the audit deliverables, I’ll revise
+            once for free in 7 days.
+          </PanelComment>
         </PricingCanvasCopy>
       </PricingCanvasBody>
       <PricingCanvasPricetable>

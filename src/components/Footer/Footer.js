@@ -172,7 +172,7 @@ const Footer = (props) => {
           </SitemapItem>
           <SitemapItem>
             <Link
-              to={`/writin`}
+              to={`/writing`}
               style={{
                 color: Colors.primaryText.highEmphasis,
                 textDecoration: "none",

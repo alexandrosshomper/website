@@ -291,7 +291,7 @@ const NavigationSticky = (props) => {
             <ButtonSmall
               href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
               clickAction={() => hanldeBookAudit()}
-              text={"Book my audit"}
+              text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}
             />

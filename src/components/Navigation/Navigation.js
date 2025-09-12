@@ -5,9 +5,9 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
-import ButtonSmall from "../Button/ButtonSmall";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
+import ButtonSmallSecondary from "../Button/ButtonSmallSecondary";
 
 const Navigation = (props) => {
   const location = useLocation();
@@ -290,10 +290,10 @@ const Navigation = (props) => {
           <CTA>
             <LandingpageMenu />
 
-            <ButtonSmall
+            <ButtonSmallSecondary
               href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
               clickAction={() => hanldeBookAudit()}
-              text={"Book my audit"}
+              text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}
             />

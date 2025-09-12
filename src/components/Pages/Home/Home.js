@@ -1330,22 +1330,24 @@ const Content = (props) => {
       <Section>
         <Hero>
           <HeroHeadline>
-            I help startups
-            <br /> <OnboardingGradient>
-              get more new users
-            </OnboardingGradient>{" "}
-            and make them <ExperienceGradient>stick</ExperienceGradient>.
+            Let's fix your leaky onboarding.
+            <br />
+            <OnboardingGradient>Boost activation in 14 days</OnboardingGradient>
+            .
           </HeroHeadline>
           <HeroSubline>
-            Let's <span style={{ color: "black" }}>fix</span> your products
-            <br /> leaky{" "}
-            <span style={{ color: "black" }}>onboarding experience</span>.
+            I help SaaS teams
+            <span style={{ color: "black" }}>
+              {" "}
+              turn more sign-ups into active, paying users
+            </span>{" "}
+            with a focused Onboarding Development Sprint.
           </HeroSubline>
           <ButtonWrapper>
             <ButtonMedium
               href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
               clickAction={() => hanldeBookAudit()}
-              text={"Book my audit"}
+              text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}
             />
@@ -1414,7 +1416,7 @@ const Content = (props) => {
           </MoveUpWhenVisible>
           <MoveUpWhenVisible>
             <ProblemListItem>
-              Users <ProblemHighlight>are not upgarding</ProblemHighlight> their
+              Users <ProblemHighlight>are not upgrading</ProblemHighlight> their
               plans
             </ProblemListItem>
           </MoveUpWhenVisible>
@@ -1428,7 +1430,7 @@ const Content = (props) => {
         <SolutionHeadline>
           <span style={{ color: "black" }}>Our Solution</span>
           <br />
-          Book a 2–week sprint to fine-tune your products onboarding experience{" "}
+          Book a 2–week sprint to fine-tune your product’s onboarding experience{" "}
         </SolutionHeadline>
         <SolutionSubline>
           {" "}
@@ -1441,14 +1443,14 @@ const Content = (props) => {
               <SolutionBody>
                 <SolutionParagraph>
                   <SolutionTitle>
-                    <span style={{ color: "black" }}>Week 1</span> Audit your
-                    onboarding experience
+                    <span style={{ color: "black" }}>Week 1</span> Onboarding
+                    Discovery
                   </SolutionTitle>
                   <SolutionCopy>
                     We'll analyze your current onboarding flow, user research,
                     and data to{" "}
                     <span style={{ color: "black" }}>
-                      pinpoint key drop-off points and opportunities
+                      pinpoint key drop-off points and opportunities{" "}
                     </span>
                     for improvement.
                   </SolutionCopy>
@@ -1463,8 +1465,8 @@ const Content = (props) => {
                 <SolutionParagraph style={{ order: "2" }}>
                   <SolutionTitle>
                     {" "}
-                    <span style={{ color: "black" }}>Week 2</span> Design
-                    delightful user experiences
+                    <span style={{ color: "black" }}>Week 2</span> Onboarding
+                    Development
                   </SolutionTitle>
                   <SolutionCopy>
                     We'll craft an onboarding journey that{" "}
@@ -1602,7 +1604,7 @@ const Content = (props) => {
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
                   <PanelCopy>
-                    Feedback service over ~1 months to ensure best practices are
+                    Feedback support over ~1 months to ensure best practices are
                     implemented
                   </PanelCopy>
                 </PanelListItem>
@@ -1632,7 +1634,7 @@ const Content = (props) => {
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
                   <PanelCopy>
-                    Feedback service over ~2 months to ensure best practices are
+                    Feedback support over ~2 months to ensure best practices are
                     implemented
                   </PanelCopy>
                 </PanelListItem>
@@ -1662,7 +1664,7 @@ const Content = (props) => {
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
                   <PanelCopy>
-                    Feedback service over ~4 months to ensure best practices are
+                    Feedback support over ~4 months to ensure best practices are
                     implemented
                   </PanelCopy>
                 </PanelListItem>
@@ -1707,7 +1709,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             //headline="Prototype and test with real users"
             //copy="Fake it until you can make it. Spend the minimum amount of time to create the closest to the real thing. You’re looking for feedback on the idea, not whether your design looks finished. Test with real representative users."
             headline="How long does the process take?"
-            copy="End-to-end, the process takes roughly one month to complete. However, this timeline is highly dependent on how quick and timely your team can provide feedback on our iterations. Be prepared to sync with your team in a timely manner in order to keep the final stage of the process moving forward."
+            copy="End-to-end, the process takes roughly two weeks to complete. However, this timeline is highly dependent on how quick and timely your team can provide feedback on our iterations. Be prepared to sync with your team in a timely manner in order to keep the final stage of the process moving forward."
           />
         </MoveUpWhenVisible>
         <MoveUpWhenVisible>

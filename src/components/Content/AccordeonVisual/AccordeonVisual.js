@@ -86,16 +86,15 @@ const AccordeonVisual = ({}) => {
     <AccordeonVisual>
       <Accordeon>
         <Option>
-          <Title>1. Book a call</Title>
+          <Title>1. Book intro call</Title>
           <Content>
             <Copy>
-              Book a user onboarding and activation strategy call. We’ll chat
-              about your current product problems and how user onboarding and
-              activation can solve them.
+              Book an intro call. We’ll chat about your current product problems
+              and how user onboarding and activation can solve them.
             </Copy>
             <ButtonSmall
               href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-              text={"Book my audit"}
+              text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}
             />

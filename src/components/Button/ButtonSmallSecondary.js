@@ -1,9 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import Icon from "@mdi/react";
 import { Colors } from "../DesignSystem";
 
-const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
+const ButtonSmallSecondary = ({
+  href,
+  text,
+  color1,
+  color2,
+  icon,
+  clickAction,
+}) => {
   console.log(`color:${color1};`);
   let csscolor = null;
   if (color1 && color2) {
@@ -11,7 +19,7 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   } else {
     csscolor = `background-image: linear-gradient(to right, #ff6d00, #ff9e40);`;
   }
-  const ButtonMedium = styled.a`
+  const ButtonSmallSecondary = styled.a`
     align-items: flex-start;
     appearance: auto;
     background-attachment: scroll;
@@ -23,10 +31,10 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     background-position-y: 0%;
     background-size: auto;
 
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 
     border-bottom-style: none;
     border-top-style: none;
@@ -60,16 +68,17 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
 
     margin: 0px;
     min-width: 51px;
+    height: fit-content;
 
     overflow-x: visible;
     overflow-y: visible;
 
-    padding: 16px 32px;
+    padding: 4px 10px;
 
     font-style: normal;
     font-weight: 500;
-    font-size: 17px;
-    line-height: 130%;
+    font-size: 12px;
+    line-height: 133%;
 
     quotes: "“" "”";
     text-align: center;
@@ -80,7 +89,7 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     text-transform: none;
     vertical-align: baseline;
 
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
 
     word-spacing: 0px;
     writing-mode: horizontal-tb;
@@ -99,11 +108,11 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   `;
 
   return (
-    <ButtonMedium href={href} onClick={clickAction}>
+    <ButtonSmallSecondary href={href} onClick={clickAction}>
       {text}
       {icon && <Icon path={icon} title={text} size={"16px"} />}
-    </ButtonMedium>
+    </ButtonSmallSecondary>
   );
 };
 
-export default ButtonMedium;
+export default ButtonSmallSecondary;
