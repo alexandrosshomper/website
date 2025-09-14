@@ -17,6 +17,7 @@ import Headline2 from "../../Content/Landingpage/Headline2";
 import ButtonMedium from "../../Button/ButtonMedium";
 import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
+import Checkbox from "../../Checkbox/Checkbox";
 
 import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
 
@@ -35,12 +36,14 @@ import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [hasAnimated, setHasAnimated] = React.useState(false);
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !hasAnimated) {
       controls.start("visible");
+      setHasAnimated(true);
     }
-  }, [controls, inView]);
+  }, [controls, inView, hasAnimated]);
 
   return (
     <motion.div
@@ -70,12 +73,14 @@ function FadeInWhenVisible({ children }) {
 function MoveUpWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [hasAnimated, setHasAnimated] = React.useState(false);
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !hasAnimated) {
       controls.start("visible");
+      setHasAnimated(true);
     }
-  }, [controls, inView]);
+  }, [controls, inView, hasAnimated]);
 
   return (
     <motion.div
@@ -111,12 +116,14 @@ function MoveUpWhenVisible({ children }) {
 function RevealWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [hasAnimated, setHasAnimated] = React.useState(false);
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !hasAnimated) {
       controls.start("visible");
+      setHasAnimated(true);
     }
-  }, [controls, inView]);
+  }, [controls, inView, hasAnimated]);
 
   return (
     <motion.div
@@ -180,7 +187,25 @@ const Content = (props) => {
       align-items: center;
     }
   `;
+  const HeaderSection = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    align-items: stretch;
+    flex-grow: 0;
+    margin-bottom: 40px;
+    ${Devices.tabletS} {
+      align-items: center;
+      margin-bottom: 200px;
+    }
+  `;
   const CardPanels = styled.section`
     display: flex;
     flex-direction: row;
@@ -391,7 +416,7 @@ const Content = (props) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    font-size: 52px;
+    font-size: 38px;
     line-height: 1;
     font-weight: 700;
     letter-spacing: -0.00028em;
@@ -1222,13 +1247,177 @@ const Content = (props) => {
     }
   `;
 
+  // Self-Check Lightbox styles
+  const SelfCheckOverlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 24px;
+  `;
+
+  const SelfCheckModal = styled.div`
+    background: #ffffff;
+    border-radius: 26px;
+    width: 100%;
+    max-width: 560px;
+    padding: 24px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+    position: relative;
+    ${Devices.tabletS} {
+      padding: 24px 32px;
+    }
+  `;
+
+  const SelfCheckTitle = styled.h3`
+    margin: 0 0 4px 0;
+    font-size: 21px;
+    line-height: 120%;
+    color: ${Colors.primaryText.highEmphasis};
+    text-align: left;
+    ${Devices.tabletS} {
+      font-size: 28px;
+      line-height: 120%;
+    }
+  `;
+
+  const SelfCheckSubline = styled.p`
+    margin: 0 0 24px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 114%;
+    color: ${Colors.primaryText.mediumEmphasis};
+    ${Devices.tabletS} {
+      margin: 0 0 32px 0;
+    }
+  `;
+
+  const SelfCheckList = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  `;
+
+  const SelfCheckItem = styled.li`
+    color: ${Colors.primaryText.highEmphasis};
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+
+    ${Devices.tabletS} {
+      font-size: 24px;
+      line-height: 120%;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+    }
+  `;
+
+  const Thermometer = styled.div`
+    width: 100%;
+    height: 32px;
+    border-radius: 30px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    font-weight: 600;
+    margin: 8px 0 20px 0;
+    ${Devices.tabletS} {
+      margin-bottom: 32px;
+    }
+  `;
+
+  const ThermometerText = styled.p`
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 114%;
+    color: ${Colors.primaryText.highEmphasis};
+    ${Devices.tabletS} {
+      font-size: 26px;
+    }
+  `;
+
+  const BlinkingCircle = styled.div`
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0;
+    transition: background-color 0.3s ease;
+    animation: ${(props) =>
+      props.shouldBlink ? `blink ${props.blinkInterval}s infinite` : "none"};
+    ${Devices.tabletS} {
+      width: 40px;
+      height: 40px;
+    }
+    @keyframes blink {
+      0%,
+      50% {
+        opacity: 1;
+      }
+      51%,
+      100% {
+        opacity: 0.3;
+      }
+    }
+  `;
+
+  const ModalActions = styled.div`
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border-top: 1px solid grey;
+    padding-top: 16px;
+    ${Devices.tabletS} {
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+  `;
+
+  const ModalClose = styled.button`
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    color: ${Colors.primaryText.highEmphasis};
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+  `;
+
   const LightboxOverlay = styled.div`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(20px);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1285,20 +1474,75 @@ const Content = (props) => {
     console.log("Clicked Watch Demo");
   };
 
-  const hanldeBookAudit = (e, href) => {
+  const hanldeBookAudit = (e, href, instance = "unknown") => {
     e.preventDefault();
     ReactGA.event({
       category: "User",
       action: "book_audit_click",
-      label: "Book Audit",
+      label: `Book Audit - ${instance}`,
       value: 10,
       nonInteraction: false,
     });
     setTimeout(() => {
       window.location.href = href;
     }, 150);
-    console.log("Clicked Book Audit");
+    console.log(`Clicked Book Audit - ${instance}`);
   };
+
+  const handleClickOnboardingSelfCheck = (e) => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "User",
+      action: "self_check_click",
+      label: "Self Check",
+      value: 10,
+      nonInteraction: false,
+    });
+
+    console.log("Clicked Self Check");
+    setIsSelfCheckOpen(true);
+  };
+
+  // Self-Check state and logic
+  const [isSelfCheckOpen, setIsSelfCheckOpen] = React.useState(false);
+  const [selectedIssues, setSelectedIssues] = React.useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const toggleIssue = (index) => {
+    setSelectedIssues((prev) => {
+      const next = [...prev];
+      next[index] = !next[index];
+      return next;
+    });
+  };
+
+  const selectedCount = selectedIssues.filter(Boolean).length;
+  let thermometerColor = "#1db954"; // green
+  let thermometerText = "Onboarding: OK";
+  let shouldBlink = false;
+  let blinkInterval = 1;
+
+  if (selectedCount === 1) {
+    thermometerColor = "#f1c40f"; // yellow
+    thermometerText = "Onboarding: Keep observing.";
+    shouldBlink = true;
+    blinkInterval = 1; // 1 second
+  } else if (selectedCount === 2) {
+    thermometerColor = "#f39c12"; // orange
+    thermometerText = "Onboarding: There is a Problem";
+    shouldBlink = true;
+    blinkInterval = 0.5; // 0.5 seconds
+  } else if (selectedCount >= 3) {
+    thermometerColor = "#e53935"; // red
+    thermometerText = "Onboarding: Big Problem";
+    shouldBlink = true;
+    blinkInterval = 0.25; // 0.25 seconds
+  }
 
   React.useEffect(() => {
     const onKeyDown = (event) => {
@@ -1312,7 +1556,7 @@ const Content = (props) => {
 
   return (
     <Content>
-      <Section>
+      <HeaderSection>
         <Hero>
           <HeroHeadline>
             Let's fix your leaky onboarding.
@@ -1330,8 +1574,13 @@ const Content = (props) => {
           </HeroSubline>
           <ButtonWrapper>
             <ButtonMedium
-              href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-              clickAction={() => hanldeBookAudit()}
+              clickAction={(e) =>
+                hanldeBookAudit(
+                  e,
+                  "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                  "hero-section"
+                )
+              }
               text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}
@@ -1369,7 +1618,7 @@ const Content = (props) => {
             </LightboxOverlay>
           )}
         </Hero>
-      </Section>
+      </HeaderSection>
       <Section>
         <PricingCanvas />
       </Section>
@@ -1382,31 +1631,116 @@ const Content = (props) => {
         </ProblemHeadline>
         <ProblemSubline>Does this sound familiar?</ProblemSubline>
         <ProblemList>
-          <MoveUpWhenVisible>
+          <MoveUpWhenVisible key="problem-1">
             <ProblemListItem>
-              Users{" "}
-              <ProblemHighlight>abandon the registration</ProblemHighlight> or
-              account creation process
+              <ProblemHighlight>Low Activation →</ProblemHighlight> New Users
+              sign up but never reach their Aha Moment.
             </ProblemListItem>
           </MoveUpWhenVisible>
 
-          <MoveUpWhenVisible>
+          <MoveUpWhenVisible key="problem-2">
             <ProblemListItem>
-              Users{" "}
-              <ProblemHighlight>
-                leave before discovering core features
-              </ProblemHighlight>{" "}
-              of your product
+              <ProblemHighlight>Weak Retention →</ProblemHighlight> Even
+              activated users drop off before forming habits.
             </ProblemListItem>
           </MoveUpWhenVisible>
-          <MoveUpWhenVisible>
+          <MoveUpWhenVisible key="problem-3">
             <ProblemListItem>
-              Users <ProblemHighlight>are not upgrading</ProblemHighlight> their
-              plans
+              <ProblemHighlight>Poor Conversion →</ProblemHighlight> Too few
+              free users upgrade to paid plans.
             </ProblemListItem>
           </MoveUpWhenVisible>
         </ProblemList>
-        <ProblemConclusion>It doesn't have to be like this…</ProblemConclusion>
+        <ProblemConclusion>
+          40% of startups die because of bad traction
+        </ProblemConclusion>
+        <div
+          style={{ display: "flex", justifyContent: "center", marginTop: 16 }}
+        >
+          <ButtonMedium
+            clickAction={() => handleClickOnboardingSelfCheck()}
+            text={"Take Onboarding Self-Check"}
+            color1="#000000"
+            color2="#000000"
+          />
+        </div>
+        {isSelfCheckOpen && (
+          <SelfCheckOverlay onClick={() => setIsSelfCheckOpen(false)}>
+            <SelfCheckModal onClick={(e) => e.stopPropagation()}>
+              <ModalClose
+                onClick={() => setIsSelfCheckOpen(false)}
+                aria-label="Close self-check"
+              >
+                ×
+              </ModalClose>
+              <SelfCheckTitle>Onboarding Self-Check</SelfCheckTitle>
+              <SelfCheckSubline>
+                Find out whether you have an onboarding problem. Check what
+                applies.
+              </SelfCheckSubline>
+              <SelfCheckList>
+                <SelfCheckItem>
+                  <Checkbox
+                    checked={selectedIssues[1]}
+                    onChange={() => toggleIssue(1)}
+                    label="Are new users signing up but not activating—dropping off
+                    before they experience real value?"
+                  />
+                </SelfCheckItem>
+                <SelfCheckItem>
+                  <Checkbox
+                    checked={selectedIssues[2]}
+                    onChange={() => toggleIssue(2)}
+                    label="Do you see low retention after the first weeks even though
+                    acquisition is steady?"
+                  />
+                </SelfCheckItem>
+                <SelfCheckItem>
+                  <Checkbox
+                    checked={selectedIssues[3]}
+                    onChange={() => toggleIssue(3)}
+                    label="Are too few free users upgrading to paid plans, leaving
+                    revenue on the table?"
+                  />
+                </SelfCheckItem>
+
+                <SelfCheckItem>
+                  <Checkbox
+                    checked={selectedIssues[4]}
+                    onChange={() => toggleIssue(4)}
+                    label="Do you notice support tickets piling up because the product
+                    doesn't guide users well enough?"
+                  />
+                </SelfCheckItem>
+                <SelfCheckItem>
+                  <Checkbox
+                    checked={selectedIssues[5]}
+                    onChange={() => toggleIssue(5)}
+                    label="Do you notice support tickets piling up because the product
+                    doesn't guide ?"
+                  />
+                </SelfCheckItem>
+              </SelfCheckList>
+              <Thermometer>
+                <BlinkingCircle
+                  style={{ backgroundColor: thermometerColor }}
+                  shouldBlink={shouldBlink}
+                  blinkInterval={blinkInterval}
+                />
+                <ThermometerText>{thermometerText}</ThermometerText>
+              </Thermometer>
+
+              <ModalActions>
+                <ButtonMedium
+                  href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                  text="Book intro call"
+                  color1={Colors.blue}
+                  color2={Colors.blueDark}
+                />
+              </ModalActions>
+            </SelfCheckModal>
+          </SelfCheckOverlay>
+        )}
       </Section>
       <Section>
         <BusinessCard />
@@ -1523,14 +1857,14 @@ const Content = (props) => {
 
         <DeliverablesCards>
           <DeliverablesCard
-            headline="New Positioning"
+            headline="Positioning"
             img="../img/Landingpage/Deliverables/Positioning.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
             copy="A light-weight positioning for your website, that communicates the right message to the right customer to ensure customers get your product at the first touchpoint."
           />
           <DeliverablesCard
-            headline="New Onboarding Journey"
+            headline="Onboarding & Activation Journey"
             img="../img/Landingpage/Deliverables/NewOnboardingJourney.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
@@ -1546,7 +1880,7 @@ const Content = (props) => {
           />
 
           <DeliverablesCard
-            headline="Prioritized List of Improvements"
+            headline="Prioritized To Do List"
             img="../img/Landingpage/Deliverables/PrioritizedList.png"
             color1={Colors.blue}
             color2={Colors.blueDark}
@@ -1572,10 +1906,40 @@ const Content = (props) => {
                   with <b>less than 1M ARR</b>.
                 </PriceComment>
               </PricePanelTitle>
-              <PanelBody></PanelBody>
+              <PanelBody>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Onboarding & Activation Journey Map</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Wireframes + Copy</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Positioning Canvas</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Prioritized To Do List</PanelCopy>
+                </PanelListItem>
+              </PanelBody>
               <ButtonMedium
-                href="https://calendar.notion.so/meet/alexandros/0a6mz4m5q"
-                clickAction={() => hanldeBookAudit()}
+                clickAction={(e) =>
+                  hanldeBookAudit(
+                    e,
+                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "pricing-panel-early"
+                  )
+                }
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1598,15 +1962,44 @@ const Content = (props) => {
                   <PriceBullet>
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
+                  <PanelCopy>Onboarding & Activation Journey Map</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Wireframes + Copy</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Positioning Canvas</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Prioritized To Do List</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
                   <PanelCopy>
-                    Feedback support over ~1 month to ensure best practices are
-                    implemented
+                    Feedback support over <b>~1 month</b> to ensure best
+                    practices are implemented
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
               <ButtonMedium
-                href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-                clickAction={() => hanldeBookAudit()}
+                clickAction={(e) =>
+                  hanldeBookAudit(
+                    e,
+                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "pricing-panel-growth"
+                  )
+                }
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1628,15 +2021,44 @@ const Content = (props) => {
                   <PriceBullet>
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
+                  <PanelCopy>Onboarding & Activation Journey Map</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Wireframes + Copy</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Positioning Canvas</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Prioritized To Do List</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
                   <PanelCopy>
-                    Feedback support over ~2 months to ensure best practices are
-                    implemented
+                    Feedback support over <b>~2 months</b> to ensure best
+                    practices are implemented
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
               <ButtonMedium
-                href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-                clickAction={() => hanldeBookAudit()}
+                clickAction={(e) =>
+                  hanldeBookAudit(
+                    e,
+                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "pricing-panel-scale"
+                  )
+                }
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1658,15 +2080,45 @@ const Content = (props) => {
                   <PriceBullet>
                     <Check size={16} strokeWidth={2.5} />
                   </PriceBullet>
+                  <PanelCopy>Onboarding & Activation Journey Map</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Wireframes + Copy</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Positioning Canvas</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
+                  <PanelCopy>Prioritized To Do List</PanelCopy>
+                </PanelListItem>
+                <PanelListItem>
+                  <PriceBullet>
+                    <Check size={16} strokeWidth={2.5} />
+                  </PriceBullet>
                   <PanelCopy>
-                    Feedback support over ~4 months to ensure best practices are
-                    implemented
+                    Feedback support over <b>~4 months</b> to ensure best
+                    practices are implemented
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
               <ButtonMedium
                 href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-                clickAction={() => hanldeBookAudit()}
+                clickAction={(e) =>
+                  hanldeBookAudit(
+                    e,
+                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "pricing-panel-mature"
+                  )
+                }
                 text={"Work with us"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
@@ -1733,8 +2185,14 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
           </HeroSubline>
           <ButtonMedium
             href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-            clickAction={() => hanldeBookAudit()}
-            text={"Book my audit"}
+            clickAction={(e) =>
+              hanldeBookAudit(
+                e,
+                "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                "cta-section"
+              )
+            }
+            text={"Book intro call"}
             color1={Colors.blue}
             color2={Colors.blueDark}
           />

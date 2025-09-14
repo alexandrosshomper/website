@@ -219,11 +219,11 @@ const Navigation = (props) => {
       align-items: center;
     }
   `;
-  const hanldeBookAudit = () => {
+  const hanldeBookAudit = (instance = "navigation") => {
     ReactGA.event({
       category: "User",
       action: "book_audit_click",
-      label: "Book Audit",
+      label: `Book Audit - ${instance}`,
       value: 10,
       nonInteraction: false,
     });

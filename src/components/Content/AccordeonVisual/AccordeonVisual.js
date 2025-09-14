@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
@@ -82,6 +83,20 @@ const AccordeonVisual = ({}) => {
   const Copy = styled.p`
     /* Auto Layout */
   `;
+  const hanldeBookAudit = (e, href, instance = "unknown") => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "User",
+      action: "book_audit_click",
+      label: `Book Audit - ${instance}`,
+      value: 10,
+      nonInteraction: false,
+    });
+    setTimeout(() => {
+      window.location.href = href;
+    }, 150);
+    console.log(`Clicked Book Audit - ${instance}`);
+  };
   return (
     <AccordeonVisual>
       <Accordeon>
@@ -93,7 +108,13 @@ const AccordeonVisual = ({}) => {
               and how user onboarding and activation can solve them.
             </Copy>
             <ButtonSmall
-              href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+              clickAction={(e) =>
+                hanldeBookAudit(
+                  e,
+                  "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                  "pricing-panel-scale"
+                )
+              }
               text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}

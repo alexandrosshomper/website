@@ -132,13 +132,13 @@ const Wrapper = styled.div`
 `;
 
 const BookAnAudit = ({}) => {
-  const bookAuditHandler = (e) => {
+  const bookAuditHandler = (e, instance = "lead-gen") => {
     e.preventDefault();
-    console.log("Click Book Audit");
+    console.log(`Click Book Audit - ${instance}`);
     ReactGA.event({
       category: "User Interaction",
       action: "Clicked Button",
-      label: "Book Audit",
+      label: `Book Audit - ${instance}`,
       nonInteraction: false,
       transport: "beacon",
     });

@@ -149,7 +149,7 @@ const PricingCanvas = () => {
     font-size: 18px;
     line-height: 115%;
 
-    margin-top: 0px;
+    margin-top: 3px;
     margin-bottom: 20px;
 
     ${Devices.tabletS} {
@@ -290,7 +290,7 @@ const PricingCanvas = () => {
     line-height: 115%;
 
     margin-top: 0px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
     ${Devices.tabletS} {
       font-size: 20px;
@@ -413,7 +413,8 @@ const PricingCanvas = () => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -561,10 +562,10 @@ const PricingCanvas = () => {
                 <Check size={16} strokeWidth={2.5} />
               </PriceBullet>
               <PanelCopy>
-                <PanelHeadline>New Onboarding Flow & Prototype</PanelHeadline>
-                Wireframes and prototype of the new, improved onboarding journey
-                that'll help you get more new users, make them stick, and
-                convert
+                <PanelHeadline>Wireframes + Copy</PanelHeadline>
+                Wireframes of the new, improved onboarding journey incl. copy,
+                empty, states etc. that'll help you get more new users, make
+                them stick, and convert
               </PanelCopy>
             </PanelListItem>
             <PanelListItem>
@@ -572,9 +573,9 @@ const PricingCanvas = () => {
                 <Check size={16} strokeWidth={2.5} />
               </PriceBullet>
               <PanelCopy>
-                <PanelHeadline>Easy to Digest Presentation</PanelHeadline>
-                The audit and the insights packed into a digestible,
-                step-by-step presentation
+                <PanelHeadline>Positioning Canvas</PanelHeadline>A canvas with a
+                refined positioning and a set of messaging for your landingpage
+                and communication your product effectively to your ICP.
               </PanelCopy>
             </PanelListItem>
             <PanelListItem>
@@ -582,7 +583,7 @@ const PricingCanvas = () => {
                 <Check size={16} strokeWidth={2.5} />
               </PriceBullet>
               <PanelCopy>
-                <PanelHeadline>Prioritized To do List</PanelHeadline>A list of
+                <PanelHeadline>Prioritized To Do List</PanelHeadline>A list of
                 improvements and experiments for your new user onboarding
                 journey, prioritized and ready to go
               </PanelCopy>

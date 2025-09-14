@@ -195,7 +195,7 @@ const BusinessCard = ({ headline, copy }) => {
     <BusinessCard>
       <Portrait src="./img/Identity/PortraitProSE.png" />
       <BusinessCardParagraph>
-        <Overline>40% of startups die because of bad traction</Overline>
+        <Overline>Startup Coach & Advisor</Overline>
         <BusinessCardHeadline>
           I’m Alexandros Shomper, <br />
           and I’m here to help.

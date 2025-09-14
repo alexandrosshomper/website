@@ -218,11 +218,11 @@ const NavigationSticky = (props) => {
       align-items: center;
     }
   `;
-  const hanldeBookAudit = () => {
+  const hanldeBookAudit = (instance = "navigation-sticky") => {
     ReactGA.event({
       category: "User",
       action: "Clicked Book Audit",
-      label: "Book Audit",
+      label: `Book Audit - ${instance}`,
       value: 10,
       nonInteraction: false,
     });

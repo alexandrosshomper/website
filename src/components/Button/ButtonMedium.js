@@ -89,7 +89,7 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
 
     text-decoration: none;
     &:hover {
-      background-color: ${Colors.blueDark};
+      background-color: ${color2 || "#000000"};
       background-image: none;
     }
     &:visited {
