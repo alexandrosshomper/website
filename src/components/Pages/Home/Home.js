@@ -1379,6 +1379,7 @@ const Content = (props) => {
 
   const ModalActions = styled.div`
     display: flex;
+    flex-direction: column;
     gap: 12px;
     align-items: center;
     justify-content: center;
@@ -1386,6 +1387,7 @@ const Content = (props) => {
     border-top: 1px solid grey;
     padding-top: 16px;
     ${Devices.tabletS} {
+      flex-direction: row;
       justify-content: flex-end;
       margin-top: 24px;
     }
@@ -1484,9 +1486,24 @@ const Content = (props) => {
       nonInteraction: false,
     });
     setTimeout(() => {
-      window.location.href = href;
+      window.open(href, "_blank", "noopener,noreferrer");
     }, 150);
     console.log(`Clicked Book Audit - ${instance}`);
+  };
+
+  const handleClickActivationScore = (e, href, instance = "unknown") => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "User",
+      action: "activation_score_click",
+      label: `Activation Score - ${instance}`,
+      value: 10,
+      nonInteraction: false,
+    });
+    setTimeout(() => {
+      window.open(href, "_blank", "noopener,noreferrer");
+    }, 150);
+    console.log(`Clicked Activation Score - ${instance}`);
   };
 
   const handleClickOnboardingSelfCheck = () => {
@@ -1730,8 +1747,24 @@ const Content = (props) => {
               </Thermometer>
 
               <ModalActions>
+                <ButtonMediumSecondary
+                  clickAction={(e) =>
+                    handleClickActivationScore(
+                      e,
+                      "https://alexshomper.notion.site/26eadf77b88b80d0b73aca5b171c586c",
+                      "self-check"
+                    )
+                  }
+                  text="Calculate Activation Score"
+                />
                 <ButtonMedium
-                  href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
+                  clickAction={(e) =>
+                    hanldeBookAudit(
+                      e,
+                      "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
+                      "self-check"
+                    )
+                  }
                   text="Book intro call"
                   color1={Colors.blue}
                   color2={Colors.blueDark}
