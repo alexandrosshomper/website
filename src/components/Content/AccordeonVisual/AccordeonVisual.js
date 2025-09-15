@@ -111,7 +111,7 @@ const AccordeonVisual = ({}) => {
               clickAction={(e) =>
                 hanldeBookAudit(
                   e,
-                  "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "pricing-panel-scale"
                 )
               }

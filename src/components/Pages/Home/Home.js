@@ -1315,7 +1315,7 @@ const Content = (props) => {
     line-height: 120%;
 
     ${Devices.tabletS} {
-      font-size: 24px;
+      font-size: 18px;
       line-height: 120%;
     }
     ${Devices.tabletM} {
@@ -1489,8 +1489,7 @@ const Content = (props) => {
     console.log(`Clicked Book Audit - ${instance}`);
   };
 
-  const handleClickOnboardingSelfCheck = (e) => {
-    e.preventDefault();
+  const handleClickOnboardingSelfCheck = () => {
     ReactGA.event({
       category: "User",
       action: "self_check_click",
@@ -1577,7 +1576,7 @@ const Content = (props) => {
               clickAction={(e) =>
                 hanldeBookAudit(
                   e,
-                  "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "hero-section"
                 )
               }
@@ -1732,7 +1731,7 @@ const Content = (props) => {
 
               <ModalActions>
                 <ButtonMedium
-                  href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                  href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
                   text="Book intro call"
                   color1={Colors.blue}
                   color2={Colors.blueDark}
@@ -1936,7 +1935,7 @@ const Content = (props) => {
                 clickAction={(e) =>
                   hanldeBookAudit(
                     e,
-                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-early"
                   )
                 }
@@ -1996,7 +1995,7 @@ const Content = (props) => {
                 clickAction={(e) =>
                   hanldeBookAudit(
                     e,
-                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-growth"
                   )
                 }
@@ -2055,7 +2054,7 @@ const Content = (props) => {
                 clickAction={(e) =>
                   hanldeBookAudit(
                     e,
-                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-scale"
                   )
                 }
@@ -2111,11 +2110,11 @@ const Content = (props) => {
                 </PanelListItem>
               </PanelBody>
               <ButtonMedium
-                href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+                href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
                 clickAction={(e) =>
                   hanldeBookAudit(
                     e,
-                    "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                    "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-mature"
                   )
                 }
@@ -2184,11 +2183,11 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             <span style={{ color: "black" }}>converts new users faster</span>.
           </HeroSubline>
           <ButtonMedium
-            href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
+            href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
             clickAction={(e) =>
               hanldeBookAudit(
                 e,
-                "https://calendar.app.google/qNqHiTZCN54GL2ij7",
+                "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                 "cta-section"
               )
             }

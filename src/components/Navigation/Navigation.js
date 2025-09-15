@@ -219,14 +219,19 @@ const Navigation = (props) => {
       align-items: center;
     }
   `;
-  const hanldeBookAudit = (instance = "navigation") => {
+  const hanldeBookAudit = (e, href, instance = "navigation-sticky") => {
+    e.preventDefault();
     ReactGA.event({
       category: "User",
-      action: "book_audit_click",
+      action: "Clicked Book Audit",
       label: `Book Audit - ${instance}`,
       value: 10,
       nonInteraction: false,
     });
+    setTimeout(() => {
+      window.location.href = href;
+    }, 150);
+    console.log(`Clicked Book Audit - ${instance}`);
   };
   return (
     <NavigationWrapper>
@@ -291,8 +296,13 @@ const Navigation = (props) => {
             <LandingpageMenu />
 
             <ButtonSmallSecondary
-              href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
-              clickAction={() => hanldeBookAudit()}
+              clickAction={(e) =>
+                hanldeBookAudit(
+                  e,
+                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
+                  "hero-section"
+                )
+              }
               text={"Book intro call"}
               color1={Colors.blue}
               color2={Colors.blueDark}
