@@ -2622,7 +2622,9 @@ const Content = (props) => {
           style={{ display: "flex", justifyContent: "center", marginTop: 32 }}
         >
           <ButtonMediumSecondary
-            clickAction={() => handleClickROICalculator(e, "pricing-panels")}
+            clickAction={(event) =>
+              handleClickROICalculator(event, "pricing-panels")
+            }
             text={"Calculate Onboarding ROI"}
             color1="#000000"
             color2="#000000"
