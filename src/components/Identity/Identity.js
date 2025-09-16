@@ -8,19 +8,19 @@ import Logo from "./Logo";
 const Identity = (props) => {
   const Identity = styled.div`
     height: 134px;
-    float: right;
+    float: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: right;
+    align-items: left;
     margin-left: 12px;
-    margin-top: 4px;
+    margin-top: 15px;
 
     width: 60px;
     ${Devices.tabletS} {
       float: left;
       width: 132px;
-      align-items: right;
+      align-items: left;
     }
     ${Devices.tabletM} {
       float: left;

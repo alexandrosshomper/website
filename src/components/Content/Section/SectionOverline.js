@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
 
-const SectionOverline = ({ subline }) => {
+const SectionOverline = ({ text }) => {
   const SectionOverline = styled.p`
     font-family: "Roboto", sans-serif;
     font-weight: bold;
@@ -43,7 +43,7 @@ const SectionOverline = ({ subline }) => {
     }
   `;
 
-  return <SectionOverline>{subline}</SectionOverline>;
+  return <SectionOverline>{text}</SectionOverline>;
 };
 
 export default SectionOverline;

@@ -16,7 +16,7 @@ const BusinessCardHeadline = ({ headline }) => {
     flex: none;
     order: 0;
     flex-grow: 0;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 115%;
 
     margin-top: 0px;
@@ -37,9 +37,9 @@ const BusinessCardHeadline = ({ headline }) => {
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
-      width: 348px;
+      width: 420px;
 
-      font-size: 40px;
+      font-size: 32px;
       line-height: 115%;
       margin-right: 84px;
     }

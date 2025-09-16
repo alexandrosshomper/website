@@ -1,0 +1,166 @@
+[
+  {
+    "image": "/img/flows/linear/00-landingpage.png",
+    "id": 0
+  },
+  {
+    "image": "/img/flows/linear/01-sign-up-account.png",
+    "id": 1
+  },
+  {
+    "image": "/img/flows/linear/02-sign-up-email.png",
+    "id": 2
+  },
+  {
+    "image": "/img/flows/linear/05-signup-email-verification.png",
+    "id": 3
+  },
+  {
+    "image": "/img/flows/linear/06-signup-email-verification-email.png",
+    "id": 4
+  },
+  {
+    "image": "/img/flows/linear/07-first-experience-homepage.png",
+    "id": 5
+  },
+  {
+    "image": "/img/flows/linear/08-setup-welcome.png",
+    "id": 6
+  },
+  {
+    "image": "/img/flows/linear/12-setup-welcome-command-done.png",
+    "id": 7
+  },
+  {
+    "image": "/img/flows/linear/13-setup-welcome-done.png",
+    "id": 8
+  },
+  {
+    "image": "/img/flows/linear/14-setup-homepage-active.png",
+    "id": 9
+  },
+  {
+    "image": "/img/flows/linear/15-setup-slack-task.png",
+    "id": 10
+  },
+  {
+    "image": "/img/flows/linear/16-setup-slack-integration.png",
+    "id": 11
+  },
+  {
+    "image": "/img/flows/linear/27-setup-slack-connected-after_page_reload.png",
+    "id": 12
+  },
+  {
+    "image": "/img/flows/linear/28-setup-slack-back_to_app.png",
+    "id": 13
+  },
+  {
+    "image": "/img/flows/linear/30-setup-slack-task-command-done.png",
+    "id": 14
+  },
+  {
+    "image": "/img/flows/linear/31-setup-slack-task-done.png",
+    "id": 15
+  },
+  {
+    "image": "/img/flows/linear/32-setup-homepage.png",
+    "id": 16
+  },
+  {
+    "image": "/img/flows/linear/33-setup-labels-ticket.png",
+    "id": 17
+  },
+  {
+    "image": "/img/flows/linear/34-setup-labels-teams_settings.png",
+    "id": 18
+  },
+  {
+    "image": "/img/flows/linear/35-setup-labels-labels_settings.png",
+    "id": 19
+  },
+  {
+    "image": "/img/flows/linear/37-setup-labels-labels_settings-new_label-name.png",
+    "id": 20
+  },
+  {
+    "image": "/img/flows/linear/38-setup-labels-labels_settings-new_label-done.png",
+    "id": 21
+  },
+  {
+    "image": "/img/flows/linear/39-setup-labels-back_to_app.png",
+    "id": 22
+  },
+  {
+    "image": "/img/flows/linear/41-setup-labels-command-done.png",
+    "id": 23
+  },
+  {
+    "image": "/img/flows/linear/42-setup-labels-command-done-finished.png",
+    "id": 24
+  },
+  {
+    "image": "/img/flows/linear/43-setup-homepage-all.png",
+    "id": 25
+  },
+  {
+    "image": "/img/flows/linear/44-setup-github-task.png",
+    "id": 26
+  },
+  {
+    "image": "/img/flows/linear/46-setup-github-settings.png",
+    "id": 27
+  },
+  {
+    "image": "/img/flows/linear/53-setup-github-settings.png",
+    "id": 28
+  },
+  {
+    "image": "/img/flows/linear/54-setup-github-task.png",
+    "id": 29
+  },
+  {
+    "image": "/img/flows/linear/56-setup-github-task-command-done.png",
+    "id": 30
+  },
+  {
+    "image": "/img/flows/linear/57-setup-github-task-command-done-finished.png",
+    "id": 31
+  },
+  {
+    "image": "/img/flows/linear/58-setup-home-active.png",
+    "id": 32
+  },
+  {
+    "image": "/img/flows/linear/59-setup-cycles.png",
+    "id": 33
+  },
+  {
+    "image": "/img/flows/linear/60-setup-cycles-team_settings.png",
+    "id": 34
+  },
+  {
+    "image": "/img/flows/linear/61-setup-cycles-team_settings-team.png",
+    "id": 35
+  },
+  {
+    "image": "/img/flows/linear/63-setup-cycles-team_settings-cycles.png",
+    "id": 36
+  },
+  {
+    "image": "/img/flows/linear/64-setup-cycles-task.png",
+    "id": 37
+  },
+  {
+    "image": "/img/flows/linear/66-setup-cycles-task-command-done.png",
+    "id": 38
+  },
+  {
+    "image": "/img/flows/linear/67-setup-cycles-task-command-done-finished.png",
+    "id": 39
+  },
+  {
+    "image": "/img/flows/linear/68-setup-homepage-done.png",
+    "id": 40
+  }
+]

@@ -4,8 +4,8 @@ import { Colors, Devices } from "../../DesignSystem";
 
 const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
   const CaseCardImage = styled.div`
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 0.38rem;
+    border-top-right-radius: 0.38rem;
 
     direction: ltr;
     display: block;

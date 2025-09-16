@@ -85,14 +85,12 @@ const SectionHead = ({ divider, headline, subline, copy }) => {
     }
   `;
   return (
-    <FadeInWhenVisible>
-      <SectionHead>
-        {divider && <SectionDivider text={divider} />}
-        {headline && <SectionHeadline headline={headline} />}
-        {subline && <SectionSubline subline={subline} />}
-        {copy && <SectionCopy copy={copy} />}
-      </SectionHead>
-    </FadeInWhenVisible>
+    <SectionHead>
+      {divider && <SectionDivider text={divider} />}
+      {headline && <SectionHeadline headline={headline} />}
+      {subline && <SectionSubline subline={subline} />}
+      {copy && <SectionCopy copy={copy} />}
+    </SectionHead>
   );
 };
 

@@ -22,10 +22,7 @@ const CaseCard = ({
   comingSoon,
 }) => {
   const CaseCard = styled(motion.div)`
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-radius: 0.38rem;
     direction: ltr;
     display: list-item;
     grid-row-end: auto;
@@ -110,10 +107,7 @@ const CaseCard = ({
   `;
   const CaseCardArticle = styled.div`
     background-color: white;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-radius: 0.38rem;
     box-shadow: none;
     direction: ltr;
     display: flex;
@@ -145,8 +139,8 @@ const CaseCard = ({
   `;
   const CaseCardContent = styled(motion.div)`
     background-color: white;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 0.38rem;
+    border-bottom-right-radius: 0.38rem;
 
     direction: ltr;
     display: flex;

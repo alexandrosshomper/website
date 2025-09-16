@@ -19,6 +19,7 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseHeadlineTwo from "../../Content/Case/CaseHeadlineTwo";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseCard from "../../Content/CaseCard/CaseCard";
+import Drawer from "../../Content/Drawer/Drawer";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -58,6 +59,22 @@ function FadeInWhenVisible({ children }) {
 }
 
 const Content = (props) => {
+  const galleryItems = [
+    {
+      id: 1,
+      imgURL: "./img/Knauf/myKnaufProjectJourney.jpg",
+      imgMobileURL: "./img/Occhio/Personae-mobile.png",
+      headline: "Detailing the construction project journey",
+      copy: "We went back to the drawing board. A journey that has been created at the start of the projects, when we still aimed for separate offerings per customer type. This is not a customer journey. It covers the journey of all our customer types along the lifecycle of a construction project. Revising this journey helped us discover close interfaces between the apps, but also long gaps that could be filled. Also we could discover important handover moments between the customer types, but also where customer types repeatedly have to check into the project again.",
+    },
+    {
+      id: 2,
+      imgURL: "./img/Knauf/myKnaufProductsMicroServices.jpg",
+      imgMobileURL: "./img/Occhio/CustomerJourney-mobile.png",
+      headline: "Investigating the interfaces of the apps",
+      copy: "With that knowledge, we are able to at our apps with new eyes. What can be combined? What can be broken up? It is a difficult but also exciting opportunity to revise two years of work.",
+    },
+  ];
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -292,6 +309,28 @@ const Content = (props) => {
               "Over the years we gathered a vast repository of research and interviews for the different customer types and products. With this new objective, we were able to look at the bigger picture. Discover bigger problems and opportunities."
             }
           />
+
+          <br />
+          <br />
+          <br />
+          <Drawer items={galleryItems} />
+
+          {/*<CaseSubline subline={"2. Concept"} />
+          <CaseHeadlineTwo headline={"Creating a new platform strategy"} />
+          <CaseImage
+            imgURL="./img/Knauf/ChangeOfProductStrategy.png"
+            size="M"
+          />
+          <CaseSublineTwo subline={"Creating a new platform strategy"} />
+          <CaseHeadlineTwo headline={"3. Validation"} />
+          <CaseHeadlineTwo headline={"3. Design"} />
+          <CaseCopy copy={"."} />
+          */}
+          <br />
+          <br />
+          <br />
+          <br />
+
           <CaseCopy copy={"Two Patterns occurred:"} />
           <CaseUnorderedList
             style={{ marginBottom: "24px", listStyleType: "circle" }}
@@ -308,62 +347,6 @@ const Content = (props) => {
               hub for project information.
             </li>
           </CaseUnorderedList>
-          <br />
-          <br />
-          <br />
-          <CaseHeadlineTwo
-            headline={"Detailing the construction project journey"}
-          />
-          <CaseCopy
-            copy={
-              "We went back to the drawing board. A journey that has been created at the start of the projects, when we still aimed for separate offerings per customer type."
-            }
-          />
-          <CaseCopy
-            copy={
-              "This is not a customer journey. It covers the journey of all our customer types along the lifecycle of a construction project."
-            }
-          />
-          <CaseImage imgURL="./img/Knauf/myKnaufProjectJourney.jpg" size="M" />
-          <CaseCopy
-            copy={
-              "Revising this journey helped us discover close interfaces between the apps, but also long gaps that could be filled. Also we could discover important handover moments between the customer types, but also where customer types repeatedly have to check into the project again."
-            }
-          />
-          <br />
-          <br />
-          <br />
-          <CaseHeadlineTwo
-            headline={"Investigating the interfaces of the apps"}
-          />
-          <CaseCopy
-            copy={
-              "With that knowledge, we are able to at our apps with new eyes. What can be combined? What can be broken up? "
-            }
-          />
-          <CaseCopy
-            copy={
-              "It is a difficult but also exciting opportunity to revise two years of work."
-            }
-          />
-          <CaseImage
-            imgURL="./img/Knauf/myKnaufProductsMicroServices.jpg"
-            size="M"
-          />{" "}
-          <br />
-          <br />
-          <br />
-          {/*<CaseSubline subline={"2. Concept"} />
-          <CaseHeadlineTwo headline={"Creating a new platform strategy"} />
-          <CaseImage
-            imgURL="./img/Knauf/ChangeOfProductStrategy.png"
-            size="M"
-          />
-          <CaseSublineTwo subline={"Creating a new platform strategy"} />
-          <CaseHeadlineTwo headline={"3. Validation"} />
-          <CaseHeadlineTwo headline={"3. Design"} />
-          <CaseCopy copy={"."} />
-          */}
         </Paragraph>
         {/*<Paragraph>
           <CaseHeadlineThree headline={"Results"} />
