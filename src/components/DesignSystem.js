@@ -79,6 +79,7 @@ export const Colors = {
   front: `black`,
   back: `white`,
   greyDark: `#080808`,
+  greyLight: `rgba(0, 0, 0, 0.05)`,
   red: `#ff1744`,
   redLight: `#ff616f`,
   redDark: `#c4001d`,
