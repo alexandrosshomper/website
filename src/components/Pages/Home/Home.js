@@ -1920,7 +1920,9 @@ const Content = (props) => {
         </Hero>
       </HeaderSection>
       <Section>
-        <PricingCanvas />
+        <PricingCanvas
+          roiCalcAction={(e) => handleClickROICalculator(e, "pricing-canvas")}
+        />
       </Section>
 
       <Section>
