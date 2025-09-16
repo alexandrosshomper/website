@@ -2166,182 +2166,6 @@ const Content = (props) => {
             </SolutionCard>
           </FadeInWhenVisible>
         </SolutionCards>
-        {isROICalculatorOpen && (
-          <ROICalculatorOverlay onClick={() => setIsROICalculatorOpen(false)}>
-            <ROICalculatorModal onClick={(e) => e.stopPropagation()}>
-              <ROIModalClose
-                onClick={() => setIsROICalculatorOpen(false)}
-                aria-label="Close ROI calculator"
-              >
-                ×
-              </ROIModalClose>
-              <ROICalculatorTitle>Calculate Onboarding ROI</ROICalculatorTitle>
-              <ROICalculatorSubline>
-                See how much revenue you could gain by improving your onboarding
-                activation rate.
-              </ROICalculatorSubline>
-
-              <ROIForm>
-                <ROIInputGroup>
-                  <ROILabel>Monthly Signups</ROILabel>
-                  <ROIInput
-                    id="roi-monthlySignups"
-                    key="roi-monthlySignups"
-                    name="monthlySignups"
-                    type="text"
-                    inputMode="numeric"
-                    autoComplete="off"
-                    placeholder="e.g., 1000"
-                    value={roiInputs.monthlySignups}
-                    onChange={(e) =>
-                      handleROIInputChange("monthlySignups", e.target.value)
-                    }
-                  />
-                </ROIInputGroup>
-
-                <ROIInputGroup>
-                  <ROILabel>Current Activation Rate (%)</ROILabel>
-                  <ROIInput
-                    id="roi-currentActivationRate"
-                    key="roi-currentActivationRate"
-                    name="currentActivationRate"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    placeholder="e.g., 25"
-                    value={roiInputs.currentActivationRate}
-                    onChange={(e) =>
-                      handleROIInputChange(
-                        "currentActivationRate",
-                        e.target.value
-                      )
-                    }
-                  />
-                </ROIInputGroup>
-
-                <ROIInputGroup>
-                  <ROILabel>Average Revenue Per User (€)</ROILabel>
-                  <ROIInput
-                    id="roi-averageRevenuePerUser"
-                    key="roi-averageRevenuePerUser"
-                    name="averageRevenuePerUser"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    placeholder="e.g., 50"
-                    value={roiInputs.averageRevenuePerUser}
-                    onChange={(e) =>
-                      handleROIInputChange(
-                        "averageRevenuePerUser",
-                        e.target.value
-                      )
-                    }
-                  />
-                </ROIInputGroup>
-
-                <ROIInputGroup>
-                  <ROILabel>Monthly Churn Rate (%)</ROILabel>
-                  <ROIInput
-                    id="roi-churnRate"
-                    key="roi-churnRate"
-                    name="churnRate"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    placeholder="e.g., 5"
-                    value={roiInputs.churnRate}
-                    onChange={(e) =>
-                      handleROIInputChange("churnRate", e.target.value)
-                    }
-                  />
-                </ROIInputGroup>
-              </ROIForm>
-
-              {roiResults && (
-                <ROIResults>
-                  <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
-
-                  <ROIMetric>
-                    <ROIMetricLabel>
-                      Current Activated Users/Month
-                    </ROIMetricLabel>
-                    <ROIMetricValue>
-                      {Math.round(roiResults.current.activatedUsers)}
-                    </ROIMetricValue>
-                  </ROIMetric>
-
-                  <ROIMetric>
-                    <ROIMetricLabel>
-                      Improved Activated Users/Month
-                    </ROIMetricLabel>
-                    <ROIMetricValue>
-                      {Math.round(roiResults.improved.activatedUsers)}
-                    </ROIMetricValue>
-                  </ROIMetric>
-
-                  <ROIMetric>
-                    <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
-                    <ROIMetricValue>
-                      €
-                      {Math.round(
-                        roiResults.current.monthlyRevenue
-                      ).toLocaleString()}
-                    </ROIMetricValue>
-                  </ROIMetric>
-
-                  <ROIMetric>
-                    <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
-                    <ROIMetricValue>
-                      €
-                      {Math.round(
-                        roiResults.improved.monthlyRevenue
-                      ).toLocaleString()}
-                    </ROIMetricValue>
-                  </ROIMetric>
-
-                  <ROIImprovement>
-                    <ROIImprovementTitle>
-                      Additional Monthly Revenue
-                    </ROIImprovementTitle>
-                    <ROIImprovementValue>
-                      €
-                      {Math.round(
-                        roiResults.improvement.monthly
-                      ).toLocaleString()}
-                    </ROIImprovementValue>
-                  </ROIImprovement>
-
-                  <ROIImprovement style={{ marginTop: "12px" }}>
-                    <ROIImprovementTitle>
-                      Additional Annual Revenue
-                    </ROIImprovementTitle>
-                    <ROIImprovementValue>
-                      €
-                      {Math.round(
-                        roiResults.improvement.annual
-                      ).toLocaleString()}
-                    </ROIImprovementValue>
-                  </ROIImprovement>
-                </ROIResults>
-              )}
-
-              <ModalActions>
-                <ButtonMedium
-                  clickAction={(e) =>
-                    hanldeBookAudit(
-                      e,
-                      "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                      "roi-calculator"
-                    )
-                  }
-                  text="Book intro call"
-                  color1={Colors.blue}
-                  color2={Colors.blueDark}
-                />
-              </ModalActions>
-            </ROICalculatorModal>
-          </ROICalculatorOverlay>
-        )}
       </Section>
 
       <Section>
@@ -2622,11 +2446,189 @@ const Content = (props) => {
           style={{ display: "flex", justifyContent: "center", marginTop: 32 }}
         >
           <ButtonMediumSecondary
-            clickAction={() => handleClickROICalculator(e, "pricing-panels")}
+            clickAction={(e) => handleClickROICalculator(e, "pricing-panels")}
             text={"Calculate Onboarding ROI"}
             color1="#000000"
             color2="#000000"
           />
+          {isROICalculatorOpen && (
+            <ROICalculatorOverlay onClick={() => setIsROICalculatorOpen(false)}>
+              <ROICalculatorModal onClick={(e) => e.stopPropagation()}>
+                <ROIModalClose
+                  onClick={() => setIsROICalculatorOpen(false)}
+                  aria-label="Close ROI calculator"
+                >
+                  ×
+                </ROIModalClose>
+                <ROICalculatorTitle>
+                  Calculate Onboarding ROI
+                </ROICalculatorTitle>
+                <ROICalculatorSubline>
+                  See how much revenue you could gain by improving your
+                  onboarding activation rate.
+                </ROICalculatorSubline>
+
+                <ROIForm>
+                  <ROIInputGroup>
+                    <ROILabel>Monthly Signups</ROILabel>
+                    <ROIInput
+                      id="roi-monthlySignups"
+                      key="roi-monthlySignups"
+                      name="monthlySignups"
+                      type="text"
+                      inputMode="numeric"
+                      autoComplete="off"
+                      placeholder="e.g., 1000"
+                      value={roiInputs.monthlySignups}
+                      onChange={(e) =>
+                        handleROIInputChange("monthlySignups", e.target.value)
+                      }
+                    />
+                  </ROIInputGroup>
+
+                  <ROIInputGroup>
+                    <ROILabel>Current Activation Rate (%)</ROILabel>
+                    <ROIInput
+                      id="roi-currentActivationRate"
+                      key="roi-currentActivationRate"
+                      name="currentActivationRate"
+                      type="text"
+                      inputMode="decimal"
+                      autoComplete="off"
+                      placeholder="e.g., 25"
+                      value={roiInputs.currentActivationRate}
+                      onChange={(e) =>
+                        handleROIInputChange(
+                          "currentActivationRate",
+                          e.target.value
+                        )
+                      }
+                    />
+                  </ROIInputGroup>
+
+                  <ROIInputGroup>
+                    <ROILabel>Average Revenue Per User (€)</ROILabel>
+                    <ROIInput
+                      id="roi-averageRevenuePerUser"
+                      key="roi-averageRevenuePerUser"
+                      name="averageRevenuePerUser"
+                      type="text"
+                      inputMode="decimal"
+                      autoComplete="off"
+                      placeholder="e.g., 50"
+                      value={roiInputs.averageRevenuePerUser}
+                      onChange={(e) =>
+                        handleROIInputChange(
+                          "averageRevenuePerUser",
+                          e.target.value
+                        )
+                      }
+                    />
+                  </ROIInputGroup>
+
+                  <ROIInputGroup>
+                    <ROILabel>Monthly Churn Rate (%)</ROILabel>
+                    <ROIInput
+                      id="roi-churnRate"
+                      key="roi-churnRate"
+                      name="churnRate"
+                      type="text"
+                      inputMode="decimal"
+                      autoComplete="off"
+                      placeholder="e.g., 5"
+                      value={roiInputs.churnRate}
+                      onChange={(e) =>
+                        handleROIInputChange("churnRate", e.target.value)
+                      }
+                    />
+                  </ROIInputGroup>
+                </ROIForm>
+
+                {roiResults && (
+                  <ROIResults>
+                    <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
+
+                    <ROIMetric>
+                      <ROIMetricLabel>
+                        Current Activated Users/Month
+                      </ROIMetricLabel>
+                      <ROIMetricValue>
+                        {Math.round(roiResults.current.activatedUsers)}
+                      </ROIMetricValue>
+                    </ROIMetric>
+
+                    <ROIMetric>
+                      <ROIMetricLabel>
+                        Improved Activated Users/Month
+                      </ROIMetricLabel>
+                      <ROIMetricValue>
+                        {Math.round(roiResults.improved.activatedUsers)}
+                      </ROIMetricValue>
+                    </ROIMetric>
+
+                    <ROIMetric>
+                      <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
+                      <ROIMetricValue>
+                        €
+                        {Math.round(
+                          roiResults.current.monthlyRevenue
+                        ).toLocaleString()}
+                      </ROIMetricValue>
+                    </ROIMetric>
+
+                    <ROIMetric>
+                      <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
+                      <ROIMetricValue>
+                        €
+                        {Math.round(
+                          roiResults.improved.monthlyRevenue
+                        ).toLocaleString()}
+                      </ROIMetricValue>
+                    </ROIMetric>
+
+                    <ROIImprovement>
+                      <ROIImprovementTitle>
+                        Additional Monthly Revenue
+                      </ROIImprovementTitle>
+                      <ROIImprovementValue>
+                        €
+                        {Math.round(
+                          roiResults.improvement.monthly
+                        ).toLocaleString()}
+                      </ROIImprovementValue>
+                    </ROIImprovement>
+
+                    <ROIImprovement style={{ marginTop: "12px" }}>
+                      <ROIImprovementTitle>
+                        Additional Annual Revenue
+                      </ROIImprovementTitle>
+                      <ROIImprovementValue>
+                        €
+                        {Math.round(
+                          roiResults.improvement.annual
+                        ).toLocaleString()}
+                      </ROIImprovementValue>
+                    </ROIImprovement>
+                  </ROIResults>
+                )}
+
+                <ModalActions>
+                  <ButtonMedium
+                    clickAction={(e) =>
+                      hanldeBookAudit(
+                        e,
+                        "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
+                        "roi-calculator"
+                      )
+                    }
+                    text="Book intro call"
+                    color1={Colors.blue}
+                    color2={Colors.blueDark}
+                  />
+                </ModalActions>
+              </ROICalculatorModal>
+            </ROICalculatorOverlay>
+          )}
         </div>
       </Section>
 
