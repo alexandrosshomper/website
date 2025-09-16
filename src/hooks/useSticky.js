@@ -1,37 +1,49 @@
-import { useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+const debounce = (func, wait = 20, immediate = true) => {
+  let timeout;
+  return (...args) => {
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      timeout = null;
+      if (!immediate) {
+        func(...args);
+      }
+    }, wait);
+
+    if (callNow) {
+      func(...args);
+    }
+  };
+};
 
 function useSticky() {
   const [isSticky, setSticky] = useState(false);
   const element = useRef(null);
 
-  const handleScroll = () => {
-    window.scrollY > element.current.getBoundingClientRect().bottom
-      ? setSticky(true)
-      : setSticky(false);
-  };
+  const handleScroll = useCallback(() => {
+    if (!element.current) {
+      setSticky(false);
+      return;
+    }
 
-  const debounce = (func, wait = 20, immediate = true) => {
-    let timeout;
-    return () => {
-      let context = this;
-      let args = arguments;
-      const later = () => {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
+    const { bottom } = element.current.getBoundingClientRect();
+    setSticky(window.scrollY > bottom);
+  }, []);
+
+  const debouncedHandleScroll = useMemo(
+    () => debounce(handleScroll),
+    [handleScroll]
+  );
 
   useEffect(() => {
-    window.addEventListener("scroll", debounce(handleScroll));
+    handleScroll();
+    window.addEventListener("scroll", debouncedHandleScroll);
     return () => {
-      window.removeEventListener("scroll", () => handleScroll);
+      window.removeEventListener("scroll", debouncedHandleScroll);
     };
-  }, [debounce, handleScroll]);
+  }, [debouncedHandleScroll, handleScroll]);
 
   return { isSticky, element };
 }
