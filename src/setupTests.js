@@ -2,4 +2,22 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom/extend-expect';
+import "@testing-library/jest-dom/extend-expect";
+
+jest.mock("lucide-react", () => {
+  const handler = () => null;
+  return new Proxy(
+    { __esModule: true, default: handler },
+    {
+      get: (target, prop) => {
+        if (prop in target) {
+          return target[prop];
+        }
+
+        return handler;
+      },
+    }
+  );
+});
+
+window.scrollTo = jest.fn();
