@@ -4,7 +4,6 @@ AuthName "Staging Private"
 AuthUserFile /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/.htpasswd
 Require valid-user
 
-# Protect the credentials file itself
 <Files ".htpasswd">
   Require all denied
 </Files>
