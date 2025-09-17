@@ -1,6 +1,6 @@
-# --- Basic Auth (stage only) ---
+# --- Basic Auth (staging only) ---
 AuthType Basic
-AuthName "Staging – Private"
+AuthName "Staging Private"
 AuthUserFile /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/.htpasswd
 Require valid-user
 
@@ -9,22 +9,22 @@ Require valid-user
   Require all denied
 </Files>
 
-# --- SPA fallback (React/Vue/Next static export) ---
+# --- Serve index by default & SPA fallback ---
+DirectoryIndex index.html
 Options -MultiViews
 RewriteEngine On
 
-# Don't rewrite real files or directories
+# 1) NEVER rewrite static assets (serve as-is even if -f check misbehaves)
+#    Add other prefixes you use (assets/, _next/, etc.) if needed
+RewriteRule ^(static/|assets/|_next/) - [L]
+RewriteRule ^favicon\.ico$ - [L]
+RewriteRule ^manifest\.json$ - [L]
+RewriteRule ^logo(192|512)\.png$ - [L]
+
+# 2) If the requested path exists as file/dir -> serve it
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule - [L]
+RewriteRule . - [L]
 
-# Fallback all other routes to index.html
+# 3) Everything else -> SPA fallback
 RewriteRule ^ index.html [QSA,L]
-
-# (Optional hardening) block dotfiles except ACME if ever needed
-<FilesMatch "^\.">
-  Require all denied
-</FilesMatch>
-<DirectoryMatch "^\.well-known/acme-challenge">
-  Require all granted
-</DirectoryMatch>
