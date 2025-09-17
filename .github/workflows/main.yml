@@ -25,19 +25,19 @@ jobs:
         run: npm run build
 
       - name: Trust host key
-  run: |
-    mkdir -p ~/.ssh
-    echo "${{ secrets.SFTP_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
-    chmod 600 ~/.ssh/known_hosts
-- name: Upload build via SFTP
-  uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-  with:
-    server: ${{ secrets.FTP_SERVER }}
-    port: ${{ secrets.FTP_PORT }}
-    username: ${{ secrets.FTP_USER }}
-    ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
-    passphrase: ${{ secrets.SFTP_PASSPHRASE }}
-    local_path: ./build/
-    remote_path: /
-    sftp_only: true
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SFTP_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
 
+      - name: Upload build via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          port: ${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_USER }}
+          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SFTP_PASSPHRASE }}
+          local_path: ./build/
+          remote_path: /
+          sftp_only: true
