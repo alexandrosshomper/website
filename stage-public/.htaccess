@@ -20,11 +20,3 @@ RewriteRule - [L]
 
 # Fallback all other routes to index.html
 RewriteRule ^ index.html [QSA,L]
-
-# (Optional hardening) block dotfiles except ACME if ever needed
-<FilesMatch "^\.">
-  Require all denied
-</FilesMatch>
-<DirectoryMatch "^\.well-known/acme-challenge">
-  Require all granted
-</DirectoryMatch>
