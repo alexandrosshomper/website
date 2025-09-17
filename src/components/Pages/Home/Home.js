@@ -2434,7 +2434,7 @@ const Content = (props) => {
                     "pricing-panel-early"
                   )
                 }
-                text={"Work with us"}
+                text={"Book intro call"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
               />
@@ -2494,7 +2494,7 @@ const Content = (props) => {
                     "pricing-panel-growth"
                   )
                 }
-                text={"Work with us"}
+                text={"Book intro call"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
               />
@@ -2553,7 +2553,7 @@ const Content = (props) => {
                     "pricing-panel-scale"
                   )
                 }
-                text={"Work with us"}
+                text={"Book intro call"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
               />
@@ -2612,7 +2612,7 @@ const Content = (props) => {
                     "pricing-panel-mature"
                   )
                 }
-                text={"Work with us"}
+                text={"Book intro call"}
                 color1={Colors.blue}
                 color2={Colors.blueDark}
               />
