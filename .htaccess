@@ -3,7 +3,7 @@
 RewriteEngine On
 
 # Host-aware robots
-SetEnvIfNoCase Host "^(stage|production)\.alexandrosshomper\.de$" BOTBLOCK=1
+SetEnvIfNoCase Host "^stage\.alexandrosshomper\.de$" BOTBLOCK=1
 RewriteCond %{ENV:BOTBLOCK} =1
 RewriteRule ^robots\.txt$ /robots-block.txt [L]
 RewriteCond %{ENV:BOTBLOCK} !=1
