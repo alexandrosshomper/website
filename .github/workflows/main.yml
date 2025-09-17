@@ -30,14 +30,12 @@ jobs:
           echo "${{ secrets.SFTP_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Upload build via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy via rsync over SSH
+        uses: burnett01/rsync-deployments@6.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          port: 22
-          username: ${{ secrets.FTP_USER }}
-          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          local_path: ./build/*
+          switches: -avzr --delete # mirror contents; remove stale files inside target
+          path: build/ # trailing slash = CONTENTS of build/
           remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/
-          sftp_only: true
-          delete_remote_files: false
+          remote_host: ${{ secrets.FTP_SERVER }} # ssh.alexandrosshomper.de
+          remote_user: ${{ secrets.FTP_USER }} # alexandrosshomper.de
+          remote_key: ${{ secrets.SFTP_PRIVATE_KEY }} # gha_deploy_ed25519 (no passphrase)
