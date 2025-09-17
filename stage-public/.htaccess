@@ -1,14 +1,17 @@
 # --- Basic Auth (staging only) ---
+# --- Basic Auth (staging only) ---
 AuthType Basic
+AuthName "Staging Private"
 AuthName "Staging Private"
 AuthUserFile /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/.htpasswd
 Require valid-user
 
-# Protect the credentials file itself
 <Files ".htpasswd">
   Require all denied
 </Files>
 
+# --- Serve index by default & SPA fallback ---
+DirectoryIndex index.html
 # --- Serve index by default & SPA fallback ---
 DirectoryIndex index.html
 Options -MultiViews
