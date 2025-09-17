@@ -37,7 +37,7 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           username: ${{ secrets.FTP_USER }}
           ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          passphrase: ${{ secrets.SFTP_PASSPHRASE }}
+          ssh_passphrase: ${{ secrets.SFTP_PASSPHRASE }}
           local_path: ./build/
           remote_path: /
           sftp_only: true
