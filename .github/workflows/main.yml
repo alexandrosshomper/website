@@ -34,10 +34,9 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
-          port: ${{ secrets.FTP_PORT }}
+          port: 22
           username: ${{ secrets.FTP_USER }}
           ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          ssh_passphrase: ${{ secrets.SFTP_PASSPHRASE }}
           local_path: ./build/
           remote_path: /
           sftp_only: true
