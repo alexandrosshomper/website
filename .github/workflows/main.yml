@@ -1,10 +1,14 @@
-name: Build and Deploy to FTP
+name: Build and Deploy (Stage & Production) to FTP
 
 on:
   push:
-    branches:
-      - master
+    branches: [master, staging]
+permissions:
+  contents: read
 
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: true
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -30,12 +34,23 @@ jobs:
           echo "${{ secrets.SFTP_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Deploy via rsync over SSH
+      - name: Deploy on STAGE via rsync over SSH
+        if: github.ref == 'refs/heads/staging'
         uses: burnett01/rsync-deployments@7.1.0
         with:
           switches: -avzr --delete # mirror contents; remove stale files inside target
           path: build/ # trailing slash = CONTENTS of build/
-          remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/
+          remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/
+          remote_host: ${{ secrets.FTP_SERVER }} # ssh.alexandrosshomper.de
+          remote_user: ${{ secrets.FTP_USER }} # alexandrosshomper.de
+          remote_key: ${{ secrets.SFTP_PRIVATE_KEY }} # gha_deploy_ed25519 (no passphrase)
+      - name: Deploy on PRODUCTION via rsync over SSH
+        if: github.ref == 'refs/heads/production'
+        uses: burnett01/rsync-deployments@7.1.0
+        with:
+          switches: -avzr --delete # mirror contents; remove stale files inside target
+          path: build/ # trailing slash = CONTENTS of build/
+          remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/production/
           remote_host: ${{ secrets.FTP_SERVER }} # ssh.alexandrosshomper.de
           remote_user: ${{ secrets.FTP_USER }} # alexandrosshomper.de
           remote_key: ${{ secrets.SFTP_PRIVATE_KEY }} # gha_deploy_ed25519 (no passphrase)
