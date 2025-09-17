@@ -122,11 +122,10 @@ function App() {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Alexandros Shomper</title>
-          <description>
-            Experienced in core and growth initiatives from acquisition to
-            retention & engagement. Bridging business, design, and tech to
-            create awesome solutions people love.
-          </description>
+          <meta
+            name="description"
+            content="Experienced in core and growth initiatives from acquisition to retention & engagement. Bridging business, design, and tech to create awesome solutions people love."
+          />
         </Helmet>
         <Suspense fallback={renderLoader()}>
           <Navigation />
