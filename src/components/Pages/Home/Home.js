@@ -1697,7 +1697,7 @@ const Content = (props) => {
       <HeaderSection>
         <Hero>
           <HeroHeadline>
-            Let's fix your leaky onboarding.
+            Let's fix your leaky onboarding!
             <br />
             <OnboardingGradient>Boost activation in 14 days</OnboardingGradient>
             .
