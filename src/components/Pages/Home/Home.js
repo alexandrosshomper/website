@@ -1771,8 +1771,8 @@ const Content = (props) => {
   }
 
   React.useEffect(() => {
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
         setIsLightboxOpen(false);
         setIsROICalculatorOpen(false);
       }
@@ -2624,7 +2624,7 @@ const Content = (props) => {
           style={{ display: "flex", justifyContent: "center", marginTop: 32 }}
         >
           <ButtonMediumSecondary
-            clickAction={() => handleClickROICalculator(e, "pricing-panels")}
+            clickAction={(e) => handleClickROICalculator(e, "pricing-panels")}
             text={"Calculate Onboarding ROI"}
             color1="#000000"
             color2="#000000"

@@ -4,13 +4,6 @@ import Icon from "@mdi/react";
 import { Colors } from "../DesignSystem";
 
 const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
-  console.log(`color:${color1};`);
-  let csscolor = null;
-  if (color1 && color2) {
-    csscolor = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
-  } else {
-    csscolor = `background-image: linear-gradient(to right, #ff6d00, #ff9e40);`;
-  }
   const ButtonMedium = styled.a`
     align-items: flex-start;
     appearance: auto;

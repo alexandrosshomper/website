@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Icon from "@mdi/react";
-import { Colors } from "../DesignSystem";
 
 const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
   console.log(`color:${color1};`);

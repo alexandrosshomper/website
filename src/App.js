@@ -3,19 +3,13 @@ import Spinner from "react-spinner-material";
 //import React from "react";
 import styled from "@emotion/styled";
 import { Helmet } from "react-helmet";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-  useLocation,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Colors, Devices } from "../src/components/DesignSystem";
 import ReactGA from "react-ga4";
 
 //FUNCTIONS
 import ScrollToTop from "./functions/ScrollToTop";
 import NavigationSticky from "./components/Navigation/NavigationSticky.js";
-import NavigationMenuMobile from "./components/Navigation/NavigationMenuMobile.js";
 
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
@@ -24,7 +18,6 @@ const Home = lazy(() => import("./components/Pages/Home/Home"));
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
 const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
-const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
 
 //REPORTS
 const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
