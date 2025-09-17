@@ -1,0 +1,12 @@
+# Redirect only if the request came via the production subdomain
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^production\.alexandrosshomper\.de$ [NC]
+RewriteRule ^ https://www.alexandrosshomper.de%{REQUEST_URI} [R=301,L]
+
+# (Optional) SPA fallback for your app under /production
+DirectoryIndex index.html
+Options -MultiViews
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule - [L]
+RewriteRule ^ index.html [QSA,L]
