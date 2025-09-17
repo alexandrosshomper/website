@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 //Components
 import { Devices } from "../../DesignSystem";
@@ -12,43 +10,6 @@ import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 //GALLERY
 import GalleryList from "../../Gallery/GalleryList";
 import galleryData from "../../../data/flows/flows.json";
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+25%",
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const Content = (props) => {
   const Content = styled.div`
@@ -116,13 +77,11 @@ const Content = (props) => {
           subline="A collection of user onboarding & activation flows from your favorite apps."
         />
         <Panels style={{ marginBottom: "48px" }}>
-          <FadeInWhenVisible>
-            <CaseSectionSummary
-              copy="
+          <CaseSectionSummary
+            copy="
 Detailed use cases assessing the user onboarding & activation flows from different companies and products."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </FadeInWhenVisible>
+            //imgURL="./img/PanelTestImages/one.jpg"
+          />
         </Panels>
       </Section>
       <Section>
