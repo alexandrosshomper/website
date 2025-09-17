@@ -29,7 +29,6 @@ jobs:
     mkdir -p ~/.ssh
     echo "${{ secrets.SFTP_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
     chmod 600 ~/.ssh/known_hosts
-
 - name: Upload build via SFTP
   uses: wlixcc/SFTP-Deploy-Action@v1.2.4
   with:
