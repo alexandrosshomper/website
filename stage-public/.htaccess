@@ -1,0 +1,25 @@
+# --- Basic Auth (stage only) ---
+AuthType Basic
+AuthName "Staging – Private"
+AuthUserFile /customers/3/6/f/alexandrosshomper.de/httpd.private/.htpasswd
+Require valid-user
+
+# --- SPA fallback (React/Vue/Next static export) ---
+Options -MultiViews
+RewriteEngine On
+
+# Don't rewrite real files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule - [L]
+
+# Fallback all other routes to index.html
+RewriteRule ^ index.html [QSA,L]
+
+# (Optional hardening) block dotfiles except ACME if ever needed
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+<DirectoryMatch "^\.well-known/acme-challenge">
+  Require all granted
+</DirectoryMatch>

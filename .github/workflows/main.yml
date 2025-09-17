@@ -44,6 +44,16 @@ jobs:
           remote_host: ${{ secrets.FTP_SERVER }} # ssh.alexandrosshomper.de
           remote_user: ${{ secrets.FTP_USER }} # alexandrosshomper.de
           remote_key: ${{ secrets.SFTP_PRIVATE_KEY }} # gha_deploy_ed25519 (no passphrase)
+      - name: Re-apply staging .htaccess
+        if: ${{ github.ref_name == 'staging' }}
+        uses: burnett01/rsync-deployments@7.1.0
+        with:
+          switches: -avzr # NOTE: no --delete here
+          path: stage-public/.htaccess # file in your repo
+          remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/
+          remote_host: ${{ secrets.FTP_SERVER }}
+          remote_user: ${{ secrets.FTP_USER }}
+          remote_key: ${{ secrets.SFTP_PRIVATE_KEY }}
       - name: Deploy on PRODUCTION via rsync over SSH
         if: github.ref == 'refs/heads/master'
         uses: burnett01/rsync-deployments@7.1.0
