@@ -38,7 +38,7 @@ jobs:
         if: github.ref == 'refs/heads/staging'
         uses: burnett01/rsync-deployments@7.1.0
         with:
-          switches: -avzr --delete # mirror contents; remove stale files inside target
+          switches: -avzr --delete --exclude='.htpasswd' # mirror contents; remove stale files inside target
           path: build/ # trailing slash = CONTENTS of build/
           remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/
           remote_host: ${{ secrets.FTP_SERVER }} # ssh.alexandrosshomper.de
