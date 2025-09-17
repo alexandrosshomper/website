@@ -6,8 +6,6 @@ import { Devices, Colors } from "../../DesignSystem";
 import { Check, Calculator } from "lucide-react";
 
 import ButtonMediumText from "../../Button/ButtonMediumText";
-import ButtonMedium from "../../Button/ButtonMedium";
-import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
 const PricingCanvas = ({ roiCalcAction }) => {
   const PricingCanvas = styled.div`
     border-radius: 0.38rem;
@@ -344,22 +342,6 @@ const PricingCanvas = ({ roiCalcAction }) => {
     ${Devices.laptopS} {
     }
   `;
-  const ModalActions = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    border-top: 1px solid grey;
-    padding-top: 16px;
-    ${Devices.tabletS} {
-      flex-direction: row;
-      justify-content: flex-end;
-      margin-top: 24px;
-    }
-  `;
-
   //VIDEO
   const PricingVideo = styled.video`
     width: 100%;

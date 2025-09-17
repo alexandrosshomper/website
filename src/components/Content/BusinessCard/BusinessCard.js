@@ -2,8 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
-import Headline from "./BusinessCardHeadline";
-import Copy from "./BusinessCardCopy";
 
 const BusinessCard = ({ headline, copy }) => {
   const BusinessCard = styled.div`

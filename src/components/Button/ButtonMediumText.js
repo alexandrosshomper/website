@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Icon from "@mdi/react";
 import { Colors } from "../DesignSystem";
 
 const ButtonMediumText = ({
@@ -11,12 +10,6 @@ const ButtonMediumText = ({
   icon,
   clickAction,
 }) => {
-  let csscolor = null;
-  if (color1 && color2) {
-    csscolor = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
-  } else {
-    csscolor = `background-image: linear-gradient(to right, #ff6d00, #ff9e40);`;
-  }
   const ButtonMediumText = styled.a`
     align-items: flex-start;
     appearance: auto;

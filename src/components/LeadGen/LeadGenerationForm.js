@@ -1,7 +1,7 @@
 // LeadGenerationForm.jsx
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { Devices, Colors } from "../DesignSystem";
+import { Devices } from "../DesignSystem";
 
 const FormHeadline = styled.h2`
   font-size: 48px;
@@ -192,7 +192,6 @@ const LeadGenerationForm = ({ portal, form, successLink }) => {
   const [message, setMessage] = useState(null);
   const [emailError, setEmailError] = useState(null);
   const [nameError, setNameError] = useState(null);
-  const [buttonActive, setButtonActive] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const validateEmail = (email) => {
@@ -214,7 +213,6 @@ const LeadGenerationForm = ({ portal, form, successLink }) => {
       setEmailError("Enter a valid email address.");
     } else {
       setEmailError(null);
-      handleButtonActive();
     }
   };
 
@@ -231,14 +229,7 @@ const LeadGenerationForm = ({ portal, form, successLink }) => {
       setNameError("Name address is a mandatory field.");
     } else {
       setNameError(null);
-      handleButtonActive();
     }
-  };
-
-  const handleButtonActive = async (e) => {
-    if (name && !nameError && email && !emailError && !loading) {
-      setButtonActive(true);
-    } else setButtonActive(false);
   };
 
   const handleSubmit = async (e) => {

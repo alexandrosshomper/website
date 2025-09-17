@@ -2,7 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
-import { Landmark } from "lucide-react";
 const DeliverablesCard = ({ headline, color1, color2, copy, img }) => {
   let csscolor = null;
   if (color1 && color2) {

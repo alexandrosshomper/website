@@ -71,40 +71,6 @@ const Content = (props) => {
     margin-bottom: 200px;
   `;
 
-  const CaseCardGrid = styled.section`
-    margin: 0px 24px 0px 24px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    --gap: 24px;
-    margin-left: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-      --gap: 12px;
-    }
-  `;
   const Panels = styled.section`
     display: flex;
     flex-direction: column;

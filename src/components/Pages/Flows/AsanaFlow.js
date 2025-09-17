@@ -5,28 +5,16 @@ import { Helmet } from "react-helmet";
 import { useInView } from "react-intersection-observer";
 
 import asanaFlow from "../../../data/flows/asana.json";
-import flows from "../../../data/flows/flows.json";
 
 // DESIGN SYSTEM
 import { Colors, Devices } from "../../DesignSystem";
-// CASE STUDY SLIDER
-import CaseStudySlider from "../../CaseStudySlider/CaseStudySlider";
-import asanaCaseStudy from "../../../data/casestudies/asanaCaseStudy.json";
 
 //COMPONENTS
-import CaseCopy from "../../Content/Case/CaseCopy";
-import CaseCover from "../../Content/Case/CaseCover";
-import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
-import CaseImage from "../../Content/Case/CaseImage";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
-import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
+import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
-
-import CaseHeadlineTwo from "../../Content/Case/CaseHeadlineTwo";
-import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseCard from "../../Content/CaseCard/CaseCard";
-import Drawer from "../../Content/Drawer/Drawer";
 
 import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
 
@@ -97,39 +85,6 @@ const Content = (props) => {
     align-self: stretch;
     flex-grow: 0;
     margin-bottom: 140px;
-  `;
-
-  const CaseUnorderedList = styled.ul`
-    position: static;
-
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: ${Colors.primaryText.highEmphasis};
-
-    list-style-type: none;
-    list-style-image: none;
-
-    list-style-position: outside;
-    padding-left: 0px;
-
-    /* Inside Auto Layout */
-
-    font-size: 24px;
-    line-height: 160%;
-
-    margin: 0 auto;
-    width: 90%;
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-    }
-    ${Devices.laptopS} {
-      width: 740px;
-    }
   `;
 
   const CaseCardGrid = styled.section`

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 import Icon from "@mdi/react";
 
 const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {

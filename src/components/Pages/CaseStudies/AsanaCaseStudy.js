@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { useInView } from "react-intersection-observer";
 
 // DESIGN SYSTEM
 import { Colors, Devices } from "../../DesignSystem";
@@ -12,7 +10,6 @@ import asanaCaseStudy from "../../../data/casestudies/asanaCaseStudy.json";
 
 //COMPONENTS
 import CaseCopy from "../../Content/Case/CaseCopy";
-import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
@@ -20,70 +17,12 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
-import CaseHeadlineTwo from "../../Content/Case/CaseHeadlineTwo";
-import CaseSubline from "../../Content/Case/CaseSubline";
-import CaseCard from "../../Content/CaseCard/CaseCard";
-import Drawer from "../../Content/Drawer/Drawer";
-
 import BookAnAudit from "../../LeadGen/BookAnAudit";
 
 import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
 import asanaFlow from "../../../data/flows/asana.json";
 
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+25%",
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 const Content = (props) => {
-  const galleryItems = [
-    {
-      id: 1,
-      imgURL: "./img/Knauf/myKnaufProjectJourney.jpg",
-      imgMobileURL: "./img/Occhio/Personae-mobile.png",
-      headline: "Detailing the construction project journey",
-      copy: "We went back to the drawing board. A journey that has been created at the start of the projects, when we still aimed for separate offerings per customer type. This is not a customer journey. It covers the journey of all our customer types along the lifecycle of a construction project. Revising this journey helped us discover close interfaces between the apps, but also long gaps that could be filled. Also we could discover important handover moments between the customer types, but also where customer types repeatedly have to check into the project again.",
-    },
-    {
-      id: 2,
-      imgURL: "./img/Knauf/myKnaufProductsMicroServices.jpg",
-      imgMobileURL: "./img/Occhio/CustomerJourney-mobile.png",
-      headline: "Investigating the interfaces of the apps",
-      copy: "With that knowledge, we are able to at our apps with new eyes. What can be combined? What can be broken up? It is a difficult but also exciting opportunity to revise two years of work.",
-    },
-  ];
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -145,39 +84,6 @@ const Content = (props) => {
     }
     ${Devices.laptopS} {
       width: 740px;
-    }
-  `;
-
-  const CaseCardGrid = styled.section`
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
     }
   `;
 

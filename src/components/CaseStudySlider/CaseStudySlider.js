@@ -1,20 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../components/DesignSystem";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { mdiPlus, mdiClose } from "@mdi/js";
-
-import ButtonMedium from "../../components/Button/ButtonMedium";
 
 const CaseStudySlider = ({ slides }) => {
   const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [nextImageLoaded, setNextImageLoaded] = useState(false);
   const [currentImageLoaded, setCurrentImageLoaded] = useState(false);
 
-  const preloadImage = (url) => {
+  const preloadImage = useCallback((url) => {
     const img = new window.Image();
     img.src = url;
     img.onload = () => {
@@ -23,7 +19,19 @@ const CaseStudySlider = ({ slides }) => {
     img.onerror = () => {
       console.warn("Failed to preload:", url);
     };
-  };
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setLoading(true);
+    setCurrentImageLoaded(false);
+    setCurrentIndex((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
+  }, [slides.length]);
+
+  const goToPrev = useCallback(() => {
+    setLoading(true);
+    setCurrentImageLoaded(false);
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -38,7 +46,7 @@ const CaseStudySlider = ({ slides }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex]);
+  }, [goToNext, goToPrev]);
 
   useEffect(() => {
     const nextIndex = currentIndex + 1;
@@ -50,19 +58,7 @@ const CaseStudySlider = ({ slides }) => {
     if (prevIndex >= 0) {
       preloadImage(slides[prevIndex].image);
     }
-  }, [currentIndex]);
-
-  const goToNext = () => {
-    setLoading(true);
-    setNextImageLoaded(false);
-    setCurrentIndex((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
-  };
-
-  const goToPrev = () => {
-    setLoading(true);
-    setNextImageLoaded(false);
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
-  };
+  }, [currentIndex, preloadImage, slides]);
 
   const CaseStudySlider = styled.div`
     /* Auto Layout */
@@ -286,7 +282,6 @@ const CaseStudySlider = ({ slides }) => {
               alt={
                 slides[currentIndex + 1].caption || `Slide ${currentIndex + 2}`
               }
-              onLoad={() => setNextImageLoaded(true)}
               isVisible={false}
             />
           )}
@@ -294,7 +289,6 @@ const CaseStudySlider = ({ slides }) => {
             <Image
               src={slides[currentIndex - 1].image}
               alt={slides[currentIndex - 1].caption || `Slide ${currentIndex}`}
-              onLoad={() => setNextImageLoaded(true)}
               isVisible={false}
             />
           )}

@@ -87,31 +87,6 @@ const NavigationSticky = (props) => {
     }
   `;
 
-  const NavigationMenuWrapper = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 52px;
-    width: 100%;
-    
-   
-    
-    z-index: 1000;
-    animation: moveDown 0.5s ease-in-out;
-    ${Devices.tabletS} {
-     
-    }
-    ${Devices.tabletM} {
-     
-    }
-    ${Devices.laptopS} {
- 
-    }
-    ${Devices.laptopM} {
-      
-  `;
   const GlobalNavCurtain = styled.div`
     background: rgba(232, 232, 237, 0.4);
     -webkit-backdrop-filter: blur(20px);

@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 import { Devices, Colors } from "../../DesignSystem";
-
-import { useState } from "react";
 
 import FlowItem from "./FlowItem";
 

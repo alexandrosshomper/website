@@ -1,6 +1,6 @@
 // BookAnAudit.jsx
 import ReactGA from "react-ga4";
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { Devices, Colors } from "../DesignSystem";
 
@@ -131,7 +131,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const BookAnAudit = ({}) => {
+const BookAnAudit = () => {
   const bookAuditHandler = (e, instance = "lead-gen") => {
     e.preventDefault();
     console.log(`Click Book Audit - ${instance}`);

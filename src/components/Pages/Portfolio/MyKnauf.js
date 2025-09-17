@@ -16,8 +16,6 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
-import CaseHeadlineTwo from "../../Content/Case/CaseHeadlineTwo";
-import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import Drawer from "../../Content/Drawer/Drawer";
 

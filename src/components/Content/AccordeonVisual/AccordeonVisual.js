@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { Colors, Devices } from "../../DesignSystem";
 import ButtonSmall from "../../Button/ButtonSmall";
 
-const AccordeonVisual = ({}) => {
+const AccordeonVisual = () => {
   const AccordeonVisual = styled.div`
     /* Auto Layout */
     display: flex;

@@ -5,10 +5,8 @@ import React from "react";
 import { Colors, Devices } from "../../DesignSystem";
 
 //Components
-import Copy from "./CaseCardCopy";
 import Eyebrow from "./CaseCardEyebrow";
 import Headline from "./CaseCardHeadline";
-import Image from "./CaseCardImage";
 import CaseCardImage from "./CaseCardImage";
 
 const CaseCard = ({
@@ -227,36 +225,6 @@ const CaseCard = ({
     },
   };
 
-  const CaseCardCopyMotion = {
-    rest: {
-      opacity: 0,
-      visibility: "hidden",
-      transition: {
-        duration: 0.2,
-        type: "tween",
-        ease: "easeInOut",
-      },
-    },
-    hover: {
-      opacity: 1,
-      visibility: "visible",
-      transition: {
-        duration: 0.2,
-        type: "tween",
-        ease: "easeInOut",
-      },
-    },
-    click: {
-      opacity: 1,
-      visibility: "visible",
-      transition: {
-        duration: 0.2,
-        type: "tween",
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <CaseCard
       initial="rest"
@@ -290,12 +258,6 @@ const CaseCard = ({
                 )}
                 {headline && <Headline text={headline} />}
               </CaseCardHeader>
-              {/*Devices.tabletS && (
-                <Copy
-                  motionVariants={Devices.tabletS && CaseCardCopyMotion}
-                  text={copy}
-                />
-              )*/}
             </CaseCardHeaderContainer>
           </CaseCardContent>
         </CaseCardArticle>

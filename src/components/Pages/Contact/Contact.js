@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { mdiLinkedin, mdiXing, mdiAccountBox, mdiFilePdfBox } from "@mdi/js";
+import { mdiLinkedin, mdiAccountBox, mdiFilePdfBox } from "@mdi/js";
 
 import { Devices, Colors } from "../../DesignSystem";
 import ButtonMedium from "../../Button/ButtonMedium";

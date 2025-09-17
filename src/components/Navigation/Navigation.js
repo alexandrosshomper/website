@@ -11,15 +11,12 @@ import ButtonSmallSecondary from "../Button/ButtonSmallSecondary";
 const Navigation = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;
-  const [pageLoaded, setPageLoaded] = useState(false);
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   //PAGE RELOAD LOGIC
   useEffect(() => {
     // Perform actions when the route changes
     console.log("New page loaded:", location.pathname);
-    setPageLoaded(true); // Set a flag indicating the page has loaded
     setMenuOpen(false);
 
     // Cleanup function to run when the component unmounts
@@ -87,31 +84,6 @@ const Navigation = (props) => {
     }
   `;
 
-  const NavigationMenuWrapper = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 52px;
-    width: 100%;
-    
-   
-    
-    z-index: 1000;
-    animation: moveDown 0.5s ease-in-out;
-    ${Devices.tabletS} {
-     
-    }
-    ${Devices.tabletM} {
-     
-    }
-    ${Devices.laptopS} {
- 
-    }
-    ${Devices.laptopM} {
-      
-  `;
   const GlobalNavCurtain = styled.div`
     background: rgba(232, 232, 237, 0.4);
     -webkit-backdrop-filter: blur(20px);

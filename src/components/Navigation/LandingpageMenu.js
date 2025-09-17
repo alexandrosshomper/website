@@ -4,8 +4,6 @@ import { Colors, Devices } from "../DesignSystem";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
-import ButtonSmall from "../Button/ButtonSmall";
-
 const LandingpageMenu = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;

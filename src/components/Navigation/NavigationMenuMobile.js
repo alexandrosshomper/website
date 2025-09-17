@@ -3,11 +3,6 @@ import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import Wortmarke from "../Identity/Wortmarke";
-import ButtonSmall from "../Button/ButtonSmall";
-import LandingpageMenu from "./LandingpageMenu";
-import Identity from "../Identity/Identity";
-import IdentitySticky from "../Identity/IdentitySticky";
 import { X } from "lucide-react";
 
 const NavigationMenuMobile = (props) => {

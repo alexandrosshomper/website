@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 //Components
 import { Devices } from "../../DesignSystem";

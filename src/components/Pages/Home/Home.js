@@ -21,15 +21,7 @@ import Checkbox from "../../Checkbox/Checkbox";
 
 import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
 
-import {
-  HandCoins,
-  MousePointerClick,
-  ChartNoAxesCombined,
-  Check,
-  PanelsTopLeft,
-  FileText,
-  Presentation,
-} from "lucide-react";
+import { Check } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 
@@ -306,47 +298,6 @@ function MoveUpWhenVisible({ children }) {
   );
 }
 
-function RevealWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  const [hasAnimated, setHasAnimated] = React.useState(false);
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [controls, inView, hasAnimated]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.9 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          x: "5%",
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 const ContentWrapper = styled.div`
   text-align: left;
   margin-top: 72px;
@@ -389,38 +340,6 @@ const HeaderSection = styled.section`
     margin-bottom: 200px;
   }
 `;
-const CardPanels = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 40px;
-  justify-content: center;
-  align-content: center;
-  align-items: flex-start;
-  --gap: 12px;
-
-  margin-bottom: calc(1 * var(--gap));
-  margin-right: 12px;
-  margin-left: 12px;
-
-  ${Devices.tabletS} {
-    width: 576px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: calc(-1 * var(--gap));
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
-
 const PricePanels = styled.section`
   display: flex;
   flex-direction: column;
@@ -444,38 +363,6 @@ const PricePanels = styled.section`
   ${Devices.tabletM} {
     width: 720px;
     flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
-const FlipCardPanels = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: flex-start;
-  --gap: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-bottom: calc(1 * var(--gap));
-
-  ${Devices.tabletS} {
-    width: 576px;
-
-    margin-bottom: calc(-1 * var(--gap));
-    flex-wrap: nowrap;
-    gap: 12px;
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    margin-left: calc(1.6 * var(--gap));
-    margin-right: calc(1.6 * var(--gap));
   }
   ${Devices.laptopS} {
     width: 864px;
@@ -513,45 +400,6 @@ const DeliverablesCards = styled.section`
   }
 `;
 
-const Annotation = styled.p`
-  max-width: 280px;
-
-  ${Devices.tabletS} {
-    max-width: 280px;
-  }
-  ${Devices.tabletM} {
-    max-width: 280px;
-  }
-  ${Devices.laptopS} {
-    max-width: 42%;
-  }
-  ${Devices.laptopM} {
-    max-width: 33%;
-  }
-`;
-const AnnotationWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: flex-start;
-  gap: 16px;
-  margin: 0px 24px 24px 24px;
-
-  ${Devices.tabletS} {
-    width: 576px;
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
 const Hero = styled.div`
   /* Auto Layout */
   display: flex;
@@ -1641,15 +1489,6 @@ const CloseLightboxButton = styled.button`
 `;
 
 const Content = (props) => {
-  const handleBookAudit = (e) => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "Button",
-      action: "Click",
-      label: "Book Audit",
-    });
-    console.log("Book Audit");
-  };
   // ROI calculator constants
   const LOOM_VIDEO_URL =
     "https://www.loom.com/embed/94ad4dc7e038465a81e930c05aa4c21a";
@@ -1817,7 +1656,6 @@ const Content = (props) => {
     const signups = parseFloat(monthlySignups);
     const activationRate = parseFloat(currentActivationRate) / 100;
     const arpu = parseFloat(averageRevenuePerUser);
-    const churn = parseFloat(churnRate) / 100;
 
     // Current state
     const currentActivatedUsers = signups * activationRate;

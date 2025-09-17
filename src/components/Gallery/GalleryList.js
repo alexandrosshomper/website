@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import GalleryItem from "./GalleryItem";
 
-import { Colors, Devices } from "../DesignSystem";
+import { Devices } from "../DesignSystem";
 
 const GalleryList = ({ data, filter }) => {
   const GalleryList = styled.div`

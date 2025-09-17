@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices } from "../../DesignSystem";
@@ -6,41 +6,6 @@ import { Devices } from "../../DesignSystem";
 import CaseHeadlineTwo from "./CaseHeadlineTwo";
 import CaseSubline from "./CaseSubline";
 //import SectionCopy from "./SectionCopy";
-
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          y: 0,
-        },
-        hidden: {
-          opacity: 0.2,
-          y: "+5%",
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const CaseSectionHead = ({ headline, subline, copy }) => {
   const CaseSectionHead = styled.div`

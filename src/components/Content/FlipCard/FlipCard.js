@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 import { Devices, Colors } from "../../DesignSystem";
 
 import FlipCardEyebrow from "./FlipCardEyebrow";
-import FlipCardImage from "./FlipCardImage";
 import FlipCardCopy from "./FlipCardCopy";
 import { mdiPlus } from "@mdi/js";
 import Icon from "@mdi/react";
