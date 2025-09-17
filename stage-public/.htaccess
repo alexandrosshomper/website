@@ -5,6 +5,7 @@
 AuthType Basic
 AuthName "Staging Private"
 AuthName "Staging Private"
+AuthName "Staging Private"
 AuthUserFile /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/.htpasswd
 Require valid-user
 
