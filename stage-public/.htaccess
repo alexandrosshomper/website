@@ -1,22 +1,25 @@
-# --- Basic Auth (stage only) ---
+# --- Basic Auth (staging only) ---
 AuthType Basic
-AuthName "Staging – Private"
+AuthName "Staging Private"
 AuthUserFile /customers/3/6/f/alexandrosshomper.de/httpd.www/stage/.htpasswd
 Require valid-user
 
-# Protect the credentials file itself
 <Files ".htpasswd">
   Require all denied
 </Files>
 
-# --- SPA fallback (React/Vue/Next static export) ---
+# --- Serve index by default & SPA fallback ---
+DirectoryIndex index.html
 Options -MultiViews
 RewriteEngine On
 
-# Don't rewrite real files or directories
+# 0) NEVER rewrite static assets; if they don't exist, let Apache 404
+RewriteRule ^(static/|assets/|_next/|favicon\.ico|manifest\.json|logo(192|512)\.png)$ - [L]
+
+# 1) If the requested path exists as a file/dir -> serve it
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule - [L]
 
-# Fallback all other routes to index.html
+# 2) Everything else -> SPA fallback
 RewriteRule ^ index.html [QSA,L]
