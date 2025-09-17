@@ -33,7 +33,7 @@ jobs:
   uses: wlixcc/SFTP-Deploy-Action@v1.2.4
   with:
     server: ${{ secrets.FTP_SERVER }}
-    port: ${{ secrets.FTP_PORT || 22 }}
+    port: ${{ secrets.FTP_PORT }}
     username: ${{ secrets.FTP_USER }}
     ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
     passphrase: ${{ secrets.SFTP_PASSPHRASE }}
