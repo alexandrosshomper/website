@@ -1,4 +1,8 @@
 import flows from "./flows.json";
+import asanaScreens from "./asana.json";
+import linearScreens from "./linear_flow.json";
+import trelloScreens from "./trello_flow.json";
+import wrikeScreens from "./wrike_flow.json";
 
 const normalizeSlug = (slug = "") =>
   slug
@@ -39,6 +43,13 @@ const flowsBySlug = flowsWithComputedFields.reduce((acc, flow) => {
   return acc;
 }, {});
 
+const flowScreensBySlug = {
+  asana: asanaScreens,
+  linear: linearScreens,
+  trello: trelloScreens,
+  wrike: wrikeScreens,
+};
+
 export const getAllFlows = () => flowsWithComputedFields;
 
 export const getFlowMeta = (slug) => {
@@ -47,6 +58,16 @@ export const getFlowMeta = (slug) => {
   }
 
   return flowsBySlug[normalizeSlug(slug)];
+};
+
+export const getFlowScreens = (slug) => {
+  if (!slug) {
+    return [];
+  }
+
+  const normalizedSlug = normalizeSlug(slug);
+
+  return flowScreensBySlug[normalizedSlug] || [];
 };
 
 export default flowsWithComputedFields;
