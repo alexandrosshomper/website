@@ -38,16 +38,12 @@ function FadeInWhenVisible({ children }) {
       variants={{
         visible: {
           opacity: 1,
-          scale: 1,
-          y: 0,
           transition: {
             staggerChildren: 0.3,
           },
         },
         hidden: {
           opacity: 0,
-          scale: 0.8,
-          y: "+25%",
         },
       }}
     >
