@@ -3,7 +3,7 @@ import React from "react";
 
 import { Colors, Devices } from "../../DesignSystem";
 
-const FlowItem = ({ thumbnail, image, slug }) => {
+const FlowItem = ({ image }) => {
   const FlowItem = styled.div`
     border-radius: 12px;
     width: 480px;
@@ -77,7 +77,11 @@ const FlowItem = ({ thumbnail, image, slug }) => {
   return (
     <FlowItem>
       <Wrapper>
-        <FlowItemLink href={slug}>
+        <FlowItemLink
+          href={image || undefined}
+          target={image ? "_blank" : undefined}
+          rel={image ? "noopener noreferrer" : undefined}
+        >
           <FlowItemImage>
             <Image src={image} alt={""} />
           </FlowItemImage>
