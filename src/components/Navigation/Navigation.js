@@ -49,7 +49,6 @@ const Navigation = (props) => {
    
   
     z-index: 1000;
-    animation: moveDown 0.5s ease-in-out;
     ${Devices.tabletS} {
      
     }
@@ -119,7 +118,6 @@ const Navigation = (props) => {
     height: 52px;
     z-index: 9999;
 
-    animation: moveDown 0.5s ease-in-out;
     margin-right: 24px;
     margin-left: 24px;
     ${Devices.tabletS} {
