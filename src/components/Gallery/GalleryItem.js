@@ -15,7 +15,6 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     overflow: hidden;
     cursor: ${comingSoon ? "wait" : "pointer"};
     cursor: ${comingSoon ? "wait" : "pointer"};
-
     ${Devices.tabletS} {
       width: 100%;
     }
