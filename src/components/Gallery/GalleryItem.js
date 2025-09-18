@@ -13,8 +13,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    cursor: ${!comingSoon ?? "pointer"};
-    cursor: ${comingSoon && "wait"};
+    cursor: ${comingSoon ? "wait" : "pointer"};
 
     ${Devices.tabletS} {
       width: 100%;
@@ -31,11 +30,11 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
   `;
 
   const GalleryItemLink = styled.a`
-    cursor: ${!comingSoon ?? "pointer"};
-    cursor: ${comingSoon && "wait"};
+    cursor: ${comingSoon ? "wait" : "pointer"};
     direction: ltr;
     display: block;
     height: 100%;
+    color: inherit;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -50,10 +49,6 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
 
     &:hover {
       color: ${Colors.primaryText.highEmphasis};
-    }
-    &:visited {
-      color: ${Colors.primaryText.mediumEmphasis};
-      text-decoration: none;
     }
   `;
 
@@ -118,8 +113,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     -webkit-font-smoothing: antialiased;
   `;
   const GalleryItemName = styled.h3`
-    color: ${!comingSoon ?? Colors.primaryText.highEmphasis};
-    color: ${comingSoon && Colors.primaryText.mediumEmphasis};
+    color: ${comingSoon
+      ? Colors.primaryText.mediumEmphasis
+      : Colors.primaryText.highEmphasis};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -166,7 +162,8 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     flex-grow: 0;
     direction: ltr;
     width: 100%;
-    height: auto;
+    aspect-ratio: 8 / 5;
+    position: relative;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -184,6 +181,12 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     border-radius: 10px;
 
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     ${Devices.tabletS} {
     }
