@@ -41,18 +41,18 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     list-style-type: none;
     position: relative;
     text-align: left;
-    text-decoration-color: blue;
     text-decoration: none;
     text-decoration-style: solid;
     text-decoration-thickness: auto;
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    color: inherit;
 
-    &:hover {
-      color: ${Colors.primaryText.highEmphasis};
-    }
+    &:hover,
+    &:focus,
+    &:active,
     &:visited {
-      color: ${Colors.primaryText.mediumEmphasis};
+      color: inherit;
       text-decoration: none;
     }
   `;
