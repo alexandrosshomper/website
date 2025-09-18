@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { X } from "lucide-react";
 
 import { Devices } from "../DesignSystem";
 
@@ -66,26 +67,44 @@ const ScrollArea = styled.div`
 `;
 
 const CloseButton = styled.button`
-  position: sticky;
-  top: 0;
-  align-self: flex-end;
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: #000000;
   color: #ffffff;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  line-height: 1;
-  z-index: 1;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  margin-bottom: 16px;
+  padding: 0;
+  z-index: 2;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  transition: transform 120ms ease, background-color 120ms ease,
+    box-shadow 120ms ease;
+
+  &:hover {
+    background: #101010;
+    transform: scale(1.03);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const Lightbox = ({
@@ -134,15 +153,15 @@ const Lightbox = ({
         $maxHeight={maxHeight}
         className={className}
       >
+        <CloseButton type="button" onClick={onClose} aria-label={closeLabel}>
+          <X aria-hidden="true" strokeWidth={2.5} />
+        </CloseButton>
         <ScrollArea
           $padding={contentPadding}
           $paddingTablet={contentPaddingTablet}
           $paddingBottom={contentPaddingBottom}
           $paddingBottomTablet={contentPaddingBottomTablet}
         >
-          <CloseButton type="button" onClick={onClose} aria-label={closeLabel}>
-            ×
-          </CloseButton>
           {children}
         </ScrollArea>
       </LightboxContainer>

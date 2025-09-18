@@ -3,7 +3,7 @@ import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
-import { Check, Calculator } from "lucide-react";
+import { Check, Calculator, X } from "lucide-react";
 
 import ButtonMediumText from "../../Button/ButtonMediumText";
 const PricingCanvas = ({ roiCalcAction }) => {
@@ -437,21 +437,43 @@ const PricingCanvas = ({ roiCalcAction }) => {
 
   const CloseLightboxButton = styled.button`
     position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 36px;
-    height: 36px;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: none;
-    background: rgba(255, 255, 255, 0.9);
-    color: #000;
+    background: #000000;
+    color: #ffffff;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    line-height: 1;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    transition: transform 120ms ease, background-color 120ms ease,
+      box-shadow 120ms ease;
+
+    &:hover {
+      background: #101010;
+      transform: scale(1.03);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
   `;
 
   const LOOM_VIDEO_URL =
@@ -523,7 +545,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
                 onClick={() => setIsLightboxOpen(false)}
                 aria-label="Close video"
               >
-                ×
+                <X aria-hidden="true" strokeWidth={2.5} />
               </CloseLightboxButton>
               <iframe
                 src={LOOM_VIDEO_URL}
