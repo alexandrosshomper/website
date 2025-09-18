@@ -109,7 +109,7 @@ const FlowCarousel = ({ data, appname, url }) => {
         </Carousel>
       </Scroller>
       <Text>
-        <Titel href="/flows/asana">
+        <Titel href={url || "#"}>
           {" "}
           {appname} <Appendix>Onboarding & Activation Flow</Appendix>
         </Titel>

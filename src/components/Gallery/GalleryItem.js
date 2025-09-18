@@ -4,7 +4,7 @@ import React from "react";
 
 import { Colors, Devices } from "../DesignSystem";
 
-const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
+const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
   const GalleryItem = styled.div`
     border-radius: 12px;
     width: 100%;
@@ -14,7 +14,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     flex-direction: column;
     overflow: hidden;
     cursor: ${comingSoon ? "wait" : "pointer"};
-
+    cursor: ${comingSoon ? "wait" : "pointer"};
     ${Devices.tabletS} {
       width: 100%;
     }
@@ -31,6 +31,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
 
   const GalleryItemLink = styled.a`
     cursor: ${comingSoon ? "wait" : "pointer"};
+    pointer-events: ${comingSoon ? "none" : "auto"};
     direction: ltr;
     display: block;
     height: 100%;
@@ -81,6 +82,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     flex-grow: 1;
     flex-shrink: 1;
     flex-direction: row;
+    min-width: 0;
     gap: 12px;
     list-style-image: none;
     list-style-position: outside;
@@ -100,8 +102,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
   const GalleryItemTitle = styled.div`
     direction: ltr;
     display: flex;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-direction: column;
+    min-width: 0;
 
     text-align: left;
     text-decoration-thickness: auto;
@@ -119,6 +122,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
     direction: ltr;
 
     font-weight: 600;
@@ -141,6 +145,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
 
     direction: ltr;
 
@@ -274,7 +279,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
 
   return (
     <GalleryItem>
-      <GalleryItemLink href={slug}>
+      <GalleryItemLink href={comingSoon ? undefined : path}>
         <GalleryItemContent>
           <GalleryCoverImage>
             {comingSoon && <ComingSoon>Coming Soon</ComingSoon>}
