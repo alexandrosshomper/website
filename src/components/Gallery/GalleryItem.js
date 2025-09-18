@@ -4,7 +4,7 @@ import React from "react";
 
 import { Colors, Devices } from "../DesignSystem";
 
-const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
+const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
   const GalleryItem = styled.div`
     border-radius: 12px;
     width: 100%;
@@ -13,8 +13,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    cursor: ${!comingSoon ?? "pointer"};
-    cursor: ${comingSoon && "wait"};
+    cursor: ${comingSoon ? "wait" : "pointer"};
 
     ${Devices.tabletS} {
       width: 100%;
@@ -31,8 +30,8 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
   `;
 
   const GalleryItemLink = styled.a`
-    cursor: ${!comingSoon ?? "pointer"};
-    cursor: ${comingSoon && "wait"};
+    cursor: ${comingSoon ? "wait" : "pointer"};
+    pointer-events: ${comingSoon ? "none" : "auto"};
     direction: ltr;
     display: block;
     height: 100%;
@@ -118,8 +117,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
     -webkit-font-smoothing: antialiased;
   `;
   const GalleryItemName = styled.h3`
-    color: ${!comingSoon ?? Colors.primaryText.highEmphasis};
-    color: ${comingSoon && Colors.primaryText.mediumEmphasis};
+    color: ${comingSoon
+      ? Colors.primaryText.mediumEmphasis
+      : Colors.primaryText.highEmphasis};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -271,7 +271,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, slug, comingSoon }) => {
 
   return (
     <GalleryItem>
-      <GalleryItemLink href={slug}>
+      <GalleryItemLink href={comingSoon ? undefined : path}>
         <GalleryItemContent>
           <GalleryCoverImage>
             {comingSoon && <ComingSoon>Coming Soon</ComingSoon>}

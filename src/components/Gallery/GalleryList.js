@@ -40,7 +40,7 @@ const GalleryList = ({ data, filter }) => {
           desc={item.desc}
           logo={item.logo}
           thumbnail={item.thumbnail}
-          slug={item.slug}
+          path={item.path}
           comingSoon={item.comingSoon}
         />
       ))}

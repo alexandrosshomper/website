@@ -9,7 +9,7 @@ import SectionHead from "../../Content/Section/SectionHead";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 //GALLERY
 import GalleryList from "../../Gallery/GalleryList";
-import galleryData from "../../../data/flows/flows.json";
+import galleryData from "../../../data/flows";
 
 const Content = (props) => {
   const Content = styled.div`
