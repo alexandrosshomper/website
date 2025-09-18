@@ -24,40 +24,7 @@ import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
 import { Check } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
-
-// ROI Calculator Lightbox styles (module scope to avoid remounting on input)
-const ROICalculatorOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.48);
-  backdrop-filter: blur(20px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  z-index: 10001;
-  padding: 24px;
-  ${Devices.tabletS} {
-    align-items: center;
-  }
-`;
-
-const ROICalculatorModal = styled.div`
-  background: #ffffff;
-  border-radius: 26px;
-  width: 100%;
-  max-width: 600px;
-  padding: 24px;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
-  position: relative;
-  max-height: 75vh;
-  overflow-y: auto;
-  ${Devices.tabletS} {
-    padding: 32px;
-  }
-`;
+import Lightbox from "../../Lightbox/Lightbox";
 
 const ROICalculatorTitle = styled.h3`
   margin: 0 0 8px 0;
@@ -198,24 +165,6 @@ const ROIImprovementValue = styled.div`
   ${Devices.tabletS} {
     font-size: 32px;
   }
-`;
-
-const ROIModalClose = styled.button`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0, 0, 0, 0.06);
-  color: ${Colors.primaryText.highEmphasis};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  line-height: 1;
 `;
 
 function FadeInWhenVisible({ children }) {
@@ -1272,35 +1221,6 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-// Self-Check Lightbox styles
-const SelfCheckOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.48);
-  backdrop-filter: blur(20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  padding: 24px;
-`;
-
-const SelfCheckModal = styled.div`
-  background: #ffffff;
-  border-radius: 26px;
-  width: 100%;
-  max-width: 560px;
-  padding: 24px;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
-  position: relative;
-  ${Devices.tabletS} {
-    padding: 24px 32px;
-  }
-`;
-
 const SelfCheckTitle = styled.h3`
   margin: 0 0 4px 0;
   font-size: 21px;
@@ -1416,24 +1336,6 @@ const ModalActions = styled.div`
     justify-content: flex-end;
     margin-top: 24px;
   }
-`;
-
-const ModalClose = styled.button`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0, 0, 0, 0.06);
-  color: ${Colors.primaryText.highEmphasis};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  line-height: 1;
 `;
 
 const LightboxOverlay = styled.div`
@@ -1608,6 +1510,7 @@ const Content = (props) => {
       if (e.key === "Escape") {
         setIsLightboxOpen(false);
         setIsROICalculatorOpen(false);
+        setIsSelfCheckOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -1798,99 +1701,92 @@ const Content = (props) => {
             color2="#000000"
           />
         </div>
-        {isSelfCheckOpen && (
-          <SelfCheckOverlay onClick={() => setIsSelfCheckOpen(false)}>
-            <SelfCheckModal onClick={(e) => e.stopPropagation()}>
-              <ModalClose
-                onClick={() => setIsSelfCheckOpen(false)}
-                aria-label="Close self-check"
-              >
-                ×
-              </ModalClose>
-              <SelfCheckTitle>Onboarding Self-Check</SelfCheckTitle>
-              <SelfCheckSubline>
-                Find out whether you have an onboarding problem. Check what
-                applies.
-              </SelfCheckSubline>
-              <SelfCheckList>
-                <SelfCheckItem>
-                  <Checkbox
-                    checked={selectedIssues[1]}
-                    onChange={() => toggleIssue(1)}
-                    label="Are new users signing up but not activating—dropping off
-                    before they experience real value?"
-                  />
-                </SelfCheckItem>
-                <SelfCheckItem>
-                  <Checkbox
-                    checked={selectedIssues[2]}
-                    onChange={() => toggleIssue(2)}
-                    label="Do you see low retention after the first weeks even though
-                    acquisition is steady?"
-                  />
-                </SelfCheckItem>
-                <SelfCheckItem>
-                  <Checkbox
-                    checked={selectedIssues[3]}
-                    onChange={() => toggleIssue(3)}
-                    label="Are too few free users upgrading to paid plans, leaving
-                    revenue on the table?"
-                  />
-                </SelfCheckItem>
+        <Lightbox
+          isOpen={isSelfCheckOpen}
+          onClose={() => setIsSelfCheckOpen(false)}
+          ariaLabel="Onboarding self-check"
+          maxWidth="560px"
+          contentPadding="24px"
+          contentPaddingTablet="24px 32px"
+          contentPaddingBottom="32px"
+          contentPaddingBottomTablet="40px"
+        >
+          <SelfCheckTitle>Onboarding Self-Check</SelfCheckTitle>
+          <SelfCheckSubline>
+            Find out whether you have an onboarding problem. Check what applies.
+          </SelfCheckSubline>
+          <SelfCheckList>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[1]}
+                onChange={() => toggleIssue(1)}
+                label="Are new users signing up but not activating—dropping off before they experience real value?"
+              />
+            </SelfCheckItem>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[2]}
+                onChange={() => toggleIssue(2)}
+                label="Do you see low retention after the first weeks even though acquisition is steady?"
+              />
+            </SelfCheckItem>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[3]}
+                onChange={() => toggleIssue(3)}
+                label="Are too few free users upgrading to paid plans, leaving revenue on the table?"
+              />
+            </SelfCheckItem>
 
-                <SelfCheckItem>
-                  <Checkbox
-                    checked={selectedIssues[4]}
-                    onChange={() => toggleIssue(4)}
-                    label="Do you notice support tickets piling up because the product
-                    doesn't guide users well enough?"
-                  />
-                </SelfCheckItem>
-                <SelfCheckItem>
-                  <Checkbox
-                    checked={selectedIssues[5]}
-                    onChange={() => toggleIssue(5)}
-                    label="Do you notice support tickets piling up because the product
-                    doesn't guide ?"
-                  />
-                </SelfCheckItem>
-              </SelfCheckList>
-              <Thermometer>
-                <BlinkingCircle
-                  style={{ backgroundColor: thermometerColor }}
-                  shouldBlink={shouldBlink}
-                  blinkInterval={blinkInterval}
-                />
-                <ThermometerText>{thermometerText}</ThermometerText>
-              </Thermometer>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[4]}
+                onChange={() => toggleIssue(4)}
+                label="Do you notice support tickets piling up because the product doesn't guide users well enough?"
+              />
+            </SelfCheckItem>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[5]}
+                onChange={() => toggleIssue(5)}
+                label="Do you notice support tickets piling up because the product doesn't guide ?"
+              />
+            </SelfCheckItem>
+          </SelfCheckList>
+          <Thermometer>
+            <BlinkingCircle
+              style={{ backgroundColor: thermometerColor }}
+              shouldBlink={shouldBlink}
+              blinkInterval={blinkInterval}
+            />
+            <ThermometerText>{thermometerText}</ThermometerText>
+          </Thermometer>
 
-              <ModalActions>
-                <ButtonMediumSecondary
-                  clickAction={(e) =>
-                    handleClickActivationScore(
-                      e,
-                      "https://alexshomper.notion.site/26eadf77b88b80d0b73aca5b171c586c",
-                      "self-check"
-                    )
-                  }
-                  text="Calculate Activation Score"
-                />
-                <ButtonMedium
-                  clickAction={(e) =>
-                    hanldeBookAudit(
-                      e,
-                      "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                      "self-check"
-                    )
-                  }
-                  text="Book intro call"
-                  color1={Colors.blue}
-                  color2={Colors.blueDark}
-                />
-              </ModalActions>
-            </SelfCheckModal>
-          </SelfCheckOverlay>
-        )}
+          <ModalActions>
+            <ButtonMediumSecondary
+              clickAction={(e) =>
+                handleClickActivationScore(
+                  e,
+                  "https://alexshomper.notion.site/26eadf77b88b80d0b73aca5b171c586c",
+                  "self-check"
+                )
+              }
+              text="Calculate Activation Score"
+            />
+            <ButtonMedium
+              clickAction={(e) =>
+                hanldeBookAudit(
+                  e,
+                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
+                  "self-check"
+                )
+              }
+              text="Book intro call"
+              color1={Colors.blue}
+              color2={Colors.blueDark}
+            />
+          </ModalActions>
+        </Lightbox>
       </Section>
       <Section>
         <BusinessCard />
@@ -2000,182 +1896,177 @@ const Content = (props) => {
             </SolutionCard>
           </FadeInWhenVisible>
         </SolutionCards>
-        {isROICalculatorOpen && (
-          <ROICalculatorOverlay onClick={() => setIsROICalculatorOpen(false)}>
-            <ROICalculatorModal onClick={(e) => e.stopPropagation()}>
-              <ROIModalClose
-                onClick={() => setIsROICalculatorOpen(false)}
-                aria-label="Close ROI calculator"
-              >
-                ×
-              </ROIModalClose>
-              <ROICalculatorTitle>Calculate Onboarding ROI</ROICalculatorTitle>
-              <ROICalculatorSubline>
-                See how much revenue you could gain by improving your onboarding
-                activation rate.
-              </ROICalculatorSubline>
+        <Lightbox
+          isOpen={isROICalculatorOpen}
+          onClose={() => setIsROICalculatorOpen(false)}
+          ariaLabel="ROI calculator"
+          maxWidth="600px"
+          maxHeight="75vh"
+          align="flex-start"
+          alignTablet="center"
+          contentPadding="24px"
+          contentPaddingTablet="32px"
+          contentPaddingBottom="40px"
+          contentPaddingBottomTablet="48px"
+        >
+          <ROICalculatorTitle>Calculate Onboarding ROI</ROICalculatorTitle>
+          <ROICalculatorSubline>
+            See how much revenue you could gain by improving your onboarding
+            activation rate.
+          </ROICalculatorSubline>
 
-              <ROIForm>
-                <ROIInputGroup>
-                  <ROILabel>Monthly Signups</ROILabel>
-                  <ROIInput
-                    id="roi-monthlySignups"
-                    key="roi-monthlySignups"
-                    name="monthlySignups"
-                    type="text"
-                    inputMode="numeric"
-                    autoComplete="off"
-                    placeholder="e.g., 1000"
-                    value={roiInputs.monthlySignups}
-                    onChange={(e) =>
-                      handleROIInputChange("monthlySignups", e.target.value)
-                    }
-                  />
-                </ROIInputGroup>
+          <ROIForm>
+            <ROIInputGroup>
+              <ROILabel>Monthly Signups</ROILabel>
+              <ROIInput
+                id="roi-monthlySignups"
+                key="roi-monthlySignups"
+                name="monthlySignups"
+                type="text"
+                inputMode="numeric"
+                autoComplete="off"
+                placeholder="e.g., 1000"
+                value={roiInputs.monthlySignups}
+                onChange={(e) =>
+                  handleROIInputChange("monthlySignups", e.target.value)
+                }
+              />
+            </ROIInputGroup>
 
-                <ROIInputGroup>
-                  <ROILabel>Current Activation Rate (%)</ROILabel>
-                  <ROIInput
-                    id="roi-currentActivationRate"
-                    key="roi-currentActivationRate"
-                    name="currentActivationRate"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    placeholder="e.g., 25"
-                    value={roiInputs.currentActivationRate}
-                    onChange={(e) =>
-                      handleROIInputChange(
-                        "currentActivationRate",
-                        e.target.value
-                      )
-                    }
-                  />
-                </ROIInputGroup>
+            <ROIInputGroup>
+              <ROILabel>Current Activation Rate (%)</ROILabel>
+              <ROIInput
+                id="roi-currentActivationRate"
+                key="roi-currentActivationRate"
+                name="currentActivationRate"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                placeholder="e.g., 25"
+                value={roiInputs.currentActivationRate}
+                onChange={(e) =>
+                  handleROIInputChange(
+                    "currentActivationRate",
+                    e.target.value
+                  )
+                }
+              />
+            </ROIInputGroup>
 
-                <ROIInputGroup>
-                  <ROILabel>Average Revenue Per User (€)</ROILabel>
-                  <ROIInput
-                    id="roi-averageRevenuePerUser"
-                    key="roi-averageRevenuePerUser"
-                    name="averageRevenuePerUser"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    placeholder="e.g., 50"
-                    value={roiInputs.averageRevenuePerUser}
-                    onChange={(e) =>
-                      handleROIInputChange(
-                        "averageRevenuePerUser",
-                        e.target.value
-                      )
-                    }
-                  />
-                </ROIInputGroup>
+            <ROIInputGroup>
+              <ROILabel>Average Revenue Per User (€)</ROILabel>
+              <ROIInput
+                id="roi-averageRevenuePerUser"
+                key="roi-averageRevenuePerUser"
+                name="averageRevenuePerUser"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                placeholder="e.g., 50"
+                value={roiInputs.averageRevenuePerUser}
+                onChange={(e) =>
+                  handleROIInputChange(
+                    "averageRevenuePerUser",
+                    e.target.value
+                  )
+                }
+              />
+            </ROIInputGroup>
 
-                <ROIInputGroup>
-                  <ROILabel>Monthly Churn Rate (%)</ROILabel>
-                  <ROIInput
-                    id="roi-churnRate"
-                    key="roi-churnRate"
-                    name="churnRate"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    placeholder="e.g., 5"
-                    value={roiInputs.churnRate}
-                    onChange={(e) =>
-                      handleROIInputChange("churnRate", e.target.value)
-                    }
-                  />
-                </ROIInputGroup>
-              </ROIForm>
+            <ROIInputGroup>
+              <ROILabel>Monthly Churn Rate (%)</ROILabel>
+              <ROIInput
+                id="roi-churnRate"
+                key="roi-churnRate"
+                name="churnRate"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                placeholder="e.g., 5"
+                value={roiInputs.churnRate}
+                onChange={(e) =>
+                  handleROIInputChange("churnRate", e.target.value)
+                }
+              />
+            </ROIInputGroup>
+          </ROIForm>
 
-              {roiResults && (
-                <ROIResults>
-                  <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
+          {roiResults && (
+            <ROIResults>
+              <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
 
-                  <ROIMetric>
-                    <ROIMetricLabel>
-                      Current Activated Users/Month
-                    </ROIMetricLabel>
-                    <ROIMetricValue>
-                      {Math.round(roiResults.current.activatedUsers)}
-                    </ROIMetricValue>
-                  </ROIMetric>
+              <ROIMetric>
+                <ROIMetricLabel>
+                  Current Activated Users/Month
+                </ROIMetricLabel>
+                <ROIMetricValue>
+                  {Math.round(roiResults.current.activatedUsers)}
+                </ROIMetricValue>
+              </ROIMetric>
 
-                  <ROIMetric>
-                    <ROIMetricLabel>
-                      Improved Activated Users/Month
-                    </ROIMetricLabel>
-                    <ROIMetricValue>
-                      {Math.round(roiResults.improved.activatedUsers)}
-                    </ROIMetricValue>
-                  </ROIMetric>
+              <ROIMetric>
+                <ROIMetricLabel>
+                  Improved Activated Users/Month
+                </ROIMetricLabel>
+                <ROIMetricValue>
+                  {Math.round(roiResults.improved.activatedUsers)}
+                </ROIMetricValue>
+              </ROIMetric>
 
-                  <ROIMetric>
-                    <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
-                    <ROIMetricValue>
-                      €
-                      {Math.round(
-                        roiResults.current.monthlyRevenue
-                      ).toLocaleString()}
-                    </ROIMetricValue>
-                  </ROIMetric>
+              <ROIMetric>
+                <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
+                <ROIMetricValue>
+                  €
+                  {Math.round(roiResults.current.monthlyRevenue).toLocaleString()}
+                </ROIMetricValue>
+              </ROIMetric>
 
-                  <ROIMetric>
-                    <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
-                    <ROIMetricValue>
-                      €
-                      {Math.round(
-                        roiResults.improved.monthlyRevenue
-                      ).toLocaleString()}
-                    </ROIMetricValue>
-                  </ROIMetric>
+              <ROIMetric>
+                <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
+                <ROIMetricValue>
+                  €
+                  {Math.round(roiResults.improved.monthlyRevenue).toLocaleString()}
+                </ROIMetricValue>
+              </ROIMetric>
 
-                  <ROIImprovement>
-                    <ROIImprovementTitle>
-                      Additional Monthly Revenue
-                    </ROIImprovementTitle>
-                    <ROIImprovementValue>
-                      €
-                      {Math.round(
-                        roiResults.improvement.monthly
-                      ).toLocaleString()}
-                    </ROIImprovementValue>
-                  </ROIImprovement>
+              <ROIImprovement>
+                <ROIImprovementTitle>
+                  Additional Monthly Revenue
+                </ROIImprovementTitle>
+                <ROIImprovementValue>
+                  €
+                  {Math.round(roiResults.improvement.monthly).toLocaleString()}
+                </ROIImprovementValue>
+              </ROIImprovement>
 
-                  <ROIImprovement style={{ marginTop: "12px" }}>
-                    <ROIImprovementTitle>
-                      Additional Annual Revenue
-                    </ROIImprovementTitle>
-                    <ROIImprovementValue>
-                      €
-                      {Math.round(
-                        roiResults.improvement.annual
-                      ).toLocaleString()}
-                    </ROIImprovementValue>
-                  </ROIImprovement>
-                </ROIResults>
-              )}
+              <ROIImprovement style={{ marginTop: "12px" }}>
+                <ROIImprovementTitle>
+                  Additional Annual Revenue
+                </ROIImprovementTitle>
+                <ROIImprovementValue>
+                  €
+                  {Math.round(roiResults.improvement.annual).toLocaleString()}
+                </ROIImprovementValue>
+              </ROIImprovement>
+            </ROIResults>
+          )}
 
-              <ModalActions>
-                <ButtonMedium
-                  clickAction={(e) =>
-                    hanldeBookAudit(
-                      e,
-                      "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                      "roi-calculator"
-                    )
-                  }
-                  text="Book intro call"
-                  color1={Colors.blue}
-                  color2={Colors.blueDark}
-                />
-              </ModalActions>
-            </ROICalculatorModal>
-          </ROICalculatorOverlay>
-        )}
+          <ModalActions>
+            <ButtonMedium
+              clickAction={(e) =>
+                hanldeBookAudit(
+                  e,
+                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
+                  "roi-calculator"
+                )
+              }
+              text="Book intro call"
+              color1={Colors.blue}
+              color2={Colors.blueDark}
+            />
+          </ModalActions>
+        </Lightbox>
+
       </Section>
 
       <Section>
