@@ -1,0 +1,42 @@
+[
+  {
+    "image": "/img/flows/wrike/00-landingpage.png",
+    "id": 0
+  },
+  {
+    "image": "/img/flows/wrike/01-signup-account.png",
+    "id": 1
+  },
+  {
+    "image": "/img/flows/wrike/02-signup-account-success.png",
+    "id": 2
+  },
+  {
+    "image": "/img/flows/wrike/04-signup-account.png",
+    "id": 3
+  },
+  {
+    "image": "/img/flows/wrike/05-signup-account.png",
+    "id": 4
+  },
+  {
+    "image": "/img/flows/wrike/05-signup-segmentation.png",
+    "id": 5
+  },
+  {
+    "image": "/img/flows/wrike/07-signup-segmentation-filled.png",
+    "id": 6
+  },
+  {
+    "image": "/img/flows/wrike/09-signup-segmentation-two-filled-suggestion.png",
+    "id": 7
+  },
+  {
+    "image": "/img/flows/wrike/09-signup-segmentation-two-filled.png",
+    "id": 8
+  },
+  {
+    "image": "/img/flows/wrike/Wrike-Embargo.png",
+    "id": 9
+  }
+]

@@ -40,6 +40,8 @@ const AsanaCaseStudy = lazy(() =>
 const Flows = lazy(() => import("./components/Pages/Flows/Flows"));
 const AsanaFlow = lazy(() => import("./components/Pages/Flows/AsanaFlow"));
 const LinearFlow = lazy(() => import("./components/Pages/Flows/LinearFlow"));
+const WrikeFlow = lazy(() => import("./components/Pages/Flows/WrikeFlow.js"));
+const TrelloFlow = lazy(() => import("./components/Pages/Flows/TrelloFlow.js"));
 
 //PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
@@ -159,6 +161,8 @@ function App() {
             <Route exact path="/flows" component={Flows} />
             <Route exact path="/flows/asana" component={AsanaFlow} />
             <Route exact path="/flows/linear" component={LinearFlow} />
+            <Route exact path="/flows/wrike" component={WrikeFlow} />
+            <Route exact path="/flows/trello" component={TrelloFlow} />
 
             {/*PORTFOLIO*/}
             <Route exact path="/occhio" component={Occhio} />

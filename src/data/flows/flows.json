@@ -18,7 +18,7 @@
   },
   {
     "id": 2,
-    "slug": "wrike",
+    "slug": "flows/wrike",
     "name": "Wrike",
     "desc": "One platform to streamline all workflows",
     "category": "Project Management",
@@ -32,7 +32,7 @@
     "landingpageScore": 2,
     "signupScore": 2,
     "ahaScore": 3,
-    "comingSoon": true
+    "comingSoon": false
   },
   {
     "id": 3,
@@ -53,7 +53,7 @@
   },
   {
     "id": 4,
-    "slug": "trello",
+    "slug": "flows/trello",
     "name": "Trello",
     "desc": "Capture, organize, and tackle your to-dos from anywhere.",
     "category": "Project Management",
@@ -67,6 +67,6 @@
     "landingpageScore": 2,
     "signupScore": 2,
     "ahaScore": 3,
-    "comingSoon": true
+    "comingSoon": false
   }
 ]
