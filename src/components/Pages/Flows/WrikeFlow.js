@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { useInView } from "react-intersection-observer";
 
 import flowData from "../../../data/flows/wrike_flow.json";
 
@@ -10,15 +8,13 @@ import flowData from "../../../data/flows/wrike_flow.json";
 import { Colors, Devices } from "../../DesignSystem";
 
 //COMPONENTS
-import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
-import CaseCard from "../../Content/CaseCard/CaseCard";
 
 import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
 
-const Content = (props) => {
+const Content = () => {
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -37,51 +33,6 @@ const Content = (props) => {
     flex-grow: 0;
   `;
 
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 140px;
-  `;
-
-  const CaseCardGrid = styled.section`
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-    }
-  `;
   const Chips = styled.div`
     display: flex;
     flex-direction: row;
