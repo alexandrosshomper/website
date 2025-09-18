@@ -83,6 +83,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     flex-grow: 1;
     flex-shrink: 1;
     flex-direction: row;
+    min-width: 0;
     gap: 12px;
     list-style-image: none;
     list-style-position: outside;
@@ -102,8 +103,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
   const GalleryItemTitle = styled.div`
     direction: ltr;
     display: flex;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-direction: column;
+    min-width: 0;
 
     text-align: left;
     text-decoration-thickness: auto;
@@ -121,6 +123,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
     direction: ltr;
 
     font-weight: 600;
@@ -143,6 +146,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
 
     direction: ltr;
 
