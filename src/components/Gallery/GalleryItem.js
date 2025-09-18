@@ -353,7 +353,6 @@ const GalleryItem = ({
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
   `;
-
   return (
     <GalleryItem>
       <GalleryItemLink
