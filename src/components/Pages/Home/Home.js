@@ -239,14 +239,12 @@ function FadeInWhenVisible({ children }) {
       variants={{
         visible: {
           opacity: 1,
-          y: 0,
           transition: {
             staggerChildren: 0.3,
           },
         },
         hidden: {
-          opacity: 0.5,
-          y: "+15%",
+          opacity: 0,
         },
       }}
     >
@@ -276,8 +274,6 @@ function MoveUpWhenVisible({ children }) {
       variants={{
         visible: {
           opacity: 1,
-          scale: 1,
-          y: 0,
           transition: {
             when: "beforeChildren",
             staggerChildren: 0.3,
@@ -285,8 +281,6 @@ function MoveUpWhenVisible({ children }) {
         },
         hidden: {
           opacity: 0,
-          scale: 0.8,
-          y: "+100%",
           transition: {
             when: "afterChildren",
           },

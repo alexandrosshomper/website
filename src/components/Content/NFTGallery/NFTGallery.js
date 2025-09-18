@@ -54,7 +54,6 @@ const NFTGallery = ({
   const NFTGalleryMotion = {
     rest: {
       boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
-      scale: 1,
       transition: {
         duration: 0.2,
         type: "tween",
@@ -63,7 +62,6 @@ const NFTGallery = ({
     },
     hover: {
       boxShadow: "1px 1px 20px rgba(0, 0, 0, 0.1)",
-      scale: 1.01,
       transition: {
         duration: 0.2,
         type: "tween",
@@ -72,7 +70,6 @@ const NFTGallery = ({
     },
     click: {
       boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
-      scale: 0.9,
       transition: {
         duration: 0.2,
         type: "tween",
