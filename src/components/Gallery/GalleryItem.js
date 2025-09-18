@@ -276,7 +276,6 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
   `;
-
   return (
     <GalleryItem>
       <GalleryItemLink href={comingSoon ? undefined : path}>
