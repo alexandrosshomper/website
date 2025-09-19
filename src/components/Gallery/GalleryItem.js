@@ -12,6 +12,7 @@ import { Colors, Devices } from "../DesignSystem";
 import { getFlowScreens } from "../../data/flows";
 
 const IMAGE_ROTATION_INTERVAL = 500;
+const IMAGE_PRELOAD_COUNT = 5;
 
 const GalleryItem = ({
   title,
@@ -45,6 +46,7 @@ const GalleryItem = ({
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const rotationIntervalRef = useRef(null);
+  const preloadedImagesRef = useRef([]);
 
   const clearRotation = useCallback(() => {
     if (rotationIntervalRef.current) {
@@ -54,6 +56,27 @@ const GalleryItem = ({
   }, []);
 
   useEffect(() => () => clearRotation(), [clearRotation]);
+
+  useEffect(() => {
+    preloadedImagesRef.current = [];
+
+    if (typeof Image === "undefined") {
+      return undefined;
+    }
+
+    const preloadTargets = images.slice(0, IMAGE_PRELOAD_COUNT);
+    const loadedImages = preloadTargets.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    preloadedImagesRef.current = loadedImages;
+
+    return () => {
+      preloadedImagesRef.current = [];
+    };
+  }, [images]);
 
   useEffect(() => {
     setActiveImageIndex(0);
