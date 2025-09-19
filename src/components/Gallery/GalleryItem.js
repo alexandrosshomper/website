@@ -115,6 +115,7 @@ const GalleryItem = ({
     overflow: hidden;
     cursor: ${comingSoon ? "wait" : "pointer"};
     cursor: ${comingSoon ? "wait" : "pointer"};
+    cursor: ${comingSoon ? "wait" : "pointer"};
     ${Devices.tabletS} {
       width: 100%;
     }
@@ -131,6 +132,7 @@ const GalleryItem = ({
 
   const GalleryItemLink = styled.a`
     cursor: ${comingSoon ? "wait" : "pointer"};
+    pointer-events: ${comingSoon ? "none" : "auto"};
     pointer-events: ${comingSoon ? "none" : "auto"};
     direction: ltr;
     display: block;
@@ -183,6 +185,7 @@ const GalleryItem = ({
     flex-shrink: 1;
     flex-direction: row;
     min-width: 0;
+    min-width: 0;
     gap: 12px;
     list-style-image: none;
     list-style-position: outside;
@@ -203,7 +206,9 @@ const GalleryItem = ({
     direction: ltr;
     display: flex;
     flex-grow: 1;
+    flex-grow: 1;
     flex-direction: column;
+    min-width: 0;
     min-width: 0;
 
     text-align: left;
@@ -222,6 +227,7 @@ const GalleryItem = ({
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
     max-width: 100%;
     direction: ltr;
 
@@ -245,6 +251,7 @@ const GalleryItem = ({
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
     max-width: 100%;
 
     direction: ltr;
@@ -376,7 +383,6 @@ const GalleryItem = ({
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
   `;
-
   return (
     <GalleryItem>
       <GalleryItemLink
