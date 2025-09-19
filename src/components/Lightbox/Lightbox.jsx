@@ -15,6 +15,11 @@ const LightboxOverlay = styled.div`
   padding: 24px;
   z-index: 10000;
   overflow-y: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   ${Devices.tabletS} {
     align-items: ${({ $alignTablet, $align }) => $alignTablet || $align};
@@ -49,6 +54,11 @@ const ScrollArea = styled.div`
   padding-bottom: ${({ $paddingBottom, $padding }) =>
     $paddingBottom || $padding || "24px"};
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   ${Devices.tabletS} {
     padding: ${({ $paddingTablet, $padding }) =>
@@ -82,14 +92,11 @@ const CloseButton = styled.button`
   justify-content: center;
   padding: 0;
   z-index: 2;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  transition: transform 120ms ease, background-color 120ms ease,
-    box-shadow 120ms ease;
+  transition: transform 120ms ease, background-color 120ms ease;
 
   &:hover {
     background: #101010;
     transform: scale(1.03);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
   }
 
   &:active {
