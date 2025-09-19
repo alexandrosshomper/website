@@ -18,11 +18,16 @@ const FlowItemCard = styled.div`
   scroll-snap-stop: always;
 
   ${Devices.tabletS} {
-    width: 480px;
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
   }
 `;
 
-const FlowItemWrapper = styled.div`
+const Wrapper = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 8 / 5;
