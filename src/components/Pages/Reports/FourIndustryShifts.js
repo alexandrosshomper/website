@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import React from "react";
 import { Helmet } from "react-helmet";
 
@@ -9,6 +8,11 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
 import CaseSubline from "../../Content/Case/CaseSubline";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
+import ReportTemplate, {
+  ReportParagraph,
+  ReportUnorderedList,
+  ReportListItem,
+} from "./ReportTemplate";
 
 const PageWrapper = styled.div`
   text-align: left;
@@ -130,4 +134,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default FourIndustryShifts;
