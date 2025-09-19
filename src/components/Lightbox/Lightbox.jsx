@@ -61,7 +61,8 @@ const ScrollArea = styled.div`
       $paddingBottomTablet ||
       $paddingBottom ||
       $paddingTablet ||
-      $padding || "24px"};
+      $padding ||
+      "24px"};
   }
 `;
 
