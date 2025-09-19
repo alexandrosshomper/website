@@ -1,38 +1,42 @@
 [
   {
-    "image": "/img/flows/wrike/wrike-00-00-homepage-landingpage.png",
+    "image": "/img/flows/wrike/00-landingpage.png",
     "id": 0
   },
   {
-    "image": "/img/flows/wrike/wrike-01-00-sign_up-account-email.png",
+    "image": "/img/flows/wrike/01-signup-account.png",
     "id": 1
   },
   {
-    "image": "/img/flows/wrike/wrike-01-01-sign_up-account-profile.png",
+    "image": "/img/flows/wrike/02-signup-account-success.png",
     "id": 2
   },
   {
-    "image": "/img/flows/wrike/wrike-02-00-setup-segmentation-team_size.png",
+    "image": "/img/flows/wrike/04-signup-account.png",
     "id": 3
   },
   {
-    "image": "/img/flows/wrike/wrike-02-01-setup-segmentation-role.png",
+    "image": "/img/flows/wrike/05-signup-account.png",
     "id": 4
   },
   {
-    "image": "/img/flows/wrike/wrike-02-02-setup-email_verification.png",
+    "image": "/img/flows/wrike/05-signup-segmentation.png",
     "id": 5
   },
   {
-    "image": "/img/flows/wrike/wrike-02-03-setup-password.png",
+    "image": "/img/flows/wrike/07-signup-segmentation-filled.png",
     "id": 6
   },
   {
-    "image": "/img/flows/wrike/wrike-03-01-first_experience-trial_popup.png",
+    "image": "/img/flows/wrike/09-signup-segmentation-two-filled-suggestion.png",
     "id": 7
   },
   {
-    "image": "/img/flows/wrike/wrike-03-02-first_experience-homepage.png",
+    "image": "/img/flows/wrike/09-signup-segmentation-two-filled.png",
     "id": 8
+  },
+  {
+    "image": "/img/flows/wrike/Wrike-Embargo.png",
+    "id": 9
   }
 ]
