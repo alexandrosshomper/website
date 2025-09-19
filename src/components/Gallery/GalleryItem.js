@@ -11,7 +11,7 @@ import React, {
 import { Colors, Devices } from "../DesignSystem";
 import { getFlowScreens } from "../../data/flows";
 
-const IMAGE_ROTATION_INTERVAL = 2000;
+const IMAGE_ROTATION_INTERVAL = 500;
 
 const GalleryItem = ({
   title,
