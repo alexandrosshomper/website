@@ -1,10 +1,110 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import React from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { Colors, Devices } from "../DesignSystem";
+import { getFlowScreens } from "../../data/flows";
 
-const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
+const IMAGE_ROTATION_INTERVAL = 500;
+const IMAGE_PRELOAD_COUNT = 5;
+
+const GalleryItem = ({
+  title,
+  desc,
+  logo,
+  thumbnail,
+  path,
+  comingSoon,
+  slug,
+}) => {
+  const images = useMemo(() => {
+    const flowScreens = getFlowScreens(slug);
+    const screenImages = (flowScreens || [])
+      .map((screen) => screen && screen.image)
+      .filter(Boolean);
+
+    const combinedImages = thumbnail
+      ? [thumbnail, ...screenImages]
+      : screenImages;
+
+    const uniqueImages = combinedImages.filter((image, index, arr) => {
+      if (!image) {
+        return false;
+      }
+
+      return arr.indexOf(image) === index;
+    });
+
+    return uniqueImages;
+  }, [slug, thumbnail]);
+
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const rotationIntervalRef = useRef(null);
+  const preloadedImagesRef = useRef([]);
+
+  const clearRotation = useCallback(() => {
+    if (rotationIntervalRef.current) {
+      clearInterval(rotationIntervalRef.current);
+      rotationIntervalRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => () => clearRotation(), [clearRotation]);
+
+  useEffect(() => {
+    preloadedImagesRef.current = [];
+
+    if (typeof Image === "undefined") {
+      return undefined;
+    }
+
+    const preloadTargets = images.slice(0, IMAGE_PRELOAD_COUNT);
+    const loadedImages = preloadTargets.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    preloadedImagesRef.current = loadedImages;
+
+    return () => {
+      preloadedImagesRef.current = [];
+    };
+  }, [images]);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+    clearRotation();
+  }, [clearRotation, slug, images.length, comingSoon]);
+
+  const startRotation = useCallback(() => {
+    if (comingSoon || images.length <= 1) {
+      return;
+    }
+
+    clearRotation();
+
+    rotationIntervalRef.current = setInterval(() => {
+      setActiveImageIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % images.length;
+        return nextIndex;
+      });
+    }, IMAGE_ROTATION_INTERVAL);
+  }, [clearRotation, comingSoon, images.length]);
+
+  const stopRotation = useCallback(() => {
+    clearRotation();
+    setActiveImageIndex(0);
+  }, [clearRotation]);
+
+  const currentImage = images[activeImageIndex] || thumbnail || "";
+
   const GalleryItem = styled.div`
     border-radius: 12px;
     width: 100%;
@@ -13,6 +113,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    cursor: ${comingSoon ? "wait" : "pointer"};
     cursor: ${comingSoon ? "wait" : "pointer"};
     cursor: ${comingSoon ? "wait" : "pointer"};
     ${Devices.tabletS} {
@@ -31,6 +132,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
 
   const GalleryItemLink = styled.a`
     cursor: ${comingSoon ? "wait" : "pointer"};
+    pointer-events: ${comingSoon ? "none" : "auto"};
     pointer-events: ${comingSoon ? "none" : "auto"};
     direction: ltr;
     display: block;
@@ -83,6 +185,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     flex-shrink: 1;
     flex-direction: row;
     min-width: 0;
+    min-width: 0;
     gap: 12px;
     list-style-image: none;
     list-style-position: outside;
@@ -103,7 +206,9 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     direction: ltr;
     display: flex;
     flex-grow: 1;
+    flex-grow: 1;
     flex-direction: column;
+    min-width: 0;
     min-width: 0;
 
     text-align: left;
@@ -122,6 +227,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
     max-width: 100%;
     direction: ltr;
 
@@ -145,6 +251,7 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
     max-width: 100%;
 
     direction: ltr;
@@ -278,11 +385,17 @@ const GalleryItem = ({ title, desc, logo, thumbnail, path, comingSoon }) => {
   `;
   return (
     <GalleryItem>
-      <GalleryItemLink href={comingSoon ? undefined : path}>
+      <GalleryItemLink
+        href={comingSoon ? undefined : path}
+        onMouseEnter={startRotation}
+        onMouseLeave={stopRotation}
+        onFocus={startRotation}
+        onBlur={stopRotation}
+      >
         <GalleryItemContent>
           <GalleryCoverImage>
             {comingSoon && <ComingSoon>Coming Soon</ComingSoon>}
-            <Picture src={thumbnail ? thumbnail : ""} alt={""} />
+            <Picture src={currentImage} alt={""} />
           </GalleryCoverImage>
           <GalleryItemTitleContainer>
             <GalleryItemLogo>
