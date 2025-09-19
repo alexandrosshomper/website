@@ -135,4 +135,4 @@ const Content = () => {
   );
 };
 
-export default FourIndustryShifts;
+export default Content;
