@@ -1,54 +1,54 @@
 [
   {
-    "image": "/img/flows/asana/00-landingpage.png",
+    "image": "/img/flows/asana/asana-00-00-landing-page-landingpage-default.png",
     "id": 0
   },
   {
-    "image": "/img/flows/asana/01-sign-up-account.png",
+    "image": "/img/flows/asana/asana-01-00-sign-up-account-default.png",
     "id": 1
   },
   {
-    "image": "/img/flows/asana/02-sign-up-email-verification.png",
+    "image": "/img/flows/asana/asana-01-01-sign-up-email-verification.png",
     "id": 2
   },
   {
-    "image": "/img/flows/asana/03-sign-up-credentials.png",
+    "image": "/img/flows/asana/asana-01-02-sign-up-credentials-default.png",
     "id": 3
   },
   {
-    "image": "/img/flows/asana/04-sign-up-segmentation.png",
+    "image": "/img/flows/asana/asana-01-03-sign-up-segmentation-default.png",
     "id": 4
   },
   {
-    "image": "/img/flows/asana/05-setup-project-name.png",
+    "image": "/img/flows/asana/asana-02-00-setup-project-name.png",
     "id": 5
   },
   {
-    "image": "/img/flows/asana/06-setup-tasks.png",
+    "image": "/img/flows/asana/asana-02-01-setup-tasks-default.png",
     "id": 6
   },
   {
-    "image": "/img/flows/asana/07-setup-states.png",
+    "image": "/img/flows/asana/asana-02-02-setup-states-default.png",
     "id": 7
   },
   {
-    "image": "/img/flows/asana/08-setup-views.png",
+    "image": "/img/flows/asana/asana-02-03-setup-views-default.png",
     "id": 8
   },
   {
-    "image": "/img/flows/asana/09-setup-team-mates.png",
+    "image": "/img/flows/asana/asana-02-04-setup-teammates-default.png",
     "id": 9
   },
   {
-    "image": "/img/flows/asana/10-setup-success-popup.png",
+    "image": "/img/flows/asana/asana-02-05-setup-success-popup.png",
     "id": 10
   },
   {
-    "image": "/img/flows/asana/11-setup-success.png",
+    "image": "/img/flows/asana/asana-02-06-setup-success-default.png",
     "id": 11
   },
   {
-    "image": "/img/flows/asana/12-first-screen.png",
+    "image": "/img/flows/asana/asana-03-00-first-experience-homepage-first_screen.png",
     "id": 12
   }
 ]

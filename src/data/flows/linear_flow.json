@@ -1,166 +1,166 @@
 [
   {
-    "image": "/img/flows/linear/00-landingpage.png",
+    "image": "/img/flows/linear/linear-00-01-landing-page-landingpage-default.png",
     "id": 0
   },
   {
-    "image": "/img/flows/linear/01-sign-up-account.png",
+    "image": "/img/flows/linear/linear-01-01-sign-up-account-default.png",
     "id": 1
   },
   {
-    "image": "/img/flows/linear/02-sign-up-email.png",
+    "image": "/img/flows/linear/linear-01-02-sign-up-email-default.png",
     "id": 2
   },
   {
-    "image": "/img/flows/linear/05-signup-email-verification.png",
+    "image": "/img/flows/linear/linear-01-07-sign-up-email-verification.png",
     "id": 3
   },
   {
-    "image": "/img/flows/linear/06-signup-email-verification-email.png",
+    "image": "/img/flows/linear/linear-01-08-sign-up-email-verification-email.png",
     "id": 4
   },
   {
-    "image": "/img/flows/linear/07-first-experience-homepage.png",
+    "image": "/img/flows/linear/linear-03-00-first-experience-homepage-default.png",
     "id": 5
   },
   {
-    "image": "/img/flows/linear/08-setup-welcome.png",
+    "image": "/img/flows/linear/linear-02-01-setup-welcome-default.png",
     "id": 6
   },
   {
-    "image": "/img/flows/linear/12-setup-welcome-command-done.png",
+    "image": "/img/flows/linear/linear-02-09-setup-welcome-command-done.png",
     "id": 7
   },
   {
-    "image": "/img/flows/linear/13-setup-welcome-done.png",
+    "image": "/img/flows/linear/linear-02-11-setup-welcome-done.png",
     "id": 8
   },
   {
-    "image": "/img/flows/linear/14-setup-homepage-active.png",
+    "image": "/img/flows/linear/linear-02-14-setup-homepage-active.png",
     "id": 9
   },
   {
-    "image": "/img/flows/linear/15-setup-slack-task.png",
+    "image": "/img/flows/linear/linear-02-17-setup-slack-task.png",
     "id": 10
   },
   {
-    "image": "/img/flows/linear/16-setup-slack-integration.png",
+    "image": "/img/flows/linear/linear-02-19-setup-slack-integration.png",
     "id": 11
   },
   {
-    "image": "/img/flows/linear/27-setup-slack-connected-after_page_reload.png",
+    "image": "/img/flows/linear/linear-02-42-setup-slack-connected-after_page_reload.png",
     "id": 12
   },
   {
-    "image": "/img/flows/linear/28-setup-slack-back_to_app.png",
+    "image": "/img/flows/linear/linear-02-45-setup-slack-back_to_app.png",
     "id": 13
   },
   {
-    "image": "/img/flows/linear/30-setup-slack-task-command-done.png",
+    "image": "/img/flows/linear/linear-02-48-setup-slack-task-command-done.png",
     "id": 14
   },
   {
-    "image": "/img/flows/linear/31-setup-slack-task-done.png",
+    "image": "/img/flows/linear/linear-02-50-setup-slack-task-done.png",
     "id": 15
   },
   {
-    "image": "/img/flows/linear/32-setup-homepage.png",
+    "image": "/img/flows/linear/linear-02-52-setup-homepage-default.png",
     "id": 16
   },
   {
-    "image": "/img/flows/linear/33-setup-labels-ticket.png",
+    "image": "/img/flows/linear/linear-02-54-setup-labels-ticket.png",
     "id": 17
   },
   {
-    "image": "/img/flows/linear/34-setup-labels-teams_settings.png",
+    "image": "/img/flows/linear/linear-02-56-setup-labels-teams_settings.png",
     "id": 18
   },
   {
-    "image": "/img/flows/linear/35-setup-labels-labels_settings.png",
+    "image": "/img/flows/linear/linear-02-58-setup-labels-labels_settings.png",
     "id": 19
   },
   {
-    "image": "/img/flows/linear/37-setup-labels-labels_settings-new_label-name.png",
+    "image": "/img/flows/linear/linear-02-62-setup-labels-labels_settings-new_label-name.png",
     "id": 20
   },
   {
-    "image": "/img/flows/linear/38-setup-labels-labels_settings-new_label-done.png",
+    "image": "/img/flows/linear/linear-02-64-setup-labels-labels_settings-new_label-done.png",
     "id": 21
   },
   {
-    "image": "/img/flows/linear/39-setup-labels-back_to_app.png",
+    "image": "/img/flows/linear/linear-02-65-setup-labels-back_to_app.png",
     "id": 22
   },
   {
-    "image": "/img/flows/linear/41-setup-labels-command-done.png",
+    "image": "/img/flows/linear/linear-02-67-setup-labels-command-done.png",
     "id": 23
   },
   {
-    "image": "/img/flows/linear/42-setup-labels-command-done-finished.png",
+    "image": "/img/flows/linear/linear-02-68-setup-labels-command-done-finished.png",
     "id": 24
   },
   {
-    "image": "/img/flows/linear/43-setup-homepage-all.png",
+    "image": "/img/flows/linear/linear-02-69-setup-homepage-all.png",
     "id": 25
   },
   {
-    "image": "/img/flows/linear/44-setup-github-task.png",
+    "image": "/img/flows/linear/linear-02-70-setup-github-task.png",
     "id": 26
   },
   {
-    "image": "/img/flows/linear/46-setup-github-settings.png",
+    "image": "/img/flows/linear/linear-02-72-setup-github-settings.png",
     "id": 27
   },
   {
-    "image": "/img/flows/linear/53-setup-github-settings.png",
+    "image": "/img/flows/linear/linear-02-79-setup-github-settings.png",
     "id": 28
   },
   {
-    "image": "/img/flows/linear/54-setup-github-task.png",
+    "image": "/img/flows/linear/linear-02-80-setup-github-task.png",
     "id": 29
   },
   {
-    "image": "/img/flows/linear/56-setup-github-task-command-done.png",
+    "image": "/img/flows/linear/linear-02-82-setup-github-task-command-done.png",
     "id": 30
   },
   {
-    "image": "/img/flows/linear/57-setup-github-task-command-done-finished.png",
+    "image": "/img/flows/linear/linear-02-83-setup-github-task-command-done-finished.png",
     "id": 31
   },
   {
-    "image": "/img/flows/linear/58-setup-home-active.png",
+    "image": "/img/flows/linear/linear-02-84-setup-home-active.png",
     "id": 32
   },
   {
-    "image": "/img/flows/linear/59-setup-cycles.png",
+    "image": "/img/flows/linear/linear-02-86-setup-cycles-default.png",
     "id": 33
   },
   {
-    "image": "/img/flows/linear/60-setup-cycles-team_settings.png",
+    "image": "/img/flows/linear/linear-02-87-setup-cycles-team_settings.png",
     "id": 34
   },
   {
-    "image": "/img/flows/linear/61-setup-cycles-team_settings-team.png",
+    "image": "/img/flows/linear/linear-02-88-setup-cycles-team_settings-team.png",
     "id": 35
   },
   {
-    "image": "/img/flows/linear/63-setup-cycles-team_settings-cycles.png",
+    "image": "/img/flows/linear/linear-02-90-setup-cycles-team_settings-cycles.png",
     "id": 36
   },
   {
-    "image": "/img/flows/linear/64-setup-cycles-task.png",
+    "image": "/img/flows/linear/linear-02-91-setup-cycles-task.png",
     "id": 37
   },
   {
-    "image": "/img/flows/linear/66-setup-cycles-task-command-done.png",
+    "image": "/img/flows/linear/linear-02-93-setup-cycles-task-command-done.png",
     "id": 38
   },
   {
-    "image": "/img/flows/linear/67-setup-cycles-task-command-done-finished.png",
+    "image": "/img/flows/linear/linear-02-94-setup-cycles-task-command-done-finished.png",
     "id": 39
   },
   {
-    "image": "/img/flows/linear/68-setup-homepage-done.png",
+    "image": "/img/flows/linear/linear-02-96-setup-homepage-done.png",
     "id": 40
   }
 ]
