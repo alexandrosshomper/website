@@ -450,15 +450,12 @@ const PricingCanvas = ({ roiCalcAction }) => {
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
     z-index: 2;
-    transition: transform 120ms ease, background-color 120ms ease,
-      box-shadow 120ms ease;
+    transition: transform 120ms ease, background-color 120ms ease;
 
     &:hover {
       background: #101010;
       transform: scale(1.03);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
     }
 
     &:active {
