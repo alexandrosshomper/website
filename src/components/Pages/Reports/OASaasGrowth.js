@@ -160,4 +160,4 @@ const Content = () => {
   );
 };
 
-export default OASaasGrowth;
+export default Content;
