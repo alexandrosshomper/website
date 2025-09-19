@@ -10,10 +10,11 @@ const StyledReportContent = styled.article`
   align-items: center;
 
   & > * {
-    width: 90%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 140px;
+    margin-top: 40px;
   }
 
   & > *:last-child {
@@ -22,19 +23,19 @@ const StyledReportContent = styled.article`
 
   ${Devices.tabletS} {
     & > * {
-      width: 564px;
+      width: 520px;
     }
   }
 
   ${Devices.tabletM} {
     & > * {
-      width: 708px;
+      width: 520px;
     }
   }
 
   ${Devices.laptopS} {
     & > * {
-      width: 740px;
+      width: 650px;
     }
   }
 
@@ -46,7 +47,7 @@ const StyledReportContent = styled.article`
   h6 {
     font-family: "Roboto", sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 550;
     color: ${Colors.primaryText.highEmphasis};
     text-align: left;
     margin-top: 0;
@@ -64,8 +65,10 @@ const StyledReportContent = styled.article`
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 30px;
     line-height: 115%;
+    letter-spacing: 0.01em;
+    line-height: 40px;
     margin-bottom: 8px;
     color: transparent;
     background-image: linear-gradient(
@@ -81,11 +84,11 @@ const StyledReportContent = styled.article`
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 132%;
+    font-size: 17px;
+    line-height: 1.7499375rem;
     color: ${Colors.primaryText.highEmphasis};
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     width: 100%;
   }
 
@@ -94,13 +97,18 @@ const StyledReportContent = styled.article`
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 130%;
+    font-size: 17px;
+    line-height: 1.7499375rem;
     color: ${Colors.primaryText.highEmphasis};
     padding-left: 24px;
     margin-top: 8px;
     margin-bottom: 40px;
-    width: 100%;
+    list-style-position: outside;
+    margin-block-start: 21.25px;
+    tab-size: 4;
+    margin-left: 12px;
+    padding-left: 32px;
+    padding-inline-start: 32px;
   }
 
   ul {
@@ -108,7 +116,7 @@ const StyledReportContent = styled.article`
   }
 
   li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   li:last-child {
@@ -128,10 +136,12 @@ const StyledReportContent = styled.article`
     text-decoration: underline;
     text-decoration-thickness: 2px;
   }
-
+  section:last-child {
+    margin-bottom: 80px;
+  }
   section > *:last-child,
   div > *:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0px;
   }
 
   [data-report-form] {
