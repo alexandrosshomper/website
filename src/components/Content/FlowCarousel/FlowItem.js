@@ -30,7 +30,6 @@ const FlowItem = ({ image }) => {
     position: relative;
     width: 100%;
     aspect-ratio: 8 / 5;
-    padding-bottom: 62.5%;
   `;
 
   const FlowItemLink = styled.a`
