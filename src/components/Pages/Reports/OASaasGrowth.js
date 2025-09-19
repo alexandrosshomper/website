@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import styled from "@emotion/styled";
 
 //Components
 import ReportContent from "../../Content/Report/ReportContent";
