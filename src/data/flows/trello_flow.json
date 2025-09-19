@@ -1,6 +1,70 @@
 [
   {
-    "image": "/img/flows/trello/00-landingpage.png",
+    "image": "/img/flows/trello/trello-00-00-homepage-landingpage.png",
     "id": 0
+  },
+  {
+    "image": "/img/flows/trello/trello-01-00-sign_up-account.png",
+    "id": 1
+  },
+  {
+    "image": "/img/flows/trello/trello-02-00-setup-segmentation-jobs_to_be_done.png",
+    "id": 2
+  },
+  {
+    "image": "/img/flows/trello/trello-02-01-setup-workspace-task.png",
+    "id": 3
+  },
+  {
+    "image": "/img/flows/trello/trello-02-02-setup-workspace-sync_info.png",
+    "id": 4
+  },
+  {
+    "image": "/img/flows/trello/trello-02-03-setup-workspace-boards_info.png",
+    "id": 5
+  },
+  {
+    "image": "/img/flows/trello/trello-02-04-setup-workspace-tasks_to_board.png",
+    "id": 6
+  },
+  {
+    "image": "/img/flows/trello/trello-02-05-setup-workspace-tasks_to_board-success.png",
+    "id": 7
+  },
+  {
+    "image": "/img/flows/trello/trello-02-06-setup-workspace-task_check_off.png",
+    "id": 8
+  },
+  {
+    "image": "/img/flows/trello/trello-02-07-setup-workspace-task_check_off-success.png",
+    "id": 9
+  },
+  {
+    "image": "/img/flows/trello/trello-02-08-setup-email_verification.png",
+    "id": 10
+  },
+  {
+    "image": "/img/flows/trello/trello-02-09-setup-email_verification-sucess.png",
+    "id": 11
+  },
+  {
+    "image": "/img/flows/trello/trello-03-00-first_experience-first_screen-trial_popup.png",
+    "id": 12
+  },
+  {
+    "image": "/img/flows/trello/trello-03-01-first_experience-walkthrough-1.png",
+    "id": 13
+  },
+  {
+    "image": "/img/flows/trello/trello-03-02-first_experience-walkthrough-2.png",
+    "id": 14
+  },
+  {
+    "image": "/img/flows/trello/trello-03-03-first_experience-walkthrough-3.png",
+    "id": 15
+  },
+  {
+    "image": "/img/flows/trello/trello-03-04-first_experience-homepage.png",
+    "id": 16
   }
 ]
