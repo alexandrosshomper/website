@@ -29,7 +29,8 @@ const FlowItem = ({ image }) => {
   const Wrapper = styled.div`
     position: relative;
     width: 100%;
-    padding-bottom: 56.8450312717165%;
+    aspect-ratio: 8 / 5;
+    padding-bottom: 62.5%;
   `;
 
   const FlowItemLink = styled.a`
