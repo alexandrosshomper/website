@@ -4,10 +4,10 @@ import styled from "@emotion/styled";
 
 //Components
 import ReportContent from "../../Content/Report/ReportContent";
-import CaseTitle from "../../Content/Case/CaseTitle";
-import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+import ReportSubline from "../../Content/Report/ReportSubline";
+import ReportTitle from "../../Content/Report/ReportTitle";
+import ReportEyebrow from "../../Content/Report/ReportEyebrow";
 
-import CaseSubline from "../../Content/Case/CaseSubline";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
 
 const PageWrapper = styled.div`
@@ -46,13 +46,13 @@ const Content = () => {
         </description>
       </Helmet>
       <Section>
-        <CaseTitleEyebrow text={"Report"} color1="#00b8d4" color2="#62ebff" />
-        <CaseTitle
+        <ReportEyebrow text={"Report"} color1="#00b8d4" color2="#62ebff" />
+        <ReportTitle
           headline={
             "Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth"
           }
         />
-        <CaseSubline subline="User Onboarding & Activation: The Secret to Long-Term Retention & ARR Growth" />
+        <ReportSubline subline="User Onboarding & Activation: The Secret to Long-Term Retention & ARR Growth" />
         <ReportContent>
           <section>
             <h2>Introduction</h2>
@@ -62,16 +62,7 @@ const Content = () => {
               about keeping them. And the most powerful levers for improving
               retention and ARR? User Onboarding &amp; Activation.
             </p>
-            <div data-report-form>
-              <LeadGenerationForm
-                portal={"49351608"}
-                form={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
-                size={"M"}
-                successLink="./reports/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf"
-              />
-            </div>
-          </section>
-          <section>
+
             <h3>Our latest report reveals:</h3>
             <ul>
               <li>
@@ -87,8 +78,8 @@ const Content = () => {
                 Robinhood, and more.
               </li>
               <li>
-                How optimizing onboarding &amp; activation impacts critical metrics
-                like CAC:CLV, NRR, and ARR.
+                How optimizing onboarding &amp; activation impacts critical
+                metrics like CAC:CLV, NRR, and ARR.
               </li>
             </ul>
             <h3>Key Metrics You'll Discover</h3>
@@ -106,8 +97,7 @@ const Content = () => {
                 <i>(Harvard Business Review)</i>.
               </li>
             </ul>
-          </section>
-          <section>
+
             <h3>Who this report is for</h3>
             <p>
               We designed this report for founders of early-stage and growth
@@ -119,10 +109,12 @@ const Content = () => {
                 <strong>low user retention</strong>.
               </li>
               <li>
-                Finding it <strong>hard to convert free users to paying customers</strong>.
+                Finding it{" "}
+                <strong>hard to convert free users to paying customers</strong>.
               </li>
               <li>
-                Seeking cost-effective ways to <strong>improve retention and revenue growth</strong>.
+                Seeking cost-effective ways to{" "}
+                <strong>improve retention and revenue growth</strong>.
               </li>
               <li>
                 Unsure <strong>how to measure and optimize onboarding</strong>
@@ -133,7 +125,8 @@ const Content = () => {
                 <strong>accelerate ARR</strong> growth.
               </li>
               <li>
-                Building or refining their <strong>product-led growth strategy</strong>.
+                Building or refining their{" "}
+                <strong>product-led growth strategy</strong>.
               </li>
             </ul>
             <p>

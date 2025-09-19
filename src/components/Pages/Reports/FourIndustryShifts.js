@@ -4,10 +4,10 @@ import styled from "@emotion/styled";
 
 //Components
 import ReportContent from "../../Content/Report/ReportContent";
-import CaseTitle from "../../Content/Case/CaseTitle";
-import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+import ReportSubline from "../../Content/Report/ReportSubline";
+import ReportTitle from "../../Content/Report/ReportTitle";
+import ReportEyebrow from "../../Content/Report/ReportEyebrow";
 
-import CaseSubline from "../../Content/Case/CaseSubline";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
 
 const PageWrapper = styled.div`
@@ -46,13 +46,13 @@ const Content = () => {
         </description>
       </Helmet>
       <Section>
-        <CaseTitleEyebrow text={"Report"} color1="#00b8d4" color2="#62ebff" />
-        <CaseTitle
+        <ReportEyebrow text={"Report"} color1="#00b8d4" color2="#62ebff" />
+        <ReportTitle
           headline={
             "Four industry shifts making user onboarding & activation indispensible"
           }
         />
-        <CaseSubline subline="User Onboarding & Activation: a strategic imperative for growth, retention, and survival." />
+        <ReportSubline subline="User Onboarding & Activation: a strategic imperative for growth, retention, and survival." />
         <ReportContent>
           <section>
             <h2>Introduction</h2>
@@ -62,8 +62,7 @@ const Content = () => {
               in-depth report reveals why exceptional user onboarding is no
               longer optional.
             </p>
-          </section>
-          <section>
+
             <h3>Our latest report reveals:</h3>
             <ul>
               <li>Market dynamics have fundamentally changed.</li>
@@ -89,8 +88,7 @@ const Content = () => {
                 Real-world examples and case studies from successful companies.
               </li>
             </ul>
-          </section>
-          <section>
+
             <h3>Who this report is for</h3>
             <p>
               We designed this report for founders of early-stage and growth
@@ -106,9 +104,7 @@ const Content = () => {
               <li>
                 Product teams looking to optimize their onboarding experience.
               </li>
-              <li>
-                Growth managers focused on improving key metrics.
-              </li>
+              <li>Growth managers focused on improving key metrics.</li>
             </ul>
             <p>
               Download now to understand why user onboarding and activation have

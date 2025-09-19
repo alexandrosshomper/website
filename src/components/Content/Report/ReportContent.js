@@ -23,7 +23,7 @@ const StyledReportContent = styled.article`
 
   ${Devices.tabletS} {
     & > * {
-      width: 564px;
+      width: 520px;
     }
   }
 
