@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { X } from "lucide-react";
 
 import { Devices } from "../DesignSystem";
 
@@ -70,23 +71,26 @@ const CloseButton = styled.button`
   position: sticky;
   top: 0;
   align-self: flex-end;
+  margin-left: auto;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: #000000;
   color: #ffffff;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  line-height: 1;
   z-index: 1;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   margin-bottom: 16px;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const Lightbox = ({
@@ -142,7 +146,7 @@ const Lightbox = ({
           $paddingBottomTablet={contentPaddingBottomTablet}
         >
           <CloseButton type="button" onClick={onClose} aria-label={closeLabel}>
-            ×
+            <X aria-hidden="true" strokeWidth={2.5} />
           </CloseButton>
           {children}
         </ScrollArea>
