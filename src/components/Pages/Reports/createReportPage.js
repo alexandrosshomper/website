@@ -30,10 +30,7 @@ const createReportPage = ({
   };
 
   const LeadGenerationFormWithDefaults = (props) => (
-    <LeadGenerationForm
-      {...mergedLeadGenerationFormProps}
-      {...props}
-    />
+    <LeadGenerationForm {...mergedLeadGenerationFormProps} {...props} />
   );
 
   const ReportPage = () => (
@@ -45,10 +42,13 @@ const createReportPage = ({
       eyebrowColor2={eyebrowColor2}
       title={title}
       subline={subline}
+      leadSuccessLink={mergedLeadGenerationFormProps}
     >
       <ReportContent>
         {typeof renderContent === "function"
-          ? renderContent({ LeadGenerationForm: LeadGenerationFormWithDefaults })
+          ? renderContent({
+              LeadGenerationForm: LeadGenerationFormWithDefaults,
+            })
           : null}
       </ReportContent>
     </ReportTemplate>

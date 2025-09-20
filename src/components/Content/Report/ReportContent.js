@@ -57,6 +57,7 @@ const StyledReportContent = styled.article`
 
   h2 {
     font-size: 28px;
+    font-weight: 500;
     line-height: 109%;
 
     ${Devices.tabletS} {
@@ -66,20 +67,23 @@ const StyledReportContent = styled.article`
 
   h3 {
     font-size: 30px;
+    font-weight: 500;
     line-height: 115%;
     letter-spacing: 0.01em;
     line-height: 40px;
     margin-bottom: 8px;
-    color: transparent;
-    background-image: linear-gradient(
-      to right,
-      ${Colors.blue},
-      ${Colors.blueLight}
-    );
     -webkit-background-clip: text;
     background-clip: text;
   }
 
+  h4 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 115%;
+    letter-spacing: 0.01em;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
   p {
     font-family: "Roboto", sans-serif;
     font-style: normal;

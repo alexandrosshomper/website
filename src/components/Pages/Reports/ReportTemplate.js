@@ -4,9 +4,10 @@ import { Helmet } from "react-helmet";
 
 import { Colors, Devices } from "../../DesignSystem";
 
-import CaseSubline from "../../Content/Case/CaseSubline";
-import CaseTitle from "../../Content/Case/CaseTitle";
-import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+import ReportSubline from "../../Content/Report/ReportSubline";
+import ReportTitle from "../../Content/Report/ReportTitle";
+import ReportEyebrow from "../../Content/Report/ReportEyebrow";
+import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -86,6 +87,7 @@ const ReportTemplate = ({
   title,
   subline,
   children,
+  leadSuccessLink,
 }) => {
   return (
     <ContentWrapper>
@@ -97,15 +99,17 @@ const ReportTemplate = ({
         )}
       </Helmet>
       <Section>
-        <CaseTitleEyebrow
+        <ReportEyebrow
           text={eyebrow}
           color1={eyebrowColor1}
           color2={eyebrowColor2}
         />
-        <CaseTitle headline={title} />
-        {subline ? <CaseSubline subline={subline} /> : null}
+        <ReportTitle headline={title} />
+        {subline ? <ReportSubline subline={subline} /> : null}
         <HeaderSpacing />
         {children}
+
+        <LeadGenerationForm {...leadSuccessLink} />
       </Section>
     </ContentWrapper>
   );
