@@ -1,8 +1,6 @@
 import React from "react";
 
-import createReportPage, {
-  DEFAULT_META_DESCRIPTION,
-} from "./createReportPage";
+import createReportPage, { DEFAULT_META_DESCRIPTION } from "./createReportPage";
 
 const metaTitle =
   "Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth | Alexandros Shomper";
@@ -63,13 +61,16 @@ const renderContent = ({ LeadGenerationForm }) => (
         <strong>low user retention</strong>.
       </li>
       <li>
-        Finding it <strong>hard to convert free users to paying customers</strong>.
+        Finding it{" "}
+        <strong>hard to convert free users to paying customers</strong>.
       </li>
       <li>
-        Seeking cost-effective ways to <strong>improve retention and revenue growth</strong>.
+        Seeking cost-effective ways to{" "}
+        <strong>improve retention and revenue growth</strong>.
       </li>
       <li>
-        Unsure <strong>how to measure and optimize onboarding</strong> effectiveness.
+        Unsure <strong>how to measure and optimize onboarding</strong>{" "}
+        effectiveness.
       </li>
       <li>
         Looking to <strong>improve CAC:CLV</strong> ratios and
@@ -83,13 +84,10 @@ const renderContent = ({ LeadGenerationForm }) => (
       If you're trying to turn new users into loyal, paying customers, this
       whitepaper is for you.
     </p>
-    <div data-report-form>
-      <LeadGenerationForm />
-    </div>
   </section>
 );
 
-export default createReportPage({
+const OASaasGrowth = createReportPage({
   metaTitle,
   metaDescription: DEFAULT_META_DESCRIPTION,
   title: "Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth",
@@ -101,3 +99,5 @@ export default createReportPage({
   },
   renderContent,
 });
+
+export default OASaasGrowth;

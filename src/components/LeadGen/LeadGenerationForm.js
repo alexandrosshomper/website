@@ -6,9 +6,11 @@ import { Devices } from "../DesignSystem";
 const FormHeadline = styled.h2`
   font-size: 48px;
   line-height: 1.0834933333;
-  font-weight: 600;
-  letter-spacing: -0.003em;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
 `;
 
 const Form = styled.form`
@@ -20,6 +22,8 @@ const InputFields = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 0;
 `;
 const InputFieldWrapper = styled.div`
   display: flex;
@@ -27,7 +31,7 @@ const InputFieldWrapper = styled.div`
   width: 48%;
   position: relative;
 
-  padding-bottom: 40px;
+  padding-bottom: 24px;
 `;
 const InputField = styled.input`
   color: #1d1d1f;
@@ -67,10 +71,10 @@ const ButtonMedium = styled.button`
 
   background-color: ${({ disabled }) => (disabled ? "grey" : "green")};
 
-  border-bottom-left-radius: 28px;
-  border-bottom-right-radius: 28px;
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 
   border-bottom-style: none;
   border-top-style: none;
@@ -111,7 +115,7 @@ const ButtonMedium = styled.button`
   padding: 16px 32px;
 
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 17px;
   line-height: 130%;
 
@@ -299,7 +303,7 @@ const LeadGenerationForm = ({ portal, form, successLink }) => {
         <Form onSubmit={handleSubmit}>
           <FormHeadline>Get your free copy of the report</FormHeadline>
 
-          <InputFields style={{ marginBottom: "10px" }}>
+          <InputFields>
             <InputFieldWrapper>
               <InputField
                 type="text"
