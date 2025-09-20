@@ -69,7 +69,7 @@ export default createReportPage({
     "User Onboarding & Activation: a strategic imperative for growth, retention, and survival.",
   leadGenerationFormProps: {
     successLink:
-      "./report-docs/[Report] Four industry shifts making onboarding & activation indispensable.pdf",
+      "/report-docs/[Report] Four industry shifts making onboarding & activation indispensable.pdf",
   },
   renderContent,
 });

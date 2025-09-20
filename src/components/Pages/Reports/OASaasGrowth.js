@@ -97,7 +97,7 @@ export default createReportPage({
     "User Onboarding & Activation: The Secret to Long-Term Retention & ARR Growth",
   leadGenerationFormProps: {
     successLink:
-      "./report-docs/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf",
+      "/report-docs/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf",
   },
   renderContent,
 });
