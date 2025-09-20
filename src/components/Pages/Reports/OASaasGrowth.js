@@ -84,12 +84,7 @@ const renderContent = ({ LeadGenerationForm }) => (
       whitepaper is for you.
     </p>
     <div data-report-form>
-      <LeadGenerationForm
-        portal={"49351608"}
-        form={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
-        size={"M"}
-        successLink="./report-docs/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf"
-      />
+      <LeadGenerationForm />
     </div>
   </section>
 );
@@ -100,5 +95,9 @@ export default createReportPage({
   title: "Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth",
   subline:
     "User Onboarding & Activation: The Secret to Long-Term Retention & ARR Growth",
+  leadGenerationFormProps: {
+    successLink:
+      "./report-docs/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf",
+  },
   renderContent,
 });

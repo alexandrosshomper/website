@@ -56,12 +56,7 @@ const renderContent = ({ LeadGenerationForm }) => (
       the cornerstone of sustainable business growth in today's market.
     </p>
     <div data-report-form>
-      <LeadGenerationForm
-        portal={"49351608"}
-        form={"ce820859-2f9e-41bb-a9f8-db512c279fba"}
-        size={"M"}
-        successLink="./report-docs/[Report] Four industry shifts making onboarding & activation indispensable.pdf"
-      />
+      <LeadGenerationForm />
     </div>
   </section>
 );
@@ -72,5 +67,9 @@ export default createReportPage({
   title: "Four industry shifts making user onboarding & activation indispensible",
   subline:
     "User Onboarding & Activation: a strategic imperative for growth, retention, and survival.",
+  leadGenerationFormProps: {
+    successLink:
+      "./report-docs/[Report] Four industry shifts making onboarding & activation indispensable.pdf",
+  },
   renderContent,
 });
