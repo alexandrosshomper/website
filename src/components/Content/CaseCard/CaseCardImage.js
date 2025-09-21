@@ -9,6 +9,7 @@ const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
 
     direction: ltr;
     display: block;
+    position: relative;
 
     width: 100%;
 
@@ -28,8 +29,9 @@ const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
   `;
   const Picture = styled.picture`
     direction: ltr;
-    max-width: 100%;
-    height: 300px;
+    display: block;
+    width: 100%;
+    height: auto;
 
     list-style-image: none;
     list-style-position: outside;
@@ -45,19 +47,14 @@ const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
     background-color: none;
 
     ${Devices.tabletS} {
-      height: auto;
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
+      width: 100%;
     }
   `;
 
   const imgStyle = {
     width: "100%",
     height: "auto",
+    display: "block",
     opacity: `${comingSoon ? 0.3 : 1}`,
   };
 
