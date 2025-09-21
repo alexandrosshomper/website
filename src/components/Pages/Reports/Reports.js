@@ -31,37 +31,35 @@ const Content = (props) => {
   `;
 
   const CaseCardGrid = styled.section`
-    margin: 0px 24px 0px 24px;
+    --gap: 24px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    align-items: center;
-    --gap: 24px;
-    margin-left: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
+    align-items: stretch;
+    gap: var(--gap);
 
     ${Devices.tabletS} {
-      width: 564px;
+      max-width: 564px;
     }
     ${Devices.tabletM} {
-      width: 708px;
+      max-width: 708px;
       flex-direction: row;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
     }
     ${Devices.laptopS} {
-      width: 852px;
+      max-width: 852px;
     }
     ${Devices.laptopM} {
-      width: 1140px;
+      max-width: 1140px;
       --gap: 12px;
+      gap: var(--gap);
     }
   `;
   const Panels = styled.section`
