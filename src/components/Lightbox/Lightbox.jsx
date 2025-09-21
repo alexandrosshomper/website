@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { X } from "lucide-react";
 
 import { Devices } from "../DesignSystem";
 
@@ -66,27 +67,41 @@ const ScrollArea = styled.div`
   }
 `;
 
-const CloseButton = styled.button`
+const CloseButtonWrapper = styled.div`
   position: sticky;
   top: 0;
-  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 2;
+  margin-bottom: 16px;
+`;
+
+const CloseButton = styled.button`
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: #000000;
   color: #ffffff;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  line-height: 1;
-  z-index: 1;
+  display: grid;
+  place-items: center;
+  z-index: 2;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  margin-bottom: 16px;
+  padding: 0;
+  pointer-events: auto;
+  box-shadow: none;
+  flex-shrink: 0;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const Lightbox = ({
@@ -141,9 +156,11 @@ const Lightbox = ({
           $paddingBottom={contentPaddingBottom}
           $paddingBottomTablet={contentPaddingBottomTablet}
         >
-          <CloseButton type="button" onClick={onClose} aria-label={closeLabel}>
-            ×
-          </CloseButton>
+          <CloseButtonWrapper>
+            <CloseButton type="button" onClick={onClose} aria-label={closeLabel}>
+              <X aria-hidden="true" strokeWidth={2.5} />
+            </CloseButton>
+          </CloseButtonWrapper>
           {children}
         </ScrollArea>
       </LightboxContainer>
