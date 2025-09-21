@@ -30,22 +30,21 @@ const CaseCard = ({
     list-style-type: none;
     text-align: left;
     text-size-adjust: 100%;
-    width: 100%;
-    max-width: 327px;
+    width: 327px;
     -webkit-font-smoothing: antialiased;
     margin: 0px;
 
     ${Devices.tabletS} {
-      max-width: 100%;
+      width: 100%;
     }
     ${Devices.tabletM} {
-      max-width: 330px;
+      width: 330px;
     }
     ${Devices.laptopS} {
-      max-width: 400px;
+      width: 400px;
     }
     ${Devices.laptopM} {
-      max-width: 558px;
+      width: 558px;
     }
   `;
 
@@ -81,7 +80,6 @@ const CaseCard = ({
     cursor: ${comingSoon && "wait"};
     direction: ltr;
     display: block;
-    width: 100%;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -109,8 +107,7 @@ const CaseCard = ({
     direction: ltr;
     display: flex;
     flex-direction: column;
-    height: auto;
-    min-height: 300px;
+    height: 300px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -123,16 +120,16 @@ const CaseCard = ({
     -webkit-box-orient: vertical;
     -webkit-font-smoothing: antialiased;
     ${Devices.tabletS} {
-      min-height: 300px;
+      height: 300px;
     }
     ${Devices.tabletM} {
-      min-height: 300px;
+      height: 300px;
     }
     ${Devices.laptopS} {
-      min-height: 330px;
+      height: 330px;
     }
     ${Devices.laptopM} {
-      min-height: 400px;
+      height: 400px;
     }
   `;
   const CaseCardContent = styled(motion.div)`
