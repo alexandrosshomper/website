@@ -74,7 +74,11 @@ const CloseButton = styled.button`
   margin-left: auto;
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  flex: 0 0 auto;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
   border: none;
   background: #000000;
   color: #ffffff;
@@ -82,6 +86,8 @@ const CloseButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 0;
   z-index: 1;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
