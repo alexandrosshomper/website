@@ -7,7 +7,7 @@ import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
-import ButtonSmallSecondary from "../Button/ButtonSmallSecondary";
+import Button from "../Button/Button";
 const Navigation = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;
@@ -16,28 +16,17 @@ const Navigation = (props) => {
   //PAGE RELOAD LOGIC
   useEffect(() => {
     // Perform actions when the route changes
-    console.log("New page loaded:", location.pathname);
     setMenuOpen(false);
-
-    // Cleanup function to run when the component unmounts
-    return () => {
-      console.log("Component is unmounting");
-    };
   }, [location]); // Dependency array includes location to trigger effect on route changes
 
   //MENU OPEN LOGIC
   const menuButtonClick = (e) => {
-    console.log("menuButtonClick 1");
-
     e.preventDefault();
     setMenuOpen(true);
-    console.log("menuButtonClick 2");
   };
   const closeButtonClick = (e) => {
-    console.log("closeButtonClick 1");
     e.preventDefault();
     setMenuOpen(false);
-    console.log("closeButtonClick 2");
   };
 
   const NavigationWrapper = styled.header`
@@ -200,7 +189,6 @@ const Navigation = (props) => {
     setTimeout(() => {
       window.location.href = href;
     }, 150);
-    console.log(`Clicked Book Audit - ${instance}`);
   };
   return (
     <NavigationWrapper>
@@ -264,8 +252,10 @@ const Navigation = (props) => {
           <CTA>
             <LandingpageMenu />
 
-            <ButtonSmallSecondary
-              clickAction={(e) =>
+            <Button
+              size="small"
+              variant="primary"
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -273,8 +263,7 @@ const Navigation = (props) => {
                 )
               }
               text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
             <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />

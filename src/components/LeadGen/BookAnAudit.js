@@ -4,7 +4,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Devices, Colors } from "../DesignSystem";
 
-import ButtonMedium from "../Button/ButtonMedium";
+import Button from "../Button/Button";
 
 const Headline = styled.h2`
   font-family: "Roboto", sans-serif;
@@ -134,7 +134,6 @@ const Wrapper = styled.div`
 const BookAnAudit = () => {
   const bookAuditHandler = (e, instance = "lead-gen") => {
     e.preventDefault();
-    console.log(`Click Book Audit - ${instance}`);
     ReactGA.event({
       category: "User Interaction",
       action: "Clicked Button",
@@ -158,11 +157,12 @@ const BookAnAudit = () => {
         <span style={{ color: "black" }}>converts new users faster</span>.
       </Subline>
       <br />
-      <ButtonMedium
+      <Button
+        size="medium"
+        variant="primary"
         href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
         text={"Book my audit"}
-        color1={Colors.blue}
-        color2={Colors.blueDark}
+        gradient={{ from: Colors.blue, to: Colors.blueDark }}
         onClick={bookAuditHandler}
       />
     </Wrapper>
