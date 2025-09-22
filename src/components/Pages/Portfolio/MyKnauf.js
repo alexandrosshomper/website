@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { useInView } from "react-intersection-observer";
 
 //Components
 import { Colors, Devices } from "../../DesignSystem";
@@ -18,39 +16,11 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import Drawer from "../../Content/Drawer/Drawer";
+import FadeInSection from "../../Content/FadeInSection/FadeInSection";
 
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+const FadeInWhenVisible = (props) => (
+  <FadeInSection stagger={0.3} {...props} />
+);
 
 const Content = (props) => {
   const galleryItems = [

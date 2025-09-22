@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 //Components
 import { Devices } from "../../DesignSystem";
@@ -11,38 +9,11 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import NFTGallery from "../../Content/NFTGallery/NFTGallery";
 import OpenSeaGallery from "../../Content/NFTGallery/OpenSeaGallery";
 import NFTCollectionAnalytics from "../../Content/NFTCollectionAnalytics/NFTCollectionAnalytics";
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+import FadeInSection from "../../Content/FadeInSection/FadeInSection";
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+const FadeInWhenVisible = (props) => (
+  <FadeInSection stagger={0.3} {...props} />
+);
 
 const Content = (props) => {
   const Content = styled.div`

@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
-
-import { useInView } from "react-intersection-observer";
 
 import ReactGA from "react-ga4";
 
@@ -20,6 +17,7 @@ import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Checkbox from "../../Checkbox/Checkbox";
 
 import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
+import FadeInSection from "../../Content/FadeInSection/FadeInSection";
 
 import { Check, X } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
@@ -167,79 +165,31 @@ const ROIImprovementValue = styled.div`
   }
 `;
 
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  const [hasAnimated, setHasAnimated] = React.useState(false);
+const moveUpVariants = {
+  visible: {
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+  hidden: {
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};
 
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [controls, inView, hasAnimated]);
+const FadeInWhenVisible = (props) => (
+  <FadeInSection stagger={0.3} {...props} />
+);
 
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function MoveUpWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  const [hasAnimated, setHasAnimated] = React.useState(false);
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [controls, inView, hasAnimated]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.6 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+const MoveUpWhenVisible = (props) => (
+  <FadeInSection
+    duration={0.6}
+    stagger={0.3}
+    variants={moveUpVariants}
+    {...props}
+  />
+);
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -1524,7 +1474,7 @@ const Content = (props) => {
     blinkInterval = 0.25; // 0.25 seconds
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "Escape") {
         setIsLightboxOpen(false);

@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { useInView } from "react-intersection-observer";
 import Trend from "react-trend";
 
 //Components
@@ -20,113 +18,42 @@ import ButtonMedium from "../../Button/ButtonMedium";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail } from "@mdi/js";
+import FadeInSection from "../../Content/FadeInSection/FadeInSection";
 
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+const moveUpVariants = {
+  visible: {
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+  hidden: {
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+const FadeInWhenVisible = (props) => (
+  <FadeInSection stagger={0.3} {...props} />
+);
 
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+const MoveUpWhenVisible = (props) => (
+  <FadeInSection
+    duration={0.6}
+    stagger={0.3}
+    variants={moveUpVariants}
+    {...props}
+  />
+);
 
-function MoveUpWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.6 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function RevealWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.9 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+const RevealWhenVisible = (props) => (
+  <FadeInSection
+    duration={0.9}
+    stagger={0.3}
+    variants={moveUpVariants}
+    {...props}
+  />
+);
 
 const Content = (props) => {
   const Content = styled.div`
