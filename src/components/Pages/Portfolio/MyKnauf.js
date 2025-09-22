@@ -18,6 +18,52 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import Drawer from "../../Content/Drawer/Drawer";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledParagraph = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  /* Inside Auto Layout */
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 140px;
+  `;
+const StyledCaseCardGrid = styled.section`
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: calc(-1 * var(--gap));
+  & > * {
+      margin-left: var(--gap);
+      margin-bottom: var(--gap);
+    }
+  ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+    }
+    ${Devices.laptopM} {
+      width: 1140px;
+    }
+  `;
+
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -69,12 +115,7 @@ const Content = (props) => {
       copy: "With that knowledge, we are able to at our apps with new eyes. What can be combined? What can be broken up? It is a difficult but also exciting opportunity to revise two years of work.",
     },
   ];
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -86,21 +127,7 @@ const Content = (props) => {
     align-self: stretch;
     flex-grow: 0;
   `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 140px;
-  `;
-
-  const CaseUnorderedList = styled.ul`
+const CaseUnorderedList = styled.ul`
     position: static;
 
     font-family: "Roboto", sans-serif;
@@ -132,47 +159,13 @@ const Content = (props) => {
       width: 740px;
     }
   `;
-
-  const CaseCardGrid = styled.section`
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-    }
-  `;
-
-  const greenArrowStyle = {
+const greenArrowStyle = {
     color: Colors.green,
     fontWeight: "bold",
   };
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>myKnauf | Alexandros Shomper</title>
@@ -213,7 +206,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        {/* <Paragraph>
+        {/* <StyledParagraph>
           <CaseHeadlineThree headline={"At a glance"} />
           <CaseUnorderedList>
             <li>Digital Strategy</li>
@@ -221,8 +214,8 @@ const Content = (props) => {
             <li>Roadmap</li>
             <li>Digital Branding</li>
           </CaseUnorderedList>
-       </Paragraph>*/}
-        <Paragraph>
+       </StyledParagraph>*/}
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Situation"} />
           <CaseSectionHead
             headline={"Change of direction"}
@@ -269,8 +262,8 @@ const Content = (props) => {
               Multi national project
             </li>
           </CaseUnorderedList>
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Task"} />
           <CaseSectionHead
             headline={"Shaping our apps offering"}
@@ -287,8 +280,8 @@ const Content = (props) => {
               "How can we reshape our apps offering to suite multiple customer types and generate synergies between the single apps?"
             }
           />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree
             headline={"Action"}
             color1="#00b8d4"
@@ -341,16 +334,16 @@ const Content = (props) => {
               hub for project information.
             </li>
           </CaseUnorderedList>
-        </Paragraph>
-        {/*<Paragraph>
+        </StyledParagraph>
+        {/*<StyledParagraph>
           <CaseHeadlineThree headline={"Results"} />
           <CaseCopy copy={"."} />
           <CaseSublineTwo subline={"Conclusion"} />
           <CaseCopy copy={"."} />
-          </Paragraph>*/}
-        <Paragraph>
+          </StyledParagraph>*/}
+        <StyledParagraph>
           <CaseSectionHead headline={"Other Projects"} />
-          <CaseCardGrid>
+          <StyledCaseCardGrid>
             <FadeInWhenVisible>
               <CaseCard
                 eyebrow="Case Study"
@@ -417,10 +410,10 @@ const Content = (props) => {
                 link="/knauf-orderoverview"
               />
             </FadeInWhenVisible>
-          </CaseCardGrid>
-        </Paragraph>
+          </StyledCaseCardGrid>
+        </StyledParagraph>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

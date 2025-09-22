@@ -3,53 +3,53 @@ import styled from "@emotion/styled";
 import Typewriter from "typewriter-effect";
 
 import { Devices } from "../../DesignSystem";
+const StyledIntro = styled.h1`
+  margin: 0px auto;
+  margin-bottom: 160px;
+
+  font-style: normal;
+  font-weight: bold;
+  line-height: 142%;
+
+  text-align: left;
+  margin-left: 24px;
+  margin-right: 24px;
+
+  color: #000a12;
+  ${Devices.tabletS} {
+    margin: 0 auto;
+    width: 563px;
+    height: 188px;
+    font-size: 44px;
+    line-height: 107%;
+    text-align: left;
+    margin-bottom: 320px;
+  }
+  ${Devices.tabletM} {
+    width: 707px;
+    height: 208px;
+    font-size: 52px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+    height: 292px;
+    font-size: 60px;
+    line-height: 122%;
+  }
+  ${Devices.laptopM} {
+    width: 1141px;
+    height: 336px;
+    font-size: 80px;
+    line-height: 105%;
+  }
+`;
+
 
 const Intro = (props) => {
-  const Intro = styled.h1`
-    margin: 0px auto;
-    margin-bottom: 160px;
-
-    font-style: normal;
-    font-weight: bold;
-    line-height: 142%;
-
-    text-align: left;
-    margin-left: 24px;
-    margin-right: 24px;
-
-    color: #000a12;
-    ${Devices.tabletS} {
-      margin: 0 auto;
-      width: 563px;
-      height: 188px;
-      font-size: 44px;
-      line-height: 107%;
-      text-align: left;
-      margin-bottom: 320px;
-    }
-    ${Devices.tabletM} {
-      width: 707px;
-      height: 208px;
-      font-size: 52px;
-      line-height: 100%;
-      letter-spacing: -0.02em;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-      height: 292px;
-      font-size: 60px;
-      line-height: 122%;
-    }
-    ${Devices.laptopM} {
-      width: 1141px;
-      height: 336px;
-      font-size: 80px;
-      line-height: 105%;
-    }
-  `;
-
-  return (
-    <Intro>
+return (
+    <StyledIntro>
       Hi! I'm a product
       <Typewriter
         options={{
@@ -77,7 +77,7 @@ const Intro = (props) => {
         }}
       />
       <br />I help you make customer-centric & data-driven product decisions.
-    </Intro>
+    </StyledIntro>
   );
 };
 

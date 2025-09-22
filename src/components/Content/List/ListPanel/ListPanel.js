@@ -6,6 +6,30 @@ import { Devices, Colors } from "../../../DesignSystem";
 import ListPanelEyebrow from "./ListPanelEyebrow";
 import ListPanelImage from "./ListPanelImage";
 import ListPanelCopy from "./ListPanelCopy";
+const StyledListPanel = styled.div`
+  text-align: left;
+
+  border-radius: 30px;
+
+  margin-bottom: 12px;
+  width: 100%;
+  float: left;
+  background-color: ${Colors.back};
+
+  ${Devices.tabletS} {
+    width: 460px;
+  }
+  ${Devices.tabletM} {
+    width: 228px;
+  }
+  ${Devices.laptopS} {
+    width: 276px;
+  }
+  ${Devices.laptopM} {
+    width: 372px;
+  }
+`;
+
 
 const ListPanel = ({
   eyebrow,
@@ -16,31 +40,7 @@ const ListPanel = ({
   png,
   webp,
 }) => {
-  const ListPanel = styled.div`
-    text-align: left;
-
-    border-radius: 30px;
-
-    margin-bottom: 12px;
-    width: 100%;
-    float: left;
-    background-color: ${Colors.back};
-
-    ${Devices.tabletS} {
-      width: 460px;
-    }
-    ${Devices.tabletM} {
-      width: 228px;
-    }
-    ${Devices.laptopS} {
-      width: 276px;
-    }
-    ${Devices.laptopM} {
-      width: 372px;
-    }
-  `;
-
-  const PanelContent = styled.div`
+const PanelContent = styled.div`
     text-align: left;
     padding: 30px 30px 72px 30px;
 
@@ -59,7 +59,7 @@ const ListPanel = ({
   `;
 
   return (
-    <ListPanel>
+    <StyledListPanel>
       <PanelContent>
         {eyebrow && (
           <ListPanelEyebrow
@@ -71,7 +71,7 @@ const ListPanel = ({
         {copy && <ListPanelCopy text={copy} />}
         {jpg && <ListPanelImage jpg={jpg} png={png} webp={webp} />}
       </PanelContent>
-    </ListPanel>
+    </StyledListPanel>
   );
 };
 

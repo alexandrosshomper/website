@@ -4,54 +4,62 @@ import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
 import ButtonSmall from "../../Button/ButtonSmall";
+const StyledAccordeonVisual = styled.div`
+  /* Auto Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: space-between;
+
+  align-items: center;
+  margin: 0px 20px 0px 20px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+  }
+  ${Devices.tabletM} {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 40px;
+    width: 720px;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
+const StyledVisualWrapper = styled.div`
+  max-width: 352px;
+
+  ${Devices.tabletS} {
+    max-width: none;
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
+  }
+`;
+const StyledOption = styled.div`
+    /* Auto Layout */
+    padding-bottom: 24px;
+  `;
+const StyledTitle = styled.h3`
+  /* Auto Layout */
+`;
+
 
 const AccordeonVisual = () => {
-  const AccordeonVisual = styled.div`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    justify-content: space-between;
-
-    align-items: center;
-    margin: 0px 20px 0px 20px;
-
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      align-items: flex-start;
-      flex-direction: row;
-      gap: 40px;
-      width: 720px;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-  const Accordeon = styled.div`
+const Accordeon = styled.div`
     /* Auto Layout */
 
     min-width: 320px;
     max-width: 460px;
   `;
-  const VisualWrapper = styled.div`
-    max-width: 352px;
-
-    ${Devices.tabletS} {
-      max-width: none;
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
-    }
-  `;
-  const Visual = styled.img`
+const Visual = styled.img`
     /* Auto Layout */
     background-color: white;
     display: block;
@@ -69,18 +77,10 @@ const AccordeonVisual = () => {
     ${Devices.laptopM} {
     }
   `;
-
-  const Option = styled.div`
-    /* Auto Layout */
-    padding-bottom: 24px;
-  `;
-  const Content = styled.div`
+const Content = styled.div`
     /* Auto Layout */
   `;
-  const Title = styled.h3`
-    /* Auto Layout */
-  `;
-  const Copy = styled.p`
+const Copy = styled.p`
     /* Auto Layout */
   `;
   const hanldeBookAudit = (e, href, instance = "unknown") => {
@@ -98,10 +98,10 @@ const AccordeonVisual = () => {
     console.log(`Clicked Book Audit - ${instance}`);
   };
   return (
-    <AccordeonVisual>
+    <StyledAccordeonVisual>
       <Accordeon>
-        <Option>
-          <Title>1. Book intro call</Title>
+        <StyledOption>
+          <StyledTitle>1. Book intro call</StyledTitle>
           <Content>
             <Copy>
               Book an intro call. I’ll chat about your current product problems
@@ -120,9 +120,9 @@ const AccordeonVisual = () => {
               color2={Colors.blueDark}
             />
           </Content>
-        </Option>
-        <Option>
-          <Title>2. Let me do the magic</Title>
+        </StyledOption>
+        <StyledOption>
+          <StyledTitle>2. Let me do the magic</StyledTitle>
           <Content>
             <Copy>
               I’ll develop your user onboarding and activation journey. I'll
@@ -130,21 +130,21 @@ const AccordeonVisual = () => {
               it’s clear and converts.
             </Copy>
           </Content>
-        </Option>
-        <Option>
-          <Title>3. Get traction</Title>
+        </StyledOption>
+        <StyledOption>
+          <StyledTitle>3. Get traction</StyledTitle>
           <Content>
             <Copy>
               You’ll get actionable insights and a prioritized checklist that
               will level up your user onboarding and activation.
             </Copy>
           </Content>
-        </Option>
+        </StyledOption>
       </Accordeon>
-      <VisualWrapper>
+      <StyledVisualWrapper>
         <Visual src="./img/Landingpage/HowItWorks.png" />
-      </VisualWrapper>
-    </AccordeonVisual>
+      </StyledVisualWrapper>
+    </StyledAccordeonVisual>
   );
 };
 

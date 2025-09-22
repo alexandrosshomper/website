@@ -2,15 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Colors } from "../DesignSystem";
 
-const ButtonMediumText = ({
-  href,
-  color1,
-  color2,
-  text,
-  icon,
-  clickAction,
-}) => {
-  const ButtonMediumText = styled.a`
+const StyledButtonMediumText = styled("a", {
+  shouldForwardProp: (prop) => prop !== "textColor",
+})`
     align-items: flex-start;
     appearance: auto;
 
@@ -19,7 +13,7 @@ const ButtonMediumText = ({
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
-    color: ${color1};
+    color: ${({ textColor }) => textColor};
     cursor: pointer;
     direction: ltr;
     display: flex;
@@ -69,11 +63,25 @@ const ButtonMediumText = ({
     }
   `;
 
+const ButtonMediumText = ({
+  href,
+  color1,
+  color2,
+  text,
+  icon,
+  clickAction,
+}) => {
+  const textColor = color1 || Colors.primaryText.highEmphasis;
+
   return (
-    <ButtonMediumText href={href} onClick={clickAction}>
+    <StyledButtonMediumText
+      href={href}
+      onClick={clickAction}
+      textColor={textColor}
+    >
       {text}
       {icon && icon}
-    </ButtonMediumText>
+    </StyledButtonMediumText>
   );
 };
 

@@ -2,45 +2,45 @@ import React from "react";
 import ReactPlayer from "react-player/lazy";
 import styled from "@emotion/styled";
 import { Devices } from "../../DesignSystem";
+const StyledCaseVideo = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  position: relative;
+
+  width: 272px;
+  height: 202px;
+
+  direction: ltr;
+
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+
+  text-align: left;
+  text-decoration-thickness: auto;
+  text-size-adjust: 100%;
+
+  -webkit-box-direction: normal;
+  -webkit-font-smoothing: antialiased;
+
+  ${Devices.tabletS} {
+    width: 564px;
+    height: 419px;
+  }
+  ${Devices.tabletM} {
+    width: 708px;
+    height: 527px;
+  }
+  ${Devices.laptopS} {
+    width: 740px;
+    height: 551px;
+  }
+`;
+
 
 const CaseVideo = ({ mp4, ogg, img, alt, url, color1, color2 }) => {
-  const CaseVideo = styled.div`
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    position: relative;
-
-    width: 272px;
-    height: 202px;
-
-    direction: ltr;
-
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-
-    text-align: left;
-    text-decoration-thickness: auto;
-    text-size-adjust: 100%;
-
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
-
-    ${Devices.tabletS} {
-      width: 564px;
-      height: 419px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      height: 527px;
-    }
-    ${Devices.laptopS} {
-      width: 740px;
-      height: 551px;
-    }
-  `;
-
-  const ReactPlayerStyle = {
+const ReactPlayerStyle = {
     overflowX: "hidden",
     overflowY: "hidden",
     margin: "0 auto",
@@ -50,7 +50,7 @@ const CaseVideo = ({ mp4, ogg, img, alt, url, color1, color2 }) => {
   };
 
   return (
-    <CaseVideo>
+    <StyledCaseVideo>
       <ReactPlayer
         url={`${url}`}
         loop="true"
@@ -62,7 +62,7 @@ const CaseVideo = ({ mp4, ogg, img, alt, url, color1, color2 }) => {
         height="100%"
         style={ReactPlayerStyle}
       />
-    </CaseVideo>
+    </StyledCaseVideo>
 
     /*<ReactPlayer
         url={`${mp4}`}

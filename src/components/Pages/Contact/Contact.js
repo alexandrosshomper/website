@@ -5,15 +5,97 @@ import { mdiLinkedin, mdiAccountBox, mdiFilePdfBox } from "@mdi/js";
 
 import { Devices, Colors } from "../../DesignSystem";
 import ButtonMedium from "../../Button/ButtonMedium";
+const StyledContact = styled.div`
+  text-align: left;
+  margin-top: 72px;
+  margin-bottom: 200px;
+`;
+const StyledContactInfo = styled.p`
+  margin: 0px auto;
+  margin-bottom: 0px;
 
-const Contact = (props) => {
-  const Contact = styled.div`
-    text-align: left;
-    margin-top: 72px;
-    margin-bottom: 200px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 130%;
+
+  text-align: left;
+  margin-left: 24px;
+  margin-right: 24px;
+
+  color: #000a12;
+  ${Devices.tabletS} {
+    margin: 0 auto;
+    width: 563px;
+    font-size: 32px;
+    line-height: 107%;
+    text-align: center;
+  }
+  ${Devices.tabletM} {
+    width: 707px;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+    font-size: 48px;
+    line-height: 122%;
+  }
+  ${Devices.laptopM} {
+    width: 1141px;
+    font-size: 60px;
+    line-height: 105%;
+  }
+`;
+const StyledButtonRow = styled.div`
+    color: rgb(29, 29, 31);
+    direction: ltr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    height: 60px;
+    letter-spacing: -0.374px;
+    line-height: 25px;
+  padding-top: 12px;
+    quotes: "“" "”";
+    text-align: center;
+    text-size-adjust: 100%;
+  width: 100%;
+    height: 200px;
+  /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    -webkit-font-smoothing: antialiased;
+    --gap: 12px;
+    margin-left: calc(-1 * var(--gap));
+    margin-right: calc(-1 * var(--gap));
+    margin-bottom: calc(-1 * var(--gap));
+  & > * {
+      margin-left: var(--gap);
+      margin-bottom: calc(2 * var(--gap));
+    }
+    ${Devices.tabletS} {
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
   `;
 
-  const Name = styled.h1`
+
+const Contact = (props) => {
+const Name = styled.h1`
     margin: 0px auto;
     margin-bottom: 24px;
 
@@ -63,46 +145,7 @@ const Contact = (props) => {
       line-height: 105%;
     }
   `;
-  const ContactInfo = styled.p`
-    margin: 0px auto;
-    margin-bottom: 0px;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 130%;
-
-    text-align: left;
-    margin-left: 24px;
-    margin-right: 24px;
-
-    color: #000a12;
-    ${Devices.tabletS} {
-      margin: 0 auto;
-      width: 563px;
-      font-size: 32px;
-      line-height: 107%;
-      text-align: center;
-    }
-    ${Devices.tabletM} {
-      width: 707px;
-      font-size: 40px;
-      line-height: 100%;
-      letter-spacing: -0.02em;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-      font-size: 48px;
-      line-height: 122%;
-    }
-    ${Devices.laptopM} {
-      width: 1141px;
-      font-size: 60px;
-      line-height: 105%;
-    }
-  `;
-
-  const ContactInfoLink = styled.a`
+const ContactInfoLink = styled.a`
     text-decoration: none;
     color: #000a12;
     :visited {
@@ -110,57 +153,7 @@ const Contact = (props) => {
       color: #000a12;
     }
   `;
-
-  const ButtonRow = styled.div`
-    color: rgb(29, 29, 31);
-    direction: ltr;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    gap: 12px;
-    height: 60px;
-    letter-spacing: -0.374px;
-    line-height: 25px;
-
-    padding-top: 12px;
-    quotes: "“" "”";
-    text-align: center;
-    text-size-adjust: 100%;
-
-    width: 100%;
-    height: 200px;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    -webkit-font-smoothing: antialiased;
-    --gap: 12px;
-    margin-left: calc(-1 * var(--gap));
-    margin-right: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: calc(2 * var(--gap));
-    }
-    ${Devices.tabletS} {
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      gap: 24px;
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-  `;
-
-  const ButtonContainer = styled.div`
+const ButtonContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,7 +191,7 @@ const Contact = (props) => {
   `;
 
   return (
-    <Contact>
+    <StyledContact>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Contact | Alexandros Shomper</title>
@@ -211,18 +204,18 @@ const Contact = (props) => {
         </description>
       </Helmet>
       <Name>Alexandros Shomper</Name>
-      <ContactInfo>
+      <StyledContactInfo>
         <ContactInfoLink href="tel:+491608382263">
           +49 160 838 22 63
         </ContactInfoLink>
-      </ContactInfo>
-      <ContactInfo>
+      </StyledContactInfo>
+      <StyledContactInfo>
         <ContactInfoLink href="mailto:alexandros@alexandrosshomper.de">
           alexandros@alexandrosshomper.de
         </ContactInfoLink>
-      </ContactInfo>
+      </StyledContactInfo>
       <ButtonContainer>
-        <ButtonRow>
+        <StyledButtonRow>
           <ButtonMedium
             href="https://www.linkedin.com/in/alexshomper/"
             text="LinkedIn"
@@ -244,9 +237,9 @@ const Contact = (props) => {
             color2={Colors.greyDark}
             icon={mdiFilePdfBox}
           />
-        </ButtonRow>
+        </StyledButtonRow>
       </ButtonContainer>
-    </Contact>
+    </StyledContact>
   );
 };
 

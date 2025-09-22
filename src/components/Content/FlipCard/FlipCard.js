@@ -10,6 +10,67 @@ import FlipCardCopy from "./FlipCardCopy";
 import { mdiPlus } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useState } from "react";
+const StyledFlipCard = styled.div`
+    text-align: left;
+    border-radius: 30px;
+    margin-bottom: 12px;
+    float: left;
+    background-color: ${isFlipped ? backgroundColor : Colors.back};
+    flex-grow: 1;
+  ${Devices.tabletS} {
+    }
+    ${Devices.tabletM} {
+    }
+    ${Devices.laptopS} {
+    }
+    ${Devices.laptopM} {
+    }
+  `;
+const StyledBackContent = styled.div`
+  text-align: left;
+  padding: 30px 30px 72px 30px;
+  visibility: ${isFlipped ? "visible" : "hidden"};
+  display: ${isFlipped ? "block" : "none"};
+  ${Devices.tabletS} {
+    padding: 30px 30px 72px 30px;
+  }
+  ${Devices.tabletM} {
+    padding: 30px 20px 72px 20px;
+  }
+  ${Devices.laptopS} {
+    padding: 30px 20px 72px 20px;
+  }
+  ${Devices.laptopM} {
+    padding: 30px 30px 71px 30px;
+  }
+`;
+const StyledFlipButton = styled.button`
+  background-color: ${isFlipped
+    ? Colors.textWhite.highEmphasis
+    : Colors.background};
+  color: ${Colors.primaryText.mediumEmphasis};
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(${isFlipped ? "45deg" : "0deg"});
+  transition: transform 3s;
+
+  ${Devices.tabletS} {
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
+  }
+`;
+
 
 const FlipCard = ({
   eyebrow,
@@ -23,26 +84,7 @@ const FlipCard = ({
   webp,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-
-  const FlipCard = styled.div`
-    text-align: left;
-    border-radius: 30px;
-    margin-bottom: 12px;
-    float: left;
-    background-color: ${isFlipped ? backgroundColor : Colors.back};
-    flex-grow: 1;
-
-    ${Devices.tabletS} {
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
-    }
-  `;
-
-  const FrontContent = styled.div`
+const FrontContent = styled.div`
     text-align: left;
     padding: 30px 30px 72px 30px;
     visibility: ${!isFlipped ? "visible" : "hidden"};
@@ -61,25 +103,7 @@ const FlipCard = ({
       padding: 30px 30px 71px 30px;
     }
   `;
-  const BackContent = styled.div`
-    text-align: left;
-    padding: 30px 30px 72px 30px;
-    visibility: ${isFlipped ? "visible" : "hidden"};
-    display: ${isFlipped ? "block" : "none"};
-    ${Devices.tabletS} {
-      padding: 30px 30px 72px 30px;
-    }
-    ${Devices.tabletM} {
-      padding: 30px 20px 72px 20px;
-    }
-    ${Devices.laptopS} {
-      padding: 30px 20px 72px 20px;
-    }
-    ${Devices.laptopM} {
-      padding: 30px 30px 71px 30px;
-    }
-  `;
-  const ButtonFooterRow = styled.div`
+const ButtonFooterRow = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -99,34 +123,7 @@ const FlipCard = ({
     ${Devices.laptopM} {
     }
   `;
-  const FlipButton = styled.button`
-    background-color: ${isFlipped
-      ? Colors.textWhite.highEmphasis
-      : Colors.background};
-    color: ${Colors.primaryText.mediumEmphasis};
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotate(${isFlipped ? "45deg" : "0deg"});
-    transition: transform 3s;
-
-    ${Devices.tabletS} {
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
-    }
-  `;
-
-  function FadeInWhenVisible({ children }) {
+function FadeInWhenVisible({ children }) {
     const controls = useAnimation();
     const [ref, inView] = useInView();
 
@@ -166,7 +163,7 @@ const FlipCard = ({
   };
 
   return (
-    <FlipCard>
+    <StyledFlipCard>
       <FrontContent>
         {eyebrow && (
           <FlipCardEyebrow
@@ -178,7 +175,7 @@ const FlipCard = ({
         {copy && <FlipCardCopy textArray={[copy]} />}
         {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
       </FrontContent>
-      <BackContent>
+      <StyledBackContent>
         {eyebrow && (
           <FlipCardEyebrow
             text={eyebrow}
@@ -193,14 +190,14 @@ const FlipCard = ({
           </FadeInWhenVisible>
         )}
         {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
-      </BackContent>
+      </StyledBackContent>
 
       <ButtonFooterRow>
-        <FlipButton onClick={flipCard}>
+        <StyledFlipButton onClick={flipCard}>
           <Icon path={mdiPlus} size={1} />
-        </FlipButton>
+        </StyledFlipButton>
       </ButtonFooterRow>
-    </FlipCard>
+    </StyledFlipCard>
   );
 };
 

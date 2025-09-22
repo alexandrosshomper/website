@@ -10,6 +10,43 @@ import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledCaseCardGrid = styled.section`
+    margin: 0px 24px 0px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    --gap: 24px;
+    margin-left: calc(-1 * var(--gap));
+    margin-bottom: calc(-1 * var(--gap));
+  & > * {
+      margin-left: var(--gap);
+      margin-bottom: var(--gap);
+    }
+  ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+    }
+    ${Devices.laptopM} {
+      width: 1140px;
+      --gap: 12px;
+    }
+  `;
+
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -45,12 +82,7 @@ function FadeInWhenVisible({ children }) {
 }
 
 const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -64,42 +96,7 @@ const Content = (props) => {
     flex-grow: 0;
     margin-bottom: 200px;
   `;
-
-  const CaseCardGrid = styled.section`
-    margin: 0px 24px 0px 24px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    --gap: 24px;
-    margin-left: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-      --gap: 12px;
-    }
-  `;
-  const Panels = styled.section`
+const Panels = styled.section`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -126,7 +123,7 @@ const Content = (props) => {
   `;
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Portfolio | Alexandros Shomper</title>
@@ -153,7 +150,7 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
             />
           </FadeInWhenVisible>
         </Panels>
-        <CaseCardGrid>
+        <StyledCaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
               eyebrow="Case Study"
@@ -220,7 +217,7 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               link="/knauf-orderoverview"
             />
           </FadeInWhenVisible>
-        </CaseCardGrid>
+        </StyledCaseCardGrid>
       </Section>
 
       <Section>
@@ -242,7 +239,7 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
             />
           </FadeInWhenVisible>
         </Panels>
-        <CaseCardGrid>
+        <StyledCaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
               eyebrow="Case Study"
@@ -276,7 +273,7 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               comingSoon="true"
             />
           </FadeInWhenVisible>
-        </CaseCardGrid>
+        </StyledCaseCardGrid>
       </Section>
       <Section>
         <SectionHead
@@ -291,7 +288,7 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
             />
           </FadeInWhenVisible>
         </Panels>
-        <CaseCardGrid>
+        <StyledCaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
               eyebrow="Case Study"
@@ -304,11 +301,11 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               link="/occhio"
             />
           </FadeInWhenVisible>
-        </CaseCardGrid>
+        </StyledCaseCardGrid>
       </Section>
       <Section>
         <SectionHead divider="Side Projects" />
-        <CaseCardGrid>
+        <StyledCaseCardGrid>
           <FadeInWhenVisible>
             <CaseCard
               eyebrow="Website / eCommerce"
@@ -331,9 +328,9 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               link="https://www.cookcook.it/"
             />
           </FadeInWhenVisible>
-        </CaseCardGrid>
+        </StyledCaseCardGrid>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

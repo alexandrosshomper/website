@@ -2,20 +2,21 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
+const StyledFlipCardCopyWrapper = styled.div`
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-grow: 1;
+  width: 100%; // Add this line to make the element fit the width of its parent
+`;
+
 
 const FlipCardCopy = ({ textArray }) => {
   console.log(textArray);
-  const FlipCardCopyWrapper = styled.div`
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 16px;
-    flex-grow: 1;
-    width: 100%; // Add this line to make the element fit the width of its parent
-  `;
-  const FlipCardCopy = styled.p`
+const FlipCardCopy = styled.p`
     font-weight: 400;
     font-size: 20px;
     line-height: 130%;
@@ -41,11 +42,11 @@ const FlipCardCopy = ({ textArray }) => {
   `;
 
   return (
-    <FlipCardCopyWrapper>
+    <StyledFlipCardCopyWrapper>
       {textArray.map((text, index) => (
         <FlipCardCopy key={index}>{text}</FlipCardCopy>
       ))}
-    </FlipCardCopyWrapper>
+    </StyledFlipCardCopyWrapper>
   );
 };
 

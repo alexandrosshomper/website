@@ -14,6 +14,41 @@ import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseVideo from "../../Content/Case/CaseVideo";
 import Drawer from "../../Content/Drawer/Drawer";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledParagraph = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  /* Inside Auto Layout */
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 140px;
+  `;
+const StyledCaseListItemLink = styled.a`
+  position: static;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: ${Colors.primaryText.highEmphasis};
+
+  /* Inside Auto Layout */
+
+  font-size: 24px;
+  line-height: 160%;
+  &:hover {
+    color: ${Colors.primaryText.mediumEmphasis};
+  }
+  &:visited {
+    color: ${Colors.primaryText.highEmphasis};
+  }
+`;
+
 
 const Content = (props) => {
   const galleryItems = [
@@ -53,12 +88,7 @@ const Content = (props) => {
       copy: "Implemented interactive components and animations to educate users about product features, making the process entertaining and informative. Introduced WebAR to help users visualize products in their own homes, addressing concerns about fit and placement, and reducing fear of making wrong decisions.",
     },
   ];
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -70,21 +100,7 @@ const Content = (props) => {
     align-self: stretch;
     flex-grow: 0;
   `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 140px;
-  `;
-
-  const CaseUnorderedList = styled.ul`
+const CaseUnorderedList = styled.ul`
     position: static;
 
     font-family: "Roboto", sans-serif;
@@ -116,33 +132,13 @@ const Content = (props) => {
       width: 740px;
     }
   `;
-  const CaseListItemLink = styled.a`
-    position: static;
-
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: ${Colors.primaryText.highEmphasis};
-
-    /* Inside Auto Layout */
-
-    font-size: 24px;
-    line-height: 160%;
-    &:hover {
-      color: ${Colors.primaryText.mediumEmphasis};
-    }
-    &:visited {
-      color: ${Colors.primaryText.highEmphasis};
-    }
-  `;
-
-  const greenArrowStyle = {
+const greenArrowStyle = {
     color: Colors.green,
     fontWeight: "bold",
   };
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Occhio | Alexandros Shomper</title>
@@ -168,7 +164,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        {/* <Paragraph>
+        {/* <StyledParagraph>
           <CaseHeadlineThree headline={"At a glance"} />
           <CaseUnorderedList>
             <li>Digital Strategy</li>
@@ -176,8 +172,8 @@ const Content = (props) => {
             <li>Roadmap</li>
             <li>Digital Branding</li>
           </CaseUnorderedList>
-       </Paragraph>*/}
-        <Paragraph>
+       </StyledParagraph>*/}
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Situation"} />
           <CaseSectionHead
             headline={"Occhio's Digital Overhaul"}
@@ -202,8 +198,8 @@ const Content = (props) => {
               "I served as the UX/UI Manager and Product Owner for this project, collaborating with stakeholders including the CEO, CMO, and CTO, and leading a team comprising development, design, CRM, and social media experts."
             }
           />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Task"} />
           <CaseSectionHead
             headline={
@@ -231,8 +227,8 @@ const Content = (props) => {
             }
           />
           <br />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Action"} />
           <CaseSectionHead
             headline={"From Blank Canvas to Digital Masterpiece"}
@@ -258,8 +254,8 @@ const Content = (props) => {
 
           <Drawer items={galleryItems} />
           <br />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Results"} />
           <CaseSectionHead
             headline={"A Bright Future: Awards and Engagement Soar"}
@@ -282,15 +278,15 @@ const Content = (props) => {
           <CaseUnorderedList>
             <li>
               🏅{" "}
-              <CaseListItemLink href="https://www.horizont.net/schweiz/nachrichten/annual-multimedia-award-martin-et-karczinski-holt-gold-und-zweimal-silber-178283">
+              <StyledCaseListItemLink href="https://www.horizont.net/schweiz/nachrichten/annual-multimedia-award-martin-et-karczinski-holt-gold-und-zweimal-silber-178283">
                 Gold, Annual Multimedia Award 2020
-              </CaseListItemLink>
+              </StyledCaseListItemLink>
             </li>
             <li>
               🏅{" "}
-              <CaseListItemLink href="https://www.acquia.com/fr/node/114276">
+              <StyledCaseListItemLink href="https://www.acquia.com/fr/node/114276">
                 Winner, Splash Award 2020
-              </CaseListItemLink>
+              </StyledCaseListItemLink>
             </li>
           </CaseUnorderedList>
           <br />
@@ -323,9 +319,9 @@ const Content = (props) => {
             img="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2F%20OcchioWebsite.png?alt=media&token=c9328dce-65ad-445a-98ad-ce2201060ae1"
             url="https://vimeo.com/517036386"
           />
-        </Paragraph>
+        </StyledParagraph>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

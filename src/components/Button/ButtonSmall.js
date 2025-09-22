@@ -2,20 +2,19 @@ import React from "react";
 import styled from "@emotion/styled";
 import Icon from "@mdi/react";
 
-const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
-  console.log(`color:${color1};`);
-  let csscolor = null;
-  if (color1 && color2) {
-    csscolor = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
-  } else {
-    csscolor = `background-image: linear-gradient(to right, #ff6d00, #ff9e40);`;
-  }
-  const ButtonSmall = styled.a`
+const StyledButtonSmall = styled("a", {
+  shouldForwardProp: (prop) =>
+    !["gradientStart", "gradientEnd"].includes(prop),
+})`
     align-items: flex-start;
     appearance: auto;
     background-attachment: scroll;
     background-clip: border-box;
-    ${csscolor};
+    background-image: linear-gradient(
+      to right,
+      ${({ gradientStart }) => gradientStart},
+      ${({ gradientEnd }) => gradientEnd}
+    );
     background-origin: padding-box;
     background-position-x: 0%;
     background-position-y: 0%;
@@ -96,11 +95,20 @@ const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
     }
   `;
 
+const ButtonSmall = ({ href, text, color1, color2, icon, clickAction }) => {
+  const gradientStart = color1 || "#ff6d00";
+  const gradientEnd = color2 || "#ff9e40";
+
   return (
-    <ButtonSmall href={href} onClick={clickAction}>
+    <StyledButtonSmall
+      href={href}
+      onClick={clickAction}
+      gradientStart={gradientStart}
+      gradientEnd={gradientEnd}
+    >
       {text}
       {icon && <Icon path={icon} title={text} size={"16px"} />}
-    </ButtonSmall>
+    </StyledButtonSmall>
   );
 };
 

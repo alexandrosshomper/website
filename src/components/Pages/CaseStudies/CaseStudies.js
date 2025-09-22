@@ -8,29 +8,11 @@ import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
-
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 200px;
-  `;
-
-  const CaseCardGrid = styled.section`
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledCaseCardGrid = styled.section`
     margin: 0px 24px 0px 24px;
     display: flex;
     flex-direction: column;
@@ -45,8 +27,7 @@ const Content = (props) => {
     }
     ${Devices.tabletM} {
       margin: 0px 0px 0px 0px;
-
-      width: 708px;
+    width: 708px;
       flex-direction: row;
       align-items: center;
       justify-content: center;
@@ -59,7 +40,24 @@ const Content = (props) => {
       --gap: 12px;
     }
   `;
-  const Panels = styled.section`
+
+
+const Content = (props) => {
+const Section = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 200px;
+  `;
+const Panels = styled.section`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -86,7 +84,7 @@ const Content = (props) => {
   `;
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Case Studies | Alexandros Shomper</title>
@@ -110,7 +108,7 @@ Detailed use cases assessing the user onboarding & activation flows from differe
             //imgURL="./img/PanelTestImages/one.jpg"
           />
         </Panels>
-        <CaseCardGrid>
+        <StyledCaseCardGrid>
           <CaseCard
             eyebrow="Case Study"
             eyebrowColor2="#FFEAED"
@@ -150,9 +148,9 @@ Detailed use cases assessing the user onboarding & activation flows from differe
             imgURL="/img/case_studies/trello/Cover@2x.png"
             comingSoon="true"
           />
-        </CaseCardGrid>
+        </StyledCaseCardGrid>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

@@ -11,6 +11,100 @@ import Image from "./NFTGalleryImage";
 import Price from "./NFTPrice";
 
 import AutoplayVideo from "../AutoplayVideo/AutoplayVideo";
+const StyledNFTGallery = styled(motion.li)`
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  direction: ltr;
+  display: list-item;
+  grid-row-end: auto;
+  grid-row-start: 1;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  text-align: left;
+  text-size-adjust: 100%;
+  width: 200px;
+  -webkit-font-smoothing: antialiased;
+
+  ${Devices.tabletS} {
+    width: 260px;
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
+  }
+`;
+const StyledNFTGalleryLink = styled.a`
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    height: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    position: relative;
+    text-align: left;
+    text-decoration-color: blue;
+    text-decoration: none;
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  &:hover {
+      color: ${Colors.primaryText.highEmphasis};
+    }
+    &:visited {
+      color: ${Colors.primaryText.mediumEmphasis};
+      text-decoration: none;
+    }
+  `;
+const StyledNFTGalleryContent = styled(motion.div)`
+  background-color: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  cursor: pointer;
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+
+  padding: 24px 18px 24px 18px;
+
+  text-align: left;
+  text-decoration-thickness: none;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+  -webkit-box-flex: 1;
+  -webkit-font-smoothing: antialiased;
+`;
+const StyledNFTGalleryHeader = styled.div`
+    cursor: pointer;
+    direction: ltr;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: stretch;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+  text-align: left;
+    text-decoration-thickness: auto;
+    text-size-adjust: 100%;
+    -webkit-box-direction: normal;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    -webkit-font-smoothing: antialiased;
+  `;
+
 
 const NFTGallery = ({
   eyebrow,
@@ -23,35 +117,7 @@ const NFTGallery = ({
   link,
   comingSoon,
 }) => {
-  const NFTGallery = styled(motion.li)`
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    direction: ltr;
-    display: list-item;
-    grid-row-end: auto;
-    grid-row-start: 1;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    text-align: left;
-    text-size-adjust: 100%;
-    width: 200px;
-    -webkit-font-smoothing: antialiased;
-
-    ${Devices.tabletS} {
-      width: 260px;
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
-    }
-  `;
-
-  const NFTGalleryMotion = {
+const NFTGalleryMotion = {
     rest: {
       boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
       transition: {
@@ -77,33 +143,7 @@ const NFTGallery = ({
       },
     },
   };
-
-  const NFTGalleryLink = styled.a`
-    cursor: pointer;
-    direction: ltr;
-    display: block;
-    height: auto;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    position: relative;
-    text-align: left;
-    text-decoration-color: blue;
-    text-decoration: none;
-    text-decoration-style: solid;
-    text-decoration-thickness: auto;
-    text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-
-    &:hover {
-      color: ${Colors.primaryText.highEmphasis};
-    }
-    &:visited {
-      color: ${Colors.primaryText.mediumEmphasis};
-      text-decoration: none;
-    }
-  `;
-  const NFTGalleryArticle = styled.div`
+const NFTGalleryArticle = styled.div`
     background-color: white;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -127,31 +167,7 @@ const NFTGallery = ({
     -webkit-box-orient: vertical;
     -webkit-font-smoothing: antialiased;
   `;
-  const NFTGalleryContent = styled(motion.div)`
-    background-color: white;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-
-    cursor: pointer;
-    direction: ltr;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-
-    padding: 24px 18px 24px 18px;
-
-    text-align: left;
-    text-decoration-thickness: none;
-    text-size-adjust: 100%;
-    -webkit-box-direction: normal;
-    -webkit-box-flex: 1;
-    -webkit-font-smoothing: antialiased;
-  `;
-
-  const NFTGalleryHeaderContainer = styled.div`
+const NFTGalleryHeaderContainer = styled.div`
     cursor: pointer;
     direction: ltr;
     display: flex;
@@ -171,46 +187,24 @@ const NFTGallery = ({
     -webkit-box-flex: 1;
     -webkit-font-smoothing: antialiased;
   `;
-
-  const NFTGalleryHeader = styled.div`
-    cursor: pointer;
-    direction: ltr;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: stretch;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-
-    text-align: left;
-    text-decoration-thickness: auto;
-    text-size-adjust: 100%;
-    -webkit-box-direction: normal;
-    -webkit-box-flex: 1;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: justify;
-    -webkit-font-smoothing: antialiased;
-  `;
-
-  return (
-    <NFTGallery
+return (
+    <StyledNFTGallery
       initial="rest"
       whileHover="hover"
       whileTap="click"
       animate="rest"
       variants={NFTGalleryMotion}
     >
-      <NFTGalleryLink href={link}>
+      <StyledNFTGalleryLink href={link}>
         <NFTGalleryArticle>
           {videoURL ? (
             <AutoplayVideo videoURL={videoURL} />
           ) : (
             <Image imgURL={imgURL} alt={headline} comingSoon={comingSoon} />
           )}
-          <NFTGalleryContent>
+          <StyledNFTGalleryContent>
             <NFTGalleryHeaderContainer>
-              <NFTGalleryHeader>
+              <StyledNFTGalleryHeader>
                 {eyebrow && (
                   <Eyebrow
                     text={eyebrow}
@@ -220,12 +214,12 @@ const NFTGallery = ({
                 )}
                 {headline && <Headline text={headline} />}
                 <Price price={price}></Price>
-              </NFTGalleryHeader>
+              </StyledNFTGalleryHeader>
             </NFTGalleryHeaderContainer>
-          </NFTGalleryContent>
+          </StyledNFTGalleryContent>
         </NFTGalleryArticle>
-      </NFTGalleryLink>
-    </NFTGallery>
+      </StyledNFTGalleryLink>
+    </StyledNFTGallery>
   );
 };
 

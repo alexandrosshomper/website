@@ -20,6 +20,87 @@ import ButtonMedium from "../../Button/ButtonMedium";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail } from "@mdi/js";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledCardPanels = styled.section`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: auto;
+    justify-content: space-between;
+    align-content: center;
+    align-items: stretch;
+    --gap: 12px;
+  margin-bottom: calc(1 * var(--gap));
+    margin-right: 12px;
+    margin-left: 12px;
+  ${Devices.tabletS} {
+      width: 576px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: calc(-1 * var(--gap));
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      flex-direction: row;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+    }
+  `;
+const StyledPolaroids = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  column-gap: 16px;
+  row-gap: 24px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    flex-direction: row;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
+const StyledAnnotationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0px 24px 24px 24px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    flex-direction: row;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
+
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -129,12 +210,7 @@ function RevealWhenVisible({ children }) {
 }
 
 const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -152,39 +228,7 @@ const Content = (props) => {
       align-items: center;
     }
   `;
-
-  const CardPanels = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
-    justify-content: space-between;
-    align-content: center;
-    align-items: stretch;
-    --gap: 12px;
-
-    margin-bottom: calc(1 * var(--gap));
-    margin-right: 12px;
-    margin-left: 12px;
-
-    ${Devices.tabletS} {
-      width: 576px;
-      margin-right: 0px;
-      margin-left: 0px;
-      margin-bottom: calc(-1 * var(--gap));
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-  const FlipCardPanels = styled.section`
+const FlipCardPanels = styled.section`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -216,32 +260,7 @@ const Content = (props) => {
       width: 1152px;
     }
   `;
-  const Polaroids = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: flex-start;
-    column-gap: 16px;
-    row-gap: 24px;
-
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-
-  const Annotation = styled.p`
+const Annotation = styled.p`
     max-width: 280px;
 
     ${Devices.tabletS} {
@@ -257,32 +276,8 @@ const Content = (props) => {
       max-width: 33%;
     }
   `;
-  const AnnotationWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    gap: 16px;
-    margin: 0px 24px 24px 24px;
-
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-
-  return (
-    <Content>
+return (
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Alexandros Shomper</title>
@@ -373,7 +368,7 @@ const Content = (props) => {
         </RevealWhenVisible>
 
         <RevealWhenVisible>
-          <AnnotationWrapper
+          <StyledAnnotationWrapper
             style={{ color: Colors.primaryText.mediumEmphasis }}
           >
             <Annotation>
@@ -398,8 +393,8 @@ const Content = (props) => {
               </a>
               .
             </Annotation>
-          </AnnotationWrapper>
-          <AnnotationWrapper
+          </StyledAnnotationWrapper>
+          <StyledAnnotationWrapper
             style={{ color: Colors.primaryText.mediumEmphasis }}
           >
             <ButtonMedium
@@ -416,7 +411,7 @@ const Content = (props) => {
               color2={Colors.greyDark}
               icon={mdiFilePdfBox}
             />
-          </AnnotationWrapper>
+          </StyledAnnotationWrapper>
         </RevealWhenVisible>
       </Section>
       <Section>
@@ -425,7 +420,7 @@ const Content = (props) => {
           subline="I believe happy and healthy teams are the most productive, and innovative teams."
         />
         <FadeInWhenVisible>
-          <CardPanels>
+          <StyledCardPanels>
             <ListPanel
               eyebrow="Autonomy"
               eyebrowColor1={Colors.green}
@@ -449,7 +444,7 @@ const Content = (props) => {
               copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </CardPanels>
+          </StyledCardPanels>
         </FadeInWhenVisible>
       </Section>
       <Section>
@@ -458,7 +453,7 @@ const Content = (props) => {
           subline="Give meaning to actions and ideas."
         />
         <FadeInWhenVisible>
-          <CardPanels>
+          <StyledCardPanels>
             <ListPanel
               eyebrow="Data Driven/Informed"
               copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
@@ -494,7 +489,7 @@ const Content = (props) => {
               copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
               //imgURL="./img/PanelTestImages/two.jpg"
             />
-          </CardPanels>
+          </StyledCardPanels>
         </FadeInWhenVisible>
       </Section>
 
@@ -510,7 +505,7 @@ const Content = (props) => {
           headline="Skill Set"
           subline="Design, Brand, and Growth."
         />
-        <Polaroids>
+        <StyledPolaroids>
           <ListSmallText
             eyebrow="Design Thinking"
             copy="Emphasizing with your customers is the first principle of innovative products. Get in their shoes, and derive powerful insights to transform the business."
@@ -537,7 +532,7 @@ const Content = (props) => {
             eyebrow="Growth Hacking"
             copy="Continuously measuring and optimizing your customer relationship. Use creativity, analytics, and tech to heighten acquisition, activation, retention, referral, and revenue. "
           />
-        </Polaroids>
+        </StyledPolaroids>
       </Section>
 
       <Section>
@@ -612,7 +607,7 @@ const Content = (props) => {
           />
         </MoveUpWhenVisible>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

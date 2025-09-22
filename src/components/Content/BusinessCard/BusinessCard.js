@@ -2,45 +2,82 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
+const StyledBusinessCard = styled.div`
+  /* Auto Layout */
+  display: flex;
+  flex-direction: column;
 
-const BusinessCard = ({ headline, copy }) => {
-  const BusinessCard = styled.div`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0px;
 
+  position: static;
+  margin: 0px 24px 0px 24px;
+  /* Inside Auto Layout */
+
+  ${Devices.tabletS} {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+    margin: 0px 0px 60px 0px;
+    width: 576px;
+    align-content: flex-start;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+
+    margin: 0px 0px 60px 0px;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+    margin: 0px 0px 60px 0px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+    margin: 0px 0px 60px 0px;
+  }
+`;
+const StyledBusinessCardParagraph = styled.div`
+    display: block;
     gap: 12px;
-    align-items: flex-start;
-    padding: 0px;
-
-    position: static;
-    margin: 0px 24px 0px 24px;
-    /* Inside Auto Layout */
-
-    ${Devices.tabletS} {
-      flex-direction: row;
-      align-items: center;
-      gap: 48px;
-      margin: 0px 0px 60px 0px;
-      width: 576px;
-      align-content: flex-start;
+    flex-basis: 50%;
+    align-self: center;
+    padding: 0 0 0 0;
+    ${Devices.laptopM} {
+      padding: 0 44px 0 44px;
+    }
+  `;
+const StyledOverline = styled.p`
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+  color: ${Colors.primaryText.lowEmphasis};
+    margin: 0px 24px 8px 24px;
+  font-size: 20px;
+    line-height: 112%;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
+  ${Devices.tabletS} {
+      text-align: left;
     }
     ${Devices.tabletM} {
-      width: 720px;
-
-      margin: 0px 0px 60px 0px;
+      font-size: 20px;
+      line-height: 111%;
     }
     ${Devices.laptopS} {
-      width: 864px;
-      margin: 0px 0px 60px 0px;
+      font-size: 24px;
+      line-height: 100%;
     }
     ${Devices.laptopM} {
-      width: 1152px;
-      margin: 0px 0px 60px 0px;
+      font-size: 24px;
+      line-height: 113%;
     }
   `;
 
-  const Portrait = styled.img`
+
+const BusinessCard = ({ headline, copy }) => {
+const Portrait = styled.img`
     position: static;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
@@ -81,19 +118,7 @@ const BusinessCard = ({ headline, copy }) => {
       height: 634px;
     }
   `;
-
-  const BusinessCardParagraph = styled.div`
-    display: block;
-    gap: 12px;
-    flex-basis: 50%;
-    align-self: center;
-    padding: 0 0 0 0;
-    ${Devices.laptopM} {
-      padding: 0 44px 0 44px;
-    }
-  `;
-
-  const BusinessCardCopy = styled.p`
+const BusinessCardCopy = styled.p`
     position: static;
 
     font-family: "Roboto", sans-serif;
@@ -119,39 +144,7 @@ const BusinessCard = ({ headline, copy }) => {
       flex: 1;
     }
   `;
-
-  const Overline = styled.p`
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-style: normal;
-
-    color: ${Colors.primaryText.lowEmphasis};
-    margin: 0px 24px 8px 24px;
-
-    font-size: 20px;
-    line-height: 112%;
-    text-align: left;
-    margin-left: 0px;
-    margin-right: 0px;
-
-    ${Devices.tabletS} {
-      text-align: left;
-    }
-    ${Devices.tabletM} {
-      font-size: 20px;
-      line-height: 111%;
-    }
-    ${Devices.laptopS} {
-      font-size: 24px;
-      line-height: 100%;
-    }
-    ${Devices.laptopM} {
-      font-size: 24px;
-      line-height: 113%;
-    }
-  `;
-
-  const BusinessCardHeadline = styled.h3`
+const BusinessCardHeadline = styled.h3`
     position: static;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
@@ -190,10 +183,10 @@ const BusinessCard = ({ headline, copy }) => {
   `;
 
   return (
-    <BusinessCard>
+    <StyledBusinessCard>
       <Portrait src="./img/Identity/PortraitProSE.png" />
-      <BusinessCardParagraph>
-        <Overline>Startup Coach & Advisor</Overline>
+      <StyledBusinessCardParagraph>
+        <StyledOverline>Startup Coach & Advisor</StyledOverline>
         <BusinessCardHeadline>
           I’m Alexandros Shomper, <br />
           and I’m here to help.
@@ -207,8 +200,8 @@ const BusinessCard = ({ headline, copy }) => {
           Working on countless products I’ve learned first hand how{" "}
           <b>user onboarding and activation can make or break your startup</b>.{" "}
         </BusinessCardCopy>
-      </BusinessCardParagraph>
-    </BusinessCard>
+      </StyledBusinessCardParagraph>
+    </StyledBusinessCard>
   );
 };
 

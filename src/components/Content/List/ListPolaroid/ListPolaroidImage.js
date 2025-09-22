@@ -2,40 +2,41 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices } from "../../../DesignSystem";
+const StyledListPolaroidImage = styled.div`
+  background-color: white;
+
+  /* Auto Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: static;
+  background-color: white;
+  margin-bottom: 20px;
+
+  width: 272px;
+  height: 272px;
+
+  ${Devices.tabletS} {
+    width: 420px;
+    height: 420px;
+  }
+  ${Devices.tabletM} {
+    width: 348px;
+    height: 348px;
+  }
+  ${Devices.laptopS} {
+    width: 420px;
+    height: 420px;
+  }
+  ${Devices.laptopM} {
+    width: 372px;
+    height: 372px;
+  }
+`;
+
 
 const ListPolaroidImage = ({ imgURL }) => {
-  const ListPolaroidImage = styled.div`
-    background-color: white;
-
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: static;
-    background-color: white;
-    margin-bottom: 20px;
-
-    width: 272px;
-    height: 272px;
-
-    ${Devices.tabletS} {
-      width: 420px;
-      height: 420px;
-    }
-    ${Devices.tabletM} {
-      width: 348px;
-      height: 348px;
-    }
-    ${Devices.laptopS} {
-      width: 420px;
-      height: 420px;
-    }
-    ${Devices.laptopM} {
-      width: 372px;
-      height: 372px;
-    }
-  `;
-  const Image = styled.div`
+const Image = styled.div`
     background: url(${imgURL});
     background-position: center;
     background-size: cover;
@@ -63,9 +64,9 @@ const ListPolaroidImage = ({ imgURL }) => {
   `;
 
   return (
-    <ListPolaroidImage>
+    <StyledListPolaroidImage>
       <Image />
-    </ListPolaroidImage>
+    </StyledListPolaroidImage>
   );
 };
 

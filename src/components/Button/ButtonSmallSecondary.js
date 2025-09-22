@@ -3,15 +3,10 @@ import styled from "@emotion/styled";
 import Icon from "@mdi/react";
 import { Colors } from "../DesignSystem";
 
-const ButtonSmallSecondary = ({
-  href,
-  text,
-  color1,
-  color2,
-  icon,
-  clickAction,
-}) => {
-  const ButtonSmallSecondary = styled.a`
+const StyledButtonSmallSecondary = styled("a", {
+  shouldForwardProp: (prop) =>
+    !["gradientStart", "gradientEnd"].includes(prop),
+})`
     align-items: flex-start;
     appearance: auto;
     background-attachment: scroll;
@@ -49,7 +44,11 @@ const ButtonSmallSecondary = ({
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
 
-    color: linear-gradient(to right, ${color1}, ${color2});
+    color: linear-gradient(
+      to right,
+      ${({ gradientStart }) => gradientStart},
+      ${({ gradientEnd }) => gradientEnd}
+    );
     cursor: pointer;
     direction: ltr;
     display: flex;
@@ -99,11 +98,27 @@ const ButtonSmallSecondary = ({
     }
   `;
 
+const ButtonSmallSecondary = ({
+  href,
+  text,
+  color1,
+  color2,
+  icon,
+  clickAction,
+}) => {
+  const gradientStart = color1 || Colors.blue;
+  const gradientEnd = color2 || Colors.blueDark;
+
   return (
-    <ButtonSmallSecondary href={href} onClick={clickAction}>
+    <StyledButtonSmallSecondary
+      href={href}
+      onClick={clickAction}
+      gradientStart={gradientStart}
+      gradientEnd={gradientEnd}
+    >
       {text}
       {icon && <Icon path={icon} title={text} size={"16px"} />}
-    </ButtonSmallSecondary>
+    </StyledButtonSmallSecondary>
   );
 };
 

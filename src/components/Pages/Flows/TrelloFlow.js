@@ -13,14 +13,29 @@ import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
 import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
-
-const Content = () => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledChips = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 90%;
+  ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+    }
+    ${Devices.laptopS} {
+      width: 740px;
+    }
   `;
 
-  const Section = styled.section`
+
+const Content = () => {
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -32,24 +47,7 @@ const Content = () => {
     align-self: stretch;
     flex-grow: 0;
   `;
-
-  const Chips = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    width: 90%;
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-    }
-    ${Devices.laptopS} {
-      width: 740px;
-    }
-  `;
-  const Chip = styled.div`
+const Chip = styled.div`
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -61,7 +59,7 @@ const Content = () => {
     cursor: default;
   `;
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Trello Onboarding Flow | Alexandros Shomper</title>
@@ -76,11 +74,11 @@ const Content = () => {
           subline={"Capture, organize, and tackle your to-dos from anywhere."}
         />
 
-        <Chips>
+        <StyledChips>
           <Chip>Project Management</Chip>
           <Chip>B2B</Chip>
           <Chip>Freemium</Chip>
-        </Chips>
+        </StyledChips>
         <br />
         <br />
         <br />
@@ -90,7 +88,7 @@ const Content = () => {
         <br />
         <br />
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

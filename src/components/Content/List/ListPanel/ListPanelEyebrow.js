@@ -3,37 +3,48 @@ import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../../DesignSystem";
 
-const ListPanelEyebrow = ({ text, color1, color2 }) => {
-  let csscolor = null;
-  if (color1 && color2) {
-    csscolor = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
-  } else {
-    csscolor = `background-image: linear-gradient(to right, ${Colors.orange}, ${Colors.orangeLight});`;
+const StyledListPanelEyebrow = styled("h3", {
+  shouldForwardProp: (prop) =>
+    !["gradientStart", "gradientEnd"].includes(prop),
+})`
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+
+  text-align: left;
+
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    ${({ gradientStart }) => gradientStart},
+    ${({ gradientEnd }) => gradientEnd}
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  margin-top: 0px;
+  margin-bottom: 4px;
+
+  ${Devices.tabletS} {
   }
-  const ListPanelEyebrow = styled.h3`
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 120%;
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+`;
 
-    text-align: left;
+const ListPanelEyebrow = ({ text, color1, color2 }) => {
+  const gradientStart = color1 || Colors.orange;
+  const gradientEnd = color2 || Colors.orangeLight;
 
-    color: transparent;
-    ${csscolor};
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    margin-top: 0px;
-    margin-bottom: 4px;
-
-    ${Devices.tabletS} {
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-  `;
-
-  return <ListPanelEyebrow>{text}</ListPanelEyebrow>;
+  return (
+    <StyledListPanelEyebrow
+      gradientStart={gradientStart}
+      gradientEnd={gradientEnd}
+    >
+      {text}
+    </StyledListPanelEyebrow>
+  );
 };
 
 export default ListPanelEyebrow;

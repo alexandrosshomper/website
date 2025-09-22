@@ -13,6 +13,22 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import Drawer from "../../Content/Drawer/Drawer";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledParagraph = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  /* Inside Auto Layout */
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 140px;
+  `;
+
 
 const Content = (props) => {
   const galleryItems = [
@@ -46,12 +62,7 @@ const Content = (props) => {
       copy: "We created 4 experiments to improve the adoption of the Delivery Notifications, from which we would learn whether this will have the impact on user activation, retention, and engagement that we think.",
     },
   ];
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -63,21 +74,7 @@ const Content = (props) => {
     align-self: stretch;
     flex-grow: 0;
   `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 140px;
-  `;
-
-  const CaseUnorderedList = styled.ul`
+const CaseUnorderedList = styled.ul`
     position: static;
 
     font-family: "Roboto", sans-serif;
@@ -116,7 +113,7 @@ const Content = (props) => {
   };
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Knauf Explorations | Alexandros Shomper</title>
@@ -156,7 +153,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        {/* <Paragraph>
+        {/* <StyledParagraph>
           <CaseHeadlineThree headline={"At a glance"} />
           <CaseUnorderedList>
             <li>Digital Strategy</li>
@@ -164,8 +161,8 @@ const Content = (props) => {
             <li>Roadmap</li>
             <li>Digital Branding</li>
           </CaseUnorderedList>
-       </Paragraph>*/}
-        <Paragraph>
+       </StyledParagraph>*/}
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Situation"} />
           <CaseSectionHead
             headline={"Knauf's Order Overview: Simple Outside, Complex Inside"}
@@ -213,8 +210,8 @@ const Content = (props) => {
               Multi national project
             </li>
           </CaseUnorderedList>
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Task"} />
           <CaseSectionHead
             headline={"Boosting Active Users: The Unmet Challenge"}
@@ -233,8 +230,8 @@ const Content = (props) => {
               "How might we increase the number of active users significantly?"
             }
           />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Action"} />
           <CaseSectionHead
             headline={"Feature Focus: From Marginal to Essential"}
@@ -258,8 +255,8 @@ const Content = (props) => {
             }
           />
           <Drawer items={galleryItems} />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Results"} />
           <CaseSectionHead
             headline={"Bug Bust and Insights: Power Users Hold the Key"}
@@ -316,9 +313,9 @@ const Content = (props) => {
               "And finally, always double-check whether the notifications really trigger..."
             }
           />
-        </Paragraph>
+        </StyledParagraph>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

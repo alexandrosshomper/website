@@ -3,8 +3,10 @@ import styled from "@emotion/styled";
 import Icon from "@mdi/react";
 import { Colors } from "../DesignSystem";
 
-const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
-  const ButtonMedium = styled.a`
+const StyledButtonMediumSecondary = styled("a", {
+  shouldForwardProp: (prop) =>
+    !["gradientStart", "gradientEnd"].includes(prop),
+})`
     align-items: flex-start;
     appearance: auto;
     background-attachment: scroll;
@@ -42,7 +44,11 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
 
-    color: linear-gradient(to right, ${color1}, ${color2});
+    color: linear-gradient(
+      to right,
+      ${({ gradientStart }) => gradientStart},
+      ${({ gradientEnd }) => gradientEnd}
+    );
     cursor: pointer;
     direction: ltr;
     display: flex;
@@ -91,11 +97,20 @@ const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
     }
   `;
 
+const ButtonMedium = ({ href, text, color1, color2, icon, clickAction }) => {
+  const gradientStart = color1 || Colors.blue;
+  const gradientEnd = color2 || Colors.blueDark;
+
   return (
-    <ButtonMedium href={href} onClick={clickAction}>
+    <StyledButtonMediumSecondary
+      href={href}
+      onClick={clickAction}
+      gradientStart={gradientStart}
+      gradientEnd={gradientEnd}
+    >
       {text}
       {icon && <Icon path={icon} title={text} size={"16px"} />}
-    </ButtonMedium>
+    </StyledButtonMediumSecondary>
   );
 };
 

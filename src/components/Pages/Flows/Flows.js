@@ -10,29 +10,11 @@ import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 //GALLERY
 import GalleryList from "../../Gallery/GalleryList";
 import galleryData from "../../../data/flows";
-
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 200px;
-  `;
-
-  const Panels = styled.section`
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledPanels = styled.section`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -41,8 +23,7 @@ const Content = (props) => {
     align-content: center;
     align-items: flex-start;
     gap: 12px;
-
-    margin: 0px;
+  margin: 0px;
     ${Devices.tabletS} {
       width: 576px;
     }
@@ -58,8 +39,24 @@ const Content = (props) => {
     }
   `;
 
-  return (
-    <Content>
+
+const Content = (props) => {
+const Section = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 200px;
+  `;
+return (
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Gallery | Alexandros Shomper</title>
@@ -76,18 +73,18 @@ const Content = (props) => {
           headline="Flow Gallery"
           subline="A collection of user onboarding & activation flows from your favorite apps."
         />
-        <Panels style={{ marginBottom: "48px" }}>
+        <StyledPanels style={{ marginBottom: "48px" }}>
           <CaseSectionSummary
             copy="
 Detailed use cases assessing the user onboarding & activation flows from different companies and products."
             //imgURL="./img/PanelTestImages/one.jpg"
           />
-        </Panels>
+        </StyledPanels>
       </Section>
       <Section>
         <GalleryList data={galleryData} />
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

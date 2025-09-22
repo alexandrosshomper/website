@@ -1,33 +1,52 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { Colors, Devices } from "../../DesignSystem";
+const StyledCaseCardImage = styled.div`
+  border-top-left-radius: 0.38rem;
+  border-top-right-radius: 0.38rem;
 
-const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
-  const CaseCardImage = styled.div`
-    border-top-left-radius: 0.38rem;
-    border-top-right-radius: 0.38rem;
+  direction: ltr;
+  display: block;
+  position: relative;
 
+  width: 100%;
+
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  text-align: left;
+  text-decoration-thickness: auto;
+  text-size-adjust: 100%;
+
+  -webkit-box-direction: normal;
+  -webkit-font-smoothing: antialiased;
+`;
+const StyledTitle = styled.p`
+    z-index: 2;
     direction: ltr;
     display: block;
-    position: relative;
-
-    width: 100%;
-
-    list-style-image: none;
+    font-size: 36px;
+    color: ${Colors.textWhite.highEmphasis};
+    position: absolute;
+    top: 20%;
+  list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
-
-    overflow-x: hidden;
-    overflow-y: hidden;
-
-    text-align: left;
+  text-align: center;
     text-decoration-thickness: auto;
     text-size-adjust: 100%;
-
+    width: 100%;
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
   `;
-  const Picture = styled.picture`
+
+
+const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
+const Picture = styled.picture`
     direction: ltr;
     display: block;
     width: 100%;
@@ -57,36 +76,14 @@ const CaseCardImage = ({ imgURL, alt, comingSoon }) => {
     display: "block",
     opacity: `${comingSoon ? 0.3 : 1}`,
   };
-
-  const Title = styled.p`
-    z-index: 2;
-    direction: ltr;
-    display: block;
-    font-size: 36px;
-    color: ${Colors.textWhite.highEmphasis};
-    position: absolute;
-    top: 20%;
-
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-
-    text-align: center;
-    text-decoration-thickness: auto;
-    text-size-adjust: 100%;
-    width: 100%;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
-  `;
-
-  return (
-    <CaseCardImage>
-      {comingSoon && <Title>Coming Soon</Title>}
+return (
+    <StyledCaseCardImage>
+      {comingSoon && <StyledTitle>Coming Soon</StyledTitle>}
       <Picture>
         <source srcset={`${imgURL}`}></source>
         <img src={`${imgURL}`} alt={`${alt}`} style={imgStyle}></img>
       </Picture>
-    </CaseCardImage>
+    </StyledCaseCardImage>
   );
 };
 

@@ -11,6 +11,42 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import NFTGallery from "../../Content/NFTGallery/NFTGallery";
 import OpenSeaGallery from "../../Content/NFTGallery/OpenSeaGallery";
 import NFTCollectionAnalytics from "../../Content/NFTCollectionAnalytics/NFTCollectionAnalytics";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledNFTGalleryGrid = styled.section`
+    margin: 0px 24px 0px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    --gap: 24px;
+    margin-left: calc(-1 * var(--gap));
+    margin-bottom: calc(-1 * var(--gap));
+  & > * {
+      margin-left: var(--gap);
+      margin-bottom: var(--gap);
+    }
+  ${Devices.tabletS} {
+      width: 564px;
+    }
+    ${Devices.tabletM} {
+      width: 708px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    ${Devices.laptopS} {
+      width: 852px;
+    }
+    ${Devices.laptopM} {
+      width: 1140px;
+    }
+  `;
+
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -45,12 +81,7 @@ function FadeInWhenVisible({ children }) {
 }
 
 const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -64,43 +95,8 @@ const Content = (props) => {
     flex-grow: 0;
     margin-bottom: 200px;
   `;
-
-  const NFTGalleryGrid = styled.section`
-    margin: 0px 24px 0px 24px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    --gap: 24px;
-    margin-left: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-    }
-  `;
-
-  return (
-    <Content>
+return (
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Heraklit NFT | Alexandros Shomper</title>
@@ -121,7 +117,7 @@ const Content = (props) => {
       </Section>
       <Section>
         <NFTCollectionAnalytics collectionName="cryptopunks" />
-        <NFTGalleryGrid>
+        <StyledNFTGalleryGrid>
           <OpenSeaGallery offset="0" limit="40" slug="cryptopunks" />
           <OpenSeaGallery offset="40" limit="40" slug="cryptopunks" />
           <OpenSeaGallery offset="0" limit="40" slug="the-fungible-by-pak" />
@@ -223,9 +219,9 @@ const Content = (props) => {
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
           </FadeInWhenVisible>
-        </NFTGalleryGrid>
+        </StyledNFTGalleryGrid>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

@@ -13,40 +13,37 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
-
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledParagraph = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    flex-grow: 0;
-  `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
     align-self: stretch;
     flex-grow: 0;
     margin-bottom: 140px;
   `;
 
-  const CaseUnorderedList = styled.ul`
+
+const Content = (props) => {
+const Section = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    /* Inside Auto Layout */
+
+    align-self: stretch;
+    flex-grow: 0;
+  `;
+const CaseUnorderedList = styled.ul`
     position: static;
 
     font-family: "Roboto", sans-serif;
@@ -85,7 +82,7 @@ const Content = (props) => {
   };
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Knauf Explorations | Alexandros Shomper</title>
@@ -124,7 +121,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        {/* <Paragraph>
+        {/* <StyledParagraph>
           <CaseHeadlineThree headline={"At a glance"} />
           <CaseUnorderedList>
             <li>Digital Strategy</li>
@@ -132,8 +129,8 @@ const Content = (props) => {
             <li>Roadmap</li>
             <li>Digital Branding</li>
           </CaseUnorderedList>
-       </Paragraph>*/}
-        <Paragraph>
+       </StyledParagraph>*/}
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Situation"} />
           <CaseSectionHead headline={"Sleeping Giants"} />
           <CaseCopy
@@ -176,8 +173,8 @@ const Content = (props) => {
               Multi national project
             </li>
           </CaseUnorderedList>
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Task"} />
           <CaseSectionHead headline={"Digital Transformation"} />
           <CaseCopy
@@ -199,8 +196,8 @@ const Content = (props) => {
               "How can we generate new business with innovative, customer centric products and services."
             }
           />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Action"} />
           <CaseSectionHead headline={"Launch to learn."} />
           <CaseSublineTwo
@@ -236,8 +233,8 @@ const Content = (props) => {
           <br />
           <CaseSublineTwo subline={"Scale"} />
           <CaseCopy copy={"Validate Business with Lean Startup"} />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Results"} />
           <CaseSectionHead headline={"The Roadmap"} />
           <CaseCopy
@@ -286,9 +283,9 @@ const Content = (props) => {
               "Once you find your must-have product or service, it might be tempting to launch it on a global scale. But going too big too soon, you run the risk of spreading yourself too thin and ending up stretched across several markets."
             }
           />
-        </Paragraph>
+        </StyledParagraph>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

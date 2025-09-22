@@ -3,12 +3,7 @@ import { Colors, Devices } from "../DesignSystem";
 
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
-
-const LandingpageMenu = (props) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-
-  const LandingpageMenu = styled.div`
+const StyledLandingpageMenu = styled.div`
     text-align: left;
     float: left;
     top: -4px;
@@ -21,18 +16,21 @@ const LandingpageMenu = (props) => {
     display: none;
     ${Devices.tabletS} {
       display: flex;
-
-      flex-direction: row;
+    flex-direction: row;
       align-items: center;
-
-      visibility: visible;
+    visibility: visible;
     }
     ${Devices.tabletM} {
     }
     ${Devices.laptopS} {
     }
   `;
-  const MenuItemSmall = styled.div`
+
+
+const LandingpageMenu = (props) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+const MenuItemSmall = styled.div`
     font-family: "Roboto", sans-serif;
     font-size: 12px;
     line-height: 137%;
@@ -50,7 +48,7 @@ const LandingpageMenu = (props) => {
   `;
 
   return (
-    <LandingpageMenu className="Menu">
+    <StyledLandingpageMenu className="Menu">
       <MenuItemSmall>
         <Link
           to={`/case-studies`}
@@ -93,7 +91,7 @@ const LandingpageMenu = (props) => {
           Flow Gallery
         </Link>
       </MenuItemSmall>
-    </LandingpageMenu>
+    </StyledLandingpageMenu>
   );
 };
 

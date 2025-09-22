@@ -11,40 +11,37 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
-
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledParagraph = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    flex-grow: 0;
-  `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
     align-self: stretch;
     flex-grow: 0;
     margin-bottom: 140px;
   `;
 
-  const CaseUnorderedList = styled.ul`
+
+const Content = (props) => {
+const Section = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    /* Inside Auto Layout */
+
+    align-self: stretch;
+    flex-grow: 0;
+  `;
+const CaseUnorderedList = styled.ul`
     position: static;
 
     font-family: "Roboto", sans-serif;
@@ -83,7 +80,7 @@ const Content = (props) => {
   };
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Knauf Explorations | Alexandros Shomper</title>
@@ -125,7 +122,7 @@ const Content = (props) => {
         <br />
         <br />
         <br />
-        <Paragraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Situation"} />
           <CaseSectionHead
             headline="Knauf Account – Ready for Takeoff, But Not Quite There Yet"
@@ -166,8 +163,8 @@ const Content = (props) => {
               Multi national project
             </li>
           </CaseUnorderedList>
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Task"} />
           <CaseSectionHead
             headline="Increase account registrations"
@@ -184,8 +181,8 @@ const Content = (props) => {
           <CaseCopy
             copy={"How might we increase the account registration signup rate?"}
           />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Action"} />
           <CaseSectionHead
             headline="Psychology Meets Data: Cracking the Signup Code"
@@ -225,8 +222,8 @@ const Content = (props) => {
               "The funnel analysis data strongly echoed our Psych Analysis. The most significant friction points in the Psych Analysis were also the largest drop-off points in the Funnel Analysis."
             }
           />
-        </Paragraph>
-        <Paragraph>
+        </StyledParagraph>
+        <StyledParagraph>
           <CaseHeadlineThree headline={"Results"} />
           <CaseSectionHead
             headline="Bug Bust and Insights: A User Behavior Twist"
@@ -283,9 +280,9 @@ const Content = (props) => {
               "And finally, always double-check whether the notifications really trigger..."
             }
           />
-        </Paragraph>
+        </StyledParagraph>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

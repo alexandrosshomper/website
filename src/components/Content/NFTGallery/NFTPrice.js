@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
-
-const NFTPrice = ({ price }) => {
-  const NFTPrice = styled.div`
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+const StyledNFTPrice = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+`;
+const StyledETH = styled.img`
+    height: 12px;
+    width: 12px;
   `;
 
-  const Amount = styled.p`
+
+const NFTPrice = ({ price }) => {
+const Amount = styled.p`
     direction: ltr;
     display: block;
 
@@ -38,17 +42,11 @@ const NFTPrice = ({ price }) => {
 
     color: black;
   `;
-
-  const ETH = styled.img`
-    height: 12px;
-    width: 12px;
-  `;
-
-  return (
-    <NFTPrice>
+return (
+    <StyledNFTPrice>
       <Amount>{price}</Amount>
-      <ETH src="./img/NFT/ether.svg" />
-    </NFTPrice>
+      <StyledETH src="./img/NFT/ether.svg" />
+    </StyledNFTPrice>
   );
 };
 

@@ -8,29 +8,11 @@ import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
-
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 200px;
-  `;
-
-  const CaseCardGrid = styled.section`
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+const StyledCaseCardGrid = styled.section`
     --gap: 24px;
     box-sizing: border-box;
     margin: 0 auto;
@@ -43,8 +25,7 @@ const Content = (props) => {
     align-content: center;
     align-items: stretch;
     gap: var(--gap);
-
-    ${Devices.tabletS} {
+  ${Devices.tabletS} {
       max-width: 564px;
     }
     ${Devices.tabletM} {
@@ -62,7 +43,24 @@ const Content = (props) => {
       gap: var(--gap);
     }
   `;
-  const Panels = styled.section`
+
+
+const Content = (props) => {
+const Section = styled.section`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 200px;
+  `;
+const Panels = styled.section`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -89,7 +87,7 @@ const Content = (props) => {
   `;
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Reports | Alexandros Shomper</title>
@@ -112,7 +110,7 @@ const Content = (props) => {
             //imgURL="./img/PanelTestImages/one.jpg"
           />
         </Panels>
-        <CaseCardGrid>
+        <StyledCaseCardGrid>
           <CaseCard
             eyebrow="Report"
             eyebrowColor2="#231768"
@@ -132,9 +130,9 @@ const Content = (props) => {
             imgURL="./img/Reports/Cover – [Report] Four industry shifts making User Onboarding & Activation indispensible.png"
             link="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
           />
-        </CaseCardGrid>
+        </StyledCaseCardGrid>
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 

@@ -8,27 +8,7 @@ import ButtonSmall from "../Button/ButtonSmall";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
 import { X, Menu } from "lucide-react";
-
-const NavigationSticky = (props) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuButtonClick = (e) => {
-    console.log("menuButtonClick 1");
-
-    e.preventDefault();
-    setMenuOpen(true);
-    console.log("menuButtonClick 2");
-  };
-  const closeButtonClick = (e) => {
-    console.log("closeButtonClick 1");
-    e.preventDefault();
-    setMenuOpen(false);
-    console.log("closeButtonClick 2");
-  };
-
-  const NavigationWrapper = styled.header`
+const StyledNavigationWrapper = styled.header`
     position: fixed;
     top: 0;
     left: 0;
@@ -55,7 +35,79 @@ const NavigationSticky = (props) => {
     ${Devices.laptopM} {
       
   `;
-  const NavigationSticky = styled.div`
+const StyledGlobalNavCurtain = styled.div`
+    background: rgba(232, 232, 237, 0.4);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+      visibility 0.32s step-end 80ms;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+      visibility 0.32s step-start 80ms;
+    backdrop-filter: blur(20px);
+  `;
+const StyledCTA = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    gap: 12px;
+    z-index: 9999;
+  `;
+const StyledMenuItem = styled.li`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 1.1428571429;
+    font-weight: 600;
+    letter-spacing: 0.007em;
+    text-decoration: none;
+  `;
+const StyledMenuButton = styled.div`
+    visibility: visible;
+    display: block;
+  ${Devices.tabletS} {
+      visibility: hidden;
+      display: none;
+    flex-direction: row;
+      align-items: center;
+    }
+  `;
+
+
+const NavigationSticky = (props) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonClick = (e) => {
+    console.log("menuButtonClick 1");
+
+    e.preventDefault();
+    setMenuOpen(true);
+    console.log("menuButtonClick 2");
+  };
+  const closeButtonClick = (e) => {
+    console.log("closeButtonClick 1");
+    e.preventDefault();
+    setMenuOpen(false);
+    console.log("closeButtonClick 2");
+  };
+const NavigationSticky = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -84,34 +136,7 @@ const NavigationSticky = (props) => {
       width: 1140px;
     }
   `;
-
-  const GlobalNavCurtain = styled.div`
-    background: rgba(232, 232, 237, 0.4);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    visibility: hidden;
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9998;
-    transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
-      visibility 0.32s step-end 80ms;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background: rgba(255, 255, 255, 0.7);
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
-      visibility 0.32s step-start 80ms;
-    backdrop-filter: blur(20px);
-  `;
-
-  const NavigationMenuMobile = styled.div`
+const NavigationMenuMobile = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -137,16 +162,7 @@ const NavigationSticky = (props) => {
       width: 1140px;
     }
   `;
-
-  const CTA = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 15px;
-    gap: 12px;
-    z-index: 9999;
-  `;
-
-  const MenuList = styled.ul`
+const MenuList = styled.ul`
     position: fixed;
     top: 48;
     left: 0;
@@ -159,38 +175,14 @@ const NavigationSticky = (props) => {
     gap: 16px;
     z-index: 9999;
   `;
-
-  const MenuItem = styled.li`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const MenuLink = styled(Link)`
     font-size: 28px;
     line-height: 1.1428571429;
     font-weight: 600;
     letter-spacing: 0.007em;
     text-decoration: none;
   `;
-  const MenuLink = styled(Link)`
-    font-size: 28px;
-    line-height: 1.1428571429;
-    font-weight: 600;
-    letter-spacing: 0.007em;
-    text-decoration: none;
-  `;
-
-  const MenuButton = styled.div`
-    visibility: visible;
-    display: block;
-
-    ${Devices.tabletS} {
-      visibility: hidden;
-      display: none;
-
-      flex-direction: row;
-      align-items: center;
-    }
-  `;
-  const hanldeBookAudit = (e, href, instance = "navigation-sticky") => {
+const hanldeBookAudit = (e, href, instance = "navigation-sticky") => {
     e.preventDefault();
     ReactGA.event({
       category: "User",
@@ -205,17 +197,17 @@ const NavigationSticky = (props) => {
     console.log(`Clicked Book Audit - ${instance}`);
   };
   return (
-    <NavigationWrapper>
+    <StyledNavigationWrapper>
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CTA onClick={closeButtonClick}>
-            <MenuButton>
+          <StyledCTA onClick={closeButtonClick}>
+            <StyledMenuButton>
               {" "}
               <X size={24} strokeWidth={1} onClick={closeButtonClick} />
-            </MenuButton>
-          </CTA>
+            </StyledMenuButton>
+          </StyledCTA>
           <MenuList>
-            <MenuItem>
+            <StyledMenuItem>
               <MenuLink
                 to="/case-studies"
                 style={{
@@ -228,8 +220,8 @@ const NavigationSticky = (props) => {
               >
                 Case Studies
               </MenuLink>
-            </MenuItem>
-            <MenuItem>
+            </StyledMenuItem>
+            <StyledMenuItem>
               <MenuLink
                 to="/reports"
                 style={{
@@ -242,8 +234,8 @@ const NavigationSticky = (props) => {
               >
                 Reports
               </MenuLink>
-            </MenuItem>
-            <MenuItem>
+            </StyledMenuItem>
+            <StyledMenuItem>
               <MenuLink
                 to="/flows"
                 style={{
@@ -256,13 +248,13 @@ const NavigationSticky = (props) => {
               >
                 Flow Gallery
               </MenuLink>
-            </MenuItem>
+            </StyledMenuItem>
           </MenuList>
         </NavigationMenuMobile>
       ) : (
         <NavigationSticky>
           <IdentitySticky />
-          <CTA>
+          <StyledCTA>
             <LandingpageMenu style={{ marginTop: "4px;" }} />
 
             <ButtonSmall
@@ -277,14 +269,14 @@ const NavigationSticky = (props) => {
               color1={Colors.blue}
               color2={Colors.blueDark}
             />
-            <MenuButton onClick={menuButtonClick}>
+            <StyledMenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
-            </MenuButton>
-          </CTA>
+            </StyledMenuButton>
+          </StyledCTA>
         </NavigationSticky>
       )}
-      {menuOpen && <GlobalNavCurtain />}
-    </NavigationWrapper>
+      {menuOpen && <StyledGlobalNavCurtain />}
+    </StyledNavigationWrapper>
   );
 };
 

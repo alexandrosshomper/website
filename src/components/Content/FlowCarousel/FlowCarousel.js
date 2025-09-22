@@ -4,53 +4,73 @@ import styled from "@emotion/styled";
 import { Devices, Colors } from "../../DesignSystem";
 
 import FlowItem from "./FlowItem";
+const StyledFlowCarousel = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: 100%;
+
+  ${Devices.tabletS} {
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
+  }
+`;
+const StyledCarousel = styled.div`
+  overflow: scroll hidden;
+  scrollbar-width: none;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+`;
+const StyledCarouselGrid = styled.div`
+  display: flex;
+  gap: 24px;
+  padding: 4px 20px 10px 20px;
+  width: min-content;
+  ${Devices.tabletS} {
+    padding: 4px 330px 10px 330px;
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+`;
+const StyledTitel = styled.a`
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  font-weight: 500;
+  margin: 0;
+  color: ${Colors.primaryText.highEmphasis};
+  cursor: pointer;
+  text-decoration: none;
+`;
+const StyledSubline = styled.p`
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.014em;
+  font-weight: 400;
+  margin: 0;
+  color: ${Colors.primaryText.mediumEmphasis};
+  cursor: pointer;
+`;
+
 
 const FlowCarousel = ({ data, appname, url }) => {
-  const FlowCarousel = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    position: relative;
-    width: 100%;
-
-    ${Devices.tabletS} {
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
-    }
-  `;
-  const Scroller = styled.div`
+const Scroller = styled.div`
     position: relative;
     overflow: hidden;
     width: 100%;
   `;
-  const Carousel = styled.div`
-    overflow: scroll hidden;
-    scrollbar-width: none;
-    border-radius: inherit;
-    width: 100%;
-    height: 100%;
-  `;
-  const CarouselWrapper = styled.div`
+const CarouselWrapper = styled.div`
     min-width: 100%;
   `;
-  const CarouselGrid = styled.div`
-    display: flex;
-    gap: 24px;
-    padding: 4px 20px 10px 20px;
-    width: min-content;
-    ${Devices.tabletS} {
-      padding: 4px 330px 10px 330px;
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-  `;
-  const Text = styled.div`
+const Text = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -66,17 +86,7 @@ const FlowCarousel = ({ data, appname, url }) => {
       width: 740px;
     }
   `;
-  const Titel = styled.a`
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0;
-    font-weight: 500;
-    margin: 0;
-    color: ${Colors.primaryText.highEmphasis};
-    cursor: pointer;
-    text-decoration: none;
-  `;
-  const Appendix = styled.span`
+const Appendix = styled.span`
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 0;
@@ -85,37 +95,27 @@ const FlowCarousel = ({ data, appname, url }) => {
     color: ${Colors.primaryText.mediumEmphasis};
     cursor: pointer;
   `;
-  const Subline = styled.p`
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.014em;
-    font-weight: 400;
-    margin: 0;
-    color: ${Colors.primaryText.mediumEmphasis};
-    cursor: pointer;
-  `;
-
-  return (
-    <FlowCarousel>
+return (
+    <StyledFlowCarousel>
       <Scroller>
-        <Carousel>
+        <StyledCarousel>
           <CarouselWrapper>
-            <CarouselGrid>
+            <StyledCarouselGrid>
               {data.map((item) => (
                 <FlowItem key={item.id} {...item} image={item.image} />
               ))}
-            </CarouselGrid>
+            </StyledCarouselGrid>
           </CarouselWrapper>
-        </Carousel>
+        </StyledCarousel>
       </Scroller>
       <Text>
-        <Titel href={url || "#"}>
+        <StyledTitel href={url || "#"}>
           {" "}
           {appname} <Appendix>Onboarding & Activation Flow</Appendix>
-        </Titel>
-        <Subline>{data.length} Screens</Subline>
+        </StyledTitel>
+        <StyledSubline>{data.length} Screens</StyledSubline>
       </Text>
-    </FlowCarousel>
+    </StyledFlowCarousel>
   );
 };
 

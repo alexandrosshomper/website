@@ -8,14 +8,14 @@ import SectionHead from "../../Content/Section/SectionHead";
 import Article from "../../Content/Article/Article";
 import ButtonMedium from "../../Button/ButtonMedium";
 import SectionOverline from "../../Content/Section/SectionOverline";
+const StyledContent = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
+
 
 const Content = () => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
+const Section = styled.section`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ const Content = () => {
   `;
 
   return (
-    <Content>
+    <StyledContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Writing | Alexandros Shomper</title>
@@ -114,7 +114,7 @@ const Content = () => {
           color2={Colors.black}
         />
       </Section>
-    </Content>
+    </StyledContent>
   );
 };
 
