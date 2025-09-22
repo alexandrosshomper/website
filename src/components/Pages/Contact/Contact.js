@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { mdiLinkedin, mdiAccountBox, mdiFilePdfBox } from "@mdi/js";
 
 import { Devices, Colors } from "../../DesignSystem";
-import ButtonMedium from "../../Button/ButtonMedium";
+import Button from "../../Button/Button";
 
 const Contact = (props) => {
   const Contact = styled.div`
@@ -223,27 +223,27 @@ const Contact = (props) => {
       </ContactInfo>
       <ButtonContainer>
         <ButtonRow>
-          <ButtonMedium
+          <Button
             href="https://www.linkedin.com/in/alexshomper/"
-            text="LinkedIn"
-            color1={Colors.blue}
-            color2={Colors.blueLight}
+            gradient={{ from: Colors.blue, to: Colors.blueLight }}
             icon={mdiLinkedin}
-          />
-          <ButtonMedium
+          >
+            LinkedIn
+          </Button>
+          <Button
             href="../vCard/AlexandrosShomper.vcf"
-            text="vCard"
-            color1={Colors.orange}
-            color2={Colors.orangeLight}
+            gradient={{ from: Colors.orange, to: Colors.orangeLight }}
             icon={mdiAccountBox}
-          />
-          <ButtonMedium
+          >
+            vCard
+          </Button>
+          <Button
             href="../cv/AlexandrosShomper–CirriculumVitae.pdf"
-            text="Curriculum Vitae"
-            color1={Colors.black}
-            color2={Colors.greyDark}
+            gradient={{ from: Colors.black, to: Colors.greyDark }}
             icon={mdiFilePdfBox}
-          />
+          >
+            Curriculum Vitae
+          </Button>
         </ButtonRow>
       </ButtonContainer>
     </Contact>

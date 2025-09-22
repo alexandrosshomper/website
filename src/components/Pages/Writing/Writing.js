@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import { Colors } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import Article from "../../Content/Article/Article";
-import ButtonMedium from "../../Button/ButtonMedium";
+import Button from "../../Button/Button";
 import SectionOverline from "../../Content/Section/SectionOverline";
 
 const Content = () => {
@@ -73,12 +73,12 @@ const Content = () => {
           imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*03GSdQoQns5lgSpW30J_bw.png"
         />
         <br />
-        <ButtonMedium
+        <Button
           href="https://medium.com/@alexandrosshomper"
-          text="See all my articles on Medium"
-          color1={Colors.greyDark}
-          color2={Colors.black}
-        />
+          gradient={{ from: Colors.greyDark, to: Colors.black }}
+        >
+          See all my articles on Medium
+        </Button>
         <br />
         <br />
         <br />
@@ -107,12 +107,12 @@ const Content = () => {
           imgURL="https://cdn.sanity.io/images/pghoxh0e/production/7d8cb395214411450f7d051f6bfae06e83788459-528x343.png?w=2200&q=80&fit=max&auto=format"
         />
         <br />
-        <ButtonMedium
+        <Button
           href="https://www.reforge.com/profiles/alexandros-shomper"
-          text="See all my artifacts on Reforge"
-          color1={Colors.greyDark}
-          color2={Colors.black}
-        />
+          gradient={{ from: Colors.greyDark, to: Colors.black }}
+        >
+          See all my artifacts on Reforge
+        </Button>
       </Section>
     </Content>
   );

@@ -7,7 +7,7 @@ import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
-import ButtonSmallSecondary from "../Button/ButtonSmallSecondary";
+import Button from "../Button/Button";
 const Navigation = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;
@@ -264,18 +264,20 @@ const Navigation = (props) => {
           <CTA>
             <LandingpageMenu />
 
-            <ButtonSmallSecondary
-              clickAction={(e) =>
+            <Button
+              size="small"
+              variant="secondary"
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "hero-section"
                 )
               }
-              text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+            >
+              Book intro call
+            </Button>
             <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>

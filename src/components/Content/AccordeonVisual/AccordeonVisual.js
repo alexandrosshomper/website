@@ -3,7 +3,7 @@ import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
-import ButtonSmall from "../../Button/ButtonSmall";
+import Button from "../../Button/Button";
 
 const AccordeonVisual = () => {
   const AccordeonVisual = styled.div`
@@ -107,18 +107,19 @@ const AccordeonVisual = () => {
               Book an intro call. I’ll chat about your current product problems
               and how user onboarding and activation can solve them.
             </Copy>
-            <ButtonSmall
-              clickAction={(e) =>
+            <Button
+              size="small"
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "pricing-panel-scale"
                 )
               }
-              text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+            >
+              Book intro call
+            </Button>
           </Content>
         </Option>
         <Option>

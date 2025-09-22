@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import ButtonSmall from "../Button/ButtonSmall";
+import Button from "../Button/Button";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
 import { X, Menu } from "lucide-react";
@@ -265,18 +265,19 @@ const NavigationSticky = (props) => {
           <CTA>
             <LandingpageMenu style={{ marginTop: "4px;" }} />
 
-            <ButtonSmall
-              clickAction={(e) =>
+            <Button
+              size="small"
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "hero-section"
                 )
               }
-              text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+            >
+              Book intro call
+            </Button>
             <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>

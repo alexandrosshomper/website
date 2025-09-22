@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { Devices, Colors } from "../../DesignSystem";
 import { Check, Calculator, X } from "lucide-react";
 
-import ButtonMediumText from "../../Button/ButtonMediumText";
+import Button from "../../Button/Button";
 const PricingCanvas = ({ roiCalcAction }) => {
   const PricingCanvas = styled.div`
     border-radius: 0.38rem;
@@ -676,13 +676,14 @@ const PricingCanvas = ({ roiCalcAction }) => {
                 € 25.000
               </PricingCardPrice>
             </PricingCardCopy>
-            <ButtonMediumText
-              text="Calculate Onboarding ROI"
-              clickAction={roiCalcAction}
+            <Button
+              variant="text"
+              onClick={roiCalcAction}
               icon={<Calculator size="18px" />}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+              color={Colors.blue}
+            >
+              Calculate Onboarding ROI
+            </Button>
           </PricingCard>
         </PricingCanvasCopy>
       </PricingCanvasPricetable>

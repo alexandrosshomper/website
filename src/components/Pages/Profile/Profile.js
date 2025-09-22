@@ -16,7 +16,7 @@ import { Colors, Devices } from "../../DesignSystem";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
-import ButtonMedium from "../../Button/ButtonMedium";
+import Button from "../../Button/Button";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail } from "@mdi/js";
@@ -402,20 +402,20 @@ const Content = (props) => {
           <AnnotationWrapper
             style={{ color: Colors.primaryText.mediumEmphasis }}
           >
-            <ButtonMedium
+            <Button
               href="mailto:alexandros@alexandrosshomper.de"
-              text="Email Me"
-              color1={Colors.blue}
-              color2={Colors.blueDark}
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
               icon={mdiEmail}
-            />
-            <ButtonMedium
+            >
+              Email Me
+            </Button>
+            <Button
               href="../cv/AlexandrosShomper–CirriculumVitae.pdf"
-              text="Download CV"
-              color1={Colors.black}
-              color2={Colors.greyDark}
+              gradient={{ from: Colors.black, to: Colors.greyDark }}
               icon={mdiFilePdfBox}
-            />
+            >
+              Download CV
+            </Button>
           </AnnotationWrapper>
         </RevealWhenVisible>
       </Section>

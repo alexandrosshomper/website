@@ -14,8 +14,7 @@ import { Colors, Devices } from "../../DesignSystem";
 
 import Headline2 from "../../Content/Landingpage/Headline2";
 
-import ButtonMedium from "../../Button/ButtonMedium";
-import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
+import Button from "../../Button/Button";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Checkbox from "../../Checkbox/Checkbox";
 
@@ -1627,24 +1626,25 @@ const Content = (props) => {
             with a focused Onboarding Development Sprint.
           </HeroSubline>
           <ButtonWrapper>
-            <ButtonMedium
-              clickAction={(e) =>
+            <Button
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "hero-section"
                 )
               }
-              text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
-            <ButtonMediumSecondary
-              clickAction={() => hanldeWatchDemo()}
-              text={"Watch a Demo"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+            >
+              Book intro call
+            </Button>
+            <Button
+              variant="secondary"
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={() => hanldeWatchDemo()}
+            >
+              Watch a Demo
+            </Button>
           </ButtonWrapper>
           {isLightboxOpen && (
             <LightboxOverlay onClick={() => setIsLightboxOpen(false)}>
@@ -1713,12 +1713,12 @@ const Content = (props) => {
         <div
           style={{ display: "flex", justifyContent: "center", marginTop: 16 }}
         >
-          <ButtonMedium
-            clickAction={() => handleClickOnboardingSelfCheck()}
-            text={"Take Onboarding Self-Check"}
-            color1="#000000"
-            color2="#000000"
-          />
+          <Button
+            gradient={{ from: "#000000", to: "#000000" }}
+            onClick={() => handleClickOnboardingSelfCheck()}
+          >
+            Take Onboarding Self-Check
+          </Button>
         </div>
         <Lightbox
           isOpen={isSelfCheckOpen}
@@ -1782,28 +1782,30 @@ const Content = (props) => {
           </Thermometer>
 
           <ModalActions>
-            <ButtonMediumSecondary
-              clickAction={(e) =>
+            <Button
+              variant="secondary"
+              onClick={(e) =>
                 handleClickActivationScore(
                   e,
                   "https://alexshomper.notion.site/26eadf77b88b80d0b73aca5b171c586c",
                   "self-check"
                 )
               }
-              text="Calculate Activation Score"
-            />
-            <ButtonMedium
-              clickAction={(e) =>
+            >
+              Calculate Activation Score
+            </Button>
+            <Button
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "self-check"
                 )
               }
-              text="Book intro call"
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+            >
+              Book intro call
+            </Button>
           </ModalActions>
         </Lightbox>
       </Section>
@@ -2071,18 +2073,18 @@ const Content = (props) => {
           )}
 
           <ModalActions>
-            <ButtonMedium
-              clickAction={(e) =>
+            <Button
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "roi-calculator"
                 )
               }
-              text="Book intro call"
-              color1={Colors.blue}
-              color2={Colors.blueDark}
-            />
+            >
+              Book intro call
+            </Button>
           </ModalActions>
         </Lightbox>
 
@@ -2168,18 +2170,18 @@ const Content = (props) => {
                   <PanelCopy>Prioritized To Do List</PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-early"
                   )
                 }
-                text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
-              />
+              >
+                Book intro call
+              </Button>
             </PanelContent>
           </PricePanel>
 
@@ -2228,18 +2230,18 @@ const Content = (props) => {
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-growth"
                   )
                 }
-                text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
-              />
+              >
+                Book intro call
+              </Button>
             </PanelContent>
           </PricePanel>
 
@@ -2287,18 +2289,18 @@ const Content = (props) => {
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-scale"
                   )
                 }
-                text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
-              />
+              >
+                Book intro call
+              </Button>
             </PanelContent>
           </PricePanel>
 
@@ -2346,18 +2348,18 @@ const Content = (props) => {
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-mature"
                   )
                 }
-                text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
-              />
+              >
+                Book intro call
+              </Button>
             </PanelContent>
           </PricePanel>
         </PricePanels>
@@ -2365,12 +2367,13 @@ const Content = (props) => {
         <div
           style={{ display: "flex", justifyContent: "center", marginTop: 32 }}
         >
-          <ButtonMediumSecondary
-            clickAction={(e) => handleClickROICalculator(e, "pricing-panels")}
-            text={"Calculate Onboarding ROI"}
-            color1="#000000"
-            color2="#000000"
-          />
+          <Button
+            variant="secondary"
+            gradient={{ from: "#000000", to: "#000000" }}
+            onClick={(e) => handleClickROICalculator(e, "pricing-panels")}
+          >
+            Calculate Onboarding ROI
+          </Button>
         </div>
       </Section>
 
@@ -2429,19 +2432,19 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             and{" "}
             <span style={{ color: "black" }}>converts new users faster</span>.
           </HeroSubline>
-          <ButtonMedium
+          <Button
             href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
-            clickAction={(e) =>
+            gradient={{ from: Colors.blue, to: Colors.blueDark }}
+            onClick={(e) =>
               hanldeBookAudit(
                 e,
                 "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                 "cta-section"
               )
             }
-            text={"Book intro call"}
-            color1={Colors.blue}
-            color2={Colors.blueDark}
-          />
+          >
+            Book intro call
+          </Button>
         </Hero>
       </Section>
     </ContentWrapper>
