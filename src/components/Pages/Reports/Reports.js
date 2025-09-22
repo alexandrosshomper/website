@@ -3,93 +3,22 @@ import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 
 //Components
-import { Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
+import SectionLayout from "../../Content/Section/SectionLayout";
+import CardGrid from "../../Content/Section/CardGrid";
+import Panels from "../../Content/Section/Panels";
+
+const ContentWrapper = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
 
 const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 200px;
-  `;
-
-  const CaseCardGrid = styled.section`
-    --gap: 24px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 24px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: stretch;
-    gap: var(--gap);
-
-    ${Devices.tabletS} {
-      max-width: 564px;
-    }
-    ${Devices.tabletM} {
-      max-width: 708px;
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      max-width: 852px;
-    }
-    ${Devices.laptopM} {
-      max-width: 1140px;
-      --gap: 12px;
-      gap: var(--gap);
-    }
-  `;
-  const Panels = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    gap: 12px;
-
-    margin: 0px;
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-
   return (
-    <Content>
+    <ContentWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Reports | Alexandros Shomper</title>
@@ -101,18 +30,48 @@ const Content = (props) => {
           and interactions.
         </description>
       </Helmet>
-      <Section>
+      <SectionLayout>
         <SectionHead
           headline="Reports"
           subline="Data and anecdotes from industry research & use cases about user onboarding & activation, user retention, and growth."
         />
-        <Panels style={{ marginBottom: "48px" }}>
+        <Panels
+          margin="0px 0px 48px"
+          responsive={{
+            tabletS: "width: 576px;",
+            tabletM: `
+              width: 720px;
+              flex-direction: row;
+            `,
+            laptopS: "width: 864px;",
+            laptopM: "width: 1152px;",
+          }}
+        >
           <CaseSectionSummary
             copy="In a complex, uncertain and volatile world, the pace of digital change is faster than ever. Looking ahead is critical to success. These reports provide insights into major business and technology trends that will help you stay ahead and make smarter decisions for your organization."
             //imgURL="./img/PanelTestImages/one.jpg"
           />
         </Panels>
-        <CaseCardGrid>
+        <CardGrid
+          margin="0 auto"
+          padding="0 24px"
+          width="100%"
+          alignItems="stretch"
+          responsive={{
+            tabletS: "max-width: 564px;",
+            tabletM: `
+              max-width: 708px;
+              flex-direction: row;
+              align-items: stretch;
+              justify-content: center;
+            `,
+            laptopS: "max-width: 852px;",
+            laptopM: `
+              max-width: 1140px;
+              --gap: 12px;
+            `,
+          }}
+        >
           <CaseCard
             eyebrow="Report"
             eyebrowColor2="#231768"
@@ -132,9 +91,9 @@ const Content = (props) => {
             imgURL="./img/Reports/Cover – [Report] Four industry shifts making User Onboarding & Activation indispensible.png"
             link="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
           />
-        </CaseCardGrid>
-      </Section>
-    </Content>
+        </CardGrid>
+      </SectionLayout>
+    </ContentWrapper>
   );
 };
 

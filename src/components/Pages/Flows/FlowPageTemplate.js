@@ -15,6 +15,8 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseCard from "../../Content/CaseCard/CaseCard";
+import SectionLayout from "../../Content/Section/SectionLayout";
+import CardGrid from "../../Content/Section/CardGrid";
 
 import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
 
@@ -56,58 +58,6 @@ const ContentWrapper = styled.div`
   margin-top: 72px;
 `;
 
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-self: stretch;
-  flex-grow: 0;
-`;
-
-const Paragraph = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-self: stretch;
-  flex-grow: 0;
-  margin-bottom: 140px;
-`;
-
-const CaseCardGrid = styled.section`
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: calc(-1 * var(--gap));
-
-  & > * {
-    margin-left: var(--gap);
-    margin-bottom: var(--gap);
-  }
-
-  ${Devices.tabletS} {
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
-  }
-`;
-
 const Chips = styled.div`
   display: flex;
   flex-direction: row;
@@ -145,16 +95,29 @@ const RelatedResourcesWrapper = ({ resources }) => {
   }
 
   return (
-    <Paragraph>
+    <SectionLayout marginBottom="140px">
       <CaseSectionHead headline={"Related Ressources"} />
-      <CaseCardGrid>
+      <CardGrid
+        margin="0px"
+        responsive={{
+          tabletS: "width: 564px;",
+          tabletM: `
+            width: 708px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          `,
+          laptopS: "width: 852px;",
+          laptopM: "width: 1140px;",
+        }}
+      >
         {resources.map((resource) => (
           <FadeInWhenVisible key={resource.headline}>
             <CaseCard {...resource} />
           </FadeInWhenVisible>
         ))}
-      </CaseCardGrid>
-    </Paragraph>
+      </CardGrid>
+    </SectionLayout>
   );
 };
 
@@ -183,7 +146,7 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
       </Helmet>
-      <Section>
+      <SectionLayout marginBottom="0">
         <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
         <CaseTitle headline={flowMeta.name} />
         <CaseSubline subline={flowMeta.desc} />
@@ -204,7 +167,7 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
         <br />
         <br />
         <RelatedResourcesWrapper resources={relatedResources} />
-      </Section>
+      </SectionLayout>
     </ContentWrapper>
   );
 };

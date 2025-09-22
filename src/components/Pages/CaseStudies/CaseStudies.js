@@ -3,90 +3,22 @@ import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 
 //Components
-import { Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
+import SectionLayout from "../../Content/Section/SectionLayout";
+import CardGrid from "../../Content/Section/CardGrid";
+import Panels from "../../Content/Section/Panels";
+
+const ContentWrapper = styled.div`
+  text-align: left;
+  margin-top: 72px;
+`;
 
 const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 200px;
-  `;
-
-  const CaseCardGrid = styled.section`
-    margin: 0px 24px 0px 24px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    --gap: 24px;
-    gap: var(--gap);
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      margin: 0px 0px 0px 0px;
-
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-      --gap: 12px;
-    }
-  `;
-  const Panels = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    gap: 12px;
-
-    margin: 0px;
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-
   return (
-    <Content>
+    <ContentWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Case Studies | Alexandros Shomper</title>
@@ -98,19 +30,45 @@ const Content = (props) => {
           and interactions.
         </description>
       </Helmet>
-      <Section>
+      <SectionLayout>
         <SectionHead
           headline="Case Studies"
           subline="Studies on user onboarding & activation from various products."
         />
-        <Panels style={{ marginBottom: "48px" }}>
+        <Panels
+          margin="0px 0px 48px"
+          responsive={{
+            tabletS: "width: 576px;",
+            tabletM: `
+              width: 720px;
+              flex-direction: row;
+            `,
+            laptopS: "width: 864px;",
+            laptopM: "width: 1152px;",
+          }}
+        >
           <CaseSectionSummary
             copy="
 Detailed use cases assessing the user onboarding & activation flows from different companies and products."
             //imgURL="./img/PanelTestImages/one.jpg"
           />
         </Panels>
-        <CaseCardGrid>
+        <CardGrid
+          responsive={{
+            tabletS: "width: 564px;",
+            tabletM: `
+              width: 708px;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+            `,
+            laptopS: "width: 864px;",
+            laptopM: `
+              width: 1140px;
+              --gap: 12px;
+            `,
+          }}
+        >
           <CaseCard
             eyebrow="Case Study"
             eyebrowColor2="#FFEAED"
@@ -150,9 +108,9 @@ Detailed use cases assessing the user onboarding & activation flows from differe
             imgURL="/img/case_studies/trello/Cover@2x.png"
             comingSoon="true"
           />
-        </CaseCardGrid>
-      </Section>
-    </Content>
+        </CardGrid>
+      </SectionLayout>
+    </ContentWrapper>
   );
 };
 
