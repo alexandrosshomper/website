@@ -5,7 +5,7 @@ import { Colors, Devices } from "../../DesignSystem";
 
 import { mdiPlus, mdiClose } from "@mdi/js";
 
-import ButtonMedium from "../../Button/ButtonMedium";
+import Button from "../../Button/Button";
 import { useState } from "react";
 
 const Drawer = ({ items }) => {
@@ -13,7 +13,6 @@ const Drawer = ({ items }) => {
   const handleToggle = (e) => {
     e.preventDefault();
     setOpen(!open);
-    console.log("CLick!!!");
   };
 
   const Drawer = styled.div`
@@ -213,12 +212,17 @@ const Drawer = ({ items }) => {
   return (
     <Drawer>
       <DrawerToggle>
-        <ButtonMedium
+        <Button
+          size="medium"
+          variant="primary"
           text={!open ? "Learn More" : "Close Gallery"}
-          color1={!open ? Colors.orange : Colors.greyDark}
-          color2={!open ? Colors.orangeLight : Colors.black}
+          gradient={
+            !open
+              ? { from: Colors.orange, to: Colors.orangeLight }
+              : { from: Colors.greyDark, to: Colors.black }
+          }
           icon={!open ? mdiPlus : mdiClose}
-          clickAction={handleToggle}
+          onClick={handleToggle}
         />
       </DrawerToggle>
       <DrawerContentWrapper>

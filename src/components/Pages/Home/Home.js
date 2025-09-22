@@ -14,8 +14,7 @@ import { Colors, Devices } from "../../DesignSystem";
 
 import Headline2 from "../../Content/Landingpage/Headline2";
 
-import ButtonMedium from "../../Button/ButtonMedium";
-import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
+import Button from "../../Button/Button";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Checkbox from "../../Checkbox/Checkbox";
 
@@ -1423,7 +1422,6 @@ const Content = (props) => {
     setTimeout(() => {
       setIsLightboxOpen(true);
     }, 150);
-    console.log("Clicked Watch Demo");
   };
 
   const hanldeBookAudit = (e, href, instance = "unknown") => {
@@ -1438,7 +1436,6 @@ const Content = (props) => {
     setTimeout(() => {
       window.open(href, "_blank", "noopener,noreferrer");
     }, 150);
-    console.log(`Clicked Book Audit - ${instance}`);
   };
 
   const handleClickActivationScore = (e, href, instance = "unknown") => {
@@ -1453,7 +1450,6 @@ const Content = (props) => {
     setTimeout(() => {
       window.open(href, "_blank", "noopener,noreferrer");
     }, 150);
-    console.log(`Clicked Activation Score - ${instance}`);
   };
 
   const handleClickOnboardingSelfCheck = () => {
@@ -1465,7 +1461,6 @@ const Content = (props) => {
       nonInteraction: false,
     });
 
-    console.log("Clicked Self Check");
     setIsSelfCheckOpen(true);
   };
 
@@ -1479,7 +1474,6 @@ const Content = (props) => {
       nonInteraction: false,
     });
 
-    console.log(`Clicked ROI Calculator - ${instance}`);
     setIsROICalculatorOpen(true);
   };
 
@@ -1627,8 +1621,10 @@ const Content = (props) => {
             with a focused Onboarding Development Sprint.
           </HeroSubline>
           <ButtonWrapper>
-            <ButtonMedium
-              clickAction={(e) =>
+            <Button
+              size="medium"
+              variant="primary"
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -1636,14 +1632,13 @@ const Content = (props) => {
                 )
               }
               text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
-            <ButtonMediumSecondary
-              clickAction={() => hanldeWatchDemo()}
+            <Button
+              size="medium"
+              variant="secondary"
+              onClick={() => hanldeWatchDemo()}
               text={"Watch a Demo"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
             />
           </ButtonWrapper>
           {isLightboxOpen && (
@@ -1713,11 +1708,12 @@ const Content = (props) => {
         <div
           style={{ display: "flex", justifyContent: "center", marginTop: 16 }}
         >
-          <ButtonMedium
-            clickAction={() => handleClickOnboardingSelfCheck()}
+          <Button
+            size="medium"
+            variant="primary"
+            onClick={() => handleClickOnboardingSelfCheck()}
             text={"Take Onboarding Self-Check"}
-            color1="#000000"
-            color2="#000000"
+            gradient={{ from: "#000000", to: "#000000" }}
           />
         </div>
         <Lightbox
@@ -1782,8 +1778,10 @@ const Content = (props) => {
           </Thermometer>
 
           <ModalActions>
-            <ButtonMediumSecondary
-              clickAction={(e) =>
+            <Button
+              size="medium"
+              variant="secondary"
+              onClick={(e) =>
                 handleClickActivationScore(
                   e,
                   "https://alexshomper.notion.site/26eadf77b88b80d0b73aca5b171c586c",
@@ -1792,8 +1790,10 @@ const Content = (props) => {
               }
               text="Calculate Activation Score"
             />
-            <ButtonMedium
-              clickAction={(e) =>
+            <Button
+              size="medium"
+              variant="primary"
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -1801,8 +1801,7 @@ const Content = (props) => {
                 )
               }
               text="Book intro call"
-              color1={Colors.blue}
-              color2={Colors.blueDark}
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
           </ModalActions>
         </Lightbox>
@@ -2071,8 +2070,10 @@ const Content = (props) => {
           )}
 
           <ModalActions>
-            <ButtonMedium
-              clickAction={(e) =>
+            <Button
+              size="medium"
+              variant="primary"
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -2080,8 +2081,7 @@ const Content = (props) => {
                 )
               }
               text="Book intro call"
-              color1={Colors.blue}
-              color2={Colors.blueDark}
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
           </ModalActions>
         </Lightbox>
@@ -2168,8 +2168,10 @@ const Content = (props) => {
                   <PanelCopy>Prioritized To Do List</PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                size="medium"
+                variant="primary"
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -2177,8 +2179,7 @@ const Content = (props) => {
                   )
                 }
                 text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
               />
             </PanelContent>
           </PricePanel>
@@ -2228,8 +2229,10 @@ const Content = (props) => {
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                size="medium"
+                variant="primary"
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -2237,8 +2240,7 @@ const Content = (props) => {
                   )
                 }
                 text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
               />
             </PanelContent>
           </PricePanel>
@@ -2287,8 +2289,10 @@ const Content = (props) => {
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                size="medium"
+                variant="primary"
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -2296,8 +2300,7 @@ const Content = (props) => {
                   )
                 }
                 text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
               />
             </PanelContent>
           </PricePanel>
@@ -2346,8 +2349,10 @@ const Content = (props) => {
                   </PanelCopy>
                 </PanelListItem>
               </PanelBody>
-              <ButtonMedium
-                clickAction={(e) =>
+              <Button
+                size="medium"
+                variant="primary"
+                onClick={(e) =>
                   hanldeBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -2355,8 +2360,7 @@ const Content = (props) => {
                   )
                 }
                 text={"Book intro call"}
-                color1={Colors.blue}
-                color2={Colors.blueDark}
+                gradient={{ from: Colors.blue, to: Colors.blueDark }}
               />
             </PanelContent>
           </PricePanel>
@@ -2365,11 +2369,12 @@ const Content = (props) => {
         <div
           style={{ display: "flex", justifyContent: "center", marginTop: 32 }}
         >
-          <ButtonMediumSecondary
-            clickAction={(e) => handleClickROICalculator(e, "pricing-panels")}
+          <Button
+            size="medium"
+            variant="secondary"
+            onClick={(e) => handleClickROICalculator(e, "pricing-panels")}
             text={"Calculate Onboarding ROI"}
-            color1="#000000"
-            color2="#000000"
+            color="#000000"
           />
         </div>
       </Section>
@@ -2429,9 +2434,11 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             and{" "}
             <span style={{ color: "black" }}>converts new users faster</span>.
           </HeroSubline>
-          <ButtonMedium
+          <Button
+            size="medium"
+            variant="primary"
             href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
-            clickAction={(e) =>
+            onClick={(e) =>
               hanldeBookAudit(
                 e,
                 "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -2439,8 +2446,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
               )
             }
             text={"Book intro call"}
-            color1={Colors.blue}
-            color2={Colors.blueDark}
+            gradient={{ from: Colors.blue, to: Colors.blueDark }}
           />
         </Hero>
       </Section>

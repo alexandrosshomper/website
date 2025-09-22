@@ -7,7 +7,7 @@ import HeadHeadline from "./HeadHeadline";
 import HeadSubline from "./HeadSubline";
 import HeadDivider from "./HeadDivider";
 
-import ButtonMedium from "../../Button/ButtonMedium";
+import Button from "../../Button/Button";
 
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -88,11 +88,12 @@ const Head = ({ divider, headline, subline, cta }) => {
         {headline && <HeadHeadline headline={headline} />}
         {subline && <HeadSubline subline={subline} />}
         {cta && (
-          <ButtonMedium
+          <Button
+            size="medium"
+            variant="primary"
             href="https://calendar.app.google/qNqHiTZCN54GL2ij7"
             text={cta}
-            color1={Colors.blue}
-            color2={Colors.blueDark}
+            gradient={{ from: Colors.blue, to: Colors.blueDark }}
           />
         )}
       </Head>

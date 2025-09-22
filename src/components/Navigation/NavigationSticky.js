@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import ButtonSmall from "../Button/ButtonSmall";
+import Button from "../Button/Button";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
 import { X, Menu } from "lucide-react";
@@ -15,17 +15,12 @@ const NavigationSticky = (props) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonClick = (e) => {
-    console.log("menuButtonClick 1");
-
     e.preventDefault();
     setMenuOpen(true);
-    console.log("menuButtonClick 2");
   };
   const closeButtonClick = (e) => {
-    console.log("closeButtonClick 1");
     e.preventDefault();
     setMenuOpen(false);
-    console.log("closeButtonClick 2");
   };
 
   const NavigationWrapper = styled.header`
@@ -202,7 +197,6 @@ const NavigationSticky = (props) => {
     setTimeout(() => {
       window.location.href = href;
     }, 150);
-    console.log(`Clicked Book Audit - ${instance}`);
   };
   return (
     <NavigationWrapper>
@@ -265,8 +259,10 @@ const NavigationSticky = (props) => {
           <CTA>
             <LandingpageMenu style={{ marginTop: "4px;" }} />
 
-            <ButtonSmall
-              clickAction={(e) =>
+            <Button
+              size="small"
+              variant="primary"
+              onClick={(e) =>
                 hanldeBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
@@ -274,8 +270,7 @@ const NavigationSticky = (props) => {
                 )
               }
               text={"Book intro call"}
-              color1={Colors.blue}
-              color2={Colors.blueDark}
+              gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
             <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
