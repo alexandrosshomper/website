@@ -442,14 +442,43 @@ const PricingCanvas = ({ roiCalcAction }) => {
     right: 16px;
     width: 44px;
     height: 44px;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: none;
     background: #000000;
     color: #ffffff;
+    background: #000000;
+    color: #ffffff;
     cursor: pointer;
+    display: inline-flex;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    z-index: 2;
+    transition: transform 120ms ease, background-color 120ms ease;
+
+    &:hover {
+      background: #101010;
+      transform: scale(1.03);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
     padding: 0;
     z-index: 2;
     transition: transform 120ms ease, background-color 120ms ease;
@@ -543,6 +572,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
                 onClick={() => setIsLightboxOpen(false)}
                 aria-label="Close video"
               >
+                <X aria-hidden="true" strokeWidth={2.5} />
                 <X aria-hidden="true" strokeWidth={2.5} />
               </CloseLightboxButton>
               <iframe
