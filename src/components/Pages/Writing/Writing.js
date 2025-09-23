@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import { Colors } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import Article from "../../Content/Article/Article";
-import ButtonMedium from "../../Button/ButtonMedium";
+import { ButtonMedium } from "../../Button";
 import SectionOverline from "../../Content/Section/SectionOverline";
 
 const Content = () => {

@@ -5,7 +5,7 @@ import { Colors, Devices } from "../../DesignSystem";
 
 import { mdiPlus, mdiClose } from "@mdi/js";
 
-import ButtonMedium from "../../Button/ButtonMedium";
+import { ButtonMedium } from "../../Button";
 import { useState } from "react";
 
 const Drawer = ({ items }) => {

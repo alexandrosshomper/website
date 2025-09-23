@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { mdiLinkedin, mdiAccountBox, mdiFilePdfBox } from "@mdi/js";
 
 import { Devices, Colors } from "../../DesignSystem";
-import ButtonMedium from "../../Button/ButtonMedium";
+import { ButtonMedium } from "../../Button";
 
 const Contact = (props) => {
   const Contact = styled.div`

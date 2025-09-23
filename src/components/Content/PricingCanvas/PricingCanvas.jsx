@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { Devices, Colors } from "../../DesignSystem";
 import { Check, Calculator, X } from "lucide-react";
 
-import ButtonMediumText from "../../Button/ButtonMediumText";
+import { ButtonMediumText } from "../../Button";
 const PricingCanvas = ({ roiCalcAction }) => {
   const PricingCanvas = styled.div`
     border-radius: 0.38rem;
