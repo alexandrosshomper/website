@@ -7,7 +7,7 @@ import HeadHeadline from "./HeadHeadline";
 import HeadSubline from "./HeadSubline";
 import HeadDivider from "./HeadDivider";
 
-import ButtonMedium from "../../Button/ButtonMedium";
+import { ButtonMedium } from "../../Button";
 
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";

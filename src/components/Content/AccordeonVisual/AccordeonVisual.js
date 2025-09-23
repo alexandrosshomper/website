@@ -3,7 +3,7 @@ import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
-import ButtonSmall from "../../Button/ButtonSmall";
+import { ButtonSmall } from "../../Button";
 
 const AccordeonVisual = () => {
   const AccordeonVisual = styled.div`

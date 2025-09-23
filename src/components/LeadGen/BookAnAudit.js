@@ -4,7 +4,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Devices, Colors } from "../DesignSystem";
 
-import ButtonMedium from "../Button/ButtonMedium";
+import { ButtonMedium } from "../Button";
 
 const Headline = styled.h2`
   font-family: "Roboto", sans-serif;

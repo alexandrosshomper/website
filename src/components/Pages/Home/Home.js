@@ -14,8 +14,7 @@ import { Colors, Devices } from "../../DesignSystem";
 
 import Headline2 from "../../Content/Landingpage/Headline2";
 
-import ButtonMedium from "../../Button/ButtonMedium";
-import ButtonMediumSecondary from "../../Button/ButtonMediumSecondary";
+import { ButtonMedium, ButtonMediumSecondary } from "../../Button";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Checkbox from "../../Checkbox/Checkbox";
 

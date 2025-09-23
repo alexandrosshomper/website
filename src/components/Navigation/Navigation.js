@@ -7,7 +7,7 @@ import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
-import ButtonSmallSecondary from "../Button/ButtonSmallSecondary";
+import { ButtonSmallSecondary } from "../Button";
 const Navigation = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;

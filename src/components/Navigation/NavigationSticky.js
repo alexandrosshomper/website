@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import ButtonSmall from "../Button/ButtonSmall";
+import { ButtonSmall } from "../Button";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
 import { X, Menu } from "lucide-react";

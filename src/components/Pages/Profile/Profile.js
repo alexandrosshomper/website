@@ -16,7 +16,7 @@ import { Colors, Devices } from "../../DesignSystem";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
-import ButtonMedium from "../../Button/ButtonMedium";
+import { ButtonMedium } from "../../Button";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail } from "@mdi/js";
