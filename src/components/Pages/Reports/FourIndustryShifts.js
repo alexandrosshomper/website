@@ -1,10 +1,7 @@
-import styled from "@emotion/styled";
 import React from "react";
 import { Helmet } from "react-helmet";
 
 //Components
-import { Colors, Devices } from "../../DesignSystem";
-
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
@@ -13,78 +10,17 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
 import CaseSubline from "../../Content/Case/CaseSubline";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
+import {
+  ReportContent,
+  ReportParagraph,
+  ReportSection,
+  ReportUnorderedList,
+  ReportUnorderedListItem,
+} from "./ReportArticleLayout";
 
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    flex-grow: 0;
-  `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 140px;
-  `;
-
-  const CaseUnorderedList = styled.ul`
-    position: static;
-
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: ${Colors.primaryText.highEmphasis};
-
-    list-style-type: circle;
-    list-style-image: none;
-
-    list-style-position: outside;
-    padding-left: 0px;
-
-    /* Inside Auto Layout */
-
-    font-size: 24px;
-    line-height: 130%;
-
-    margin: 8px auto;
-    width: 90%;
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-    }
-    ${Devices.laptopS} {
-      width: 740px;
-    }
-  `;
-
-  const CaseUnorderedListItem = styled.li`
-    margin-bottom: 12px;
-  `;
-
+const Content = () => {
   return (
-    <Content>
+    <ReportContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -103,7 +39,7 @@ const Content = (props) => {
           loyal, paying customers.
         </description>
       </Helmet>
-      <Section>
+      <ReportSection>
         <CaseTitleEyebrow text={"Report"} color1="#00b8d4" color2="#62ebff" />
         <CaseTitle
           headline={
@@ -127,44 +63,44 @@ const Content = (props) => {
         />
         <br />
 
-        <Paragraph>
+        <ReportParagraph>
           <CaseHeadlineThree headline={"Our latest report reveals:"} />
-          <CaseUnorderedList>
-            <CaseUnorderedListItem>
+          <ReportUnorderedList>
+            <ReportUnorderedListItem>
               Market Dynamics Have Fundamentally Changed
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               The Funding Environment Has Tightened
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Product and Team Structures Have Evolved
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               External Influences Shape Internal Pressures
-            </CaseUnorderedListItem>
-          </CaseUnorderedList>
+            </ReportUnorderedListItem>
+          </ReportUnorderedList>
           <br />
           <br />
           <CaseHeadlineThree headline={"Key Insights You'll Discover:"} />
-          <CaseUnorderedList>
-            <CaseUnorderedListItem>
+          <ReportUnorderedList>
+            <ReportUnorderedListItem>
               How market dynamics have fundamentally shifted, making user
               activation more crucial than ever
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Why companies with strong onboarding see up to 86% higher customer
               lifetime value
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               The direct link between onboarding quality and key metrics like
               CAC, CLV, and NRR
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Real-world examples and case studies from successful companies
-            </CaseUnorderedListItem>
-          </CaseUnorderedList>
-        </Paragraph>
-        <Paragraph>
+            </ReportUnorderedListItem>
+          </ReportUnorderedList>
+        </ReportParagraph>
+        <ReportParagraph>
           <CaseSectionHead
             headline={"Who this report is for"}
             subline={
@@ -172,20 +108,20 @@ const Content = (props) => {
             }
           />
 
-          <CaseUnorderedList>
-            <CaseUnorderedListItem>
+          <ReportUnorderedList>
+            <ReportUnorderedListItem>
               Startup founders and product leaders seeking sustainable growth
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               SaaS companies struggling with user retention and activation
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Product teams looking to optimize their onboarding experience
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Growth managers focused on improving key metrics
-            </CaseUnorderedListItem>
-          </CaseUnorderedList>
+            </ReportUnorderedListItem>
+          </ReportUnorderedList>
           <br />
           <CaseCopy
             copy={
@@ -200,8 +136,8 @@ const Content = (props) => {
             successLink="./report-docs/[Report] Four industry shifts making onboarding & activation indispensable.pdf"
           />
         </Paragraph>
-      </Section>
-    </Content>
+      </ReportSection>
+    </ReportContent>
   );
 };
 
