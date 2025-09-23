@@ -1,10 +1,7 @@
-import styled from "@emotion/styled";
 import React from "react";
 import { Helmet } from "react-helmet";
 
 //Components
-import { Colors, Devices } from "../../DesignSystem";
-
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
@@ -13,78 +10,17 @@ import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 
 import CaseSubline from "../../Content/Case/CaseSubline";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
+import {
+  ReportContent,
+  ReportParagraph,
+  ReportSection,
+  ReportUnorderedList,
+  ReportUnorderedListItem,
+} from "./ReportArticleLayout";
 
-const Content = (props) => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    flex-grow: 0;
-  `;
-
-  const Paragraph = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 140px;
-  `;
-
-  const CaseUnorderedList = styled.ul`
-    position: static;
-
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: ${Colors.primaryText.highEmphasis};
-
-    list-style-type: circle;
-    list-style-image: none;
-
-    list-style-position: outside;
-    padding-left: 0px;
-
-    /* Inside Auto Layout */
-
-    font-size: 24px;
-    line-height: 130%;
-
-    margin: 8px auto;
-    width: 90%;
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-    }
-    ${Devices.laptopS} {
-      width: 740px;
-    }
-  `;
-
-  const CaseUnorderedListItem = styled.li`
-    margin-bottom: 12px;
-  `;
-
+const Content = () => {
   return (
-    <Content>
+    <ReportContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -103,7 +39,7 @@ const Content = (props) => {
           loyal, paying customers.
         </description>
       </Helmet>
-      <Section>
+      <ReportSection>
         <CaseTitleEyebrow text={"Report"} color1="#00b8d4" color2="#62ebff" />
         <CaseTitle
           headline={
@@ -133,45 +69,45 @@ const Content = (props) => {
           successLink="./reports/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf"
         />
 
-        <Paragraph>
+        <ReportParagraph>
           <CaseHeadlineThree headline={"Our latest report reveals:"} />
-          <CaseUnorderedList>
-            <CaseUnorderedListItem>
+          <ReportUnorderedList>
+            <ReportUnorderedListItem>
               Why effective onboarding and activation are the most
               cost-efficient ways to boost retention.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               The metrics, frameworks, and psychological insights that make
               onboarding work.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Case studies from successful SaaS companies like HubSpot, Slack,
               Robinhood, and more.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               How optimizing onboarding & activation impacts critical metrics
               like CAC:CLV, NRR, and ARR.
-            </CaseUnorderedListItem>
-          </CaseUnorderedList>
+            </ReportUnorderedListItem>
+          </ReportUnorderedList>
           <br />
           <br />
           <CaseHeadlineThree headline={"Key Metrics You'll Discover"} />
-          <CaseUnorderedList>
-            <CaseUnorderedListItem>
+          <ReportUnorderedList>
+            <ReportUnorderedListItem>
               Improving user onboarding can boost customer retention by up to
               50% <i>(Invesp)</i>.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               A well-designed onboarding flow can increase revenue by up to 150%
               over six months.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Reducing churn by just 5% can increase profits by up to 95%
               <i>(Harvard Business Review)</i>.
-            </CaseUnorderedListItem>
-          </CaseUnorderedList>
-        </Paragraph>
-        <Paragraph>
+            </ReportUnorderedListItem>
+          </ReportUnorderedList>
+        </ReportParagraph>
+        <ReportParagraph>
           <CaseSectionHead
             headline={"Who this report is for"}
             subline={
@@ -179,30 +115,30 @@ const Content = (props) => {
             }
           />
 
-          <CaseUnorderedList>
-            <CaseUnorderedListItem>
+          <ReportUnorderedList>
+            <ReportUnorderedListItem>
               Struggling with <b>high churn</b> rates and{" "}
               <b>low user retention</b>.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Finding it <b>hard to convert free users to paying customers</b>.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Seeking cost-effective ways to{" "}
               <b>improve retention and revenue growth</b>.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Unsure <b>how to measure and optimize onboarding</b>{" "}
               effectiveness.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Looking to <b>improve CAC:CLV</b> ratios and <b>accelerate ARR</b>
               growth.
-            </CaseUnorderedListItem>
-            <CaseUnorderedListItem>
+            </ReportUnorderedListItem>
+            <ReportUnorderedListItem>
               Building or refining their <b>product-led growth strategy</b>.
-            </CaseUnorderedListItem>
-          </CaseUnorderedList>
+            </ReportUnorderedListItem>
+          </ReportUnorderedList>
           <br />
           <CaseCopy
             copy={
@@ -216,9 +152,9 @@ const Content = (props) => {
             size={"M"}
             successLink="./report-docs/[Report]Why-Onboarding&Activation-Are-The-Ultimate-Levers-For-SaaS-Growth.pdf"
           />
-        </Paragraph>
-      </Section>
-    </Content>
+        </ReportParagraph>
+      </ReportSection>
+    </ReportContent>
   );
 };
 

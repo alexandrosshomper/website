@@ -36,7 +36,7 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     font-weight: 700;
     font-size: 16px;
     line-height: 120%;
-    width: 90%;
+    width: 100%;
 
     color: transparent;
     ${csscolor};
@@ -44,13 +44,16 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     background-clip: text;
 
     ${Devices.tabletS} {
-      width: 564px;
+      width: 350px;
     }
     ${Devices.tabletM} {
-      width: 708px;
+      width: 480px;
     }
     ${Devices.laptopS} {
-      width: 740px;
+      width: 567px;
+    }
+    ${Devices.laptopM} {
+      width: 567px;
     }
   `;
 
