@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import ReactGA from "react-ga4";
+import React from "react";
 import styled from "@emotion/styled";
-import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 import { Devices, Colors } from "../DesignSystem";
 import Button from "../Button/Button";
@@ -202,62 +201,35 @@ const NavigationSticky = (props) => {
     <NavigationWrapper>
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CTA onClick={closeButtonClick}>
+          <CTA onClick={closeMenu}>
             <MenuButton>
-              {" "}
-              <X size={24} strokeWidth={1} onClick={closeButtonClick} />
+              <X size={24} strokeWidth={1} onClick={closeMenu} />
             </MenuButton>
           </CTA>
           <MenuList>
-            <MenuItem>
-              <MenuLink
-                to="/case-studies"
-                style={{
-                  color:
-                    currentPath === "/case-studies"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Case Studies
-              </MenuLink>
-            </MenuItem>
-            <MenuItem>
-              <MenuLink
-                to="/reports"
-                style={{
-                  color:
-                    currentPath === "/reports"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Reports
-              </MenuLink>
-            </MenuItem>
-            <MenuItem>
-              <MenuLink
-                to="/flows"
-                style={{
-                  color:
-                    currentPath === "/flows"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Flow Gallery
-              </MenuLink>
-            </MenuItem>
+            {navLinks.map(({ to, label }) => (
+              <MenuItem key={to}>
+                <MenuLink
+                  to={to}
+                  style={{
+                    color:
+                      currentPath === to
+                        ? Colors.primaryText.highEmphasis
+                        : Colors.primaryText.mediumEmphasis,
+                    textDecoration: "none",
+                  }}
+                >
+                  {label}
+                </MenuLink>
+              </MenuItem>
+            ))}
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <NavigationSticky>
+        <NavigationContainer>
           <IdentitySticky />
           <CTA>
-            <LandingpageMenu style={{ marginTop: "4px;" }} />
+            <LandingpageMenu style={{ marginTop: "4px" }} />
 
             <Button
               size="small"
@@ -272,11 +244,11 @@ const NavigationSticky = (props) => {
               text={"Book intro call"}
               gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
-            <MenuButton onClick={menuButtonClick}>
+            <MenuButton onClick={openMenu}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>
           </CTA>
-        </NavigationSticky>
+        </NavigationContainer>
       )}
       {menuOpen && <GlobalNavCurtain />}
     </NavigationWrapper>
