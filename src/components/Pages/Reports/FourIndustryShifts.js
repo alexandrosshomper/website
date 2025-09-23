@@ -135,7 +135,7 @@ const Content = () => {
             size={"M"}
             successLink="./report-docs/[Report] Four industry shifts making onboarding & activation indispensable.pdf"
           />
-        </Paragraph>
+        </ReportParagraph>
       </ReportSection>
     </ReportContent>
   );
