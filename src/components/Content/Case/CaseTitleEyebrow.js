@@ -36,7 +36,7 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     font-weight: 500;
     font-size: 16px;
     line-height: 120%;
-    width: 90%;
+    width: 100%;
 
     color: transparent;
     ${csscolor};

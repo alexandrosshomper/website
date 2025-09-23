@@ -40,6 +40,7 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
       width: 650px;
     }
     ${Devices.laptopM} {
+      width: 567px;
     }
   `;
   return (
