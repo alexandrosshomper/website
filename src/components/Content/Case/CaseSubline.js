@@ -16,20 +16,19 @@ const CaseSubline = ({ subline }) => {
     font-size: 28px;
     line-height: 112%;
     text-align: left;
-    width: 100%;
+    width: 90%;
     ${Devices.tabletS} {
-      width: 350px;
+      width: 564px;
       font-size: 36px;
       line-height: 112%;
     }
     ${Devices.tabletM} {
-      width: 480px;
+      width: 708px;
     }
     ${Devices.laptopS} {
-      width: 567px;
+      width: 740px;
     }
     ${Devices.laptopM} {
-      width: 567px;
     }
   `;
 

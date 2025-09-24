@@ -30,25 +30,22 @@ const CaseTitle = ({ headline }) => {
     font-weight: 700;
     font-size: 36px;
     line-height: 120%;
-    width: 100%;
+    width: 90%;
 
     color: ${Colors.primaryText};
 
     margin-top: 0px;
 
     ${Devices.tabletS} {
-      width: 350px;
+      width: 564px;
       font-size: 56px;
       line-height: 120%;
     }
     ${Devices.tabletM} {
-      width: 480px;
+      width: 708px;
     }
     ${Devices.laptopS} {
-      width: 567px;
-    }
-    ${Devices.laptopM} {
-      width: 567px;
+      width: 740px;
     }
   `;
 

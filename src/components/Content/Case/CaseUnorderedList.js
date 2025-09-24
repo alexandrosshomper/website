@@ -18,19 +18,16 @@ const CaseUnorderedList = ({ copy }) => {
     line-height: 142%;
 
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 90%;
 
     ${Devices.tabletS} {
-      width: 350px;
+      width: 564px;
     }
     ${Devices.tabletM} {
-      width: 480px;
+      width: 708px;
     }
     ${Devices.laptopS} {
-      width: 567px;
-    }
-    ${Devices.laptopM} {
-      width: 567px;
+      width: 740px;
     }
   `;
 
