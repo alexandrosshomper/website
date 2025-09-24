@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-import { Colors } from "../DesignSystem";
+import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
@@ -232,7 +233,7 @@ const Navigation = (props) => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <NavigationContainer>
+        <Navigation>
           <Identity />
 
           <CallToAction>

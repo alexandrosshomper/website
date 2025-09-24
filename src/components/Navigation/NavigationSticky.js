@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import Button from "../Button/Button";
@@ -201,35 +202,62 @@ const NavigationSticky = (props) => {
     <NavigationWrapper>
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CTA onClick={closeMenu}>
+          <CTA onClick={closeButtonClick}>
             <MenuButton>
-              <X size={24} strokeWidth={1} onClick={closeMenu} />
+              {" "}
+              <X size={24} strokeWidth={1} onClick={closeButtonClick} />
             </MenuButton>
           </CTA>
           <MenuList>
-            {navLinks.map(({ to, label }) => (
-              <MenuItem key={to}>
-                <MenuLink
-                  to={to}
-                  style={{
-                    color:
-                      currentPath === to
-                        ? Colors.primaryText.highEmphasis
-                        : Colors.primaryText.mediumEmphasis,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </MenuLink>
-              </MenuItem>
-            ))}
+            <MenuItem>
+              <MenuLink
+                to="/case-studies"
+                style={{
+                  color:
+                    currentPath === "/case-studies"
+                      ? Colors.primaryText.highEmphasis
+                      : Colors.primaryText.mediumEmphasis,
+                  textDecoration: "none",
+                }}
+              >
+                Case Studies
+              </MenuLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuLink
+                to="/reports"
+                style={{
+                  color:
+                    currentPath === "/reports"
+                      ? Colors.primaryText.highEmphasis
+                      : Colors.primaryText.mediumEmphasis,
+                  textDecoration: "none",
+                }}
+              >
+                Reports
+              </MenuLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuLink
+                to="/flows"
+                style={{
+                  color:
+                    currentPath === "/flows"
+                      ? Colors.primaryText.highEmphasis
+                      : Colors.primaryText.mediumEmphasis,
+                  textDecoration: "none",
+                }}
+              >
+                Flow Gallery
+              </MenuLink>
+            </MenuItem>
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <NavigationContainer>
+        <NavigationSticky>
           <IdentitySticky />
           <CTA>
-            <LandingpageMenu style={{ marginTop: "4px" }} />
+            <LandingpageMenu style={{ marginTop: "4px;" }} />
 
             <Button
               size="small"
@@ -244,11 +272,11 @@ const NavigationSticky = (props) => {
               text={"Book intro call"}
               gradient={{ from: Colors.blue, to: Colors.blueDark }}
             />
-            <MenuButton onClick={openMenu}>
+            <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>
           </CTA>
-        </NavigationContainer>
+        </NavigationSticky>
       )}
       {menuOpen && <GlobalNavCurtain />}
     </NavigationWrapper>
