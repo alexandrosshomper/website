@@ -29,16 +29,15 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
     padding-bottom: 60px;
 
     ${Devices.tabletS} {
-      width: 350px;
+      width: 564px;
     }
     ${Devices.tabletM} {
-      width: 480px;
+      width: 708px;
     }
     ${Devices.laptopS} {
-      width: 567px;
+      width: 740px;
     }
     ${Devices.laptopM} {
-      width: 567px;
     }
   `;
   return (
