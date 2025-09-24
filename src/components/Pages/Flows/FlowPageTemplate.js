@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
@@ -7,7 +6,14 @@ import { useInView } from "react-intersection-observer";
 import { getFlowMeta } from "../../../data/flows";
 
 // DESIGN SYSTEM
-import { Colors, Devices } from "../../DesignSystem";
+import {
+  CaseCardGrid,
+  ChipPill,
+  ChipRow,
+  PageContent,
+  PageParagraph,
+  PageSection,
+} from "../../Layout";
 
 //COMPONENTS
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
@@ -51,101 +57,13 @@ function FadeInWhenVisible({ children }) {
   );
 }
 
-const ContentWrapper = styled.div`
-  text-align: left;
-  margin-top: 72px;
-`;
-
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-self: stretch;
-  flex-grow: 0;
-`;
-
-const Paragraph = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-self: stretch;
-  flex-grow: 0;
-  margin-bottom: 140px;
-`;
-
-const CaseCardGrid = styled.section`
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: calc(-1 * var(--gap));
-
-  & > * {
-    margin-left: var(--gap);
-    margin-bottom: var(--gap);
-  }
-
-  ${Devices.tabletS} {
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
-  }
-`;
-
-const Chips = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
-  width: 90%;
-
-  ${Devices.tabletS} {
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 740px;
-  }
-`;
-
-const Chip = styled.div`
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  color: ${Colors.primaryText.highEmphasis};
-  background-color: white;
-  border-radius: 20px;
-  padding: 8px 16px 8px 16px;
-  cursor: default;
-  white-space: nowrap;
-`;
-
 const RelatedResourcesWrapper = ({ resources }) => {
   if (!resources || resources.length === 0) {
     return null;
   }
 
   return (
-    <Paragraph>
+    <PageParagraph>
       <CaseSectionHead headline={"Related Ressources"} />
       <CaseCardGrid>
         {resources.map((resource) => (
@@ -154,7 +72,7 @@ const RelatedResourcesWrapper = ({ resources }) => {
           </FadeInWhenVisible>
         ))}
       </CaseCardGrid>
-    </Paragraph>
+    </PageParagraph>
   );
 };
 
@@ -177,23 +95,23 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
     "Explore detailed onboarding and activation flows from leading products.";
 
   return (
-    <ContentWrapper>
+    <PageContent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
       </Helmet>
-      <Section>
+      <PageSection>
         <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
         <CaseTitle headline={flowMeta.name} />
         <CaseSubline subline={flowMeta.desc} />
 
         {chips.length > 0 && (
-          <Chips>
+          <ChipRow>
             {chips.map((chipValue) => (
-              <Chip key={chipValue}>{chipValue}</Chip>
+              <ChipPill key={chipValue}>{chipValue}</ChipPill>
             ))}
-          </Chips>
+          </ChipRow>
         )}
         <br />
         <br />
@@ -204,8 +122,8 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
         <br />
         <br />
         <RelatedResourcesWrapper resources={relatedResources} />
-      </Section>
-    </ContentWrapper>
+      </PageSection>
+    </PageContent>
   );
 };
 
