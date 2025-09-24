@@ -13,29 +13,28 @@ const CaseHeadline = ({ headline }) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    width: 100%;
+    width: 90%;
 
     font-size: 56px;
     line-height: 109%;
     text-align: left;
     ${Devices.tabletS} {
       text-align: left;
-      width: 350px;
+      width: 564px;
     }
     ${Devices.tabletM} {
-      width: 480px;
+      width: 708px;
 
       font-size: 44px;
       line-height: 114%;
     }
     ${Devices.laptopS} {
-      width: 567px;
+      width: 740px;
 
       font-size: 80px;
       line-height: 114%;
     }
     ${Devices.laptopM} {
-      width: 567px;
     }
   `;
 

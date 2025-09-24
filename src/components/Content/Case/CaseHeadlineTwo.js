@@ -30,7 +30,6 @@ const CaseHeadlineTwo = ({ headline }) => {
       width: 650px;
     }
     ${Devices.laptopM} {
-      width: 567px;
     }
   `;
 

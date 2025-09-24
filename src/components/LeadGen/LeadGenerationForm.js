@@ -155,7 +155,7 @@ const ErrorMessage = styled.p`
   margin-top: 8px;
 `;
 const FormWrapper = styled.div`
-  margin: 20px auto 40px auto;
+  margin: 20px 20px 40px 20px;
   padding: 20px;
   border-radius: 0.38rem;
   background-color: white;
@@ -176,19 +176,17 @@ const FormWrapper = styled.div`
   -webkit-box-direction: normal;
   -webkit-font-smoothing: antialiased;
 
-  width: 100%;
-  max-width: 100%;
+  max-width: 90%;
   ${Devices.tabletS} {
-    max-width: 350px;
+    width: 564px;
   }
   ${Devices.tabletM} {
-    max-width: 480px;
+    width: 708px;
   }
   ${Devices.laptopS} {
-    max-width: 567px;
+    width: 740px;
   }
   ${Devices.laptopM} {
-    max-width: 567px;
   }
 `;
 const LeadGenerationForm = ({ portal, form, successLink }) => {

@@ -30,19 +30,16 @@ const CaseHeadlineThree = ({ headline }) => {
     );
     -webkit-background-clip: text;
     background-clip: text;
-    width: 100%;
+    width: 90%;
 
     ${Devices.tabletS} {
-      width: 350px;
+      width: 564px;
     }
     ${Devices.tabletM} {
-      width: 480px;
+      width: 708px;
     }
     ${Devices.laptopS} {
-      width: 567px;
-    }
-    ${Devices.laptopM} {
-      width: 567px;
+      width: 740px;
     }
   `;
 
