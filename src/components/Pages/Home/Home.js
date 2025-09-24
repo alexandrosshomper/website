@@ -24,6 +24,13 @@ import { Check, X } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 import Lightbox from "../../Lightbox/Lightbox";
+import {
+  DeliverablesGrid,
+  PageContent,
+  PageHeaderSection,
+  PaddedPageSection,
+  PricePanelGrid,
+} from "../../Layout";
 
 const ROICalculatorTitle = styled.h3`
   margin: 0 0 8px 0;
@@ -239,108 +246,6 @@ function MoveUpWhenVisible({ children }) {
     </motion.div>
   );
 }
-
-const ContentWrapper = styled.div`
-  text-align: left;
-  margin-top: 72px;
-`;
-
-const Section = styled.section`
-  /* Auto Layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  align-items: stretch;
-  flex-grow: 0;
-  margin-bottom: 200px;
-  ${Devices.tabletS} {
-    align-items: center;
-  }
-`;
-const HeaderSection = styled.section`
-  /* Auto Layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  align-items: stretch;
-  flex-grow: 0;
-  margin-bottom: 40px;
-  ${Devices.tabletS} {
-    align-items: center;
-    margin-bottom: 200px;
-  }
-`;
-const PricePanels = styled.section`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 12px;
-  justify-content: center;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-
-  margin-bottom: calc(1 * var(--gap));
-  margin-right: 12px;
-  margin-left: 12px;
-
-  ${Devices.tabletS} {
-    width: 576px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: calc(-1 * var(--gap));
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
-const DeliverablesCards = styled.section`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: flex-start;
-  column-gap: 16px;
-  row-gap: 16px;
-  margin-left: 12px;
-  margin-right: 12px;
-
-  ${Devices.tabletS} {
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 576px;
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
 
 const Hero = styled.div`
   /* Auto Layout */
@@ -1603,8 +1508,8 @@ const Content = (props) => {
   const roiResults = calculateROI();
 
   return (
-    <ContentWrapper>
-      <HeaderSection>
+    <PageContent>
+      <PageHeaderSection>
         <Hero>
           <HeroHeadline>
             Let's fix your leaky onboarding.
@@ -1667,14 +1572,14 @@ const Content = (props) => {
             </LightboxOverlay>
           )}
         </Hero>
-      </HeaderSection>
-      <Section>
+      </PageHeaderSection>
+      <PaddedPageSection>
         <PricingCanvas
           roiCalcAction={(e) => handleClickROICalculator(e, "pricing-canvas")}
         />
-      </Section>
+      </PaddedPageSection>
 
-      <Section>
+      <PaddedPageSection>
         <ProblemHeadline>
           <span style={{ color: "black" }}>The Problem</span>
           <br />
@@ -1805,11 +1710,11 @@ const Content = (props) => {
             />
           </ModalActions>
         </Lightbox>
-      </Section>
-      <Section>
+      </PaddedPageSection>
+      <PaddedPageSection>
         <BusinessCard />
-      </Section>
-      <Section>
+      </PaddedPageSection>
+      <PaddedPageSection>
         <SolutionHeadline>
           <span style={{ color: "black" }}>Our Solution</span>
           <br />A 2–week sprint to fine-tune your product’s onboarding
@@ -2086,12 +1991,12 @@ const Content = (props) => {
           </ModalActions>
         </Lightbox>
 
-      </Section>
+      </PaddedPageSection>
 
-      <Section>
+      <PaddedPageSection>
         <DeliverablesHeadline>Your Deliverables</DeliverablesHeadline>
 
-        <DeliverablesCards>
+        <DeliverablesGrid>
           <DeliverablesCard
             headline="Positioning"
             img="../img/Landingpage/Deliverables/Positioning.png"
@@ -2122,16 +2027,16 @@ const Content = (props) => {
             color2={Colors.blueDark}
             copy="A prioritized list of improvements and experiments for you to get started and plan implementation right away."
           />
-        </DeliverablesCards>
-      </Section>
-      <Section>
+        </DeliverablesGrid>
+      </PaddedPageSection>
+      <PaddedPageSection>
         <SolutionSubline>How it works</SolutionSubline>
 
         <AccordeonVisual />
-      </Section>
-      <Section>
+      </PaddedPageSection>
+      <PaddedPageSection>
         <Headline2 headline="Onboarding Development Sprint" />
-        <PricePanels>
+        <PricePanelGrid>
           <PricePanel>
             <PanelContent>
               <PricePanelTitle>
@@ -2364,7 +2269,7 @@ const Content = (props) => {
               />
             </PanelContent>
           </PricePanel>
-        </PricePanels>
+        </PricePanelGrid>
 
         <div
           style={{ display: "flex", justifyContent: "center", marginTop: 32 }}
@@ -2377,9 +2282,9 @@ const Content = (props) => {
             color="#000000"
           />
         </div>
-      </Section>
+      </PaddedPageSection>
 
-      <Section>
+      <PaddedPageSection>
         <Headline2 headline="Questions? Answers." />
 
         <MoveUpWhenVisible>
@@ -2418,8 +2323,8 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             copy="Yes, I offer a retainer service to continuously refine, test and optimize your onboarding flow and other user journeys based on real user data and feedback. I also advise in other areas of product-led growth."
           />
         </MoveUpWhenVisible>
-      </Section>
-      <Section>
+      </PaddedPageSection>
+      <PaddedPageSection>
         <Hero>
           <HeroHeadline>
             Let's fix your <OnboardingGradient>onboarding</OnboardingGradient>{" "}
@@ -2449,8 +2354,8 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             gradient={{ from: Colors.blue, to: Colors.blueDark }}
           />
         </Hero>
-      </Section>
-    </ContentWrapper>
+      </PaddedPageSection>
+    </PageContent>
   );
 };
 
