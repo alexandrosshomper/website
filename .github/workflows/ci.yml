@@ -1,8 +1,8 @@
 name: CI
 
 on:
+  push:
   pull_request:
-    branches: [master, staging]
 
 permissions:
   contents: read
@@ -52,7 +52,8 @@ jobs:
           cache: "npm"
       - run: npm ci
       - name: Test
-        env: { CI: true }
+        env:
+          CI: true
         run: |
           if npm run | grep -q " test"; then
             npm test -- --watch=false || npm test -- --watchAll=false
@@ -76,3 +77,18 @@ jobs:
           else
             echo "No tsconfig.json; skipping."
           fi
+
+  targeted-tests:
+    name: CTA and lead gen tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+      - run: npm ci
+      - name: Run CTA and lead gen tests
+        env:
+          CI: true
+        run: npm test -- --watchAll=false --testPathPattern='home\.cta\.test\.jsx|LeadGenerationForm\.test\.jsx'
