@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 //Components
 import { Devices } from "../../DesignSystem";
@@ -10,39 +8,7 @@ import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
 import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import InViewMotion from "../../animation/InViewMotion";
 
 const Content = (props) => {
   const Content = styled.div`
@@ -145,16 +111,16 @@ const Content = (props) => {
           subline="Building a global apps platform, from scratch."
         />
         <Panels style={{ marginBottom: "48px" }}>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseSectionSummary
               copy="
 As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </Panels>
         <CaseCardGrid>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseCard
               eyebrow="Case Study"
               eyebrowColor2="#231768"
@@ -164,8 +130,8 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               imgURL="./img/Knauf/CoverKnaufTransformation.png"
               link="/knauf-explorations"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Case Study"
               eyebrowColor2="#231768"
@@ -175,8 +141,8 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               imgURL="./img/Knauf/CoverMyKnauf.png"
               link="/myKnauf"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Deep Dive"
               eyebrowColor2="#231768"
@@ -186,8 +152,8 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               imgURL="./img/Knauf/CoverProductAnalytics.png"
               comingSoon="true"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Deep Dive"
               eyebrowColor2="#231768"
@@ -197,8 +163,8 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               imgURL="./img/Knauf/CoverUserAcquisition.png"
               comingSoon="true"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Deep Dive"
               eyebrowColor2="#231768"
@@ -208,8 +174,8 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               imgURL="./img/Knauf/CoverSignup.png"
               link="/knauf-account"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Deep Dive"
               eyebrowColor2="#231768"
@@ -219,7 +185,7 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
               imgURL="./img/Knauf/CoverUserRetention.png"
               link="/knauf-orderoverview"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </CaseCardGrid>
       </Section>
 
@@ -234,16 +200,16 @@ As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construct
             gap: "24px",
           }}
         >
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseSectionSummary
               copy="
 As the Chapter Lead UX, I led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
               //imgURL="./img/PanelTestImages/one.jpg"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </Panels>
         <CaseCardGrid>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseCard
               eyebrow="Case Study"
               eyebrowColor1="#3b177d"
@@ -253,8 +219,8 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               imgURL="./img/Knauf/CoverKnaufCom.png"
               comingSoon="true"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Deep Dive"
               eyebrowColor1="#3b177d"
@@ -264,8 +230,8 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               imgURL="./img/Knauf/CoverProductWorkflow.png"
               comingSoon="true"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="Deep Dive"
               eyebrowColor1="#3b177d"
@@ -275,7 +241,7 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               imgURL="./img/Knauf/CoverUXMetrics.png"
               comingSoon="true"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </CaseCardGrid>
       </Section>
       <Section>
@@ -284,15 +250,15 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
           subline="Leading the digital relaunch of a premium lighting brand."
         />
         <Panels style={{ marginBottom: "48px" }}>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseSectionSummary
               copy="As the UX Manager & Product Owner, I led Occhio's website relaunch and e-commerce debut, blending brand, user experience and performance to redefine Occhio's digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
               //imgURL="./img/PanelTestImages/one.jpg"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </Panels>
         <CaseCardGrid>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseCard
               eyebrow="Case Study"
               eyebrowColor1="#FF0000"
@@ -303,13 +269,13 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               imgURL="./img/Occhio/Occhio-Website.png"
               link="/occhio"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </CaseCardGrid>
       </Section>
       <Section>
         <SectionHead divider="Side Projects" />
         <CaseCardGrid>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <CaseCard
               eyebrow="Website / eCommerce"
               eyebrowColor2="#d9edca"
@@ -319,8 +285,8 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               imgURL="./img/FeatheredHooks/CoverFeatheredHooks.png"
               link="/feathered-hooks"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <CaseCard
               eyebrow="App"
               eyebrowColor2="#6a210d"
@@ -330,7 +296,7 @@ As the Chapter Lead UX, I led the product design of Knauf's global websites unif
               imgURL="./img/CookCook/CoverCookCook.png"
               link="https://www.cookcook.it/"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </CaseCardGrid>
       </Section>
     </Content>

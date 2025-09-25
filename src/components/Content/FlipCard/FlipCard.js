@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 import { Devices, Colors } from "../../DesignSystem";
 
@@ -10,6 +8,7 @@ import FlipCardCopy from "./FlipCardCopy";
 import { mdiPlus } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useState } from "react";
+import InViewMotion from "../../animation/InViewMotion";
 
 const FlipCard = ({
   eyebrow,
@@ -126,39 +125,6 @@ const FlipCard = ({
     }
   `;
 
-  function FadeInWhenVisible({ children }) {
-    const controls = useAnimation();
-    const [ref, inView] = useInView();
-
-    useEffect(() => {
-      if (inView) {
-        controls.start("visible");
-      }
-    }, [controls, inView]);
-
-    return (
-      <motion.div
-        ref={ref}
-        animate={controls}
-        initial="hidden"
-        transition={{ duration: 0.3 }}
-        variants={{
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.3,
-            },
-          },
-          hidden: {
-            opacity: 0,
-          },
-        }}
-      >
-        {children}
-      </motion.div>
-    );
-  }
-
   const flipCard = (e) => {
     e.preventDefault();
     setIsFlipped(!isFlipped);
@@ -188,9 +154,9 @@ const FlipCard = ({
         )}
         <br />
         {copy && (
-          <FadeInWhenVisible>
+          <InViewMotion>
             <FlipCardCopy textArray={copyBack} />{" "}
-          </FadeInWhenVisible>
+          </InViewMotion>
         )}
         {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
       </BackContent>

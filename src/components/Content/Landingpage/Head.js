@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
@@ -8,39 +8,7 @@ import HeadSubline from "./HeadSubline";
 import HeadDivider from "./HeadDivider";
 
 import Button from "../../Button/Button";
-
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import InViewMotion from "../../animation/InViewMotion";
 
 const Head = ({ divider, headline, subline, cta }) => {
   const Head = styled.div`
@@ -82,7 +50,7 @@ const Head = ({ divider, headline, subline, cta }) => {
     }
   `;
   return (
-    <FadeInWhenVisible>
+    <InViewMotion staggerChildren={null}>
       <Head>
         {divider && <HeadDivider text={divider} />}
         {headline && <HeadHeadline headline={headline} />}
@@ -97,7 +65,7 @@ const Head = ({ divider, headline, subline, cta }) => {
           />
         )}
       </Head>
-    </FadeInWhenVisible>
+    </InViewMotion>
   );
 };
 

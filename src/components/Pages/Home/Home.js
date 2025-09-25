@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
-
-import { useInView } from "react-intersection-observer";
+import React from "react";
 
 import ReactGA from "react-ga4";
 
@@ -24,6 +21,7 @@ import { Check, X } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 import Lightbox from "../../Lightbox/Lightbox";
+import InViewMotion from "../../animation/InViewMotion";
 import {
   DeliverablesGrid,
   PageContent,
@@ -172,80 +170,6 @@ const ROIImprovementValue = styled.div`
     font-size: 32px;
   }
 `;
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  const [hasAnimated, setHasAnimated] = React.useState(false);
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [controls, inView, hasAnimated]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function MoveUpWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  const [hasAnimated, setHasAnimated] = React.useState(false);
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [controls, inView, hasAnimated]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.6 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const Hero = styled.div`
   /* Auto Layout */
@@ -1587,25 +1511,25 @@ const Content = (props) => {
         </ProblemHeadline>
         <ProblemSubline>Does this sound familiar?</ProblemSubline>
         <ProblemList>
-          <MoveUpWhenVisible key="problem-1">
+          <InViewMotion variant="moveUp" key="problem-1">
             <ProblemListItem>
               <ProblemHighlight>Low Activation →</ProblemHighlight> New Users
               sign up but never reach their Aha Moment.
             </ProblemListItem>
-          </MoveUpWhenVisible>
+          </InViewMotion>
 
-          <MoveUpWhenVisible key="problem-2">
+          <InViewMotion variant="moveUp" key="problem-2">
             <ProblemListItem>
               <ProblemHighlight>Weak Retention →</ProblemHighlight> Even
               activated users drop off before forming habits.
             </ProblemListItem>
-          </MoveUpWhenVisible>
-          <MoveUpWhenVisible key="problem-3">
+          </InViewMotion>
+          <InViewMotion variant="moveUp" key="problem-3">
             <ProblemListItem>
               <ProblemHighlight>Poor Conversion →</ProblemHighlight> Too few
               free users upgrade to paid plans.
             </ProblemListItem>
-          </MoveUpWhenVisible>
+          </InViewMotion>
         </ProblemList>
         <ProblemConclusion>
           40% of startups die because of bad traction
@@ -1726,7 +1650,7 @@ const Content = (props) => {
         </SolutionSubline>
 
         <SolutionCards>
-          <FadeInWhenVisible>
+          <InViewMotion>
             <SolutionCard>
               <SolutionBody>
                 <SolutionParagraph>
@@ -1755,8 +1679,8 @@ const Content = (props) => {
                 <SolutionPicture src="./img/Landingpage/Solutions/Notes.png" />
               </SolutionBody>
             </SolutionCard>
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <SolutionCard>
               <SolutionBody>
                 <SolutionParagraph style={{ order: "2" }}>
@@ -1785,8 +1709,8 @@ const Content = (props) => {
                 <SolutionPicture src="./img/Landingpage/Solutions/Week2.png" />
               </SolutionBody>
             </SolutionCard>
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <SolutionCard>
               <SolutionBodyMac>
                 <SolutionParagraph>
@@ -1817,7 +1741,7 @@ const Content = (props) => {
                 <SolutionPictureBig src="./img/Landingpage/Solutions/Assessment1.png" />
               </SolutionBodyMac>
             </SolutionCard>
-          </FadeInWhenVisible>
+          </InViewMotion>
         </SolutionCards>
         <Lightbox
           isOpen={isROICalculatorOpen}
@@ -2287,15 +2211,15 @@ const Content = (props) => {
       <PaddedPageSection>
         <Headline2 headline="Questions? Answers." />
 
-        <MoveUpWhenVisible>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Establish empathy together as a team"
             //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
             headline="Do you offer discounts?"
             copy="Yes! For Non-Profits I offer discounts. Please schedule a call and let's talk."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Collectively define and agree on problems"
             //copy="Take time to understand and clearly define your user’s problems. Feeding the team solutions will only lead to demoralisation; people like being empowered and to have a chance to be creative. Let the team stretch their skills, and give them time to truly understand the problem."
@@ -2306,23 +2230,23 @@ A completed onboarding journey mapping canvas
 
 Wireframe mockups with detailed recommendations for updating your onboarding screens, user flows, and empty states."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Prototype and test with real users"
             //copy="Fake it until you can make it. Spend the minimum amount of time to create the closest to the real thing. You’re looking for feedback on the idea, not whether your design looks finished. Test with real representative users."
             headline="How long does the process take?"
             copy="End-to-end, the process takes roughly two weeks to complete. However, this timeline is highly dependent on how quick and timely your team can provide feedback on our iterations. Be prepared to sync with your team in a timely manner in order to keep the final stage of the process moving forward."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Group ideation"
             //copy="Good ideas can come from anyone. Waiting for one member of the team to create the best idea will take time, and will be biassed towards their experience. It doesn’t have to take long, there are exercises designed to generate lots of ideas quickly."
             headline="Can you also help with ongoing optimizations?"
             copy="Yes, I offer a retainer service to continuously refine, test and optimize your onboarding flow and other user journeys based on real user data and feedback. I also advise in other areas of product-led growth."
           />
-        </MoveUpWhenVisible>
+        </InViewMotion>
       </PaddedPageSection>
       <PaddedPageSection>
         <Hero>
