@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { useInView } from "react-intersection-observer";
 import Trend from "react-trend";
 
 //Components
@@ -20,113 +18,7 @@ import Button from "../../Button/Button";
 import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import { mdiEmail } from "@mdi/js";
-
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function MoveUpWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.6 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function RevealWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.9 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import InViewMotion from "../../animation/InViewMotion";
 
 const Content = (props) => {
   const Content = styled.div`
@@ -340,39 +232,39 @@ const Content = (props) => {
           headline={"Alexandros Shomper"}
           copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
         />
-        <RevealWhenVisible>
+        <InViewMotion variant="reveal">
           <SectionDivider text={"Here’s a TL;DR of my career:"} />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="reveal">
           <SectionCopy
             copy={
               "Education in Arts & Marketing, and self-taught developer 👨🏻‍💻 (still building own side projects)"
             }
           />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="reveal">
           <SectionCopy
             copy={
               "Successful career in advertising and marketing, creating global marketing campaigns and brand experiences"
             }
           />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="reveal">
           <SectionCopy
             copy={
               "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
             }
           />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="reveal">
           <SectionCopy
             copy={
               "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
             }
           />
-        </RevealWhenVisible>
+        </InViewMotion>
 
-        <RevealWhenVisible>
+        <InViewMotion variant="reveal">
           <AnnotationWrapper
             style={{ color: Colors.primaryText.mediumEmphasis }}
           >
@@ -419,14 +311,14 @@ const Content = (props) => {
               icon={mdiFilePdfBox}
             />
           </AnnotationWrapper>
-        </RevealWhenVisible>
+        </InViewMotion>
       </Section>
       <Section>
         <SectionHead
           headline="Human Centered Leadership"
           subline="I believe happy and healthy teams are the most productive, and innovative teams."
         />
-        <FadeInWhenVisible>
+        <InViewMotion>
           <CardPanels>
             <ListPanel
               eyebrow="Autonomy"
@@ -452,14 +344,14 @@ const Content = (props) => {
               //imgURL="./img/PanelTestImages/two.jpg"
             />
           </CardPanels>
-        </FadeInWhenVisible>
+        </InViewMotion>
       </Section>
       <Section>
         <SectionHead
           headline="My Principles"
           subline="Give meaning to actions and ideas."
         />
-        <FadeInWhenVisible>
+        <InViewMotion>
           <CardPanels>
             <ListPanel
               eyebrow="Data Driven/Informed"
@@ -497,7 +389,7 @@ const Content = (props) => {
               //imgURL="./img/PanelTestImages/two.jpg"
             />
           </CardPanels>
-        </FadeInWhenVisible>
+        </InViewMotion>
       </Section>
 
       <Section>
@@ -563,39 +455,39 @@ const Content = (props) => {
           copy="Innovative products need a flexible but repeatable process of making data-driven & customer-centric product decisions."
           //copy="Aproaching problems creatively with well-though and well-executed solutions. Developing feasibility, desirability and viability ideas that improve people's life in some manner, but at the same time it needs to be work and make business sense."
         />
-        <MoveUpWhenVisible>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Establish empathy together as a team"
             //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
             headline="Discover"
             copy="It all starts with observing, learning, and understanding. Understand the business, the brand and the users. Frame the problem and validate it. Distill and weight the user insights and hypotheses. What are we aiming for?"
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Collectively define and agree on problems"
             //copy="Take time to understand and clearly define your user’s problems. Feeding the team solutions will only lead to demoralisation; people like being empowered and to have a chance to be creative. Let the team stretch their skills, and give them time to truly understand the problem."
             headline="Define"
             copy="Goals become actions. What are the Use Cases, how do the Personae & the Journey look like. Identify the most important touchpoints. Which strategic models can be used to bring business, brand, and user together."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Prototype and test with real users"
             //copy="Fake it until you can make it. Spend the minimum amount of time to create the closest to the real thing. You’re looking for feedback on the idea, not whether your design looks finished. Test with real representative users."
             headline="Design"
             copy="Pick the most important touchpoints and hypotheses. Start building and testing. Build desire and loyalty. Users will only stick around, if you can turn your findings to an unforgettable experience."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Group ideation"
             //copy="Good ideas can come from anyone. Waiting for one member of the team to create the best idea will take time, and will be biassed towards their experience. It doesn’t have to take long, there are exercises designed to generate lots of ideas quickly."
             headline="Develop"
             copy="Now it's time to manifest the user experience. Pick an essential set of features to launch the product with to get the ball rolling. Translate the design into code, and keep an eye on the quality of the outcome. Learn. Iterate."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Establish empathy together as a team"
             //copy="It’s important to understand your users together as a team. Doing so eventually weaves benefit into the product at every level. By increasing your team’s exposure to users, you will increase the user’s satisfaction of the product."
@@ -603,8 +495,8 @@ const Content = (props) => {
             headline="Deliver"
             copy="It's about implementing the product in the operating team. Put the pieces in place so that everybody is on board and speaks the same language. Create style guides, user experience guidelines, and documentation. Bring clarity without being too restrictive."
           />
-        </MoveUpWhenVisible>
-        <MoveUpWhenVisible>
+        </InViewMotion>
+        <InViewMotion variant="moveUp">
           <ListBigText
             //headline="Iterate, iterate, iterate"
             //copy="It isn’t enough to run through a design process once. Learn from your users, learn from your team, and iterate. Your process will mature and you’ll be able to run through it easier and faster on each pass. Being agile is to be set up to react to new information fast."
@@ -612,7 +504,7 @@ const Content = (props) => {
             headline="Distribute"
             copy="Measure the performance of the product, and the engagement of the users. Learn. Iterate. Iterate. Iterate. Find out what attracts new users. Continuously work on the Aha-Moment & Stickiness to drive retention and loyalty."
           />
-        </MoveUpWhenVisible>
+        </InViewMotion>
       </Section>
     </Content>
   );
