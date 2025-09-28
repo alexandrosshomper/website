@@ -3,12 +3,13 @@ import React from "react";
 import createReportPage, {
   DEFAULT_META_DESCRIPTION,
 } from "./createReportPage";
+import { ArticleSection } from "../../DesignSystem";
 
 const metaTitle =
   "Four industry shifts making user onboarding & activation indispensible | Alexandros Shomper";
 
 const renderContent = ({ LeadGenerationForm }) => (
-  <section>
+  <ArticleSection>
     <h2>Introduction</h2>
     <p>
       In today's challenging startup landscape, acquiring and retaining users
@@ -58,7 +59,7 @@ const renderContent = ({ LeadGenerationForm }) => (
     <div data-report-form>
       <LeadGenerationForm />
     </div>
-  </section>
+  </ArticleSection>
 );
 
 export default createReportPage({
