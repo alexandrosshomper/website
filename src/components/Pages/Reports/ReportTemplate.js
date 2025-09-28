@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import { Colors, Devices } from "../../DesignSystem";
+import { ArticleStyles, Colors, Devices } from "../../DesignSystem";
 
 import ReportSubline from "../../Content/Report/ReportSubline";
 import ReportTitle from "../../Content/Report/ReportTitle";
@@ -21,6 +21,10 @@ const Section = styled.section`
   width: 100%;
   align-self: stretch;
   flex-grow: 0;
+`;
+
+const ReportArticle = styled.article`
+  ${ArticleStyles};
 `;
 
 const Paragraph = styled.section`
@@ -107,7 +111,7 @@ const ReportTemplate = ({
         <ReportTitle headline={title} />
         {subline ? <ReportSubline subline={subline} /> : null}
         <HeaderSpacing />
-        {children}
+        {children ? <ReportArticle>{children}</ReportArticle> : null}
 
         <LeadGenerationForm {...leadSuccessLink} />
       </Section>

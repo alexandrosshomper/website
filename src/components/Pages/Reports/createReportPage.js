@@ -1,7 +1,6 @@
 import React from "react";
 
 import ReportTemplate from "./ReportTemplate";
-import ReportContent from "../../Content/Report/ReportContent";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
 
 const DEFAULT_LEAD_GENERATION_FORM_PROPS = {
@@ -44,13 +43,11 @@ const createReportPage = ({
       subline={subline}
       leadSuccessLink={mergedLeadGenerationFormProps}
     >
-      <ReportContent>
-        {typeof renderContent === "function"
-          ? renderContent({
-              LeadGenerationForm: LeadGenerationFormWithDefaults,
-            })
-          : null}
-      </ReportContent>
+      {typeof renderContent === "function"
+        ? renderContent({
+            LeadGenerationForm: LeadGenerationFormWithDefaults,
+          })
+        : null}
     </ReportTemplate>
   );
 

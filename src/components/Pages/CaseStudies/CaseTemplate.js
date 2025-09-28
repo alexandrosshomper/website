@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import { Helmet } from "react-helmet";
 
+import { ArticleStyles } from "../../DesignSystem";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
@@ -18,6 +19,10 @@ const Section = styled.section`
   width: 100%;
   align-self: stretch;
   flex-grow: 0;
+`;
+
+const CaseArticle = styled.article`
+  ${ArticleStyles};
 `;
 
 const HeaderSpacing = () => (
@@ -70,7 +75,7 @@ const CaseTemplate = ({
         {subline ? <CaseSectionHead subline={subline} /> : null}
         {renderHero()}
         <HeaderSpacing />
-        {children}
+        {children ? <CaseArticle>{children}</CaseArticle> : null}
       </Section>
     </ContentWrapper>
   );

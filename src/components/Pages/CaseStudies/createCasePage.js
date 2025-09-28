@@ -1,7 +1,6 @@
 import React from "react";
 
 import CaseTemplate from "./CaseTemplate";
-import CaseContent from "../../Content/Case/CaseContent";
 
 const createCasePage = ({
   metaTitle,
@@ -25,9 +24,7 @@ const createCasePage = ({
       subline={subline}
       hero={hero}
     >
-      <CaseContent>
-        {typeof renderContent === "function" ? renderContent() : null}
-      </CaseContent>
+      {typeof renderContent === "function" ? renderContent() : null}
     </CaseTemplate>
   );
 
