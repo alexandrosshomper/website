@@ -1,12 +1,13 @@
 import React from "react";
 
 import createReportPage, { DEFAULT_META_DESCRIPTION } from "./createReportPage";
+import { ArticleSection } from "../../DesignSystem";
 
 const metaTitle =
   "Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth | Alexandros Shomper";
 
 const renderContent = ({ LeadGenerationForm }) => (
-  <section>
+  <ArticleSection>
     <h2>Introduction</h2>
     <p>
       For early-stage and growth startup founders, the path to sustainable
@@ -84,7 +85,7 @@ const renderContent = ({ LeadGenerationForm }) => (
       If you're trying to turn new users into loyal, paying customers, this
       whitepaper is for you.
     </p>
-  </section>
+  </ArticleSection>
 );
 
 const OASaasGrowth = createReportPage({

@@ -10,7 +10,7 @@ import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
 import BookAnAudit from "../../LeadGen/BookAnAudit";
 
 import asanaFlow from "../../../data/flows/asana.json";
-import { Colors } from "../../DesignSystem";
+import { Colors, ArticleSection } from "../../DesignSystem";
 
 const metaTitle =
   "Asana Case Study – Onboarding and Activation | Alexandros Shomper";
@@ -25,7 +25,7 @@ const greenArrowStyle = {
 
 const renderContent = () => (
   <>
-    <section>
+    <ArticleSection>
       <CaseImage imgURL="/img/case_studies/asana/Cover@2x.png" size="M" />
       <p>
         In this case study we’ll take a look at asana’s onboarding and activation
@@ -43,17 +43,17 @@ const renderContent = () => (
         messaging, signup, to activation metrics.
       </p>
       <p>Let’s take a look.</p>
-    </section>
+    </ArticleSection>
 
-    <section data-case-content="wide">
+    <ArticleSection $width="wide" $disableTypography>
       <CaseSectionHead
         headline="Audit Walkthrough"
         subline="A step-by-step look at the onboarding journey⁠"
       />
       <CaseStudySlider slides={asanaCaseStudy} />
-    </section>
+    </ArticleSection>
 
-    <section>
+    <ArticleSection>
       <CaseSectionHead
         headline="Key Takeaways"
         subline="While Asana offers a strong team-oriented setup with thorough segmentation, it provides little effort payoff for the user and misses personalization opportunities.⁠"
@@ -64,9 +64,9 @@ const renderContent = () => (
         <li>Activation heavily dependent on team participation</li>
         <li>Personal users may feel overwhelmed by enterprise-focused features</li>
       </ul>
-    </section>
+    </ArticleSection>
 
-    <section>
+    <ArticleSection>
       <CaseSectionHead
         headline="Onboarding Flow Evaluation"
         subline="The onboarding process shows both strengths and areas for improvement"
@@ -110,9 +110,9 @@ const renderContent = () => (
           Limited support for personal use case activation
         </li>
       </ul>
-    </section>
+    </ArticleSection>
 
-    <section>
+    <ArticleSection>
       <CaseSectionHead
         headline="Recommendations"
         subline="Based on the audit findings, several opportunities for improvement exist"
@@ -181,16 +181,16 @@ const renderContent = () => (
 
       <h3>Activation</h3>
       <p>Activation heavily dependent on team participation.</p>
-    </section>
+    </ArticleSection>
 
-    <section data-case-content="wide">
+    <ArticleSection $width="wide" $disableTypography>
       <CaseSectionHead headline="Flow" />
       <FlowCarousel data={asanaFlow} appname="Asana" />
-    </section>
+    </ArticleSection>
 
-    <section data-case-content="wide">
+    <ArticleSection $width="wide">
       <BookAnAudit />
-    </section>
+    </ArticleSection>
   </>
 );
 
