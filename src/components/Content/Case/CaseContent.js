@@ -49,12 +49,12 @@ const StyledCaseContent = styled.article`
     margin-right: 0;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  :where(h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6):not([class]) {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 550;
@@ -65,7 +65,7 @@ const StyledCaseContent = styled.article`
     width: 100%;
   }
 
-  h2 {
+  :where(h2):not([class]) {
     font-size: 28px;
     font-weight: 500;
     line-height: 109%;
@@ -75,7 +75,7 @@ const StyledCaseContent = styled.article`
     }
   }
 
-  h3 {
+  :where(h3):not([class]) {
     font-size: 30px;
     font-weight: 500;
     line-height: 115%;
@@ -86,7 +86,7 @@ const StyledCaseContent = styled.article`
     background-clip: text;
   }
 
-  h4 {
+  :where(h4):not([class]) {
     font-size: 22px;
     font-weight: 500;
     line-height: 115%;
@@ -94,7 +94,7 @@ const StyledCaseContent = styled.article`
     line-height: 24px;
     margin-bottom: 8px;
   }
-  p {
+  :where(p):not([class]) {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -106,8 +106,7 @@ const StyledCaseContent = styled.article`
     width: 100%;
   }
 
-  ul,
-  ol {
+  :where(ul, ol):not([class]) {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -125,27 +124,27 @@ const StyledCaseContent = styled.article`
     padding-inline-start: 32px;
   }
 
-  ul {
+  :where(ul):not([class]) {
     list-style-type: disc;
   }
 
-  li {
+  :where(li):not([class]) {
     margin-bottom: 8px;
   }
 
-  li:last-child {
+  :where(li:last-child):not([class]) {
     margin-bottom: 0;
   }
 
-  strong {
+  :where(strong):not([class]) {
     font-weight: 700;
   }
 
-  em {
+  :where(em):not([class]) {
     font-style: italic;
   }
 
-  a {
+  :where(a):not([class]) {
     color: ${Colors.blue};
     text-decoration: underline;
     text-decoration-thickness: 2px;
