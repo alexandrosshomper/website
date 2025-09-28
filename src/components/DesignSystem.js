@@ -318,3 +318,59 @@ export const ArticleSection = styled.section`
 ArticleSection.defaultProps = {
   "data-article-section": true,
 };
+
+export const ArticleHeadline = styled.h1`
+  direction: ltr;
+  display: block;
+  margin: 0 0 4px;
+
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+  width: 90%;
+  color: ${Colors.primaryText.highEmphasis};
+
+  ${Devices.tabletS} {
+    width: 520px;
+    font-size: 50px;
+    line-height: 120%;
+  }
+
+  ${Devices.tabletM} {
+    width: 520px;
+  }
+
+  ${Devices.laptopS} {
+    width: 650px;
+  }
+`;
+
+export const ArticleSubline = styled.p`
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 550;
+  letter-spacing: 0.04rem;
+  margin: 0 0 8px;
+
+  color: ${Colors.primaryText.mediumEmphasis};
+  font-size: 28px;
+  line-height: 112%;
+  text-align: left;
+  width: 90%;
+
+  ${Devices.tabletS} {
+    width: 520px;
+    font-size: 36px;
+    line-height: 112%;
+  }
+
+  ${Devices.tabletM} {
+    width: 520px;
+  }
+
+  ${Devices.laptopS} {
+    width: 650px;
+  }
+`;
