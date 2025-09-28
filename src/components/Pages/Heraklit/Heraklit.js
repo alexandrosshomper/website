@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 //Components
 import { Devices } from "../../DesignSystem";
@@ -11,38 +9,7 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import NFTGallery from "../../Content/NFTGallery/NFTGallery";
 import OpenSeaGallery from "../../Content/NFTGallery/OpenSeaGallery";
 import NFTCollectionAnalytics from "../../Content/NFTCollectionAnalytics/NFTCollectionAnalytics";
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import InViewMotion from "../../animation/InViewMotion";
 
 const Content = (props) => {
   const Content = styled.div`
@@ -127,7 +94,7 @@ const Content = (props) => {
           <OpenSeaGallery offset="0" limit="40" slug="the-fungible-by-pak" />
           <OpenSeaGallery offset="0" limit="2" slug="heraklit" />
 
-          <FadeInWhenVisible>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -138,8 +105,8 @@ const Content = (props) => {
               price="0.1"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -150,8 +117,8 @@ const Content = (props) => {
               price="0.5"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -162,8 +129,8 @@ const Content = (props) => {
               price="0.2"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -174,8 +141,8 @@ const Content = (props) => {
               price="0.9"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -186,8 +153,8 @@ const Content = (props) => {
               price="0.5"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -198,8 +165,8 @@ const Content = (props) => {
               price="0.2"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -210,8 +177,8 @@ const Content = (props) => {
               price="0.4"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </InViewMotion>
+          <InViewMotion>
             <NFTGallery
               eyebrow="Heraklit"
               eyebrowColor1="#FF0000"
@@ -222,7 +189,7 @@ const Content = (props) => {
               price="0.1"
               link="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/111589776352736674838778066049010664931120148642497133493220937301359675310081"
             />
-          </FadeInWhenVisible>
+          </InViewMotion>
         </NFTGalleryGrid>
       </Section>
     </Content>
