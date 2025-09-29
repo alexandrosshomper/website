@@ -5,43 +5,34 @@ import { Colors, Devices } from "../../DesignSystem";
 
 const FlowItemCard = styled.div`
   border-radius: 12px;
-  width: 70%;
+  width: 480px;
   height: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: block;
   flex-shrink: 0;
   overflow: hidden;
   border-color: rgb(194, 194, 194);
   border-width: 1px;
   border-style: solid;
-  scroll-snap-align: center;
-
-  &:first-of-type {
-    scroll-snap-align: start;
-  }
-
-  &:last-of-type {
-    scroll-snap-align: end;
-  }
-
-  ${Devices.tabletS} {
-    width: 480px;
-  }
 `;
 
 const FlowItemWrapper = styled.div`
+  position: relative;
   width: 100%;
+  aspect-ratio: 8 / 5;
 `;
 
 const FlowItemLink = styled.a`
   display: flex;
+  position: absolute;
+  inset: 0px;
   border-radius: 12px;
 
   overflow: hidden;
   cursor: zoom-in;
 
   width: 100%;
+  height: 100%;
 
   &:hover {
     color: ${Colors.primaryText.highEmphasis};
@@ -54,17 +45,23 @@ const FlowItemLink = styled.a`
 
 const FlowItemImage = styled.div`
   flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  ${Devices.tabletS} {
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
+  }
 `;
 
 const FlowItemPicture = styled.img`
   border-radius: 12px;
-  object-fit: contain;
+  object-position: top;
+  object-fit: cover;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
 `;
 
 const FlowItem = ({ image }) => {
