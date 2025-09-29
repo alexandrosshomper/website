@@ -33,7 +33,7 @@ const ReportEyebrow = ({ text, color1, color2 }) => {
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
 
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
     line-height: 120%;
     width: 90%;
@@ -51,7 +51,7 @@ const ReportEyebrow = ({ text, color1, color2 }) => {
     }
     ${Devices.laptopS} {
       width: 650px;
-
+    }
   `;
 
   return <ReportEyebrow>{text}</ReportEyebrow>;
