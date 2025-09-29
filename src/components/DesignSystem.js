@@ -374,3 +374,152 @@ export const ArticleSubline = styled.p`
     width: 650px;
   }
 `;
+
+const OverviewPageHeadline = styled.h2`
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  color: ${Colors.primaryText.highEmphasis};
+  margin-bottom: 8px;
+  margin-top: 0px;
+
+  font-size: 44px;
+  line-height: 109%;
+  text-align: left;
+
+  ${Devices.tabletS} {
+    text-align: left;
+    width: 564px;
+  }
+
+  ${Devices.tabletM} {
+    width: 708px;
+    font-size: 44px;
+    line-height: 114%;
+  }
+
+  ${Devices.laptopS} {
+    width: 852px;
+    font-size: 64px;
+    line-height: 131%;
+  }
+
+  ${Devices.laptopM} {
+    width: 996px;
+    font-size: 80px;
+    line-height: 114%;
+  }
+`;
+
+const OverviewPageSubline = styled.p`
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+  color: ${Colors.primaryText.mediumEmphasis};
+  margin-bottom: 8px;
+  margin-top: 0px;
+
+  font-size: 32px;
+  line-height: 112%;
+  text-align: left;
+  width: 100%;
+
+  ${Devices.tabletS} {
+    text-align: left;
+    width: 576px;
+  }
+
+  ${Devices.tabletM} {
+    width: 708px;
+    font-size: 36px;
+    line-height: 111%;
+  }
+
+  ${Devices.laptopS} {
+    width: 852px;
+    font-size: 48px;
+    line-height: 100%;
+  }
+
+  ${Devices.laptopM} {
+    width: 1141px;
+    font-size: 60px;
+    line-height: 113%;
+  }
+`;
+
+const OverviewPageCopy = styled.p`
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: ${Colors.primaryText.highEmphasis};
+  margin: 0px 24px 24px 24px;
+
+  font-size: 20px;
+  line-height: 120%;
+  text-align: left;
+
+  ${Devices.tabletS} {
+    text-align: left;
+    width: 576px;
+  }
+
+  ${Devices.tabletM} {
+    width: 720px;
+    font-size: 36px;
+    line-height: 111%;
+    margin-bottom: 32px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  ${Devices.laptopS} {
+    width: 864px;
+    font-size: 36px;
+    line-height: 100%;
+    margin-bottom: 38px;
+  }
+
+  ${Devices.laptopM} {
+    width: 1152px;
+    font-size: 42px;
+    line-height: 113%;
+    margin-bottom: 46px;
+  }
+`;
+
+const OverviewPageSummary = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
+
+  margin: 0px 24px 60px 24px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  ${Devices.tabletS} {
+    width: 100%;
+    margin: 0px 0px 60px 0px;
+  }
+
+  ${Devices.tabletM} {
+    width: 90%;
+  }
+
+  ${Devices.laptop} {
+    width: 80%;
+  }
+`;
+
+export const OverviewPages = {
+  Headline: OverviewPageHeadline,
+  Subline: OverviewPageSubline,
+  Copy: OverviewPageCopy,
+  Summary: OverviewPageSummary,
+};
