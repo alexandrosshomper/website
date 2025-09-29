@@ -25,6 +25,12 @@ const CarouselViewport = styled.div`
   border-radius: inherit;
   width: 100%;
   height: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const CarouselContent = styled.div`
@@ -33,11 +39,12 @@ const CarouselContent = styled.div`
 
 const CarouselGrid = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 16px;
   padding: 4px 20px 10px 20px;
-  width: min-content;
+  width: max-content;
 
   ${Devices.tabletS} {
+    gap: 24px;
     padding: 4px 330px 10px 330px;
   }
 `;
