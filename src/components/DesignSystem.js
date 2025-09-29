@@ -453,7 +453,7 @@ const OverviewPageSubline = styled.p`
 const OverviewPageCopy = styled.p`
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   color: ${Colors.primaryText.highEmphasis};
   margin: 0px 24px 24px 24px;
 
