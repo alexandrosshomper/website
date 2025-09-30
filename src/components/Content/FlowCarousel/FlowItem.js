@@ -14,6 +14,8 @@ const FlowItemCard = styled.div`
   border-color: rgb(194, 194, 194);
   border-width: 1px;
   border-style: solid;
+  scroll-snap-align: ${(props) => props.snapAlignment};
+  scroll-snap-stop: always;
 
   ${Devices.tabletS} {
     width: 480px;
@@ -68,9 +70,9 @@ const FlowItemPicture = styled.img`
   height: 100%;
 `;
 
-const FlowItem = ({ image }) => {
+const FlowItem = ({ image, snapAlignment = "center" }) => {
   return (
-    <FlowItemCard>
+    <FlowItemCard snapAlignment={snapAlignment}>
       <FlowItemWrapper>
         <FlowItemLink
           href={image || undefined}

@@ -25,6 +25,12 @@ const CarouselViewport = styled.div`
   border-radius: inherit;
   width: 100%;
   height: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 20px;
+
+  ${Devices.tabletS} {
+    scroll-padding-inline: 330px;
+  }
 `;
 
 const CarouselContent = styled.div`
@@ -98,9 +104,19 @@ const FlowCarousel = ({ data, appname, url }) => {
         <CarouselViewport>
           <CarouselContent>
             <CarouselGrid>
-              {data.map((item) => (
-                <FlowItem key={item.id} {...item} image={item.image} />
-              ))}
+              {data.map((item, index) => {
+                const isFirst = index === 0;
+                const isLast = index === data.length - 1;
+
+                return (
+                  <FlowItem
+                    key={item.id}
+                    {...item}
+                    image={item.image}
+                    snapAlignment={isFirst ? "start" : isLast ? "end" : "center"}
+                  />
+                );
+              })}
             </CarouselGrid>
           </CarouselContent>
         </CarouselViewport>
