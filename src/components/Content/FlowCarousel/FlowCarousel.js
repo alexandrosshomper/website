@@ -41,7 +41,7 @@ const CarouselGrid = styled.div`
   display: flex;
   gap: 24px;
   padding: 4px 20px 10px 20px;
-  width: min-content;
+  width: 80%;
 
   ${Devices.tabletS} {
     padding: 4px 330px 10px 330px;
@@ -113,7 +113,9 @@ const FlowCarousel = ({ data, appname, url }) => {
                     key={item.id}
                     {...item}
                     image={item.image}
-                    snapAlignment={isFirst ? "start" : isLast ? "end" : "center"}
+                    snapAlignment={
+                      isFirst ? "start" : isLast ? "end" : "center"
+                    }
                   />
                 );
               })}

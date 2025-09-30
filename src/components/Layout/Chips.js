@@ -8,6 +8,7 @@ export const ChipRow = styled.div`
   flex-wrap: wrap;
   gap: 12px;
   width: 90%;
+  margin-top: 12px;
 
   ${Devices.tabletS} {
     width: 564px;
@@ -25,7 +26,7 @@ export const ChipPill = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  color: ${Colors.primaryText.highEmphasis};
+  color: ${Colors.greyLight};
   background-color: white;
   border-radius: 20px;
   padding: 8px 16px 8px 16px;
