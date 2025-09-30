@@ -5,7 +5,7 @@ import { Colors, Devices } from "../../DesignSystem";
 
 const FlowItemCard = styled.div`
   border-radius: 12px;
-  width: 480px;
+  width: 100%;
   height: 100%;
   margin: 0;
   display: block;
@@ -14,6 +14,10 @@ const FlowItemCard = styled.div`
   border-color: rgb(194, 194, 194);
   border-width: 1px;
   border-style: solid;
+
+  ${Devices.tabletS} {
+    width: 480px;
+  }
 `;
 
 const FlowItemWrapper = styled.div`
