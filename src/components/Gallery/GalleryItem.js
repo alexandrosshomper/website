@@ -46,9 +46,11 @@ const GalleryItem = ({
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const rotationIntervalRef = useRef(null);
+  const isPointerInsideRef = useRef(false);
   const preloadedImagesRef = useRef([]);
 
   const clearRotation = useCallback(() => {
+    isPointerInsideRef.current = false;
     if (rotationIntervalRef.current) {
       clearInterval(rotationIntervalRef.current);
       rotationIntervalRef.current = null;
@@ -90,7 +92,13 @@ const GalleryItem = ({
 
     clearRotation();
 
+    isPointerInsideRef.current = true;
+
     rotationIntervalRef.current = setInterval(() => {
+      if (!isPointerInsideRef.current) {
+        return;
+      }
+
       setActiveImageIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % images.length;
         return nextIndex;
@@ -99,6 +107,7 @@ const GalleryItem = ({
   }, [clearRotation, comingSoon, images.length]);
 
   const stopRotation = useCallback(() => {
+    isPointerInsideRef.current = false;
     clearRotation();
     setActiveImageIndex(0);
   }, [clearRotation]);
@@ -389,8 +398,6 @@ const GalleryItem = ({
         href={comingSoon ? undefined : path}
         onMouseEnter={startRotation}
         onMouseLeave={stopRotation}
-        onFocus={startRotation}
-        onBlur={stopRotation}
       >
         <GalleryItemContent>
           <GalleryCoverImage>
