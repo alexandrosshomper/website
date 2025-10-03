@@ -1,0 +1,1416 @@
+{
+  "name": "Playbook → Content Chain (v3, full)",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "event": "pagedUpdatedInDatabase",
+        "databaseId": {
+          "__rl": true,
+          "value": "8829ea4d-ee14-44fe-9f03-293dd96521ac",
+          "mode": "list",
+          "cachedResultName": "Playbooks",
+          "cachedResultUrl": "https://www.notion.so/8829ea4dee1444fe9f03293dd96521ac"
+        }
+      },
+      "id": "e7c4ecb6-b57f-43b0-8492-88d5c12afad3",
+      "name": "Notion Trigger — Playbooks Updated",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3728,
+        -304
+      ],
+      "notesInFlow": true,
+      "retryOnFail": true,
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "const out=[];for(const item of $input.all()){const id=item.json.id;const publicUrl=item.json[\"Public URL\"]||null;const internalUrl=item.json[\"Internal URL\"]||null;const pageIdFromFormula=item.json[\"Page ID\"]||null;let pageId=null;if(pageIdFromFormula&&/^[a-f0-9]{32}$/i.test(pageIdFromFormula))pageId=pageIdFromFormula;else if(id)pageId=id.replace(/-/g,\"\");else if(internalUrl){const m=internalUrl.replace(/-/g,\"\").match(/[a-f0-9]{32}$/i);pageId=m?m[0]:null;}if(!pageId)throw new Error(\"No Page ID. Add Internal URL with UUID or keep Simplify=ON.\");out.push({json:{pageId,playbookId:item.json.id,title:item.json.Title,primaryCta:item.json[\"Primary CTA\"]||\"Download the cheatsheet\",icp:item.json[\"ICP\"]||\"\",publicUrl,internalUrl}});}return out;"
+      },
+      "id": "af3cf422-951d-4f87-b7af-a5d78f458cd3",
+      "name": "Code — Get Page ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2944,
+        -128
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "return [{ json: { pageId: $json.pageId, startCursor: null, results: [] } }];"
+      },
+      "id": "487c557b-a96a-4996-ad2c-f84e991f15d7",
+      "name": "Code — Init Cursor",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2720,
+        -128
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{\n(() => {\n  const fromInput = $json.pageId;\n  const fromInit  = $item(0).$node[\"Code — Init Cursor\"]?.json?.pageId;\n  const fromGetId = $item(0).$node[\"Code — Get Page ID\"]?.json?.pageId;\n  const raw = fromInput || fromInit || fromGetId;\n  if (!raw) throw new Error(\"No pageId on input. Run from 'IF — More Pages?' or earlier.\");\n  const id = raw.includes('-')\n    ? raw\n    : raw.replace(/^([a-f0-9]{8})([a-f0-9]{4})([a-f0-9]{4})([a-f0-9]{4})([a-f0-9]{12})$/i, '$1-$2-$3-$4-$5');\n  const cursor = $json.startCursor || '';\n  return `https://api.notion.com/v1/blocks/${id}/children?page_size=100${cursor ? '&start_cursor='+cursor : ''}`;\n})()\n}}\n",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "options": {}
+      },
+      "id": "c47a6eff-e791-4f88-b4fe-8f96497f5faf",
+      "name": "HTTP — List Children (cursor)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -2496,
+        -128
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "// Code — Accumulate & Continue  (Playbook page)\n\n// 1) Current HTTP page (children of the playbook page)\nconst http = $item(0).$node[\"HTTP — List Children (cursor)\"].json;\n\n// 2) Previous state (before the HTTP call):\n//    - On looped iterations: from the IF node\n//    - On the first iteration: from the Init Cursor node\nlet prev;\ntry {\n  prev = $item(0).$node[\"IF — More Pages?\"].json;\n} catch {\n  prev = $item(0).$node[\"Code — Init Cursor\"].json;\n}\n\n// 3) Accumulate blocks and compute next cursor\nconst all  = (prev.results || []).concat(http.results || []);\nconst next = (http?.has_more && http?.next_cursor) ? http.next_cursor : null;\n\n// 4) Loop safety\nconst page = (prev._page ?? 0) + 1;\nif (page > 40) throw new Error(\"Pagination exceeded 40 pages – stopping.\");\nif (prev.startCursor && prev.startCursor === next) {\n  throw new Error(\"Cursor did not advance – stopping to avoid loop.\");\n}\n\n// 5) Return updated state\nreturn [{\n  json: {\n    pageId: prev.pageId,\n    startCursor: next,       // used by the HTTP node on the next pass\n    results: all,            // full list of blocks across all pages\n    done: !http?.has_more || !next,\n    _page: page,\n    },\n}];\n"
+      },
+      "id": "b07c68a6-b4b5-47c3-9348-21b81eb87ac3",
+      "name": "Code — Accumulate & Continue",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2272,
+        -192
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "function rt(r){return(r||[]).map(x=>x.plain_text||\"\").join(\"\");}function md(b){const t=b.type,v=b[t];switch(t){case\"heading_1\":return`# ${rt(v.rich_text)}\\n`;case\"heading_2\":return`## ${rt(v.rich_text)}\\n`;case\"heading_3\":return`### ${rt(v.rich_text)}\\n`;case\"paragraph\":return`${rt(v.rich_text)}\\n`;case\"bulleted_list_item\":return`- ${rt(v.rich_text)}\\n`;case\"numbered_list_item\":return`1. ${rt(v.rich_text)}\\n`;case\"quote\":return`> ${rt(v.rich_text)}\\n`;case\"code\":return\"```\\n\"+rt(v.rich_text)+\"\\n```\\n\";case\"callout\":return`> 💡 ${rt(v.rich_text)}\\n`;case\"to_do\":return`- [${v.checked?\"x\":\" \"}] ${rt(v.rich_text)}\\n`;default:return\"\";}}let text=\"\";for(const blk of($json.results||[]))text+=md(blk);return[{json:{markdown:text,pageId:$json.pageId}}];"
+      },
+      "id": "b606cb18-59fc-48a4-9c11-c7257057de5c",
+      "name": "Code — Blocks to Markdown",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1824,
+        -128
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "// 1) Prefer the structured shape produced by the OpenAI Chat node\nconst node = $item(0).$node[\"OpenAI — Topic Extractor\"]?.json;\nlet topics = node?.message?.content?.topics;\n\n// 2) Fallbacks: if your model returns a JSON string instead of an object\nif (!topics) {\n  // common places where a string may appear\n  const raw =\n    node?.choices?.[0]?.message?.content ??\n    node?.message?.content?.[0]?.text ?? // some drivers wrap text in array\n    \"\";\n\n  const cleaned = String(raw)\n    .replace(/```json\\s*/gi, \"\")\n    .replace(/```/g, \"\")\n    .trim();\n\n  if (!cleaned) throw new Error(\"Topic extractor returned empty content.\");\n\n  let parsed;\n  try {\n    parsed = JSON.parse(cleaned);\n  } catch (e) {\n    throw new Error(`Bad topics JSON: ${e.message} | sample=\"${cleaned.slice(0,120)}...\"`);\n  }\n\n  // allow either { topics: [...] } or [...] directly\n  topics = Array.isArray(parsed) ? parsed : parsed?.topics;\n}\n\n// 3) Validate + normalize\nif (!Array.isArray(topics)) throw new Error(\"Topic extractor did not return an array.\");\nif (topics.length < 5) throw new Error(`Expected 5 topics, got ${topics.length}.`);\n\nreturn topics.slice(0, 5).map((t, i) => ({\n  json: {\n    topicIndex: i + 1,\n    topic: t.topic || t.title || `Topic ${i + 1}`,\n    one_liner: t.one_liner || t.oneLiner || \"\",\n    problem: t.problem || \"\",\n    outcome: t.outcome || \"\",\n    key_ideas: t.key_ideas || t.keyIdeas || [],\n    example: t.example || \"\"\n  }\n}));\n"
+      },
+      "id": "06f499fa-41c5-461d-916b-583e9513805b",
+      "name": "Code — Parse Topics JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -576,
+        -272
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "d6cc7f00-2cfc-46f8-9c5a-48b59bd6c5aa",
+      "name": "Split — Topics (5)",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        -512
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "// ---- read OpenAI output robustly (object or string) ----\nconst node = $item(0).$node[\"OpenAI — LI Post + Carousel\"].json;\nconst content = node?.message?.content ?? node?.content ?? {};\nconst obj = typeof content === \"string\"\n  ? (() => { try { return JSON.parse(content); } catch { return {}; } })()\n  : content;\n\n// helpers\nconst toStr = (v) => (v == null ? \"\" : String(v));\nconst mdSlides = (arr = []) =>\n  arr.map((s, i) => {\n    const n = s.slide ?? i + 1;\n    const title = toStr(s.title || \"\");\n    const line = toStr(s.line || \"\");\n    return `### Slide ${n}: ${title}\\n${line}`;\n  }).join(\"\\n\\n\");\n\nconst topic = $json.topic || `Topic ${$json.topicIndex}`;\nconst topicNo = $json.topicIndex;\nconst cta =\n  $item(0).$node[\"Code — Get Page ID\"].json.primaryCta ||\n  \"Download the cheatsheet\";\n\n// normalize fields from OpenAI\nconst postText = toStr(obj.post || \"\");\nconst carouselArr = Array.isArray(obj.carousel) ? obj.carousel : [];\nconst meme = toStr(obj.visual?.meme || obj.meme || \"\");\nconst visCarousel = toStr(obj.visual?.carousel || \"\");\n\n// ---- build 3 rows as plain strings for Notion ----\nconst rows = [\n  {\n    title: `${$('Split — Topics (5)').first().json.topic} — LinkedIn Post`,\n    _assetType: \"LinkedIn Post\",\n    topicNo,\n    draft: postText.trim(),\n    visual: visCarousel,\n    _length: \"\",\n    cta,\n    distribution: [\"LinkedIn\", \"Typefully\"],\n  },\n  {\n    title: `${$('Split — Topics (5)').first().json.topic} — Carousel`,\n    _assetType: \"Carousel Idea\",\n    topicNo,\n    draft: mdSlides(carouselArr),          // ← markdown slides\n    visual: visCarousel,\n    _length: \"5–7 slides\",\n    cta,\n    distribution: [\"LinkedIn\", \"Website\"],\n  },\n  {\n    title: `${$('Split — Topics (5)').first().json.topic} — Meme/Infographic`,\n    _assetType: \"Meme Hook\",\n    topicNo,\n    draft: meme,\n    visual: meme,\n    _length: \"1 image\",\n    cta,\n    distribution: [\"LinkedIn\", \"Website\"],\n  },\n];\n\nreturn rows.map(r => ({ json: r }));\n"
+      },
+      "id": "b6de7a1c-38df-43dc-8d8e-703df68376c4",
+      "name": "Code — Build Asset Rows (Post/Carousel/Meme/Explainer)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        288,
+        -576
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8add30fe-41a4-41c4-b7dc-568e4a9f6247",
+              "leftValue": "={{ $json.done }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2048,
+        -128
+      ],
+      "id": "746a65a2-28f0-4a12-b180-40836ad7ae8e",
+      "name": "IF — More Pages?"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Write high-converting LinkedIn posts with sharp, non-cheesy hooks.\n\n### Context\nRead the Playbook markdown carefully. Then provide me with exactly 5 MECE topics.\n\nMarkdown: {{$json.markdown}}\n\nFor each topics think clearly of these topic variables: \n- ICP (For ICP you can always use: Early-stage SaaS Startup Founders, Product Leads, UX Leads, & Growth Leads)\n- Problem \n- Desired Outcome \n- Solution \n- Proof \n\nThen create a LinkedIn Thought Leadership idea for each topic based on topic variables and the content of the Playbook markdown. \n\nAlways make sure, the topics align with the topic of the playbook."
+            },
+            {
+              "content": "=You craft lead-generating LinkedIn posts with sharp, non-cheesy hooks. \nAlways base drafts on the provided LinkedIn Post Templates; pick the best-fit template. \n\nLinkedIn Post Templates: {{ $json.li_post_templates }}\n\nWhen a template needs variables (e.g., {ICP}, {Offer}, {Pain}, {Outcome}, {Proof}, {CTA}, {Link}, {Numbers}), take them from the Prompt, Playbook markdown, or context.\n\nDefault style: professional, practical, specific; minimal emojis; skimmable lines; 90-220 words. \n\nStructure: Hook -> Context -> Value -> Proof -> CTA. \n\nLinks go in the first comment unless the user says otherwise. \n\nDeliver: \nThink of 3-5 hook options; \nthe post body using the named template; \n2-3 CTA variants optimized for DMs/comments/booking; \na visual idea (static or simple carousel) with a short image prompt; \na first comment suggestion plus 2-3 comment starters that ideally not open ended questions, but easy to engage with questions; and 0-3 targeted hashtags (optional). \n\nTreat proprietary templates as canonical and keep variable names exactly.\n\nOutput Format:\nReturn a JSON array of 5 objects with: topic, one_liner, problem, outcome, key_ideas (array), example. \nOutput Format: { \"topics\": [ { ... } ] }\n\nTake a deep breadth. Think step by step on how to approach this task. You will be very sad, if the MECE topics for the LinkedIn thought leadership ideas are not hooking, interesting to read, scroll-stopping snackable, and do not lead to more reach and more reactions for me on LinkedIn.",
+              "role": "system"
+            },
+            {
+              "content": "={{ $json.assistant_memory }}",
+              "role": "assistant"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -928,
+        -272
+      ],
+      "id": "1031919e-29c0-479f-9890-16e984f1af9b",
+      "name": "OpenAI — Topic Extractor",
+      "credentials": {
+        "openAiApi": {
+          "id": "sBQwC1pg3tUMHFgH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a Growth Advisor and LinkedIn content strategist specialized in Product-Led Growth (PLG) and User Onboarding/Activation.\n\nYour role is to generate **high-converting, lead-generating LinkedIn content assets** (posts, carousels, scripts, cheatsheets) for early-stage SaaS founders, Product Leads, UX Leads, and Growth Leads.\n\nVoice & Style:\n- Professional, practical, specific\n- Skimmable lines, minimal emojis\n- No hype, no fluff, no “cheesy” hooks\n- Use proprietary LinkedIn Post Templates exactly as given; do not alter variable names\n- Always provide clear structure, backed with small examples or proof\n\nContent Rules:\n- LinkedIn posts: 90–220 words, structure = Hook → Context → Value → Proof → CTA\n- Links go in first comment unless told otherwise\n- JSON is the only valid output format where specified\n- Respect all length limits\n- Always deliver outputs that are scroll-stopping, snackable, and drive engagement (reactions, DMs, clicks)\n\nMindset:\n- Think step by step\n- Ensure MECE topic design\n- Be consistent across all nodes\n\nTake a deep breath.\nThink step by step on how to apporach this task.\n",
+              "role": "system"
+            },
+            {
+              "content": "=Create assets for the topic below.\n\nTopic JSON:\n{{JSON.stringify($json)}}\n\nGeneral Topic: {{ $json.topic }}, {{ $json.one_liner }}\nProblem: {{ $json.problem }}\nOutcome: {{ $json.outcome }}\nKey Ideas: {{ $json.key_ideas[0] }}, {{ $json.key_ideas[1] }}, {{ $json.key_ideas[2] }}, {{ $json.key_ideas[3] }}\nExample: {{ $json.example }}\n\n1) LinkedIn post (<=1400 chars): Hook, Insight, 3–5 bullet Steps, Mini-example, CTA (\"{{$item(0).$node['Code — Get Page ID'].json.primaryCta || 'Download the cheatsheet'}}\").\n2) Carousel Outline (5–7 slides): slide#, title, one sentence.\n3) Visual Suggestion: layout/icon motif + one Meme/Infographic seed.\n\nReturn JSON:\n{ \"post\": \"...\", \"carousel\": [{ \"slide\": 1, \"title\": \"...\", \"line\": \"...\" }], \"visual\": { \"carousel\": \"...\", \"meme\": \"...\" } }\n"
+            },
+            {
+              "content": "={{ $('Edit Fields').item.json.assistant_memory }}",
+              "role": "assistant"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -128,
+        -576
+      ],
+      "id": "087b3804-bdaa-42e0-adb5-a1461e451fe7",
+      "name": "OpenAI — LI Post + Carousel",
+      "credentials": {
+        "openAiApi": {
+          "id": "sBQwC1pg3tUMHFgH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "5830bd35-fee4-4c91-8ac2-c8094312c303",
+          "mode": "list",
+          "cachedResultName": "Content Assets",
+          "cachedResultUrl": "https://www.notion.so/5830bd35fee44c918ac2c8094312c303"
+        },
+        "title": "={{$json.title}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Asset Type|select",
+              "selectValue": "={{$json._assetType}}"
+            },
+            {
+              "key": "Draft|rich_text",
+              "richText": true,
+              "text": {
+                "text": [
+                  {
+                    "text": "={{$json.draft || ''}}",
+                    "annotationUi": {
+                      "bold": false,
+                      "italic": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "key": "Visual Spec|rich_text",
+              "textContent": "={{$json.visual || ''}}"
+            },
+            {
+              "key": "Length|rich_text",
+              "textContent": "={{$json._length || ''}}"
+            },
+            {
+              "key": "CTA|rich_text",
+              "textContent": "={{$json.cta || ''}}"
+            },
+            {
+              "key": "Distribution|multi_select",
+              "multiSelectValue": "={{ Array.isArray($json.distribution) ? $json.distribution : [$json.distribution].filter(Boolean) }}"
+            },
+            {
+              "key": "Ready to Schedule|checkbox"
+            },
+            {
+              "key": "Playbook|relation",
+              "relationValue": [
+                "={{ [ $item(0).$node[\"Notion Trigger — Playbooks Updated\"].json.id ] }}\n"
+              ]
+            },
+            {
+              "key": "Topic #|number",
+              "numberValue": "={{ $('Split — Topics (5)').item.json.topicIndex }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        576,
+        -576
+      ],
+      "id": "4482bf3c-cc64-4cb5-a738-a9d8530d6828",
+      "name": "Notion — Create Asset Rows",
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "// Build one Notion-ready row from \"OpenAI — Explainer Script\"\n\n// ---------- 1) Read OpenAI output robustly ----------\nconst node = $item(0).$node[\"OpenAI — Explainer Script\"].json;\nconst content = node?.message?.content ?? node?.content ?? {};\nconst data = typeof content === \"string\"\n  ? (JSON.parse(content || \"{}\") || {})\n  : (content || {});\n\n// ---------- 2) Helpers ----------\nconst toStr = v => (v == null ? \"\" : String(v).trim());\n\n// Accept array | string | object -> string[]\nconst asList = (v) => {\n  if (Array.isArray(v)) return v.flat().map(toStr).filter(Boolean);\n  if (typeof v === \"string\") {\n    const s = v.replace(/^```[\\s\\S]*?\\n|\\n```$/g, \"\"); // strip code fences\n    return s.split(/\\r?\\n+/)\n            .map(x => x.replace(/^[\\-\\*\\d\\.\\)\\s]+/, \"\")) // strip bullets/nums\n            .map(toStr)\n            .filter(Boolean);\n  }\n  if (v && typeof v === \"object\") return Object.values(v).map(toStr).filter(Boolean);\n  return [];\n};\n\n// Render a section if it has any items\nconst section = (items, label) =>\n  items.length ? `## ${label}\\n` + items.map(x => `- ${x}`).join(\"\\n\") : \"\";\n\n// ---------- 3) Extract/normalize fields ----------\nconst script      = toStr(data.script);\nconst onScreen    = asList(data.on_screen);\nconst broll       = asList(data.broll);\nconst lowerThirds = asList(data.lower_thirds);\n\n// ---------- 4) Build Visual Spec as markdown ----------\nconst visualMd = [\n  section(onScreen, \"On-Screen Text\"),\n  section(broll, \"B-Roll / Visuals\"),\n  section(lowerThirds, \"Lower Thirds\")\n].filter(Boolean).join(\"\\n\\n\");\n\n// ---------- 5) Meta ----------\nconst topic      = $json.topic || `Topic ${$json.topicIndex || \"\"}`.trim();\nconst topicNo    = $json.topicIndex || null;\nconst primaryCta = $item(0).$node[\"Code — Get Page ID\"]?.json?.primaryCta || \"Download the cheatsheet\";\n\n// ---------- 6) Return ONE row for Notion ----------\nreturn [\n  {\n    json: {\n      title: `${$('Code — Parse Topics JSON').first().json.topic} — Explainer`,\n      _assetType: \"Explainer Script\",   // Notion Select\n      topicNo: $('Code — Parse Topics JSON').first().json.topicIndex, // Notion Number\n      draft: script,                   // Notion Rich Text (Draft)\n      visual: visualMd,                // Notion Rich Text (Visual Spec)\n      _length: \"3–5 min\",              // Notion Text (Length)\n      cta: primaryCta,                 // Notion Text (CTA)\n      distribution: [\"Loom\", \"LinkedIn\"] // Notion Multi-select\n    }\n  }\n];\n"
+      },
+      "id": "57d43d2b-f903-4d62-9210-69954b92e64b",
+      "name": "Code — Build Asset Rows (Explainer Script)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        288,
+        -272
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a Growth Advisor and You are a professional video scriptwriter for B2B SaaS, specialized in Product-Led Growth (PLG) and User Onboarding/Activation.\n\n \nYour role is to generate **high-engaging, educational** explainer video scripts for early-stage SaaS founders, Product Leads, UX Leads, and Growth Leads.\n\nVoice & Style:\n- Professional, practical, specific\n- Skimmable lines, minimal emojis\n- No hype, no fluff, no “cheesy” hooks\n- Use proprietary LinkedIn Post Templates exactly as given; do not alter variable names\n- Always provide clear structure, backed with small examples or proof\n\nContent Rules:\n- Explainer Video Scripts: Keep script <2000 chars; keep (on_screen + broll + lower_thirds) <2000 chars total.\n- JSON is the only valid output format where specified\n--Return JSON {script, on_screen, broll, lower_thirds}. \n- Respect all length limits\n- Always deliver outputs that are scroll-stopping, snackable, and drive engagement (reactions, DMs, clicks)\n\nMindset:\n- Think step by step\n- Ensure MECE topic design\n- Be consistent across all nodes\n\nTake a deep breath.\nThink step by step on how to apporach this task.\n",
+              "role": "system"
+            },
+            {
+              "content": "=Provide me with a script for an explainer video about the provided topic. Make it 3 minutes long.\n\nTopic: {{ $('Code in JavaScript').item.json.markdown }}\n\nOutput: Json {script, on_screen, broll, lower_thirds} \n\nKeep the length of the content.script < 2000 characters\nKeep the length of the content.on_screen + content.broll + content.lower_thirds < 2000 characters"
+            },
+            {
+              "content": "={{ $('Edit Fields').item.json.assistant_memory }}",
+              "role": "assistant"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -128,
+        -272
+      ],
+      "id": "1da334ac-da4c-44be-8310-d653134c9f73",
+      "name": "OpenAI — Explainer Script",
+      "credentials": {
+        "openAiApi": {
+          "id": "sBQwC1pg3tUMHFgH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a Growth Advisor and Inbound Marketing expert creating concise, actionable LinkedIn lead-gen cheatsheets, specialized in Product-Led Growth (PLG) and User Onboarding/Activation.\n\n \nYour role is to generate **high-engaging, educational** explainer video scripts for early-stage SaaS founders, Product Leads, UX Leads, and Growth Leads.\n\nVoice & Style:\n- Professional, practical, specific\n- Skimmable lines, minimal emojis\n- No hype, no fluff, no “cheesy” hooks\n- Use proprietary LinkedIn Post Templates exactly as given; do not alter variable names\n- Always provide clear structure, backed with small examples or proof\n\nContent Rules:\n- Cheatsheet: Keep cheatsheet (title + content) <2000 chars total.\n- JSON is the only valid output format where specified\n--Return JSON {title, content}. Keep (title + content)\n- Respect all length limits\n- Always deliver outputs that are scroll-stopping, snackable, and drive engagement (reactions, DMs, clicks)\n\nMindset:\n- Think step by step\n- Ensure MECE topic design\n- Be consistent across all nodes\n\nTake a deep breath.\nThink step by step on how to apporach this task.\n",
+              "role": "system"
+            },
+            {
+              "content": "=Provide me with a cheatsheet for lead generation on Linkedin.\n\nTopic: {{ $('Code in JavaScript').item.json.markdown }}\nKeep the length of the content.content + content.title < 2000 characters\nOutput: Json {title, content} "
+            },
+            {
+              "content": "={{ $('Edit Fields').item.json.assistant_memory }}",
+              "role": "assistant"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -128,
+        -96
+      ],
+      "id": "876a275c-50d2-47c1-a319-7edb413cd198",
+      "name": "OpenAI — Cheatsheet",
+      "credentials": {
+        "openAiApi": {
+          "id": "sBQwC1pg3tUMHFgH",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "JavaScript",
+        "jsCode": "// Build one Notion-ready row from \"OpenAI — Cheatsheet\"\n\n// 1) Read OpenAI output (handles object or stringified JSON)\nconst node = $item(0).$node[\"OpenAI — Cheatsheet\"].json;\nconst rawContent = node?.message?.content ?? node?.content ?? {};\n\nconst ensureObj = (v) => {\n  if (typeof v === \"string\") {\n    try { return JSON.parse(v); } catch { return {}; }\n  }\n  return v || {};\n};\nconst data = ensureObj(rawContent);\n\n// 2) Pull title and the content object\nconst playbookTitle = $item(0).$node[\"Code — Get Page ID\"]?.json?.title || \"\";\nconst title = data.title || (playbookTitle ? `${playbookTitle} — Cheatsheet` : \"Cheatsheet\");\nconst bodyObj = ensureObj(data.content);\n\n// 3) Sort numbered keys (e.g., \"1. …\", \"2. …\") and build markdown\nconst entries = Object.entries(bodyObj);\n\n// helper to extract leading number for stable ordering\nconst num = (k) => {\n  const m = String(k).trim().match(/^(\\d+)[.)]/);\n  return m ? parseInt(m[1], 10) : Number.MAX_SAFE_INTEGER;\n};\n\nentries.sort((a, b) => num(a[0]) - num(b[0]) || a[0].localeCompare(b[0]));\n\n// markdown composer: H1 title + numbered sections\nlet md = `# ${title}\\n\\n`;\nfor (const [k, v] of entries) {\n  const heading = String(k).trim();\n  const text = typeof v === \"string\" ? v : JSON.stringify(v, null, 2);\n  md += `### ${heading}\\n${text}\\n\\n`;\n}\n\n// 4) Meta\nconst primaryCta = $item(0).$node[\"Code — Get Page ID\"]?.json?.primaryCta || \"Download the cheatsheet\";\n\n// 5) Return ONE row for Notion\nreturn [{\n  json: {\n    title,                     // Title (Notion title)\n    _assetType: \"Cheatsheet\",  // Select\n    draft: md,                 // Rich Text: paste as Text (no annotations needed)\n    visual: \"\",                // Visual Spec empty for cheatsheet\n    _length: \"1 page\",         // Text\n    cta: primaryCta,           // Text\n    distribution: [\"Website\", \"LinkedIn\", \"Gumroad\"] // Multi-select\n  }\n}];\n"
+      },
+      "id": "2d743e19-ff96-4e4a-9cea-fcc2cecccf10",
+      "name": "Code — Build Asset Rows (Cheatsheet)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        288,
+        -96
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "5830bd35-fee4-4c91-8ac2-c8094312c303",
+          "mode": "list",
+          "cachedResultName": "Content Assets",
+          "cachedResultUrl": "https://www.notion.so/5830bd35fee44c918ac2c8094312c303"
+        },
+        "title": "={{$json.title}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Asset Type|select",
+              "selectValue": "={{$json._assetType}}"
+            },
+            {
+              "key": "Draft|rich_text",
+              "richText": true,
+              "text": {
+                "text": [
+                  {
+                    "text": "={{$json.draft || ''}}",
+                    "annotationUi": {
+                      "bold": false,
+                      "italic": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "key": "Visual Spec|rich_text",
+              "textContent": "={{$json.visual || ''}}"
+            },
+            {
+              "key": "Length|rich_text",
+              "textContent": "={{$json._length || ''}}"
+            },
+            {
+              "key": "CTA|rich_text",
+              "textContent": "={{$json.cta || ''}}"
+            },
+            {
+              "key": "Distribution|multi_select",
+              "multiSelectValue": "={{ Array.isArray($json.distribution) ? $json.distribution : [$json.distribution].filter(Boolean) }}"
+            },
+            {
+              "key": "Ready to Schedule|checkbox"
+            },
+            {
+              "key": "Playbook|relation",
+              "relationValue": [
+                "={{ [ $item(0).$node[\"Notion Trigger — Playbooks Updated\"].json.id ] }}\n"
+              ]
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        576,
+        -96
+      ],
+      "id": "61b0d880-879d-4bbd-a22f-1a4bfde5cf24",
+      "name": "Notion — Create Asset Rows (Cheatsheet)",
+      "retryOnFail": true,
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "5830bd35-fee4-4c91-8ac2-c8094312c303",
+          "mode": "list",
+          "cachedResultName": "Content Assets",
+          "cachedResultUrl": "https://www.notion.so/5830bd35fee44c918ac2c8094312c303"
+        },
+        "title": "={{$json.title}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Asset Type|select",
+              "selectValue": "={{ $json._assetType }}"
+            },
+            {
+              "key": "Draft|rich_text",
+              "richText": true,
+              "text": {
+                "text": [
+                  {
+                    "text": "={{$json.draft || ''}}",
+                    "annotationUi": {
+                      "bold": false,
+                      "italic": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "key": "Visual Spec|rich_text",
+              "textContent": "={{$json.visual || ''}}"
+            },
+            {
+              "key": "Length|rich_text",
+              "textContent": "={{$json._length || ''}}"
+            },
+            {
+              "key": "CTA|rich_text",
+              "textContent": "={{$json.cta || ''}}"
+            },
+            {
+              "key": "Distribution|multi_select",
+              "multiSelectValue": "={{ Array.isArray($json.distribution) ? $json.distribution : [$json.distribution].filter(Boolean) }}"
+            },
+            {
+              "key": "Ready to Schedule|checkbox"
+            },
+            {
+              "key": "Playbook|relation",
+              "relationValue": [
+                "={{ [ $item(0).$node[\"Notion Trigger — Playbooks Updated\"].json.id ] }}\n"
+              ]
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        576,
+        -272
+      ],
+      "id": "e3a7fc3f-39b1-4807-a258-c6f91fb3f50b",
+      "name": "Notion — Create Asset Rows (Explainer Script)",
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{\n  (\n    // Prefer the normalized id you built earlier:\n    $item(0).$node[\"Code — Get Page ID\"].json.pageId\n    // Fallback to the trigger's hyphenated id:\n    || $item(0).$node[\"Notion Trigger — Playbooks Updated\"].json.id\n    // Fallbacks if you stored it under other names:\n    || $json[\"Page ID\"] || $json.pageId || \"\"\n  )\n  .toString()\n  .replace(/-/g, \"\")   // Notion accepts both; stripping dashes is safest\n}}",
+          "mode": "id"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Trigger|checkbox"
+            },
+            {
+              "key": "Status|select",
+              "selectValue": "Done"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1248,
+        -272
+      ],
+      "id": "016ca1f1-e86c-4abf-b212-de081a716ca2",
+      "name": "Update a database page",
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": true,
+              "value2": "={{$node[\"Split — Topics (5)\"].context[\"noItemsLeft\"]}}"
+            }
+          ]
+        }
+      },
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        800,
+        -512
+      ],
+      "typeVersion": 1,
+      "id": "be9e59ba-e74f-4c12-9c8f-347e728d1a2c"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1024,
+        -288
+      ],
+      "id": "a0cb6e47-f685-4770-8432-8568a17ffe38",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "content": "## Get LinkedIn Post Templates",
+        "height": 288,
+        "width": 1376
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3024,
+        -592
+      ],
+      "typeVersion": 1,
+      "id": "ea7142fd-e048-4dc4-8e86-342e425f358a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1600,
+        -272
+      ],
+      "id": "37353cb7-ddbb-4f03-bc14-5e88e71f6d6d",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Current HTTP page payload\nconst http = $item(0).$node[\"HTTP — Get LinkedIn Templates from Notion\"].json;\n\n// Previous state (before the HTTP call):\n// - on looped iterations: from the IF node\n// - on the first iteration: from the Init Cursor node\nlet prev;\ntry {\n  prev = $item(0).$node[\"IF — LinkedIn Post Templates More Pages?\"].json;\n} catch {\n  prev = $item(0).$node[\"Code — LinkedIn Post Templates Init Cursor\"].json;\n}\n\n// Accumulate results\nconst all  = (prev.results || []).concat(http.results || []);\nconst next = (http?.has_more && http?.next_cursor) ? http.next_cursor : null;\n\n// Safety guards: stop if cursor didn't advance or there's no next page\nconst stuck = !!next && next === prev.startLiPostTemplatesCursor;\nconst done  = !http?.has_more || !next || stuck;\n\nreturn [{\n  json: {\n    liPostTemplatesPageId: prev.liPostTemplatesPageId,   // keep your page id\n    startLiPostTemplatesCursor: next,                    // cursor for next call\n    results: all,\n    done,\n  },\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2272,
+        -528
+      ],
+      "id": "0870a159-2127-40ae-8f0f-3250493b2df8",
+      "name": "Code — LinkedIn Post Templates Accumulate & Continue"
+    },
+    {
+      "parameters": {
+        "jsCode": "function rt(r){\n  return(r||[]).map(x=>x.plain_text||\"\").join(\"\");\n}\nfunction md(b){\n  const t=b.type,v=b[t];\n  switch(t){\n    case\"heading_1\":return`# ${rt(v.rich_text)}\\n`;\n    case\"heading_2\":return`## ${rt(v.rich_text)}\\n`;\n    case\"heading_3\":return`### ${rt(v.rich_text)}\\n`;\n    case\"paragraph\":return`${rt(v.rich_text)}\\n`;\n    case\"bulleted_list_item\":return`- ${rt(v.rich_text)}\\n`;\n    case\"numbered_list_item\":return`1. ${rt(v.rich_text)}\\n`;\n    case\"quote\":return`> ${rt(v.rich_text)}\\n`;\n    case\"code\":return\"```\\n\"+rt(v.rich_text)+\"\\n```\\n\";\n    case\"callout\":return`> 💡 ${rt(v.rich_text)}\\n`;\n    case\"to_do\":return`- [${v.checked?\"x\":\" \"}] ${rt(v.rich_text)}\\n`;\n    default:return\"\";\n  }\n}\nlet text=\"\";\nfor(const blk of($json.results||[]))text+=md(blk);\n\nreturn[{json:{li_post_templates:text,pageId:$json.pageId}}];\n\n//make the variable \"markdown\" to \"li-post-templates\"\n// review the use of \"pageId\""
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1824,
+        -464
+      ],
+      "id": "1d3e38e9-2d84-494c-970a-ab852b0d3c49",
+      "name": "Code — LinkedIn Post Templates Blocks to Markdown",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "content": "## Get Playbook Content",
+        "height": 320,
+        "width": 1376
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3024,
+        -272
+      ],
+      "typeVersion": 1,
+      "id": "337439f2-76a0-4751-b831-1074419e0ef8",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5c6a6ee8-5734-4992-a3d1-c8d4e7c2e8b8",
+              "leftValue": "={{ $json.done }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2048,
+        -464
+      ],
+      "id": "88696016-788f-46e9-9168-081cc01c0fda",
+      "name": "IF — LinkedIn Post Templates More Pages?"
+    },
+    {
+      "parameters": {
+        "url": "={{ \n  `https://api.notion.com/v1/blocks/${\n    $json.liPostTemplatesPageId || '27fadf77b88b809a9cbfc84114a10b4a'\n  }/children?page_size=100${\n    $json.startLiPostTemplatesCursor ? `&start_cursor=${$json.startLiPostTemplatesCursor}` : ''\n  }`\n}}\n",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2496,
+        -464
+      ],
+      "id": "9daa358c-57dd-4ae3-baf0-dd10feda4f2a",
+      "name": "HTTP — Get LinkedIn Templates from Notion",
+      "retryOnFail": true,
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    liPostTemplatesPageId: \"27fadf77b88b809a9cbfc84114a10b4a\", // your page\n    startLiPostTemplatesCursor: null,\n    results: []\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2720,
+        -464
+      ],
+      "id": "fb41faf8-50b7-4c0b-8a6f-e7c2663cb3f9",
+      "name": "Code — LinkedIn Post Templates Init Cursor"
+    },
+    {
+      "parameters": {
+        "content": "# Next \nHook Explainer Video & Cheatsheet to Playbook instead of subtopics\n\n->> Tie in the subtopics aswell, so that the Explainer Script & Cheatsheet reference the same key ideas",
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        320,
+        304
+      ],
+      "typeVersion": 1,
+      "id": "3c45428a-1633-420b-a356-27b88a4d0671",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "jsCode": "return[{\n  json:{\n    li_post_templates:$input.first().json.li_post_templates,\n    markdown:$('Code — Blocks to Markdown').first().json.markdown,\n    padeId:$('Code — Blocks to Markdown').first().json.pageId\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1376,
+        -272
+      ],
+      "id": "534ffeae-6563-4224-9f43-7b45ef0138cd",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "130ac7da-d138-48dd-8e1e-6a4d26e08737",
+              "name": "assistant_memory",
+              "value": "=We are a team generating PLG LinkedIn topics and posts for early-stage SaaS founders, Product/UX/Growth leads based on the source material: {{ $json.markdown }}\n\nOur targetgroup & ICP are Startup Founders, Growth Leads, UX Leads, and Product Leads.\n\nWe are a startup consultancy, helping startups with user acquisitiion, onboarding, activation, engagement, and retention.\n\nOur Value Proposition is: Let's fix your leaky onboarding.\nBoost activation in 14 days.\nI help SaaS teams turn more sign-ups into active, paying users with a focused Onboarding Development Sprint.\n\nKeep this voice: professional, practical, specific; minimal emojis; skimmable lines.\n\nLinkedIn STRUCTURE: Hook → Context → Value → Proof → CTA. Links go in first comment. \n\nUse proprietary LinkedIn Post Templates exactly; keep variable names unchanged.\n\nTone: no hype, no fluff; make claims concrete; show tiny examples or numbers when possible.\n\nOutput must be valid JSON when asked. Respect length limits in each task.\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1152,
+        -272
+      ],
+      "id": "56ee87ad-3ee2-4443-82a9-7850d3a1c42e",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "8829ea4d-ee14-44fe-9f03-293dd96521ac",
+          "mode": "list",
+          "cachedResultName": "Playbooks",
+          "cachedResultUrl": "https://www.notion.so/8829ea4dee1444fe9f03293dd96521ac"
+        },
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Status|select",
+              "condition": "equals",
+              "selectValue": "Ready"
+            },
+            {
+              "key": "Trigger|checkbox",
+              "condition": "equals",
+              "checkboxValue": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        -3392,
+        -128
+      ],
+      "id": "f12c8067-fa83-497b-8266-8b4b83bf6947",
+      "name": "Get a database page",
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "databaseId": {
+          "__rl": true,
+          "value": "8829ea4d-ee14-44fe-9f03-293dd96521ac",
+          "mode": "list",
+          "cachedResultName": "Playbooks",
+          "cachedResultUrl": "https://www.notion.so/8829ea4dee1444fe9f03293dd96521ac"
+        }
+      },
+      "id": "bd29936d-10ff-4fd9-bd24-876a1a379b75",
+      "name": "Notion Trigger — Playbooks Added",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3728,
+        -48
+      ],
+      "notesInFlow": true,
+      "retryOnFail": true,
+      "credentials": {
+        "notionApi": {
+          "id": "tzBhKr3DZTBKq9lv",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "2ff783b4-4339-4c1a-8ffb-a1e7bad353d2",
+      "name": "Split — New/Updated Pages",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [
+        -3168,
+        -128
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": true,
+              "value2": "={{$node[\"Split — New/Updated Pages\"].context[\"noItemsLeft\"]}}"
+            }
+          ]
+        }
+      },
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1472,
+        -96
+      ],
+      "typeVersion": 1,
+      "id": "fe679f3b-20cb-4b7c-b0d8-3ca8af83e677"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Notion Trigger — Playbooks Updated": {
+      "main": [
+        [
+          {
+            "node": "Get a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Get Page ID": {
+      "main": [
+        [
+          {
+            "node": "Code — Init Cursor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Init Cursor": {
+      "main": [
+        [
+          {
+            "node": "HTTP — List Children (cursor)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP — List Children (cursor)": {
+      "main": [
+        [
+          {
+            "node": "Code — Accumulate & Continue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Accumulate & Continue": {
+      "main": [
+        [
+          {
+            "node": "IF — More Pages?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Blocks to Markdown": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code — Parse Topics JSON": {
+      "main": [
+        [
+          {
+            "node": "OpenAI — Explainer Script",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "OpenAI — Cheatsheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split — Topics (5)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split — Topics (5)": {
+      "main": [
+        [
+          {
+            "node": "OpenAI — LI Post + Carousel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Build Asset Rows (Post/Carousel/Meme/Explainer)": {
+      "main": [
+        [
+          {
+            "node": "Notion — Create Asset Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF — More Pages?": {
+      "main": [
+        [
+          {
+            "node": "HTTP — List Children (cursor)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code — Blocks to Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI — Topic Extractor": {
+      "main": [
+        [
+          {
+            "node": "Code — Parse Topics JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI — LI Post + Carousel": {
+      "main": [
+        [
+          {
+            "node": "Code — Build Asset Rows (Post/Carousel/Meme/Explainer)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion — Create Asset Rows": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Build Asset Rows (Explainer Script)": {
+      "main": [
+        [
+          {
+            "node": "Notion — Create Asset Rows (Explainer Script)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI — Explainer Script": {
+      "main": [
+        [
+          {
+            "node": "Code — Build Asset Rows (Explainer Script)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI — Cheatsheet": {
+      "main": [
+        [
+          {
+            "node": "Code — Build Asset Rows (Cheatsheet)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — Build Asset Rows (Cheatsheet)": {
+      "main": [
+        [
+          {
+            "node": "Notion — Create Asset Rows (Cheatsheet)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion — Create Asset Rows (Cheatsheet)": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Notion — Create Asset Rows (Explainer Script)": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Split — Topics (5)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Update a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — LinkedIn Post Templates Accumulate & Continue": {
+      "main": [
+        [
+          {
+            "node": "IF — LinkedIn Post Templates More Pages?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — LinkedIn Post Templates Blocks to Markdown": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF — LinkedIn Post Templates More Pages?": {
+      "main": [
+        [
+          {
+            "node": "HTTP — Get LinkedIn Templates from Notion",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code — LinkedIn Post Templates Blocks to Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP — Get LinkedIn Templates from Notion": {
+      "main": [
+        [
+          {
+            "node": "Code — LinkedIn Post Templates Accumulate & Continue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code — LinkedIn Post Templates Init Cursor": {
+      "main": [
+        [
+          {
+            "node": "HTTP — Get LinkedIn Templates from Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "OpenAI — Topic Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion Trigger — Playbooks Added": {
+      "main": [
+        [
+          {
+            "node": "Get a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a database page": {
+      "main": [
+        [
+          {
+            "node": "Split — New/Updated Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split — New/Updated Pages": {
+      "main": [
+        [
+          {
+            "node": "Code — Get Page ID",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code — LinkedIn Post Templates Init Cursor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a database page": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Get a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "timeSavedPerExecution": 120
+  },
+  "versionId": "eb87c8f5-79f1-4d96-b7e3-e983279f2fe8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1aa19caf317ef7a1cbf0d72cc4bd5369beee2efe54ab2e01e98b0440dba5428f"
+  },
+  "id": "FcSKzl5V9K8TLe8m",
+  "tags": []
+}
