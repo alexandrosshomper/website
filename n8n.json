@@ -326,7 +326,7 @@
             {
               "key": "Playbook|relation",
               "relationValue": [
-                "={{ ($json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id) ? [$json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id] : [] }}"
+                "={{ ((id) => id ? [{ id }] : [])($json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id) }}"
               ]
             },
             {
@@ -516,7 +516,7 @@
             {
               "key": "Playbook|relation",
               "relationValue": [
-                "={{ ($json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id) ? [$json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id] : [] }}"
+                "={{ ((id) => id ? [{ id }] : [])($json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id) }}"
               ]
             }
           ]
@@ -593,7 +593,7 @@
             {
               "key": "Playbook|relation",
               "relationValue": [
-                "={{ ($json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id) ? [$json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id] : [] }}"
+                "={{ ((id) => id ? [{ id }] : [])($json.playbookId || $item(0).$node[\"Code — Get Page ID\"]?.json?.playbookId || $item(0).$node[\"Notion Trigger — Playbooks Updated\"]?.json?.id) }}"
               ]
             }
           ]
