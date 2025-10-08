@@ -18,7 +18,6 @@ import Checkbox from "../../Checkbox/Checkbox";
 import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
 
 import { Check, X } from "lucide-react";
-import { Check, X } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 import Lightbox from "../../Lightbox/Lightbox";
@@ -1613,66 +1612,6 @@ const Content = (props) => {
                 label="Are too few free users upgrading to paid plans, leaving revenue on the table?"
               />
             </SelfCheckItem>
-        <Lightbox
-          isOpen={isSelfCheckOpen}
-          onClose={() => setIsSelfCheckOpen(false)}
-          ariaLabel="Onboarding self-check"
-          maxWidth="560px"
-          contentPadding="24px"
-          contentPaddingTablet="24px 32px"
-          contentPaddingBottom="32px"
-          contentPaddingBottomTablet="40px"
-        >
-          <SelfCheckTitle>Onboarding Self-Check</SelfCheckTitle>
-          <SelfCheckSubline>
-            Find out whether you have an onboarding problem. Check what applies.
-          </SelfCheckSubline>
-          <SelfCheckList>
-            <SelfCheckItem>
-              <Checkbox
-                checked={selectedIssues[1]}
-                onChange={() => toggleIssue(1)}
-                label="Are new users signing up but not activating—dropping off before they experience real value?"
-              />
-            </SelfCheckItem>
-            <SelfCheckItem>
-              <Checkbox
-                checked={selectedIssues[2]}
-                onChange={() => toggleIssue(2)}
-                label="Do you see low retention after the first weeks even though acquisition is steady?"
-              />
-            </SelfCheckItem>
-            <SelfCheckItem>
-              <Checkbox
-                checked={selectedIssues[3]}
-                onChange={() => toggleIssue(3)}
-                label="Are too few free users upgrading to paid plans, leaving revenue on the table?"
-              />
-            </SelfCheckItem>
-
-            <SelfCheckItem>
-              <Checkbox
-                checked={selectedIssues[4]}
-                onChange={() => toggleIssue(4)}
-                label="Do you notice support tickets piling up because the product doesn't guide users well enough?"
-              />
-            </SelfCheckItem>
-            <SelfCheckItem>
-              <Checkbox
-                checked={selectedIssues[5]}
-                onChange={() => toggleIssue(5)}
-                label="Do you notice support tickets piling up because the product doesn't guide ?"
-              />
-            </SelfCheckItem>
-          </SelfCheckList>
-          <Thermometer>
-            <BlinkingCircle
-              style={{ backgroundColor: thermometerColor }}
-              shouldBlink={shouldBlink}
-              blinkInterval={blinkInterval}
-            />
-            <ThermometerText>{thermometerText}</ThermometerText>
-          </Thermometer>
             <SelfCheckItem>
               <Checkbox
                 checked={selectedIssues[4]}
@@ -1834,24 +1773,6 @@ const Content = (props) => {
             </SolutionCard>
           </InViewMotion>
         </SolutionCards>
-        <Lightbox
-          isOpen={isROICalculatorOpen}
-          onClose={() => setIsROICalculatorOpen(false)}
-          ariaLabel="ROI calculator"
-          maxWidth="600px"
-          maxHeight="75vh"
-          align="flex-start"
-          alignTablet="center"
-          contentPadding="24px"
-          contentPaddingTablet="32px"
-          contentPaddingBottom="40px"
-          contentPaddingBottomTablet="48px"
-        >
-          <ROICalculatorTitle>Calculate Onboarding ROI</ROICalculatorTitle>
-          <ROICalculatorSubline>
-            See how much revenue you could gain by improving your onboarding
-            activation rate.
-          </ROICalculatorSubline>
         <Lightbox
           isOpen={isROICalculatorOpen}
           onClose={() => setIsROICalculatorOpen(false)}
