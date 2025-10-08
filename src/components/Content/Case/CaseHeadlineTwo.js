@@ -13,21 +13,21 @@ const CaseHeadlineTwo = ({ headline }) => {
     margin-bottom: 8px;
     margin-top: 0px;
 
-    width: 90%;
+    width: 70%;
 
     font-size: 28px;
     line-height: 109%;
     text-align: left;
     ${Devices.tabletS} {
-      width: 564px;
+      width: 520px;
       font-size: 36px;
       line-height: 109%;
     }
     ${Devices.tabletM} {
-      width: 708px;
+      width: 520px;
     }
     ${Devices.laptopS} {
-      width: 740px;
+      width: 650px;
     }
     ${Devices.laptopM} {
     }

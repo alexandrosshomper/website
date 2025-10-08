@@ -57,7 +57,8 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
   ].filter(Boolean);
 
   const pageTitle = `${flowMeta.name} Onboarding Flow | Alexandros Shomper`;
-  const pageDescription = flowMeta.desc ||
+  const pageDescription =
+    flowMeta.desc ||
     "Explore detailed onboarding and activation flows from leading products.";
 
   return (
@@ -82,7 +83,11 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
         <br />
         <br />
         <br />
-        <FlowCarousel data={screens} appname={flowMeta.name} url={flowMeta.path} />
+        <FlowCarousel
+          data={screens}
+          appname={flowMeta.name}
+          url={flowMeta.path}
+        />
         <br />
         <br />
         <br />
