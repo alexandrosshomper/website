@@ -1,95 +1,23 @@
-import styled from "@emotion/styled";
 import React from "react";
-import { Helmet } from "react-helmet";
 
-import flowData from "../../../data/flows/wrike_flow.json";
+import wrikeFlow from "../../../data/flows/wrike_flow.json";
+import FlowPageTemplate from "./FlowPageTemplate";
 
-// DESIGN SYSTEM
-import { Colors, Devices } from "../../DesignSystem";
+const relatedResources = [
+  {
+    eyebrow: "Case Study",
+    eyebrowColor2: "#FFEAED",
+    eyebrowColor1: "#FD594A",
+    headline:
+      "Asana – How positioning for teams & enterprise impacts your segmentation, setup, and plan selection",
+    copy: "",
+    imgURL: "/img/case_studies/wrike/Cover@2x.png",
+    link: "/case-studies/wrike",
+  },
+];
 
-//COMPONENTS
-import CaseSubline from "../../Content/Case/CaseSubline";
-import CaseTitle from "../../Content/Case/CaseTitle";
-import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
+const AsanaFlow = () => (
+  <FlowPageTemplate flowSlug="wrike" screens={wrikeFlow} />
+);
 
-import FlowCarousel from "../../Content/FlowCarousel/FlowCarousel";
-
-const Content = () => {
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 72px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    flex-grow: 0;
-  `;
-
-  const Chips = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    width: 90%;
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      width: 708px;
-    }
-    ${Devices.laptopS} {
-      width: 740px;
-    }
-  `;
-  const Chip = styled.div`
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    color: ${Colors.primaryText.highEmphasis};
-    background-color: white;
-    border-radius: 20px;
-    padding: 8px 16px 8px 16px;
-    cursor: default;
-  `;
-  return (
-    <Content>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Wrike Onboarding Flow | Alexandros Shomper</title>
-        <meta name="description" content="" />
-        <description></description>
-        <title>Wrike Onboarding Flow</title>
-      </Helmet>
-      <Section>
-        <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
-        <CaseTitle headline={"Wrike"} />
-        <CaseSubline subline={"One platform to streamline all workflows"} />
-
-        <Chips>
-          <Chip>Project Management</Chip>
-          <Chip>B2B</Chip>
-          <Chip>Freemium</Chip>
-        </Chips>
-        <br />
-        <br />
-        <br />
-        <FlowCarousel data={flowData} appname={"Wrike"} />
-        <br />
-        <br />
-        <br />
-        <br />
-      </Section>
-    </Content>
-  );
-};
-
-export default Content;
+export default AsanaFlow;
