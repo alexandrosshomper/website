@@ -18,6 +18,7 @@ import Checkbox from "../../Checkbox/Checkbox";
 import DeliverablesCard from "../../Content/DeliverablesCard/DeliverablesCard";
 
 import { Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import AccordeonVisual from "../../Content/AccordeonVisual/AccordeonVisual";
 import PricingCanvas from "../../Content/PricingCanvas/PricingCanvas";
 import Lightbox from "../../Lightbox/Lightbox";
@@ -1199,14 +1200,43 @@ const CloseLightboxButton = styled.button`
   right: 16px;
   width: 44px;
   height: 44px;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: #000000;
   color: #ffffff;
+  background: #000000;
+  color: #ffffff;
   cursor: pointer;
+  display: inline-flex;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  z-index: 2;
+  transition: transform 120ms ease, background-color 120ms ease;
+
+  &:hover {
+    background: #101010;
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
   padding: 0;
   z-index: 2;
   transition: transform 120ms ease, background-color 120ms ease;
@@ -1353,6 +1383,7 @@ const Content = (props) => {
         setIsLightboxOpen(false);
         setIsROICalculatorOpen(false);
         setIsSelfCheckOpen(false);
+        setIsSelfCheckOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -1478,6 +1509,7 @@ const Content = (props) => {
                   aria-label="Close video"
                 >
                   <X aria-hidden="true" strokeWidth={2.5} />
+                  <X aria-hidden="true" strokeWidth={2.5} />
                 </CloseLightboxButton>
                 <iframe
                   src={LOOM_VIDEO_URL}
@@ -1581,7 +1613,66 @@ const Content = (props) => {
                 label="Are too few free users upgrading to paid plans, leaving revenue on the table?"
               />
             </SelfCheckItem>
+        <Lightbox
+          isOpen={isSelfCheckOpen}
+          onClose={() => setIsSelfCheckOpen(false)}
+          ariaLabel="Onboarding self-check"
+          maxWidth="560px"
+          contentPadding="24px"
+          contentPaddingTablet="24px 32px"
+          contentPaddingBottom="32px"
+          contentPaddingBottomTablet="40px"
+        >
+          <SelfCheckTitle>Onboarding Self-Check</SelfCheckTitle>
+          <SelfCheckSubline>
+            Find out whether you have an onboarding problem. Check what applies.
+          </SelfCheckSubline>
+          <SelfCheckList>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[1]}
+                onChange={() => toggleIssue(1)}
+                label="Are new users signing up but not activating—dropping off before they experience real value?"
+              />
+            </SelfCheckItem>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[2]}
+                onChange={() => toggleIssue(2)}
+                label="Do you see low retention after the first weeks even though acquisition is steady?"
+              />
+            </SelfCheckItem>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[3]}
+                onChange={() => toggleIssue(3)}
+                label="Are too few free users upgrading to paid plans, leaving revenue on the table?"
+              />
+            </SelfCheckItem>
 
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[4]}
+                onChange={() => toggleIssue(4)}
+                label="Do you notice support tickets piling up because the product doesn't guide users well enough?"
+              />
+            </SelfCheckItem>
+            <SelfCheckItem>
+              <Checkbox
+                checked={selectedIssues[5]}
+                onChange={() => toggleIssue(5)}
+                label="Do you notice support tickets piling up because the product doesn't guide ?"
+              />
+            </SelfCheckItem>
+          </SelfCheckList>
+          <Thermometer>
+            <BlinkingCircle
+              style={{ backgroundColor: thermometerColor }}
+              shouldBlink={shouldBlink}
+              blinkInterval={blinkInterval}
+            />
+            <ThermometerText>{thermometerText}</ThermometerText>
+          </Thermometer>
             <SelfCheckItem>
               <Checkbox
                 checked={selectedIssues[4]}
@@ -1761,6 +1852,24 @@ const Content = (props) => {
             See how much revenue you could gain by improving your onboarding
             activation rate.
           </ROICalculatorSubline>
+        <Lightbox
+          isOpen={isROICalculatorOpen}
+          onClose={() => setIsROICalculatorOpen(false)}
+          ariaLabel="ROI calculator"
+          maxWidth="600px"
+          maxHeight="75vh"
+          align="flex-start"
+          alignTablet="center"
+          contentPadding="24px"
+          contentPaddingTablet="32px"
+          contentPaddingBottom="40px"
+          contentPaddingBottomTablet="48px"
+        >
+          <ROICalculatorTitle>Calculate Onboarding ROI</ROICalculatorTitle>
+          <ROICalculatorSubline>
+            See how much revenue you could gain by improving your onboarding
+            activation rate.
+          </ROICalculatorSubline>
 
           <ROIForm>
             <ROIInputGroup>
@@ -1779,7 +1888,43 @@ const Content = (props) => {
                 }
               />
             </ROIInputGroup>
+          <ROIForm>
+            <ROIInputGroup>
+              <ROILabel>Monthly Signups</ROILabel>
+              <ROIInput
+                id="roi-monthlySignups"
+                key="roi-monthlySignups"
+                name="monthlySignups"
+                type="text"
+                inputMode="numeric"
+                autoComplete="off"
+                placeholder="e.g., 1000"
+                value={roiInputs.monthlySignups}
+                onChange={(e) =>
+                  handleROIInputChange("monthlySignups", e.target.value)
+                }
+              />
+            </ROIInputGroup>
 
+            <ROIInputGroup>
+              <ROILabel>Current Activation Rate (%)</ROILabel>
+              <ROIInput
+                id="roi-currentActivationRate"
+                key="roi-currentActivationRate"
+                name="currentActivationRate"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                placeholder="e.g., 25"
+                value={roiInputs.currentActivationRate}
+                onChange={(e) =>
+                  handleROIInputChange(
+                    "currentActivationRate",
+                    e.target.value
+                  )
+                }
+              />
+            </ROIInputGroup>
             <ROIInputGroup>
               <ROILabel>Current Activation Rate (%)</ROILabel>
               <ROIInput
@@ -1819,7 +1964,43 @@ const Content = (props) => {
                 }
               />
             </ROIInputGroup>
+            <ROIInputGroup>
+              <ROILabel>Average Revenue Per User (€)</ROILabel>
+              <ROIInput
+                id="roi-averageRevenuePerUser"
+                key="roi-averageRevenuePerUser"
+                name="averageRevenuePerUser"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                placeholder="e.g., 50"
+                value={roiInputs.averageRevenuePerUser}
+                onChange={(e) =>
+                  handleROIInputChange(
+                    "averageRevenuePerUser",
+                    e.target.value
+                  )
+                }
+              />
+            </ROIInputGroup>
 
+            <ROIInputGroup>
+              <ROILabel>Monthly Churn Rate (%)</ROILabel>
+              <ROIInput
+                id="roi-churnRate"
+                key="roi-churnRate"
+                name="churnRate"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                placeholder="e.g., 5"
+                value={roiInputs.churnRate}
+                onChange={(e) =>
+                  handleROIInputChange("churnRate", e.target.value)
+                }
+              />
+            </ROIInputGroup>
+          </ROIForm>
             <ROIInputGroup>
               <ROILabel>Monthly Churn Rate (%)</ROILabel>
               <ROIInput
@@ -1841,7 +2022,18 @@ const Content = (props) => {
           {roiResults && (
             <ROIResults>
               <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
+          {roiResults && (
+            <ROIResults>
+              <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
 
+              <ROIMetric>
+                <ROIMetricLabel>
+                  Current Activated Users/Month
+                </ROIMetricLabel>
+                <ROIMetricValue>
+                  {Math.round(roiResults.current.activatedUsers)}
+                </ROIMetricValue>
+              </ROIMetric>
               <ROIMetric>
                 <ROIMetricLabel>
                   Current Activated Users/Month
@@ -1859,6 +2051,14 @@ const Content = (props) => {
                   {Math.round(roiResults.improved.activatedUsers)}
                 </ROIMetricValue>
               </ROIMetric>
+              <ROIMetric>
+                <ROIMetricLabel>
+                  Improved Activated Users/Month
+                </ROIMetricLabel>
+                <ROIMetricValue>
+                  {Math.round(roiResults.improved.activatedUsers)}
+                </ROIMetricValue>
+              </ROIMetric>
 
               <ROIMetric>
                 <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
@@ -1867,7 +2067,21 @@ const Content = (props) => {
                   {Math.round(roiResults.current.monthlyRevenue).toLocaleString()}
                 </ROIMetricValue>
               </ROIMetric>
+              <ROIMetric>
+                <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
+                <ROIMetricValue>
+                  €
+                  {Math.round(roiResults.current.monthlyRevenue).toLocaleString()}
+                </ROIMetricValue>
+              </ROIMetric>
 
+              <ROIMetric>
+                <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
+                <ROIMetricValue>
+                  €
+                  {Math.round(roiResults.improved.monthlyRevenue).toLocaleString()}
+                </ROIMetricValue>
+              </ROIMetric>
               <ROIMetric>
                 <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
                 <ROIMetricValue>
@@ -1885,7 +2099,27 @@ const Content = (props) => {
                   {Math.round(roiResults.improvement.monthly).toLocaleString()}
                 </ROIImprovementValue>
               </ROIImprovement>
+              <ROIImprovement>
+                <ROIImprovementTitle>
+                  Additional Monthly Revenue
+                </ROIImprovementTitle>
+                <ROIImprovementValue>
+                  €
+                  {Math.round(roiResults.improvement.monthly).toLocaleString()}
+                </ROIImprovementValue>
+              </ROIImprovement>
 
+              <ROIImprovement style={{ marginTop: "12px" }}>
+                <ROIImprovementTitle>
+                  Additional Annual Revenue
+                </ROIImprovementTitle>
+                <ROIImprovementValue>
+                  €
+                  {Math.round(roiResults.improvement.annual).toLocaleString()}
+                </ROIImprovementValue>
+              </ROIImprovement>
+            </ROIResults>
+          )}
               <ROIImprovement style={{ marginTop: "12px" }}>
                 <ROIImprovementTitle>
                   Additional Annual Revenue
