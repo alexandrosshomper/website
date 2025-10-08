@@ -32,8 +32,8 @@ const renderContent = ({ LeadGenerationForm }) => (
           Robinhood, and more.
         </li>
         <li>
-          How optimizing onboarding &amp; activation impacts critical metrics like
-          CAC:CLV, NRR, and ARR.
+          How optimizing onboarding &amp; activation impacts critical metrics
+          like CAC:CLV, NRR, and ARR.
         </li>
       </ul>
       <h3>Key Metrics You'll Discover</h3>
@@ -43,8 +43,8 @@ const renderContent = ({ LeadGenerationForm }) => (
           <i>(Invesp)</i>.
         </li>
         <li>
-          A well-designed onboarding flow can increase revenue by up to 150% over
-          six months.
+          A well-designed onboarding flow can increase revenue by up to 150%
+          over six months.
         </li>
         <li>
           Reducing churn by just 5% can increase profits by up to 95%
@@ -79,7 +79,8 @@ const renderContent = ({ LeadGenerationForm }) => (
           <strong>accelerate ARR</strong> growth.
         </li>
         <li>
-          Building or refining their <strong>product-led growth strategy</strong>.
+          Building or refining their{" "}
+          <strong>product-led growth strategy</strong>.
         </li>
       </ul>
       <p>

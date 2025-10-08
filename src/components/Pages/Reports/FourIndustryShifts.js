@@ -1,8 +1,6 @@
 import React from "react";
 
-import createReportPage, {
-  DEFAULT_META_DESCRIPTION,
-} from "./createReportPage";
+import createReportPage, { DEFAULT_META_DESCRIPTION } from "./createReportPage";
 import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 
 const metaTitle =
@@ -28,8 +26,8 @@ const renderContent = ({ LeadGenerationForm }) => (
       <h3>Key insights you'll discover:</h3>
       <ul>
         <li>
-          How market dynamics have fundamentally shifted, making user
-          activation more crucial than ever.
+          How market dynamics have fundamentally shifted, making user activation
+          more crucial than ever.
         </li>
         <li>
           Why companies with strong onboarding see up to 86% higher customer
@@ -48,7 +46,9 @@ const renderContent = ({ LeadGenerationForm }) => (
         who are:
       </p>
       <ul>
-        <li>Startup founders and product leaders seeking sustainable growth.</li>
+        <li>
+          Startup founders and product leaders seeking sustainable growth.
+        </li>
         <li>SaaS companies struggling with user retention and activation.</li>
         <li>Product teams looking to optimize their onboarding experience.</li>
         <li>Growth managers focused on improving key metrics.</li>
@@ -67,7 +67,8 @@ const renderContent = ({ LeadGenerationForm }) => (
 export default createReportPage({
   metaTitle,
   metaDescription: DEFAULT_META_DESCRIPTION,
-  title: "Four industry shifts making user onboarding & activation indispensible",
+  title:
+    "Four industry shifts making user onboarding & activation indispensible",
   subline:
     "User Onboarding & Activation: a strategic imperative for growth, retention, and survival.",
   leadGenerationFormProps: {

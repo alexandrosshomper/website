@@ -18,7 +18,12 @@ const FlowItemCard = styled.div`
   scroll-snap-stop: always;
 
   ${Devices.tabletS} {
-    width: 480px;
+  }
+  ${Devices.tabletM} {
+  }
+  ${Devices.laptopS} {
+  }
+  ${Devices.laptopM} {
   }
 `;
 
