@@ -233,7 +233,7 @@ const Navigation = (props) => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <Navigation>
+        <NavigationContainer>
           <Identity />
 
           <CallToAction>
