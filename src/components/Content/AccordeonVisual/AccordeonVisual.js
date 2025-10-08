@@ -83,7 +83,7 @@ const AccordeonVisual = () => {
   const Copy = styled.p`
     /* Auto Layout */
   `;
-  const hanldeBookAudit = (e, href, instance = "unknown") => {
+  const handleBookAudit = (e, href, instance = "unknown") => {
     e.preventDefault();
     ReactGA.event({
       category: "User",
@@ -110,7 +110,7 @@ const AccordeonVisual = () => {
               size="small"
               variant="primary"
               onClick={(e) =>
-                hanldeBookAudit(
+                handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "pricing-panel-scale"

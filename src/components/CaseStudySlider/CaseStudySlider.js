@@ -74,7 +74,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Image = styled.img`
+const Bild = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -104,16 +104,7 @@ const Spinner = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
-  @keyframes spin {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
+  transform: translate(-50 %, -50 %);
 `;
 
 const NavigationIndicator = styled.div`
@@ -180,7 +171,6 @@ const Controls = styled.div`
   align-items: center;
   gap: 12px;
 `;
-
 const NavButton = styled.button`
   background-color: ${Colors.textWhite.mediumEmphasis};
   color: ${Colors.text.mediumEmphasis};
@@ -271,7 +261,7 @@ const CaseStudySlider = ({ slides }) => {
       <Container>
         <ImageWrapper>
           {loading && <Spinner />}
-          <Image
+          <Bild
             src={slides[currentIndex].image}
             alt={slides[currentIndex].caption || `Slide ${currentIndex + 1}`}
             onLoad={() => {
@@ -281,7 +271,7 @@ const CaseStudySlider = ({ slides }) => {
             isVisible={currentImageLoaded}
           />
           {currentIndex < slides.length - 1 && (
-            <Image
+            <Bild
               src={slides[currentIndex + 1].image}
               alt={
                 slides[currentIndex + 1].caption || `Slide ${currentIndex + 2}`
@@ -290,7 +280,7 @@ const CaseStudySlider = ({ slides }) => {
             />
           )}
           {currentIndex > 0 && (
-            <Image
+            <Bild
               src={slides[currentIndex - 1].image}
               alt={slides[currentIndex - 1].caption || `Slide ${currentIndex}`}
               isVisible={false}
@@ -329,5 +319,4 @@ const CaseStudySlider = ({ slides }) => {
     </SliderRoot>
   );
 };
-
 export default CaseStudySlider;

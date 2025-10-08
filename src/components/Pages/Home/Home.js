@@ -595,7 +595,6 @@ const SolutionCopy = styled.p`
   ${Devices.tabletS} {
   }
   ${Devices.tabletM} {
-
     font-size: 21px;
     line-height: 111%;
   }
@@ -605,7 +604,7 @@ const SolutionCopy = styled.p`
     font-size: 21px;
     line-height: 124%;
   }
-  ${Devices.laptopM} 
+  ${Devices.laptopM} {
     font-size: 21px;
     line-height: 147%;
   }
@@ -1253,7 +1252,7 @@ const Content = (props) => {
     }, 150);
   };
 
-  const hanldeBookAudit = (e, href, instance = "unknown") => {
+  const handleBookAudit = (e, href, instance = "unknown") => {
     e.preventDefault();
     ReactGA.event({
       category: "User",
@@ -1454,7 +1453,7 @@ const Content = (props) => {
               size="medium"
               variant="primary"
               onClick={(e) =>
-                hanldeBookAudit(
+                handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "hero-section"
@@ -1581,7 +1580,6 @@ const Content = (props) => {
                 label="Are too few free users upgrading to paid plans, leaving revenue on the table?"
               />
             </SelfCheckItem>
-
             <SelfCheckItem>
               <Checkbox
                 checked={selectedIssues[4]}
@@ -1623,7 +1621,7 @@ const Content = (props) => {
               size="medium"
               variant="primary"
               onClick={(e) =>
-                hanldeBookAudit(
+                handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "self-check"
@@ -1779,63 +1777,6 @@ const Content = (props) => {
                 }
               />
             </ROIInputGroup>
-
-            <ROIInputGroup>
-              <ROILabel>Current Activation Rate (%)</ROILabel>
-              <ROIInput
-                id="roi-currentActivationRate"
-                key="roi-currentActivationRate"
-                name="currentActivationRate"
-                type="text"
-                inputMode="decimal"
-                autoComplete="off"
-                placeholder="e.g., 25"
-                value={roiInputs.currentActivationRate}
-                onChange={(e) =>
-                  handleROIInputChange(
-                    "currentActivationRate",
-                    e.target.value
-                  )
-                }
-              />
-            </ROIInputGroup>
-
-            <ROIInputGroup>
-              <ROILabel>Average Revenue Per User (€)</ROILabel>
-              <ROIInput
-                id="roi-averageRevenuePerUser"
-                key="roi-averageRevenuePerUser"
-                name="averageRevenuePerUser"
-                type="text"
-                inputMode="decimal"
-                autoComplete="off"
-                placeholder="e.g., 50"
-                value={roiInputs.averageRevenuePerUser}
-                onChange={(e) =>
-                  handleROIInputChange(
-                    "averageRevenuePerUser",
-                    e.target.value
-                  )
-                }
-              />
-            </ROIInputGroup>
-
-            <ROIInputGroup>
-              <ROILabel>Monthly Churn Rate (%)</ROILabel>
-              <ROIInput
-                id="roi-churnRate"
-                key="roi-churnRate"
-                name="churnRate"
-                type="text"
-                inputMode="decimal"
-                autoComplete="off"
-                placeholder="e.g., 5"
-                value={roiInputs.churnRate}
-                onChange={(e) =>
-                  handleROIInputChange("churnRate", e.target.value)
-                }
-              />
-            </ROIInputGroup>
           </ROIForm>
 
           {roiResults && (
@@ -1843,18 +1784,14 @@ const Content = (props) => {
               <ROIResultsTitle>ROI Analysis</ROIResultsTitle>
 
               <ROIMetric>
-                <ROIMetricLabel>
-                  Current Activated Users/Month
-                </ROIMetricLabel>
+                <ROIMetricLabel>Current Activated Users/Month</ROIMetricLabel>
                 <ROIMetricValue>
                   {Math.round(roiResults.current.activatedUsers)}
                 </ROIMetricValue>
               </ROIMetric>
 
               <ROIMetric>
-                <ROIMetricLabel>
-                  Improved Activated Users/Month
-                </ROIMetricLabel>
+                <ROIMetricLabel>Improved Activated Users/Month</ROIMetricLabel>
                 <ROIMetricValue>
                   {Math.round(roiResults.improved.activatedUsers)}
                 </ROIMetricValue>
@@ -1864,7 +1801,9 @@ const Content = (props) => {
                 <ROIMetricLabel>Current Monthly Revenue</ROIMetricLabel>
                 <ROIMetricValue>
                   €
-                  {Math.round(roiResults.current.monthlyRevenue).toLocaleString()}
+                  {Math.round(
+                    roiResults.current.monthlyRevenue
+                  ).toLocaleString()}
                 </ROIMetricValue>
               </ROIMetric>
 
@@ -1872,7 +1811,9 @@ const Content = (props) => {
                 <ROIMetricLabel>Improved Monthly Revenue</ROIMetricLabel>
                 <ROIMetricValue>
                   €
-                  {Math.round(roiResults.improved.monthlyRevenue).toLocaleString()}
+                  {Math.round(
+                    roiResults.improved.monthlyRevenue
+                  ).toLocaleString()}
                 </ROIMetricValue>
               </ROIMetric>
 
@@ -1881,8 +1822,7 @@ const Content = (props) => {
                   Additional Monthly Revenue
                 </ROIImprovementTitle>
                 <ROIImprovementValue>
-                  €
-                  {Math.round(roiResults.improvement.monthly).toLocaleString()}
+                  €{Math.round(roiResults.improvement.monthly).toLocaleString()}
                 </ROIImprovementValue>
               </ROIImprovement>
 
@@ -1891,8 +1831,7 @@ const Content = (props) => {
                   Additional Annual Revenue
                 </ROIImprovementTitle>
                 <ROIImprovementValue>
-                  €
-                  {Math.round(roiResults.improvement.annual).toLocaleString()}
+                  €{Math.round(roiResults.improvement.annual).toLocaleString()}
                 </ROIImprovementValue>
               </ROIImprovement>
             </ROIResults>
@@ -1903,7 +1842,7 @@ const Content = (props) => {
               size="medium"
               variant="primary"
               onClick={(e) =>
-                hanldeBookAudit(
+                handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "roi-calculator"
@@ -1914,7 +1853,6 @@ const Content = (props) => {
             />
           </ModalActions>
         </Lightbox>
-
       </PaddedPageSection>
 
       <PaddedPageSection>
@@ -2001,7 +1939,7 @@ const Content = (props) => {
                 size="medium"
                 variant="primary"
                 onClick={(e) =>
-                  hanldeBookAudit(
+                  handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-early"
@@ -2062,7 +2000,7 @@ const Content = (props) => {
                 size="medium"
                 variant="primary"
                 onClick={(e) =>
-                  hanldeBookAudit(
+                  handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-growth"
@@ -2122,7 +2060,7 @@ const Content = (props) => {
                 size="medium"
                 variant="primary"
                 onClick={(e) =>
-                  hanldeBookAudit(
+                  handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-scale"
@@ -2182,7 +2120,7 @@ const Content = (props) => {
                 size="medium"
                 variant="primary"
                 onClick={(e) =>
-                  hanldeBookAudit(
+                  handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                     "pricing-panel-mature"
@@ -2268,7 +2206,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
             variant="primary"
             href="https://calendar.notion.so/meet/alexandros/onboarding-discovery"
             onClick={(e) =>
-              hanldeBookAudit(
+              handleBookAudit(
                 e,
                 "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                 "cta-section"

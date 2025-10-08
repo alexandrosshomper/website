@@ -185,7 +185,7 @@ const NavigationSticky = (props) => {
       align-items: center;
     }
   `;
-  const hanldeBookAudit = (e, href, instance = "navigation-sticky") => {
+  const handleBookAudit = (e, href, instance = "navigation-sticky") => {
     e.preventDefault();
     ReactGA.event({
       category: "User",
@@ -263,7 +263,7 @@ const NavigationSticky = (props) => {
               size="small"
               variant="primary"
               onClick={(e) =>
-                hanldeBookAudit(
+                handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
                   "hero-section"
