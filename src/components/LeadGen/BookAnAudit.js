@@ -12,8 +12,8 @@ const Headline = styled.h2`
   font-style: normal;
 
   color: ${Colors.primaryText.highEmphasis};
-  margin-bottom: 8px;
-  margin-top: 0px;
+
+  margin: 0px auto 8px auto;
 
   font-size: 32px;
   line-height: 109%;
@@ -48,29 +48,21 @@ const Subline = styled.p`
   font-size: 16px;
   line-height: 112%;
   text-align: center;
-  width: 100%;
+  width: 80%;
 
   ${Devices.tabletS} {
-    font-size: 24px;
-
     text-align: center;
     width: 576px;
   }
   ${Devices.tabletM} {
-    width: 708px;
-
     font-size: 24px;
     line-height: 111%;
   }
   ${Devices.laptopS} {
-    width: 852px;
-
     font-size: 32px;
     line-height: 100%;
   }
   ${Devices.laptopM} {
-    width: 720px;
-
     font-size: 24px;
     line-height: 124%;
   }
@@ -99,7 +91,7 @@ const Wrapper = styled.div`
   border-radius: 0.38rem;
   background-color: white;
 
-  margin: 20px 20px 40px 20px;
+  margin: 20px auto 40px auto;
 
   direction: ltr;
 

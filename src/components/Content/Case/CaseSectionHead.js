@@ -15,6 +15,8 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
     align-items: center;
     padding: 0px;
 
+    margin: 0px auto 0px auto;
+
     position: static;
 
     left: 0px;
@@ -24,18 +26,18 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
     flex: none;
     order: 0;
     flex-grow: 0;
-    width: 100%;
+    width: 70%;
 
     padding-bottom: 60px;
 
     ${Devices.tabletS} {
-      width: 564px;
+      width: 520px;
     }
     ${Devices.tabletM} {
-      width: 708px;
+      width: 520px;
     }
     ${Devices.laptopS} {
-      width: 740px;
+      width: 650px;
     }
     ${Devices.laptopM} {
     }

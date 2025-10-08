@@ -11,8 +11,7 @@ const CaseImage = ({ imgURL, alt, color1, color2, size }) => {
   }
 
   const CaseImage = styled.div`
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px auto 40px auto;
 
     direction: ltr;
 

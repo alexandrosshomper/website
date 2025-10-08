@@ -40,11 +40,19 @@ const CarouselContent = styled.div`
 const CarouselGrid = styled.div`
   display: flex;
   gap: 24px;
-  padding: 4px 20px 10px 20px;
-  width: 80%;
+  padding-top; 4px;
+  padding-bottom: 10px;
+  padding-left: calc((100vw - 70vw) / 2);
+  padding-right: calc((100vw - 70vw) / 2);
+  width: 70%;
 
   ${Devices.tabletS} {
-    padding: 4px 330px 10px 330px;
+  padding-left: calc((100vw - 520px) / 2);
+  padding-right: calc((100vw - 520px) / 2);
+  }
+  ${Devices.laptopS} {
+  padding-left: calc((100vw - 650px) / 2);
+  padding-right: calc((100vw - 650px) / 2);
   }
 `;
 
@@ -53,16 +61,16 @@ const TextWrapper = styled.div`
   flex-direction: column;
   gap: 0px;
   margin: 0px auto 0px auto;
-  width: 90%;
+  width: 70%;
 
   ${Devices.tabletS} {
-    width: 564px;
+    width: 520px;
   }
   ${Devices.tabletM} {
-    width: 708px;
+    width: 520px;
   }
   ${Devices.laptopS} {
-    width: 740px;
+    width: 650px;
   }
 `;
 

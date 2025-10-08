@@ -10,8 +10,8 @@ const SliderRoot = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+
+  margin: 20px auto 40px auto;
 
   position: static;
   left: 0px;
