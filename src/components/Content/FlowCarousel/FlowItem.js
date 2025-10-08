@@ -27,7 +27,7 @@ const FlowItemCard = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const FlowItemWrapper = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 8 / 5;
