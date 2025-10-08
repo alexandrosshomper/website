@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
 import { Check, Calculator, X } from "lucide-react";
-import { Check, Calculator, X } from "lucide-react";
 
 import Button from "../../Button/Button";
 const PricingCanvas = ({ roiCalcAction }) => {

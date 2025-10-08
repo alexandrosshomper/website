@@ -16,9 +16,6 @@ const SliderRoot = styled.div`
   position: static;
   left: 0px;
   top: 0px;
-  position: static;
-  left: 0px;
-  top: 0px;
 
   /* Inside Auto Layout */
   flex: none;
@@ -259,136 +256,67 @@ const CaseStudySlider = ({ slides }) => {
     }
   }, [currentIndex, preloadImage, slides]);
 
-  const SlideIndicator = styled.span`
-    font-size: 14px;
-    color: ${Colors.primaryText.mediumEmphasis};
-    font-weight: 500;
-  `;
-
-  const CaseStudySlider = ({ slides }) => {
-    const sliderRef = useRef(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [loading, setLoading] = useState(true);
-    const [currentImageLoaded, setCurrentImageLoaded] = useState(false);
-
-    const preloadImage = useCallback((url) => {
-      const img = new window.Image();
-      img.src = url;
-      img.onload = () => {
-        console.log("Preloaded:", url);
-      };
-      img.onerror = () => {
-        console.warn("Failed to preload:", url);
-      };
-    }, []);
-
-    const goToNext = useCallback(() => {
-      setLoading(true);
-      setCurrentImageLoaded(false);
-      setCurrentIndex((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
-    }, [slides.length]);
-
-    const goToPrev = useCallback(() => {
-      setLoading(true);
-      setCurrentImageLoaded(false);
-      setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
-    }, []);
-
-    useEffect(() => {
-      const handleKeyDown = (e) => {
-        if (e.key === "ArrowRight") {
-          goToNext();
-          sliderRef.current?.scrollIntoView({ behavior: "smooth" });
-        } else if (e.key === "ArrowLeft") {
-          goToPrev();
-          sliderRef.current?.scrollIntoView({ behavior: "smooth" });
-        }
-      };
-
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [goToNext, goToPrev]);
-
-    useEffect(() => {
-      const nextIndex = currentIndex + 1;
-      const prevIndex = currentIndex - 1;
-
-      if (nextIndex < slides.length) {
-        preloadImage(slides[nextIndex].image);
-      }
-      if (prevIndex >= 0) {
-        preloadImage(slides[prevIndex].image);
-      }
-    }, [currentIndex, preloadImage, slides]);
-
-    return (
-      <SliderRoot ref={sliderRef}>
-        <Container>
-          <ImageWrapper>
-            {loading && <Spinner />}
+  return (
+    <SliderRoot ref={sliderRef}>
+      <Container>
+        <ImageWrapper>
+          {loading && <Spinner />}
+          <Bild
+            src={slides[currentIndex].image}
+            alt={slides[currentIndex].caption || `Slide ${currentIndex + 1}`}
+            onLoad={() => {
+              setCurrentImageLoaded(true);
+              setLoading(false);
+            }}
+            isVisible={currentImageLoaded}
+          />
+          {currentIndex < slides.length - 1 && (
             <Bild
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].caption || `Slide ${currentIndex + 1}`}
-              onLoad={() => {
-                setCurrentImageLoaded(true);
-                setLoading(false);
-              }}
-              isVisible={currentImageLoaded}
+              src={slides[currentIndex + 1].image}
+              alt={
+                slides[currentIndex + 1].caption || `Slide ${currentIndex + 2}`
+              }
+              isVisible={false}
             />
-            {currentIndex < slides.length - 1 && (
-              <Bild
-                src={slides[currentIndex + 1].image}
-                alt={
-                  slides[currentIndex + 1].caption ||
-                  `Slide ${currentIndex + 2}`
-                }
-                isVisible={false}
-              />
-            )}
-            {currentIndex > 0 && (
-              <Bild
-                src={slides[currentIndex - 1].image}
-                alt={
-                  slides[currentIndex - 1].caption || `Slide ${currentIndex}`
-                }
-                isVisible={false}
-              />
-            )}
-          </ImageWrapper>
+          )}
+          {currentIndex > 0 && (
+            <Bild
+              src={slides[currentIndex - 1].image}
+              alt={slides[currentIndex - 1].caption || `Slide ${currentIndex}`}
+              isVisible={false}
+            />
+          )}
+        </ImageWrapper>
 
-          <Controls>
-            <NavButton onClick={goToPrev} disabled={currentIndex === 0}>
-              <ChevronLeft size={26} strokeWidth={1.5} />
-            </NavButton>
-            <NavigationIndicator>
-              <TextGroup>
-                {slides[currentIndex].headline && (
-                  <Headline>{slides[currentIndex].headline}</Headline>
-                )}
-                {slides[currentIndex].caption && (
-                  <Caption>{slides[currentIndex].caption}</Caption>
-                )}
-              </TextGroup>
-              <ProgressBar>
-                <ProgressFill
-                  progress={currentIndex + 1}
-                  total={slides.length}
-                />
-              </ProgressBar>
-              <SlideIndicator>
-                Slide {currentIndex + 1} of {slides.length}
-              </SlideIndicator>
-            </NavigationIndicator>
-            <NavButton
-              onClick={goToNext}
-              disabled={currentIndex === slides.length - 1}
-            >
-              <ChevronRight size={26} strokeWidth={1.5} />
-            </NavButton>
-          </Controls>
-        </Container>
-      </SliderRoot>
-    );
-  };
+        <Controls>
+          <NavButton onClick={goToPrev} disabled={currentIndex === 0}>
+            <ChevronLeft size={26} strokeWidth={1.5} />
+          </NavButton>
+          <NavigationIndicator>
+            <TextGroup>
+              {slides[currentIndex].headline && (
+                <Headline>{slides[currentIndex].headline}</Headline>
+              )}
+              {slides[currentIndex].caption && (
+                <Caption>{slides[currentIndex].caption}</Caption>
+              )}
+            </TextGroup>
+            <ProgressBar>
+              <ProgressFill progress={currentIndex + 1} total={slides.length} />
+            </ProgressBar>
+            <SlideIndicator>
+              Slide {currentIndex + 1} of {slides.length}
+            </SlideIndicator>
+          </NavigationIndicator>
+          <NavButton
+            onClick={goToNext}
+            disabled={currentIndex === slides.length - 1}
+          >
+            <ChevronRight size={26} strokeWidth={1.5} />
+          </NavButton>
+        </Controls>
+      </Container>
+    </SliderRoot>
+  );
 };
 export default CaseStudySlider;
