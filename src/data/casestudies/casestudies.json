@@ -34,5 +34,14 @@
     "cover": "/img/casestudies/trello/cover.png",
     "thumbnail": "/img/casestudies/trello/thumbnail.png",
     "type": "Onboarding Case Studies"
+  },
+  {
+    "id": 5,
+    "slug": "casestudies/chatgpt-apps",
+    "name": "Booking vacation with ChatGPT Apps",
+    "desc": "Booking vacation with ChatGPT Apps",
+    "cover": "/img/casestudies/chatgpt-apps/cover.png",
+    "thumbnail": "/img/casestudies/chatgpt-apps/thumbnail.png",
+    "type": "General Case Study"
   }
 ]
