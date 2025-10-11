@@ -55,6 +55,15 @@ const CASE_STUDY_METADATA = {
     imgURL: "/img/case_studies/trello/Cover@2x.png",
     comingSoon: true,
   },
+  "chatgpt-apps": {
+    eyebrow: "Case Study",
+    eyebrowColor1: "#111827",
+    eyebrowColor2: "#9CA3AF",
+    headline: "Booking vacation with ChatGPT Apps",
+    copy: "",
+    imgURL: "/img/case_studies/chatgpt-apps/Cover@2x.png",
+    comingSoon: true,
+  },
 };
 
 const mapCaseStudyType = (type) => {
@@ -63,6 +72,10 @@ const mapCaseStudyType = (type) => {
   }
 
   if (type === CASE_STUDY_TYPES.GENERAL) {
+    return CASE_STUDY_TYPES.GENERAL;
+  }
+
+  if (type === "General Case Study") {
     return CASE_STUDY_TYPES.GENERAL;
   }
 
