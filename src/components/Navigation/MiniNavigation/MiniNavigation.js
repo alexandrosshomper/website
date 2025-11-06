@@ -79,7 +79,7 @@ const MiniNavigation = (props) => {
       <Sitemap>
         <SitemapItem>
           <Link
-            to={`/`}
+            to={`/profile`}
             style={{
               color: Colors.primaryText.highEmphasis,
               textDecoration: "none",

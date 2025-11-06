@@ -4,6 +4,10 @@ const routes = [
     exact: true,
   },
   {
+    path: "/profile",
+    exact: true,
+  },
+  {
     path: "/contact",
     exact: true,
   },
