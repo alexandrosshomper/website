@@ -50,14 +50,6 @@ const Name = styled.h1`
   }
 `;
 
-const Subline = styled.p`
-  margin: 0;
-  font-size: 18px;
-  line-height: 150%;
-  color: ${Colors.primaryText.mediumEmphasis};
-  max-width: 520px;
-`;
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -191,13 +183,10 @@ const Profile = () => {
 
       <Hero>
         <Portrait
-          src="/img/Identity/PortraitProSE.png"
+          src="/img/Identity/Portrait.png"
           alt="Portrait of Alexandros Shomper"
         />
         <Name>Alexandros Shomper</Name>
-        <Subline>
-          Product Designer, Product Manager, Startup Advisor PLG
-        </Subline>
       </Hero>
 
       {sections.map((section) => (
