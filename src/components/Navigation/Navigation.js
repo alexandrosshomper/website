@@ -190,6 +190,20 @@ const Navigation = (props) => {
           <MenuList>
             <MenuItem>
               <MenuLinkStyled
+                to="/profile"
+                style={{
+                  color:
+                    currentPath === "/profile"
+                      ? Colors.primaryText.highEmphasis
+                      : Colors.primaryText.mediumEmphasis,
+                  textDecoration: "none",
+                }}
+              >
+                Profile
+              </MenuLinkStyled>
+            </MenuItem>
+            <MenuItem>
+              <MenuLinkStyled
                 to="/case-studies"
                 style={{
                   color:
