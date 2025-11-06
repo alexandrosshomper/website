@@ -15,6 +15,7 @@ import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 //import Home from "./components/Pages/Home/Home";
 const Home = lazy(() => import("./components/Pages/Home/Home"));
+const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
 const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
@@ -129,6 +130,7 @@ function App() {
           {isSticky && <NavigationSticky />}
 
           <Switch>
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/portfolio" component={Portfolio} />
