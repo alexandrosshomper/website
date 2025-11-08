@@ -92,7 +92,10 @@ const CompanyList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(8, 8, 8, 0.08);
+  overflow: hidden;
 `;
 
 const CompanyItem = styled.li`
@@ -101,9 +104,10 @@ const CompanyItem = styled.li`
   gap: 20px;
   padding: 16px 20px;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 28px rgba(8, 8, 8, 0.08);
-  border: 1px solid rgba(8, 8, 8, 0.05);
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid rgba(8, 8, 8, 0.08);
+  }
 `;
 
 const CompanyDetails = styled.div`
