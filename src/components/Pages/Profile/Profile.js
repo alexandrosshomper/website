@@ -106,6 +106,14 @@ const CompanyItem = styled.li`
   border: 1px solid rgba(8, 8, 8, 0.05);
 `;
 
+const CompanyDetails = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+`;
+
 const CompanyIcon = styled.div`
   width: 56px;
   height: 56px;
@@ -126,6 +134,31 @@ const CompanyName = styled.span`
   font-weight: 600;
   color: ${Colors.primaryText.highEmphasis};
   letter-spacing: 0.01em;
+`;
+
+const VisitButton = styled.button`
+  margin-left: auto;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: ${Colors.blue};
+  color: ${Colors.textWhite.highEmphasis};
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: ${Colors.blueDark};
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${Colors.blueLight};
+    outline-offset: 2px;
+  }
 `;
 
 const sections = [
@@ -207,15 +240,20 @@ const Profile = () => {
           <CompanyList>
             {section.items.map((company, index) => (
               <CompanyItem key={company}>
-                <CompanyIcon
-                  $background={
-                    accentPalette[index % accentPalette.length]
-                  }
-                  aria-hidden="true"
-                >
-                  {getInitials(company)}
-                </CompanyIcon>
-                <CompanyName>{company}</CompanyName>
+                <CompanyDetails>
+                  <CompanyIcon
+                    $background={
+                      accentPalette[index % accentPalette.length]
+                    }
+                    aria-hidden="true"
+                  >
+                    {getInitials(company)}
+                  </CompanyIcon>
+                  <CompanyName>{company}</CompanyName>
+                </CompanyDetails>
+                <VisitButton type="button" aria-label={`Visit ${company}`}>
+                  Visit
+                </VisitButton>
               </CompanyItem>
             ))}
           </CompanyList>
