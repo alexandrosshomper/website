@@ -134,13 +134,33 @@ const CompanyIcon = styled.div`
 `;
 
 const CompanyName = styled.span`
+  display: block;
   font-size: 18px;
   font-weight: 600;
+  line-height: 140%;
   color: ${Colors.primaryText.highEmphasis};
   letter-spacing: 0.01em;
 `;
 
+const CompanyText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  text-align: left;
+`;
+
+const CompanySubline = styled.span`
+  font-size: 15px;
+  line-height: 150%;
+  color: ${Colors.primaryText.mediumEmphasis};
+  letter-spacing: 0.01em;
+`;
+
 const VisitButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   padding: 10px 20px;
   border-radius: 999px;
@@ -152,6 +172,7 @@ const VisitButton = styled.button`
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
 
   &:hover,
   &:focus-visible {
@@ -169,29 +190,111 @@ const sections = [
   {
     title: "Current",
     items: [
-      "UnternehmerTUM",
-      "Start2 Group",
-      "Werk1",
-      "PioneersClub",
+      {
+        name: "Kimarina",
+        subline: "Founder, Growth & Product Design Consultancy",
+        url: "https://kimarina.com",
+      },
+      {
+        name: "UnternehmerTUM",
+        subline: "Startup Advisor PMF, Growth & Product Design",
+        url: "https://www.unternehmertum.de",
+      },
+      {
+        name: "Start2 Group",
+        subline: "Startup Advisor Growth & Product Design",
+        url: "https://www.start2.group",
+      },
+      {
+        name: "Werk1",
+        subline: "Startup Advisor Growth & Product Design",
+        url: "https://www.werk1.com",
+      },
+      {
+        name: "PioneersClub",
+        subline: "Startup Advisor PMF, Growth & Product Design",
+        url: "https://pioneersclub.io",
+      },
     ],
   },
   {
     title: "Startups coached",
-    items: ["Norizon", "Muvn", "Codressing", "FuturePM", "FamilyMindAI", "evalu8"],
+    items: [
+      {
+        name: "Muvn",
+        subline: "Pre-Seed",
+        url: "https://www.muvn.de",
+      },
+      {
+        name: "Norizon",
+        subline: "Pre-Seed",
+        url: "https://norizon.de",
+      },
+      {
+        name: "Codressing",
+        subline: "Pre-Seed",
+        url: "https://www.co-dressing.com",
+      },
+      {
+        name: "FamilyMindAI",
+        subline: "Pre-Seed",
+        url: "https://familymind.ai",
+      },
+      {
+        name: "evalu8",
+        subline: "Pre-Seed",
+        url: "https://www.evalue8.ai",
+      },
+    ],
   },
   {
     title: "Past Work",
     items: [
-      "Knauf",
-      "Occhio",
-      "Magirus",
-      "Stabilo",
-      "Crown",
-      "Medi",
-      "MTV",
-      "Disney",
-      "Studio100",
-      "SIXT",
+      {
+        name: "Knauf",
+        subline: "Product Owner, Product Design Manager",
+        url: "https://www.knauf.com",
+      },
+      {
+        name: "Occhio",
+        subline: "Product Owner & UX Manager",
+        url: "https://www.occhio.com",
+      },
+      {
+        name: "Magirus",
+        subline: "Art Director, Product Owner & UX Designer (Agency)",
+        url: "https://www.magirus.de",
+      },
+      {
+        name: "Stabilo",
+        subline: "Art Director (Agency)",
+        url: "https://www.stabilo.de",
+      },
+      {
+        name: "Crown",
+        subline: "Art Director (Agency)",
+        url: "https://www.crown.com",
+      },
+      {
+        name: "Medi",
+        subline: "Art Director (Agency)",
+        url: "https://www.medi.com",
+      },
+      {
+        name: "Disney",
+        subline: "Art Director (Agency)",
+        url: "https://www.disney.com",
+      },
+      {
+        name: "Studio 100",
+        subline: "Art Director (Agency)",
+        url: "https://www.studio100.com",
+      },
+      {
+        name: "Sixt",
+        subline: "Art Director (Agency)",
+        url: "https://www.sixt.com",
+      },
     ],
   },
 ];
@@ -213,7 +316,8 @@ const accentPalette = [
 
 const getInitials = (name) =>
   name
-    .split(" ")
+    .split(/\s|-/)
+    .filter(Boolean)
     .map((part) => part[0])
     .join("")
     .slice(0, 2);
@@ -243,7 +347,7 @@ const Profile = () => {
           <SectionTitle>{section.title}</SectionTitle>
           <CompanyList>
             {section.items.map((company, index) => (
-              <CompanyItem key={company}>
+              <CompanyItem key={company.name}>
                 <CompanyDetails>
                   <CompanyIcon
                     $background={
@@ -251,11 +355,20 @@ const Profile = () => {
                     }
                     aria-hidden="true"
                   >
-                    {getInitials(company)}
+                    {getInitials(company.name)}
                   </CompanyIcon>
-                  <CompanyName>{company}</CompanyName>
+                  <CompanyText>
+                    <CompanyName>{company.name}</CompanyName>
+                    <CompanySubline>{company.subline}</CompanySubline>
+                  </CompanyText>
                 </CompanyDetails>
-                <VisitButton type="button" aria-label={`Visit ${company}`}>
+                <VisitButton
+                  as="a"
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${company.name}`}
+                >
                   Visit
                 </VisitButton>
               </CompanyItem>
