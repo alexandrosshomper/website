@@ -30,23 +30,27 @@ const Portrait = styled.img`
   border-radius: 32px;
   object-fit: cover;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
-  border: 4px solid ${Colors.back};
 
   ${Devices.tabletS} {
-    width: 220px;
-    height: 220px;
+    width: 440px;
+    height: 260px;
   }
 `;
 
+const NameBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
 const Name = styled.h1`
   margin: 0;
   font-size: 36px;
   line-height: 120%;
-  font-weight: 700;
+  font-weight: 500;
   color: ${Colors.primaryText.highEmphasis};
 
   ${Devices.tabletS} {
-    font-size: 48px;
+    font-size: 36px;
   }
 `;
 
@@ -64,25 +68,37 @@ const Subline = styled.p`
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 18px;
   width: 100%;
   max-width: 720px;
 
+  margin-right: 24px;
+  margin-left: 24px;
+  ${Devices.tabletS} {
+    margin: 0 auto;
+    width: 564px;
+  }
+  ${Devices.tabletM} {
+    width: 708px;
+  }
   ${Devices.laptopS} {
-    max-width: 864px;
+    width: 852px;
+  }
+  ${Devices.laptopM} {
+    width: 1140px;
   }
 `;
 
 const SectionTitle = styled.h2`
   margin: 0;
-  font-size: 28px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 120%;
-  color: ${Colors.primaryText.highEmphasis};
+  color: ${Colors.primaryText.mediumEmphasis};
   text-align: left;
 
   ${Devices.tabletS} {
-    font-size: 32px;
+    font-size: 16px;
   }
 `;
 
@@ -100,7 +116,7 @@ const CompanyList = styled.ul`
 
 const CompanyItem = styled.li`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   padding: 16px 20px;
   background: #ffffff;
@@ -108,14 +124,20 @@ const CompanyItem = styled.li`
   &:not(:last-of-type) {
     border-bottom: 1px solid rgba(8, 8, 8, 0.08);
   }
+  ${Devices.tabletS} {
+    align-items: center;
+  }
 `;
 
 const CompanyDetails = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   flex: 1;
   min-width: 0;
+  ${Devices.tabletS} {
+    align-items: center;
+  }
 `;
 
 const CompanyIcon = styled.div`
@@ -129,8 +151,13 @@ const CompanyIcon = styled.div`
   font-weight: 600;
   letter-spacing: 0.02em;
   color: ${Colors.textWhite.highEmphasis};
-  background: ${(props) => props.$background};
+  background-image: ${(props) =>
+    props.$background ? `url(${props.$background})` : "none"};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-transform: uppercase;
+  flex-shrink: 0;
 `;
 
 const CompanyName = styled.span`
@@ -145,7 +172,7 @@ const CompanyName = styled.span`
 const CompanyText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0px;
   min-width: 0;
   text-align: left;
 `;
@@ -164,11 +191,11 @@ const VisitButton = styled.button`
   margin-left: auto;
   padding: 10px 20px;
   border-radius: 999px;
-  background: ${Colors.blue};
-  color: ${Colors.textWhite.highEmphasis};
+  background: ${Colors.greyLight};
+  color: ${Colors.text.highEmphasis};
   border: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -176,8 +203,12 @@ const VisitButton = styled.button`
 
   &:hover,
   &:focus-visible {
-    background: ${Colors.blueDark};
-    transform: translateY(-1px);
+    background: ${Colors.greyDark};
+    color: ${Colors.textWhite.highEmphasis};
+  }
+
+  &:visited {
+    color: ${Colors.text.highEmphasis};
   }
 
   &:focus-visible {
@@ -194,26 +225,25 @@ const sections = [
         name: "Kimarina",
         subline: "Founder, Growth & Product Design Consultancy",
         url: "https://kimarina.com",
+        logo: "/img/company-logos/kimarina.jpeg",
       },
       {
         name: "UnternehmerTUM",
         subline: "Startup Advisor PMF, Growth & Product Design",
         url: "https://www.unternehmertum.de",
+        logo: "/img/company-logos/unternehmertum.jpeg",
       },
       {
         name: "Start2 Group",
         subline: "Startup Advisor Growth & Product Design",
         url: "https://www.start2.group",
-      },
-      {
-        name: "Werk1",
-        subline: "Startup Advisor Growth & Product Design",
-        url: "https://www.werk1.com",
+        logo: "/img/company-logos/start2.jpeg",
       },
       {
         name: "PioneersClub",
         subline: "Startup Advisor PMF, Growth & Product Design",
         url: "https://pioneersclub.io",
+        logo: "/img/company-logos/pioneersclub.jpeg",
       },
     ],
   },
@@ -224,26 +254,25 @@ const sections = [
         name: "Muvn",
         subline: "Pre-Seed",
         url: "https://www.muvn.de",
+        logo: "/img/company-logos/muvn.jpeg",
       },
       {
         name: "Norizon",
         subline: "Pre-Seed",
         url: "https://norizon.de",
+        logo: "/img/company-logos/norizon.jpeg",
       },
       {
         name: "Codressing",
         subline: "Pre-Seed",
         url: "https://www.co-dressing.com",
+        logo: "/img/company-logos/codressing.jpeg",
       },
       {
         name: "FamilyMindAI",
         subline: "Pre-Seed",
         url: "https://familymind.ai",
-      },
-      {
-        name: "evalu8",
-        subline: "Pre-Seed",
-        url: "https://www.evalue8.ai",
+        logo: "/img/company-logos/familymindai.jpeg",
       },
     ],
   },
@@ -253,74 +282,51 @@ const sections = [
       {
         name: "Knauf",
         subline: "Product Owner, Product Design Manager",
-        url: "https://www.knauf.com",
+        logo: "/img/company-logos/knauf.jpeg",
       },
       {
         name: "Occhio",
         subline: "Product Owner & UX Manager",
-        url: "https://www.occhio.com",
+        logo: "/img/company-logos/occhio.jpeg",
       },
       {
         name: "Magirus",
         subline: "Art Director, Product Owner & UX Designer (Agency)",
-        url: "https://www.magirus.de",
+        logo: "/img/company-logos/magirus.jpeg",
       },
       {
         name: "Stabilo",
         subline: "Art Director (Agency)",
-        url: "https://www.stabilo.de",
+        logo: "/img/company-logos/stabilo.jpeg",
       },
       {
         name: "Crown",
         subline: "Art Director (Agency)",
-        url: "https://www.crown.com",
+        logo: "/img/company-logos/crown.jpeg",
       },
       {
         name: "Medi",
         subline: "Art Director (Agency)",
-        url: "https://www.medi.com",
+        logo: "/img/company-logos/medi.jpeg",
       },
       {
         name: "Disney",
         subline: "Art Director (Agency)",
-        url: "https://www.disney.com",
+        logo: "/img/company-logos/disney.jpeg",
       },
       {
         name: "Studio 100",
         subline: "Art Director (Agency)",
-        url: "https://www.studio100.com",
+        logo: "/img/company-logos/studio100.jpeg",
       },
       {
         name: "Sixt",
         subline: "Art Director (Agency)",
-        url: "https://www.sixt.com",
+        logo: "/img/company-logos/sixt.jpeg",
       },
     ],
   },
 ];
-
-const accentPalette = [
-  Colors.blue,
-  Colors.orange,
-  Colors.green,
-  Colors.purple,
-  Colors.red,
-  Colors.turkish,
-  Colors.blueDark,
-  Colors.orangeDark,
-  Colors.greenDark,
-  Colors.purpleDark,
-  Colors.redLight,
-  Colors.turkishLight,
-];
-
-const getInitials = (name) =>
-  name
-    .split(/\s|-/)
-    .filter(Boolean)
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2);
 
 const Profile = () => {
   return (
@@ -334,12 +340,16 @@ const Profile = () => {
       </Helmet>
 
       <Hero>
+        <NameBlock>
+          <Name>Alexandros Shomper</Name>
+          <Subline>
+            Product Designer, Product Manager, Startup Advisor PLG
+          </Subline>
+        </NameBlock>
         <Portrait
           src="/img/Identity/PortraitProSE.png"
           alt="Portrait of Alexandros Shomper"
         />
-        <Name>Alexandros Shomper</Name>
-        <Subline>Product Designer, Product Manager, Startup Advisor PLG</Subline>
       </Hero>
 
       {sections.map((section) => (
@@ -350,27 +360,25 @@ const Profile = () => {
               <CompanyItem key={company.name}>
                 <CompanyDetails>
                   <CompanyIcon
-                    $background={
-                      accentPalette[index % accentPalette.length]
-                    }
+                    $background={company.logo}
                     aria-hidden="true"
-                  >
-                    {getInitials(company.name)}
-                  </CompanyIcon>
+                  ></CompanyIcon>
                   <CompanyText>
                     <CompanyName>{company.name}</CompanyName>
                     <CompanySubline>{company.subline}</CompanySubline>
                   </CompanyText>
                 </CompanyDetails>
-                <VisitButton
-                  as="a"
-                  href={company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${company.name}`}
-                >
-                  Visit
-                </VisitButton>
+                {company.url && (
+                  <VisitButton
+                    as="a"
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${company.name}`}
+                  >
+                    Visit
+                  </VisitButton>
+                )}
               </CompanyItem>
             ))}
           </CompanyList>

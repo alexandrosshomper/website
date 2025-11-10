@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
@@ -7,7 +6,6 @@ import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
-import Button from "../Button/Button";
 
 const NavigationWrapper = styled.header`
   margin: 0 auto;
@@ -164,19 +162,6 @@ const Navigation = (props) => {
     setMenuOpen(false);
   };
 
-  const handleBookAudit = (e, href, instance = "navigation-sticky") => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "User",
-      action: "Clicked Book Audit",
-      label: `Book Audit - ${instance}`,
-      value: 10,
-      nonInteraction: false,
-    });
-    setTimeout(() => {
-      window.location.href = href;
-    }, 150);
-  };
   return (
     <NavigationWrapper>
       {menuOpen ? (
@@ -204,44 +189,30 @@ const Navigation = (props) => {
             </MenuItem>
             <MenuItem>
               <MenuLinkStyled
-                to="/case-studies"
+                to="/portfolio"
                 style={{
                   color:
-                    currentPath === "/case-studies"
+                    currentPath === "/portfolio"
                       ? Colors.primaryText.highEmphasis
                       : Colors.primaryText.mediumEmphasis,
                   textDecoration: "none",
                 }}
               >
-                Case Studies
+                Portfolio
               </MenuLinkStyled>
             </MenuItem>
             <MenuItem>
               <MenuLinkStyled
-                to="/reports"
+                to="/writing"
                 style={{
                   color:
-                    currentPath === "/reports"
+                    currentPath === "/writing"
                       ? Colors.primaryText.highEmphasis
                       : Colors.primaryText.mediumEmphasis,
                   textDecoration: "none",
                 }}
               >
-                Reports
-              </MenuLinkStyled>
-            </MenuItem>
-            <MenuItem>
-              <MenuLinkStyled
-                to="/flows"
-                style={{
-                  color:
-                    currentPath === "/flows"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Flow Gallery
+                Writing
               </MenuLinkStyled>
             </MenuItem>
           </MenuList>
@@ -253,19 +224,6 @@ const Navigation = (props) => {
           <CallToAction>
             <LandingpageMenu />
 
-            <Button
-              size="small"
-              variant="primary"
-              onClick={(e) =>
-                handleBookAudit(
-                  e,
-                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "hero-section"
-                )
-              }
-              text={"Book intro call"}
-              gradient={{ from: Colors.blue, to: Colors.blueDark }}
-            />
             <MenuButtonWrapper onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButtonWrapper>

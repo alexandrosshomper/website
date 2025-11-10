@@ -1,10 +1,8 @@
 import React, { useState, useMemo } from "react";
-import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import Button from "../Button/Button";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
 import { X, Menu } from "lucide-react";
@@ -168,22 +166,9 @@ const NavigationSticky = () => {
     setMenuOpen(false);
   };
 
-  const handleBookAudit = (e, href, instance = "navigation-sticky") => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "User",
-      action: "Clicked Book Audit",
-      label: `Book Audit - ${instance}`,
-      value: 10,
-      nonInteraction: false,
-    });
-    setTimeout(() => {
-      window.location.href = href;
-    }, 150);
-  };
   const navigationLinks = useMemo(
     () => [
-      { label: "Case Studies", to: "/case-studies" },
+      { label: "Portfolios", to: "/portfolio" },
       { label: "Reports", to: "/reports" },
       { label: "Flow Gallery", to: "/flows" },
     ],
@@ -226,19 +211,6 @@ const NavigationSticky = () => {
           <CTA>
             <LandingpageMenu style={{ marginTop: "4px;" }} />
 
-            <Button
-              size="small"
-              variant="primary"
-              onClick={(e) =>
-                handleBookAudit(
-                  e,
-                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "hero-section"
-                )
-              }
-              text={"Book intro call"}
-              gradient={{ from: Colors.blue, to: Colors.blueDark }}
-            />
             <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>
