@@ -135,7 +135,6 @@ function App() {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/" component={Profile} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/writing" component={Writing} />
             {/*REPORTS*/}
             <Route exact path="/reports" component={Reports} />
@@ -163,25 +162,29 @@ function App() {
             <Route exact path="/flows/wrike" component={WrikeFlow} />
             <Route exact path="/flows/trello" component={TrelloFlow} />
             {/*PORTFOLIO*/}
-            <Route exact path="/occhio" component={Occhio} />
+            <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/portfolio/occhio" component={Occhio} />
             <Route
               exact
-              path="/knauf-explorations"
+              path="/portfolio/knauf-explorations"
               component={KnaufExplorations}
             />
-            <Route exact path="/knauf-account" component={KnaufAccount} />
             <Route
               exact
-              path="/knauf-orderoverview"
+              path="/portfolio/knauf-account"
+              component={KnaufAccount}
+            />
+            <Route
+              exact
+              path="/portfolio/knauf-order-overview"
               component={KnaufOrderOverview}
             />
             <Route
               exact
-              path="/knauf-materialcalculator-pmf"
+              path="/portfolio/knauf-material-calculator"
               component={KnaufMaterialCalculatorPMF}
             />
-
-            <Route exact path="/myknauf" component={MyKnauf} />
+            <Route exact path="/portfolio/myknauf" component={MyKnauf} />
             <Route exact path="/heraklit" component={Heraklit} />
           </Switch>
           <Footer />

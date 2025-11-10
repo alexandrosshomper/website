@@ -455,7 +455,7 @@ const OverviewPageCopy = styled.p`
   font-style: normal;
   font-weight: 300;
   color: ${Colors.primaryText.highEmphasis};
-  margin: 0px 24px 24px 24px;
+  margin: 0px 0px 24px 0px;
 
   font-size: 20px;
   line-height: 120%;
@@ -497,7 +497,11 @@ const OverviewPageSummary = styled.div`
 
   text-align: left;
 
-  margin: 0px 24px 60px 24px;
+  margin: 0px 0px 60px 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 
   &:last-child {
     margin-bottom: 0px;

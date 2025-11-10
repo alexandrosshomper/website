@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "slug": "portfolio/knauf-material-calculator",
+    "name": "Knauf Material Calculator",
+    "desc": "The Jira for construction applicators",
+    "cover": "/img/portfolio/knauf-material-calculator/cover.png",
+    "thumbnail": "/img/portfolio/knauf-material-calculator/thumbnail.png",
+    "type": "Product Market Fit",
+    "coming": false
+  },
+  {
+    "id": 2,
+    "slug": "portfolio/knauf-order-overview",
+    "name": "Knauf Order Overview",
+    "desc": "A unified platform for all Knauf Orders",
+    "cover": "/img/portfolio/knauf-order-overview/cover.png",
+    "thumbnail": "/img/portfolio/knauf-order-overview/thumbnail.png",
+    "type": "Product Market Fit",
+    "coming": false
+  },
+  {
+    "id": 3,
+    "slug": "portfolio/knauf-account",
+    "name": "Knauf Account",
+    "desc": "The Google Account for the construction industry",
+    "cover": "/img/portfolio/knauf-account/cover.png",
+    "thumbnail": "/img/portfolio/knauf-account/thumbnail.png",
+    "type": "Product Market Fit",
+    "coming": true
+  },
+  {
+    "id": 4,
+    "slug": "portfolio/occhio",
+    "name": "Occhio Website & eCommerce",
+    "desc": "A premium user experience",
+    "cover": "/img/portfolio/occhio-website/cover.png",
+    "thumbnail": "/img/portfolio/occhio/thumbnail.png",
+    "type": "Product Market Fit",
+    "coming": false
+  }
+]
