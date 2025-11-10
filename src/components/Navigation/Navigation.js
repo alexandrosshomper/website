@@ -204,44 +204,30 @@ const Navigation = (props) => {
             </MenuItem>
             <MenuItem>
               <MenuLinkStyled
-                to="/case-studies"
+                to="/portfolio"
                 style={{
                   color:
-                    currentPath === "/case-studies"
+                    currentPath === "/portfolio"
                       ? Colors.primaryText.highEmphasis
                       : Colors.primaryText.mediumEmphasis,
                   textDecoration: "none",
                 }}
               >
-                Case Studies
+                Portfolio
               </MenuLinkStyled>
             </MenuItem>
             <MenuItem>
               <MenuLinkStyled
-                to="/reports"
+                to="/writing"
                 style={{
                   color:
-                    currentPath === "/reports"
+                    currentPath === "/writing"
                       ? Colors.primaryText.highEmphasis
                       : Colors.primaryText.mediumEmphasis,
                   textDecoration: "none",
                 }}
               >
-                Reports
-              </MenuLinkStyled>
-            </MenuItem>
-            <MenuItem>
-              <MenuLinkStyled
-                to="/flows"
-                style={{
-                  color:
-                    currentPath === "/flows"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Flow Gallery
+                Writing
               </MenuLinkStyled>
             </MenuItem>
           </MenuList>
@@ -253,19 +239,6 @@ const Navigation = (props) => {
           <CallToAction>
             <LandingpageMenu />
 
-            <Button
-              size="small"
-              variant="primary"
-              onClick={(e) =>
-                handleBookAudit(
-                  e,
-                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "hero-section"
-                )
-              }
-              text={"Book intro call"}
-              gradient={{ from: Colors.blue, to: Colors.blueDark }}
-            />
             <MenuButtonWrapper onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButtonWrapper>

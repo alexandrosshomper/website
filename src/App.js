@@ -55,6 +55,9 @@ const KnaufAccount = lazy(() =>
 const KnaufOrderOverview = lazy(() =>
   import("./components/Pages/Portfolio/KnaufOrderOverview")
 );
+const KnaufMaterialCalculatorPMF = lazy(() =>
+  import("./components/Pages/Portfolio/KnaufMaterialCalculatorPMF")
+);
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
@@ -131,11 +134,10 @@ function App() {
 
           <Switch>
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Profile} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/writing" component={Writing} />
-
             {/*REPORTS*/}
             <Route exact path="/reports" component={Reports} />
             <Route
@@ -161,7 +163,6 @@ function App() {
             <Route exact path="/flows/linear" component={LinearFlow} />
             <Route exact path="/flows/wrike" component={WrikeFlow} />
             <Route exact path="/flows/trello" component={TrelloFlow} />
-
             {/*PORTFOLIO*/}
             <Route exact path="/occhio" component={Occhio} />
             <Route
@@ -175,6 +176,12 @@ function App() {
               path="/knauf-orderoverview"
               component={KnaufOrderOverview}
             />
+            <Route
+              exact
+              path="/knauf-materialcalculator-pmf"
+              component={KnaufMaterialCalculatorPMF}
+            />
+
             <Route exact path="/myknauf" component={MyKnauf} />
             <Route exact path="/heraklit" component={Heraklit} />
           </Switch>

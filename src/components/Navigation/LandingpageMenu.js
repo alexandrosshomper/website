@@ -67,44 +67,30 @@ const LandingpageMenu = (props) => {
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/case-studies`}
+          to={`/portfolio`}
           style={{
             color:
-              currentPath === "/case-studies"
+              currentPath === "/portfolio"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Case Studies
+          Portfolio
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/reports`}
+          to={`/writing`}
           style={{
             color:
-              currentPath === "/reports"
+              currentPath === "/writing"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Reports
-        </Link>
-      </MenuItemSmall>
-      <MenuItemSmall>
-        <Link
-          to={`/flows`}
-          style={{
-            color:
-              currentPath === "/flows"
-                ? Colors.primaryText.highEmphasis
-                : Colors.primaryText.mediumEmphasis,
-            textDecoration: "none",
-          }}
-        >
-          Flow Gallery
+          Writing
         </Link>
       </MenuItemSmall>
     </LandingpageMenu>

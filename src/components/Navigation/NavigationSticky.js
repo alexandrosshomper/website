@@ -183,7 +183,7 @@ const NavigationSticky = () => {
   };
   const navigationLinks = useMemo(
     () => [
-      { label: "Case Studies", to: "/case-studies" },
+      { label: "Portfolios", to: "/portfolio" },
       { label: "Reports", to: "/reports" },
       { label: "Flow Gallery", to: "/flows" },
     ],
@@ -226,19 +226,6 @@ const NavigationSticky = () => {
           <CTA>
             <LandingpageMenu style={{ marginTop: "4px;" }} />
 
-            <Button
-              size="small"
-              variant="primary"
-              onClick={(e) =>
-                handleBookAudit(
-                  e,
-                  "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "hero-section"
-                )
-              }
-              text={"Book intro call"}
-              gradient={{ from: Colors.blue, to: Colors.blueDark }}
-            />
             <MenuButton onClick={menuButtonClick}>
               <Menu size={24} strokeWidth={1} />
             </MenuButton>

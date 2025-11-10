@@ -30,23 +30,27 @@ const Portrait = styled.img`
   border-radius: 32px;
   object-fit: cover;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
-  border: 4px solid ${Colors.back};
 
   ${Devices.tabletS} {
-    width: 220px;
-    height: 220px;
+    width: 440px;
+    height: 260px;
   }
 `;
 
+const NameBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
 const Name = styled.h1`
   margin: 0;
   font-size: 36px;
   line-height: 120%;
-  font-weight: 700;
+  font-weight: 500;
   color: ${Colors.primaryText.highEmphasis};
 
   ${Devices.tabletS} {
-    font-size: 48px;
+    font-size: 36px;
   }
 `;
 
@@ -336,14 +340,16 @@ const Profile = () => {
       </Helmet>
 
       <Hero>
+        <NameBlock>
+          <Name>Alexandros Shomper</Name>
+          <Subline>
+            Product Designer, Product Manager, Startup Advisor PLG
+          </Subline>
+        </NameBlock>
         <Portrait
           src="/img/Identity/PortraitProSE.png"
           alt="Portrait of Alexandros Shomper"
         />
-        <Name>Alexandros Shomper</Name>
-        <Subline>
-          Product Designer, Product Manager, Startup Advisor PLG
-        </Subline>
       </Hero>
 
       {sections.map((section) => (
