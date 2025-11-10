@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactGA from "react-ga4";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
