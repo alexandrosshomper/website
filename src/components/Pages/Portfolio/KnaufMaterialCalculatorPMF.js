@@ -13,6 +13,7 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import Drawer from "../../Content/Drawer/Drawer";
+import CaseSubline from "../../Content/Case/CaseSubline";
 
 const Content = (props) => {
   const galleryItems = [
@@ -134,11 +135,8 @@ const Content = (props) => {
           color1="#00b8d4"
           color2="#62ebff"
         />
-        <CaseTitle
-          headline={
-            "How to analyze featuer adoption to increase user engagement & activation"
-          }
-        />
+        <CaseTitle headline={"Knauf Material Calculator"} />
+        <CaseSubline subline={"The Jira for constuction applicators"} />
         <CaseCover imgURL="./img/Knauf/OrderOverview.png" />
         <br />
         <br />
