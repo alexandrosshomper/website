@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import Button from "../Button/Button";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
 import { X, Menu } from "lucide-react";
@@ -168,19 +167,6 @@ const NavigationSticky = () => {
     setMenuOpen(false);
   };
 
-  const handleBookAudit = (e, href, instance = "navigation-sticky") => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "User",
-      action: "Clicked Book Audit",
-      label: `Book Audit - ${instance}`,
-      value: 10,
-      nonInteraction: false,
-    });
-    setTimeout(() => {
-      window.location.href = href;
-    }, 150);
-  };
   const navigationLinks = useMemo(
     () => [
       { label: "Portfolios", to: "/portfolio" },

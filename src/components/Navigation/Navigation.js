@@ -7,7 +7,6 @@ import { Devices, Colors } from "../DesignSystem";
 import Identity from "../Identity/Identity";
 import LandingpageMenu from "./LandingpageMenu";
 import { X, Menu } from "lucide-react";
-import Button from "../Button/Button";
 
 const NavigationWrapper = styled.header`
   margin: 0 auto;
@@ -164,19 +163,6 @@ const Navigation = (props) => {
     setMenuOpen(false);
   };
 
-  const handleBookAudit = (e, href, instance = "navigation-sticky") => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "User",
-      action: "Clicked Book Audit",
-      label: `Book Audit - ${instance}`,
-      value: 10,
-      nonInteraction: false,
-    });
-    setTimeout(() => {
-      window.location.href = href;
-    }, 150);
-  };
   return (
     <NavigationWrapper>
       {menuOpen ? (

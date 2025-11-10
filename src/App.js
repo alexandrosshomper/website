@@ -14,7 +14,6 @@ import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 //import Home from "./components/Pages/Home/Home";
-const Home = lazy(() => import("./components/Pages/Home/Home"));
 const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
