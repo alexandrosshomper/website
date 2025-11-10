@@ -129,7 +129,11 @@ const CompanyIcon = styled.div`
   font-weight: 600;
   letter-spacing: 0.02em;
   color: ${Colors.textWhite.highEmphasis};
-  background: ${(props) => props.$background};
+  background-image: ${(props) =>
+    props.$background ? `url(${props.$background})` : "none"};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-transform: uppercase;
 `;
 
@@ -194,26 +198,25 @@ const sections = [
         name: "Kimarina",
         subline: "Founder, Growth & Product Design Consultancy",
         url: "https://kimarina.com",
+        logo: "/img/company-logos/kimarina.jpeg",
       },
       {
         name: "UnternehmerTUM",
         subline: "Startup Advisor PMF, Growth & Product Design",
         url: "https://www.unternehmertum.de",
+        logo: "/img/company-logos/unternehmertum.jpeg",
       },
       {
         name: "Start2 Group",
         subline: "Startup Advisor Growth & Product Design",
         url: "https://www.start2.group",
-      },
-      {
-        name: "Werk1",
-        subline: "Startup Advisor Growth & Product Design",
-        url: "https://www.werk1.com",
+        logo: "/img/company-logos/start2.jpeg",
       },
       {
         name: "PioneersClub",
         subline: "Startup Advisor PMF, Growth & Product Design",
         url: "https://pioneersclub.io",
+        logo: "/img/company-logos/pioneersclub.jpeg",
       },
     ],
   },
@@ -224,26 +227,31 @@ const sections = [
         name: "Muvn",
         subline: "Pre-Seed",
         url: "https://www.muvn.de",
+        logo: "/img/company-logos/muvn.jpeg",
       },
       {
         name: "Norizon",
         subline: "Pre-Seed",
         url: "https://norizon.de",
+        logo: "/img/company-logos/norizon.jpeg",
       },
       {
         name: "Codressing",
         subline: "Pre-Seed",
         url: "https://www.co-dressing.com",
+        logo: "/img/company-logos/codressing.jpeg",
       },
       {
         name: "FamilyMindAI",
         subline: "Pre-Seed",
         url: "https://familymind.ai",
+        logo: "/img/company-logos/familymindai.jpeg",
       },
       {
         name: "evalu8",
         subline: "Pre-Seed",
         url: "https://www.evalue8.ai",
+        logo: "/img/company-logos/evalu8.jpeg",
       },
     ],
   },
@@ -254,73 +262,59 @@ const sections = [
         name: "Knauf",
         subline: "Product Owner, Product Design Manager",
         url: "https://www.knauf.com",
+        logo: "/img/company-logos/knauf.jpeg",
       },
       {
         name: "Occhio",
         subline: "Product Owner & UX Manager",
         url: "https://www.occhio.com",
+        logo: "/img/company-logos/occhio.jpeg",
       },
       {
         name: "Magirus",
         subline: "Art Director, Product Owner & UX Designer (Agency)",
         url: "https://www.magirus.de",
+        logo: "/img/company-logos/magirus.jpeg",
       },
       {
         name: "Stabilo",
         subline: "Art Director (Agency)",
         url: "https://www.stabilo.de",
+        logo: "/img/company-logos/stabilo.jpeg",
       },
       {
         name: "Crown",
         subline: "Art Director (Agency)",
         url: "https://www.crown.com",
+        logo: "/img/company-logos/crown.jpeg",
       },
       {
         name: "Medi",
         subline: "Art Director (Agency)",
         url: "https://www.medi.com",
+        logo: "/img/company-logos/medi.jpeg",
       },
       {
         name: "Disney",
         subline: "Art Director (Agency)",
         url: "https://www.disney.com",
+        logo: "/img/company-logos/disney.jpeg",
       },
       {
         name: "Studio 100",
         subline: "Art Director (Agency)",
         url: "https://www.studio100.com",
+        logo: "/img/company-logos/studio100.jpeg",
       },
       {
         name: "Sixt",
         subline: "Art Director (Agency)",
         url: "https://www.sixt.com",
+        logo: "/img/company-logos/sixt.jpeg",
       },
     ],
   },
 ];
-
-const accentPalette = [
-  Colors.blue,
-  Colors.orange,
-  Colors.green,
-  Colors.purple,
-  Colors.red,
-  Colors.turkish,
-  Colors.blueDark,
-  Colors.orangeDark,
-  Colors.greenDark,
-  Colors.purpleDark,
-  Colors.redLight,
-  Colors.turkishLight,
-];
-
-const getInitials = (name) =>
-  name
-    .split(/\s|-/)
-    .filter(Boolean)
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2);
 
 const Profile = () => {
   return (
@@ -339,7 +333,9 @@ const Profile = () => {
           alt="Portrait of Alexandros Shomper"
         />
         <Name>Alexandros Shomper</Name>
-        <Subline>Product Designer, Product Manager, Startup Advisor PLG</Subline>
+        <Subline>
+          Product Designer, Product Manager, Startup Advisor PLG
+        </Subline>
       </Hero>
 
       {sections.map((section) => (
@@ -350,13 +346,9 @@ const Profile = () => {
               <CompanyItem key={company.name}>
                 <CompanyDetails>
                   <CompanyIcon
-                    $background={
-                      accentPalette[index % accentPalette.length]
-                    }
+                    $background={company.logo}
                     aria-hidden="true"
-                  >
-                    {getInitials(company.name)}
-                  </CompanyIcon>
+                  ></CompanyIcon>
                   <CompanyText>
                     <CompanyName>{company.name}</CompanyName>
                     <CompanySubline>{company.subline}</CompanySubline>
