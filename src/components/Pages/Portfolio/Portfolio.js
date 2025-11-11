@@ -238,13 +238,7 @@ const Content = (props) => {
           headline="Portfolio"
           subline="Selected projects from my corporate work"
         />
-        <Panels style={{ marginBottom: "48px" }}>
-          <CaseSectionSummary
-            copy="
-Detailed use cases assessing the user onboarding & activation flows from different companies and products."
-            //imgURL="./img/PanelTestImages/one.jpg"
-          />
-        </Panels>
+
         <FilterBar>
           {FILTER_OPTIONS.map((type) => (
             <FilterButton
