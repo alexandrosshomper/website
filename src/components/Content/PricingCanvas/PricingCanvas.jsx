@@ -175,7 +175,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
     ${Devices.laptopM} {
     }
   `;
-  const PricingCardHeadline = styled.h4`
+  const PricingCardHeadline = styled.p`
     font-weight: 600;
     font-size: 21px;
     line-height: 120%;
@@ -276,7 +276,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
     background-color: blue;
     border-radius: 17px;
   `;
-  const PanelHeadline = styled.h4`
+  const PanelHeadline = styled.p`
     position: static;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
