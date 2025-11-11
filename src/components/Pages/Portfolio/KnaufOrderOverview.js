@@ -51,18 +51,6 @@ const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseSublineTwo subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours." />
-        <br />
-        <br />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
-        <br />
-        <br />
-        <CaseSublineTwo subline="This project taught me how to turn complex, fragmented workflows into scalable growth systems." />
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection>
-      <ArticleSectionContent>
         <CaseHeadlineThree headline="Overview" />
         <CaseSectionHead
           headline="B2B SaaS platform for construction applicators"

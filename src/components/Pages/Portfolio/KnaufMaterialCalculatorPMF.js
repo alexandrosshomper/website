@@ -263,7 +263,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <CaseSublineTwo subline="Easy Import" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-import-formats.png"
-          size="S"
+          size="L"
         />
         <p>
           <b>Problem</b> Low Set Up rates. The Set up moment for this use case
@@ -281,7 +281,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <CaseSublineTwo subline="Auto Fill Quote" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-auto-fill.png"
-          size="S"
+          size="L"
         />
         <p>
           <b>Problem</b> Low Aha moment Rates. The Aha moment for this use case
@@ -301,7 +301,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <CaseSublineTwo subline="Team Collaboration" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
-          size="S"
+          size="L"
         />
         <p>
           <b>Problem</b> Low Activation Rates. Creating detailed measurements
@@ -333,6 +333,10 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <CaseSectionHead
           headline="Building a Design Team & Culture"
           subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-ux-maturity.jpeg"
+          size="L"
         />
         <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
         <ul>
