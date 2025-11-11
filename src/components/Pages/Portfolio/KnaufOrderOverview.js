@@ -1,11 +1,7 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import {
-  ArticleSection,
-  ArticleSectionContent,
-  Colors,
-} from "../../DesignSystem";
+import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";

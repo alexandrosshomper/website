@@ -7,7 +7,6 @@ import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
-import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 
 const CASE_STUDY_TYPES = {
@@ -132,31 +131,6 @@ const Content = (props) => {
     ${Devices.laptopM} {
       width: 1140px;
       --gap: 12px;
-    }
-  `;
-  const Panels = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    gap: 12px;
-
-    margin: 0px;
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
     }
   `;
 

@@ -506,6 +506,16 @@ const PricingCanvas = ({ roiCalcAction }) => {
     "https://www.loom.com/embed/94ad4dc7e038465a81e930c05aa4c21a";
 
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+  const isJSDOM =
+    typeof navigator !== "undefined" &&
+    /jsdom/i.test(navigator?.userAgent || "");
+  // Avoid setting video.muted in jsdom tests, it fires volume events mid-render.
+  const videoProps = {
+    autoPlay: true,
+    loop: true,
+    playsInline: true,
+    ...(!isJSDOM ? { muted: true } : {}),
+  };
   const hanldeWatchDemo = () => {
     ReactGA.event({
       category: "User",
@@ -543,7 +553,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
           <b>stick with your product</b>.
         </PricingCanvasCopy>
         <PricingVideoWrapper onClick={() => hanldeWatchDemo()}>
-          <PricingVideo autoPlay loop muted playsInline>
+          <PricingVideo {...videoProps}>
             <source
               src="/img/SalesPitch/OnboardingDevelopmentSprint-SalesPitch-Cover.mp4"
               type="video/mp4"
