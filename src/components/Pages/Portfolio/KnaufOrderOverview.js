@@ -42,11 +42,6 @@ const galleryItems = [
   },
 ];
 
-const greenArrowStyle = {
-  color: Colors.green,
-  fontWeight: "bold",
-};
-
 const renderContent = () => (
   <>
     <ArticleSection>

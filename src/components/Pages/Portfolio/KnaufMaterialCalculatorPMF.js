@@ -1,11 +1,7 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import {
-  ArticleSection,
-  ArticleSectionContent,
-  Colors,
-} from "../../DesignSystem";
+import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
@@ -54,11 +50,6 @@ const galleryItems = [
     copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
   },
 ];
-
-const greenArrowStyle = {
-  color: Colors.green,
-  fontWeight: "bold",
-};
 
 const renderContent = () => (
   <>
