@@ -62,9 +62,11 @@ const Drawer = ({ items }) => {
     border-bottom-color: ${Colors.greyDark};
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    width: 100%;
-    margin: 0 auto;
-    height: ${open ? "auto" : "0"};
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw); /* full-bleed */
+    margin-right: calc(50% - 50vw);
+    height: ${open ? "700px" : "0"};
     visibility: ${open ? "visible" : "hidden"};
     transition: height 0.3s ease, visibility 0.3s ease;
   `;

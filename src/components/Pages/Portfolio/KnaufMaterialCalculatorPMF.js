@@ -27,31 +27,30 @@ const hero = () => (
 const galleryItems = [
   {
     id: 1,
-    imgURL: "/img/Knauf/FeatureAdoption.png",
-    imgMobileURL: "./img/Knauf/FeatureAdoption-mobile.png",
-    headline: "The data",
-    copy: "That 7% of users that used the Delivery Notification, turned out to make 20% of the overall traffic on the product. Three times more actions per session.",
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/foundational-research.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/foundational-research.png",
+    headline: "Foundational Research",
+    copy: "I spend the whole year of 2020 to do nothing else but research. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
   },
   {
     id: 2,
-    imgURL: "/img/Knauf/UserRetention.png",
-    imgMobileURL: "./img/Knauf/UserRetention-mobile.png",
-    headline: "User Retention Correlation",
-    copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/construction-project-journey.jpeg",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/construction-project-journey.jpeg",
+    headline: "Construction Project Journey",
+    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
   },
   {
     id: 3,
-    imgURL: "/img/Knauf/HabitLoop.png",
-    imgMobileURL: "./img/Knauf/HabitLoop-mobile.png",
-    headline: "Hypothesis",
-    copy: "We believe that more users adopting the Delivery Notifications will result in better overall user activation, retention, and engagement. The hypothesis is based on a user behaviour principle: Habit Formation. Our users already have an established habit of solving their problem (emails & calls). Our product requires them to change their habit, and adopt a new habit. Repeating a new habit early on, maximizes the chance of adoption. By regularly reminding our users of our new solution, the Delivery Notifications help our users adopt a new habit.",
-  },
-  {
-    id: 4,
-    imgURL: "/img/Knauf/Experiments.png",
-    imgMobileURL: "./img/Knauf/Experiments-mobile.png",
-    headline: "Experiments",
-    copy: "We created 4 experiments to improve the adoption of the Delivery Notifications, from which we would learn whether this will have the impact on user activation, retention, and engagement that we think.",
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
+    headline: "Scalability Assessment",
+    copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
   },
 ];
 
@@ -64,23 +63,13 @@ const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseSublineTwo subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours." />
-        <br />
-        <br />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
-        <br />
-        <br />
-        <CaseSublineTwo subline="This project taught me how to turn complex, fragmented workflows into scalable growth systems." />
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection>
-      <ArticleSectionContent>
         <CaseHeadlineThree headline="Overview" />
         <CaseSectionHead
           headline="B2B SaaS platform for construction applicators"
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
+        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
+
         <p>
           Applicators used 5+ disconnected tools to quote, plan, and order. We
           built one workspace that unified all, reducing errors, increasing
@@ -90,7 +79,6 @@ const renderContent = () => (
           From fragmented workflows to a unified product, helping construction
           applicators quote, plan, and order 3× faster.
         </p>
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
         <CaseCitations
           company="Knauf Digital"
           role="Product Design Manager, 12 markets"
