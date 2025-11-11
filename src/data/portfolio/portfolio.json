@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "slug": "portfolio/knauf-material-calculator",
+    "slug": "/portfolio/knauf-material-calculator",
     "name": "Knauf Material Calculator",
     "desc": "The Jira for construction applicators",
     "cover": "/img/portfolio/knauf-material-calculator/cover.png",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "slug": "portfolio/knauf-order-overview",
+    "slug": "/portfolio/knauf-order-overview",
     "name": "Knauf Order Overview",
     "desc": "A unified platform for all Knauf Orders",
     "cover": "/img/portfolio/knauf-order-overview/cover.png",
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "slug": "portfolio/knauf-account",
+    "slug": "/portfolio/knauf-account",
     "name": "Knauf Account",
     "desc": "The Google Account for the construction industry",
     "cover": "/img/portfolio/knauf-account/cover.png",
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "slug": "portfolio/occhio",
+    "slug": "/portfolio/occhio",
     "name": "Occhio Website & eCommerce",
     "desc": "A premium user experience",
     "cover": "/img/portfolio/occhio-website/cover.png",
