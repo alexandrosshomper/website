@@ -53,15 +53,13 @@ const renderContent = () => (
       <ArticleSectionContent>
         <CaseHeadlineThree headline="Overview" />
         <CaseSectionHead
-          headline="B2B SaaS platform for construction applicators"
+          headline="A unified platform for all Knauf deliveries."
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
 
         <p>
-          Dealers used 5+ disconnected tools to quote, plan, and order. We built
-          one workspace that unified all, reducing errors, increasing trust, and
-          driving repeat usage.
+          Dealers lacked a unified way to track orders (inefficiency and
+          frustration).
         </p>
         <p>
           Bringing clarity to construction logistics, giving dealers and
@@ -82,6 +80,7 @@ const renderContent = () => (
             "2h/week saved per dealer",
           ]}
         />
+        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
       </ArticleSectionContent>
     </ArticleSection>
 
