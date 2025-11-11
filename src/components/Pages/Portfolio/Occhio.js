@@ -19,41 +19,41 @@ const metaTitle = "Occhio | Alexandros Shomper";
 const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
-const hero = () => <CaseCover imgURL="./img/Occhio/Occhio-Website.png" />;
+const hero = () => <CaseCover imgURL="/img/Occhio/Occhio-Website.png" />;
 
 const galleryItems = [
   {
     id: 1,
-    imgURL: "./img/Occhio/Personae.jpg",
-    imgMobileURL: "./img/Occhio/Personae-mobile.png",
+    imgURL: "/img/Occhio/Personae.jpg",
+    imgMobileURL: "/img/Occhio/Personae-mobile.png",
     headline: "Research and Persona Development",
     copy: "Conducted extensive market and brand equity research, including secondary research in Munich stores, speaking directly with customers and sales teams. Identified key personas based on Sigma Milieus of Social Climbers and the Established, understanding their values, needs, and behaviors.",
   },
   {
     id: 2,
-    imgURL: "./img/Occhio/CustomerJourney.png",
-    imgMobileURL: "./img/Occhio/CustomerJourney-mobile.png",
+    imgURL: "/img/Occhio/CustomerJourney.png",
+    imgMobileURL: "/img/Occhio/CustomerJourney-mobile.png",
     headline: "User Journey Mapping",
     copy: "Visualized and prioritized user needs throughout their journey, addressing pain points such as difficulty in imagining products at home, getting an overview of available product variants, and fear of making wrong decisions.",
   },
   {
     id: 3,
-    imgURL: "./img/Occhio/Sitemap.png",
-    imgMobileURL: "./img/Occhio/Sitemap-mobile.png",
+    imgURL: "/img/Occhio/Sitemap.png",
+    imgMobileURL: "/img/Occhio/Sitemap-mobile.png",
     headline: "Sitemap and Navigation",
     copy: "Developed a comprehensive sitemap to guide user experience, SEO, social media strategy, and marketing. Designed navigation that catered to different mental models, allowing users to search by room, luminaire type, or specific products.",
   },
   {
     id: 4,
-    imgURL: "./img/Occhio/PDP.png",
-    imgMobileURL: "./img/Occhio/PDP-mobile.png",
+    imgURL: "/img/Occhio/PDP.png",
+    imgMobileURL: "/img/Occhio/PDP-mobile.png",
     headline: "Product Detail Page Optimization",
     copy: "Initially used lavish renderings to impress users but pivoted to a more functional design with a mini-configurator for color and size, value proposition, price, and a buy button to enhance performance.",
   },
   {
     id: 5,
-    imgURL: "./img/Occhio/AR.png",
-    imgMobileURL: "./img/Occhio/AR-mobile.png",
+    imgURL: "/img/Occhio/AR.png",
+    imgMobileURL: "/img/Occhio/AR-mobile.png",
     headline: "Interactive Features and AR",
     copy: "Implemented interactive components and animations to educate users about product features, making the process entertaining and informative. Introduced WebAR to help users visualize products in their own homes, addressing concerns about fit and placement, and reducing fear of making wrong decisions.",
   },
@@ -72,9 +72,7 @@ const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseSublineTwo
-          subline="I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Occhio."
-        />
+        <CaseSublineTwo subline="I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Occhio." />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -86,12 +84,8 @@ const renderContent = () => (
           subline="Occhio needed a website relaunch and e-commerce launch for their brand redefinition"
         />
         <CaseCopy copy="In 2019, Occhio, a leading luxury interior and lighting brand in Germany, embarked on a brand redefinition and digitization journey." />
-        <CaseCopy
-          copy="As part of this initiative, the company needed to relaunch its website and introduce an e-commerce platform. Occhio's reputation for perfection, highest quality, and pure design posed a significant challenge: balancing these high standards with user experience and website performance."
-        />
-        <CaseCopy
-          copy="I served as the UX/UI Manager and Product Owner for this project, collaborating with stakeholders including the CEO, CMO, and CTO, and leading a team comprising development, design, CRM, and social media experts."
-        />
+        <CaseCopy copy="As part of this initiative, the company needed to relaunch its website and introduce an e-commerce platform. Occhio's reputation for perfection, highest quality, and pure design posed a significant challenge: balancing these high standards with user experience and website performance." />
+        <CaseCopy copy="I served as the UX/UI Manager and Product Owner for this project, collaborating with stakeholders including the CEO, CMO, and CTO, and leading a team comprising development, design, CRM, and social media experts." />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -103,12 +97,8 @@ const renderContent = () => (
           subline="Led website and e-commerce relaunch to enhance digital presence and improve product discoverability"
         />
         <CaseCopy copy="My primary task was to lead the relaunch of Occhio's website and the launch of its e-commerce platform." />
-        <CaseCopy
-          copy="The goals were to enhance the digital brand presence, align with the new brand direction, improve product discoverability, and integrate various products from different tech stacks seamlessly."
-        />
-        <CaseCopy
-          copy="Additionally, the website needed to support a broad set of initiatives across the customer journey and cater to Occhio's extensive range of modular and configurable products."
-        />
+        <CaseCopy copy="The goals were to enhance the digital brand presence, align with the new brand direction, improve product discoverability, and integrate various products from different tech stacks seamlessly." />
+        <CaseCopy copy="Additionally, the website needed to support a broad set of initiatives across the customer journey and cater to Occhio's extensive range of modular and configurable products." />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -119,15 +109,9 @@ const renderContent = () => (
           headline="From Blank Canvas to Digital Masterpiece"
           subline="Partnered with top agencies, adopted agile methods, conducted research, and redefined Occhio's digital brand experience"
         />
-        <CaseCopy
-          copy="In Munich stores, I engaged with customers and sales teams to identify key personas, uncovering insights about Social Climbers and the Established. Mapping their user journeys, I addressed pain points like visualizing products at home and decision-making anxiety."
-        />
-        <CaseCopy
-          copy="Partnered with the award-winning Brand Consultancy & Design Agency Martin et Karzinski for design and Tech Consultancy & Agency Inviqa for development. Adopted an agile product development approach to ensure flexibility and responsiveness throughout the project."
-        />
-        <CaseCopy
-          copy="I developed a comprehensive sitemap and intuitive navigation, and pivoted our product detail pages from lavish renderings to a functional design featuring a mini-configurator. Interactive features and WebAR were introduced to educate users and help them visualize products in their homes. Collaborating with Martin et Karzinski for design and Inviqa for development, we used an agile approach to ensure flexibility and responsiveness."
-        />
+        <CaseCopy copy="In Munich stores, I engaged with customers and sales teams to identify key personas, uncovering insights about Social Climbers and the Established. Mapping their user journeys, I addressed pain points like visualizing products at home and decision-making anxiety." />
+        <CaseCopy copy="Partnered with the award-winning Brand Consultancy & Design Agency Martin et Karzinski for design and Tech Consultancy & Agency Inviqa for development. Adopted an agile product development approach to ensure flexibility and responsiveness throughout the project." />
+        <CaseCopy copy="I developed a comprehensive sitemap and intuitive navigation, and pivoted our product detail pages from lavish renderings to a functional design featuring a mini-configurator. Interactive features and WebAR were introduced to educate users and help them visualize products in their homes. Collaborating with Martin et Karzinski for design and Inviqa for development, we used an agile approach to ensure flexibility and responsiveness." />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -144,16 +128,12 @@ const renderContent = () => (
           headline="A Bright Future: Awards and Engagement Soar"
           subline="Created an engaging, stunning website, boosting conversion rates, engagement, visitors, and newsletter sign-ups, winning awards"
         />
-        <CaseCopy
-          copy="The relaunch resulted in a highly engaging and visually appealing website that seamlessly integrated Occhio's new brand direction with an enhanced user experience."
-        />
-        <CaseCopy
-          copy="The new e-commerce platform significantly improved product discoverability and consultancy, leading to e-commerce gaining a significant revenue-share, and:"
-        />
+        <CaseCopy copy="The relaunch resulted in a highly engaging and visually appealing website that seamlessly integrated Occhio's new brand direction with an enhanced user experience." />
+        <CaseCopy copy="The new e-commerce platform significantly improved product discoverability and consultancy, leading to e-commerce gaining a significant revenue-share, and:" />
         <CaseSublineTwo subline="Awards" />
         <ul>
           <li>
-            🏅 {" "}
+            🏅{" "}
             <a
               href="https://www.horizont.net/schweiz/nachrichten/annual-multimedia-award-martin-et-karczinski-holt-gold-und-zweimal-silber-178283"
               style={linkStyle}
@@ -162,7 +142,7 @@ const renderContent = () => (
             </a>
           </li>
           <li>
-            🏅 {" "}
+            🏅{" "}
             <a href="https://www.acquia.com/fr/node/114276" style={linkStyle}>
               Winner, Splash Award 2020
             </a>
@@ -205,4 +185,3 @@ export default createCasePage({
   hero,
   renderContent,
 });
-
