@@ -161,6 +161,7 @@ export const ArticleContent = styled.article`
   & > [data-article-section]:last-child {
     margin-bottom: 80px;
   }
+  padding-bottom: 64px;
 `;
 
 const articleTypographyStyles = css`
@@ -230,15 +231,15 @@ const articleTypographyStyles = css`
     font-size: 17px;
     line-height: 1.7499375rem;
     color: ${Colors.primaryText.highEmphasis};
-    padding-left: 24px;
+    padding-left: 16px;
     margin-top: 8px;
     margin-bottom: 40px;
     list-style-position: outside;
     margin-block-start: 21.25px;
     tab-size: 4;
     margin-left: 12px;
-    padding-left: 32px;
-    padding-inline-start: 32px;
+    padding-left: 16px;
+    padding-inline-start: 16px;
   }
 
   ul {
@@ -265,6 +266,68 @@ const articleTypographyStyles = css`
     color: ${Colors.blue};
     text-decoration: underline;
     text-decoration-thickness: 2px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0 48px;
+    table-layout: auto;
+  }
+
+  table tr {
+    border-top: 1px solid rgba(8, 8, 8, 0.12);
+  }
+
+  table tr:last-child {
+    border-bottom: 1px solid rgba(8, 8, 8, 0.12);
+  }
+
+  table th,
+  table td {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.435rem;
+    letter-spacing: -0.01em;
+    color: ${Colors.primaryText.highEmphasis};
+    text-align: left;
+    vertical-align: top;
+    min-width: 7.5rem;
+    word-break: break-word;
+  }
+
+  table th {
+    font-weight: 600;
+    padding: 8px 12px;
+  }
+
+  table td {
+    font-weight: 400;
+    padding: 12px;
+  }
+
+  table th > *:last-child,
+  table td > *:last-child {
+    margin-bottom: 0;
+  }
+
+  table p {
+    font-size: 14px;
+    line-height: 1.435rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  table p:last-child {
+    margin-bottom: 0;
+  }
+
+  table caption {
+    caption-side: bottom;
+    font-size: 14px;
+    line-height: 1.4;
+    color: ${Colors.primaryText.mediumEmphasis};
+    padding-top: 12px;
   }
 
   & > *:last-child,
