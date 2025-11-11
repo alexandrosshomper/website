@@ -1,139 +1,136 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import {
-  ArticleSection,
-  ArticleSectionContent,
-  Colors,
-} from "../../DesignSystem";
+import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
-import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
+import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
+import CaseSubline from "../../Content/Case/CaseSubline";
+import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 
-const metaTitle = "Knauf Explorations | Alexandros Shomper";
+const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
 const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
-const hero = () => <CaseCover imgURL="./img/Knauf/OrderOverview.png" />;
+const hero = () => (
+  <CaseCover imgURL="/img/portfolio/knauf-order-overview/cover.png" />
+);
 
 const galleryItems = [
   {
     id: 1,
-    imgURL: "./img/Knauf/FeatureAdoption.png",
-    imgMobileURL: "./img/Knauf/FeatureAdoption-mobile.png",
-    headline: "The data",
-    copy: "That 7% of users that used the Delivery Notification, turned out to make 20% of the overall traffic on the product. Three times more actions per session.",
+    imgURL: "/img/portfolio/knauf-order-overview/in-market-validation.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/in-market-validation.png",
+    headline: "In Market Validation",
+    copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
   },
   {
     id: 2,
-    imgURL: "./img/Knauf/UserRetention.png",
-    imgMobileURL: "./img/Knauf/UserRetention-mobile.png",
-    headline: "User Retention Correlation",
-    copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
-  },
-  {
-    id: 3,
-    imgURL: "./img/Knauf/HabitLoop.png",
-    imgMobileURL: "./img/Knauf/HabitLoop-mobile.png",
-    headline: "Hypothesis",
-    copy: "We believe that more users adopting the Delivery Notifications will result in better overall user activation, retention, and engagement. The hypothesis is based on a user behaviour principle: Habit Formation. Our users already have an established habit of solving their problem (emails & calls). Our product requires them to change their habit, and adopt a new habit. Repeating a new habit early on, maximizes the chance of adoption. By regularly reminding our users of our new solution, the Delivery Notifications help our users adopt a new habit.",
-  },
-  {
-    id: 4,
-    imgURL: "./img/Knauf/Experiments.png",
-    imgMobileURL: "./img/Knauf/Experiments-mobile.png",
-    headline: "Experiments",
-    copy: "We created 4 experiments to improve the adoption of the Delivery Notifications, from which we would learn whether this will have the impact on user activation, retention, and engagement that we think.",
+    imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
+    imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
+    headline: "Mental Models",
+    copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
   },
 ];
-
-const greenArrowStyle = {
-  color: Colors.green,
-  fontWeight: "bold",
-};
 
 const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseSublineTwo
-          subline="I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Knauf."
+        <CaseHeadlineThree headline="Overview" />
+        <CaseSectionHead
+          headline="A unified platform for all Knauf deliveries."
+          subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
+
+        <p>
+          Dealers lacked a unified way to track orders (inefficiency and
+          frustration).
+        </p>
+        <p>
+          Bringing clarity to construction logistics, giving dealers and
+          applicators real-time visibility into every delivery.
+        </p>
+
+        <CaseCitations
+          company="Knauf Digital"
+          role="Product Design Manager, 12 markets"
+          team="14 (PM, Eng, Data, BA, Design)"
+          product="Centralized track-n-trace platform for a fragemnted conglomerate"
+          stage="0→1→n (PMF → Growth)"
+          timeline="12 months"
+          keyResults={[
+            "↓20% service inquiry calls",
+            "+30% activation rate",
+            "+25% retention",
+            "2h/week saved per dealer",
+          ]}
+        />
+        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
       </ArticleSectionContent>
     </ArticleSection>
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Situation" />
+        <CaseHeadlineThree headline="Challenge" />
         <CaseSectionHead
-          headline="Knauf's Order Overview: Simple Outside, Complex Inside"
-          subline="Mission to centralize processes and enhance delivery transparency; a complex low hanging fruit with huge potential."
+          headline="“We spent more time chasing delivery info than selling materials.”"
+          subline="Construction dealers manage thousands of orders across different Knauf entities.
+Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
         />
-        <CaseSublineTwo
-          subline="Knauf Digital’s mission is to digitalize Knauf’s business and digitize & centralize existing processes - for all Knauf brands and subsidiaries. "
-        />
-        <CaseCopy
-          copy="Among many other, we developed an order overview app. A replacement for several email updates and/or phone conversations per week, for each brand separately. Details of every delivery (like ETA, materials in delivery, etc.) can change quickly. Just as quickly, the last updates could be not up-to-date anymore. Delivery-transparency is one of the main pain-points on a construction site."
-        />
-        <CaseCopy copy="Simultaneously, this means a lot of manual work for manufacturers aswell." />
-        <CaseCopy
-          copy="On the outside it looks rather simple, on the inside it proved to be a very challenging and complex initiative. An initiative with huge potential of improving internal efficiency and profitability, but also make our customers every-day life much easier."
-        />
-        <CaseCopy
-          copy="It took two years, required alignment with several subsidiaries, and involved research within several countries, standardizing data and how it get’s displayed."
-        />
+        <CaseSubline subline="The Problem" />
+        <CaseCopy copy="The lack of transparency created frustration for both dealers and Knauf, resulting in inefficiencies and low trust in the system." />
         <ul>
-          <li>
-            <span style={greenArrowStyle}>👎 </span>
-            No Data about customers
-          </li>
-          <li>
-            <span style={greenArrowStyle}> 👎 </span>
-            No Data interfaces available
-          </li>
-          <li>
-            <span style={greenArrowStyle}> 👎 </span>
-            Multi national project
-          </li>
+          <li>Constantly changing ETAs</li>
+          <li>No unified tracking platform</li>
+          <li>Different contact points per Knauf entity</li>
+          <li>Manual customer updates consuming hours weekly</li>
+        </ul>
+        <CaseSubline subline="The Goal" />
+        <CaseCopy copy="Design a unified, easy-to-use order management platform that reduces friction, increases trust, and saves dealers time." />
+        <ul>
+          <li>Helps users reach value (first quote sent) within 15 minutes</li>
+          <li>Bridges quote → plan → order seamlessly</li>
+          <li>Builds trust through precision and reliability</li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Task" />
+        <CaseHeadlineThree headline="Discovery & Hypothesis" />
         <CaseSectionHead
-          headline="Boosting Active Users: The Unmet Challenge"
-          subline="Despite a slight increase, the app struggled to achieve significant user growth"
+          headline="Discover the essential workflow that defines value."
+          subline="Through interviews, diaries, and job walkthroughs, we found that transparency and autonomy were key drivers."
         />
-        <CaseCopy
-          copy="We had a slight increase of Active users every month since the launch of the pilot, however the product struggled to grow as we’d expected. "
-        />
-        <CaseSublineTwo subline="Problem" />
-        <CaseCopy copy="How might we increase the number of active users significantly?" />
+        <CaseSubline subline="Research" />
+        <p>
+          I led field visits and interviews across 12 countries — observing how
+          crews plan, measure, and order. We combined JTBD analysis, expert
+          interviews, and a survey with 53 applicators in Germany.
+          <br />
+          <i>
+            Field shadowing • Expert interviews (12 countries) • JTBD analysis •
+            UX surveys (n=53 DE).
+          </i>
+        </p>
+        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
+        <br />
+        <br />
+        <CaseSubline subline="Key Insights" />
+        <ul>
+          <li>Changes in ETA = #1 priority.</li>
+          <li>Dealers’ notification preferences vary widely.</li>
+          <li>Users needed fast setup (Day 1 value).</li>
+        </ul>
+        <CaseSubline subline="PMF Hypothesis" />
+        <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
       </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Action" />
-        <CaseSectionHead
-          headline="Feature Focus: From Marginal to Essential"
-          subline="Analyzed feature engagement, discovering that the 7% using Delivery Notifications were our power users"
-        />
-        <CaseSublineTwo subline="Analyze the User Behaviour and find areas of improvements with huge impact on user activation." />
-        <CaseCopy
-          copy="I started to analyze the engagement of our features, and the correlation on user retention and engagement. What I found was one feature, the Delivery Notification, that seamed marginal with only 7% of user adoption."
-        />
-        <CaseCopy copy="However, that segment of users proofed to be our power users." />
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection $width="wide">
       <ArticleSectionContent>
         <Drawer items={galleryItems} />
       </ArticleSectionContent>
@@ -141,37 +138,193 @@ const renderContent = () => (
 
     <ArticleSection>
       <ArticleSectionContent>
+        <CaseHeadlineThree headline="Solution" />
+        <CaseSectionHead
+          headline="Designing for Activation"
+          subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
+        />
+        <CaseSublineTwo subline="Key Feature 1: Unified Order Table" />
+        <CaseCopy
+          copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
+We built a guided import flow that parses items and matches them to Knauf’s product systems."
+        />
+        <CaseCopy copy="The single source of truth for all deliveries." />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>All Knauf entities in one view</li>
+          <li>Customizable columns</li>
+          <li>Simplified visual status</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <p>
+          Dealers could see everything instantly, cutting down cross-team calls.
+        </p>
+        <ul>
+          <li>Quote creation time reduced by 60%</li>
+          <li>
+            Early trust increased: users saw reliable, structured data from the
+            start
+          </li>
+          <li>Foundation for automation and cross-system integration</li>
+        </ul>
+        <CaseSublineTwo subline="Key Feature 2: Calendar View" />
+        <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>Visual timeline of the week</li>
+          <li>Easy day planning for warehouse teams</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <p>Dealers reported fewer surprises and smoother operations.</p>
+        <ul>
+          <li>3× faster take-offs</li>
+          <li>Zero re-entries between planning and ordering</li>
+          <li>Major confidence boost among early users</li>
+        </ul>
+        <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
+        <CaseCopy copy="Personalized update preferences." />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>Email, app, or SMS alerts</li>
+          <li>Choose events to be notified about</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <p>
+          Engagement and trust increased — users stopped “checking constantly.”
+        </p>
+        <ul>
+          <li>Order accuracy ↑</li>
+          <li>Reorders simplified</li>
+          <li>Trust built between applicators and dealers</li>
+        </ul>
+        <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
+        <CaseCopy copy="Let dealers share live delivery info with applicators." />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>One link, always up to date</li>
+          <li>Reduced double communication</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <p>+25% retention; fewer “where’s my order?” calls.</p>
+        <ul>
+          <li>Order accuracy ↑</li>
+          <li>Reorders simplified</li>
+          <li>Trust built between applicators and dealers</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Driving Growth (1→n)" />
+        <CaseSectionHead
+          headline="Discovering the Growth Bottlenecks"
+          subline="After PMF validation, we focused on activation and habit formation"
+        />
+        <CaseSubline subline="Experiment 1 — Auto Enable Notifications" />
+        <p>Prompt new users to enable all updates on first login.</p>
+        <ul>
+          <li>+18% activation</li>
+        </ul>
+        <CaseSubline subline="Experiment 2 — Update Toast Nudges" />
+        <p>Show missed updates since last visit.</p>
+        <CaseSublineTwo subline="“A small nudge turned notifications from a setting into a habit.”" />
+        <ul>
+          <li>+30% engagement</li>
+          <li>+25% retention</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Leadership Impact" />
+        <CaseSectionHead
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Hosted Activation Clinics to align teams on user metrics</li>
+          <li>Mentored 2 designers on experiment design</li>
+          <li>Led Growth Guild (Design, PM, Eng, Data).</li>
+          <li>Built UX Maturity Model & Design System foundations</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
         <CaseHeadlineThree headline="Results" />
         <CaseSectionHead
-          headline="Bug Bust and Insights: Power Users Hold the Key"
-          subline="Found a bug in notifications; realized true engagement drivers were our power users' habits, not the feature itself"
+          headline="Success in numbers"
+          subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
         />
+        <p>
+          A product that turned analog workflows into a digital growth engine —
+          and a design-led transformation that shaped how Knauf builds all
+          future tools.
+        </p>
+        <ul>
+          <li>
+            Scaled design system across 4 apps, cutting delivery time by 40%.
+          </li>
+          <li>Mentored designers in hypothesis-driven experimentation.</li>
+          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
+          <li>Introduced UX Maturity Assessments company-wide.</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <th>Metric</th>
+              <th>Δ</th>
+            </tr>
+            <tr>
+              <td>Inquiry Calls</td>
+              <td>↓20%</td>
+            </tr>
+            <tr>
+              <td>Dealer Admin Work</td>
+              <td>-2h/week</td>
+            </tr>
+            <tr>
+              <td>Activation</td>
+              <td>+30%</td>
+            </tr>
+            <tr>
+              <td>Retention</td>
+              <td>+25%</td>
+            </tr>
+            <tr>
+              <td>Markets Rolled Out</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+        </table>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Reflections" />
+        <CaseSectionHead headline="Great Product Design is Growth Design" />
+        <CaseSublineTwo subline="Transparency builds trust, and trust drives retention." />
+        <br />
         <CaseCopy
-          copy="Well, here is where things got interesting and took a turn. When we analyzed the data, we found that the Delivery Notifications were not triggering - at all."
+          copy="Knauf Order Overview transformed dealer operations from manual chaos to digital clarity.
+It became Knauf’s blueprint for future B2B platforms and one of its fastest-adopted tools globally."
         />
-        <CaseCopy
-          copy="This bug is of course bad news for the user experience, but it also means that we can't measure the impact of the Delivery Notifications on user activation, retention, and engagement."
-        />
-        <CaseSublineTwo subline="New questions" />
-        <CaseCopy
-          copy="But what does this mean for our analysis and hypothesis? What does this mean for our product? Where does the correlation between Delivery Notification and Activation, Retention, and Engagement come from?"
-        />
-        <CaseSublineTwo subline="The turn-around" />
-        <CaseCopy
-          copy="We found that the correlation between Delivery Notifications and user activation, retention, and engagement is not due to the Delivery Notifications themselves, but due to the users who adopt the Delivery Notifications - the power users."
-        />
-        <CaseCopy
-          copy="A user behaviour analysis turned out to be a feature request survey. Our power users seam to like the idea of Delivery Notifications."
-        />
-        <CaseSublineTwo subline="Conclusion" />
-        <CaseCopy
-          copy="In conclusion, the importance of seeking correlations to overall performance and long-term retention when analyzing products and users can't be overstated. Yet, correlation is not causation."
-        />
-        <CaseCopy
-          copy="It's crucial to identify key features that drive user engagement and retention, even if they initially seem marginal. Investigating these correlations provides valuable insights that can guide product improvement and optimization strategies."
-        />
-        <CaseCopy copy="This ultimately enhances the user experience, promotes habit formation, and drives sustained product use." />
-        <CaseCopy copy="And finally, always double-check whether the notifications really trigger..." />
+        <CaseSubline subline="Key Takeaways" />
+        <ul>
+          <li>
+            <b>Growth by design:</b> Focusing on user activation and behavioral
+            loops, not just UI.
+          </li>
+          <li>
+            <b>Leadership through impact:</b> Metrics, mentorship, and maturity
+            in one strategy.
+          </li>
+          <li>
+            <b>Clarity at scale:</b> Turning industrial complexity into
+            intuitive user journeys.
+          </li>
+        </ul>
       </ArticleSectionContent>
     </ArticleSection>
   </>
@@ -180,11 +333,10 @@ const renderContent = () => (
 export default createCasePage({
   metaTitle,
   metaDescription,
-  eyebrow: "Deep Dive",
+  eyebrow: "Case Study",
   eyebrowColor1: "#00b8d4",
   eyebrowColor2: "#62ebff",
-  title: "How to analyze feature adoption to increase user engagement & activation",
+  title: "Knauf Order Overview",
   hero,
   renderContent,
 });
-

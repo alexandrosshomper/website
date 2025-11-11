@@ -161,6 +161,7 @@ export const ArticleContent = styled.article`
   & > [data-article-section]:last-child {
     margin-bottom: 80px;
   }
+  padding-bottom: 64px;
 `;
 
 const articleTypographyStyles = css`
@@ -170,7 +171,7 @@ const articleTypographyStyles = css`
   h4,
   h5,
   h6 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-style: normal;
     font-weight: 550;
     color: ${Colors.primaryText.highEmphasis};
@@ -209,6 +210,24 @@ const articleTypographyStyles = css`
     line-height: 24px;
     margin-bottom: 8px;
   }
+  h5 {
+    font-size: 22px;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-weight: 500;
+    line-height: 115%;
+    letter-spacing: 0.01em;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  h6 {
+    font-size: 17px;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-weight: 500;
+    line-height: 115%;
+    letter-spacing: 0.01em;
+    line-height: 1.7499375rem;
+    margin-bottom: 0px;
+  }
 
   p {
     font-family: "Roboto", sans-serif;
@@ -230,15 +249,15 @@ const articleTypographyStyles = css`
     font-size: 17px;
     line-height: 1.7499375rem;
     color: ${Colors.primaryText.highEmphasis};
-    padding-left: 24px;
+    padding-left: 16px;
     margin-top: 8px;
     margin-bottom: 40px;
     list-style-position: outside;
     margin-block-start: 21.25px;
     tab-size: 4;
     margin-left: 12px;
-    padding-left: 32px;
-    padding-inline-start: 32px;
+    padding-left: 16px;
+    padding-inline-start: 16px;
   }
 
   ul {
@@ -265,6 +284,68 @@ const articleTypographyStyles = css`
     color: ${Colors.blue};
     text-decoration: underline;
     text-decoration-thickness: 2px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0 48px;
+    table-layout: auto;
+  }
+
+  table tr {
+    border-top: 1px solid rgba(8, 8, 8, 0.12);
+  }
+
+  table tr:last-child {
+    border-bottom: 1px solid rgba(8, 8, 8, 0.12);
+  }
+
+  table th,
+  table td {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.435rem;
+    letter-spacing: -0.01em;
+    color: ${Colors.primaryText.highEmphasis};
+    text-align: left;
+    vertical-align: top;
+    min-width: 7.5rem;
+    word-break: break-word;
+  }
+
+  table th {
+    font-weight: 600;
+    padding: 8px 12px;
+  }
+
+  table td {
+    font-weight: 400;
+    padding: 12px;
+  }
+
+  table th > *:last-child,
+  table td > *:last-child {
+    margin-bottom: 0;
+  }
+
+  table p {
+    font-size: 14px;
+    line-height: 1.435rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  table p:last-child {
+    margin-bottom: 0;
+  }
+
+  table caption {
+    caption-side: bottom;
+    font-size: 14px;
+    line-height: 1.4;
+    color: ${Colors.primaryText.mediumEmphasis};
+    padding-top: 12px;
   }
 
   & > *:last-child,
@@ -347,7 +428,7 @@ export const ArticleHeadline = styled.h1`
   }
 `;
 
-export const ArticleSubline = styled.p`
+export const ArticleSubline = styled.h4`
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 550;
@@ -455,7 +536,7 @@ const OverviewPageCopy = styled.p`
   font-style: normal;
   font-weight: 300;
   color: ${Colors.primaryText.highEmphasis};
-  margin: 0px 24px 24px 24px;
+  margin: 0px 0px 24px 0px;
 
   font-size: 20px;
   line-height: 120%;
@@ -497,7 +578,11 @@ const OverviewPageSummary = styled.div`
 
   text-align: left;
 
-  margin: 0px 24px 60px 24px;
+  margin: 0px 0px 60px 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 
   &:last-child {
     margin-bottom: 0px;

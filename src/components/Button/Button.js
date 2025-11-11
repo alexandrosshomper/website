@@ -103,7 +103,7 @@ const variantStyles = {
   `,
 };
 
-const StyledButton = styled.a(
+const StyledButton = styled.button(
   ({ $size, $variant, $gradient, $textColor }) => {
     const sizeStyle = sizeStyles[$size] || sizeStyles.medium;
     const variantResolver = variantStyles[$variant] || variantStyles.primary;

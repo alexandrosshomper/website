@@ -168,7 +168,7 @@ const NavigationSticky = () => {
 
   const navigationLinks = useMemo(
     () => [
-      { label: "Portfolios", to: "/portfolio" },
+      { label: "Portfolio", to: "/portfolio" },
       { label: "Reports", to: "/reports" },
       { label: "Flow Gallery", to: "/flows" },
     ],
