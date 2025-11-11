@@ -14,6 +14,7 @@ import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
+import CaseImage from "../../Content/Case/CaseImage";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
 
@@ -68,8 +69,6 @@ const renderContent = () => (
           headline="B2B SaaS platform for construction applicators"
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
-
         <p>
           Applicators used 5+ disconnected tools to quote, plan, and order. We
           built one workspace that unified all, reducing errors, increasing
@@ -93,6 +92,7 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
+        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -166,15 +166,17 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
         <CaseSublineTwo subline="Key Feature 1: Tender Import & Smart Mapping" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          size="L"
+        />
+
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
-        <CaseCopy
-          copy="Tenders arrive in every imaginable format — Excel, PDF, paper.
-We built guided import + system matching that parses items and maps them to Knauf systems."
-        />
         <CaseSubline subline="Highlights" />
+
         <ul>
           <li>Reduced quote creation time by 60%</li>
           <li>Increased quote accuracy and confidence</li>
@@ -188,7 +190,13 @@ We built guided import + system matching that parses items and maps them to Knau
           </li>
           <li>Foundation for automation and cross-system integration</li>
         </ul>
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 2: In-Plan Measurement" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
+          size="L"
+        />
         <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions." />
         <CaseSubline subline="Highlights" />
         <ul>
@@ -202,7 +210,13 @@ We built guided import + system matching that parses items and maps them to Knau
           <li>Zero re-entries between planning and ordering</li>
           <li>Major confidence boost among early users</li>
         </ul>
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
+          size="L"
+        />
         <CaseCopy
           copy="Ordering materials used to happen over phone calls and guesswork.
 We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
@@ -244,6 +258,65 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
           We built onboarding loops and “repeat job templates” to encourage
           reactivation and faster setup.
         </p>
+        <br />
+        <br />
+        <CaseSublineTwo subline="Easy Import" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-import-formats.png"
+          size="S"
+        />
+        <p>
+          <b>Problem</b> Low Set Up rates. The Set up moment for this use case
+          is providing the positions your first quote. Manually a daunting task
+          and the import sources can vary vastly.
+        </p>
+        <p>
+          <b>Solution</b> Create a quote feature for any type of import.
+        </p>
+        <p>
+          <b>Impact</b> Onboarding Drop-off: –28% before project creation
+        </p>
+        <br />
+        <br />
+        <CaseSublineTwo subline="Auto Fill Quote" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-auto-fill.png"
+          size="S"
+        />
+        <p>
+          <b>Problem</b> Low Aha moment Rates. The Aha moment for this use case
+          is easily sending out and winning a offer. This depends on the ease of
+          creating an offer.
+        </p>
+        <p>
+          <b>Solution</b> Make a one-click done-for-you offer calculation
+          feature.
+        </p>
+        <p>
+          <b>Impact</b> Activation Rate: +18% (users completing first project),
+          Time-to-Aha: –35% (from 43 min to 10 min median)
+        </p>
+        <br />
+        <br />
+        <CaseSublineTwo subline="Team Collaboration" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
+          size="S"
+        />
+        <p>
+          <b>Problem</b> Low Activation Rates. Creating detailed measurements
+          can often change hands of team mates or require them to review.
+          Measurement in isolation is blocking activation.
+        </p>
+        <p>
+          <b>Solution</b> Make a team workspace for collaboration.
+        </p>
+        <p>
+          <b>Impact</b> Activation Rate: +18% (teams finishing first plan),
+          Viral Invites: +20%
+        </p>
+        <br />
+        <br />
         <CaseSubline subline="Growth Impact" />
         <ul>
           <li>25% more users sent their first quote under 15 minutes.</li>

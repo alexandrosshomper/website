@@ -210,6 +210,24 @@ const articleTypographyStyles = css`
     line-height: 24px;
     margin-bottom: 8px;
   }
+  h5 {
+    font-size: 22px;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-weight: 500;
+    line-height: 115%;
+    letter-spacing: 0.01em;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  h6 {
+    font-size: 17px;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-weight: 500;
+    line-height: 115%;
+    letter-spacing: 0.01em;
+    line-height: 1.7499375rem;
+    margin-bottom: 0px;
+  }
 
   p {
     font-family: "Roboto", sans-serif;
@@ -410,7 +428,7 @@ export const ArticleHeadline = styled.h1`
   }
 `;
 
-export const ArticleSubline = styled.p`
+export const ArticleSubline = styled.h4`
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 550;
