@@ -10,6 +10,7 @@ import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
+import CaseImage from "../../Content/Case/CaseImage";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -44,16 +45,12 @@ const renderContent = () => (
       <ArticleSectionContent>
         <CaseHeadlineThree headline="Overview" />
         <CaseSectionHead
-          headline="A unified platform for all Knauf deliveries."
-          subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
+          headline="Bringing clarity to construction logistics, giving dealers and applicators real-time visibility into every delivery."
+          subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators & dealers manage their logistics and warehouse."
         />
         <p>
           Dealers lacked a unified way to track orders (inefficiency and
           frustration).
-        </p>
-        <p>
-          Bringing clarity to construction logistics, giving dealers and
-          applicators real-time visibility into every delivery.
         </p>
         <CaseSublineTwo subline="Company" />
         <p>
@@ -116,9 +113,12 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <CaseSubline subline="The Goal" />
         <CaseCopy copy="Design a unified, easy-to-use order management platform that reduces friction, increases trust, and saves dealers time." />
         <ul>
-          <li>Helps users reach value (first quote sent) within 15 minutes</li>
-          <li>Bridges quote → plan → order seamlessly</li>
-          <li>Builds trust through precision and reliability</li>
+          <li>
+            Provide users a unified overview of all their orders live status &
+            changes
+          </li>
+          <li>Give transparency to the deliveries on material level</li>
+          <li>Help our customers work more seamlessly togehter</li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
@@ -132,16 +132,16 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         />
         <CaseSubline subline="Research" />
         <p>
-          I led field visits and interviews across 12 countries — observing how
-          crews plan, measure, and order. We combined JTBD analysis, expert
-          interviews, and a survey with 53 applicators in Germany.
+          I led field visits and interviews across 9 countries — logistics &
+          warehouse management works in dealerships and on the construction
+          site. We combined JTBD analysis, expert interviews, and a survey with
+          20 dealers in Europe.
           <br />
           <i>
-            Field shadowing • Expert interviews (12 countries) • JTBD analysis •
-            UX surveys (n=53 DE).
+            Field shadowing • Expert interviews (9 countries) • JTBD analysis •
+            UX surveys (n=20 EU).
           </i>
         </p>
-        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
         <br />
         <br />
         <CaseSubline subline="Key Insights" />
@@ -150,8 +150,11 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           <li>Dealers’ notification preferences vary widely.</li>
           <li>Users needed fast setup (Day 1 value).</li>
         </ul>
+        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
+        <br />
+        <br />
         <CaseSubline subline="PMF Hypothesis" />
-        <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
+        <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
       </ArticleSectionContent>
       <ArticleSectionContent>
         <Drawer items={galleryItems} />
@@ -166,6 +169,10 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
         <CaseSublineTwo subline="Key Feature 1: Unified Order Table" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          size="L"
+        />
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
@@ -189,7 +196,13 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           </li>
           <li>Foundation for automation and cross-system integration</li>
         </ul>
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 2: Calendar View" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          size="L"
+        />
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
         <CaseSubline subline="Highlights" />
         <ul>
@@ -203,7 +216,13 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           <li>Zero re-entries between planning and ordering</li>
           <li>Major confidence boost among early users</li>
         </ul>
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          size="L"
+        />
         <CaseCopy copy="Personalized update preferences." />
         <CaseSubline subline="Highlights" />
         <ul>
@@ -219,7 +238,13 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           <li>Reorders simplified</li>
           <li>Trust built between applicators and dealers</li>
         </ul>
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          size="L"
+        />
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
         <CaseSubline subline="Highlights" />
         <ul>
@@ -242,14 +267,22 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
-        <CaseSubline subline="Experiment 1 — Auto Enable Notifications" />
+        <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
+          size="L"
+        />
         <p>Prompt new users to enable all updates on first login.</p>
         <ul>
           <li>+18% activation</li>
         </ul>
-        <CaseSubline subline="Experiment 2 — Update Toast Nudges" />
+        <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
+          size="L"
+        />
         <p>Show missed updates since last visit.</p>
-        <CaseSublineTwo subline="“A small nudge turned notifications from a setting into a habit.”" />
+        <CaseSubline subline="A small nudge turned notifications from a setting into a habit." />
         <ul>
           <li>+30% engagement</li>
           <li>+25% retention</li>

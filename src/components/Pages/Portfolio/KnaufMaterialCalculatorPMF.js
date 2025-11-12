@@ -274,7 +274,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </p>
         <br />
         <br />
-        <CaseSublineTwo subline="Easy Import" />
+        <CaseSublineTwo subline="Experiment 1: Easy Import" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-import-formats.png"
           size="L"
@@ -292,7 +292,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </p>
         <br />
         <br />
-        <CaseSublineTwo subline="Auto Fill Quote" />
+        <CaseSublineTwo subline="Experiment 2: Auto Fill Quote" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-auto-fill.png"
           size="L"
@@ -312,7 +312,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </p>
         <br />
         <br />
-        <CaseSublineTwo subline="Team Collaboration" />
+        <CaseSublineTwo subline="Experiment 3: Team Collaboration" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
           size="L"
