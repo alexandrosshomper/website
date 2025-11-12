@@ -47,7 +47,6 @@ const renderContent = () => (
           headline="A unified platform for all Knauf deliveries."
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
-
         <p>
           Dealers lacked a unified way to track orders (inefficiency and
           frustration).
@@ -56,9 +55,32 @@ const renderContent = () => (
           Bringing clarity to construction logistics, giving dealers and
           applicators real-time visibility into every delivery.
         </p>
+        <CaseSublineTwo subline="Company" />
+        <p>
+          <b>Knauf</b> is a €15B global building materials manufacturer
+          operating in more than 90 countries.
+        </p>
+        <p>
+          <b>Knauf Digital</b> is the technology and innovation unit driving the
+          digital transformation at scale; building digital ecosystems that
+          connect contractors, dealers, and Knauf brands across markets.
+        </p>
+        <CaseSublineTwo subline="Customer Types" />
+        <p>
+          <b>Specifier:</b> Professionals who design or specify Knauf systems
+          for projects. They define which products and materials are included in
+          tenders.
+        </p>
+        <p>
+          <b>Dealer:</b> B2B partners who sell Knauf materials to construction
+          companies and manage order logistics.
+        </p>
+        <p>
+          <b>Applicator:</b> Contractors, on-site professionals who plan,
+          measure, and execute installations.
+        </p>
 
         <CaseCitations
-          company="Knauf Digital"
           role="Product Design Manager, 12 markets"
           team="14 (PM, Eng, Data, BA, Design)"
           product="Centralized track-n-trace platform for a fragemnted conglomerate"

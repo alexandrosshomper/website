@@ -69,8 +69,31 @@ const renderContent = () => (
           From fragmented workflows to a unified product, helping construction
           applicators quote, plan, and order 3× faster.
         </p>
+        <CaseSublineTwo subline="Company" />
+        <p>
+          <b>Knauf</b> is a €15B global building materials manufacturer
+          operating in more than 90 countries.
+        </p>
+        <p>
+          <b>Knauf Digital</b> is the technology and innovation unit driving the
+          digital transformation at scale; building digital ecosystems that
+          connect contractors, dealers, and Knauf brands across markets.
+        </p>
+        <CaseSublineTwo subline="Customer Types" />
+        <p>
+          <b>Specifier:</b> Professionals who design or specify Knauf systems
+          for projects. They define which products and materials are included in
+          tenders.
+        </p>
+        <p>
+          <b>Dealer:</b> B2B partners who sell Knauf materials to construction
+          companies and manage order logistics.
+        </p>
+        <p>
+          <b>Applicator:</b> Contractors, on-site professionals who plan,
+          measure, and execute installations.
+        </p>
         <CaseCitations
-          company="Knauf Digital"
           role="Product Design Manager, 12 markets"
           team="PO, Eng, Data, Design"
           product="B2B SaaS platform for construction professionals"

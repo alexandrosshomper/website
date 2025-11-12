@@ -82,7 +82,6 @@ const CaseCitations = ({
   keyResults = [],
 }) => {
   const entries = [
-    { label: "Company", value: company },
     { label: "Role", value: role },
     { label: "Team", value: team },
     { label: "Product", value: product },
