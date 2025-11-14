@@ -224,24 +224,28 @@ const sections = [
       {
         name: "Kimarina",
         subline: "Founder, Growth & Product Design Consultancy",
+        label: "Visit",
         url: "https://kimarina.com",
         logo: "/img/company-logos/kimarina.jpeg",
       },
       {
         name: "UnternehmerTUM",
         subline: "Startup Advisor PMF, Growth & Product Design",
+        label: "Visit",
         url: "https://www.unternehmertum.de",
         logo: "/img/company-logos/unternehmertum.jpeg",
       },
       {
         name: "Start2 Group",
         subline: "Startup Advisor Growth & Product Design",
+        label: "Visit",
         url: "https://www.start2.group",
         logo: "/img/company-logos/start2.jpeg",
       },
       {
         name: "PioneersClub",
         subline: "Startup Advisor PMF, Growth & Product Design",
+        label: "Visit",
         url: "https://pioneersclub.io",
         logo: "/img/company-logos/pioneersclub.jpeg",
       },
@@ -253,24 +257,28 @@ const sections = [
       {
         name: "Muvn",
         subline: "Pre-Seed",
+        label: "Visit",
         url: "https://www.muvn.de",
         logo: "/img/company-logos/muvn.jpeg",
       },
       {
         name: "Norizon",
         subline: "Pre-Seed",
+        label: "Visit",
         url: "https://norizon.de",
         logo: "/img/company-logos/norizon.jpeg",
       },
       {
         name: "Codressing",
         subline: "Pre-Seed",
+        label: "Visit",
         url: "https://www.co-dressing.com",
         logo: "/img/company-logos/codressing.jpeg",
       },
       {
         name: "FamilyMindAI",
         subline: "Pre-Seed",
+        label: "Visit",
         url: "https://familymind.ai",
         logo: "/img/company-logos/familymindai.jpeg",
       },
@@ -282,11 +290,15 @@ const sections = [
       {
         name: "Knauf",
         subline: "Product Owner, Product Design Manager",
+        label: "Cases",
+        url: "/portfolio",
         logo: "/img/company-logos/knauf.jpeg",
       },
       {
         name: "Occhio",
         subline: "Product Owner & UX Manager",
+        label: "Cases",
+        url: "/portfolio",
         logo: "/img/company-logos/occhio.jpeg",
       },
       {
@@ -372,11 +384,12 @@ const Profile = () => {
                   <VisitButton
                     as="a"
                     href={company.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(company.url.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                     aria-label={`Visit ${company.name}`}
                   >
-                    Visit
+                    {company.label}
                   </VisitButton>
                 )}
               </CompanyItem>

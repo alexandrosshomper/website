@@ -63,18 +63,10 @@ const renderContent = () => (
           connect contractors, dealers, and Knauf brands across markets.
         </p>
         <CaseSublineTwo subline="Customer Types" />
-        <p>
-          <b>Specifier:</b> Professionals who design or specify Knauf systems
-          for projects. They define which products and materials are included in
-          tenders.
-        </p>
+
         <p>
           <b>Dealer:</b> B2B partners who sell Knauf materials to construction
           companies and manage order logistics.
-        </p>
-        <p>
-          <b>Applicator:</b> Contractors, on-site professionals who plan,
-          measure, and execute installations.
         </p>
 
         <CaseCitations
@@ -170,7 +162,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         />
         <CaseSublineTwo subline="Key Feature 1: Unified Order Table" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
         <CaseCopy
@@ -200,7 +192,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <CaseSublineTwo subline="Key Feature 2: Calendar View" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
           size="L"
         />
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
@@ -220,7 +212,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
           size="L"
         />
         <CaseCopy copy="Personalized update preferences." />
@@ -242,7 +234,11 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
+          size="L"
+        />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-order-details-documents.png"
           size="L"
         />
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
@@ -269,7 +265,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
         <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
+          imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
           size="L"
         />
         <p>Prompt new users to enable all updates on first login.</p>
@@ -278,7 +274,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </ul>
         <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
+          imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
           size="L"
         />
         <p>Show missed updates since last visit.</p>

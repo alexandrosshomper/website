@@ -79,16 +79,8 @@ const renderContent = () => (
           digital transformation at scale; building digital ecosystems that
           connect contractors, dealers, and Knauf brands across markets.
         </p>
-        <CaseSublineTwo subline="Customer Types" />
-        <p>
-          <b>Specifier:</b> Professionals who design or specify Knauf systems
-          for projects. They define which products and materials are included in
-          tenders.
-        </p>
-        <p>
-          <b>Dealer:</b> B2B partners who sell Knauf materials to construction
-          companies and manage order logistics.
-        </p>
+        <CaseSublineTwo subline="Customer Type" />
+
         <p>
           <b>Applicator:</b> Contractors, on-site professionals who plan,
           measure, and execute installations.
