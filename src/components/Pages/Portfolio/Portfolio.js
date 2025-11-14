@@ -1,16 +1,89 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 
 //Components
-import { Devices } from "../../DesignSystem";
+import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
 import CaseCard from "../../Content/CaseCard/CaseCard";
-import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
-import InViewMotion from "../../animation/InViewMotion";
+import caseStudiesData from "../../../data/portfolio/portfolio.json";
+
+const CASE_STUDY_TYPES = {
+  ALL: "All Case Studies",
+  ONBOARDING: "Onboarding Case Studies",
+  GENERAL: "General Case Studies",
+};
+
+const mapCaseStudyType = (type) => {
+  if (type === CASE_STUDY_TYPES.ONBOARDING) {
+    return CASE_STUDY_TYPES.ONBOARDING;
+  }
+
+  if (type === CASE_STUDY_TYPES.GENERAL) {
+    return CASE_STUDY_TYPES.GENERAL;
+  }
+
+  if (type === "General Case Study") {
+    return CASE_STUDY_TYPES.GENERAL;
+  }
+
+  return type;
+};
+
+const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
+  return {
+    id: caseStudy.id,
+    type: mapCaseStudyType(caseStudy.type),
+    eyebrow: "Case Study",
+    headline: caseStudy.name,
+    copy: caseStudy.desc,
+    imgURL: caseStudy.cover,
+    link: caseStudy.slug,
+    comingSoon: caseStudy.coming,
+  };
+});
+
+const KNOWN_CASE_STUDY_TYPE_ORDER = [
+  CASE_STUDY_TYPES.ONBOARDING,
+  CASE_STUDY_TYPES.GENERAL,
+];
+
+const FILTER_OPTIONS = [
+  CASE_STUDY_TYPES.ALL,
+  ...Array.from(
+    new Set(CASE_STUDIES.map(({ type }) => type).filter(Boolean))
+  ).sort((typeA, typeB) => {
+    const indexA = KNOWN_CASE_STUDY_TYPE_ORDER.indexOf(typeA);
+    const indexB = KNOWN_CASE_STUDY_TYPE_ORDER.indexOf(typeB);
+
+    if (indexA === -1 && indexB === -1) {
+      return typeA.localeCompare(typeB);
+    }
+
+    if (indexA === -1) {
+      return 1;
+    }
+
+    if (indexB === -1) {
+      return -1;
+    }
+
+    return indexA - indexB;
+  }),
+];
 
 const Content = (props) => {
+  const [selectedType, setSelectedType] = useState(CASE_STUDY_TYPES.ALL);
+
+  const filteredCaseStudies = useMemo(() => {
+    if (selectedType === CASE_STUDY_TYPES.ALL) {
+      return CASE_STUDIES;
+    }
+
+    return CASE_STUDIES.filter((caseStudy) => caseStudy.type === selectedType);
+  }, [selectedType]);
+
   const Content = styled.div`
     text-align: left;
     margin-top: 72px;
@@ -40,55 +113,85 @@ const Content = (props) => {
     align-content: center;
     align-items: center;
     --gap: 24px;
-    margin-left: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
-
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: var(--gap);
-    }
-
+    gap: var(--gap);
     ${Devices.tabletS} {
       width: 564px;
     }
     ${Devices.tabletM} {
+      margin: 0px 0px 0px 0px;
+
       width: 708px;
       flex-direction: row;
       align-items: center;
       justify-content: center;
     }
     ${Devices.laptopS} {
-      width: 852px;
+      width: 864px;
     }
     ${Devices.laptopM} {
       width: 1140px;
       --gap: 12px;
     }
   `;
-  const Panels = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    gap: 12px;
 
-    margin: 0px;
+  const FilterBar = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 32px 24px 24px 24px;
+    visibility: hidden;
+
     ${Devices.tabletS} {
-      width: 576px;
+      width: 564px;
     }
+
     ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
+      margin: 32px 0 24px 0;
+      width: 708px;
+      justify-content: flex-start;
     }
+
     ${Devices.laptopS} {
       width: 864px;
     }
+
     ${Devices.laptopM} {
-      width: 1152px;
+      width: 1140px;
     }
+  `;
+
+  const FilterButton = styled.button`
+    border-radius: 999px;
+    border: 1px solid
+      ${(props) => (props.isActive ? Colors.blue : "rgba(0, 0, 0, 0.12)")};
+    background-color: ${(props) =>
+      props.isActive ? Colors.blue : Colors.background};
+    color: ${(props) =>
+      props.isActive ? Colors.textWhite.highEmphasis : Colors.text};
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: ${(props) => (props.isActive ? 600 : 500)};
+    letter-spacing: 0.01em;
+    padding: 10px 18px;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      border-color: ${Colors.blue};
+      color: ${(props) =>
+        props.isActive ? Colors.textWhite.highEmphasis : Colors.blue};
+      outline: none;
+    }
+  `;
+
+  const EmptyState = styled.p`
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-size: 16px;
+    line-height: 150%;
+    margin: 48px 0;
+    max-width: 420px;
+    text-align: center;
   `;
 
   return (
@@ -106,197 +209,44 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <SectionHead
-          divider="Selected projects"
-          headline="Knauf Construction Apps"
-          subline="Building a global apps platform, from scratch."
+          headline="Portfolio"
+          subline="Selected projects from my corporate work"
         />
-        <Panels style={{ marginBottom: "48px" }}>
-          <InViewMotion>
-            <CaseSectionSummary
-              copy="
-As the Chapter Lead UX, I spearheaded the design and UX for four Knauf construction apps, creating a unified design system. I established key growth metrics for these products, leading to data-informed decisions."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </InViewMotion>
-        </Panels>
-        <CaseCardGrid>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Case Study"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Knauf Digital Transformation & Business Design"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverKnaufTransformation.png"
-              link="/knauf-explorations"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Case Study"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="myKnauf: A global construction app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverMyKnauf.png"
-              link="/myKnauf"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Product Analytics: How to analyze and define retention & engagement metrics for an app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverProductAnalytics.png"
-              comingSoon="true"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="User Acquisition: How to develop a marketing messaging framework for an app platform"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverUserAcquisition.png"
-              comingSoon="true"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="Signups: How to increase signups with user psychology and data analysis"
-              copy="Increasing signups for Knauf Account. Reducing signup friction by applying user psychology on registration flows."
-              imgURL="./img/Knauf/CoverSignup.png"
-              link="/knauf-account"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor2="#231768"
-              eyebrowColor1="#10d5f5"
-              headline="User Retention: How to increase user engagement & activation by analyzing featuer adoption"
-              copy="Increasing user engagement & activation for Knauf Digital's app. An unexpected finding: a neglected feature used by 7% of users, accounting for 20% of total traffic."
-              imgURL="./img/Knauf/CoverUserRetention.png"
-              link="/knauf-orderoverview"
-            />
-          </InViewMotion>
-        </CaseCardGrid>
-      </Section>
 
-      <Section>
-        <SectionHead
-          headline="Knauf Corporate Website"
-          subline="Unifying the user experience of a global conglomerate."
-        />
-        <Panels
-          style={{
-            marginBottom: "48px",
-            gap: "24px",
-          }}
-        >
-          <InViewMotion>
-            <CaseSectionSummary
-              copy="
-As the Chapter Lead UX, I led the product design of Knauf's global websites unification, establishing a cohesive design system across 4 product teams. A successful launch in 120 countries and multiple languages, guided by key performance metrics analysis."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </InViewMotion>
-        </Panels>
+        <FilterBar>
+          {FILTER_OPTIONS.map((type) => (
+            <FilterButton
+              key={type}
+              type="button"
+              onClick={() => setSelectedType(type)}
+              isActive={selectedType === type}
+              aria-pressed={selectedType === type}
+            >
+              {type}
+            </FilterButton>
+          ))}
+        </FilterBar>
         <CaseCardGrid>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Case Study"
-              eyebrowColor1="#3b177d"
-              eyebrowColor2="#73b9df"
-              headline="knauf.com: Information Architecture & navigation for digital future of the construction business"
-              copy="Building the digital future of the construction business. The roadmap is there, now we need to get tracktion."
-              imgURL="./img/Knauf/CoverKnaufCom.png"
-              comingSoon="true"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor1="#3b177d"
-              eyebrowColor2="#73b9df"
-              headline="Product Workflow: How to streamline data-driven and customer-centric product decisions."
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverProductWorkflow.png"
-              comingSoon="true"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Deep Dive"
-              eyebrowColor1="#3b177d"
-              eyebrowColor2="#73b9df"
-              headline="UX Metrics: How to enable data-driven product decisions with a UX Metrics framework"
-              copy="Knauf want's to explore the opportunities of digitizing the construction business by rapidly developing validated product & business ideas"
-              imgURL="./img/Knauf/CoverUXMetrics.png"
-              comingSoon="true"
-            />
-          </InViewMotion>
-        </CaseCardGrid>
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Occhio Website & eCommerce"
-          subline="Leading the digital relaunch of a premium lighting brand."
-        />
-        <Panels style={{ marginBottom: "48px" }}>
-          <InViewMotion>
-            <CaseSectionSummary
-              copy="As the UX Manager & Product Owner, I led Occhio's website relaunch and e-commerce debut, blending brand, user experience and performance to redefine Occhio's digital presence. This overhaul boosted user engagement and conversion rates, earning accolades and raising e-commerce to 10% of revenue share"
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
-          </InViewMotion>
-        </Panels>
-        <CaseCardGrid>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Case Study"
-              eyebrowColor1="#FF0000"
-              eyebrowColor2="#FFCC00"
-              headline="Occhio Website Relaunch and eCommerce Launch"
-              copy="Occhio relaunches its Website and establishes it's first e-commerce while simultaneously redefining its brand for a digital world"
-              //copy="Auf Basis umfangreicher Marktforschung und einer neuen Digitalstrategie entwickelte Alexandros Shomper das nutzerzentrierte Konzept sowie das UX/UI Design für den Website-Relaunch und eCommerce Launch von Occhio. Dabei standen ein begeisterndes, interaktives Markenerlebnis und die intuitive Führung der Nutzer von der Inspiration hin zum Konfigurations- und Kaufprozess im Vordergrund."
-              imgURL="./img/Occhio/Occhio-Website.png"
-              link="/occhio"
-            />
-          </InViewMotion>
-        </CaseCardGrid>
-      </Section>
-      <Section>
-        <SectionHead divider="Side Projects" />
-        <CaseCardGrid>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="Website / eCommerce"
-              eyebrowColor2="#d9edca"
-              eyebrowColor1="#206405"
-              headline="The elegant art of topic authority for fly fishing"
-              copy="Feathered Hooks: My blog/eCommerce for fly fishing. A SEO experiment on achieving & monetizing topic authority as quick as possible."
-              imgURL="./img/FeatheredHooks/CoverFeatheredHooks.png"
-              link="/feathered-hooks"
-            />
-          </InViewMotion>
-          <InViewMotion>
-            <CaseCard
-              eyebrow="App"
-              eyebrowColor2="#6a210d"
-              eyebrowColor1="#ffb700"
-              headline="CookCook: The Video Recipe Social Network"
-              copy="My very own MERN stack app. A technical excercise and solution to a real problem I have: Find easy to follow video recipes."
-              imgURL="./img/CookCook/CoverCookCook.png"
-              link="https://www.cookcook.it/"
-            />
-          </InViewMotion>
+          {filteredCaseStudies.length > 0 ? (
+            filteredCaseStudies.map((caseStudy) => (
+              <CaseCard
+                key={caseStudy.id}
+                eyebrow={caseStudy.eyebrow}
+                eyebrowColor2={caseStudy.eyebrowColor2}
+                eyebrowColor1={caseStudy.eyebrowColor1}
+                headline={caseStudy.headline}
+                copy={caseStudy.desc}
+                imgURL={caseStudy.imgURL}
+                link={caseStudy.link}
+                comingSoon={caseStudy.comingSoon}
+              />
+            ))
+          ) : (
+            <EmptyState>
+              No case studies are available for this type yet. Please check back
+              soon.
+            </EmptyState>
+          )}
         </CaseCardGrid>
       </Section>
     </Content>

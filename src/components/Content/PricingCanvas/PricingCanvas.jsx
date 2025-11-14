@@ -175,7 +175,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
     ${Devices.laptopM} {
     }
   `;
-  const PricingCardHeadline = styled.h4`
+  const PricingCardHeadline = styled.p`
     font-weight: 600;
     font-size: 21px;
     line-height: 120%;
@@ -276,7 +276,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
     background-color: blue;
     border-radius: 17px;
   `;
-  const PanelHeadline = styled.h4`
+  const PanelHeadline = styled.p`
     position: static;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
@@ -506,6 +506,16 @@ const PricingCanvas = ({ roiCalcAction }) => {
     "https://www.loom.com/embed/94ad4dc7e038465a81e930c05aa4c21a";
 
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+  const isJSDOM =
+    typeof navigator !== "undefined" &&
+    /jsdom/i.test(navigator?.userAgent || "");
+  // Avoid setting video.muted in jsdom tests, it fires volume events mid-render.
+  const videoProps = {
+    autoPlay: true,
+    loop: true,
+    playsInline: true,
+    ...(!isJSDOM ? { muted: true } : {}),
+  };
   const hanldeWatchDemo = () => {
     ReactGA.event({
       category: "User",
@@ -543,7 +553,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
           <b>stick with your product</b>.
         </PricingCanvasCopy>
         <PricingVideoWrapper onClick={() => hanldeWatchDemo()}>
-          <PricingVideo autoPlay loop muted playsInline>
+          <PricingVideo {...videoProps}>
             <source
               src="/img/SalesPitch/OnboardingDevelopmentSprint-SalesPitch-Cover.mp4"
               type="video/mp4"

@@ -53,44 +53,44 @@ const LandingpageMenu = (props) => {
     <LandingpageMenu className="Menu">
       <MenuItemSmall>
         <Link
-          to={`/case-studies`}
+          to={`/profile`}
           style={{
             color:
-              currentPath === "/case-studies"
+              currentPath === "/profile"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Case Studies
+          Profile
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/reports`}
+          to={`/portfolio`}
           style={{
             color:
-              currentPath === "/reports"
+              currentPath === "/portfolio"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Reports
+          Portfolio
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/flows`}
+          to={`/writing`}
           style={{
             color:
-              currentPath === "/flows"
+              currentPath === "/writing"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Flow Gallery
+          Writing
         </Link>
       </MenuItemSmall>
     </LandingpageMenu>

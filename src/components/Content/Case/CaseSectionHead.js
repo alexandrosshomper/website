@@ -26,7 +26,7 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
     flex: none;
     order: 0;
     flex-grow: 0;
-    width: 70%;
+    width: 100%;
 
     padding-bottom: 60px;
 

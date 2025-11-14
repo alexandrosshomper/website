@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect, useCallback } from "react";
 import Spinner from "react-spinner-material";
 //import React from "react";
 import styled from "@emotion/styled";
@@ -14,7 +14,7 @@ import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 //import Home from "./components/Pages/Home/Home";
-const Home = lazy(() => import("./components/Pages/Home/Home"));
+const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
 const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
@@ -54,6 +54,9 @@ const KnaufAccount = lazy(() =>
 const KnaufOrderOverview = lazy(() =>
   import("./components/Pages/Portfolio/KnaufOrderOverview")
 );
+const KnaufMaterialCalculatorPMF = lazy(() =>
+  import("./components/Pages/Portfolio/KnaufMaterialCalculatorPMF")
+);
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
@@ -63,6 +66,23 @@ const Navigation = lazy(() => import("./components/Navigation/Navigation"));
 /*const MiniNavigation = lazy(() =>
   import("./components/Navigation/MiniNavigation/MiniNavigation")
 );*/
+const StyledApp = styled.div`
+  text-align: center;
+  margin: 0 auto;
+  ${Devices.tabletS} {
+    //width: 564px;
+  }
+  ${Devices.tabletM} {
+    //width: 708px;
+  }
+  ${Devices.laptopS} {
+    //width: 852px;
+  }
+  ${Devices.laptopM} {
+    //width: 1140px;
+  }
+`;
+
 const renderLoader = () => (
   <div
     style={{
@@ -81,44 +101,24 @@ const renderLoader = () => (
 ReactGA.initialize("G-6BNG13DFW0"); // Replace with your Google Analytics tracking ID
 
 function App() {
-  const App = styled.div`
-    text-align: center;
-    margin: 0 auto;
-    ${Devices.tabletS} {
-      //width: 564px;
-    }
-    ${Devices.tabletM} {
-      //width: 708px;
-    }
-    ${Devices.laptopS} {
-      //width: 852px;
-    }
-    ${Devices.laptopM} {
-      //width: 1140px;
-    }
-  `;
   const [isSticky, setIsSticky] = useState(false);
 
+  const handleScroll = useCallback(() => {
+    setIsSticky(window.pageYOffset > 152);
+  }, []);
+
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  const handleScroll = () => {
-    if (window.pageYOffset > 152) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
+  }, [handleScroll]);
 
   return (
     <Router>
       <ScrollToTop />
 
-      <App className="App">
+      <StyledApp className="App">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Alexandros Shomper</title>
@@ -132,11 +132,10 @@ function App() {
           {isSticky && <NavigationSticky />}
 
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/" component={Profile} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/writing" component={Writing} />
-
             {/*REPORTS*/}
             <Route exact path="/reports" component={Reports} />
             <Route
@@ -162,26 +161,35 @@ function App() {
             <Route exact path="/flows/linear" component={LinearFlow} />
             <Route exact path="/flows/wrike" component={WrikeFlow} />
             <Route exact path="/flows/trello" component={TrelloFlow} />
-
             {/*PORTFOLIO*/}
-            <Route exact path="/occhio" component={Occhio} />
+            <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/portfolio/occhio" component={Occhio} />
             <Route
               exact
-              path="/knauf-explorations"
+              path="/portfolio/knauf-explorations"
               component={KnaufExplorations}
             />
-            <Route exact path="/knauf-account" component={KnaufAccount} />
             <Route
               exact
-              path="/knauf-orderoverview"
+              path="/portfolio/knauf-account"
+              component={KnaufAccount}
+            />
+            <Route
+              exact
+              path="/portfolio/knauf-order-overview"
               component={KnaufOrderOverview}
             />
-            <Route exact path="/myknauf" component={MyKnauf} />
+            <Route
+              exact
+              path="/portfolio/knauf-material-calculator"
+              component={KnaufMaterialCalculatorPMF}
+            />
+            <Route exact path="/portfolio/myknauf" component={MyKnauf} />
             <Route exact path="/heraklit" component={Heraklit} />
           </Switch>
           <Footer />
         </Suspense>
-      </App>
+      </StyledApp>
     </Router>
   );
 }

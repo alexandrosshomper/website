@@ -105,7 +105,7 @@ const ROIResults = styled.div`
   border: 1px solid #e9ecef;
 `;
 
-const ROIResultsTitle = styled.h4`
+const ROIResultsTitle = styled.p`
   margin: 0 0 16px 0;
   font-size: 18px;
   font-weight: 700;
