@@ -2,6 +2,7 @@ import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
 import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
+import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
@@ -9,14 +10,21 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
+import CaseCitations from "../../Content/Case/CaseCitations";
+import Drawer from "../../Content/Drawer/Drawer";
+import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 
+const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
 const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
+const hero = () => (
+  <CaseCover imgURL="/img/portfolio/knauf-order-overview/cover.png" />
+);
 const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-order-overview/cover.png" />
 );
@@ -29,9 +37,18 @@ const galleryItems = [
       "/img/portfolio/knauf-order-overview/in-market-validation.png",
     headline: "In Market Validation",
     copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
+    imgURL: "/img/portfolio/knauf-order-overview/in-market-validation.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/in-market-validation.png",
+    headline: "In Market Validation",
+    copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
   },
   {
     id: 2,
+    imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
+    imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
+    headline: "Mental Models",
+    copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
     imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
     imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
     headline: "Mental Models",
@@ -89,11 +106,25 @@ const renderContent = () => (
     <ArticleSection>
       <ArticleSectionContent>
         <CaseHeadlineThree headline="Challenge" />
+        <CaseHeadlineThree headline="Challenge" />
         <CaseSectionHead
           headline="“We spent more time chasing delivery info than selling materials.”"
           subline="Construction dealers manage thousands of orders across different Knauf entities.
 Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
+          headline="“We spent more time chasing delivery info than selling materials.”"
+          subline="Construction dealers manage thousands of orders across different Knauf entities.
+Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
         />
+        <CaseSubline subline="The Problem" />
+        <CaseCopy copy="The lack of transparency created frustration for both dealers and Knauf, resulting in inefficiencies and low trust in the system." />
+        <ul>
+          <li>Constantly changing ETAs</li>
+          <li>No unified tracking platform</li>
+          <li>Different contact points per Knauf entity</li>
+          <li>Manual customer updates consuming hours weekly</li>
+        </ul>
+        <CaseSubline subline="The Goal" />
+        <CaseCopy copy="Design a unified, easy-to-use order management platform that reduces friction, increases trust, and saves dealers time." />
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="The lack of transparency created frustration for both dealers and Knauf, resulting in inefficiencies and low trust in the system." />
         <ul>
@@ -117,6 +148,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
 
     <ArticleSection>
       <ArticleSectionContent>
+        <CaseHeadlineThree headline="Discovery & Hypothesis" />
         <CaseHeadlineThree headline="Discovery & Hypothesis" />
         <CaseSectionHead
           headline="Discover the essential workflow that defines value."
@@ -156,7 +188,10 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
     <ArticleSection>
       <ArticleSectionContent>
         <CaseHeadlineThree headline="Solution" />
+        <CaseHeadlineThree headline="Solution" />
         <CaseSectionHead
+          headline="Designing for Activation"
+          subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
@@ -286,7 +321,20 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
+    <ArticleSection>
       <ArticleSectionContent>
+        <CaseHeadlineThree headline="Leadership Impact" />
+        <CaseSectionHead
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Hosted Activation Clinics to align teams on user metrics</li>
+          <li>Mentored 2 designers on experiment design</li>
+          <li>Led Growth Guild (Design, PM, Eng, Data).</li>
+          <li>Built UX Maturity Model & Design System foundations</li>
+        </ul>
         <CaseHeadlineThree headline="Leadership Impact" />
         <CaseSectionHead
           headline="Building a Design Team & Culture"
@@ -357,10 +405,79 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseSectionHead headline="Great Product Design is Growth Design" />
         <CaseSublineTwo subline="Transparency builds trust, and trust drives retention." />
         <br />
+          headline="Success in numbers"
+          subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
+        />
+        <p>
+          A product that turned analog workflows into a digital growth engine —
+          and a design-led transformation that shaped how Knauf builds all
+          future tools.
+        </p>
+        <ul>
+          <li>
+            Scaled design system across 4 apps, cutting delivery time by 40%.
+          </li>
+          <li>Mentored designers in hypothesis-driven experimentation.</li>
+          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
+          <li>Introduced UX Maturity Assessments company-wide.</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <th>Metric</th>
+              <th>Δ</th>
+            </tr>
+            <tr>
+              <td>Inquiry Calls</td>
+              <td>↓20%</td>
+            </tr>
+            <tr>
+              <td>Dealer Admin Work</td>
+              <td>-2h/week</td>
+            </tr>
+            <tr>
+              <td>Activation</td>
+              <td>+30%</td>
+            </tr>
+            <tr>
+              <td>Retention</td>
+              <td>+25%</td>
+            </tr>
+            <tr>
+              <td>Markets Rolled Out</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+        </table>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Reflections" />
+        <CaseSectionHead headline="Great Product Design is Growth Design" />
+        <CaseSublineTwo subline="Transparency builds trust, and trust drives retention." />
+        <br />
         <CaseCopy
           copy="Knauf Order Overview transformed dealer operations from manual chaos to digital clarity.
 It became Knauf’s blueprint for future B2B platforms and one of its fastest-adopted tools globally."
+          copy="Knauf Order Overview transformed dealer operations from manual chaos to digital clarity.
+It became Knauf’s blueprint for future B2B platforms and one of its fastest-adopted tools globally."
         />
+        <CaseSubline subline="Key Takeaways" />
+        <ul>
+          <li>
+            <b>Growth by design:</b> Focusing on user activation and behavioral
+            loops, not just UI.
+          </li>
+          <li>
+            <b>Leadership through impact:</b> Metrics, mentorship, and maturity
+            in one strategy.
+          </li>
+          <li>
+            <b>Clarity at scale:</b> Turning industrial complexity into
+            intuitive user journeys.
+          </li>
+        </ul>
         <CaseSubline subline="Key Takeaways" />
         <ul>
           <li>
@@ -385,8 +502,10 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
+  eyebrow: "Case Study",
   eyebrowColor1: "#00b8d4",
   eyebrowColor2: "#62ebff",
+  title: "Knauf Order Overview",
   title: "Knauf Order Overview",
   hero,
   renderContent,

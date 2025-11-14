@@ -7,6 +7,7 @@ import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
+import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
@@ -216,7 +217,72 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           <li>Zero re-entries between planning and ordering</li>
           <li>Major confidence boost among early users</li>
         </ul>
+        <CaseSublineTwo subline="Key Feature 2: In-Plan Measurement" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
+          size="L"
+        />
+        <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions." />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>Live measurement tools with snapping & layer toggles</li>
+          <li>Real-time quantity calculation per wall, floor, or phase</li>
+          <li>Immediate audit trail for every measurement</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <ul>
+          <li>3× faster take-offs</li>
+          <li>Zero re-entries between planning and ordering</li>
+          <li>Major confidence boost among early users</li>
+        </ul>
         <br />
+        <br />
+        <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
+          size="L"
+        />
+        <CaseCopy
+          copy="Ordering materials used to happen over phone calls and guesswork.
+We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
+        />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>Split orders by date or project phase</li>
+          <li>Smart templates for recurring items</li>
+          <li>Built-in delivery scheduling</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <ul>
+          <li>Order accuracy ↑</li>
+          <li>Reorders simplified</li>
+          <li>Trust built between applicators and dealers</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Driving Growth (1→n)" />
+        <CaseSectionHead
+          headline="Discovering the Growth Bottlenecks"
+          subline="Once core value was validated, I led the transition from PMF to Growth."
+        />
+        <CaseSubline subline="Growth Tactics" />
+        <p>
+          We introduced Activation Clinics, biweekly cross-functional sessions
+          (Design, PM, Eng, Data) to review friction metrics and identify quick
+          wins. We tracked:
+        </p>
+        <ul>
+          <li>Aha Moment ≤15m</li>
+          <li>Quote-to-Plan Conversion</li>
+          <li>7-Day Retention</li>
+        </ul>
+        <CaseSubline subline="Loops & Experiments" />
+        <p>
+          We built onboarding loops and “repeat job templates” to encourage
+          reactivation and faster setup.
+        </p>
         <br />
         <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
         <CaseImage
@@ -323,6 +389,125 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </p>
         <br />
         <br />
+        <CaseSubline subline="Growth Impact" />
+        <ul>
+          <li>25% more users sent their first quote under 15 minutes.</li>
+          <li>30% increase in 7-day retention.</li>
+          <li>
+            Product became a blueprint for all future Knauf Digital tools.
+          </li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Leadership Impact" />
+        <CaseSectionHead
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-ux-maturity.jpeg"
+          size="L"
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Built and led a 4-person product design team.</li>
+          <li>
+            Scaled design system across 4 apps, cutting delivery time by 40%.
+          </li>
+          <li>
+            Mentored two designers in experimentation and metric-driven UX.
+          </li>
+          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
+          <li>Introduced UX Maturity Assessments company-wide.</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Results" />
+        <CaseSectionHead
+          headline="Success in numbers"
+          subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
+        />
+        <p>
+          A product that turned analog workflows into a digital growth engine —
+          and a design-led transformation that shaped how Knauf builds all
+          future tools.
+        </p>
+        <ul>
+          <li>
+            Scaled design system across 4 apps, cutting delivery time by 40%.
+          </li>
+          <li>Mentored designers in hypothesis-driven experimentation.</li>
+          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
+          <li>Introduced UX Maturity Assessments company-wide.</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <th>Metric</th>
+              <th>Δ</th>
+            </tr>
+            <tr>
+              <td>Activation (Aha ≤15m)</td>
+              <td>+25%</td>
+            </tr>
+            <tr>
+              <td>7-Day Retention</td>
+              <td>+30%</td>
+            </tr>
+            <tr>
+              <td>Plan→Order Conversion</td>
+              <td>+18pp</td>
+            </tr>
+            <tr>
+              <td>NPS</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Reflections" />
+        <CaseSectionHead headline="Great Product Design is Growth Design" />
+        <CaseSublineTwo subline="Knauf Material Calculator taught me that activation isn’t a funnel stage, it’s a design problem. When users trust the system, growth becomes a side effect." />
+        <br />
+        <CaseSubline subline="Next step I’d take today:" />
+        <CaseCopy copy="Automate system recommendations with AI to predict optimal materials based on project type." />
+        <CaseSubline subline="Key Takeaways" />
+        <ul>
+          <li>
+            <b>Growth by design:</b> Focusing on user activation and behavioral
+            loops, not just UI.
+          </li>
+          <li>
+            <b>Leadership through impact:</b> Metrics, mentorship, and maturity
+            in one strategy.
+          </li>
+          <li>
+            <b>Clarity at scale:</b> Turning industrial complexity into
+            intuitive user journeys.
+          </li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+  </>
+);
+
+export default createCasePage({
+  metaTitle,
+  metaDescription,
+  eyebrow: "Case Study",
+  eyebrowColor1: "#00b8d4",
+  eyebrowColor2: "#62ebff",
+  title: "Knauf Material Calculator",
+  hero,
+  renderContent,
+});
         <CaseSubline subline="Growth Impact" />
         <ul>
           <li>25% more users sent their first quote under 15 minutes.</li>
