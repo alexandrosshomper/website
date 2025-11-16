@@ -48,8 +48,6 @@ const renderContent = () => (
         <CaseSectionHead
           headline="Bringing clarity to construction logistics, giving dealers and applicators real-time visibility into every delivery."
           subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators & dealers manage their logistics and warehouse."
-          headline="Bringing clarity to construction logistics, giving dealers and applicators real-time visibility into every delivery."
-          subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators & dealers manage their logistics and warehouse."
         />
         <p>
           Dealers lacked a unified way to track orders (inefficiency and
@@ -136,17 +134,15 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           I led field visits and interviews across 9 countries — logistics &
           warehouse management works in dealerships and on the construction
           site. We combined JTBD analysis, expert interviews, and a survey with
-          20 dealers in Europe.
-          I led field visits and interviews across 9 countries — logistics &
-          warehouse management works in dealerships and on the construction
-          site. We combined JTBD analysis, expert interviews, and a survey with
-          20 dealers in Europe.
+          20 dealers in Europe. I led field visits and interviews across 9
+          countries — logistics & warehouse management works in dealerships and
+          on the construction site. We combined JTBD analysis, expert
+          interviews, and a survey with 20 dealers in Europe.
           <br />
           <i>
             Field shadowing • Expert interviews (9 countries) • JTBD analysis •
-            UX surveys (n=20 EU).
-            Field shadowing • Expert interviews (9 countries) • JTBD analysis •
-            UX surveys (n=20 EU).
+            UX surveys (n=20 EU). Field shadowing • Expert interviews (9
+            countries) • JTBD analysis • UX surveys (n=20 EU).
           </i>
         </p>
         <br />
