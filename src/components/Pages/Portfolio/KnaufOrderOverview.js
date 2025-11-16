@@ -192,7 +192,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           deliveries. A one-size-fits-all solution was not going to be useful to
           any customer. So we gave our customers the ability to choose what they
           want to see, and in which order."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
+          imgURL="/img/portfolio/knauf-order-overview/closeup-knauf-brands.png"
           direction="LTR"
         />
         <CaseHighlight
