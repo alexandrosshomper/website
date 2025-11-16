@@ -8,14 +8,23 @@ jest.mock("react-ga4", () => ({
   event: jest.fn(),
 }));
 
-jest.mock("framer-motion", () => ({
-  motion: {
-    div: ({ children }) => <div>{children}</div>,
-  },
-  useAnimation: () => ({
-    start: jest.fn(),
-  }),
-}));
+jest.mock("framer-motion", () => {
+  const React = require("react");
+  const MockMotionDiv = React.forwardRef(({ children, ...rest }, ref) => (
+    <div ref={ref} {...rest}>
+      {children}
+    </div>
+  ));
+
+  return {
+    motion: {
+      div: MockMotionDiv,
+    },
+    useAnimation: () => ({
+      start: jest.fn(),
+    }),
+  };
+});
 
 jest.mock("react-intersection-observer", () => ({
   useInView: () => {
@@ -93,7 +102,8 @@ describe("Home page CTAs", () => {
 
     const roiButton = screen
       .getAllByText(/Calculate Onboarding ROI/i)
-      .find((element) => element.tagName.toLowerCase() === "a");
+      .map((element) => element.closest("button"))
+      .find(Boolean);
 
     fireEvent.click(roiButton);
 
