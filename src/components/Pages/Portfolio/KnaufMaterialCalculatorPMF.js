@@ -216,24 +216,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           <li>Zero re-entries between planning and ordering</li>
           <li>Major confidence boost among early users</li>
         </ul>
-        <CaseSublineTwo subline="Key Feature 2: In-Plan Measurement" />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
-          size="L"
-        />
-        <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions." />
-        <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Live measurement tools with snapping & layer toggles</li>
-          <li>Real-time quantity calculation per wall, floor, or phase</li>
-          <li>Immediate audit trail for every measurement</li>
-        </ul>
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>3× faster take-offs</li>
-          <li>Zero re-entries between planning and ordering</li>
-          <li>Major confidence boost among early users</li>
-        </ul>
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
@@ -259,53 +241,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Driving Growth (1→n)" />
-        <CaseSectionHead
-          headline="Discovering the Growth Bottlenecks"
-          subline="Once core value was validated, I led the transition from PMF to Growth."
-        />
-        <CaseSubline subline="Growth Tactics" />
-        <p>
-          We introduced Activation Clinics, biweekly cross-functional sessions
-          (Design, PM, Eng, Data) to review friction metrics and identify quick
-          wins. We tracked:
-        </p>
-        <ul>
-          <li>Aha Moment ≤15m</li>
-          <li>Quote-to-Plan Conversion</li>
-          <li>7-Day Retention</li>
-        </ul>
-        <CaseSubline subline="Loops & Experiments" />
-        <p>
-          We built onboarding loops and “repeat job templates” to encourage
-          reactivation and faster setup.
-        </p>
-        <br />
-        <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
-          size="L"
-        />
-        <CaseCopy
-          copy="Ordering materials used to happen over phone calls and guesswork.
-We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
-        />
-        <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Split orders by date or project phase</li>
-          <li>Smart templates for recurring items</li>
-          <li>Built-in delivery scheduling</li>
-        </ul>
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>Order accuracy ↑</li>
-          <li>Reorders simplified</li>
-          <li>Trust built between applicators and dealers</li>
-        </ul>
-      </ArticleSectionContent>
-    </ArticleSection>
+
     <ArticleSection>
       <ArticleSectionContent>
         <CaseHeadlineThree headline="Driving Growth (1→n)" />

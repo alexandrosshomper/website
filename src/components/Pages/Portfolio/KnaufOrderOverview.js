@@ -12,6 +12,7 @@ import Drawer from "../../Content/Drawer/Drawer";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseImageComponent from "../../Content/Case/CaseImage";
+import CaseHighlight from "../../Content/Case/CaseHighlight";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -185,11 +186,34 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
         <CaseCopy copy="The single source of truth for all deliveries." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>All Knauf entities in one view</li>
-          <li>Customizable columns</li>
-          <li>Simplified visual status</li>
-        </ul>
+        <CaseHighlight
+          headline="All Knauf entities in one view"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Customizable columns"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
+          direction="RTL"
+        />
+        <CaseHighlight
+          headline="Simplified visual status"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-order-status.png"
+          direction="LTR"
+        />
+        <br />
         <CaseSubline subline="Impact" />
         <p>
           Dealers could see everything instantly, cutting down cross-team calls.
@@ -214,10 +238,25 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Visual timeline of the week</li>
-          <li>Easy day planning for warehouse teams</li>
-        </ul>
+        <CaseHighlight
+          headline="Visual timeline of the week"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Easy day planning for warehouse teams"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-planning.png"
+          direction="RTL"
+        />
+
         <CaseSubline subline="Impact" />
         <p>Dealers reported fewer surprises and smoother operations.</p>
         <ul>
@@ -237,10 +276,25 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
         <CaseCopy copy="Personalized update preferences." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Email, app, or SMS alerts</li>
-          <li>Choose events to be notified about</li>
-        </ul>
+        <CaseHighlight
+          headline="Email, app, or SMS alerts"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Choose events to be notified about"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So we gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
+          direction="RTL"
+        />
+
         <CaseSubline subline="Impact" />
         <p>
           Engagement and trust increased — users stopped “checking constantly.”
@@ -259,10 +313,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
           size="L"
         />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-order-details-documents.png"
-          size="L"
-        />
+
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
         <CaseSubline subline="Highlights" />
         <ul>
