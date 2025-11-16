@@ -10,7 +10,7 @@ import CaseCitations from "../../Content/Case/CaseCitations";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
-import CaseImage from "../../Content/Case/CaseImage";
+import CaseImageComponent from "../../Content/Case/CaseImage";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -161,7 +161,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
         <CaseSublineTwo subline="Key Feature 1: Unified Order Table" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
@@ -191,7 +191,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 2: Calendar View" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
           size="L"
         />
@@ -211,7 +211,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
           size="L"
         />
@@ -233,11 +233,11 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
           size="L"
         />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details-documents.png"
           size="L"
         />
@@ -264,7 +264,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           subline="After PMF validation, we focused on activation and habit formation"
         />
         <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
           size="L"
         />
@@ -273,7 +273,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           <li>+18% activation</li>
         </ul>
         <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
           size="L"
         />
