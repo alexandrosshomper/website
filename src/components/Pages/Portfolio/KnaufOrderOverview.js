@@ -156,11 +156,9 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
         <br />
         <br />
-        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
-        <br />
+
         <br />
         <CaseSubline subline="PMF Hypothesis" />
-        <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
       </ArticleSectionContent>
       <ArticleSectionContent>
@@ -180,10 +178,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
-          size="L"
-        />
+
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
@@ -212,10 +207,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 2: Calendar View" />
-        <CaseImageComponent
-          imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
-          size="L"
-        />
+
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
           size="L"
@@ -238,10 +230,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
-        <CaseImageComponent
-          imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
-          size="L"
-        />
+
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
           size="L"
@@ -266,14 +255,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
-        <CaseImageComponent
-          imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
-          size="L"
-        />
-        <CaseImageComponent
-          imgURL="/img/portfolio/knauf-order-overview/cover-order-details-documents.png"
-          size="L"
-        />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
           size="L"
@@ -304,11 +285,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
-        <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
-        <CaseImageComponent
-          imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
-          size="L"
-        />
+
         <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
@@ -318,18 +295,13 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <ul>
           <li>+18% activation</li>
         </ul>
-        <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
-        <CaseImageComponent
-          imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
-          size="L"
-        />
+
         <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
           size="L"
         />
         <p>Show missed updates since last visit.</p>
-        <CaseSubline subline="A small nudge turned notifications from a setting into a habit." />
         <CaseSubline subline="A small nudge turned notifications from a setting into a habit." />
         <ul>
           <li>+30% engagement</li>
