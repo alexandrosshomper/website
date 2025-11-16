@@ -29,18 +29,9 @@ const galleryItems = [
       "/img/portfolio/knauf-order-overview/in-market-validation.png",
     headline: "In Market Validation",
     copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
-    imgURL: "/img/portfolio/knauf-order-overview/in-market-validation.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/in-market-validation.png",
-    headline: "In Market Validation",
-    copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
   },
   {
     id: 2,
-    imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
-    imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
-    headline: "Mental Models",
-    copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
     imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
     imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
     headline: "Mental Models",
