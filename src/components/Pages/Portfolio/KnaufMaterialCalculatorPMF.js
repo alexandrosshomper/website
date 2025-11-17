@@ -111,11 +111,6 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
           size="L"
         />
-        <p>
-          Applicators used 5+ disconnected tools to quote, plan, and order. We
-          built one workspace that unified all, reducing errors, increasing
-          trust, and driving repeat usage.
-        </p>
 
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and calls, leading to:" />
