@@ -112,12 +112,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </li>
           <li>Give transparency to the deliveries on material level</li>
           <li>Help our customers work more seamlessly togehter</li>
-          <li>
-            Provide users a unified overview of all their orders live status &
-            changes
-          </li>
-          <li>Give transparency to the deliveries on material level</li>
-          <li>Help our customers work more seamlessly togehter</li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
@@ -134,27 +128,16 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           I led field visits and interviews across 9 countries — logistics &
           warehouse management works in dealerships and on the construction
           site. We combined JTBD analysis, expert interviews, and a survey with
-          20 dealers in Europe. I led field visits and interviews across 9
-          countries — logistics & warehouse management works in dealerships and
-          on the construction site. We combined JTBD analysis, expert
-          interviews, and a survey with 20 dealers in Europe.
+          20 dealers in Europe.
           <br />
           <i>
             Field shadowing • Expert interviews (9 countries) • JTBD analysis •
-            UX surveys (n=20 EU). Field shadowing • Expert interviews (9
-            countries) • JTBD analysis • UX surveys (n=20 EU).
+            UX surveys (n=20 EU).
           </i>
         </p>
         <br />
         <br />
-        <CaseSubline subline="Key Insights" />
-        <ul>
-          <li>Changes in ETA = #1 priority.</li>
-          <li>Dealers’ notification preferences vary widely.</li>
-          <li>Users needed fast setup (Day 1 value).</li>
-        </ul>
-        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
-        <br />
+
         <CaseSubline subline="Key Insights" />
         <ul>
           <li>Changes in ETA = #1 priority.</li>
@@ -191,6 +174,8 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
         <CaseCopy copy="The single source of truth for all deliveries." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="All Knauf entities in one view"
@@ -237,6 +222,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           size="L"
         />
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Visual timeline of the week"
@@ -269,6 +256,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           size="L"
         />
         <CaseCopy copy="Personalized update preferences." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Choose events to be notified about"
@@ -303,6 +292,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
 
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <ul>
           <li>One link, always up to date</li>
