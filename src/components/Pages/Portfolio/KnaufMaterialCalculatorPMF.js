@@ -11,6 +11,7 @@ import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
+import CaseHighlight from "../../Content/Case/CaseHighlight";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
 
@@ -179,14 +180,27 @@ Project leads and applicators were spending hours moving between Excel sheets, P
 
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
-We built a guided import flow that parses items and matches them to Knauf’s product systems."
+I built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
         <CaseSubline subline="Highlights" />
-
-        <ul>
-          <li>Reduced quote creation time by 60%</li>
-          <li>Increased quote accuracy and confidence</li>
-        </ul>
+        <CaseHighlight
+          headline="Quote Tracking"
+          copy="An overview of the quotes sent, but even more important, an overview of quote drafts with highlighted due-dates. Helping you find the most urgent actions on the screen."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-overview.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Tender to Quote"
+          copy="New business starts with a tender, and providing a quote asap. Instead of manually transfering each position, customers can import the tender directly in seconds."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-import-tender.png"
+          direction="RTL"
+        />
+        <CaseHighlight
+          headline="Quote to Project"
+          copy="After a Tender has been won and approved, it can be converted into a construction project in one click. Users can import all existing information and offering to add new resources like floor-plans."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-to-project.png"
+          direction="LTR"
+        />
         <CaseSubline subline="Impact" />
         <ul>
           <li>Quote creation time reduced by 60%</li>
@@ -203,13 +217,20 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
           size="L"
         />
-        <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions." />
+        <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions. From site measurements → plan → exact quantities → approved order in minutes." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Live measurement tools with snapping & layer toggles</li>
-          <li>Real-time quantity calculation per wall, floor, or phase</li>
-          <li>Immediate audit trail for every measurement</li>
-        </ul>
+        <CaseHighlight
+          headline="Plan Measurement tools"
+          copy="Users can plan mm-exact measurements and directly assign positions from the quote. Intuitive usage with immediate results."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-measurement.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Real-time quantity calculation"
+          copy="By making mm-exact measurements on the plan, the quantities of the matching positions get calculated in real-time; per wall, floor, or phase"
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-calculations.png"
+          direction="RTL"
+        />
         <CaseSubline subline="Impact" />
         <ul>
           <li>3× faster take-offs</li>
@@ -228,11 +249,18 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
 We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
         />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Split orders by date or project phase</li>
-          <li>Smart templates for recurring items</li>
-          <li>Built-in delivery scheduling</li>
-        </ul>
+        <CaseHighlight
+          headline="Split orders by date or project phase"
+          copy="Order material according to need. By floor, wall type, construction phase, element. Whatever the user needs."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-orders.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Built-in delivery scheduling"
+          copy="Tracking orders & deliveries on a construction is complex, messy, and time-sensitive. Our order tracking provides real-time status that can be filtered down to any phase, section, floor, wall-type, etc. to give users the ETA they need."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-order-scheduling.png"
+          direction="RTL"
+        />
         <CaseSubline subline="Impact" />
         <ul>
           <li>Order accuracy ↑</li>
