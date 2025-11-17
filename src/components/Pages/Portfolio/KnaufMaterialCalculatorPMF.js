@@ -11,6 +11,7 @@ import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
+import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
@@ -62,11 +63,6 @@ const renderContent = () => (
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
         <p>
-          Applicators used 5+ disconnected tools to quote, plan, and order. We
-          built one workspace that unified all, reducing errors, increasing
-          trust, and driving repeat usage.
-        </p>
-        <p>
           From fragmented workflows to a unified product, helping construction
           applicators quote, plan, and order 3× faster.
         </p>
@@ -111,6 +107,11 @@ const renderContent = () => (
           subline="The construction industry runs on experience, not software.
 Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
         />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
+          size="L"
+        />
+
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and calls, leading to:" />
         <ul>
@@ -147,6 +148,10 @@ Project leads and applicators were spending hours moving between Excel sheets, P
             UX surveys (n=53 DE).
           </i>
         </p>
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
+          size="L"
+        />
 
         <CaseSubline subline="Key Insights" />
         <ul>
@@ -269,7 +274,57 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
-
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseHeadlineThree headline="Driving Growth (1→n)" />
+        <CaseSectionHead
+          headline="Discovering the Growth Bottlenecks"
+          subline="Once core value was validated, I led the transition from PMF to Growth."
+        />
+        <CaseSubline subline="Growth Tactics" />
+        <p>
+          We introduced Activation Clinics, biweekly cross-functional sessions
+          (Design, PM, Eng, Data) to review friction metrics and identify quick
+          wins. We tracked:
+        </p>
+        <ul>
+          <li>Aha Moment ≤15m</li>
+          <li>Quote-to-Plan Conversion</li>
+          <li>7-Day Retention</li>
+        </ul>
+        <CaseSubline subline="Loops & Experiments" />
+        <p>
+          We built onboarding loops and “repeat job templates” to encourage
+          reactivation and faster setup.
+        </p>
+        <br />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
+          size="L"
+        />
+        <CaseCopy
+          copy="Ordering materials used to happen over phone calls and guesswork.
+We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
+        />
+        <br />
+        <br />
+        <CaseSubline subline="Highlights" />
+        <ul>
+          <li>Split orders by date or project phase</li>
+          <li>Smart templates for recurring items</li>
+          <li>Built-in delivery scheduling</li>
+        </ul>
+        <CaseSubline subline="Impact" />
+        <ul>
+          <li>Order accuracy ↑</li>
+          <li>Reorders simplified</li>
+          <li>Trust built between applicators and dealers</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseHeadlineThree headline="Driving Growth (1→n)" />

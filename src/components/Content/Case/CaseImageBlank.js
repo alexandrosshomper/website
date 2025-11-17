@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Devices } from "../../DesignSystem";
+import { Colors, Devices } from "../../DesignSystem";
 
 const sizeMap = {
   default: {
     tabletS: "564px",
-    tabletM: "100%",
-    laptopS: "100%",
+    tabletM: "80%",
+    laptopS: "80%",
   },
   S: {
     tabletS: "564px",
@@ -28,12 +28,8 @@ const sizeMap = {
 const getWidthFor = (size = "default", breakpoint) =>
   sizeMap[size]?.[breakpoint] || sizeMap.default[breakpoint];
 
-const CaseHighlightWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin: 20px 0 64px 0;
+const CaseImageWrapper = styled.div`
+  margin: 20px auto 40px auto;
   direction: ltr;
   list-style: none;
   overflow: hidden;
@@ -44,9 +40,9 @@ const CaseHighlightWrapper = styled.div`
   -webkit-font-smoothing: antialiased;
 
   width: 100%;
+  max-width: ${({ $size }) => ($size === "L" ? "100%" : "90%")};
 
   ${Devices.tabletS} {
-    flex-direction: row;
     width: ${({ $size }) => getWidthFor($size, "tabletS")};
   }
 
@@ -61,8 +57,7 @@ const CaseHighlightWrapper = styled.div`
 
 const Picture = styled.img`
   display: block;
-  order: 0;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 0;
   list-style: none;
@@ -71,33 +66,14 @@ const Picture = styled.img`
   text-size-adjust: 100%;
   -webkit-box-direction: normal;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0.38rem;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-  ${Devices.tabletS} {
-    width: 60%;
-    order: 2;
-  }
 `;
-const CaseHighlightText = styled.div`
-  order: 1;
-`;
-const CaseHighlightHeadline = styled.h5``;
-const CaseHighlightCopy = styled.p``;
 
-const CaseHighlight = ({ imgURL, headline, copy, direction }) => {
+const CaseImageBlank = ({ imgURL, alt = "", size }) => {
   return (
-    <CaseHighlightWrapper>
-      <CaseHighlightText
-        style={{
-          order: direction === "RTL" ? "3" : "1",
-        }}
-      >
-        <CaseHighlightHeadline>{headline}</CaseHighlightHeadline>
-        <CaseHighlightCopy>{copy}</CaseHighlightCopy>
-      </CaseHighlightText>
-      <Picture src={imgURL} />
-    </CaseHighlightWrapper>
+    <CaseImageWrapper $size={size}>
+      <Picture src={imgURL} alt={alt} />
+    </CaseImageWrapper>
   );
 };
 
-export default CaseHighlight;
+export default CaseImageBlank;
