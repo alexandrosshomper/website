@@ -2,18 +2,13 @@ import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
 import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
-import createCasePage from "../CaseStudies/createCasePage";
-import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
-import CaseSubline from "../../Content/Case/CaseSubline";
 import Drawer from "../../Content/Drawer/Drawer";
-import CaseCitations from "../../Content/Case/CaseCitations";
 import CaseSubline from "../../Content/Case/CaseSubline";
-import Drawer from "../../Content/Drawer/Drawer";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
