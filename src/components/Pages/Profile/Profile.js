@@ -60,8 +60,13 @@ const Subline = styled.p`
   line-height: 150%;
   color: ${Colors.primaryText.mediumEmphasis};
 
+  width: 100%;
+  max-width: 720px;
+
   ${Devices.tabletS} {
     font-size: 20px;
+    margin: 0 auto;
+    width: 600px;
   }
 `;
 
@@ -349,19 +354,29 @@ const Profile = () => {
           name="description"
           content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
         />
+        <title>Alexandros Shomper — Profile</title>
+        <meta
+          name="description"
+          content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
+        />
       </Helmet>
 
       <Hero>
         <NameBlock>
           <Name>Alexandros Shomper</Name>
           <Subline>
-            Product Designer, Product Manager, Startup Advisor PLG
+            <b>Product Design Leader & Startup Advisor</b>
           </Subline>
         </NameBlock>
         <Portrait
           src="/img/Identity/PortraitProSE.png"
           alt="Portrait of Alexandros Shomper"
         />
+        <Subline>
+          Now seeking a Product Design Manager role in a high-growth environment
+          where strategic leadership and hands-on execution accelerate product
+          maturity and user value.
+        </Subline>
       </Hero>
 
       {sections.map((section) => (

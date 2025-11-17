@@ -305,7 +305,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
     ${Devices.laptopS} {
     }
   `;
-  const PanelCopy = styled.p`
+  const PanelCopy = styled.div`
     font-weight: 400;
     font-size: 17px;
     line-height: 130%;

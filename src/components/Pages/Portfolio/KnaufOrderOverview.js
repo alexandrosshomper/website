@@ -7,10 +7,11 @@ import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
-import CaseSubline from "../../Content/Case/CaseSubline";
 import Drawer from "../../Content/Drawer/Drawer";
+import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
+import CaseHighlight from "../../Content/Case/CaseHighlight";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -29,18 +30,9 @@ const galleryItems = [
       "/img/portfolio/knauf-order-overview/in-market-validation.png",
     headline: "In Market Validation",
     copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
-    imgURL: "/img/portfolio/knauf-order-overview/in-market-validation.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/in-market-validation.png",
-    headline: "In Market Validation",
-    copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
   },
   {
     id: 2,
-    imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
-    imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
-    headline: "Mental Models",
-    copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
     imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
     imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
     headline: "Mental Models",
@@ -120,6 +112,12 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </li>
           <li>Give transparency to the deliveries on material level</li>
           <li>Help our customers work more seamlessly togehter</li>
+          <li>
+            Provide users a unified overview of all their orders live status &
+            changes
+          </li>
+          <li>Give transparency to the deliveries on material level</li>
+          <li>Help our customers work more seamlessly togehter</li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
@@ -136,11 +134,15 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           I led field visits and interviews across 9 countries — logistics &
           warehouse management works in dealerships and on the construction
           site. We combined JTBD analysis, expert interviews, and a survey with
-          20 dealers in Europe.
+          20 dealers in Europe. I led field visits and interviews across 9
+          countries — logistics & warehouse management works in dealerships and
+          on the construction site. We combined JTBD analysis, expert
+          interviews, and a survey with 20 dealers in Europe.
           <br />
           <i>
             Field shadowing • Expert interviews (9 countries) • JTBD analysis •
-            UX surveys (n=20 EU).
+            UX surveys (n=20 EU). Field shadowing • Expert interviews (9
+            countries) • JTBD analysis • UX surveys (n=20 EU).
           </i>
         </p>
         <br />
@@ -153,6 +155,15 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         </ul>
         <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
         <br />
+        <CaseSubline subline="Key Insights" />
+        <ul>
+          <li>Changes in ETA = #1 priority.</li>
+          <li>Dealers’ notification preferences vary widely.</li>
+          <li>Users needed fast setup (Day 1 value).</li>
+        </ul>
+        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
+        <br />
+
         <br />
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
@@ -174,17 +185,35 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
+
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
         <CaseCopy copy="The single source of truth for all deliveries." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>All Knauf entities in one view</li>
-          <li>Customizable columns</li>
-          <li>Simplified visual status</li>
-        </ul>
+        <CaseHighlight
+          headline="All Knauf entities in one view"
+          copy="Think 10+ Knauf entities with their own contact... I created a single source-of-truth order table that consolidates all delivery information, replacing what used to require several calls or systems. Now dealers can see everything at a glance."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-knauf-brands.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Customizable columns"
+          copy="Every customer has very different needs in monitoring their orders &
+          deliveries. A one-size-fits-all solution was not going to be useful to
+          any customer. So I gave our customers the ability to choose what they
+          want to see, and in which order."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
+          direction="RTL"
+        />
+        <CaseHighlight
+          headline="Simplified visual status"
+          copy="The delivery states for every Knauf entity where completely different, and even worse, the states of an order could change quickly. I standardized the delivery states for all entities; color-coded and icon-coded for a quick grasp of the status quo."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-order-status.png"
+          direction="LTR"
+        />
+        <br />
         <CaseSubline subline="Impact" />
         <p>
           Dealers could see everything instantly, cutting down cross-team calls.
@@ -199,17 +228,29 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </ul>
         <br />
         <br />
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 2: Calendar View" />
+
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
           size="L"
         />
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Visual timeline of the week</li>
-          <li>Easy day planning for warehouse teams</li>
-        </ul>
+        <CaseHighlight
+          headline="Visual timeline of the week"
+          copy="Although tables are a great structured, and searchable view on orders, essentially orders and deliveries are about time. This calendar view now a birds-eye view on the day or whole week."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Easy day planning for warehouse teams"
+          copy="Displaying deliveries like calendar events, helps customers manage their own fleet, their warehouses, and their logistics more precisely. Without having to click through several orders, or even worse - calling the customer services."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-planning.png"
+          direction="RTL"
+        />
+
         <CaseSubline subline="Impact" />
         <p>Dealers reported fewer surprises and smoother operations.</p>
         <ul>
@@ -219,17 +260,29 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </ul>
         <br />
         <br />
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
+
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
           size="L"
         />
         <CaseCopy copy="Personalized update preferences." />
         <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Email, app, or SMS alerts</li>
-          <li>Choose events to be notified about</li>
-        </ul>
+        <CaseHighlight
+          headline="Choose events to be notified about"
+          copy="In numerous customer interviews we've learned that each and every customer has very different preferences on what they want to receive notifications on. I've therefore designed a notification center that gives the user maximum customization."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Email, app, or SMS alerts"
+          copy="Not only the events, but also the channel differed. Not only from customer to customer. But a single customer might need one important event notification to be sent immediately via text, while the rest can be delivered by email."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
+          direction="RTL"
+        />
+
         <CaseSubline subline="Impact" />
         <p>
           Engagement and trust increased — users stopped “checking constantly.”
@@ -241,15 +294,14 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </ul>
         <br />
         <br />
+        <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
           size="L"
         />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-order-details-documents.png"
-          size="L"
-        />
+
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
         <CaseSubline subline="Highlights" />
         <ul>
@@ -272,6 +324,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
+
         <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
@@ -281,6 +334,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <ul>
           <li>+18% activation</li>
         </ul>
+
         <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
