@@ -61,7 +61,7 @@ const CaseHighlightWrapper = styled.div`
 
 const Picture = styled.img`
   display: block;
-  order: 4;
+  order: 0;
   width: 90%;
   height: auto;
   margin: 0;
