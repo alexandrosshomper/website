@@ -7,8 +7,8 @@ import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
-import CaseSubline from "../../Content/Case/CaseSubline";
 import Drawer from "../../Content/Drawer/Drawer";
+import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
@@ -155,6 +155,13 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         </ul>
         <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
         <br />
+        <CaseSubline subline="Key Insights" />
+        <ul>
+          <li>Changes in ETA = #1 priority.</li>
+          <li>Dealers’ notification preferences vary widely.</li>
+          <li>Users needed fast setup (Day 1 value).</li>
+        </ul>
+        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
         <br />
 
         <br />

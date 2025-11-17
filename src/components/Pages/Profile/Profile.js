@@ -354,6 +354,11 @@ const Profile = () => {
           name="description"
           content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
         />
+        <title>Alexandros Shomper — Profile</title>
+        <meta
+          name="description"
+          content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
+        />
       </Helmet>
 
       <Hero>
