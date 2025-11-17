@@ -74,7 +74,7 @@ const Picture = styled.img`
   border-radius: 0.38rem;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
   ${Devices.tabletS} {
-    width: 40%;
+    width: 60%;
     order: 2;
   }
 `;
