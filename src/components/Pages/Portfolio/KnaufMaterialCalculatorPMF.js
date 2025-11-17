@@ -110,6 +110,10 @@ const renderContent = () => (
           subline="The construction industry runs on experience, not software.
 Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
         />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
+          size="L"
+        />
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and calls, leading to:" />
         <ul>

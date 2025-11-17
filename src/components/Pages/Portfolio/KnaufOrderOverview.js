@@ -95,6 +95,10 @@ const renderContent = () => (
           subline="Construction dealers manage thousands of orders across different Knauf entities.
 Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
         />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-problem.png"
+          size="L"
+        />
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="The lack of transparency created frustration for both dealers and Knauf, resulting in inefficiencies and low trust in the system." />
         <ul>
