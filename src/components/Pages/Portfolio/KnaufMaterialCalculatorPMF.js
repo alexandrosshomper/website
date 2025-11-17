@@ -11,6 +11,7 @@ import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
+import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
@@ -151,6 +152,10 @@ Project leads and applicators were spending hours moving between Excel sheets, P
             UX surveys (n=53 DE).
           </i>
         </p>
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
+          size="L"
+        />
 
         <CaseSubline subline="Key Insights" />
         <ul>

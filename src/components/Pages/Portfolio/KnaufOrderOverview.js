@@ -38,6 +38,13 @@ const galleryItems = [
     headline: "Mental Models",
     copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
   },
+  {
+    id: 3,
+    imgURL: "/img/portfolio/knauf-order-overview/hypotheses.jpeg",
+    imgMobileURL: "/img/portfolio/knauf-order-overview/hypotheses.jpeg",
+    headline: "Hypotheses Validation",
+    copy: "Each feature of our concept was then mapped into a table, connected to the corresponding component on a preliminary wireframe. I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
+  },
 ];
 
 const renderContent = () => (
