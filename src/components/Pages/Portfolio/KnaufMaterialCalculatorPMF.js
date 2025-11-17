@@ -11,6 +11,7 @@ import Drawer from "../../Content/Drawer/Drawer";
 import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
+import CaseHighlight from "../../Content/Case/CaseHighlight";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
 
@@ -179,14 +180,27 @@ Project leads and applicators were spending hours moving between Excel sheets, P
 
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
-We built a guided import flow that parses items and matches them to Knauf’s product systems."
+I built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
         <CaseSubline subline="Highlights" />
-
-        <ul>
-          <li>Reduced quote creation time by 60%</li>
-          <li>Increased quote accuracy and confidence</li>
-        </ul>
+        <CaseHighlight
+          headline="Quote Tracking"
+          copy="An overview of the quotes sent, but even more important, an overview of quote drafts with highlighted due-dates. Helping you find the most urgent actions on the screen."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-overview.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Tender to Quote"
+          copy="New business starts with a tender, and providing a quote asap. Instead of manually transfering each position, customers can import the tender directly in seconds."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-import-tender.png"
+          direction="RTL"
+        />
+        <CaseHighlight
+          headline="Quote to Project"
+          copy="After a Tender has been won and approved, it can be converted into a construction project in one click. Users can import all existing information and offering to add new resources like floor-plans."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-to-project.png"
+          direction="LTR"
+        />
         <CaseSubline subline="Impact" />
         <ul>
           <li>Quote creation time reduced by 60%</li>
