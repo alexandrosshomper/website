@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Colors, Devices } from "../../DesignSystem";
+import { Devices } from "../../DesignSystem";
 
 const sizeMap = {
   default: {
