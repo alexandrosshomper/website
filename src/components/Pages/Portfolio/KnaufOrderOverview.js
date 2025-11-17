@@ -11,7 +11,6 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
-import CaseImage from "../../Content/Case/CaseImage";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
