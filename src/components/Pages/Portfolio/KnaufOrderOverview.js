@@ -11,7 +11,7 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import Drawer from "../../Content/Drawer/Drawer";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
-import CaseHighlight from "../../Content/Case/CaseHighlight";
+import CaseImage from "../../Content/Case/CaseImage";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -174,7 +174,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
         <CaseSublineTwo subline="Key Feature 1: Unified Order Table" />
-        <CaseImage
+        <CaseImageComponent
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
