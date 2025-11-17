@@ -38,6 +38,13 @@ const galleryItems = [
     headline: "Mental Models",
     copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
   },
+  {
+    id: 3,
+    imgURL: "/img/portfolio/knauf-order-overview/hypotheses.jpeg",
+    imgMobileURL: "/img/portfolio/knauf-order-overview/hypotheses.jpeg",
+    headline: "Hypotheses Validation",
+    copy: "Each feature of our concept was then mapped into a table, connected to the corresponding component on a preliminary wireframe. I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
+  },
 ];
 
 const renderContent = () => (
@@ -95,6 +102,10 @@ const renderContent = () => (
           subline="Construction dealers manage thousands of orders across different Knauf entities.
 Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
         />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-problem.png"
+          size="L"
+        />
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="The lack of transparency created frustration for both dealers and Knauf, resulting in inefficiencies and low trust in the system." />
         <ul>
@@ -106,12 +117,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <CaseSubline subline="The Goal" />
         <CaseCopy copy="Design a unified, easy-to-use order management platform that reduces friction, increases trust, and saves dealers time." />
         <ul>
-          <li>
-            Provide users a unified overview of all their orders live status &
-            changes
-          </li>
-          <li>Give transparency to the deliveries on material level</li>
-          <li>Help our customers work more seamlessly togehter</li>
           <li>
             Provide users a unified overview of all their orders live status &
             changes
@@ -134,27 +139,16 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           I led field visits and interviews across 9 countries — logistics &
           warehouse management works in dealerships and on the construction
           site. We combined JTBD analysis, expert interviews, and a survey with
-          20 dealers in Europe. I led field visits and interviews across 9
-          countries — logistics & warehouse management works in dealerships and
-          on the construction site. We combined JTBD analysis, expert
-          interviews, and a survey with 20 dealers in Europe.
+          20 dealers in Europe.
           <br />
           <i>
             Field shadowing • Expert interviews (9 countries) • JTBD analysis •
-            UX surveys (n=20 EU). Field shadowing • Expert interviews (9
-            countries) • JTBD analysis • UX surveys (n=20 EU).
+            UX surveys (n=20 EU).
           </i>
         </p>
         <br />
         <br />
-        <CaseSubline subline="Key Insights" />
-        <ul>
-          <li>Changes in ETA = #1 priority.</li>
-          <li>Dealers’ notification preferences vary widely.</li>
-          <li>Users needed fast setup (Day 1 value).</li>
-        </ul>
-        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
-        <br />
+
         <CaseSubline subline="Key Insights" />
         <ul>
           <li>Changes in ETA = #1 priority.</li>
@@ -191,6 +185,8 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
         <CaseCopy copy="The single source of truth for all deliveries." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="All Knauf entities in one view"
@@ -237,6 +233,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           size="L"
         />
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Visual timeline of the week"
@@ -269,6 +267,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           size="L"
         />
         <CaseCopy copy="Personalized update preferences." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Choose events to be notified about"
@@ -303,6 +303,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
 
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <ul>
           <li>One link, always up to date</li>

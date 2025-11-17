@@ -27,7 +27,7 @@ const Hero = styled.header`
 const Portrait = styled.img`
   width: 180px;
   height: 180px;
-  border-radius: 32px;
+  border-radius: 12px;
   object-fit: cover;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
 
@@ -40,7 +40,7 @@ const Portrait = styled.img`
 const NameBlock = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
 `;
 const Name = styled.h1`
   margin: 0;
