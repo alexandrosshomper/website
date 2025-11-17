@@ -188,10 +188,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="All Knauf entities in one view"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
-          want to see, and in which order."
+          copy="Think 10+ Knauf entities with their own contact... I created a single source-of-truth order table that consolidates all delivery information, replacing what used to require several calls or systems. Now dealers can see everything at a glance."
           imgURL="/img/portfolio/knauf-order-overview/closeup-knauf-brands.png"
           direction="LTR"
         />
@@ -199,17 +196,14 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Customizable columns"
           copy="Every customer has very different needs in monitoring their orders &
           deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
+          any customer. So I gave our customers the ability to choose what they
           want to see, and in which order."
           imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
           direction="RTL"
         />
         <CaseHighlight
           headline="Simplified visual status"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
-          want to see, and in which order."
+          copy="The delivery states for every Knauf entity where completely different, and even worse, the states of an order could change quickly. I standardized the delivery states for all entities; color-coded and icon-coded for a quick grasp of the status quo."
           imgURL="/img/portfolio/knauf-order-overview/closeup-order-status.png"
           direction="LTR"
         />
@@ -240,19 +234,13 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Visual timeline of the week"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
-          want to see, and in which order."
+          copy="Although tables are a great structured, and searchable view on orders, essentially orders and deliveries are about time. This calendar view now a birds-eye view on the day or whole week."
           imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Easy day planning for warehouse teams"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
-          want to see, and in which order."
+          copy="Displaying deliveries like calendar events, helps customers manage their own fleet, their warehouses, and their logistics more precisely. Without having to click through several orders, or even worse - calling the customer services."
           imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-planning.png"
           direction="RTL"
         />
@@ -277,21 +265,15 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseCopy copy="Personalized update preferences." />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
-          headline="Email, app, or SMS alerts"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
-          want to see, and in which order."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
+          headline="Choose events to be notified about"
+          copy="In numerous customer interviews we've learned that each and every customer has very different preferences on what they want to receive notifications on. I've therefore designed a notification center that gives the user maximum customization."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
           direction="LTR"
         />
         <CaseHighlight
-          headline="Choose events to be notified about"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So we gave our customers the ability to choose what they
-          want to see, and in which order."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
+          headline="Email, app, or SMS alerts"
+          copy="Not only the events, but also the channel differed. Not only from customer to customer. But a single customer might need one important event notification to be sent immediately via text, while the rest can be delivered by email."
+          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
           direction="RTL"
         />
 
