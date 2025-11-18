@@ -235,7 +235,7 @@ const Content = (props) => {
                 eyebrowColor2={caseStudy.eyebrowColor2}
                 eyebrowColor1={caseStudy.eyebrowColor1}
                 headline={caseStudy.headline}
-                copy={caseStudy.desc}
+                copy={caseStudy.copy}
                 imgURL={caseStudy.imgURL}
                 link={caseStudy.link}
                 comingSoon={caseStudy.comingSoon}
