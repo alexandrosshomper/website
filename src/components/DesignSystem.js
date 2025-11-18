@@ -182,16 +182,6 @@ const articleTypographyStyles = css`
   }
 
   h2 {
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 109%;
-
-    ${Devices.tabletS} {
-      font-size: 36px;
-    }
-  }
-
-  h3 {
     font-size: 30px;
     font-weight: 500;
     line-height: 115%;
@@ -202,15 +192,33 @@ const articleTypographyStyles = css`
     background-clip: text;
   }
 
+  h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 109%;
+
+    ${Devices.tabletS} {
+      font-size: 36px;
+    }
+  }
+
   h4 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 500;
     line-height: 124%;
     letter-spacing: 0.01em;
     margin-bottom: 8px;
   }
   h5 {
-    font-size: 22px;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 124%;
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+  }
+  h6 {
+    font-size: 20px;
     color: ${Colors.primaryText.mediumEmphasis};
     font-weight: 500;
     line-height: 115%;
@@ -218,18 +226,9 @@ const articleTypographyStyles = css`
     line-height: 24px;
     margin-bottom: 8px;
   }
-  h6 {
-    font-size: 17px;
-    color: ${Colors.primaryText.mediumEmphasis};
-    font-weight: 500;
-    line-height: 115%;
-    letter-spacing: 0.01em;
-    line-height: 1.7499375rem;
-    margin-bottom: 0px;
-  }
 
   p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -242,7 +241,7 @@ const articleTypographyStyles = css`
 
   ul,
   ol {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -302,7 +301,7 @@ const articleTypographyStyles = css`
 
   table th,
   table td {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 14px;
     line-height: 1.435rem;
     letter-spacing: -0.01em;
@@ -428,32 +427,18 @@ export const ArticleHeadline = styled.h1`
   }
 `;
 
-export const ArticleSubline = styled.h4`
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 450;
-  letter-spacing: 0.04rem;
-  margin: 24px 0 8px 0;
+export const ArticleSubline = styled.span`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
 
   color: ${Colors.primaryText.mediumEmphasis};
-  font-size: 12px;
-  line-height: 122%;
-  text-align: center;
-  width: 90%;
-
-  ${Devices.tabletS} {
-    width: 520px;
-    font-size: 17px;
-    line-height: 142%;
-  }
-
-  ${Devices.tabletM} {
-    width: 520px;
-  }
 `;
 
 const OverviewPageHeadline = styled.h2`
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
 
@@ -490,7 +475,7 @@ const OverviewPageHeadline = styled.h2`
 `;
 
 const OverviewPageSubline = styled.p`
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 500;
   font-style: normal;
 
@@ -528,7 +513,7 @@ const OverviewPageSubline = styled.p`
 `;
 
 const OverviewPageCopy = styled.p`
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 300;
   color: ${Colors.primaryText.highEmphasis};
