@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
-import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseSubtitle from "../../Content/Case/CaseSubtitle";
 
 const ContentWrapper = styled.div`
