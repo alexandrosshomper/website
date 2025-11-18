@@ -62,10 +62,6 @@ const renderContent = () => (
           headline="B2B SaaS platform for construction applicators"
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
         />
-        <p>
-          From fragmented workflows to a unified product, helping construction
-          applicators quote, plan, and order 3× faster.
-        </p>
         <CaseSublineTwo subline="Company" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
@@ -177,6 +173,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
+        <br />
         <CaseSublineTwo subline="Key Feature 1: Tender Import & Smart Mapping" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
@@ -217,6 +214,7 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
         </ul>
         <br />
         <br />
+        <br />
         <CaseSublineTwo subline="Key Feature 2: In-Plan Measurement" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
@@ -242,6 +240,7 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           <li>Zero re-entries between planning and ordering</li>
           <li>Major confidence boost among early users</li>
         </ul>
+        <br />
         <br />
         <br />
         <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
@@ -300,56 +299,6 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <br />
         <br />
         <br />
-        <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
-          size="L"
-        />
-        <CaseCopy
-          copy="Ordering materials used to happen over phone calls and guesswork.
-We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
-        />
-        <br />
-        <br />
-        <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Split orders by date or project phase</li>
-          <li>Smart templates for recurring items</li>
-          <li>Built-in delivery scheduling</li>
-        </ul>
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>Order accuracy ↑</li>
-          <li>Reorders simplified</li>
-          <li>Trust built between applicators and dealers</li>
-        </ul>
-      </ArticleSectionContent>
-    </ArticleSection>
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Driving Growth (1→n)" />
-        <CaseSectionHead
-          headline="Discovering the Growth Bottlenecks"
-          subline="Once core value was validated, I led the transition from PMF to Growth."
-        />
-        <CaseSubline subline="Growth Tactics" />
-        <p>
-          We introduced Activation Clinics, biweekly cross-functional sessions
-          (Design, PM, Eng, Data) to review friction metrics and identify quick
-          wins. We tracked:
-        </p>
-        <ul>
-          <li>Aha Moment ≤15m</li>
-          <li>Quote-to-Plan Conversion</li>
-          <li>7-Day Retention</li>
-        </ul>
-        <CaseSubline subline="Loops & Experiments" />
-        <p>
-          We built onboarding loops and “repeat job templates” to encourage
-          reactivation and faster setup.
-        </p>
-        <br />
-        <br />
         <CaseSublineTwo subline="Experiment 1: Easy Import" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-import-formats.png"
@@ -366,6 +315,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <p>
           <b>Impact</b> Onboarding Drop-off: –28% before project creation
         </p>
+        <br />
         <br />
         <br />
         <CaseSublineTwo subline="Experiment 2: Auto Fill Quote" />
@@ -386,6 +336,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
           <b>Impact</b> Activation Rate: +18% (users completing first project),
           Time-to-Aha: –35% (from 43 min to 10 min median)
         </p>
+        <br />
         <br />
         <br />
         <CaseSublineTwo subline="Experiment 3: Team Collaboration" />
@@ -523,6 +474,8 @@ export default createCasePage({
   eyebrowColor1: "#00b8d4",
   eyebrowColor2: "#62ebff",
   title: "Knauf Material Calculator",
+  subline:
+    "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",
   hero,
   renderContent,
 });

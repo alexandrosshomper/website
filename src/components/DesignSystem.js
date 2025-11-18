@@ -205,9 +205,8 @@ const articleTypographyStyles = css`
   h4 {
     font-size: 22px;
     font-weight: 500;
-    line-height: 115%;
+    line-height: 124%;
     letter-spacing: 0.01em;
-    line-height: 24px;
     margin-bottom: 8px;
   }
   h5 {
@@ -405,18 +404,19 @@ export const ArticleHeadline = styled.h1`
   display: block;
   margin: 0 0 4px;
 
-  text-align: left;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 36px;
   line-height: 120%;
+  letter-spacing: -1.7px;
   width: 90%;
   color: ${Colors.primaryText.highEmphasis};
 
   ${Devices.tabletS} {
     width: 520px;
-    font-size: 50px;
-    line-height: 120%;
+    font-size: 58px;
+    line-height: 110%;
   }
 
   ${Devices.tabletM} {
@@ -431,28 +431,24 @@ export const ArticleHeadline = styled.h1`
 export const ArticleSubline = styled.h4`
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 550;
+  font-weight: 450;
   letter-spacing: 0.04rem;
-  margin: 0 0 8px;
+  margin: 24px 0 8px 0;
 
   color: ${Colors.primaryText.mediumEmphasis};
-  font-size: 28px;
-  line-height: 112%;
-  text-align: left;
+  font-size: 12px;
+  line-height: 122%;
+  text-align: center;
   width: 90%;
 
   ${Devices.tabletS} {
     width: 520px;
-    font-size: 36px;
-    line-height: 112%;
+    font-size: 17px;
+    line-height: 142%;
   }
 
   ${Devices.tabletM} {
     width: 520px;
-  }
-
-  ${Devices.laptopS} {
-    width: 650px;
   }
 `;
 
