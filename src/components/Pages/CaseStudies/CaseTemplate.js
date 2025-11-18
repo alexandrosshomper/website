@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
+import CaseSubtitle from "../../Content/Case/CaseSubtitle";
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -67,7 +68,7 @@ const CaseTemplate = ({
           />
         ) : null}
         {title ? <CaseTitle headline={title} /> : null}
-        {subline ? <CaseSectionHead subline={subline} /> : null}
+        {subline ? <CaseSubtitle text={subline} /> : null}
         {renderHero()}
         <HeaderSpacing />
         {children}
