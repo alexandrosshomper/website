@@ -13,6 +13,7 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
+import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
 
@@ -204,6 +205,22 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           direction="LTR"
         />
         <CaseSubline subline="Impact" />
+        <ImpactBoxGrid
+          items={[
+            { impact: "60%", subline: "faster quote creation" },
+            {
+              impact: "2 weeks",
+              subline: "of custom front-end work saved during build",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>Quote creation time reduced by 60%</li>
           <li>
@@ -235,6 +252,22 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           direction="RTL"
         />
         <CaseSubline subline="Impact" />
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>3× faster take-offs</li>
           <li>Zero re-entries between planning and ordering</li>
@@ -266,6 +299,22 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
           direction="RTL"
         />
         <CaseSubline subline="Impact" />
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>Order accuracy ↑</li>
           <li>Reorders simplified</li>
@@ -359,6 +408,25 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <br />
         <br />
         <CaseSubline subline="Growth Impact" />
+        <ImpactBoxGrid
+          items={[
+            {
+              impact: "25%",
+              subline: "more users sent their first quote under 15 minutes",
+            },
+            {
+              impact: "30%",
+              subline: "increase in 7-day retention",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>25% more users sent their first quote under 15 minutes.</li>
           <li>30% increase in 7-day retention.</li>

@@ -12,6 +12,7 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
+import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -214,6 +215,22 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <p>
           Dealers could see everything instantly, cutting down cross-team calls.
         </p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>Quote creation time reduced by 60%</li>
           <li>
@@ -251,6 +268,22 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
 
         <CaseSubline subline="Impact" />
         <p>Dealers reported fewer surprises and smoother operations.</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>3× faster take-offs</li>
           <li>Zero re-entries between planning and ordering</li>
@@ -287,6 +320,22 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <p>
           Engagement and trust increased — users stopped “checking constantly.”
         </p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>Order accuracy ↑</li>
           <li>Reorders simplified</li>
@@ -311,6 +360,22 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           <li>Reduced double communication</li>
         </ul>
         <CaseSubline subline="Impact" />
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <p>+25% retention; fewer “where’s my order?” calls.</p>
         <ul>
           <li>Order accuracy ↑</li>
@@ -343,7 +408,24 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           size="L"
         />
         <p>Show missed updates since last visit.</p>
-        <CaseSubline subline="A small nudge turned notifications from a setting into a habit." />
+        <CaseSubline subline="Growth Impact" />
+        <p>A small nudge turned notifications from a setting into a habit.</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "take-offs" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "70%",
+              subline: "reduction in iteration cycles",
+              quote:
+                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+              size: "L",
+            },
+          ]}
+        />
         <ul>
           <li>+30% engagement</li>
           <li>+25% retention</li>
