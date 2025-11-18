@@ -216,28 +216,20 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </p>
         <ImpactBoxGrid
           items={[
-            { impact: "3x", subline: "take-offs" },
+            { impact: "2h", subline: "average saved per week" },
             {
-              impact: "0",
-              subline: "re-entries between planning and ordering",
+              impact: "20%",
+              subline: "reduction in service calls",
             },
             {
-              impact: "70%",
-              subline: "reduction in iteration cycles",
+              impact: "3x",
+              subline: "less back to back calls",
               quote:
-                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+                "You can't imagine how much work this saves me, and how much easier my client work now is.",
               size: "L",
             },
           ]}
         />
-        <ul>
-          <li>Quote creation time reduced by 60%</li>
-          <li>
-            Early trust increased: users saw reliable, structured data from the
-            start
-          </li>
-          <li>Foundation for automation and cross-system integration</li>
-        </ul>
         <br />
         <br />
         <br />
@@ -269,25 +261,13 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <p>Dealers reported fewer surprises and smoother operations.</p>
         <ImpactBoxGrid
           items={[
-            { impact: "3x", subline: "take-offs" },
+            { impact: "25%", subline: "reduction of logistics chokepoints" },
             {
-              impact: "0",
-              subline: "re-entries between planning and ordering",
-            },
-            {
-              impact: "70%",
-              subline: "reduction in iteration cycles",
-              quote:
-                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
-              size: "L",
+              impact: "2X",
+              subline: "warehouse planning efficiency",
             },
           ]}
         />
-        <ul>
-          <li>3× faster take-offs</li>
-          <li>Zero re-entries between planning and ordering</li>
-          <li>Major confidence boost among early users</li>
-        </ul>
         <br />
         <br />
         <br />
@@ -321,25 +301,15 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </p>
         <ImpactBoxGrid
           items={[
-            { impact: "3x", subline: "take-offs" },
             {
-              impact: "0",
-              subline: "re-entries between planning and ordering",
-            },
-            {
-              impact: "70%",
-              subline: "reduction in iteration cycles",
+              impact: "2X",
+              subline: "improved change response time",
               quote:
-                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+                "It's good if you don't have to chase information about changes, but it comes to you asap.",
               size: "L",
             },
           ]}
         />
-        <ul>
-          <li>Order accuracy ↑</li>
-          <li>Reorders simplified</li>
-          <li>Trust built between applicators and dealers</li>
-        </ul>
         <br />
         <br />
         <br />
@@ -361,26 +331,15 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseSublineTwo subline="Impact" />
         <ImpactBoxGrid
           items={[
-            { impact: "3x", subline: "take-offs" },
             {
-              impact: "0",
-              subline: "re-entries between planning and ordering",
-            },
-            {
-              impact: "70%",
-              subline: "reduction in iteration cycles",
+              impact: "45%",
+              subline: "less “where’s my order?” calls of clients",
               quote:
-                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+                "Keeping my clients up-to-date was half my day. Now they can keep them up to date by themselves.",
               size: "L",
             },
           ]}
         />
-        <p>+25% retention; fewer “where’s my order?” calls.</p>
-        <ul>
-          <li>Order accuracy ↑</li>
-          <li>Reorders simplified</li>
-          <li>Trust built between applicators and dealers</li>
-        </ul>
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
@@ -397,9 +356,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           size="L"
         />
         <p>Prompt new users to enable all updates on first login.</p>
-        <ul>
-          <li>+18% activation</li>
-        </ul>
 
         <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
         <CaseImage
@@ -411,24 +367,17 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <p>A small nudge turned notifications from a setting into a habit.</p>
         <ImpactBoxGrid
           items={[
-            { impact: "3x", subline: "take-offs" },
+            { impact: "18%", subline: "better activation rate" },
             {
-              impact: "0",
-              subline: "re-entries between planning and ordering",
+              impact: "30%",
+              subline: "more user engagement",
             },
             {
-              impact: "70%",
-              subline: "reduction in iteration cycles",
-              quote:
-                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
-              size: "L",
+              impact: "25%",
+              subline: "better user retention",
             },
           ]}
         />
-        <ul>
-          <li>+30% engagement</li>
-          <li>+25% retention</li>
-        </ul>
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
@@ -537,6 +486,8 @@ export default createCasePage({
   eyebrowColor1: "#00b8d4",
   eyebrowColor2: "#62ebff",
   title: "Knauf Order Overview",
+  subline:
+    "The single source of truth for deliveries from all Knauf brands and subbrands.",
   hero,
   renderContent,
 });

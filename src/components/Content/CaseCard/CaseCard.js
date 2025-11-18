@@ -7,6 +7,7 @@ import { Colors, Devices } from "../../DesignSystem";
 //Components
 import Eyebrow from "./CaseCardEyebrow";
 import Headline from "./CaseCardHeadline";
+import Copy from "./CaseCardCopy";
 import CaseCardImage from "./CaseCardImage";
 
 const CaseCard = ({
@@ -257,6 +258,7 @@ const CaseCard = ({
                   />
                 )}
                 {headline && <Headline text={headline} />}
+                {copy && <Copy text={copy} />}
               </CaseCardHeader>
             </CaseCardHeaderContainer>
           </CaseCardContent>
