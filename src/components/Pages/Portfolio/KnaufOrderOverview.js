@@ -4,7 +4,6 @@ import createCasePage from "../CaseStudies/createCasePage";
 import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
-import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
@@ -52,8 +51,8 @@ const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Overview" />
         <CaseSectionHead
+          overline="Overview"
           headline="Bringing clarity to construction logistics, giving dealers and applicators real-time visibility into every delivery."
           subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators & dealers manage their logistics and warehouse."
         />
@@ -97,8 +96,8 @@ const renderContent = () => (
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Challenge" />
         <CaseSectionHead
+          overline="Challenge"
           headline="“We spent more time chasing delivery info than selling materials.”"
           subline="Construction dealers manage thousands of orders across different Knauf entities.
 Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
@@ -130,8 +129,8 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Discovery & Hypothesis" />
         <CaseSectionHead
+          overline="Discovery & Hypothesis"
           headline="Discover the essential workflow that defines value."
           subline="Through interviews, diaries, and job walkthroughs, we found that transparency and autonomy were key drivers."
         />
@@ -170,12 +169,12 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Solution" />
         <CaseSectionHead
+          overline="Solution"
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
-        <CaseSublineTwo subline="Key Feature 1: Unified Order Table" />
+        <CaseSubline subline="Key Feature 1: Unified Order Table" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
@@ -188,7 +187,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseCopy copy="The single source of truth for all deliveries." />
         <br />
         <br />
-        <CaseSubline subline="Highlights" />
+        <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="All Knauf entities in one view"
           copy="Think 10+ Knauf entities with their own contact... I created a single source-of-truth order table that consolidates all delivery information, replacing what used to require several calls or systems. Now dealers can see everything at a glance."
@@ -211,7 +210,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           direction="LTR"
         />
         <br />
-        <CaseSubline subline="Impact" />
+        <CaseSublineTwo subline="Impact" />
         <p>
           Dealers could see everything instantly, cutting down cross-team calls.
         </p>
@@ -243,7 +242,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <br />
-        <CaseSublineTwo subline="Key Feature 2: Calendar View" />
+        <CaseSubline subline="Key Feature 2: Calendar View" />
 
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
@@ -252,7 +251,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseCopy copy="A bird’s-eye view of upcoming deliveries." />
         <br />
         <br />
-        <CaseSubline subline="Highlights" />
+        <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Visual timeline of the week"
           copy="Although tables are a great structured, and searchable view on orders, essentially orders and deliveries are about time. This calendar view now a birds-eye view on the day or whole week."
@@ -266,7 +265,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           direction="RTL"
         />
 
-        <CaseSubline subline="Impact" />
+        <CaseSublineTwo subline="Impact" />
         <p>Dealers reported fewer surprises and smoother operations.</p>
         <ImpactBoxGrid
           items={[
@@ -293,7 +292,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <br />
-        <CaseSublineTwo subline="Key Feature 3: Notification Settings" />
+        <CaseSubline subline="Key Feature 3: Notification Settings" />
 
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
@@ -302,7 +301,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseCopy copy="Personalized update preferences." />
         <br />
         <br />
-        <CaseSubline subline="Highlights" />
+        <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Choose events to be notified about"
           copy="In numerous customer interviews we've learned that each and every customer has very different preferences on what they want to receive notifications on. I've therefore designed a notification center that gives the user maximum customization."
@@ -316,7 +315,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           direction="RTL"
         />
 
-        <CaseSubline subline="Impact" />
+        <CaseSublineTwo subline="Impact" />
         <p>
           Engagement and trust increased — users stopped “checking constantly.”
         </p>
@@ -345,7 +344,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <br />
-        <CaseSublineTwo subline="Key Feature 4: Share Order Details" />
+        <CaseSubline subline="Key Feature 4: Share Order Details" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
           size="L"
@@ -354,12 +353,12 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
         <br />
         <br />
-        <CaseSubline subline="Highlights" />
+        <CaseSublineTwo subline="Highlights" />
         <ul>
           <li>One link, always up to date</li>
           <li>Reduced double communication</li>
         </ul>
-        <CaseSubline subline="Impact" />
+        <CaseSublineTwo subline="Impact" />
         <ImpactBoxGrid
           items={[
             { impact: "3x", subline: "take-offs" },
@@ -386,8 +385,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Driving Growth (1→n)" />
         <CaseSectionHead
+          overline="Driving Growth (1→n)"
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
@@ -434,8 +433,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Leadership Impact" />
         <CaseSectionHead
+          overline="Leadership Impact"
           headline="Building a Design Team & Culture"
           subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
         />
@@ -450,8 +449,8 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Results" />
         <CaseSectionHead
+          overline="Results"
           headline="Success in numbers"
           subline="Knauf Order Overview became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
         />
@@ -501,8 +500,10 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Reflections" />
-        <CaseSectionHead headline="Great Product Design is Growth Design" />
+        <CaseSectionHead
+          overline="Reflections"
+          headline="Great Product Design is Growth Design"
+        />
         <CaseSublineTwo subline="Transparency builds trust, and trust drives retention." />
         <br />
         <CaseCopy

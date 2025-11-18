@@ -8,7 +8,6 @@ import {
 } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
-import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
