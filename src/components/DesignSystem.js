@@ -426,13 +426,39 @@ export const ArticleHeadline = styled.h1`
     width: 650px;
   }
 `;
+export const ArticleSubtitle = styled.span`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+  width: 90%;
+  text-align: center;
 
+  color: ${Colors.primaryText.mediumEmphasis};
+
+  width: 100%;
+
+  ${Devices.tabletS} {
+    width: 520px;
+  }
+  ${Devices.tabletM} {
+    width: 520px;
+  }
+  ${Devices.laptopS} {
+    width: 650px;
+  }
+  ${Devices.laptopM} {
+  }
+`;
 export const ArticleSubline = styled.span`
   font-size: 22px;
   font-weight: 500;
   line-height: 124%;
   letter-spacing: 0.01em;
   margin-bottom: 8px;
+  width: 100%;
+  text-align: left;
 
   color: ${Colors.primaryText.mediumEmphasis};
 `;

@@ -1,19 +1,17 @@
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 import React from "react";
+import { Colors } from "../../DesignSystem";
 
-const CaseCardCopy = ({ text, motionVariants }) => {
-  const CaseCardCopy = styled(motion.p)`
-    backface-visibility: visible;
-    bottom: -24px;
-
+const CaseCardCopy = ({ text }) => {
+  const CaseCardCopy = styled.p`
     color: rgba(0, 0, 0, 0.86);
 
     direction: ltr;
-    display: --webkit-box;
+    display: block;
 
     font-weight: 400;
-    font-size: 12px;
+    font-size: 16px;
+    color: ${Colors.primaryText.mediumEmphasis};
 
     list-style-image: none;
     list-style-position: outside;
@@ -25,12 +23,7 @@ const CaseCardCopy = ({ text, motionVariants }) => {
     margin-inline: 0px;
     margin-bottom: 0px;
 
-    opacity: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-
     padding: 0px;
-    position: absolute;
 
     quotes: "“" "”";
 
@@ -38,15 +31,13 @@ const CaseCardCopy = ({ text, motionVariants }) => {
     text-decoration-thickness: auto;
     text-size-adjust: 100%;
 
-    visibility: hidden;
-
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-font-smoothing: antialiased;
     -webkit-line-clamp: 2;
   `;
 
-  return <CaseCardCopy variants={motionVariants}>{text}</CaseCardCopy>;
+  return <CaseCardCopy>{text}</CaseCardCopy>;
 };
 
 export default CaseCardCopy;
