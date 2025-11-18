@@ -433,6 +433,8 @@ export const ArticleSubline = styled.span`
   line-height: 124%;
   letter-spacing: 0.01em;
   margin-bottom: 8px;
+  width: 90%;
+  text-align: center;
 
   color: ${Colors.primaryText.mediumEmphasis};
 `;
