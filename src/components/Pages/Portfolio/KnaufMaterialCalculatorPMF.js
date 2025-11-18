@@ -1,10 +1,13 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
+import {
+  ArticleSection,
+  ArticleSectionContent,
+  Colors,
+} from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
-import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
@@ -13,6 +16,7 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
+import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
 
@@ -53,19 +57,18 @@ const galleryItems = [
   },
 ];
 
+const colorA = Colors.blue;
+const colorB = Colors.blueLight;
+
 const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Overview" />
         <CaseSectionHead
           headline="B2B SaaS platform for construction applicators"
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
+          overline="Overview"
         />
-        <p>
-          From fragmented workflows to a unified product, helping construction
-          applicators quote, plan, and order 3× faster.
-        </p>
         <CaseSublineTwo subline="Company" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
@@ -101,8 +104,8 @@ const renderContent = () => (
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Challenge" />
         <CaseSectionHead
+          overline="Challenge"
           headline="Delays led to quote errors costing millions in lost bids. "
           subline="The construction industry runs on experience, not software.
 Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
@@ -132,8 +135,8 @@ Project leads and applicators were spending hours moving between Excel sheets, P
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Finding Product-Market Fit (0→1)" />
         <CaseSectionHead
+          overline="Discovery: Finding Product-Market Fit (0→1)"
           headline="Discover the essential workflow that defines value."
           subline="Before designing, we needed to understand what “value” actually meant for our users."
         />
@@ -166,18 +169,20 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
       </ArticleSectionContent>
       <ArticleSectionContent>
-        <Drawer items={galleryItems} />
+        <br />
+        <Drawer items={galleryItems} color1={colorA} color2={colorB} />
       </ArticleSectionContent>
     </ArticleSection>
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Solution" />
         <CaseSectionHead
+          overline="Solution"
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
-        <CaseSublineTwo subline="Key Feature 1: Tender Import & Smart Mapping" />
+        <br />
+        <CaseSubline subline="Key Feature 1: Tender Import & Smart Mapping" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
           size="L"
@@ -187,7 +192,9 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 I built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
-        <CaseSubline subline="Highlights" />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Quote Tracking"
           copy="An overview of the quotes sent, but even more important, an overview of quote drafts with highlighted due-dates. Helping you find the most urgent actions on the screen."
@@ -206,24 +213,39 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-to-project.png"
           direction="LTR"
         />
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>Quote creation time reduced by 60%</li>
-          <li>
-            Early trust increased: users saw reliable, structured data from the
-            start
-          </li>
-          <li>Foundation for automation and cross-system integration</li>
-        </ul>
+        <CaseSublineTwo subline="Impact" />
+        <p>
+          Early trust increased: users saw reliable, structured data from the
+          start
+        </p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "60%", subline: "faster quote creation" },
+            {
+              impact: "3x",
+              subline: "higher quoting rate",
+            },
+            {
+              impact: "85%",
+              subline: "reduction in errors",
+              quote:
+                "This is the tool I was looking for. Finally everything in one place.",
+              size: "L",
+            },
+          ]}
+        />
         <br />
         <br />
-        <CaseSublineTwo subline="Key Feature 2: In-Plan Measurement" />
+        <br />
+        <CaseSubline subline="Key Feature 2: In-Plan Measurement" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
           size="L"
         />
         <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions. From site measurements → plan → exact quantities → approved order in minutes." />
-        <CaseSubline subline="Highlights" />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Plan Measurement tools"
           copy="Users can plan mm-exact measurements and directly assign positions from the quote. Intuitive usage with immediate results."
@@ -236,15 +258,28 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-calculations.png"
           direction="RTL"
         />
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>3× faster take-offs</li>
-          <li>Zero re-entries between planning and ordering</li>
-          <li>Major confidence boost among early users</li>
-        </ul>
+        <CaseSublineTwo subline="Impact" />
+        <p>Major confidence boost among early users</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "quantity calculation speed" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "40%",
+              subline: "reduction in communication",
+              quote:
+                "With this system, there is no guessworking anymore, no blackspots between the team. We all know, what has been planned, what material do we need mm-exact.",
+              size: "L",
+            },
+          ]}
+        />
         <br />
         <br />
-        <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
+        <br />
+        <CaseSubline subline="Key Feature 3: Easy Ordering & Tracking" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
           size="L"
@@ -253,7 +288,9 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           copy="Ordering materials used to happen over phone calls and guesswork.
 We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
         />
-        <CaseSubline subline="Highlights" />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Split orders by date or project phase"
           copy="Order material according to need. By floor, wall type, construction phase, element. Whatever the user needs."
@@ -266,18 +303,30 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
           imgURL="/img/portfolio/knauf-material-calculator/closeup-order-scheduling.png"
           direction="RTL"
         />
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>Order accuracy ↑</li>
-          <li>Reorders simplified</li>
-          <li>Trust built between applicators and dealers</li>
-        </ul>
+        <CaseSublineTwo subline="Impact" />
+        <p>Trust built between Knauf, dealers, and applicators</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "60%", subline: "cut in order mistakes" },
+            {
+              impact: "30%",
+              subline: "reduction of delivery status update calls",
+            },
+            {
+              impact: "20%",
+              subline: "improved logistics efficiency",
+              quote:
+                "Now I finally have a clear picture of my orders and deliveries.",
+              size: "L",
+            },
+          ]}
+        />
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Driving Growth (1→n)" />
         <CaseSectionHead
+          overline="Driving Growth (1→n)"
           headline="Discovering the Growth Bottlenecks"
           subline="Once core value was validated, I led the transition from PMF to Growth."
         />
@@ -298,56 +347,6 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
           reactivation and faster setup.
         </p>
         <br />
-        <br />
-        <br />
-        <CaseSublineTwo subline="Key Feature 3: Easy Ordering & Tracking" />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
-          size="L"
-        />
-        <CaseCopy
-          copy="Ordering materials used to happen over phone calls and guesswork.
-We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
-        />
-        <br />
-        <br />
-        <CaseSubline subline="Highlights" />
-        <ul>
-          <li>Split orders by date or project phase</li>
-          <li>Smart templates for recurring items</li>
-          <li>Built-in delivery scheduling</li>
-        </ul>
-        <CaseSubline subline="Impact" />
-        <ul>
-          <li>Order accuracy ↑</li>
-          <li>Reorders simplified</li>
-          <li>Trust built between applicators and dealers</li>
-        </ul>
-      </ArticleSectionContent>
-    </ArticleSection>
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Driving Growth (1→n)" />
-        <CaseSectionHead
-          headline="Discovering the Growth Bottlenecks"
-          subline="Once core value was validated, I led the transition from PMF to Growth."
-        />
-        <CaseSubline subline="Growth Tactics" />
-        <p>
-          We introduced Activation Clinics, biweekly cross-functional sessions
-          (Design, PM, Eng, Data) to review friction metrics and identify quick
-          wins. We tracked:
-        </p>
-        <ul>
-          <li>Aha Moment ≤15m</li>
-          <li>Quote-to-Plan Conversion</li>
-          <li>7-Day Retention</li>
-        </ul>
-        <CaseSubline subline="Loops & Experiments" />
-        <p>
-          We built onboarding loops and “repeat job templates” to encourage
-          reactivation and faster setup.
-        </p>
         <br />
         <br />
         <CaseSublineTwo subline="Experiment 1: Easy Import" />
@@ -366,6 +365,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <p>
           <b>Impact</b> Onboarding Drop-off: –28% before project creation
         </p>
+        <br />
         <br />
         <br />
         <CaseSublineTwo subline="Experiment 2: Auto Fill Quote" />
@@ -388,6 +388,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         </p>
         <br />
         <br />
+        <br />
         <CaseSublineTwo subline="Experiment 3: Team Collaboration" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-collaboration.png"
@@ -408,19 +409,28 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
         <br />
         <br />
         <CaseSubline subline="Growth Impact" />
-        <ul>
-          <li>25% more users sent their first quote under 15 minutes.</li>
-          <li>30% increase in 7-day retention.</li>
-          <li>
-            Product became a blueprint for all future Knauf Digital tools.
-          </li>
-        </ul>
+        <p>
+          Knauf Material Calculator became a blueprint for all future Knauf
+          Digital tools.
+        </p>
+        <ImpactBoxGrid
+          items={[
+            {
+              impact: "25%",
+              subline: "more users sent their first quote under 15 minutes",
+            },
+            {
+              impact: "30%",
+              subline: "increase in 7-day retention",
+            },
+          ]}
+        />
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Leadership Impact" />
         <CaseSectionHead
+          overline="Leadership Impact"
           headline="Building a Design Team & Culture"
           subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
         />
@@ -444,8 +454,8 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Results" />
         <CaseSectionHead
+          overline="Results"
           headline="Success in numbers"
           subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
         />
@@ -490,8 +500,10 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Reflections" />
-        <CaseSectionHead headline="Great Product Design is Growth Design" />
+        <CaseSectionHead
+          overline="Reflections"
+          headline="Great Product Design is Growth Design"
+        />
         <CaseSublineTwo subline="Knauf Material Calculator taught me that activation isn’t a funnel stage, it’s a design problem. When users trust the system, growth becomes a side effect." />
         <br />
         <CaseSubline subline="Next step I’d take today:" />
@@ -520,9 +532,11 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
-  eyebrowColor1: "#00b8d4",
-  eyebrowColor2: "#62ebff",
+  eyebrowColor1: colorA,
+  eyebrowColor2: colorB,
   title: "Knauf Material Calculator",
+  subline:
+    "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",
   hero,
   renderContent,
 });

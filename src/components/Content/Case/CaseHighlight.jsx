@@ -81,7 +81,7 @@ const Picture = styled.img`
 const CaseHighlightText = styled.div`
   order: 1;
 `;
-const CaseHighlightHeadline = styled.h5``;
+const CaseHighlightHeadline = styled.h6``;
 const CaseHighlightCopy = styled.p``;
 
 const CaseHighlight = ({ imgURL, headline, copy, direction }) => {
