@@ -163,7 +163,7 @@ const Navigation = (props) => {
   };
 
   return (
-    <NavigationWrapper>
+    <NavigationWrapper data-navigation="primary">
       {menuOpen ? (
         <NavigationMenuMobile>
           <CallToAction>

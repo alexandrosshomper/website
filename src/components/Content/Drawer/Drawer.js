@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
@@ -6,14 +6,16 @@ import { Colors, Devices } from "../../DesignSystem";
 import { mdiPlus, mdiClose } from "@mdi/js";
 
 import Button from "../../Button/Button";
-import { useState } from "react";
 
-const Drawer = ({ items }) => {
+const Drawer = ({ items, color1, color2 }) => {
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef(null);
   const handleToggle = (e) => {
     e.preventDefault();
     setOpen(!open);
   };
+  const color_1 = color1 ?? Colors.black;
+  const color_2 = color2 ?? Colors.greyDark;
 
   const Drawer = styled.div`
     /* Auto Layout */
@@ -211,16 +213,75 @@ const Drawer = ({ items }) => {
     line-height: 160%;
   `;
 
+  useEffect(() => {
+    if (
+      !open ||
+      typeof window === "undefined" ||
+      typeof document === "undefined"
+    ) {
+      return;
+    }
+
+    const toggleNode = toggleRef.current;
+    if (!toggleNode) {
+      return;
+    }
+
+    const getNavigationHeight = () => {
+      const navNodes = Array.from(
+        document.querySelectorAll("[data-navigation]")
+      );
+      if (!navNodes.length) {
+        return 0;
+      }
+
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+      let closestNav = null;
+      let minDistance = Number.POSITIVE_INFINITY;
+
+      navNodes.forEach((node) => {
+        const rect = node.getBoundingClientRect();
+        if (rect.bottom <= 0 || rect.top >= viewportHeight) {
+          return;
+        }
+        const distance = Math.abs(rect.top);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestNav = rect;
+        }
+      });
+
+      if (closestNav) {
+        return closestNav.height;
+      }
+
+      return navNodes[0].getBoundingClientRect().height;
+    };
+
+    const { top } = toggleNode.getBoundingClientRect();
+    const navigationHeight = getNavigationHeight();
+    const extraOffset = 16;
+    const target = Math.max(
+      window.pageYOffset + top - (navigationHeight + extraOffset),
+      0
+    );
+    window.scrollTo({
+      top: target,
+      behavior: "smooth",
+    });
+  }, [open]);
+
   return (
     <Drawer>
-      <DrawerToggle>
+      <DrawerToggle ref={toggleRef}>
         <Button
           size="medium"
           variant="primary"
           text={!open ? "Learn More" : "Close Gallery"}
           gradient={
             !open
-              ? { from: Colors.orange, to: Colors.orangeLight }
+              ? { from: color_1, to: color_2 }
               : { from: Colors.greyDark, to: Colors.black }
           }
           icon={!open ? mdiPlus : mdiClose}

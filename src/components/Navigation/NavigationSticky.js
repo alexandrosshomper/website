@@ -175,7 +175,7 @@ const NavigationSticky = () => {
     []
   );
   return (
-    <NavigationWrapper>
+    <NavigationWrapper data-navigation="sticky">
       {menuOpen ? (
         <NavigationMenuMobile>
           <CTA onClick={closeButtonClick}>

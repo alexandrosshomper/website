@@ -1,7 +1,11 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
+import {
+  ArticleSection,
+  ArticleSectionContent,
+  Colors,
+} from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
@@ -53,6 +57,9 @@ const galleryItems = [
     copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
   },
 ];
+
+const colorA = Colors.blue;
+const colorB = Colors.blueLight;
 
 const renderContent = () => (
   <>
@@ -163,7 +170,8 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
       </ArticleSectionContent>
       <ArticleSectionContent>
-        <Drawer items={galleryItems} />
+        <br />
+        <Drawer items={galleryItems} color1={colorA} color2={colorB} />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -185,6 +193,8 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 I built a guided import flow that parses items and matches them to Knauf’s product systems."
         />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Quote Tracking"
@@ -238,6 +248,8 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           size="L"
         />
         <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions. From site measurements → plan → exact quantities → approved order in minutes." />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Plan Measurement tools"
@@ -285,6 +297,8 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
           copy="Ordering materials used to happen over phone calls and guesswork.
 We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
         />
+        <br />
+        <br />
         <CaseSubline subline="Highlights" />
         <CaseHighlight
           headline="Split orders by date or project phase"
@@ -539,8 +553,8 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
-  eyebrowColor1: "#00b8d4",
-  eyebrowColor2: "#62ebff",
+  eyebrowColor1: colorA,
+  eyebrowColor2: colorB,
   title: "Knauf Material Calculator",
   subline:
     "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",
