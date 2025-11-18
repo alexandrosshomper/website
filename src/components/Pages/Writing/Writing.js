@@ -49,6 +49,42 @@ const Content = () => {
           headline="Writing on Product, Design, Marketing and Growth"
           subline="Sharing articles, insights, and frameworks with the product community."
         />
+        <SectionOverline subline="My playbooks about PLG" />
+
+        <Article
+          headline="Onboarding Friction Playbook"
+          subline="This workbook covers all the relevant aspects to identify, quantify, and remove onboarding friction so new users reach value fast and activate reliably."
+          meta="Alexandros Shomper - PLG Playbooks"
+          link="https://store.alexandrosshomper.de/l/onboarding-playbook?layout=profile"
+          imgURL="https://public-files.gumroad.com/gsm5tgpavsj447antai1j4m903h8"
+        />
+        <Article
+          headline="Lifecycle Nudges Playbook"
+          subline="This workbook covers all the relevant aspects to design, orchestrate, and iterate lifecycle nudges across channels so more users reach Aha! fast, adopt key behaviors, form habits, expand, and recover when they lapse."
+          meta="Alexandros Shomper - PLG Playbooks"
+          link="https://store.alexandrosshomper.de/l/lifecycle-nudges-playbook?layout=profile"
+          imgURL="https://public-files.gumroad.com/0kn4t816lalki7d7zfbfv6uo9tr3"
+        />
+        <Article
+          headline="Segmentation Questions Playbook"
+          subline="This workbook covers how you define your segments, create the right questions to identify them, and use that insight to provide personalized experiences, and analyze user behaviour better."
+          meta="Alexandros Shomper - PLG Playbooks"
+          link="https://store.alexandrosshomper.de/l/segmentation-questions-playbook?layout=profile"
+          imgURL="https://public-files.gumroad.com/h5csduao9u8b31v1x3shl6jsg9pf"
+        />
+        <br />
+        <Button
+          size="medium"
+          variant="primary"
+          href="https://store.alexandrosshomper.de/"
+          text="See all my PLG playbooks"
+          gradient={{ from: Colors.greyDark, to: Colors.black }}
+        />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <SectionOverline subline="My articles on Medium.com" />
 
         <Article
