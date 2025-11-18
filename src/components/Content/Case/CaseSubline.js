@@ -1,9 +1,7 @@
 import React from "react";
 
-import { ArticleSubline } from "../../DesignSystem";
-
 const CaseSubline = ({ subline }) => {
-  return <ArticleSubline>{subline}</ArticleSubline>;
+  return <h4>{subline}</h4>;
 };
 
 export default CaseSubline;

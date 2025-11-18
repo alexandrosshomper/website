@@ -20,21 +20,21 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     padding: 0px;
     margin-block-end: 4px;
     margin-block-start: 0px;
-    margin-bottom: 4x;
+    margin-bottom: 32px;
     margin-inline-end: 0px;
     margin-inline-start: 0px;
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
 
-    text-align: left;
+    text-align: center;
     text-decoration-thickness: auto;
     text-size-adjust: 100%;
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
 
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 120%;
     width: 90%;
 

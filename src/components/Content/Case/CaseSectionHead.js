@@ -3,12 +3,12 @@ import styled from "@emotion/styled";
 
 import { Devices } from "../../DesignSystem";
 
-import CaseHeadlineTwo from "./CaseHeadlineTwo";
-import CaseSubline from "./CaseSubline";
-//import SectionCopy from "./SectionCopy";
+import CaseSectionOverline from "./CaseSectionOverline";
+import CaseSectionTitle from "./CaseSectionTitle";
+import CaseSectionSubline from "./CaseSectionSubline";
 
-const CaseSectionHead = ({ headline, subline, copy }) => {
-  const CaseSectionHead = styled.div`
+const CaseSectionHead = ({ headline, subline, overline }) => {
+  const CaseSectionHead = styled.header`
     /* Auto Layout */
     display: flex;
     flex-direction: column;
@@ -44,9 +44,9 @@ const CaseSectionHead = ({ headline, subline, copy }) => {
   `;
   return (
     <CaseSectionHead>
-      {headline && <CaseHeadlineTwo headline={headline} />}
-      {subline && <CaseSubline subline={subline} />}
-      {/*{copy && <SectionCopy copy={copy} />}*/}
+      {overline && <CaseSectionOverline text={overline} />}
+      {headline && <CaseSectionTitle text={headline} />}
+      {subline && <CaseSectionSubline text={subline} />}
     </CaseSectionHead>
   );
 };

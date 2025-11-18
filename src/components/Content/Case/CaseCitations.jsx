@@ -4,16 +4,18 @@ import styled from "@emotion/styled";
 import { Colors, Devices } from "../../DesignSystem";
 
 const CitationsWrapper = styled.section`
-  width: 100%;
+  width: calc(100% + 48px);
   box-sizing: border-box;
   background: rgba(8, 8, 8, 0.04);
   border-radius: 24px;
   padding: 32px 24px;
-  margin: 48px 0;
+  margin: 48px -24px;
   display: flex;
   flex-direction: column;
 
   ${Devices.tabletS} {
+    width: calc(100% + 96px);
+    margin: 48px -48px;
     padding: 48px;
   }
 `;
