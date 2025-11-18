@@ -54,12 +54,12 @@ const ImpactQuote = styled.blockquote`
   font-weight: 450;
   letter-spacing: -0.01em;
   font-size: clamp(
-    1.5rem,
+    1.9rem,
     calc(1.5rem + 0.375 * ((100vw - 375px) / 1066)),
     1.875rem
   );
   line-height: clamp(
-    1.98rem,
+    2.4rem,
     calc(1.98rem + 0.495 * ((100vw - 375px) / 1066)),
     2.475rem
   );
@@ -90,12 +90,12 @@ const ImpactValue = styled.span`
   text-wrap: balance;
 `;
 
-const ImpactSubline = styled.p`
+const ImpactSubline = styled.span`
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-size: 1.249rem;
-  line-height: 130%;
+  font-size: 1.1rem;
+  line-height: 120%;
   color: ${Colors.primaryText.mediumEmphasis};
   margin: 0;
   white-space: pre-line;
@@ -127,7 +127,7 @@ export const ImpactBoxGrid = ({ items = [], children, ...rest }) => {
               key={`${impact}-${index}`}
               impact={impact}
               subline={subline}
-              quote={quote}
+              quote={quote && `"` + quote + `"`}
               size={size}
               {...itemRest}
             />

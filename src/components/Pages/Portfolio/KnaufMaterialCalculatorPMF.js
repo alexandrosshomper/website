@@ -223,10 +223,10 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
               subline: "of custom front-end work saved during build",
             },
             {
-              impact: "70%",
-              subline: "reduction in iteration cycles",
+              impact: "85%",
+              subline: "reduction in errors",
               quote:
-                "Agent Builder transformed what took months of orchestration, custom code, and manual optimization into hours.",
+                "This is the tool I was looking for. Finally everything in one place.",
               size: "L",
             },
           ]}
