@@ -27,7 +27,7 @@ const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-material-calculator/cover.png" />
 );
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL:
@@ -54,6 +54,35 @@ const galleryItems = [
       "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
     headline: "Scalability Assessment",
     copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
+  },
+];
+const galleryItemsDesign = [
+  {
+    id: 1,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-sketch-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-sketch-mobile.png",
+    headline: "First Sketches",
+    copy: "I spend the whole year of 2020 to do nothing else but research. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
+  },
+  {
+    id: 2,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-sitemap-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-sitemap-mobile.png",
+    headline: "Sitemap",
+    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
+  },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-wireframes-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-wireframes-mobile.png",
+    headline: "Wireframes",
+    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
   },
 ];
 
@@ -89,7 +118,7 @@ const renderContent = () => (
           role="Product Design Manager, 12 markets"
           team="PO, Eng, Data, Design"
           product="B2B SaaS platform for construction professionals"
-          stage="0 → 1 → n (Pre-PMF → PMF → Growth)"
+          stage="0 →1→n "
           timeline="18 months"
           keyResults={[
             "Activation ↑ 25%",
@@ -136,7 +165,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Discovery: Finding Product-Market Fit (0→1)"
+          overline="Discovery: Finding Product-Market Fit"
           headline="Discover the essential workflow that defines value."
           subline="Before designing, we needed to understand what “value” actually meant for our users."
         />
@@ -170,7 +199,12 @@ Project leads and applicators were spending hours moving between Excel sheets, P
       </ArticleSectionContent>
       <ArticleSectionContent>
         <br />
-        <Drawer items={galleryItems} color1={colorA} color2={colorB} />
+        <Drawer
+          items={galleryItemsDiscover}
+          color1={colorA}
+          color2={colorB}
+          label="Discovery Details"
+        />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -181,6 +215,13 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
+        <Drawer
+          items={galleryItemsDesign}
+          color1={colorA}
+          color2={colorB}
+          label="Design Details"
+        />
+
         <br />
         <CaseSubline subline="Key Feature 1: Tender Import & Smart Mapping" />
         <CaseImage

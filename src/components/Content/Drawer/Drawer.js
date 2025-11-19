@@ -7,8 +7,9 @@ import { mdiPlus, mdiClose } from "@mdi/js";
 
 import Button from "../../Button/Button";
 
-const Drawer = ({ items, color1, color2 }) => {
+const Drawer = ({ items, color1, color2, label }) => {
   const [open, setOpen] = useState(false);
+  const button_label = label ? label : "Learn More";
   const toggleRef = useRef(null);
   const handleToggle = (e) => {
     e.preventDefault();
@@ -141,7 +142,7 @@ const Drawer = ({ items, color1, color2 }) => {
     position: relative;
     width: 280px;
     height: 386px;
-    border-radius: 20px;
+    border-radius: 8px;
     overflow: hidden;
     ${Devices.tabletM} {
       width: 740px;
@@ -278,7 +279,7 @@ const Drawer = ({ items, color1, color2 }) => {
         <Button
           size="medium"
           variant="primary"
-          text={!open ? "Learn More" : "Close Gallery"}
+          text={!open ? button_label : "Close Gallery"}
           gradient={
             !open
               ? { from: color_1, to: color_2 }

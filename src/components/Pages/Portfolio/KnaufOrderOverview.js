@@ -81,7 +81,7 @@ const renderContent = () => (
           role="Product Design Manager, 12 markets"
           team="14 (PM, Eng, Data, BA, Design)"
           product="Centralized track-n-trace platform for a fragemnted conglomerate"
-          stage="0→1→n (PMF → Growth)"
+          stage="0→1→n"
           timeline="12 months"
           keyResults={[
             "↓20% service inquiry calls",
