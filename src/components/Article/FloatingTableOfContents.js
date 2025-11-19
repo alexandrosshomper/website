@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Colors } from "../DesignSystem";
 
-const HEADING_SELECTOR = "h1, h2, h3, h4, h5, h6";
+const HEADING_SELECTOR = "h2";
 const FLOATING_GUARD_SELECTOR = "[data-floating-toc-guard]";
 const TOC_WIDTH = 248;
 const TOC_HORIZONTAL_GAP = 32;
