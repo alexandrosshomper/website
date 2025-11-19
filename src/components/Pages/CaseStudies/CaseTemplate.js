@@ -21,6 +21,13 @@ const Section = styled.section`
   flex-grow: 0;
 `;
 
+const ArticleHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
 const HeaderSpacing = () => (
   <>
     <br />
@@ -59,18 +66,20 @@ const CaseTemplate = ({
           <meta name="description" content={metaDescription} />
         )}
       </Helmet>
-      <Section>
-        {eyebrow ? (
-          <CaseTitleEyebrow
-            text={eyebrow}
-            color1={eyebrowColor1}
-            color2={eyebrowColor2}
-          />
-        ) : null}
-        {title ? <CaseTitle headline={title} /> : null}
-        {subline ? <CaseSubtitle text={subline} /> : null}
-        {renderHero()}
-        <HeaderSpacing />
+      <Section data-article-container="true">
+        <ArticleHeader data-article-header="true">
+          {eyebrow ? (
+            <CaseTitleEyebrow
+              text={eyebrow}
+              color1={eyebrowColor1}
+              color2={eyebrowColor2}
+            />
+          ) : null}
+          {title ? <CaseTitle headline={title} /> : null}
+          {subline ? <CaseSubtitle text={subline} /> : null}
+          {renderHero()}
+          <HeaderSpacing />
+        </ArticleHeader>
         <FloatingTableOfContents>{children}</FloatingTableOfContents>
       </Section>
     </ContentWrapper>

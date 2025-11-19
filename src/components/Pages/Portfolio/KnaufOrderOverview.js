@@ -130,7 +130,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Discovery & Hypothesis"
+          overline="Discovery 0→1"
           headline="Discover the essential workflow that defines value."
           subline="Through interviews, diaries, and job walkthroughs, we found that transparency and autonomy were key drivers."
         />
@@ -345,7 +345,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Driving Growth (1→n)"
+          overline="Driving Growth 1→n"
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />

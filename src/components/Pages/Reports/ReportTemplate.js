@@ -24,6 +24,13 @@ const Section = styled.section`
   flex-grow: 0;
 `;
 
+const ArticleHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
 const Paragraph = styled.section`
   display: flex;
   flex-direction: column;
@@ -99,15 +106,17 @@ const ReportTemplate = ({
           <meta name="description" content={metaDescription} />
         )}
       </Helmet>
-      <Section>
-        <ReportEyebrow
-          text={eyebrow}
-          color1={eyebrowColor1}
-          color2={eyebrowColor2}
-        />
-        <ReportTitle headline={title} />
-        {subline ? <ReportSubline subline={subline} /> : null}
-        <HeaderSpacing />
+      <Section data-article-container="true">
+        <ArticleHeader data-article-header="true">
+          <ReportEyebrow
+            text={eyebrow}
+            color1={eyebrowColor1}
+            color2={eyebrowColor2}
+          />
+          <ReportTitle headline={title} />
+          {subline ? <ReportSubline subline={subline} /> : null}
+          <HeaderSpacing />
+        </ArticleHeader>
         <FloatingTableOfContents>{children}</FloatingTableOfContents>
 
         <LeadGenerationForm {...leadSuccessLink} />
