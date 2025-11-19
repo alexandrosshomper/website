@@ -8,6 +8,7 @@ import ReportSubline from "../../Content/Report/ReportSubline";
 import ReportTitle from "../../Content/Report/ReportTitle";
 import ReportEyebrow from "../../Content/Report/ReportEyebrow";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
+import FloatingTableOfContents from "../../Article/FloatingTableOfContents";
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -107,7 +108,7 @@ const ReportTemplate = ({
         <ReportTitle headline={title} />
         {subline ? <ReportSubline subline={subline} /> : null}
         <HeaderSpacing />
-        {children}
+        <FloatingTableOfContents>{children}</FloatingTableOfContents>
 
         <LeadGenerationForm {...leadSuccessLink} />
       </Section>
