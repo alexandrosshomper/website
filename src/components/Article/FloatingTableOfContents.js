@@ -25,17 +25,21 @@ const FloatingNav = styled.nav`
   top: ${TOC_TOP_OFFSET}px;
   right: ${VIEWPORT_EDGE_GUTTER}px;
   width: ${TOC_WIDTH}px;
-  padding: 16px 20px 20px;
-  border-radius: 16px;
-  backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(8, 8, 8, 0.04);
-  box-shadow: 0 4px 4px rgba(8, 8, 8, 0.04);
+  padding: 12px 8px;
+  border-radius: 8px;
+  backdrop-filter: ${(props) => (props.$expanded ? "blur(8px)" : "none")};
+  background-color: ${(props) =>
+    props.$expanded ? "rgba(255, 255, 255, 0.8)" : "transparent"};
+  border: 1px solid
+    ${(props) => (props.$expanded ? "rgba(8, 8, 8, 0.04)" : "transparent")};
+  box-shadow: ${(props) =>
+    props.$expanded ? "0 4px 4px rgba(8, 8, 8, 0.04)" : "none"};
   z-index: 20;
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - ${TOC_TOP_OFFSET + 48}px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease, backdrop-filter 0.2s ease;
   opacity: ${(props) => (props["data-hidden"] ? 0 : 1)};
   pointer-events: ${(props) => (props["data-hidden"] ? "none" : "auto")};
   transform: ${(props) =>
@@ -60,23 +64,44 @@ const FloatingNavItem = styled.li`
 const TocButton = styled.button`
   border: none;
   background: none;
-  padding: 6px 0;
+  padding: ${(props) => (props.$expanded ? "6px 0" : "0")}
   width: 100%;
   text-align: left;
-  font-size: 12px;
-  line-height: 1;
+  font-size: ${(props) => (props.$expanded ? "12px" : "0")};
+  line-height: ${(props) => (props.$expanded ? "1" : "0")};
   font-weight: ${(props) => (props.$active ? 600 : 500)};
   color: ${(props) =>
-    props.$active
-      ? Colors.primaryText.highEmphasis
-      : Colors.primaryText.mediumEmphasis};
-  cursor: pointer;
-  padding-left: ${(props) => props.$indent || 0}px;
-  transition: color 0.2s ease;
+    props.$expanded
+      ? props.$active
+        ? Colors.primaryText.highEmphasis
+        : Colors.primaryText.mediumEmphasis
+      : "transparent"};
+  cursor: ${(props) => (props.$expanded ? "pointer" : "default")};
+  padding-left: ${(props) =>
+    props.$expanded ? `${props.$indent || 0}px` : "0"};
+  transition: color 0.2s ease, padding 0.2s ease;
+  pointer-events: ${(props) => (props.$expanded ? "auto" : "none")};
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+    margin: ${(props) => (props.$expanded ? "0" : "0px auto")};
+    background-color: ${(props) =>
+      props.$active
+        ? Colors.primaryText.highEmphasis
+        : Colors.primaryText.lowEmphasis};
+    opacity: ${(props) => (props.$expanded ? 0 : 1)};
+    transition: opacity 0.2s ease;
+  }
 
   &:hover,
   &:focus {
-    color: ${Colors.primaryText.highEmphasis};
+    color: ${(props) =>
+      props.$expanded ? Colors.primaryText.highEmphasis : "transparent"};
     outline: none;
   }
 `;
@@ -99,6 +124,7 @@ const FloatingTableOfContents = ({ children }) => {
   const [isOverlapping, setIsOverlapping] = useState(false);
   const [isArticleInViewport, setIsArticleInViewport] = useState(false);
   const [isHeaderOutOfViewport, setIsHeaderOutOfViewport] = useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const collectHeadings = useCallback(() => {
     const container = articleRef.current;
@@ -153,9 +179,7 @@ const FloatingTableOfContents = ({ children }) => {
     const container = articleRef.current;
 
     if (!container) {
-      setLayout((current) =>
-        current.canShow ? { canShow: false } : current
-      );
+      setLayout((current) => (current.canShow ? { canShow: false } : current));
       return;
     }
 
@@ -165,9 +189,7 @@ const FloatingTableOfContents = ({ children }) => {
       ) || container.querySelector("[data-article-section]");
 
     if (!baseSection) {
-      setLayout((current) =>
-        current.canShow ? { canShow: false } : current
-      );
+      setLayout((current) => (current.canShow ? { canShow: false } : current));
       return;
     }
 
@@ -439,10 +461,15 @@ const FloatingTableOfContents = ({ children }) => {
   const shouldRenderToc =
     layout.canShow && headings.length >= MIN_HEADINGS_TO_RENDER;
 
-  const shouldShowBasedOnScroll =
-    isHeaderOutOfViewport && isArticleInViewport;
+  const shouldShowBasedOnScroll = isHeaderOutOfViewport && isArticleInViewport;
 
   const navHidden = isOverlapping || !shouldShowBasedOnScroll;
+
+  useEffect(() => {
+    if ((!shouldRenderToc || navHidden) && isNavExpanded) {
+      setIsNavExpanded(false);
+    }
+  }, [shouldRenderToc, navHidden, isNavExpanded]);
 
   const tocIndentation = useCallback((level) => {
     if (typeof level !== "number") {
@@ -452,15 +479,38 @@ const FloatingTableOfContents = ({ children }) => {
     return 12 + Math.min(Math.max(level - 2, 0) * 12, 48);
   }, []);
 
+  const handleNavFocus = useCallback(() => {
+    setIsNavExpanded(true);
+  }, []);
+
+  const handleNavBlur = useCallback((event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setIsNavExpanded(false);
+    }
+  }, []);
+
+  const handleNavMouseEnter = useCallback(() => {
+    setIsNavExpanded(true);
+  }, []);
+
+  const handleNavMouseLeave = useCallback(() => {
+    setIsNavExpanded(false);
+  }, []);
+
   return (
     <Wrapper>
       <ArticleSlot ref={articleRef}>{children}</ArticleSlot>
       {shouldRenderToc ? (
         <FloatingNav
           ref={tocRef}
+          $expanded={isNavExpanded}
           data-hidden={navHidden}
           aria-hidden={navHidden}
           aria-label="Table of contents"
+          onMouseEnter={handleNavMouseEnter}
+          onMouseLeave={handleNavMouseLeave}
+          onFocus={handleNavFocus}
+          onBlur={handleNavBlur}
         >
           <FloatingNavList>
             {headings.map((heading) => (
@@ -470,6 +520,7 @@ const FloatingTableOfContents = ({ children }) => {
                   onClick={(event) => handleHeadingClick(event, heading.id)}
                   $indent={tocIndentation(heading.level)}
                   $active={heading.id === activeHeadingId}
+                  $expanded={isNavExpanded}
                   aria-current={
                     heading.id === activeHeadingId ? "true" : undefined
                   }
