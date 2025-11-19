@@ -1,86 +1,149 @@
 import React from "react";
 import ReactPlayer from "react-player/lazy";
 import styled from "@emotion/styled";
-import { Devices } from "../../DesignSystem";
+import { Play, Pause } from "lucide-react";
+import { Devices, Colors } from "../../DesignSystem";
 
-const CaseVideo = ({ mp4, ogg, img, alt, url, color1, color2 }) => {
-  const CaseVideo = styled.div`
-    margin-top: 20px;
-    margin-bottom: 20px;
+const VideoWrapper = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 272px;
+  height: 202px;
+  direction: ltr;
+  text-align: left;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+  -webkit-font-smoothing: antialiased;
 
-    position: relative;
+  ${Devices.tabletS} {
+    width: 564px;
+    height: 419px;
+  }
+  ${Devices.tabletM} {
+    width: 708px;
+    height: 527px;
+  }
+  ${Devices.laptopS} {
+    width: 740px;
+    height: 551px;
+  }
+`;
 
-    width: 272px;
-    height: 202px;
+const PlayPauseButton = styled.button`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${Colors.primaryText.highEmphasis};
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  will-change: backdrop-filter;
+  transition: opacity 120ms ease, background-color 120ms ease,
+    box-shadow 120ms ease;
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? "auto" : "none")};
+  z-index: 2;
+  animation: blurPulse 2.4s ease-in-out infinite;
 
-    direction: ltr;
+  &:hover {
+    background: rgba(255, 255, 255, 0.95);
+  }
 
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
+  }
 
-    text-align: left;
-    text-decoration-thickness: auto;
-    text-size-adjust: 100%;
+  & svg {
+    width: 14px;
+    height: 14px;
+  }
 
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
-
-    ${Devices.tabletS} {
-      width: 564px;
-      height: 419px;
+  @keyframes blurPulse {
+    0% {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.8);
     }
-    ${Devices.tabletM} {
-      width: 708px;
-      height: 527px;
+    50% {
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.6);
     }
-    ${Devices.laptopS} {
-      width: 740px;
-      height: 551px;
+    100% {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.8);
     }
-  `;
+  }
+`;
 
-  const ReactPlayerStyle = {
-    overflowX: "hidden",
-    overflowY: "hidden",
-    margin: "0 auto",
-    borderRadius: "10px",
-    boxShadow: "1px 1px 20px rgba(0, 0, 0, 0.1)",
-    position: "static",
+const ReactPlayerStyle = {
+  overflowX: "hidden",
+  overflowY: "hidden",
+  margin: "0 auto",
+  borderRadius: "10px",
+  boxShadow: "1px 1px 20px rgba(0, 0, 0, 0.1)",
+  position: "static",
+};
+
+const CaseVideo = ({ url }) => {
+  const [isPlaying, setIsPlaying] = React.useState(true);
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  const showButton = !isPlaying || isHovered;
+
+  const handleTogglePlayback = () => {
+    setIsPlaying((prev) => !prev);
   };
 
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
-    <CaseVideo>
+    <VideoWrapper
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <ReactPlayer
-        url={`${url}`}
-        loop="true"
-        controls="false"
-        muted="true"
-        playsInline="true"
-        playing="true"
+        url={url}
+        loop
+        controls={false}
+        muted
+        playsinline
+        playing={isPlaying}
         width="100%"
         height="100%"
         style={ReactPlayerStyle}
       />
-    </CaseVideo>
-
-    /*<ReactPlayer
-        url={`${mp4}`}
-        
-      />
-      <Video
-        src={`${mp4}`}
-        preload="yes"
-        autoPlay="autoplay"
-        loop="true"
-        muted="true"
-        controls="true"
-        playsInline="true"
+      <PlayPauseButton
+        type="button"
+        onClick={handleTogglePlayback}
+        onFocus={handleMouseEnter}
+        onBlur={handleMouseLeave}
+        aria-label={isPlaying ? "Pause video" : "Play video"}
+        tabIndex={showButton ? 0 : -1}
+        $visible={showButton}
       >
-        <source src={`${mp4}`} type="video/mp4" />
-        <source src={`${ogg}`} type="video/ogg" />
-        <Picture src={`${img}`} alt={`${alt}`} />
-      </Video>*/
+        {isPlaying ? (
+          <Pause fill="#000" strokeWidth={2.5} />
+        ) : (
+          <Play fill="#000" strokeWidth={2.5} />
+        )}
+      </PlayPauseButton>
+    </VideoWrapper>
   );
 };
 
