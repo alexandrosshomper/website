@@ -2,7 +2,6 @@ import React from "react";
 
 import CaseTemplate from "./CaseTemplate";
 import { ArticleContent } from "../../DesignSystem";
-import FloatingTableOfContents from "../../Article/FloatingTableOfContents";
 
 const createCasePage = ({
   metaTitle,
