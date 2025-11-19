@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseSubtitle from "../../Content/Case/CaseSubtitle";
+import FloatingTableOfContents from "../../Article/FloatingTableOfContents";
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -70,7 +71,7 @@ const CaseTemplate = ({
         {subline ? <CaseSubtitle text={subline} /> : null}
         {renderHero()}
         <HeaderSpacing />
-        {children}
+        <FloatingTableOfContents>{children}</FloatingTableOfContents>
       </Section>
     </ContentWrapper>
   );
