@@ -8,8 +8,9 @@ const VideoWrapper = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  width: 272px;
-  height: 202px;
+  width: 100%;
+  max-width: 272px;
+  aspect-ratio: ${(props) => props.$aspectRatio};
   direction: ltr;
   text-align: left;
   text-size-adjust: 100%;
@@ -17,16 +18,13 @@ const VideoWrapper = styled.div`
   -webkit-font-smoothing: antialiased;
 
   ${Devices.tabletS} {
-    width: 564px;
-    height: 419px;
+    max-width: 564px;
   }
   ${Devices.tabletM} {
-    width: 708px;
-    height: 527px;
+    max-width: 708px;
   }
   ${Devices.laptopS} {
-    width: 740px;
-    height: 551px;
+    max-width: 740px;
   }
 `;
 
@@ -99,9 +97,61 @@ const ReactPlayerStyle = {
   position: "static",
 };
 
-const CaseVideo = ({ url }) => {
+const DEFAULT_ASPECT_RATIO = 16 / 9;
+
+const CaseVideo = ({ url, img }) => {
   const [isPlaying, setIsPlaying] = React.useState(true);
   const [isHovered, setIsHovered] = React.useState(false);
+  const [videoAspectRatio, setVideoAspectRatio] =
+    React.useState(DEFAULT_ASPECT_RATIO);
+  const playerRef = React.useRef(null);
+
+  const applyAspectRatio = React.useCallback((width, height) => {
+    if (!width || !height) {
+      return;
+    }
+    const ratio = width / height;
+    if (Number.isFinite(ratio) && ratio > 0) {
+      setVideoAspectRatio(ratio);
+    }
+  }, []);
+
+  const updateAspectRatio = React.useCallback(
+    async (playerInstance) => {
+      const player = playerInstance ?? playerRef.current;
+      const internalPlayer = player?.getInternalPlayer
+        ? player.getInternalPlayer()
+        : null;
+
+      if (!internalPlayer) {
+        return;
+      }
+
+      try {
+        if (
+          typeof internalPlayer.getVideoWidth === "function" &&
+          typeof internalPlayer.getVideoHeight === "function"
+        ) {
+          const [width, height] = await Promise.all([
+            internalPlayer.getVideoWidth(),
+            internalPlayer.getVideoHeight(),
+          ]);
+          applyAspectRatio(width, height);
+          return;
+        }
+
+        const { videoWidth, videoHeight } = internalPlayer;
+        applyAspectRatio(videoWidth, videoHeight);
+      } catch (error) {
+        // Ignore errors retrieving metadata; fallback ratio remains in place.
+      }
+    },
+    [applyAspectRatio]
+  );
+
+  React.useEffect(() => {
+    setVideoAspectRatio(DEFAULT_ASPECT_RATIO);
+  }, [url]);
 
   const showButton = !isPlaying || isHovered;
 
@@ -111,13 +161,18 @@ const CaseVideo = ({ url }) => {
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
+  const handleReady = (player) => {
+    updateAspectRatio(player);
+  };
 
   return (
     <VideoWrapper
+      $aspectRatio={videoAspectRatio}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <ReactPlayer
+        ref={playerRef}
         url={url}
         loop
         controls={false}
@@ -127,6 +182,7 @@ const CaseVideo = ({ url }) => {
         width="100%"
         height="100%"
         style={ReactPlayerStyle}
+        onReady={handleReady}
       />
       <PlayPauseButton
         type="button"

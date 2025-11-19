@@ -216,11 +216,10 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
+
         <CaseVideo
-          mp4="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2FOcchioWebsite.mp4?alt=media&token=729e66b2-0dbf-48b0-8550-0f37ff183980"
-          ogg="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2FOcchioWebsite.ogv?alt=media&token=7cee14a3-2fa4-4798-a739-7557828ba986"
-          img="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2F%20OcchioWebsite.png?alt=media&token=c9328dce-65ad-445a-98ad-ce2201060ae1"
-          url="https://vimeo.com/517036386"
+          img="/img/portfolio/knauf-material-calculator/KMC.png"
+          url="https://vimeo.com/1138645247"
         />
         <p>
           <b>Scope decisions</b> Desktop-first; all-in-one app; design system
