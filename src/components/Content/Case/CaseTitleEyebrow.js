@@ -20,7 +20,7 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     padding: 0px;
     margin-block-end: 4px;
     margin-block-start: 0px;
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     margin-inline-end: 0px;
     margin-inline-start: 0px;
     margin-left: 0px;
@@ -44,6 +44,7 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     background-clip: text;
 
     ${Devices.tabletS} {
+      margin-bottom: 32px;
       width: 520px;
     }
     ${Devices.tabletM} {
