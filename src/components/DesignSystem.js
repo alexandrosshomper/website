@@ -1,3 +1,4 @@
+import React, { forwardRef } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
@@ -368,7 +369,7 @@ export const ArticleSectionContent = styled.div`
   ${articleTypographyStyles}
 `;
 
-export const ArticleSection = styled.section`
+const ArticleSectionElement = styled.section`
   width: ${(props) =>
     getArticleSectionVariant(props) === "default" ? "" : "70%"};
   margin-left: ${(props) =>
@@ -396,9 +397,23 @@ export const ArticleSection = styled.section`
   }
 `;
 
-ArticleSection.defaultProps = {
-  "data-article-section": true,
-};
+const ArticleSectionComponent = forwardRef((props, ref) => {
+  const variant = getArticleSectionVariant(props);
+
+  return (
+    <ArticleSectionElement
+      ref={ref}
+      {...props}
+      data-article-section="true"
+      data-article-width={variant}
+      data-floating-toc-guard={variant === "default" ? undefined : "true"}
+    />
+  );
+});
+
+ArticleSectionComponent.displayName = "ArticleSection";
+
+export const ArticleSection = ArticleSectionComponent;
 
 export const ArticleHeadline = styled.h1`
   direction: ltr;
