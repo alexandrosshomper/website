@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import CaseTitle from "../../Content/Case/CaseTitle";
 import CaseTitleEyebrow from "../../Content/Case/CaseTitleEyebrow";
 import CaseSubtitle from "../../Content/Case/CaseSubtitle";
+import FloatingTableOfContents from "../../Article/FloatingTableOfContents";
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -18,6 +19,13 @@ const Section = styled.section`
   width: 100%;
   align-self: stretch;
   flex-grow: 0;
+`;
+
+const ArticleHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 `;
 
 const HeaderSpacing = () => (
@@ -58,19 +66,21 @@ const CaseTemplate = ({
           <meta name="description" content={metaDescription} />
         )}
       </Helmet>
-      <Section>
-        {eyebrow ? (
-          <CaseTitleEyebrow
-            text={eyebrow}
-            color1={eyebrowColor1}
-            color2={eyebrowColor2}
-          />
-        ) : null}
-        {title ? <CaseTitle headline={title} /> : null}
-        {subline ? <CaseSubtitle text={subline} /> : null}
-        {renderHero()}
-        <HeaderSpacing />
-        {children}
+      <Section data-article-container="true">
+        <ArticleHeader data-article-header="true">
+          {eyebrow ? (
+            <CaseTitleEyebrow
+              text={eyebrow}
+              color1={eyebrowColor1}
+              color2={eyebrowColor2}
+            />
+          ) : null}
+          {title ? <CaseTitle headline={title} /> : null}
+          {subline ? <CaseSubtitle text={subline} /> : null}
+          {renderHero()}
+          <HeaderSpacing />
+        </ArticleHeader>
+        <FloatingTableOfContents>{children}</FloatingTableOfContents>
       </Section>
     </ContentWrapper>
   );

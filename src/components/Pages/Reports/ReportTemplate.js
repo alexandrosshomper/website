@@ -8,6 +8,7 @@ import ReportSubline from "../../Content/Report/ReportSubline";
 import ReportTitle from "../../Content/Report/ReportTitle";
 import ReportEyebrow from "../../Content/Report/ReportEyebrow";
 import LeadGenerationForm from "../../LeadGen/LeadGenerationForm";
+import FloatingTableOfContents from "../../Article/FloatingTableOfContents";
 
 const ContentWrapper = styled.div`
   text-align: left;
@@ -21,6 +22,13 @@ const Section = styled.section`
   width: 100%;
   align-self: stretch;
   flex-grow: 0;
+`;
+
+const ArticleHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 `;
 
 const Paragraph = styled.section`
@@ -98,16 +106,18 @@ const ReportTemplate = ({
           <meta name="description" content={metaDescription} />
         )}
       </Helmet>
-      <Section>
-        <ReportEyebrow
-          text={eyebrow}
-          color1={eyebrowColor1}
-          color2={eyebrowColor2}
-        />
-        <ReportTitle headline={title} />
-        {subline ? <ReportSubline subline={subline} /> : null}
-        <HeaderSpacing />
-        {children}
+      <Section data-article-container="true">
+        <ArticleHeader data-article-header="true">
+          <ReportEyebrow
+            text={eyebrow}
+            color1={eyebrowColor1}
+            color2={eyebrowColor2}
+          />
+          <ReportTitle headline={title} />
+          {subline ? <ReportSubline subline={subline} /> : null}
+          <HeaderSpacing />
+        </ArticleHeader>
+        <FloatingTableOfContents>{children}</FloatingTableOfContents>
 
         <LeadGenerationForm {...leadSuccessLink} />
       </Section>
