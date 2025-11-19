@@ -5,7 +5,7 @@ import { Colors } from "../DesignSystem";
 
 const HEADING_SELECTOR = "h2";
 const FLOATING_GUARD_SELECTOR = "[data-floating-toc-guard]";
-const TOC_WIDTH = 248;
+const TOC_WIDTH = 160;
 const TOC_HORIZONTAL_GAP = 32;
 const VIEWPORT_EDGE_GUTTER = 16;
 const TOC_TOP_OFFSET = 112;
@@ -23,12 +23,14 @@ const ArticleSlot = styled.div`
 const FloatingNav = styled.nav`
   position: fixed;
   top: ${TOC_TOP_OFFSET}px;
+  right: ${VIEWPORT_EDGE_GUTTER}px;
   width: ${TOC_WIDTH}px;
   padding: 16px 20px 20px;
   border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(8, 8, 8, 0.08);
-  box-shadow: 0 24px 60px rgba(8, 8, 8, 0.08);
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(8, 8, 8, 0.04);
+  box-shadow: 0 4px 4px rgba(8, 8, 8, 0.04);
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -40,15 +42,6 @@ const FloatingNav = styled.nav`
     props["data-hidden"] ? "translate3d(0, 8px, 0)" : "translate3d(0, 0, 0)"};
 `;
 
-const FloatingNavTitle = styled.p`
-  margin: 0 0 12px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  color: ${Colors.primaryText.mediumEmphasis};
-`;
-
 const FloatingNavList = styled.ul`
   list-style: none;
   margin: 0;
@@ -57,7 +50,6 @@ const FloatingNavList = styled.ul`
   max-height: calc(100vh - ${TOC_TOP_OFFSET + 98}px);
   display: flex;
   flex-direction: column;
-  gap: 4px;
 `;
 
 const FloatingNavItem = styled.li`
@@ -71,8 +63,8 @@ const TocButton = styled.button`
   padding: 6px 0;
   width: 100%;
   text-align: left;
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1;
   font-weight: ${(props) => (props.$active ? 600 : 500)};
   color: ${(props) =>
     props.$active
@@ -103,8 +95,10 @@ const FloatingTableOfContents = ({ children }) => {
   const tocRef = useRef(null);
   const [headings, setHeadings] = useState([]);
   const [activeHeadingId, setActiveHeadingId] = useState(null);
-  const [layout, setLayout] = useState({ canShow: false, left: 0 });
+  const [layout, setLayout] = useState({ canShow: false });
   const [isOverlapping, setIsOverlapping] = useState(false);
+  const [isArticleInViewport, setIsArticleInViewport] = useState(false);
+  const [isHeaderOutOfViewport, setIsHeaderOutOfViewport] = useState(false);
 
   const collectHeadings = useCallback(() => {
     const container = articleRef.current;
@@ -160,7 +154,7 @@ const FloatingTableOfContents = ({ children }) => {
 
     if (!container) {
       setLayout((current) =>
-        current.canShow ? { canShow: false, left: 0 } : current
+        current.canShow ? { canShow: false } : current
       );
       return;
     }
@@ -168,11 +162,11 @@ const FloatingTableOfContents = ({ children }) => {
     const baseSection =
       container.querySelector(
         '[data-article-section][data-article-width="default"]'
-      ) || container.querySelector('[data-article-section]');
+      ) || container.querySelector("[data-article-section]");
 
     if (!baseSection) {
       setLayout((current) =>
-        current.canShow ? { canShow: false, left: 0 } : current
+        current.canShow ? { canShow: false } : current
       );
       return;
     }
@@ -183,21 +177,9 @@ const FloatingTableOfContents = ({ children }) => {
     const spaceRight = viewportWidth - rect.right;
     const canShow =
       spaceRight >= TOC_WIDTH + TOC_HORIZONTAL_GAP + VIEWPORT_EDGE_GUTTER;
-    const desiredLeft = rect.right + TOC_HORIZONTAL_GAP;
-    const minLeft = VIEWPORT_EDGE_GUTTER;
-    const maxLeft = viewportWidth - TOC_WIDTH - VIEWPORT_EDGE_GUTTER;
-    const computedLeft = Math.min(
-      Math.max(desiredLeft, minLeft),
-      maxLeft
+    setLayout((current) =>
+      current.canShow === canShow ? current : { canShow }
     );
-
-    setLayout((current) => {
-      if (current.canShow === canShow && current.left === computedLeft) {
-        return current;
-      }
-
-      return { canShow, left: computedLeft };
-    });
   }, []);
 
   const checkOverlap = useCallback(() => {
@@ -227,7 +209,8 @@ const FloatingTableOfContents = ({ children }) => {
 
     const overlaps = guards.some((element) => {
       const rect = element.getBoundingClientRect();
-      const verticalOverlap = rect.top < tocRect.bottom && rect.bottom > tocRect.top;
+      const verticalOverlap =
+        rect.top < tocRect.bottom && rect.bottom > tocRect.top;
       const horizontalOverlap =
         rect.left < tocRect.right && rect.right > tocRect.left;
 
@@ -241,6 +224,80 @@ const FloatingTableOfContents = ({ children }) => {
     collectHeadings();
     updateLayout();
   }, [collectHeadings, updateLayout]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const element = articleRef.current;
+
+    if (!element) {
+      return undefined;
+    }
+
+    if (typeof IntersectionObserver === "undefined") {
+      setIsArticleInViewport(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsArticleInViewport(Boolean(entry?.isIntersecting));
+      },
+      {
+        threshold: [0],
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const element = articleRef.current;
+
+    if (!element) {
+      return undefined;
+    }
+
+    const container =
+      typeof element.closest === "function"
+        ? element.closest("[data-article-container]")
+        : null;
+
+    const header =
+      (container && container.querySelector("[data-article-header]")) ||
+      document.querySelector("[data-article-header]");
+
+    if (!header) {
+      setIsHeaderOutOfViewport(true);
+      return undefined;
+    }
+
+    if (typeof IntersectionObserver === "undefined") {
+      setIsHeaderOutOfViewport(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeaderOutOfViewport(!entry?.isIntersecting);
+      },
+      {
+        threshold: [0],
+      }
+    );
+
+    observer.observe(header);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const container = articleRef.current;
@@ -379,7 +436,13 @@ const FloatingTableOfContents = ({ children }) => {
     }
   }, []);
 
-  const shouldRenderToc = layout.canShow && headings.length >= MIN_HEADINGS_TO_RENDER;
+  const shouldRenderToc =
+    layout.canShow && headings.length >= MIN_HEADINGS_TO_RENDER;
+
+  const shouldShowBasedOnScroll =
+    isHeaderOutOfViewport && isArticleInViewport;
+
+  const navHidden = isOverlapping || !shouldShowBasedOnScroll;
 
   const tocIndentation = useCallback((level) => {
     if (typeof level !== "number") {
@@ -395,12 +458,10 @@ const FloatingTableOfContents = ({ children }) => {
       {shouldRenderToc ? (
         <FloatingNav
           ref={tocRef}
-          style={{ left: `${layout.left}px` }}
-          data-hidden={isOverlapping}
-          aria-hidden={isOverlapping}
+          data-hidden={navHidden}
+          aria-hidden={navHidden}
           aria-label="Table of contents"
         >
-          <FloatingNavTitle>On this page</FloatingNavTitle>
           <FloatingNavList>
             {headings.map((heading) => (
               <FloatingNavItem key={heading.id}>
@@ -409,7 +470,9 @@ const FloatingTableOfContents = ({ children }) => {
                   onClick={(event) => handleHeadingClick(event, heading.id)}
                   $indent={tocIndentation(heading.level)}
                   $active={heading.id === activeHeadingId}
-                  aria-current={heading.id === activeHeadingId ? "true" : undefined}
+                  aria-current={
+                    heading.id === activeHeadingId ? "true" : undefined
+                  }
                 >
                   {heading.text}
                 </TocButton>
