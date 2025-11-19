@@ -7,13 +7,14 @@ const CitationsWrapper = styled.section`
   width: calc(100% + 48px);
   box-sizing: border-box;
   background: rgba(8, 8, 8, 0.04);
-  border-radius: 24px;
+
   padding: 32px 24px;
   margin: 48px -24px;
   display: flex;
   flex-direction: column;
 
   ${Devices.tabletS} {
+    border-radius: 24px;
     width: calc(100% + 96px);
     margin: 48px -48px;
     padding: 48px;

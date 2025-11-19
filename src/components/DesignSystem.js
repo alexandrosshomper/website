@@ -370,13 +370,15 @@ export const ArticleSectionContent = styled.div`
 
 export const ArticleSection = styled.section`
   width: ${(props) =>
-    getArticleSectionVariant(props) === "default" ? "70%" : "100%"};
+    getArticleSectionVariant(props) === "default" ? "" : "70%"};
   margin-left: ${(props) =>
     getArticleSectionVariant(props) === "full" ? "0" : "auto"};
   margin-right: ${(props) =>
     getArticleSectionVariant(props) === "full" ? "0" : "auto"};
   margin-top: 40px;
   margin-bottom: 140px;
+  padding-left: 24px;
+  padding-right: 24px;
 
   ${Devices.tabletS} {
     width: ${(props) =>
@@ -436,8 +438,6 @@ export const ArticleSubtitle = styled.span`
   text-align: center;
 
   color: ${Colors.primaryText.mediumEmphasis};
-
-  width: 100%;
 
   ${Devices.tabletS} {
     width: 520px;
