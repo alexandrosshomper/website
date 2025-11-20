@@ -220,6 +220,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         <CaseVideo
           img="/img/portfolio/knauf-material-calculator/KMC.png"
           url="https://vimeo.com/1138645247"
+          size="L"
         />
         <p>
           <b>Scope decisions</b> Desktop-first; all-in-one app; design system
