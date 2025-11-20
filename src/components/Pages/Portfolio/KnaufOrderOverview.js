@@ -12,6 +12,7 @@ import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
+import CaseVideo from "../../Content/Case/CaseVideo";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -204,6 +205,30 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
+
+        <CaseVideo
+          img="/img/portfolio/knauf-material-calculator/KOO.png"
+          url="https://vimeo.com/1138854460?share=copy&fl=sv&fe=ci"
+          size="L"
+        />
+        <p>
+          <b>Scope decisions</b> Desktop-first; all-in-one app; design system
+          prioritized to accelerate delivery across 4 apps.
+          <ul>
+            <li>
+              <b>Cross Knauf Brands Order Overview</b> See the status of any
+              order from any Knauf brand or sub-brand.
+            </li>
+            <li>
+              <b>Calendar View</b> Provide order & delivery data in an easy to
+              grasp context that helps customers organize their day.
+            </li>
+            <li>
+              <b>Notification Settings</b> Customize on event level what to get
+              notifications on, and on which channel.
+            </li>
+          </ul>
+        </p>
         <ArticleSectionContent>
           <Drawer items={galleryItemsDesign} />
           <br />
@@ -214,7 +239,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
-
         <CaseCopy
           copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
 We built a guided import flow that parses items and matches them to Knauf’s product systems."
@@ -270,7 +294,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSubline subline="Key Feature 2: Calendar View" />
-
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
           size="L"
@@ -291,7 +314,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-planning.png"
           direction="RTL"
         />
-
         <CaseSublineTwo subline="Impact" />
         <p>Dealers reported fewer surprises and smoother operations.</p>
         <ImpactBoxGrid
@@ -308,7 +330,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <CaseSubline subline="Key Feature 3: Notification Settings" />
-
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
           size="L"
@@ -329,7 +350,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
           direction="RTL"
         />
-
         <CaseSublineTwo subline="Impact" />
         <p>
           Engagement and trust increased — users stopped “checking constantly.”
@@ -354,7 +374,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
           size="L"
         />
-
         <CaseCopy copy="Let dealers share live delivery info with applicators." />
         <br />
         <br />
