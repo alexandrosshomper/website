@@ -9,7 +9,7 @@ const VideoWrapper = styled.div`
   margin-bottom: 20px;
   position: relative;
   width: 100%;
-  max-width: 272px;
+  max-width: 100%;
   aspect-ratio: ${(props) => props.$aspectRatio};
   direction: ltr;
   text-align: left;
@@ -18,7 +18,7 @@ const VideoWrapper = styled.div`
   -webkit-font-smoothing: antialiased;
 
   ${Devices.tabletS} {
-    max-width: 564px;
+    max-width: 100%;
   }
   ${Devices.tabletM} {
     max-width: 708px;
