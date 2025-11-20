@@ -9,6 +9,7 @@ const TOC_WIDTH = 160;
 const TOC_HORIZONTAL_GAP = 32;
 const VIEWPORT_EDGE_GUTTER = 16;
 const TOC_TOP_OFFSET = 112;
+const TOC_SCROLL_OFFSET = 120;
 const MIN_HEADINGS_TO_RENDER = 2;
 
 const Wrapper = styled.div`
@@ -453,7 +454,15 @@ const FloatingTableOfContents = ({ children }) => {
     const target = document.getElementById(headingId);
 
     if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top =
+        window.pageYOffset +
+        target.getBoundingClientRect().top -
+        TOC_SCROLL_OFFSET;
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: "smooth",
+      });
       setActiveHeadingId(headingId);
     }
   }, []);
