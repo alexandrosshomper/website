@@ -26,6 +26,19 @@ const VideoWrapper = styled.div`
   ${Devices.laptopS} {
     max-width: 740px;
   }
+
+  ${(props) =>
+    props.$size === "L" &&
+    `
+      ${Devices.tabletM} {
+        max-width: 70vw;
+        width: 70vw;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        margin-right: 0;
+      }
+    `}
 `;
 
 const PlayPauseButton = styled.button`
@@ -99,7 +112,7 @@ const ReactPlayerStyle = {
 
 const DEFAULT_ASPECT_RATIO = 16 / 9;
 
-const CaseVideo = ({ url, img }) => {
+const CaseVideo = ({ url, img, size = "M" }) => {
   const [isPlaying, setIsPlaying] = React.useState(true);
   const [isHovered, setIsHovered] = React.useState(false);
   const [videoAspectRatio, setVideoAspectRatio] =
@@ -168,6 +181,7 @@ const CaseVideo = ({ url, img }) => {
   return (
     <VideoWrapper
       $aspectRatio={videoAspectRatio}
+      $size={size}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -183,6 +197,7 @@ const CaseVideo = ({ url, img }) => {
         height="100%"
         style={ReactPlayerStyle}
         onReady={handleReady}
+        borderRadius="8px"
       />
       <PlayPauseButton
         type="button"
