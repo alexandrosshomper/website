@@ -117,7 +117,9 @@ const CaseVideo = ({ url, img, size = "M" }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [videoAspectRatio, setVideoAspectRatio] =
     React.useState(DEFAULT_ASPECT_RATIO);
+  const [isInViewport, setIsInViewport] = React.useState(false);
   const playerRef = React.useRef(null);
+  const containerRef = React.useRef(null);
 
   const applyAspectRatio = React.useCallback((width, height) => {
     if (!width || !height) {
@@ -166,6 +168,38 @@ const CaseVideo = ({ url, img, size = "M" }) => {
     setVideoAspectRatio(DEFAULT_ASPECT_RATIO);
   }, [url]);
 
+  React.useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setIsInViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === containerRef.current) {
+            setIsInViewport(entry.isIntersecting);
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    const current = containerRef.current;
+    if (current) {
+      observer.observe(current);
+    }
+
+    return () => {
+      if (current) {
+        observer.unobserve(current);
+      }
+      observer.disconnect();
+    };
+  }, []);
+
   const showButton = !isPlaying || isHovered;
 
   const handleTogglePlayback = () => {
@@ -180,6 +214,7 @@ const CaseVideo = ({ url, img, size = "M" }) => {
 
   return (
     <VideoWrapper
+      ref={containerRef}
       $aspectRatio={videoAspectRatio}
       $size={size}
       onMouseEnter={handleMouseEnter}
@@ -192,7 +227,7 @@ const CaseVideo = ({ url, img, size = "M" }) => {
         controls={false}
         muted
         playsinline
-        playing={isPlaying}
+        playing={isPlaying && isInViewport}
         width="100%"
         height="100%"
         style={ReactPlayerStyle}
