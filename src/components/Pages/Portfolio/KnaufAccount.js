@@ -260,16 +260,15 @@ and support workload will drop significantly."
           prioritized to accelerate delivery across 4 apps.
           <ul>
             <li>
-              <b>Cross Knauf Brands Order Overview</b> See the status of any
-              order from any Knauf brand or sub-brand.
+              <b>SSO</b> One account for all products.
             </li>
             <li>
-              <b>Calendar View</b> Provide order & delivery data in an easy to
-              grasp context that helps customers organize their day.
+              <b>Team management</b> Give customers a team workspace with role &
+              permission settings for each app.
             </li>
             <li>
-              <b>Notification Settings</b> Customize on event level what to get
-              notifications on, and on which channel.
+              <b>Personalization</b> Provide customers personalized experiences
+              and data.
             </li>
           </ul>
         </p>
@@ -295,10 +294,7 @@ and support workload will drop significantly."
         />
         <CaseHighlight
           headline="Unified customer and company profiles"
-          copy="Every customer has very different needs in monitoring their orders &
-          deliveries. A one-size-fits-all solution was not going to be useful to
-          any customer. So I gave our customers the ability to choose what they
-          want to see, and in which order."
+          copy="Centralize all data, access, and service offerings on company and user level."
           imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
           direction="RTL"
         />
