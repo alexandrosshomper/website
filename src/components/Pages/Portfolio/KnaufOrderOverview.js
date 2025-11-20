@@ -25,25 +25,55 @@ const hero = () => (
 const galleryItems = [
   {
     id: 1,
-    imgURL: "/img/portfolio/knauf-order-overview/in-market-validation.png",
+    imgURL: "/img/portfolio/knauf-order-overview/detail-deepdive-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-order-overview/in-market-validation.png",
-    headline: "In Market Validation",
-    copy: "After extensive interviews  and analysis, I discovered order transparency was the biggest pain point for dealers.",
+      "/img/portfolio/knauf-order-overview/detail-deepdive-mobile.png",
+    headline: "Field Research & Surveys",
+    copy: "This survey has been conducted with 53 customers in order to get a basic understanding of this particular target segment and quantitatively validate initial hypotheses around the workflow.",
   },
   {
     id: 2,
-    imgURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
-    imgMobileURL: "/img/portfolio/knauf-order-overview/mental-models.jpeg",
-    headline: "Mental Models",
-    copy: "I mapped our customers Mental Models onto a more detailed version of the sitemap - not yet wireframes, rather a high level concepts of the features out users might need.",
+    imgURL: "/img/portfolio/knauf-order-overview/detail-inmarket-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-inmarket-desktop.png",
+    headline: "In Market Validation",
+    copy: "After extensive interviews and analysis, I was able to validate order transparency was the biggest pain point for dealers.",
+  },
+];
+const galleryItemsDesign = [
+  {
+    id: 1,
+    imgURL: "/img/portfolio/knauf-order-overview/detail-sitemap-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-sitemap-mobile.png",
+    headline: "Sitemap",
+    copy: "I designed a sitemap that not only organizes the screens, but the actual workflow of the users.",
+  },
+
+  {
+    id: 2,
+    imgURL: "/img/portfolio/knauf-order-overview/detail-sketch-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-sketch-mobile.png",
+    headline: "Quick Sketches",
+    copy: "With quick sketches I made, I was able to align with stakeholders and customers on the best concept to continue.",
   },
   {
     id: 3,
-    imgURL: "/img/portfolio/knauf-order-overview/hypotheses.jpeg",
-    imgMobileURL: "/img/portfolio/knauf-order-overview/hypotheses.jpeg",
-    headline: "Hypotheses Validation",
-    copy: "Each feature of our concept was then mapped into a table, connected to the corresponding component on a preliminary wireframe. I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-mental-model-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-mental-model-mobile.png",
+    headline: "Mental Model",
+    copy: "I mapped the mental models of our customers along the user journey, and mapped them to our sitemap & wireframes to ensure my concept meet their expectations and needs.",
+  },
+  {
+    id: 4,
+    imgURL: "/img/portfolio/knauf-order-overview/detail-hypotheses-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-hypotheses-mobile.png",
+    headline: "Feature Level Hypotheses",
+    copy: "For each feature I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
   },
 ];
 
@@ -174,6 +204,11 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           headline="Designing for Activation"
           subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
         />
+        <ArticleSectionContent>
+          <Drawer items={galleryItemsDesign} />
+          <br />
+          <br />
+        </ArticleSectionContent>
         <CaseSubline subline="Key Feature 1: Unified Order Table" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
