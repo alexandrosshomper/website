@@ -13,6 +13,7 @@ import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
+import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 
 const metaTitle = "Knauf Account | Alexandros Shomper";
 
@@ -150,11 +151,16 @@ const renderContent = () => (
         />
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="The ecosystem couldn’t scale because identity wasn’t unified." />
+
         <p>
           Users had to remember multiple passwords, re-enter the same data for
           every country or app, and had no central place to manage teams, roles,
           or account information. Business suffered:
         </p>
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-account/key-chain.png"
+          size="S"
+        />
         <ul>
           <li>Fragmented CRM made global sales operations nearly impossible</li>
           <li>No single view of customers or companies</li>
@@ -173,6 +179,10 @@ const renderContent = () => (
           <li>Enable personalized pricing, content, and experience</li>
           <li>Enable personalized pricing, content, and experience</li>
         </ul>
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-account/master-key.png"
+          size="S"
+        />
         <p>
           A platform designed not for one product but for every product Knauf
           will ever build.
