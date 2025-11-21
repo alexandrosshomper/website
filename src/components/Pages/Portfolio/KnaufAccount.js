@@ -142,7 +142,7 @@ const renderContent = () => (
         <CaseSectionHead
           overline="Challenge"
           headline="A fragmented identity landscape blocking activation and scalability."
-          subline="For decades, Knauf operated as a federation of brands across countries."
+          subline="For decades, Knauf operated as a federation of brands in and across countries. Fragmented solutions, fragmented data, fragmented accounts."
         />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-problem.png"
@@ -248,7 +248,7 @@ and support workload will drop significantly."
         <CaseSectionHead
           overline="Solution"
           headline="Designing the identity platform powering the Knauf ecosystem"
-          subline="We approached the Knauf Account as a platform, not a feature — with foundations that support decades of future products."
+          subline="We approached the Knauf Account as a platform, not a feature, with foundations that support decades of future products."
         />
         <CaseVideo
           img="/img/portfolio/knauf-material-calculator/KOO.png"
@@ -256,8 +256,8 @@ and support workload will drop significantly."
           size="L"
         />
         <p>
-          <b>Scope decisions</b> Desktop-first; all-in-one app; design system
-          prioritized to accelerate delivery across 4 apps.
+          <b>Scope decisions</b> Desktop-first; compatibility with new Knauf
+          Apps vs legacy apps has priority; Localization is key
           <ul>
             <li>
               <b>SSO</b> One account for all products.
@@ -301,20 +301,22 @@ and support workload will drop significantly."
         <br />
         <CaseSublineTwo subline="Impact" />
         <p>
-          Dealers could see everything instantly, cutting down cross-team calls.
+          Customers now had one Knauf Account (instead dozens) for everything
+          Knauf.
         </p>
         <ImpactBoxGrid
           items={[
-            { impact: "2h", subline: "Activation ↑ across all connected apps" },
             {
-              impact: "20%",
-              subline: "Support requests ↓ significantly",
+              impact: "50%",
+              subline: "improved account activation across all connected apps",
             },
             {
-              impact: "3x",
-              subline: "less back to back calls",
+              impact: "30%",
+              subline: "reduced support requests",
+            },
+            {
               quote:
-                "You can't imagine how much work this saves me, and how much easier my client work now is.",
+                "We used to manage ten different Knauf accounts across countries. Now it’s one login, and suddenly everything works the way it should.",
               size: "L",
             },
           ]}
@@ -328,25 +330,25 @@ and support workload will drop significantly."
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
           size="L"
         />
-        <CaseCopy copy="A foundational capability for enterprise clients." />
+        <CaseCopy copy="A foundational capability for enterprise clients. A shared single source of truth, and the foundation for team collabiration on our platform." />
         <br />
         <br />
         <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Create and manage teams"
-          copy="Although tables are a great structured, and searchable view on orders, essentially orders and deliveries are about time. This calendar view now a birds-eye view on the day or whole week."
+          copy="Create teams based on function, project, and location."
           imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Invite users or approve join requests"
-          copy="Displaying deliveries like calendar events, helps customers manage their own fleet, their warehouses, and their logistics more precisely. Without having to click through several orders, or even worse - calling the customer services."
+          copy="Customers can invite team mates during onboarding or when creating projects, and manage join requests from their team mates."
           imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-planning.png"
           direction="RTL"
         />
         <CaseHighlight
           headline="Define roles & permissions per app"
-          copy="Although tables are a great structured, and searchable view on orders, essentially orders and deliveries are about time. This calendar view now a birds-eye view on the day or whole week."
+          copy="Projects can have very sensistive data. Our customers can define clear roles and persmissions on what the team mates can do, and what they can see. On project level, location level, and app level."
           imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
           direction="LTR"
         />
@@ -358,10 +360,15 @@ and support workload will drop significantly."
         </p>
         <ImpactBoxGrid
           items={[
-            { impact: "25%", subline: "Team onboarding time ↓ drastically" },
+            { impact: "45%", subline: "reduced team onboarding time" },
             {
               impact: "2X",
-              subline: "Higher cross-app activation",
+              subline: "higher cross-app activation",
+            },
+            {
+              quote:
+                "Onboarding new colleagues went from days of emails to five minutes. It feels like we finally have a modern enterprise system.",
+              size: "L",
             },
           ]}
         />
@@ -374,31 +381,31 @@ and support workload will drop significantly."
           imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
           size="L"
         />
-        <CaseCopy copy="With a unified identity, personalization becomes possible." />
+        <CaseCopy copy="With a unified identity, personalization becomes possible. Prices and data are not just different from country to country. But also from customer to customer. Before, we were not able to provide prices because of this, now we can show everyone their exact, personalized prices." />
         <br />
         <br />
         <CaseSublineTwo subline="Highlights" />
         <CaseHighlight
           headline="Customer type → tailored experience"
-          copy="In numerous customer interviews we've learned that each and every customer has very different preferences on what they want to receive notifications on. I've therefore designed a notification center that gives the user maximum customization."
+          copy="The experience for every user is tailored to their customer type (specifier, applicator, dealer), so we can provide each user value asap."
           imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Country → localized content"
-          copy="Not only the events, but also the channel differed. Not only from customer to customer. But a single customer might need one important event notification to be sent immediately via text, while the rest can be delivered by email."
+          copy="Not just marketing content. Products, construction requirements, regulations are very different in each country. This depends on the customers location, but also on the projects location."
           imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
           direction="RTL"
         />
         <CaseHighlight
           headline="Company → personalized pricing"
-          copy="In numerous customer interviews we've learned that each and every customer has very different preferences on what they want to receive notifications on. I've therefore designed a notification center that gives the user maximum customization."
+          copy="Every customer negotiates different prices for different products or product categories; sometimes for each project. This can change every year. The Knauf account now enables us to show every customer the exact price for their project."
           imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Role → relevant tools and onboarding"
-          copy="Not only the events, but also the channel differed. Not only from customer to customer. But a single customer might need one important event notification to be sent immediately via text, while the rest can be delivered by email."
+          copy="Not only based on the customer type, but also the user role we offer each user a set of suggested tools & apps most useful to them."
           imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
           direction="RTL"
         />
@@ -410,14 +417,19 @@ and support workload will drop significantly."
         <ImpactBoxGrid
           items={[
             {
-              impact: "2X",
+              impact: "3X",
               subline: "Better CRM data → better personalization",
               size: "M",
             },
             {
-              impact: "2X",
-              subline: "Higher trust and transparency",
+              impact: "20%",
+              subline: "less service calls",
               size: "M",
+            },
+            {
+              quote:
+                "For the first time, prices, content, and data are consistent across countries and apps. This makes everything so much easier and faster!",
+              size: "L",
             },
           ]}
         />
@@ -432,7 +444,7 @@ and support workload will drop significantly."
         <CaseSectionHead
           overline="Driving Growth 1→n"
           headline="Once the platform went live, we focused on ecosystem-wide activation and scalability."
-          subline="After PMF validation, we focused on activation and habit formation"
+          subline="The onboarding experience of the Knauf Account has the biggest impact on overall user activation and growth."
         />
         <p>Growth Tactics:</p>
         <ul>
@@ -441,7 +453,7 @@ and support workload will drop significantly."
           <li>IIntroduced team-based activation loops</li>
           <li>Ran “Account Health Clinics” with CRM, Product, and Design</li>
         </ul>
-        <CaseSublineTwo subline="Experiment 1: Activation increased in all apps using Knauf Account" />
+        <CaseSublineTwo subline="Experiment 1: Signup Flow" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
           size="L"
@@ -455,17 +467,21 @@ and support workload will drop significantly."
         />
         <p>Show missed updates since last visit.</p>
         <CaseSubline subline="Growth Impact" />
-        <p>A small nudge turned notifications from a setting into a habit.</p>
+        <p>
+          The Knauf account is the gateway to our digital ecosystem, and impacts
+          growth across all apps.
+        </p>
         <ImpactBoxGrid
           items={[
-            { impact: "18%", subline: "better activation rate" },
+            { impact: "30%", subline: "better activation rate" },
             {
               impact: "30%",
               subline: "more user engagement",
             },
             {
-              impact: "25%",
-              subline: "better user retention",
+              quote:
+                "Knauf Account didn’t just improve onboarding, it unlocked cross-app growth we couldn’t achieve before.",
+              size: "L",
             },
           ]}
         />
@@ -489,6 +505,18 @@ and support workload will drop significantly."
           <li>Advocated for platform thinking across Knauf Digital</li>
         </ul>
       </ArticleSectionContent>
+      <ArticleSection>
+        <ImpactBoxGrid
+          items={[
+            {
+              quote:
+                "This was one of the most complex migrations we’ve done at Knauf. Alexandros aligned markets, brands, CRM, engineering, and delivered a platform that scales.",
+              size: "L",
+              subline: "Director, Knauf Digital",
+            },
+          ]}
+        />
+      </ArticleSection>
     </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
