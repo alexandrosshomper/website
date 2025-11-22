@@ -166,7 +166,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Discovery 0→1"
+          overline="Discovery"
           headline="Discover the essential workflow that defines value."
           subline="Before designing, we needed to understand what “value” actually meant for our users."
         />
@@ -208,7 +208,6 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         />
       </ArticleSectionContent>
     </ArticleSection>
-
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
@@ -408,7 +407,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Driving Growth 1→n"
+          overline="Driving Growth"
           headline="Discovering the Growth Bottlenecks"
           subline="Once core value was validated, I led the transition from PMF to Growth."
         />
@@ -512,31 +511,6 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Leadership Impact"
-          headline="Building a Design Team & Culture"
-          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
-        />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-ux-maturity.jpeg"
-          size="L"
-        />
-        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
-        <ul>
-          <li>Built and led a 4-person product design team.</li>
-          <li>
-            Scaled design system across 4 apps, cutting delivery time by 40%.
-          </li>
-          <li>
-            Mentored two designers in experimentation and metric-driven UX.
-          </li>
-          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
-          <li>Introduced UX Maturity Assessments company-wide.</li>
-        </ul>
-      </ArticleSectionContent>
-    </ArticleSection>
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseSectionHead
           overline="Results"
           headline="Success in numbers"
           subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
@@ -578,6 +552,31 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
             </tr>
           </tbody>
         </table>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-ux-maturity.jpeg"
+          size="L"
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Built and led a 4-person product design team.</li>
+          <li>
+            Scaled design system across 4 apps, cutting delivery time by 40%.
+          </li>
+          <li>
+            Mentored two designers in experimentation and metric-driven UX.
+          </li>
+          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
+          <li>Introduced UX Maturity Assessments company-wide.</li>
+        </ul>
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>

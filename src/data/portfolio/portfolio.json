@@ -27,7 +27,7 @@
     "cover": "/img/portfolio/knauf-account/cover.png",
     "thumbnail": "/img/portfolio/knauf-account/thumbnail.png",
     "type": "Product Market Fit",
-    "coming": true
+    "coming": false
   },
   {
     "id": 4,
