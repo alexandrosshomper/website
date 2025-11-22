@@ -161,7 +161,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Discovery 0→1"
+          overline="Discovery"
           headline="Discover the essential workflow that defines value."
           subline="Through interviews, diaries, and job walkthroughs, we found that transparency and autonomy were key drivers."
         />
@@ -194,7 +194,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
       </ArticleSectionContent>
       <ArticleSectionContent>
-        <Drawer items={galleryItems} />
+        <Drawer items={galleryItems} label="Discovery Details" />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -230,7 +230,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </ul>
         </p>
         <ArticleSectionContent>
-          <Drawer items={galleryItemsDesign} />
+          <Drawer items={galleryItemsDesign} label="Design Details" />
           <br />
           <br />
         </ArticleSectionContent>
@@ -399,7 +399,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Driving Growth 1→n"
+          overline="Driving Growth"
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
@@ -432,22 +432,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
             },
           ]}
         />
-      </ArticleSectionContent>
-    </ArticleSection>
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseSectionHead
-          overline="Leadership Impact"
-          headline="Building a Design Team & Culture"
-          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
-        />
-        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
-        <ul>
-          <li>Hosted Activation Clinics to align teams on user metrics</li>
-          <li>Mentored 2 designers on experiment design</li>
-          <li>Led Growth Guild (Design, PM, Eng, Data).</li>
-          <li>Built UX Maturity Model & Design System foundations</li>
-        </ul>
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
@@ -500,7 +484,22 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </table>
       </ArticleSectionContent>
     </ArticleSection>
-
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Hosted Activation Clinics to align teams on user metrics</li>
+          <li>Mentored 2 designers on experiment design</li>
+          <li>Led Growth Guild (Design, PM, Eng, Data).</li>
+          <li>Built UX Maturity Model & Design System foundations</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead

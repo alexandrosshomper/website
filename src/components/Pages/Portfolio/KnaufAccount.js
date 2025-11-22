@@ -27,55 +27,42 @@ const hero = () => (
 const galleryItems = [
   {
     id: 1,
-    imgURL: "/img/portfolio/knauf-order-overview/detail-deepdive-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-deepdive-mobile.png",
+    imgURL: "/img/portfolio/knauf-account/detail-deepdive-desktop.png",
+    imgMobileURL: "/img/portfolio/knauf-account/detail-deepdive-mobile.png",
     headline: "Field Research & Surveys",
-    copy: "This survey has been conducted with 53 customers in order to get a basic understanding of this particular target segment and quantitatively validate initial hypotheses around the workflow.",
-  },
-  {
-    id: 2,
-    imgURL: "/img/portfolio/knauf-order-overview/detail-inmarket-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-inmarket-desktop.png",
-    headline: "In Market Validation",
-    copy: "After extensive interviews and analysis, I was able to validate order transparency was the biggest pain point for dealers.",
+    copy: "When designing an account for a fragmented corporate, the first thing we needed to do is get a picture of the landscape. The global system requirements, customer requirements, and business requirements.",
   },
 ];
 const galleryItemsDesign = [
   {
     id: 1,
-    imgURL: "/img/portfolio/knauf-order-overview/detail-sitemap-desktop.png",
+    imgURL: "/img/portfolio/knauf-account/detail-golden-circle-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-sitemap-mobile.png",
-    headline: "Sitemap",
-    copy: "I designed a sitemap that not only organizes the screens, but the actual workflow of the users.",
+      "/img/portfolio/knauf-account/detail-golden-circle-mobile.png",
+    headline: "Golden Circle",
+    copy: "Before I could start building the digital ecosystem, I needed define a common understanding of our driving principle. I therefore created the infamous Golden Circle for our initiative.",
   },
 
   {
     id: 2,
-    imgURL: "/img/portfolio/knauf-order-overview/detail-sketch-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-sketch-mobile.png",
-    headline: "Quick Sketches",
-    copy: "With quick sketches I made, I was able to align with stakeholders and customers on the best concept to continue.",
+    imgURL: "/img/portfolio/knauf-account/detail-flow-desktop.png",
+    imgMobileURL: "/img/portfolio/knauf-account/detail-flow-mobile.png",
+    headline: "User Flows",
+    copy: "The next step was defining a general flow that works for all identified cases for the Knauf Account.",
   },
   {
     id: 3,
-    imgURL:
-      "/img/portfolio/knauf-order-overview/detail-mental-model-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-mental-model-mobile.png",
-    headline: "Mental Model",
-    copy: "I mapped the mental models of our customers along the user journey, and mapped them to our sitemap & wireframes to ensure my concept meet their expectations and needs.",
+    imgURL: "/img/portfolio/knauf-account/detail-wireflow-desktop.png",
+    imgMobileURL: "/img/portfolio/knauf-account/detail-wireflow-mobile.png",
+    headline: "Login & Registration Wireflows",
+    copy: "The Knauf Account is (literally) the key for the Knauf digital ecosystem, I mapped the user onboarding flow of the Knauf Account to be efficient and versatile for any identified case.",
   },
   {
     id: 4,
-    imgURL: "/img/portfolio/knauf-order-overview/detail-hypotheses-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-hypotheses-mobile.png",
-    headline: "Feature Level Hypotheses",
-    copy: "For each feature I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
+    imgURL: "/img/portfolio/knauf-account/detail-wireframes-desktop.png",
+    imgMobileURL: "/img/portfolio/knauf-account/detail-wireframes-mobile.png",
+    headline: "Account Wireframes",
+    copy: "Based on the key insights and concepts I designed the Knauf Account wireframes for cross-app compatibility to drive the ecosystem idea, and for scalability to provide not only new apps an Account but also most legacy apps.",
   },
 ];
 
@@ -146,7 +133,7 @@ const renderContent = () => (
           subline="For decades, Knauf operated as a federation of brands in and across countries. Fragmented solutions, fragmented data, fragmented accounts."
         />
         <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-problem.png"
+          imgURL="/img/portfolio/knauf-account/cover-problem.png"
           size="L"
         />
         <CaseSubline subline="The Problem" />
@@ -157,10 +144,6 @@ const renderContent = () => (
           every country or app, and had no central place to manage teams, roles,
           or account information. Business suffered:
         </p>
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-account/key-chain.png"
-          size="S"
-        />
         <ul>
           <li>Fragmented CRM made global sales operations nearly impossible</li>
           <li>No single view of customers or companies</li>
@@ -179,21 +162,22 @@ const renderContent = () => (
           <li>Enable personalized pricing, content, and experience</li>
           <li>Enable personalized pricing, content, and experience</li>
         </ul>
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-account/master-key.png"
-          size="S"
-        />
+
         <p>
           A platform designed not for one product but for every product Knauf
           will ever build.
         </p>
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-account/master-key.png"
+          size="S"
+        />
       </ArticleSectionContent>
     </ArticleSection>
 
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Discovery 0→1"
+          overline="Discovery"
           headline="Understanding identity through ecosystems, not screens"
           subline="Identity isn’t a UI problem, it's an ecosystem problem."
         />
@@ -249,7 +233,7 @@ and support workload will drop significantly."
         />
       </ArticleSectionContent>
       <ArticleSectionContent>
-        <Drawer items={galleryItems} />
+        <Drawer items={galleryItems} label="Discovery Details" />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -262,7 +246,7 @@ and support workload will drop significantly."
         />
         <CaseVideo
           img="/img/portfolio/knauf-material-calculator/KOO.png"
-          url="https://vimeo.com/1138854460?share=copy&fl=sv&fe=ci"
+          url="https://vimeo.com/1139365225?share=copy&fl=sv&fe=ci"
           size="L"
         />
         <p>
@@ -283,13 +267,13 @@ and support workload will drop significantly."
           </ul>
         </p>
         <ArticleSectionContent>
-          <Drawer items={galleryItemsDesign} />
+          <Drawer items={galleryItemsDesign} label="Design Details" />
           <br />
           <br />
         </ArticleSectionContent>
         <CaseSubline subline="Key Feature 1: One Account for All Knauf" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
+          imgURL="/img/portfolio/knauf-account/feature-apps.png"
           size="L"
         />
         <CaseCopy copy="The core of the platform: One login. One profile. One company. One identity." />
@@ -299,13 +283,13 @@ and support workload will drop significantly."
         <CaseHighlight
           headline="Single sign-on (SSO) across all Knauf apps"
           copy="Consolidation of dozens of legacy accounts. Migration path for old country-based systems. Stronger authentication + enterprise-grade security"
-          imgURL="/img/portfolio/knauf-order-overview/closeup-knauf-brands.png"
+          imgURL="/img/portfolio/knauf-account/highlight-SSO.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Unified customer and company profiles"
           copy="Centralize all data, access, and service offerings on company and user level."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-table-personalization.png"
+          imgURL="/img/portfolio/knauf-account/highlight-profiles.png"
           direction="RTL"
         />
         <br />
@@ -337,7 +321,7 @@ and support workload will drop significantly."
         <br />
         <CaseSubline subline="Key Feature 2: Team Management & Permissions" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
+          imgURL="/img/portfolio/knauf-account/feature-team.png"
           size="L"
         />
         <CaseCopy copy="A foundational capability for enterprise clients. A shared single source of truth, and the foundation for team collabiration on our platform." />
@@ -347,19 +331,19 @@ and support workload will drop significantly."
         <CaseHighlight
           headline="Create and manage teams"
           copy="Create teams based on function, project, and location."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
+          imgURL="/img/portfolio/knauf-account/highlight-add-team.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Invite users or approve join requests"
           copy="Customers can invite team mates during onboarding or when creating projects, and manage join requests from their team mates."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-planning.png"
+          imgURL="/img/portfolio/knauf-account/highlight-requests.png"
           direction="RTL"
         />
         <CaseHighlight
           headline="Define roles & permissions per app"
           copy="Projects can have very sensistive data. Our customers can define clear roles and persmissions on what the team mates can do, and what they can see. On project level, location level, and app level."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-calendar-view.png"
+          imgURL="/img/portfolio/knauf-account/highlight-permissions.png"
           direction="LTR"
         />
 
@@ -388,7 +372,7 @@ and support workload will drop significantly."
         <br />
         <CaseSubline subline="Key Feature 3: Personalized Experiences & Pricing" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-notifications.png"
+          imgURL="/img/portfolio/knauf-account/feature-prices.png"
           size="L"
         />
         <CaseCopy copy="With a unified identity, personalization becomes possible. Prices and data are not just different from country to country. But also from customer to customer. Before, we were not able to provide prices because of this, now we can show everyone their exact, personalized prices." />
@@ -398,27 +382,22 @@ and support workload will drop significantly."
         <CaseHighlight
           headline="Customer type → tailored experience"
           copy="The experience for every user is tailored to their customer type (specifier, applicator, dealer), so we can provide each user value asap."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
+          imgURL="/img/portfolio/knauf-account/highlight-personalization.png"
           direction="LTR"
         />
         <CaseHighlight
           headline="Country → localized content"
           copy="Not just marketing content. Products, construction requirements, regulations are very different in each country. This depends on the customers location, but also on the projects location."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
+          imgURL="/img/portfolio/knauf-account/highlight-content.png"
           direction="RTL"
         />
         <CaseHighlight
           headline="Company → personalized pricing"
           copy="Every customer negotiates different prices for different products or product categories; sometimes for each project. This can change every year. The Knauf account now enables us to show every customer the exact price for their project."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-options.png"
+          imgURL="/img/portfolio/knauf-account/highlight-localization.png"
           direction="LTR"
         />
-        <CaseHighlight
-          headline="Role → relevant tools and onboarding"
-          copy="Not only based on the customer type, but also the user role we offer each user a set of suggested tools & apps most useful to them."
-          imgURL="/img/portfolio/knauf-order-overview/closeup-notifications-channels.png"
-          direction="RTL"
-        />
+
         <CaseSublineTwo subline="Impact" />
         <p>
           This powered activation loops across the ecosystem — users see “their
@@ -452,7 +431,7 @@ and support workload will drop significantly."
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          overline="Driving Growth 1→n"
+          overline="Driving Growth"
           headline="Once the platform went live, we focused on ecosystem-wide activation and scalability."
           subline="The onboarding experience of the Knauf Account has the biggest impact on overall user activation and growth."
         />
@@ -463,19 +442,13 @@ and support workload will drop significantly."
           <li>IIntroduced team-based activation loops</li>
           <li>Ran “Account Health Clinics” with CRM, Product, and Design</li>
         </ul>
-        <CaseSublineTwo subline="Experiment 1: Signup Flow" />
+        <CaseSublineTwo subline="Experiment: Signup Flow" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
+          imgURL="/img/portfolio/knauf-account/feature-signup.png"
           size="L"
         />
         <p>Prompt new users to enable all updates on first login.</p>
 
-        <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
-          size="L"
-        />
-        <p>Show missed updates since last visit.</p>
         <CaseSubline subline="Growth Impact" />
         <p>
           The Knauf account is the gateway to our digital ecosystem, and impacts
@@ -497,37 +470,7 @@ and support workload will drop significantly."
         />
       </ArticleSectionContent>
     </ArticleSection>
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseSectionHead
-          overline="Leadership Impact"
-          headline="Shaping Knauf’s digital ecosystem strategy"
-          subline="This wasn’t just an account. It was the infrastructure for Knauf’s digital future."
-        />
-        <CaseSubline subline="Beyond product delivery, I drove strategic alignment across teams:" />
-        <ul>
-          <li>Led product direction for identity and access</li>
-          <li>Aligned brands, markets, and legal teams on unified standards</li>
-          <li>
-            Established shared UX and technical patterns for the ecosystem
-          </li>
-          <li>Advocated for platform thinking across Knauf Digital</li>
-          <li>Advocated for platform thinking across Knauf Digital</li>
-        </ul>
-      </ArticleSectionContent>
-      <ArticleSection>
-        <ImpactBoxGrid
-          items={[
-            {
-              quote:
-                "This was one of the most complex migrations we’ve done at Knauf. Alexandros aligned markets, brands, CRM, engineering, and delivered a platform that scales.",
-              size: "L",
-              subline: "Director, Knauf Digital",
-            },
-          ]}
-        />
-      </ArticleSection>
-    </ArticleSection>
+
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
@@ -569,7 +512,37 @@ and support workload will drop significantly."
         </table>
       </ArticleSectionContent>
     </ArticleSection>
-
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Shaping Knauf’s digital ecosystem strategy"
+          subline="This wasn’t just an account. It was the infrastructure for Knauf’s digital future."
+        />
+        <CaseSubline subline="Beyond product delivery, I drove strategic alignment across teams:" />
+        <ul>
+          <li>Led product direction for identity and access</li>
+          <li>Aligned brands, markets, and legal teams on unified standards</li>
+          <li>
+            Established shared UX and technical patterns for the ecosystem
+          </li>
+          <li>Advocated for platform thinking across Knauf Digital</li>
+          <li>Advocated for platform thinking across Knauf Digital</li>
+        </ul>
+      </ArticleSectionContent>
+      <ArticleSection>
+        <ImpactBoxGrid
+          items={[
+            {
+              quote:
+                "This was one of the most complex migrations we’ve done at Knauf. Alexandros aligned markets, brands, CRM, engineering, and delivered a platform that scales.",
+              size: "L",
+              subline: "Director, Knauf Digital",
+            },
+          ]}
+        />
+      </ArticleSection>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
