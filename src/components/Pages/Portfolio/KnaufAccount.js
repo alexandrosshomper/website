@@ -14,6 +14,7 @@ import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
 import CaseImageBlank from "../../Content/Case/CaseImageBlank";
+import Article from "../../Content/Article/Article";
 
 const metaTitle = "Knauf Account | Alexandros Shomper";
 
@@ -572,6 +573,32 @@ personalization, analytics, CRM, trust, onboarding, and cross-app retention."
           guiding users into the app most relevant to their role, country, and
           company.
         </p>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead headline="Related Articles" />
+        <Article
+          headline="Generic User Onboarding kills your activation"
+          subline="Treating every new user the same is costing you growth."
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/generic-user-onboarding-kills-your-activation-a05e5ed751af"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*A2VnZ1dVEoqY_zKPbCtYjA.png"
+        />
+        <Article
+          headline="Is the Customer always right? It depends …"
+          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
+        />
+        <Article
+          headline="UX evangelism at Knauf"
+          subline="An explainer presentation meant to introduce actionable concepts around UX and what it means for our organization."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/ux-explainer-presentation-at-knauf"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/17b7e5317001c34b57ad7f37166caae848166744-1062x597.png?w=2200&q=80&fit=max&auto=format"
+        />
       </ArticleSectionContent>
     </ArticleSection>
   </>

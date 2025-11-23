@@ -281,7 +281,7 @@ const articleTypographyStyles = css`
 
   a {
     color: ${Colors.blue};
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 2px;
   }
 
