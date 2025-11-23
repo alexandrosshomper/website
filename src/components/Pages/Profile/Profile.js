@@ -363,10 +363,7 @@ const Profile = () => {
             <b>Product Design Leader & Startup Advisor</b>
           </Subline>
         </NameBlock>
-        <Portrait
-          src="/img/Identity/PortraitProSE.png"
-          alt="Portrait of Alexandros Shomper"
-        />
+
         <Subline>
           Now seeking a Product Design Manager role in a high-growth environment
           where strategic leadership and hands-on execution accelerate product

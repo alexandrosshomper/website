@@ -205,12 +205,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
       </ArticleSectionContent>
       <ArticleSectionContent>
         <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          color1={colorA}
-          color2={colorB}
-          label="Research Details"
-        />
+        <Drawer items={galleryItemsDiscover} label="Research Details" />
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
@@ -249,12 +244,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           </ul>
         </p>
 
-        <Drawer
-          items={galleryItemsDesign}
-          color1={colorA}
-          color2={colorB}
-          label="Design Details"
-        />
+        <Drawer items={galleryItemsDesign} label="Design Details" />
         <br />
         <br />
         <CaseSubline subline="Key Feature 1: Tender Capture" />
