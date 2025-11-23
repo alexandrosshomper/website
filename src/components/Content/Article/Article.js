@@ -19,15 +19,12 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
     max-width: 680px;
     cursor: pointer;
     text-decoration: none;
-    margin-left: 24px;
-    margin-right: 24px;
 
     border-bottom: 1px solid ${Colors.primaryText.lowEmphasis};
     ${Devices.tabletS} {
       width: 100%;
     }
     ${Devices.tabletM} {
-      min-width: 720px;
       margin-left: 0px;
       margin-right: 0px;
     }
