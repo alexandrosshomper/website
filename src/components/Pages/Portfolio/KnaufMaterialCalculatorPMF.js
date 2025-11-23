@@ -128,7 +128,11 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
+        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
+          size="L"
+        />
       </ArticleSectionContent>
     </ArticleSection>
 

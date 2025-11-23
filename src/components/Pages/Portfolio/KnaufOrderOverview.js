@@ -13,6 +13,7 @@ import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
+import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -111,12 +112,10 @@ const renderContent = () => (
           connect contractors, dealers, and Knauf brands across markets.
         </p>
         <CaseSublineTwo subline="Customer Type" />
-
         <p>
           <b>Dealer:</b> B2B partners who sell Knauf materials to construction
           companies and manage order logistics.
         </p>
-
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="14 (PM, Eng, Data, BA, Design)"
@@ -130,7 +129,11 @@ const renderContent = () => (
             "2h/week saved per dealer",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
+        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
+          size="L"
+        />{" "}
       </ArticleSectionContent>
     </ArticleSection>
 

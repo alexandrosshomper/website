@@ -115,7 +115,6 @@ const renderContent = () => (
           <b>Specifier:</b> Architects, planners, and general contractors who
           define material requirements.
         </p>
-
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="20 (PM, Eng, Data, CRM, Design)"
@@ -129,7 +128,11 @@ const renderContent = () => (
             "Team onboarding time ↓ drastically",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
+        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
+          size="L"
+        />{" "}
       </ArticleSectionContent>
     </ArticleSection>
 
