@@ -89,6 +89,37 @@ const galleryItemsDesign = [
   },
 ];
 
+const galleryItemsGrowth = [
+  {
+    id: 1,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-retention-data-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-retention-data-mobile.png",
+    headline: "Correlation Analysis",
+    copy: "Retention was bad. I analysed the correlation with retention by account segments, user segments, features, geography. I found a very clear correlation: The Order Specific Notification Feature: “Blue Bell”",
+  },
+
+  {
+    id: 2,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-data-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-data-mobile.png",
+    headline: "Engagement",
+    copy: "Blue Bell Feature Users make 7% of user base but  20% of traffic and spend 50% more time / session.",
+  },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-mobile.png",
+    headline: "Retention",
+    copy: "Blue Bell Feature Users have a retention rate of 53% vs 15,6% on average.",
+  },
+];
+
 const renderContent = () => (
   <>
     <ArticleSection>
@@ -207,7 +238,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
       </ArticleSectionContent>
       <ArticleSectionContent>
-        <Drawer items={galleryItems} label="Discovery Details" />
+        <Drawer items={galleryItems} label="Research Details" />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -416,7 +447,20 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
+        <p>
+          <b>Top Insights</b> Activation stalled between Aha moment and habit
+          moment Usage frequency did not match the problem frequency and
+          internal order data.
+        </p>
+        <p>
+          <b>Growth Hypothesis</b> Manufactured Habit Loop: I believe more users
+          adopting the “Order Specific Notification” will result in better
+          activation & more engagement.
+        </p>
+        <Drawer items={galleryItemsGrowth} label="Growth Details" />
 
+        <br />
+        <br />
         <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"

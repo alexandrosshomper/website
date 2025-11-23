@@ -209,7 +209,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           items={galleryItemsDiscover}
           color1={colorA}
           color2={colorB}
-          label="Discovery Details"
+          label="Research Details"
         />
       </ArticleSectionContent>
     </ArticleSection>
