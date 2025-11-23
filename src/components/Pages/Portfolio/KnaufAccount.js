@@ -32,6 +32,14 @@ const galleryItems = [
     headline: "Field Research & Surveys",
     copy: "When designing an account for a fragmented corporate, the first thing we needed to do is get a picture of the landscape. The global system requirements, customer requirements, and business requirements.",
   },
+  {
+    id: 2,
+    imgURL: "/img/portfolio/knauf-account/detail-project-journey-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-account/detail-project-journey-mobile.png",
+    headline: "Construction Project Journey",
+    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
+  },
 ];
 const galleryItemsDesign = [
   {

@@ -40,6 +40,15 @@ const galleryItems = [
     headline: "In Market Validation",
     copy: "After extensive interviews and analysis, I was able to validate order transparency was the biggest pain point for dealers.",
   },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-project-journey-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-project-journey-mobile.png",
+    headline: "Construction Project Journey",
+    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
+  },
 ];
 const galleryItemsDesign = [
   {

@@ -32,27 +32,27 @@ const galleryItemsDiscover = [
   {
     id: 1,
     imgURL:
-      "/img/portfolio/knauf-material-calculator/foundational-research.png",
+      "/img/portfolio/knauf-material-calculator/detail-field-research-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/foundational-research.png",
+      "/img/portfolio/knauf-material-calculator/detail-field-research-mobile.png",
     headline: "Foundational Research",
     copy: "I spend the whole year of 2020 to do nothing else but research. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
   },
   {
     id: 2,
     imgURL:
-      "/img/portfolio/knauf-material-calculator/construction-project-journey.jpeg",
+      "/img/portfolio/knauf-material-calculator/detail-project-journey-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/construction-project-journey.jpeg",
+      "/img/portfolio/knauf-material-calculator/detail-project-journey-mobile.png",
     headline: "Construction Project Journey",
     copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
   },
   {
     id: 3,
     imgURL:
-      "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
+      "/img/portfolio/knauf-material-calculator/detail-scalability-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
+      "/img/portfolio/knauf-material-calculator/detail-scalability-mobile.png",
     headline: "Scalability Assessment",
     copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
   },
