@@ -24,19 +24,6 @@ const Hero = styled.header`
   text-align: center;
 `;
 
-const Portrait = styled.img`
-  width: 180px;
-  height: 180px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
-
-  ${Devices.tabletS} {
-    width: 440px;
-    height: 260px;
-  }
-`;
-
 const NameBlock = styled.div`
   display: flex;
   flex-direction: column;
