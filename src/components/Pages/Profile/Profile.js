@@ -369,6 +369,7 @@ const Profile = () => {
           where strategic leadership and hands-on execution accelerate product
           maturity and user value.
         </Subline>
+        <br />
       </Hero>
 
       {sections.map((section) => (
