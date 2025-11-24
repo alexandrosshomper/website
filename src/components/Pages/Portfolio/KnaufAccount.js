@@ -25,7 +25,7 @@ const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-account/cover.png" />
 );
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL: "/img/portfolio/knauf-account/detail-deepdive-desktop.png",
@@ -205,6 +205,8 @@ const renderContent = () => (
           </i>
         </p>
         <br />
+        <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />
@@ -243,9 +245,6 @@ then activation will increase across all apps,
 CRM data will improve,
 and support workload will drop significantly."
         />
-      </ArticleSectionContent>
-      <ArticleSectionContent>
-        <Drawer items={galleryItems} label="Research Details" />
       </ArticleSectionContent>
     </ArticleSection>
 

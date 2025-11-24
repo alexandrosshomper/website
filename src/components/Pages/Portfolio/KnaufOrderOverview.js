@@ -25,7 +25,7 @@ const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-order-overview/cover.png" />
 );
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL: "/img/portfolio/knauf-order-overview/detail-deepdive-desktop.png",
@@ -222,6 +222,8 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </i>
         </p>
         <br />
+        <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />
@@ -236,9 +238,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <br />
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
-      </ArticleSectionContent>
-      <ArticleSectionContent>
-        <Drawer items={galleryItems} label="Research Details" />
       </ArticleSectionContent>
     </ArticleSection>
 
