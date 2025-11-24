@@ -245,7 +245,7 @@ and support workload will drop significantly."
         />
       </ArticleSectionContent>
       <ArticleSectionContent>
-        <Drawer items={galleryItems} label="Discovery Details" />
+        <Drawer items={galleryItems} label="Research Details" />
       </ArticleSectionContent>
     </ArticleSection>
 

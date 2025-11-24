@@ -24,19 +24,6 @@ const Hero = styled.header`
   text-align: center;
 `;
 
-const Portrait = styled.img`
-  width: 180px;
-  height: 180px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
-
-  ${Devices.tabletS} {
-    width: 440px;
-    height: 260px;
-  }
-`;
-
 const NameBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -363,15 +350,13 @@ const Profile = () => {
             <b>Product Design Leader & Startup Advisor</b>
           </Subline>
         </NameBlock>
-        <Portrait
-          src="/img/Identity/PortraitProSE.png"
-          alt="Portrait of Alexandros Shomper"
-        />
+
         <Subline>
           Now seeking a Product Design Manager role in a high-growth environment
           where strategic leadership and hands-on execution accelerate product
           maturity and user value.
         </Subline>
+        <br />
       </Hero>
 
       {sections.map((section) => (
