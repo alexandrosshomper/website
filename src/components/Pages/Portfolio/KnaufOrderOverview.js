@@ -25,7 +25,7 @@ const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-order-overview/cover.png" />
 );
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL: "/img/portfolio/knauf-order-overview/detail-deepdive-desktop.png",
@@ -223,6 +223,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         </p>
         <br />
         <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />

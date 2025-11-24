@@ -193,6 +193,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         <br />
         <Drawer items={galleryItemsDiscover} label="Research Details" />
         <br />
+        <br />
         <CaseSubline subline="Key Insights" />
         <ul>
           <li>“Trustable numbers” mattered more than UI polish.</li>

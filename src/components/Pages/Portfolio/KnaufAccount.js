@@ -25,7 +25,7 @@ const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-account/cover.png" />
 );
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL: "/img/portfolio/knauf-account/detail-deepdive-desktop.png",
@@ -206,6 +206,7 @@ const renderContent = () => (
         </p>
         <br />
         <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />
