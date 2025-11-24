@@ -190,7 +190,9 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
           size="L"
         />
-
+        <br />
+        <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
         <CaseSubline subline="Key Insights" />
         <ul>
           <li>“Trustable numbers” mattered more than UI polish.</li>
@@ -202,10 +204,6 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         </ul>
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
-      </ArticleSectionContent>
-      <ArticleSectionContent>
-        <br />
-        <Drawer items={galleryItemsDiscover} label="Research Details" />
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
