@@ -87,6 +87,23 @@ const galleryItemsDesign = [
     headline: "Feature Level Hypotheses",
     copy: "For each feature I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
   },
+  {
+    id: 5,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-design-system-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-design-system-mobile.png",
+    headline: "Design System",
+    copy: "I analyzed the wireframes from this and all other products to destill the most common design artifacts. From that I built an atomic design system that keeps consistency and provides scalability.",
+  },
+  {
+    id: 6,
+    imgURL: "/img/portfolio/knauf-order-overview/detail-template-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-template-mobile.png",
+    headline: "Templates",
+    copy: "Also, I defined base templates for common use cases across all prodcuts, and specifically for each product themselves.",
+  },
 ];
 
 const galleryItemsGrowth = [
@@ -272,6 +289,10 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
             </li>
           </ul>
         </p>
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-mobile-screens.png"
+          size="L"
+        />
         <ArticleSectionContent>
           <Drawer items={galleryItemsDesign} label="Design Details" />
           <br />
