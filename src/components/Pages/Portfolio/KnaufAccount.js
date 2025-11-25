@@ -277,6 +277,10 @@ and support workload will drop significantly."
             </li>
           </ul>
         </p>
+        <CaseImage
+          imgURL="/img/portfolio/knauf-account/cover-mobile-screens.png"
+          size="L"
+        />
         <ArticleSectionContent>
           <Drawer items={galleryItemsDesign} label="Design Details" />
           <br />

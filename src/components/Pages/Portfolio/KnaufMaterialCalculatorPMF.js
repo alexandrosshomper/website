@@ -220,6 +220,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           url="https://vimeo.com/1138645247"
           size="L"
         />
+
         <p>
           <b>Scope decisions</b> Desktop-first; all-in-one app; design system
           prioritized to accelerate delivery across 4 apps.
@@ -242,6 +243,10 @@ Project leads and applicators were spending hours moving between Excel sheets, P
             </li>
           </ul>
         </p>
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-mobile-screens.png"
+          size="L"
+        />
 
         <Drawer items={galleryItemsDesign} label="Design Details" />
         <br />

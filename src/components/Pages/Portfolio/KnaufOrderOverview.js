@@ -272,6 +272,10 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
             </li>
           </ul>
         </p>
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-mobile-screens.png"
+          size="L"
+        />
         <ArticleSectionContent>
           <Drawer items={galleryItemsDesign} label="Design Details" />
           <br />
