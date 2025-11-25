@@ -13,6 +13,8 @@ import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
+import CaseImageBlank from "../../Content/Case/CaseImageBlank";
+import Article from "../../Content/Article/Article";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
 
@@ -23,7 +25,7 @@ const hero = () => (
   <CaseCover imgURL="/img/portfolio/knauf-order-overview/cover.png" />
 );
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL: "/img/portfolio/knauf-order-overview/detail-deepdive-desktop.png",
@@ -39,6 +41,15 @@ const galleryItems = [
       "/img/portfolio/knauf-order-overview/detail-inmarket-desktop.png",
     headline: "In Market Validation",
     copy: "After extensive interviews and analysis, I was able to validate order transparency was the biggest pain point for dealers.",
+  },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-project-journey-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-project-journey-mobile.png",
+    headline: "Construction Project Journey",
+    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
   },
 ];
 const galleryItemsDesign = [
@@ -76,6 +87,54 @@ const galleryItemsDesign = [
     headline: "Feature Level Hypotheses",
     copy: "For each feature I defined the Value Proposition, Addressed Pain, User Goal for each of them. I used further interviews, simple flyers, and click-dummies to validate our hypotheses.",
   },
+  {
+    id: 5,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-design-system-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-design-system-mobile.png",
+    headline: "Design System",
+    copy: "I analyzed the wireframes from this and all other products to destill the most common design artifacts. From that I built an atomic design system that keeps consistency and provides scalability.",
+  },
+  {
+    id: 6,
+    imgURL: "/img/portfolio/knauf-order-overview/detail-template-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-template-mobile.png",
+    headline: "Templates",
+    copy: "Also, I defined base templates for common use cases across all prodcuts, and specifically for each product themselves.",
+  },
+];
+
+const galleryItemsGrowth = [
+  {
+    id: 1,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-retention-data-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-retention-data-mobile.png",
+    headline: "Correlation Analysis",
+    copy: "Retention was bad. I analysed the correlation with retention by account segments, user segments, features, geography. I found a very clear correlation: The Order Specific Notification Feature: “Blue Bell”",
+  },
+
+  {
+    id: 2,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-data-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-data-mobile.png",
+    headline: "Engagement",
+    copy: "Blue Bell Feature Users make 7% of user base but  20% of traffic and spend 50% more time / session.",
+  },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-mobile.png",
+    headline: "Retention",
+    copy: "Blue Bell Feature Users have a retention rate of 53% vs 15,6% on average.",
+  },
 ];
 
 const renderContent = () => (
@@ -102,12 +161,10 @@ const renderContent = () => (
           connect contractors, dealers, and Knauf brands across markets.
         </p>
         <CaseSublineTwo subline="Customer Type" />
-
         <p>
           <b>Dealer:</b> B2B partners who sell Knauf materials to construction
           companies and manage order logistics.
         </p>
-
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="14 (PM, Eng, Data, BA, Design)"
@@ -121,7 +178,11 @@ const renderContent = () => (
             "2h/week saved per dealer",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
+        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
+          size="L"
+        />{" "}
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -178,6 +239,8 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </i>
         </p>
         <br />
+        <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />
@@ -192,9 +255,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <br />
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
-      </ArticleSectionContent>
-      <ArticleSectionContent>
-        <Drawer items={galleryItems} label="Discovery Details" />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -229,6 +289,10 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
             </li>
           </ul>
         </p>
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-mobile-screens.png"
+          size="L"
+        />
         <ArticleSectionContent>
           <Drawer items={galleryItemsDesign} label="Design Details" />
           <br />
@@ -403,7 +467,20 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Discovering the Growth Bottlenecks"
           subline="After PMF validation, we focused on activation and habit formation"
         />
+        <p>
+          <b>Top Insights</b> Activation stalled between Aha moment and habit
+          moment Usage frequency did not match the problem frequency and
+          internal order data.
+        </p>
+        <p>
+          <b>Growth Hypothesis</b> Manufactured Habit Loop: I believe more users
+          adopting the “Order Specific Notification” will result in better
+          activation & more engagement.
+        </p>
+        <Drawer items={galleryItemsGrowth} label="Growth Details" />
 
+        <br />
+        <br />
         <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
@@ -527,6 +604,32 @@ It became Knauf’s blueprint for future B2B platforms and one of its fastest-ad
             intuitive user journeys.
           </li>
         </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead headline="Related Articles" />
+        <Article
+          headline="Is the Customer always right? It depends …"
+          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
+        />
+        <Article
+          headline="Problem/Solution Fit vs Product/Market Fit"
+          subline="Or: The difference between “good enough” and “awesome”"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/problem-solution-fit-vs-product-market-fit-bcfb7f8edfdc"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/0*JrB0_hChqOG3mFwj.png"
+        />
+        <Article
+          headline="UX maturity assessment workshop"
+          subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
+        />
       </ArticleSectionContent>
     </ArticleSection>
   </>

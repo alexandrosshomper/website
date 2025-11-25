@@ -18,6 +18,7 @@ import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
+import Article from "../../Content/Article/Article";
 
 const metaTitle = "Knauf Material Calculator | Alexandros Shomper";
 
@@ -32,27 +33,27 @@ const galleryItemsDiscover = [
   {
     id: 1,
     imgURL:
-      "/img/portfolio/knauf-material-calculator/foundational-research.png",
+      "/img/portfolio/knauf-material-calculator/detail-field-research-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/foundational-research.png",
+      "/img/portfolio/knauf-material-calculator/detail-field-research-mobile.png",
     headline: "Foundational Research",
     copy: "I spend the whole year of 2020 to do nothing else but research. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
   },
   {
     id: 2,
     imgURL:
-      "/img/portfolio/knauf-material-calculator/construction-project-journey.jpeg",
+      "/img/portfolio/knauf-material-calculator/detail-project-journey-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/construction-project-journey.jpeg",
+      "/img/portfolio/knauf-material-calculator/detail-project-journey-mobile.png",
     headline: "Construction Project Journey",
     copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
   },
   {
     id: 3,
     imgURL:
-      "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
+      "/img/portfolio/knauf-material-calculator/detail-scalability-desktop.png",
     imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/scalability-assessment.png",
+      "/img/portfolio/knauf-material-calculator/detail-scalability-mobile.png",
     headline: "Scalability Assessment",
     copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
   },
@@ -84,6 +85,24 @@ const galleryItemsDesign = [
       "/img/portfolio/knauf-material-calculator/detail-wireframes-mobile.png",
     headline: "Wireframes",
     copy: "Wireframes and flows, even if very high-level, helped us allocate the screen-real-estate for these information dense screens and complex workflows.",
+  },
+  {
+    id: 4,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-design-system-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-design-system-mobile.png",
+    headline: "Design System",
+    copy: "I analyzed the wireframes from this and all other products to destill the most common design artifacts. From that I built an atomic design system that keeps consistency and provides scalability.",
+  },
+  {
+    id: 5,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-template-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-template-mobile.png",
+    headline: "Templates",
+    copy: "Also, I defined base templates for common use cases across all prodcuts, and specifically for each product themselves.",
   },
 ];
 
@@ -128,7 +147,11 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager (Chapter Lead), I led it from concept to growth, reducing activation time-to-value by 40% and increasing repeat use by 30%." />
+        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
+          size="L"
+        />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -185,7 +208,10 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
           size="L"
         />
-
+        <br />
+        <Drawer items={galleryItemsDiscover} label="Research Details" />
+        <br />
+        <br />
         <CaseSubline subline="Key Insights" />
         <ul>
           <li>“Trustable numbers” mattered more than UI polish.</li>
@@ -197,15 +223,6 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         </ul>
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
-      </ArticleSectionContent>
-      <ArticleSectionContent>
-        <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          color1={colorA}
-          color2={colorB}
-          label="Discovery Details"
-        />
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
@@ -221,6 +238,7 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           url="https://vimeo.com/1138645247"
           size="L"
         />
+
         <p>
           <b>Scope decisions</b> Desktop-first; all-in-one app; design system
           prioritized to accelerate delivery across 4 apps.
@@ -243,13 +261,12 @@ Project leads and applicators were spending hours moving between Excel sheets, P
             </li>
           </ul>
         </p>
-
-        <Drawer
-          items={galleryItemsDesign}
-          color1={colorA}
-          color2={colorB}
-          label="Design Details"
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-mobile-screens.png"
+          size="L"
         />
+
+        <Drawer items={galleryItemsDesign} label="Design Details" />
         <br />
         <br />
         <CaseSubline subline="Key Feature 1: Tender Capture" />
@@ -604,6 +621,32 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
             intuitive user journeys.
           </li>
         </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead headline="Related Articles" />
+        <Article
+          headline="Is the Customer always right? It depends …"
+          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
+        />
+        <Article
+          headline="Problem/Solution Fit vs Product/Market Fit"
+          subline="Or: The difference between “good enough” and “awesome”"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/problem-solution-fit-vs-product-market-fit-bcfb7f8edfdc"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/0*JrB0_hChqOG3mFwj.png"
+        />
+        <Article
+          headline="UX maturity assessment workshop"
+          subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
+        />
       </ArticleSectionContent>
     </ArticleSection>
   </>
