@@ -86,6 +86,24 @@ const galleryItemsDesign = [
     headline: "Wireframes",
     copy: "Wireframes and flows, even if very high-level, helped us allocate the screen-real-estate for these information dense screens and complex workflows.",
   },
+  {
+    id: 4,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-design-system-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-design-system-mobile.png",
+    headline: "Design System",
+    copy: "I analyzed the wireframes from this and all other products to destill the most common design artifacts. From that I built an atomic design system that keeps consistency and provides scalability.",
+  },
+  {
+    id: 5,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-template-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-template-mobile.png",
+    headline: "Templates",
+    copy: "Also, I defined base templates for common use cases across all prodcuts, and specifically for each product themselves.",
+  },
 ];
 
 const colorA = Colors.blue;
