@@ -6,6 +6,7 @@ import { Colors, Devices } from "../../DesignSystem";
 import { mdiPlus, mdiClose } from "@mdi/js";
 
 import Button from "../../Button/Button";
+import { FLOATING_TOC_GUARD_EVENT } from "../../../utils/floatingToc";
 
 const Drawer = ({ items, color1, color2, label }) => {
   const [open, setOpen] = useState(false);
@@ -273,6 +274,14 @@ const Drawer = ({ items, color1, color2, label }) => {
     });
   }, [open]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.dispatchEvent(new CustomEvent(FLOATING_TOC_GUARD_EVENT));
+  }, [open]);
+
   return (
     <Drawer>
       <DrawerToggle ref={toggleRef}>
@@ -289,7 +298,9 @@ const Drawer = ({ items, color1, color2, label }) => {
           onClick={handleToggle}
         />
       </DrawerToggle>
-      <DrawerContentWrapper>
+      <DrawerContentWrapper
+        data-floating-toc-guard={open ? "true" : undefined}
+      >
         <DrawerContent>
           <DrawerGallery>
             <ScrollingContainer id="ScrollingContainer">
