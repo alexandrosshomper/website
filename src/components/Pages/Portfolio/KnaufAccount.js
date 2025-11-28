@@ -219,10 +219,12 @@ const renderContent = () => (
           </i>
         </p>
         <br />
+        <br />
         <Drawer
           items={galleryItemsDiscover}
           label="Research Process Deepdive"
         />
+        <br />
         <br />
         <br />
 
@@ -299,7 +301,14 @@ and support workload will drop significantly."
           size="L"
         />
         <ArticleSectionContent>
+          <br />
+          <br />
           <Drawer items={galleryItemsDesign} label="Design Process Deepdive" />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
         </ArticleSectionContent>
@@ -351,6 +360,9 @@ and support workload will drop significantly."
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <br />
         <CaseSubline subline="Key Feature 2: Team Management & Permissions" />
         <CaseImage
           imgURL="/img/portfolio/knauf-account/feature-team.png"
@@ -398,6 +410,9 @@ and support workload will drop significantly."
             },
           ]}
         />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -454,10 +469,6 @@ and support workload will drop significantly."
             },
           ]}
         />
-        <br />
-        <br />
-        <br />
-        <br />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -503,9 +514,6 @@ and support workload will drop significantly."
       </ArticleSectionContent>
     </ArticleSection>
 
-    <br />
-    <br />
-    <br />
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />
@@ -539,8 +547,8 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
-  eyebrowColor1: "#00b8d4",
-  eyebrowColor2: "#62ebff",
+  eyebrowColor1: "#000000",
+  eyebrowColor2: "#000000",
   title: "Knauf Account",
   subline:
     "From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.",

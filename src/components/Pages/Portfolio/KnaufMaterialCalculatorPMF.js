@@ -208,10 +208,12 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           size="L"
         />
         <br />
+        <br />
         <Drawer
           items={galleryItemsDiscover}
           label="Research Process Deepdive"
         />
+        <br />
         <br />
         <br />
         <CaseSubline subline="Key Insights" />
@@ -267,8 +269,14 @@ Project leads and applicators were spending hours moving between Excel sheets, P
           imgURL="/img/portfolio/knauf-material-calculator/cover-mobile-screens.png"
           size="L"
         />
-
+        <br />
+        <br />
         <Drawer items={galleryItemsDesign} label="Design Process Deepdive" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <CaseSubline subline="Key Feature 1: Tender Capture" />
@@ -331,6 +339,10 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <CaseSubline subline="Key Feature 2: In-Plan Measurement" />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
@@ -376,6 +388,10 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
             },
           ]}
         />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -471,9 +487,6 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
       </ArticleSectionContent>
     </ArticleSection>
 
-    <br />
-    <br />
-    <br />
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />
@@ -507,8 +520,8 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
-  eyebrowColor1: colorA,
-  eyebrowColor2: colorB,
+  eyebrowColor1: "#000000",
+  eyebrowColor2: "#000000",
   title: "Knauf Material Calculator",
   subline:
     "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",

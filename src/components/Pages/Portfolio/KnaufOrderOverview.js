@@ -238,10 +238,12 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </i>
         </p>
         <br />
+        <br />
         <Drawer
           items={galleryItemsDiscover}
           label="Research Process Deepdive"
         />
+        <br />
         <br />
         <br />
 
@@ -296,7 +298,14 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           size="L"
         />
         <ArticleSectionContent>
+          <br />
+          <br />
           <Drawer items={galleryItemsDesign} label="Design Process Deepdive" />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
         </ArticleSectionContent>
@@ -359,6 +368,9 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <br />
         <CaseSubline subline="Key Feature 2: Calendar View" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
@@ -391,6 +403,9 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
             },
           ]}
         />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -431,6 +446,9 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
             },
           ]}
         />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -514,9 +532,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
       </ArticleSectionContent>
     </ArticleSection>
 
-    <br />
-    <br />
-    <br />
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />
@@ -550,8 +565,8 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
-  eyebrowColor1: "#00b8d4",
-  eyebrowColor2: "#62ebff",
+  eyebrowColor1: "#000000",
+  eyebrowColor2: "#000000",
   title: "Knauf Order Overview",
   subline:
     "The single source of truth for deliveries from all Knauf brands and subbrands.",

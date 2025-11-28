@@ -377,7 +377,7 @@ const ArticleSectionElement = styled.section`
   margin-right: ${(props) =>
     getArticleSectionVariant(props) === "full" ? "0" : "auto"};
   margin-top: 40px;
-  margin-bottom: 140px;
+  margin-bottom: 200px;
   padding-left: 24px;
   padding-right: 24px;
 
