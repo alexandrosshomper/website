@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
-import IdentitySmall from "../Identity/IdentitySmall";
 
 const Footer = (props) => {
   const Footer = styled.footer`
@@ -132,9 +131,7 @@ const Footer = (props) => {
 
   return (
     <Footer>
-      <FooterHead>
-        <IdentitySmall />
-      </FooterHead>
+      <FooterHead></FooterHead>
       <FooterBody>
         <Sitemap>
           <SitemapItem>
