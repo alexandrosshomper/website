@@ -132,8 +132,8 @@ function App() {
           {isSticky && <NavigationSticky />}
 
           <Switch>
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/" component={Profile} />
+            <Route exact path="/about" component={Profile} />
+            <Route exact path="/" component={Portfolio} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/writing" component={Writing} />
             {/*REPORTS*/}

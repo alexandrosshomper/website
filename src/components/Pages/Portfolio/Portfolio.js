@@ -130,7 +130,6 @@ const Content = (props) => {
     }
     ${Devices.laptopM} {
       width: 1140px;
-      --gap: 12px;
     }
   `;
 
@@ -209,23 +208,13 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <SectionHead
-          headline="Portfolio"
-          subline="Selected projects from my corporate work"
+          headline="Product Designer / Manager with 15+ years experience in various products"
+          subline="Now seeking a Product Design Manager role in a high-growth environment."
         />
+      </Section>
+      <Section>
+        <SectionHead subline="Work" copy="Selected projects" />
 
-        <FilterBar>
-          {FILTER_OPTIONS.map((type) => (
-            <FilterButton
-              key={type}
-              type="button"
-              onClick={() => setSelectedType(type)}
-              isActive={selectedType === type}
-              aria-pressed={selectedType === type}
-            >
-              {type}
-            </FilterButton>
-          ))}
-        </FilterBar>
         <CaseCardGrid>
           {filteredCaseStudies.length > 0 ? (
             filteredCaseStudies.map((caseStudy) => (

@@ -494,6 +494,7 @@ const OverviewPageHeadline = styled.h2`
   ${Devices.tabletS} {
     font-size: 58px;
     line-height: 110%;
+    width: 60%;
   }
 
   ${Devices.tabletM} {
@@ -510,13 +511,15 @@ const OverviewPageSubline = styled.p`
 
   letter-spacing: 0.01em;
   margin-top: 0px;
-  width: 90%;
+  margin-bottom: 12px;
+
   text-align: left;
 
   color: ${Colors.primaryText.mediumEmphasis};
 
   ${Devices.tabletS} {
     font-size: 36px;
+    width: 60%;
   }
 `;
 

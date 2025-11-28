@@ -133,30 +133,30 @@ const NavigationMenuMobile = (props) => {
         <Menu>
           <MenuItem>
             <MenuLink
-              to="/profile"
+              to="/"
               style={{
                 color:
-                  currentPath === "/profile"
+                  currentPath === "/"
                     ? Colors.primaryText.highEmphasis
                     : Colors.primaryText.mediumEmphasis,
                 textDecoration: "none",
               }}
             >
-              Profile
+              Home
             </MenuLink>
           </MenuItem>
           <MenuItem>
             <MenuLink
-              to="/portfolio"
+              to="/about"
               style={{
                 color:
-                  currentPath === "/portfolio"
+                  currentPath === "/about"
                     ? Colors.primaryText.highEmphasis
                     : Colors.primaryText.mediumEmphasis,
                 textDecoration: "none",
               }}
             >
-              Portfolio
+              About
             </MenuLink>
           </MenuItem>
           <MenuItem>

@@ -25,7 +25,8 @@ const ArticleSlot = styled.div`
 const FloatingNav = styled.nav`
   position: fixed;
   top: ${TOC_TOP_OFFSET}px;
-  right: ${VIEWPORT_EDGE_GUTTER}px;
+  left: ${VIEWPORT_EDGE_GUTTER}px;
+  right: auto;
   width: ${TOC_WIDTH}px;
 
   background-color: transparent;
@@ -189,11 +190,9 @@ const FloatingTableOfContents = ({ children }) => {
     }
 
     const rect = baseSection.getBoundingClientRect();
-    const viewportWidth =
-      window.innerWidth || document.documentElement?.clientWidth || 0;
-    const spaceRight = viewportWidth - rect.right;
+    const spaceLeft = rect.left;
     const canShow =
-      spaceRight >= TOC_WIDTH + TOC_HORIZONTAL_GAP + VIEWPORT_EDGE_GUTTER;
+      spaceLeft >= TOC_WIDTH + TOC_HORIZONTAL_GAP + VIEWPORT_EDGE_GUTTER;
     setLayout((current) =>
       current.canShow === canShow ? current : { canShow }
     );
