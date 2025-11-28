@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 
 import { Colors } from "../DesignSystem";
+import { FLOATING_TOC_GUARD_EVENT } from "../../utils/floatingToc";
 
 const HEADING_SELECTOR = "h2";
 const FLOATING_GUARD_SELECTOR = "[data-floating-toc-guard]";
@@ -361,6 +362,25 @@ const FloatingTableOfContents = ({ children }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, [layout.canShow, updateLayout, checkOverlap]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const handleGuardChange = () => {
+      checkOverlap();
+    };
+
+    window.addEventListener(FLOATING_TOC_GUARD_EVENT, handleGuardChange);
+
+    return () => {
+      window.removeEventListener(
+        FLOATING_TOC_GUARD_EVENT,
+        handleGuardChange
+      );
+    };
+  }, [checkOverlap]);
 
   useEffect(() => {
     if (!layout.canShow) {

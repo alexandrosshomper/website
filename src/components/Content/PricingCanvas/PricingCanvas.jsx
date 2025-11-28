@@ -4,8 +4,50 @@ import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
 import { Check, Calculator, X } from "lucide-react";
-
 import Button from "../../Button/Button";
+
+export const PlayOverlayButton = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 1;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+  will-change: backdrop-filter;
+  animation: blurPulse 2.4s ease-in-out infinite;
+  &:hover {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  @keyframes blurPulse {
+    0% {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.8);
+    }
+    50% {
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.6);
+    }
+    100% {
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+`;
 const PricingCanvas = ({ roiCalcAction }) => {
   const PricingCanvas = styled.div`
     border-radius: 0.38rem;
@@ -364,49 +406,6 @@ const PricingCanvas = ({ roiCalcAction }) => {
     width: 100%;
     display: block;
     cursor: pointer;
-  `;
-
-  const PlayOverlayButton = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    backdrop-filter: blur(2px);
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: auto;
-    z-index: 1;
-    transition: background-color 120ms ease, box-shadow 120ms ease;
-    will-change: backdrop-filter;
-    animation: blurPulse 2.4s ease-in-out infinite;
-    &:hover {
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    @keyframes blurPulse {
-      0% {
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-        background: rgba(255, 255, 255, 0.8);
-      }
-      50% {
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(4px);
-        background: rgba(255, 255, 255, 0.6);
-      }
-      100% {
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-        background: rgba(255, 255, 255, 0.8);
-      }
-    }
   `;
 
   const LightboxOverlay = styled.div`
