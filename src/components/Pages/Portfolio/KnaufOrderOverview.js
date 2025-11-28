@@ -565,8 +565,8 @@ export default createCasePage({
   metaTitle,
   metaDescription,
   eyebrow: "Case Study",
-  eyebrowColor1: "#000000",
-  eyebrowColor2: "#000000",
+  eyebrowColor1: "#666677",
+  eyebrowColor2: "#444455",
   title: "Knauf Order Overview",
   subline:
     "The single source of truth for deliveries from all Knauf brands and subbrands.",
