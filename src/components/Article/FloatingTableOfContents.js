@@ -27,21 +27,15 @@ const FloatingNav = styled.nav`
   top: ${TOC_TOP_OFFSET}px;
   right: ${VIEWPORT_EDGE_GUTTER}px;
   width: ${TOC_WIDTH}px;
-  padding: 12px 8px;
-  border-radius: 8px;
-  backdrop-filter: ${(props) => (props.$expanded ? "blur(8px)" : "none")};
-  background-color: ${(props) =>
-    props.$expanded ? "rgba(255, 255, 255, 0.8)" : "transparent"};
-  border: 1px solid
-    ${(props) => (props.$expanded ? "rgba(8, 8, 8, 0.04)" : "transparent")};
-  box-shadow: ${(props) =>
-    props.$expanded ? "0 4px 4px rgba(8, 8, 8, 0.04)" : "none"};
+
+  background-color: transparent;
+
   z-index: 20;
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - ${TOC_TOP_OFFSET + 48}px);
   transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease,
-    border-color 0.2s ease, box-shadow 0.2s ease, backdrop-filter 0.2s ease;
+    backdrop-filter 0.2s ease;
   opacity: ${(props) => (props["data-hidden"] ? 0 : 1)};
   pointer-events: ${(props) => (props["data-hidden"] ? "none" : "auto")};
   transform: ${(props) =>
@@ -374,10 +368,7 @@ const FloatingTableOfContents = ({ children }) => {
     window.addEventListener(FLOATING_TOC_GUARD_EVENT, handleGuardChange);
 
     return () => {
-      window.removeEventListener(
-        FLOATING_TOC_GUARD_EVENT,
-        handleGuardChange
-      );
+      window.removeEventListener(FLOATING_TOC_GUARD_EVENT, handleGuardChange);
     };
   }, [checkOverlap]);
 

@@ -32,8 +32,8 @@ const LandingpageMenu = (props) => {
     }
   `;
   const MenuItemSmall = styled.div`
-    font-family: "Roboto", sans-serif;
-    font-size: 21px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 18px;
     line-height: 137%;
 
     margin-left: 24px;
