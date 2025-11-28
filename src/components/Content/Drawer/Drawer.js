@@ -4,17 +4,37 @@ import styled from "@emotion/styled";
 import { Colors, Devices } from "../../DesignSystem";
 
 import { mdiPlus, mdiClose } from "@mdi/js";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Button from "../../Button/Button";
 import { FLOATING_TOC_GUARD_EVENT } from "../../../utils/floatingToc";
+import { PlayOverlayButton } from "../PricingCanvas/PricingCanvas";
 
 const Drawer = ({ items, color1, color2, label }) => {
   const [open, setOpen] = useState(false);
   const button_label = label ? label : "Learn More";
   const toggleRef = useRef(null);
+  const scrollingContainerRef = useRef(null);
   const handleToggle = (e) => {
     e.preventDefault();
     setOpen(!open);
+  };
+  const handleNavigate = (direction) => {
+    const container = scrollingContainerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const firstItem = container.querySelector("li");
+    const gap = 20;
+    const itemWidth = firstItem?.getBoundingClientRect().width ?? 0;
+    const scrollAmount =
+      itemWidth > 0 ? itemWidth + gap : container.clientWidth;
+
+    container.scrollTo({
+      left: container.scrollLeft + direction * scrollAmount,
+      behavior: "smooth",
+    });
   };
   const color_1 = color1 ?? Colors.black;
   const color_2 = color2 ?? Colors.greyDark;
@@ -89,6 +109,7 @@ const Drawer = ({ items, color1, color2, label }) => {
 
   const DrawerGallery = styled.div`
     display: block;
+    position: relative;
   `;
   const ScrollingContainer = styled.div`
     position: relative;
@@ -215,6 +236,32 @@ const Drawer = ({ items, color1, color2, label }) => {
     line-height: 160%;
   `;
 
+  const GalleryNavButton = styled(PlayOverlayButton)`
+    top: 50%;
+    left: auto;
+    right: auto;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border: none;
+    background: rgba(255, 255, 255, 0.92);
+    color: ${Colors.black};
+    z-index: 2;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  `;
+
+  const GalleryNavButtonBack = styled(GalleryNavButton)`
+    left: 16px;
+  `;
+
+  const GalleryNavButtonNext = styled(GalleryNavButton)`
+    right: 16px;
+  `;
+
   useEffect(() => {
     if (
       !open ||
@@ -298,12 +345,29 @@ const Drawer = ({ items, color1, color2, label }) => {
           onClick={handleToggle}
         />
       </DrawerToggle>
-      <DrawerContentWrapper
-        data-floating-toc-guard={open ? "true" : undefined}
-      >
+      <DrawerContentWrapper data-floating-toc-guard={open ? "true" : undefined}>
         <DrawerContent>
           <DrawerGallery>
-            <ScrollingContainer id="ScrollingContainer">
+            <GalleryNavButtonBack
+              as="button"
+              type="button"
+              aria-label="Go to previous image"
+              onClick={() => handleNavigate(-1)}
+            >
+              <ChevronLeft strokeWidth={2.5} />
+            </GalleryNavButtonBack>
+            <GalleryNavButtonNext
+              as="button"
+              type="button"
+              aria-label="Go to next image"
+              onClick={() => handleNavigate(1)}
+            >
+              <ChevronRight strokeWidth={2.5} />
+            </GalleryNavButtonNext>
+            <ScrollingContainer
+              ref={scrollingContainerRef}
+              id="ScrollingContainer"
+            >
               <ItemContainer>
                 {items.map((item) => (
                   <GalleryItem key={item.id}>
