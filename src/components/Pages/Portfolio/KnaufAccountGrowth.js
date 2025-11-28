@@ -460,6 +460,48 @@ and support workload will drop significantly."
         <br />
       </ArticleSectionContent>
     </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Driving Growth"
+          headline="Once the platform went live, we focused on ecosystem-wide activation and scalability."
+          subline="The onboarding experience of the Knauf Account has the biggest impact on overall user activation and growth."
+        />
+        <p>Growth Tactics:</p>
+        <ul>
+          <li>Audited onboarding flows across apps and removed friction</li>
+          <li>Improved first-run experiences using Knauf Account data</li>
+          <li>IIntroduced team-based activation loops</li>
+          <li>Ran “Account Health Clinics” with CRM, Product, and Design</li>
+        </ul>
+        <CaseSublineTwo subline="Experiment: Signup Flow" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-account/feature-signup.png"
+          size="L"
+        />
+        <p>Prompt new users to enable all updates on first login.</p>
+
+        <CaseSubline subline="Growth Impact" />
+        <p>
+          The Knauf account is the gateway to our digital ecosystem, and impacts
+          growth across all apps.
+        </p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "30%", subline: "better activation rate" },
+            {
+              impact: "30%",
+              subline: "more user engagement",
+            },
+            {
+              quote:
+                "Knauf Account didn’t just improve onboarding, it unlocked cross-app growth we couldn’t achieve before.",
+              size: "L",
+            },
+          ]}
+        />
+      </ArticleSectionContent>
+    </ArticleSection>
 
     <ArticleSection>
       <ArticleSectionContent>
@@ -502,10 +544,57 @@ and support workload will drop significantly."
         </table>
       </ArticleSectionContent>
     </ArticleSection>
-
-    <br />
-    <br />
-    <br />
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Shaping Knauf’s digital ecosystem strategy"
+          subline="This wasn’t just an account. It was the infrastructure for Knauf’s digital future."
+        />
+        <CaseSubline subline="Beyond product delivery, I drove strategic alignment across teams:" />
+        <ul>
+          <li>Led product direction for identity and access</li>
+          <li>Aligned brands, markets, and legal teams on unified standards</li>
+          <li>
+            Established shared UX and technical patterns for the ecosystem
+          </li>
+          <li>Advocated for platform thinking across Knauf Digital</li>
+          <li>Advocated for platform thinking across Knauf Digital</li>
+        </ul>
+      </ArticleSectionContent>
+      <ArticleSection>
+        <ImpactBoxGrid
+          items={[
+            {
+              quote:
+                "This was one of the most complex migrations we’ve done at Knauf. Alexandros aligned markets, brands, CRM, engineering, and delivered a platform that scales.",
+              size: "L",
+              subline: "Director, Knauf Digital",
+            },
+          ]}
+        />
+      </ArticleSection>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflections"
+          headline="Identity as the first growth lever"
+        />
+        <CaseSublineTwo subline="Activation is not only a product problem. It begins with identity." />
+        <br />
+        <CaseCopy
+          copy="Unifying access unlocked every downstream improvement:
+personalization, analytics, CRM, trust, onboarding, and cross-app retention."
+        />
+        <CaseSubline subline="Next steps I'd today:" />
+        <p>
+          Introduce adaptive onboarding powered by identity data — dynamically
+          guiding users into the app most relevant to their role, country, and
+          company.
+        </p>
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />

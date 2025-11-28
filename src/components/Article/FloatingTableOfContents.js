@@ -126,7 +126,6 @@ const FloatingTableOfContents = ({ children }) => {
   const [isOverlapping, setIsOverlapping] = useState(false);
   const [isArticleInViewport, setIsArticleInViewport] = useState(false);
   const [isHeaderOutOfViewport, setIsHeaderOutOfViewport] = useState(false);
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const collectHeadings = useCallback(() => {
     const container = articleRef.current;
@@ -493,12 +492,7 @@ const FloatingTableOfContents = ({ children }) => {
   const shouldShowBasedOnScroll = isHeaderOutOfViewport && isArticleInViewport;
 
   const navHidden = isOverlapping || !shouldShowBasedOnScroll;
-
-  useEffect(() => {
-    if ((!shouldRenderToc || navHidden) && isNavExpanded) {
-      setIsNavExpanded(false);
-    }
-  }, [shouldRenderToc, navHidden, isNavExpanded]);
+  const isNavExpanded = true;
 
   const tocIndentation = useCallback((level) => {
     if (typeof level !== "number") {
@@ -506,24 +500,6 @@ const FloatingTableOfContents = ({ children }) => {
     }
 
     return 12 + Math.min(Math.max(level - 2, 0) * 12, 48);
-  }, []);
-
-  const handleNavFocus = useCallback(() => {
-    setIsNavExpanded(true);
-  }, []);
-
-  const handleNavBlur = useCallback((event) => {
-    if (!event.currentTarget.contains(event.relatedTarget)) {
-      setIsNavExpanded(false);
-    }
-  }, []);
-
-  const handleNavMouseEnter = useCallback(() => {
-    setIsNavExpanded(true);
-  }, []);
-
-  const handleNavMouseLeave = useCallback(() => {
-    setIsNavExpanded(false);
   }, []);
 
   return (
@@ -536,10 +512,6 @@ const FloatingTableOfContents = ({ children }) => {
           data-hidden={navHidden}
           aria-hidden={navHidden}
           aria-label="Table of contents"
-          onMouseEnter={handleNavMouseEnter}
-          onMouseLeave={handleNavMouseLeave}
-          onFocus={handleNavFocus}
-          onBlur={handleNavBlur}
         >
           <FloatingNavList>
             {headings.map((heading) => (

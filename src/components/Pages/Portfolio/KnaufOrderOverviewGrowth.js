@@ -462,7 +462,57 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
       </ArticleSectionContent>
     </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Driving Growth"
+          headline="Discovering the Growth Bottlenecks"
+          subline="After PMF validation, we focused on activation and habit formation"
+        />
+        <p>
+          <b>Top Insights</b> Activation stalled between Aha moment and habit
+          moment Usage frequency did not match the problem frequency and
+          internal order data.
+        </p>
+        <p>
+          <b>Growth Hypothesis</b> Manufactured Habit Loop: I believe more users
+          adopting the “Order Specific Notification” will result in better
+          activation & more engagement.
+        </p>
+        <Drawer items={galleryItemsGrowth} label="Growth Process Deepdive" />
 
+        <br />
+        <br />
+        <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
+          size="L"
+        />
+        <p>Prompt new users to enable all updates on first login.</p>
+
+        <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
+          size="L"
+        />
+        <p>Show missed updates since last visit.</p>
+        <CaseSubline subline="Growth Impact" />
+        <p>A small nudge turned notifications from a setting into a habit.</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "18%", subline: "better activation rate" },
+            {
+              impact: "30%",
+              subline: "more user engagement",
+            },
+            {
+              impact: "25%",
+              subline: "better user retention",
+            },
+          ]}
+        />
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
@@ -513,10 +563,51 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </table>
       </ArticleSectionContent>
     </ArticleSection>
-
-    <br />
-    <br />
-    <br />
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Hosted Activation Clinics to align teams on user metrics</li>
+          <li>Mentored 2 designers on experiment design</li>
+          <li>Led Growth Guild (Design, PM, Eng, Data).</li>
+          <li>Built UX Maturity Model & Design System foundations</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflections"
+          headline="Great Product Design is Growth Design"
+        />
+        <CaseSublineTwo subline="Transparency builds trust, and trust drives retention." />
+        <br />
+        <CaseCopy
+          copy="Knauf Order Overview transformed dealer operations from manual chaos to digital clarity.
+It became Knauf’s blueprint for future B2B platforms and one of its fastest-adopted tools globally."
+        />
+        <CaseSubline subline="Key Takeaways" />
+        <ul>
+          <li>
+            <b>Growth by design:</b> Focusing on user activation and behavioral
+            loops, not just UI.
+          </li>
+          <li>
+            <b>Leadership through impact:</b> Metrics, mentorship, and maturity
+            in one strategy.
+          </li>
+          <li>
+            <b>Clarity at scale:</b> Turning industrial complexity into
+            intuitive user journeys.
+          </li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />
