@@ -98,36 +98,26 @@ const renderContent = () => (
           overline="Overview"
           headline="Unified Identity & Access Platform for 30+ Knauf Apps and Services."
           subline="Knauf Account is the single sign-on and customer identity platform powering the entire Knauf digital ecosystem."
-        />
-        <p>
-          It connects users, teams, and companies with everything Knauf offers:
-          apps, websites, services, data, permissions, pricing, and
-          notifications.
-        </p>
-        <CaseSublineTwo subline="Company" />
+        />{" "}
+        <CaseImage imgURL="/img/portfolio/knauf-account/table.png" size="L" />
+        <CaseSublineTwo subline="About Knauf" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
-          operating in more than 90 countries.
-        </p>
-        <p>
+          operating in more than 90 countries with various brands and companies.
+          <br />
           <b>Knauf Digital</b> is the technology and innovation unit driving the
           digital transformation at scale; building digital ecosystems that
-          connect contractors, dealers, and Knauf brands across markets.
+          connect contractors, dealers, and Knauf brands across markets. This is
+          were I worked.
         </p>
-        <CaseSublineTwo subline="Customer Type" />
-        <p>
-          Construction professionals, enterprises, and teams accessing any Knauf
-          digital product — from planning tools to e-commerce portals.
-        </p>
+        <CaseSublineTwo subline="Customer Types" />
         <p>
           <b>Dealer:</b> B2B partners who sell Knauf materials to construction
           companies and manage order logistics.
-        </p>
-        <p>
+          <br />
           <b>Applicator:</b> Contractors, on-site professionals who plan,
           measure, and execute installations.
-        </p>
-        <p>
+          <br />
           <b>Specifier:</b> Architects, planners, and general contractors who
           define material requirements.
         </p>

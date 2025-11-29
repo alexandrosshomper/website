@@ -1,11 +1,7 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import {
-  ArticleSection,
-  ArticleSectionContent,
-  Colors,
-} from "../../DesignSystem";
+import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
@@ -106,9 +102,6 @@ const galleryItemsDesign = [
   },
 ];
 
-const colorA = Colors.blue;
-const colorB = Colors.blueLight;
-
 const renderContent = () => (
   <>
     <ArticleSection>
@@ -118,18 +111,22 @@ const renderContent = () => (
           subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
           overline="Overview"
         />
-        <CaseSublineTwo subline="Company" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/plasterboards.png"
+          size="L"
+        />
+        <CaseSublineTwo subline="About Knauf" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
-          operating in more than 90 countries.
-        </p>
-        <p>
+          operating in more than 90 countries with various brands and companies.
+          <br />
           <b>Knauf Digital</b> is the technology and innovation unit driving the
           digital transformation at scale; building digital ecosystems that
-          connect contractors, dealers, and Knauf brands across markets.
+          connect contractors, dealers, and Knauf brands across markets. This is
+          were I worked.
         </p>
-        <CaseSublineTwo subline="Customer Type" />
 
+        <CaseSublineTwo subline="Customer Type" />
         <p>
           <b>Applicator:</b> Contractors, on-site professionals who plan,
           measure, and execute installations.
@@ -160,8 +157,7 @@ const renderContent = () => (
         <CaseSectionHead
           overline="Challenge"
           headline="Delays led to quote errors costing millions in lost bids. "
-          subline="The construction industry runs on experience, not software.
-Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
+          subline="Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
         />
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"

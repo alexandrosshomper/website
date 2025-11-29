@@ -106,37 +106,6 @@ const galleryItemsDesign = [
   },
 ];
 
-const galleryItemsGrowth = [
-  {
-    id: 1,
-    imgURL:
-      "/img/portfolio/knauf-order-overview/detail-retention-data-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-retention-data-mobile.png",
-    headline: "Correlation Analysis",
-    copy: "Retention was bad. I analysed the correlation with retention by account segments, user segments, features, geography. I found a very clear correlation: The Order Specific Notification Feature: “Blue Bell”",
-  },
-
-  {
-    id: 2,
-    imgURL:
-      "/img/portfolio/knauf-order-overview/detail-bluebell-data-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-bluebell-data-mobile.png",
-    headline: "Engagement",
-    copy: "Blue Bell Feature Users make 7% of user base but  20% of traffic and spend 50% more time / session.",
-  },
-  {
-    id: 3,
-    imgURL:
-      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-mobile.png",
-    headline: "Retention",
-    copy: "Blue Bell Feature Users have a retention rate of 53% vs 15,6% on average.",
-  },
-];
-
 const renderContent = () => (
   <>
     <ArticleSection>
@@ -146,19 +115,19 @@ const renderContent = () => (
           headline="Bringing clarity to construction logistics, giving dealers and applicators real-time visibility into every delivery."
           subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators & dealers manage their logistics and warehouse."
         />
-        <p>
-          Dealers lacked a unified way to track orders (inefficiency and
-          frustration).
-        </p>
-        <CaseSublineTwo subline="Company" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/warehouse.png"
+          size="L"
+        />
+        <CaseSublineTwo subline="About Knauf" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
-          operating in more than 90 countries.
-        </p>
-        <p>
+          operating in more than 90 countries with various brands and companies.
+          <br />
           <b>Knauf Digital</b> is the technology and innovation unit driving the
           digital transformation at scale; building digital ecosystems that
-          connect contractors, dealers, and Knauf brands across markets.
+          connect contractors, dealers, and Knauf brands across markets. This is
+          were I worked.
         </p>
         <CaseSublineTwo subline="Customer Type" />
         <p>
@@ -246,8 +215,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           <li>Dealers’ notification preferences vary widely.</li>
           <li>Users needed fast setup (Day 1 value).</li>
         </ul>
-        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
-        <br />
 
         <br />
         <CaseSubline subline="PMF Hypothesis" />
