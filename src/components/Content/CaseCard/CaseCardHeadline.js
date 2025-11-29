@@ -15,7 +15,7 @@ const CaseCardHeadline = ({ text }) => {
     padding: 0px;
     margin-block-end: 4px;
     margin-block-start: 0px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     margin-inline-end: 0px;
     margin-inline-start: 0px;
     margin-left: 0px;

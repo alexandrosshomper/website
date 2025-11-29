@@ -92,7 +92,7 @@ const NavigationMenuMobile = styled.div`
 const CallToAction = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-top: 15px;
+  padding-top: 13px;
   gap: 12px;
   z-index: 9999;
 `;

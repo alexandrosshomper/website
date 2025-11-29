@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 
 import { Devices } from "../DesignSystem";
 import Wortmarke from "./Wortmarke";
-import Logo from "./Logo";
 
 const Identity = (props) => {
   const Identity = styled.div`
@@ -13,7 +12,7 @@ const Identity = (props) => {
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
-    margin-left: 12px;
+    margin-left: 0px;
     margin-top: 15px;
 
     width: 60px;
@@ -42,7 +41,6 @@ const Identity = (props) => {
   return (
     <Identity className="Identity">
       <Wortmarke />
-      <Logo />
     </Identity>
   );
 };

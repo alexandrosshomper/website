@@ -98,26 +98,36 @@ const renderContent = () => (
           overline="Overview"
           headline="Unified Identity & Access Platform for 30+ Knauf Apps and Services."
           subline="Knauf Account is the single sign-on and customer identity platform powering the entire Knauf digital ecosystem."
-        />{" "}
-        <CaseImage imgURL="/img/portfolio/knauf-account/table.png" size="L" />
-        <CaseSublineTwo subline="About Knauf" />
+        />
+        <p>
+          It connects users, teams, and companies with everything Knauf offers:
+          apps, websites, services, data, permissions, pricing, and
+          notifications.
+        </p>
+        <CaseSublineTwo subline="Company" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
-          operating in more than 90 countries with various brands and companies.
-          <br />
+          operating in more than 90 countries.
+        </p>
+        <p>
           <b>Knauf Digital</b> is the technology and innovation unit driving the
           digital transformation at scale; building digital ecosystems that
-          connect contractors, dealers, and Knauf brands across markets. This is
-          were I worked.
+          connect contractors, dealers, and Knauf brands across markets.
         </p>
-        <CaseSublineTwo subline="Customer Types" />
+        <CaseSublineTwo subline="Customer Type" />
+        <p>
+          Construction professionals, enterprises, and teams accessing any Knauf
+          digital product — from planning tools to e-commerce portals.
+        </p>
         <p>
           <b>Dealer:</b> B2B partners who sell Knauf materials to construction
           companies and manage order logistics.
-          <br />
+        </p>
+        <p>
           <b>Applicator:</b> Contractors, on-site professionals who plan,
           measure, and execute installations.
-          <br />
+        </p>
+        <p>
           <b>Specifier:</b> Architects, planners, and general contractors who
           define material requirements.
         </p>
@@ -209,6 +219,11 @@ const renderContent = () => (
           </i>
         </p>
         <br />
+        <Drawer
+          items={galleryItemsDiscover}
+          label="Research Process Deepdive"
+        />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />
@@ -247,13 +262,6 @@ then activation will increase across all apps,
 CRM data will improve,
 and support workload will drop significantly."
         />
-        <br />
-        <br />
-        <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          label="Research Process Deepdive"
-        />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -291,14 +299,7 @@ and support workload will drop significantly."
           size="L"
         />
         <ArticleSectionContent>
-          <br />
-          <br />
           <Drawer items={galleryItemsDesign} label="Design Process Deepdive" />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           <br />
           <br />
         </ArticleSectionContent>
@@ -350,9 +351,6 @@ and support workload will drop significantly."
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
         <CaseSubline subline="Key Feature 2: Team Management & Permissions" />
         <CaseImage
           imgURL="/img/portfolio/knauf-account/feature-team.png"
@@ -400,9 +398,6 @@ and support workload will drop significantly."
             },
           ]}
         />
-        <br />
-        <br />
-        <br />
         <br />
         <br />
         <br />
@@ -459,6 +454,52 @@ and support workload will drop significantly."
             },
           ]}
         />
+        <br />
+        <br />
+        <br />
+        <br />
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Driving Growth"
+          headline="Once the platform went live, we focused on ecosystem-wide activation and scalability."
+          subline="The onboarding experience of the Knauf Account has the biggest impact on overall user activation and growth."
+        />
+        <p>Growth Tactics:</p>
+        <ul>
+          <li>Audited onboarding flows across apps and removed friction</li>
+          <li>Improved first-run experiences using Knauf Account data</li>
+          <li>IIntroduced team-based activation loops</li>
+          <li>Ran “Account Health Clinics” with CRM, Product, and Design</li>
+        </ul>
+        <CaseSublineTwo subline="Experiment: Signup Flow" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-account/feature-signup.png"
+          size="L"
+        />
+        <p>Prompt new users to enable all updates on first login.</p>
+
+        <CaseSubline subline="Growth Impact" />
+        <p>
+          The Knauf account is the gateway to our digital ecosystem, and impacts
+          growth across all apps.
+        </p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "30%", subline: "better activation rate" },
+            {
+              impact: "30%",
+              subline: "more user engagement",
+            },
+            {
+              quote:
+                "Knauf Account didn’t just improve onboarding, it unlocked cross-app growth we couldn’t achieve before.",
+              size: "L",
+            },
+          ]}
+        />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -503,7 +544,57 @@ and support workload will drop significantly."
         </table>
       </ArticleSectionContent>
     </ArticleSection>
-
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Shaping Knauf’s digital ecosystem strategy"
+          subline="This wasn’t just an account. It was the infrastructure for Knauf’s digital future."
+        />
+        <CaseSubline subline="Beyond product delivery, I drove strategic alignment across teams:" />
+        <ul>
+          <li>Led product direction for identity and access</li>
+          <li>Aligned brands, markets, and legal teams on unified standards</li>
+          <li>
+            Established shared UX and technical patterns for the ecosystem
+          </li>
+          <li>Advocated for platform thinking across Knauf Digital</li>
+          <li>Advocated for platform thinking across Knauf Digital</li>
+        </ul>
+      </ArticleSectionContent>
+      <ArticleSection>
+        <ImpactBoxGrid
+          items={[
+            {
+              quote:
+                "This was one of the most complex migrations we’ve done at Knauf. Alexandros aligned markets, brands, CRM, engineering, and delivered a platform that scales.",
+              size: "L",
+              subline: "Director, Knauf Digital",
+            },
+          ]}
+        />
+      </ArticleSection>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflections"
+          headline="Identity as the first growth lever"
+        />
+        <CaseSublineTwo subline="Activation is not only a product problem. It begins with identity." />
+        <br />
+        <CaseCopy
+          copy="Unifying access unlocked every downstream improvement:
+personalization, analytics, CRM, trust, onboarding, and cross-app retention."
+        />
+        <CaseSubline subline="Next steps I'd today:" />
+        <p>
+          Introduce adaptive onboarding powered by identity data — dynamically
+          guiding users into the app most relevant to their role, country, and
+          company.
+        </p>
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />
@@ -536,10 +627,10 @@ and support workload will drop significantly."
 export default createCasePage({
   metaTitle,
   metaDescription,
-  eyebrow: "Knauf Account",
-  eyebrowColor1: "#666677",
-  eyebrowColor2: "#444455",
-  title: "The Google Account for the construction industry",
+  eyebrow: "Case Study",
+  eyebrowColor1: "#00b8d4",
+  eyebrowColor2: "#62ebff",
+  title: "Knauf Account",
   subline:
     "From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.",
   hero,

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Devices } from "../DesignSystem";
-import Wortmarke from "./Wortmarke";
+import Wortmarke from "./WortmarkeLang";
 
 const Identity = (props) => {
   const Identity = styled.a`
@@ -12,7 +12,7 @@ const Identity = (props) => {
     justify-content: flex-start;
     align-items: center;
 
-    margin-top: 11px;
+    margin-top: 15px;
 
     width: 140px;
     gap: 14px;
@@ -25,17 +25,9 @@ const Identity = (props) => {
     ${Devices.laptopM} {
     }
   `;
-  const Logo = styled.div`
-    width: 32px;
-    height: 32px;
-    background-image: url("/img/Identity/Logo/alexandros shomper logo@2x.png");
-    background-size: contain;
-    border-radius: 30px;
-  `;
 
   return (
     <Identity className="Identity" href="/">
-      <Logo />
       <Wortmarke />
     </Identity>
   );

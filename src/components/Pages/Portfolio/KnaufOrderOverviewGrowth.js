@@ -106,6 +106,37 @@ const galleryItemsDesign = [
   },
 ];
 
+const galleryItemsGrowth = [
+  {
+    id: 1,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-retention-data-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-retention-data-mobile.png",
+    headline: "Correlation Analysis",
+    copy: "Retention was bad. I analysed the correlation with retention by account segments, user segments, features, geography. I found a very clear correlation: The Order Specific Notification Feature: “Blue Bell”",
+  },
+
+  {
+    id: 2,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-data-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-data-mobile.png",
+    headline: "Engagement",
+    copy: "Blue Bell Feature Users make 7% of user base but  20% of traffic and spend 50% more time / session.",
+  },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-order-overview/detail-bluebell-retention-mobile.png",
+    headline: "Retention",
+    copy: "Blue Bell Feature Users have a retention rate of 53% vs 15,6% on average.",
+  },
+];
+
 const renderContent = () => (
   <>
     <ArticleSection>
@@ -115,19 +146,19 @@ const renderContent = () => (
           headline="Bringing clarity to construction logistics, giving dealers and applicators real-time visibility into every delivery."
           subline="Knauf Order Overview is a B2B SaaS platform helping construction applicators & dealers manage their logistics and warehouse."
         />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-order-overview/warehouse.png"
-          size="L"
-        />
-        <CaseSublineTwo subline="About Knauf" />
+        <p>
+          Dealers lacked a unified way to track orders (inefficiency and
+          frustration).
+        </p>
+        <CaseSublineTwo subline="Company" />
         <p>
           <b>Knauf</b> is a €15B global building materials manufacturer
-          operating in more than 90 countries with various brands and companies.
-          <br />
+          operating in more than 90 countries.
+        </p>
+        <p>
           <b>Knauf Digital</b> is the technology and innovation unit driving the
           digital transformation at scale; building digital ecosystems that
-          connect contractors, dealers, and Knauf brands across markets. This is
-          were I worked.
+          connect contractors, dealers, and Knauf brands across markets.
         </p>
         <CaseSublineTwo subline="Customer Type" />
         <p>
@@ -207,6 +238,11 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </i>
         </p>
         <br />
+        <Drawer
+          items={galleryItemsDiscover}
+          label="Research Process Deepdive"
+        />
+        <br />
         <br />
 
         <CaseSubline subline="Key Insights" />
@@ -215,18 +251,12 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           <li>Dealers’ notification preferences vary widely.</li>
           <li>Users needed fast setup (Day 1 value).</li>
         </ul>
+        <CaseSublineTwo subline="“If dealers can trust their data and customize how they’re updated, they’ll come back every day.”" />
+        <br />
 
         <br />
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
-
-        <br />
-        <br />
-        <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          label="Research Process Deepdive"
-        />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -266,14 +296,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           size="L"
         />
         <ArticleSectionContent>
-          <br />
-          <br />
           <Drawer items={galleryItemsDesign} label="Design Process Deepdive" />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           <br />
           <br />
         </ArticleSectionContent>
@@ -336,9 +359,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
         <CaseSubline subline="Key Feature 2: Calendar View" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-home-calendar.png"
@@ -371,9 +391,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
             },
           ]}
         />
-        <br />
-        <br />
-        <br />
         <br />
         <br />
         <br />
@@ -418,9 +435,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
         <CaseSubline subline="Key Feature 4: Share Order Details" />
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-order-details.png"
@@ -448,7 +462,57 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         />
       </ArticleSectionContent>
     </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Driving Growth"
+          headline="Discovering the Growth Bottlenecks"
+          subline="After PMF validation, we focused on activation and habit formation"
+        />
+        <p>
+          <b>Top Insights</b> Activation stalled between Aha moment and habit
+          moment Usage frequency did not match the problem frequency and
+          internal order data.
+        </p>
+        <p>
+          <b>Growth Hypothesis</b> Manufactured Habit Loop: I believe more users
+          adopting the “Order Specific Notification” will result in better
+          activation & more engagement.
+        </p>
+        <Drawer items={galleryItemsGrowth} label="Growth Process Deepdive" />
 
+        <br />
+        <br />
+        <CaseSublineTwo subline="Experiment 1: Auto Enable Notifications" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-auto-notifictions.png"
+          size="L"
+        />
+        <p>Prompt new users to enable all updates on first login.</p>
+
+        <CaseSublineTwo subline="Experiment 2: Update Toast Nudges" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-order-overview/cover-notifications-reminder.png"
+          size="L"
+        />
+        <p>Show missed updates since last visit.</p>
+        <CaseSubline subline="Growth Impact" />
+        <p>A small nudge turned notifications from a setting into a habit.</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "18%", subline: "better activation rate" },
+            {
+              impact: "30%",
+              subline: "more user engagement",
+            },
+            {
+              impact: "25%",
+              subline: "better user retention",
+            },
+          ]}
+        />
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
@@ -499,7 +563,51 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
         </table>
       </ArticleSectionContent>
     </ArticleSection>
-
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Leadership Impact"
+          headline="Building a Design Team & Culture"
+          subline="Alongside product delivery, I scaled design maturity and growth mindset across Knauf Digital."
+        />
+        <CaseSubline subline="I didn’t just lead a product. I built a growth design culture." />
+        <ul>
+          <li>Hosted Activation Clinics to align teams on user metrics</li>
+          <li>Mentored 2 designers on experiment design</li>
+          <li>Led Growth Guild (Design, PM, Eng, Data).</li>
+          <li>Built UX Maturity Model & Design System foundations</li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflections"
+          headline="Great Product Design is Growth Design"
+        />
+        <CaseSublineTwo subline="Transparency builds trust, and trust drives retention." />
+        <br />
+        <CaseCopy
+          copy="Knauf Order Overview transformed dealer operations from manual chaos to digital clarity.
+It became Knauf’s blueprint for future B2B platforms and one of its fastest-adopted tools globally."
+        />
+        <CaseSubline subline="Key Takeaways" />
+        <ul>
+          <li>
+            <b>Growth by design:</b> Focusing on user activation and behavioral
+            loops, not just UI.
+          </li>
+          <li>
+            <b>Leadership through impact:</b> Metrics, mentorship, and maturity
+            in one strategy.
+          </li>
+          <li>
+            <b>Clarity at scale:</b> Turning industrial complexity into
+            intuitive user journeys.
+          </li>
+        </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead headline="Related Articles" />
@@ -532,10 +640,10 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
 export default createCasePage({
   metaTitle,
   metaDescription,
-  eyebrow: "Knauf Order Overview",
-  eyebrowColor1: "#666677",
-  eyebrowColor2: "#444455",
-  title: "A unified platform for all Knauf orders",
+  eyebrow: "Case Study",
+  eyebrowColor1: "#00b8d4",
+  eyebrowColor2: "#62ebff",
+  title: "Knauf Order Overview",
   subline:
     "The single source of truth for deliveries from all Knauf brands and subbrands.",
   hero,

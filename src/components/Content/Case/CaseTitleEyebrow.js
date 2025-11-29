@@ -44,7 +44,7 @@ const CaseTitleEyebrow = ({ text, color1, color2 }) => {
     background-clip: text;
 
     ${Devices.tabletS} {
-      margin-bottom: 32px;
+      margin-bottom: 21px;
       width: 520px;
     }
     ${Devices.tabletM} {
