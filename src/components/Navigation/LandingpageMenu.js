@@ -11,8 +11,7 @@ const LandingpageMenu = (props) => {
   const LandingpageMenu = styled.div`
     text-align: left;
     float: left;
-    top: -4px;
-    padding-top: 1px;
+
     margin-right: 24px;
     flex-direction: column;
     align-items: left;
@@ -33,8 +32,8 @@ const LandingpageMenu = (props) => {
     }
   `;
   const MenuItemSmall = styled.div`
-    font-family: "Roboto", sans-serif;
-    font-size: 12px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 18px;
     line-height: 137%;
 
     margin-left: 24px;
@@ -53,30 +52,30 @@ const LandingpageMenu = (props) => {
     <LandingpageMenu className="Menu">
       <MenuItemSmall>
         <Link
-          to={`/profile`}
+          to={`/`}
           style={{
             color:
-              currentPath === "/profile"
+              currentPath === "/"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Profile
+          Home
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/portfolio`}
+          to={`/about`}
           style={{
             color:
-              currentPath === "/portfolio"
+              currentPath === "/about"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Portfolio
+          About
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>

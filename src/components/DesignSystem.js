@@ -377,7 +377,7 @@ const ArticleSectionElement = styled.section`
   margin-right: ${(props) =>
     getArticleSectionVariant(props) === "full" ? "0" : "auto"};
   margin-top: 40px;
-  margin-bottom: 140px;
+  margin-bottom: 200px;
   padding-left: 24px;
   padding-right: 24px;
 
@@ -444,12 +444,13 @@ export const ArticleHeadline = styled.h1`
   }
 `;
 export const ArticleSubtitle = styled.span`
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 400;
   line-height: 124%;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
+  margin-top: 24px;
   margin-bottom: 8px;
-  width: 90%;
+  width: 70%;
   text-align: center;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -461,14 +462,13 @@ export const ArticleSubtitle = styled.span`
     width: 520px;
   }
   ${Devices.laptopS} {
-    width: 650px;
   }
   ${Devices.laptopM} {
   }
 `;
 export const ArticleSubline = styled.span`
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 124%;
   letter-spacing: 0.01em;
   margin-bottom: 8px;
@@ -479,77 +479,47 @@ export const ArticleSubline = styled.span`
 `;
 
 const OverviewPageHeadline = styled.h2`
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  direction: ltr;
+  display: block;
+  margin: 0 0 4px;
 
-  color: ${Colors.primaryText.highEmphasis};
-  margin-bottom: 8px;
-  margin-top: 0px;
-
-  font-size: 44px;
-  line-height: 109%;
   text-align: left;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -1.7px;
+  color: ${Colors.primaryText.highEmphasis};
 
   ${Devices.tabletS} {
-    text-align: left;
-    width: 564px;
+    font-size: 58px;
+    line-height: 110%;
+    width: 60%;
   }
 
   ${Devices.tabletM} {
-    width: 708px;
-    font-size: 44px;
-    line-height: 114%;
   }
 
   ${Devices.laptopS} {
-    width: 852px;
-    font-size: 64px;
-    line-height: 131%;
-  }
-
-  ${Devices.laptopM} {
-    width: 996px;
-    font-size: 80px;
-    line-height: 114%;
   }
 `;
 
 const OverviewPageSubline = styled.p`
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 109%;
+
+  letter-spacing: 0.01em;
+  margin-top: 0px;
+  margin-bottom: 12px;
+
+  text-align: left;
 
   color: ${Colors.primaryText.mediumEmphasis};
-  margin-bottom: 8px;
-  margin-top: 0px;
-
-  font-size: 32px;
-  line-height: 112%;
-  text-align: left;
-  width: 100%;
 
   ${Devices.tabletS} {
-    text-align: left;
-    width: 576px;
-  }
-
-  ${Devices.tabletM} {
-    width: 708px;
     font-size: 36px;
-    line-height: 111%;
-  }
-
-  ${Devices.laptopS} {
-    width: 852px;
-    font-size: 48px;
-    line-height: 100%;
-  }
-
-  ${Devices.laptopM} {
-    width: 1141px;
-    font-size: 60px;
-    line-height: 113%;
+    width: 60%;
   }
 `;
 

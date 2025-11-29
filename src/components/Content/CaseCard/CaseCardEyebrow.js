@@ -6,8 +6,9 @@ const CaseCardEyebrow = ({ text, color1, color2 }) => {
   if (color1 && color2) {
     csscolor = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
   } else {
-    csscolor = `background-image: linear-gradient(to right, #ff1744, #ff616f);`;
+    csscolor = `background-image: linear-gradient(to right, #666677, #444455);`;
   }
+
   const CaseCardEyebrow = styled.p`
     direction: ltr;
     display: block;

@@ -44,35 +44,6 @@ const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
   };
 });
 
-const KNOWN_CASE_STUDY_TYPE_ORDER = [
-  CASE_STUDY_TYPES.ONBOARDING,
-  CASE_STUDY_TYPES.GENERAL,
-];
-
-const FILTER_OPTIONS = [
-  CASE_STUDY_TYPES.ALL,
-  ...Array.from(
-    new Set(CASE_STUDIES.map(({ type }) => type).filter(Boolean))
-  ).sort((typeA, typeB) => {
-    const indexA = KNOWN_CASE_STUDY_TYPE_ORDER.indexOf(typeA);
-    const indexB = KNOWN_CASE_STUDY_TYPE_ORDER.indexOf(typeB);
-
-    if (indexA === -1 && indexB === -1) {
-      return typeA.localeCompare(typeB);
-    }
-
-    if (indexA === -1) {
-      return 1;
-    }
-
-    if (indexB === -1) {
-      return -1;
-    }
-
-    return indexA - indexB;
-  }),
-];
-
 const Content = (props) => {
   const [selectedType, setSelectedType] = useState(CASE_STUDY_TYPES.ALL);
 
@@ -80,6 +51,7 @@ const Content = (props) => {
     if (selectedType === CASE_STUDY_TYPES.ALL) {
       return CASE_STUDIES;
     }
+    setSelectedType(selectedType);
 
     return CASE_STUDIES.filter((caseStudy) => caseStudy.type === selectedType);
   }, [selectedType]);
@@ -130,58 +102,6 @@ const Content = (props) => {
     }
     ${Devices.laptopM} {
       width: 1140px;
-      --gap: 12px;
-    }
-  `;
-
-  const FilterBar = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 32px 24px 24px 24px;
-    visibility: hidden;
-
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-
-    ${Devices.tabletM} {
-      margin: 32px 0 24px 0;
-      width: 708px;
-      justify-content: flex-start;
-    }
-
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-
-    ${Devices.laptopM} {
-      width: 1140px;
-    }
-  `;
-
-  const FilterButton = styled.button`
-    border-radius: 999px;
-    border: 1px solid
-      ${(props) => (props.isActive ? Colors.blue : "rgba(0, 0, 0, 0.12)")};
-    background-color: ${(props) =>
-      props.isActive ? Colors.blue : Colors.background};
-    color: ${(props) =>
-      props.isActive ? Colors.textWhite.highEmphasis : Colors.text};
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: ${(props) => (props.isActive ? 600 : 500)};
-    letter-spacing: 0.01em;
-    padding: 10px 18px;
-    transition: all 0.2s ease;
-
-    &:hover,
-    &:focus {
-      border-color: ${Colors.blue};
-      color: ${(props) =>
-        props.isActive ? Colors.textWhite.highEmphasis : Colors.blue};
-      outline: none;
     }
   `;
 
@@ -209,23 +129,13 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <SectionHead
-          headline="Portfolio"
-          subline="Selected projects from my corporate work"
+          headline="Product Designer / Manager with 15+ years experience in various products"
+          subline="Now seeking a Product Design Manager role in a high-growth environment."
         />
+      </Section>
+      <Section>
+        <SectionHead subline="Work" copy="Selected projects" />
 
-        <FilterBar>
-          {FILTER_OPTIONS.map((type) => (
-            <FilterButton
-              key={type}
-              type="button"
-              onClick={() => setSelectedType(type)}
-              isActive={selectedType === type}
-              aria-pressed={selectedType === type}
-            >
-              {type}
-            </FilterButton>
-          ))}
-        </FilterBar>
         <CaseCardGrid>
           {filteredCaseStudies.length > 0 ? (
             filteredCaseStudies.map((caseStudy) => (
