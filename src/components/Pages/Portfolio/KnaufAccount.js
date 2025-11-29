@@ -220,13 +220,6 @@ const renderContent = () => (
         </p>
         <br />
         <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          label="Research Process Deepdive"
-        />
-        <br />
-        <br />
-        <br />
 
         <CaseSubline subline="Key Insights" />
         <ul>
@@ -263,6 +256,13 @@ and if that account becomes the single source of truth,
 then activation will increase across all apps,
 CRM data will improve,
 and support workload will drop significantly."
+        />
+        <br />
+        <br />
+        <br />
+        <Drawer
+          items={galleryItemsDiscover}
+          label="Research Process Deepdive"
         />
       </ArticleSectionContent>
     </ArticleSection>
@@ -546,10 +546,10 @@ and support workload will drop significantly."
 export default createCasePage({
   metaTitle,
   metaDescription,
-  eyebrow: "Case Study",
+  eyebrow: "Knauf Account",
   eyebrowColor1: "#666677",
   eyebrowColor2: "#444455",
-  title: "Knauf Account",
+  title: "The Google Account for the construction industry",
   subline:
     "From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.",
   hero,

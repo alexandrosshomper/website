@@ -203,17 +203,11 @@ Project leads and applicators were spending hours moving between Excel sheets, P
             UX surveys (n=53 DE).
           </i>
         </p>
+        <br />
         <CaseImageBlank
           imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
           size="L"
         />
-        <br />
-        <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          label="Research Process Deepdive"
-        />
-        <br />
         <br />
         <br />
         <CaseSubline subline="Key Insights" />
@@ -227,6 +221,12 @@ Project leads and applicators were spending hours moving between Excel sheets, P
         </ul>
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
+        <br />
+        <br />
+        <Drawer
+          items={galleryItemsDiscover}
+          label="Research Process Deepdive"
+        />{" "}
       </ArticleSectionContent>
     </ArticleSection>
     <ArticleSection>
@@ -519,10 +519,10 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
 export default createCasePage({
   metaTitle,
   metaDescription,
-  eyebrow: "Case Study",
+  eyebrow: "Knauf Material Calculator",
   eyebrowColor1: "#666677",
   eyebrowColor2: "#444455",
-  title: "Knauf Material Calculator",
+  title: "The Jira for construction professionals",
   subline:
     "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",
   hero,

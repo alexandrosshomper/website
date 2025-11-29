@@ -38,7 +38,6 @@ const HeaderSpacing = () => (
     <br />
     <br />
     <br />
-    <br />
   </>
 );
 const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
@@ -93,6 +92,7 @@ const CaseTemplate = ({
           ) : null}
           {title ? <CaseTitle headline={title} /> : null}
           {subline ? <CaseSubtitle text={subline} /> : null}
+          <HeaderSpacing />
           {renderHero()}
           <HeaderSpacing />
         </ArticleHeader>

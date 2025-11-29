@@ -444,12 +444,13 @@ export const ArticleHeadline = styled.h1`
   }
 `;
 export const ArticleSubtitle = styled.span`
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 400;
   line-height: 124%;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
+  margin-top: 24px;
   margin-bottom: 8px;
-  width: 90%;
+  width: 70%;
   text-align: center;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -461,14 +462,13 @@ export const ArticleSubtitle = styled.span`
     width: 520px;
   }
   ${Devices.laptopS} {
-    width: 650px;
   }
   ${Devices.laptopM} {
   }
 `;
 export const ArticleSubline = styled.span`
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 124%;
   letter-spacing: 0.01em;
   margin-bottom: 8px;

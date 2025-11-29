@@ -239,13 +239,6 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         </p>
         <br />
         <br />
-        <Drawer
-          items={galleryItemsDiscover}
-          label="Research Process Deepdive"
-        />
-        <br />
-        <br />
-        <br />
 
         <CaseSubline subline="Key Insights" />
         <ul>
@@ -259,6 +252,14 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
         <br />
         <CaseSubline subline="PMF Hypothesis" />
         <CaseSubline subline="If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily." />
+
+        <br />
+        <br />
+        <br />
+        <Drawer
+          items={galleryItemsDiscover}
+          label="Research Process Deepdive"
+        />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -564,10 +565,10 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
 export default createCasePage({
   metaTitle,
   metaDescription,
-  eyebrow: "Case Study",
+  eyebrow: "Knauf Order Overview",
   eyebrowColor1: "#666677",
   eyebrowColor2: "#444455",
-  title: "Knauf Order Overview",
+  title: "A unified platform for all Knauf orders",
   subline:
     "The single source of truth for deliveries from all Knauf brands and subbrands.",
   hero,
