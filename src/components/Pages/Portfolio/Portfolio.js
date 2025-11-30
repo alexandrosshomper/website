@@ -101,14 +101,14 @@ const Content = (props) => {
   const CaseBlock = styled.a`
     text-decoration: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 24px;
     overflow: hidden;
     background-color: white;
     color: ${Colors.primaryText.mediumEmphasis};
     font-size: 16px;
     line-height: 150%;
-    width: 100%;
+    width: 90%;
     min-height: 400px;
     border-radius: 32px;
     text-align: center;
@@ -128,7 +128,7 @@ const Content = (props) => {
       width: 864px;
     }
     ${Devices.laptopM} {
-      width: 1140px;
+      width: 1152px;
     }
     &:hover img {
       transform: scale(1.2);
@@ -142,11 +142,16 @@ const Content = (props) => {
     color: ${Colors.primaryText.mediumEmphasis};
     font-size: 16px;
     line-height: 150%;
-    margin: 32px 0px 24px 24px;
-    width: 40%;
-    min-height: 400px;
+    margin: 8px 14px 14px 14px;
 
+    min-height: 400px;
+    order: 1;
     text-align: left;
+    ${Devices.tabletS} {
+      margin: 32px 0px 24px 24px;
+      order: 0;
+      width: 40%;
+    }
   `;
   const CaseBlockDetailsText = styled.div`
     margin: 0px 0px 0px 0px;
