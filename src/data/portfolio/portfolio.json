@@ -2,32 +2,77 @@
   {
     "id": 1,
     "slug": "/portfolio/knauf-material-calculator",
-    "name": "Knauf Material Calculator",
-    "desc": "The Jira for construction applicators",
+    "company": "Knauf",
+    "name": "Material Calculator",
+    "sub": "The Jira for construction professionals",
+    "desc": "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",
     "cover": "/img/portfolio/knauf-material-calculator/cover.png",
     "thumbnail": "/img/portfolio/knauf-material-calculator/thumbnail.png",
     "type": "Product Market Fit",
-    "coming": false
+    "coming": false,
+    "role": "Product Design Manager, 12 markets",
+    "team": "PO, Eng, Data, Design",
+    "product": "B2B SaaS platform for construction professionals",
+    "stage": "0 →1→n ",
+    "timeline": "18 months",
+    "keyResults": [
+      "Activation ↑ 25%",
+      "Retention ↑ 30%",
+      "Time-to-Value ↓ 40%",
+      "NPS ↑ 15"
+    ],
+    "bg": "#dff5f4",
+    "color": "#231768"
   },
   {
     "id": 2,
     "slug": "/portfolio/knauf-order-overview",
-    "name": "Knauf Order Overview",
-    "desc": "A unified platform for all Knauf Orders",
+    "company": "Knauf",
+    "name": "Order Overview",
+    "sub": "A unified platform for all Knauf Orders",
+    "desc": "The single source of truth for deliveries from all Knauf brands and subbrands.",
     "cover": "/img/portfolio/knauf-order-overview/cover.png",
     "thumbnail": "/img/portfolio/knauf-order-overview/thumbnail.png",
     "type": "Product Market Fit",
-    "coming": false
+    "coming": false,
+    "role": "Product Design Manager, 12 markets",
+    "team": "14 (PM, Eng, Data, BA, Design)",
+    "product": "Centralized track-n-trace platform for a fragemnted conglomerate",
+    "stage": "0→1→n",
+    "timeline": "12 months",
+    "keyResults": [
+      "↓20% service inquiry calls",
+      "+30% activation rate",
+      "+25% retention",
+      "2h/week saved per dealer"
+    ],
+    "bg": "#dff5f4",
+    "color": "#231768"
   },
   {
     "id": 3,
     "slug": "/portfolio/knauf-account",
+    "company": "Knauf",
     "name": "Knauf Account",
-    "desc": "The Google Account for the construction industry",
+    "sub": "The Google Account for the construction industry",
+    "desc": "From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.",
     "cover": "/img/portfolio/knauf-account/cover.png",
     "thumbnail": "/img/portfolio/knauf-account/thumbnail.png",
     "type": "Product Market Fit",
-    "coming": false
+    "coming": false,
+    "role": "Product Design Manager, 12 markets",
+    "team": "20 (PM, Eng, Data, CRM, Design)",
+    "product": "Unified Identity Platform (B2B/B2C + Enterprise teams)",
+    "stage": "0→1→n",
+    "timeline": "8 months",
+    "keyResults": [
+      "Activation ↑ across all connected apps",
+      "Support tickets ↓ significantly",
+      "CRM data quality ↑",
+      "Team onboarding time ↓ drastically"
+    ],
+    "bg": "#dff5f4",
+    "color": "#231768"
   },
   {
     "id": 4,
