@@ -110,7 +110,8 @@ const Content = (props) => {
     line-height: 150%;
     width: 90%;
     min-height: 400px;
-    border-radius: 32px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     margin: 0px 0px 24px 0px;
     cursor: pointer;
@@ -262,7 +263,7 @@ const Content = (props) => {
                 </KeyResultsList>
                 <Button
                   text="View Case Study"
-                  gradient={caseStudy.color}
+                  gradient="#000"
                   href={caseStudy.link}
                   icon={<ArrowRight size="21" />}
                 />

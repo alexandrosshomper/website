@@ -18,8 +18,6 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
     max-width: 90%;
     border-radius: 10px;
 
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;

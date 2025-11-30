@@ -528,7 +528,7 @@ const OverviewPageCopy = styled.p`
   font-style: normal;
   font-weight: 300;
   color: ${Colors.primaryText.highEmphasis};
-  margin: 0px 0px 24px 0px;
+  margin: 0px;
 
   font-size: 20px;
   line-height: 120%;
@@ -543,7 +543,7 @@ const OverviewPageCopy = styled.p`
     width: 720px;
     font-size: 36px;
     line-height: 111%;
-    margin-bottom: 32px;
+
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -552,14 +552,12 @@ const OverviewPageCopy = styled.p`
     width: 864px;
     font-size: 36px;
     line-height: 100%;
-    margin-bottom: 38px;
   }
 
   ${Devices.laptopM} {
     width: 1152px;
     font-size: 42px;
     line-height: 113%;
-    margin-bottom: 46px;
   }
 `;
 
