@@ -1,13 +1,14 @@
 import React, { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
+import { ArrowRight } from "lucide-react";
 
 //Components
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
-import CaseCard from "../../Content/CaseCard/CaseCard";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
+import Button from "../../Button/Button";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -35,12 +36,16 @@ const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
   return {
     id: caseStudy.id,
     type: mapCaseStudyType(caseStudy.type),
-    eyebrow: "Case Study",
+    company: caseStudy.company,
     headline: caseStudy.name,
+    subline: caseStudy.sub,
     copy: caseStudy.desc,
     imgURL: caseStudy.cover,
     link: caseStudy.slug,
     comingSoon: caseStudy.coming,
+    bg: caseStudy.bg,
+    color: caseStudy.color,
+    keyResults: caseStudy.keyResults,
   };
 });
 
@@ -76,22 +81,44 @@ const Content = (props) => {
     margin-bottom: 200px;
   `;
 
-  const CaseCardGrid = styled.section`
-    margin: 0px 24px 0px 24px;
+  const CaseBlockImage = styled.img`
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+    flex: 1;
+  `;
+  const CaseBlockImageWrapper = styled.div`
+    flex: 1;
+    margin: 0px;
+    min-width: 0;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    --gap: 24px;
-    gap: var(--gap);
+    align-self: stretch;
+  `;
+  const CaseBlock = styled.a`
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    overflow: hidden;
+    background-color: white;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    min-height: 400px;
+    border-radius: 32px;
+    text-align: center;
+    margin: 0px 0px 24px 0px;
+    cursor: pointer;
     ${Devices.tabletS} {
       width: 564px;
     }
     ${Devices.tabletM} {
-      margin: 0px 0px 0px 0px;
-
+      margin: 0px 0px 48px 0px;
       width: 708px;
       flex-direction: row;
       align-items: center;
@@ -103,8 +130,79 @@ const Content = (props) => {
     ${Devices.laptopM} {
       width: 1140px;
     }
+    &:hover img {
+      transform: scale(1.2);
+    }
+  `;
+  const CaseBlockDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-size: 16px;
+    line-height: 150%;
+    margin: 32px 0px 24px 24px;
+    width: 40%;
+    min-height: 400px;
+
+    text-align: left;
+  `;
+  const CaseBlockDetailsText = styled.div`
+    margin: 0px 0px 0px 0px;
+  `;
+  const CaseBlockEyebrow = styled.p`
+    color: ${Colors.primaryText.highEmphasis};
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 110%;
+
+    text-align: left;
+    margin: 0px 0px 4px 0px;
+  `;
+  const CaseBlockHeadline = styled.h3`
+    color: ${Colors.primaryText.highEmphasis};
+    font-size: 32px;
+    line-height: 110%;
+
+    text-align: left;
+    margin: 0px 0px 0px 0px;
+  `;
+  const CaseBlockSubline = styled.p`
+    color: ${Colors.primaryText.highEmphasis};
+    font-size: 24px;
+    line-height: 110%;
+
+    text-align: left;
+    margin: 0px 0px 24px 0px;
+  `;
+  const CaseBlockCopy = styled.p`
+    color: ${Colors.primaryText.mediumEmphasis};
+    font-size: 18px;
+    line-height: 110%;
+
+    text-align: left;
+    margin: 0px 0px 0px 0px;
+  `;
+  const KeyResultsList = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+    !list-style: none;
   `;
 
+  const KeyResultItem = styled.div`
+    background: ${Colors.back};
+    border: 1px solid rgba(8, 8, 8, 0.08);
+    color: ${Colors.primaryText.highEmphasis};
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 15px;
+    line-height: 1.3;
+  `;
   const EmptyState = styled.p`
     color: ${Colors.primaryText.mediumEmphasis};
     font-size: 16px;
@@ -136,28 +234,45 @@ const Content = (props) => {
       <Section>
         <SectionHead subline="Work" copy="Selected projects" />
 
-        <CaseCardGrid>
-          {filteredCaseStudies.length > 0 ? (
-            filteredCaseStudies.map((caseStudy) => (
-              <CaseCard
-                key={caseStudy.id}
-                eyebrow={caseStudy.eyebrow}
-                eyebrowColor2={caseStudy.eyebrowColor2}
-                eyebrowColor1={caseStudy.eyebrowColor1}
-                headline={caseStudy.headline}
-                copy={caseStudy.copy}
-                imgURL={caseStudy.imgURL}
-                link={caseStudy.link}
-                comingSoon={caseStudy.comingSoon}
-              />
-            ))
-          ) : (
-            <EmptyState>
-              No case studies are available for this type yet. Please check back
-              soon.
-            </EmptyState>
-          )}
-        </CaseCardGrid>
+        {filteredCaseStudies.length > 0 ? (
+          filteredCaseStudies.map((caseStudy) => (
+            <CaseBlock
+              key={caseStudy.id}
+              style={{ backgroundColor: caseStudy.bg }}
+              href={caseStudy.link}
+            >
+              <CaseBlockDetails>
+                <CaseBlockDetailsText>
+                  <CaseBlockEyebrow style={{ color: caseStudy.color }}>
+                    {caseStudy.company}
+                  </CaseBlockEyebrow>
+                  <CaseBlockHeadline>{caseStudy.headline}</CaseBlockHeadline>
+                  <CaseBlockSubline>{caseStudy.subline}</CaseBlockSubline>
+                  <CaseBlockCopy>{caseStudy.copy}</CaseBlockCopy>
+                </CaseBlockDetailsText>
+                <KeyResultsList>
+                  {caseStudy.keyResults?.map((keyResult, index) => (
+                    <KeyResultItem key={index}>{keyResult}</KeyResultItem>
+                  ))}
+                </KeyResultsList>
+                <Button
+                  text="View Case Study"
+                  gradient={caseStudy.color}
+                  href={caseStudy.link}
+                  icon={<ArrowRight size="21" />}
+                />
+              </CaseBlockDetails>
+              <CaseBlockImageWrapper>
+                <CaseBlockImage src={caseStudy.imgURL} />
+              </CaseBlockImageWrapper>
+            </CaseBlock>
+          ))
+        ) : (
+          <EmptyState>
+            No case studies are available for this type yet. Please check back
+            soon.
+          </EmptyState>
+        )}
       </Section>
     </Content>
   );

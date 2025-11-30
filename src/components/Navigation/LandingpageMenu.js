@@ -12,7 +12,6 @@ const LandingpageMenu = (props) => {
     text-align: left;
     float: left;
 
-    margin-right: 24px;
     flex-direction: column;
     align-items: left;
     gap: 2px;
