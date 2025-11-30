@@ -17,7 +17,8 @@ const NavigationWrapper = styled.header`
   width: 100%;
   border-bottom: 1px solid;
   border-color: ${Colors.primaryText.highEmphasis};
-  background-color: ${Colors.background};
+  background-color: ${Colors.background}dd;
+  backdrop-filter: blur(2.40437px);
   z-index: 1000;
 `;
 
@@ -29,8 +30,7 @@ const StickyBar = styled.div`
   margin: 0 auto;
   height: 52px;
   border-bottom: 1px solid;
-  border-color: ${Colors.primaryText.highEmphasis};
-  background-color: ${Colors.background};
+
   z-index: 1000;
   margin-right: 24px;
   margin-left: 24px;
