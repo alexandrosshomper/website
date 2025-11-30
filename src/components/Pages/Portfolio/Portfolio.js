@@ -127,10 +127,12 @@ const Content = (props) => {
     display: flex;
     align-self: stretch;
   `;
-  const CaseBlock = styled.div`
+  const CaseBlock = styled.a`
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     gap: 24px;
+    overflow: hidden;
     background-color: white;
     color: ${Colors.primaryText.mediumEmphasis};
     font-size: 16px;
@@ -139,12 +141,13 @@ const Content = (props) => {
     min-height: 400px;
     border-radius: 32px;
     text-align: center;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 24px 0px;
+    cursor: pointer;
     ${Devices.tabletS} {
       width: 564px;
     }
     ${Devices.tabletM} {
-      margin: 0px 0px 0px 0px;
+      margin: 0px 0px 48px 0px;
       width: 708px;
       flex-direction: row;
       align-items: center;
@@ -157,7 +160,7 @@ const Content = (props) => {
       width: 1140px;
     }
     &:hover img {
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
   `;
   const CaseBlockDetails = styled.div`
@@ -265,6 +268,7 @@ const Content = (props) => {
             <CaseBlock
               key={caseStudy.id}
               style={{ backgroundColor: caseStudy.bg }}
+              href={caseStudy.link}
             >
               <CaseBlockDetails>
                 <CaseBlockDetailsText>
@@ -283,7 +287,8 @@ const Content = (props) => {
                 <Button
                   text="View Case Study"
                   gradient={caseStudy.color}
-                  color={caseStudy.bg}
+                  href={caseStudy.link}
+                  icon={<ArrowRight size="21" />}
                 />
               </CaseBlockDetails>
               <CaseBlockImageWrapper>
@@ -297,29 +302,6 @@ const Content = (props) => {
             soon.
           </EmptyState>
         )}
-
-        <CaseCardGrid>
-          {filteredCaseStudies.length > 0 ? (
-            filteredCaseStudies.map((caseStudy) => (
-              <CaseCard
-                key={caseStudy.id}
-                eyebrow={caseStudy.eyebrow}
-                eyebrowColor2={caseStudy.eyebrowColor2}
-                eyebrowColor1={caseStudy.eyebrowColor1}
-                headline={caseStudy.headline}
-                copy={caseStudy.copy}
-                imgURL={caseStudy.imgURL}
-                link={caseStudy.link}
-                comingSoon={caseStudy.comingSoon}
-              />
-            ))
-          ) : (
-            <EmptyState>
-              No case studies are available for this type yet. Please check back
-              soon.
-            </EmptyState>
-          )}
-        </CaseCardGrid>
       </Section>
     </Content>
   );

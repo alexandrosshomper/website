@@ -21,8 +21,8 @@
       "Time-to-Value ↓ 40%",
       "NPS ↑ 15"
     ],
-    "bg": "#dff5f4",
-    "color": "#231768"
+    "bg": "#fff",
+    "color": "#383294"
   },
   {
     "id": 2,
@@ -46,7 +46,7 @@
       "+25% retention",
       "2h/week saved per dealer"
     ],
-    "bg": "#dff5f4",
+    "bg": "#fff",
     "color": "#231768"
   },
   {
@@ -71,8 +71,8 @@
       "CRM data quality ↑",
       "Team onboarding time ↓ drastically"
     ],
-    "bg": "#dff5f4",
-    "color": "#231768"
+    "bg": "#fff",
+    "color": "#171c91"
   },
   {
     "id": 4,
