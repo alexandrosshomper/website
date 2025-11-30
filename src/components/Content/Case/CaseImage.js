@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Colors, Devices } from "../../DesignSystem";
+import { Devices } from "../../DesignSystem";
 
 const sizeMap = {
   default: {
@@ -69,14 +69,9 @@ const Picture = styled.img`
   -webkit-font-smoothing: antialiased;
 `;
 
-const CaseImage = ({ imgURL, alt = "", color1, color2, size }) => {
-  const backgroundGradient =
-    color1 && color2
-      ? `linear-gradient(to right, ${color1}, ${color2})`
-      : `linear-gradient(to right, ${Colors.red}, ${Colors.redLight})`;
-
+const CaseImage = ({ imgURL, alt = "", size }) => {
   return (
-    <CaseImageWrapper $size={size} style={{ backgroundImage: backgroundGradient }}>
+    <CaseImageWrapper $size={size}>
       <Picture src={imgURL} alt={alt} />
     </CaseImageWrapper>
   );
