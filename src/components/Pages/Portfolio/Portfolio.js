@@ -7,7 +7,6 @@ import { ArrowRight } from "lucide-react";
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 
-import CaseCard from "../../Content/CaseCard/CaseCard";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 
@@ -82,34 +81,6 @@ const Content = (props) => {
     margin-bottom: 200px;
   `;
 
-  const CaseCardGrid = styled.section`
-    margin: 0px 24px 0px 24px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    --gap: 24px;
-    gap: var(--gap);
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      margin: 0px 0px 0px 0px;
-
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1140px;
-    }
-  `;
   const CaseBlockImage = styled.img`
     width: 100%;
     height: 100%;
