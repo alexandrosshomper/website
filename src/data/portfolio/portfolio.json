@@ -82,6 +82,8 @@
     "cover": "/img/portfolio/occhio-website/cover.png",
     "thumbnail": "/img/portfolio/occhio/thumbnail.png",
     "type": "Product Market Fit",
-    "coming": false
+    "coming": false,
+    "bg": "#fff",
+    "color": "#000"
   }
 ]
