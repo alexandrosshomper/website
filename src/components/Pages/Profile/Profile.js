@@ -102,7 +102,6 @@ const CompanyList = styled.ul`
   flex-direction: column;
   background: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 8px 28px rgba(8, 8, 8, 0.08);
   overflow: hidden;
 `;
 
