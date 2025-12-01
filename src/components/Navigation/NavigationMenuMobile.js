@@ -173,6 +173,20 @@ const NavigationMenuMobile = (props) => {
               Writing
             </MenuLink>
           </MenuItem>
+          <MenuItem>
+            <MenuLink
+              to="/contact"
+              style={{
+                color:
+                  currentPath === "/contact"
+                    ? Colors.primaryText.highEmphasis
+                    : Colors.primaryText.mediumEmphasis,
+                textDecoration: "none",
+              }}
+            >
+              Contact
+            </MenuLink>
+          </MenuItem>
         </Menu>
       </NavigationMenuMobile>
 

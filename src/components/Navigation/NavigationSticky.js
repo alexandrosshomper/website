@@ -152,7 +152,7 @@ const MenuButton = styled.div`
   }
 `;
 
-const NavigationSticky = () => {
+const NavigationSticky = ({ style }) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -168,14 +168,15 @@ const NavigationSticky = () => {
 
   const navigationLinks = useMemo(
     () => [
-      { label: "Profile", to: "/profile" },
-      { label: "Portfolio", to: "/portfolio" },
+      { label: "Home", to: "/" },
+      { label: "About", to: "/about" },
       { label: "Writing", to: "/writing" },
+      { label: "Contact", to: "/contact" },
     ],
     []
   );
   return (
-    <NavigationWrapper data-navigation="sticky">
+    <NavigationWrapper data-navigation="sticky" style={style}>
       {menuOpen ? (
         <NavigationMenuMobile>
           <CTA onClick={closeButtonClick}>
@@ -206,7 +207,7 @@ const NavigationSticky = () => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <StickyBar>
+        <StickyBar style={style}>
           <IdentitySticky />
           <CTA>
             <LandingpageMenu style={{ marginTop: "4px;" }} />

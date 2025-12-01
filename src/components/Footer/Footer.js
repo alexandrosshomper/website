@@ -167,6 +167,17 @@ const Footer = (props) => {
               Writing
             </Link>
           </SitemapItem>
+          <SitemapItem>
+            <Link
+              to={`/contact`}
+              style={{
+                color: Colors.primaryText.highEmphasis,
+                textDecoration: "none",
+              }}
+            >
+              Contact
+            </Link>
+          </SitemapItem>
         </Sitemap>
 
         <Legals>

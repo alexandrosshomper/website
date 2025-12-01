@@ -91,6 +91,20 @@ const LandingpageMenu = (props) => {
           Writing
         </Link>
       </MenuItemSmall>
+      <MenuItemSmall>
+        <Link
+          to={`/contact`}
+          style={{
+            color:
+              currentPath === "/contact"
+                ? Colors.primaryText.highEmphasis
+                : Colors.primaryText.mediumEmphasis,
+            textDecoration: "none",
+          }}
+        >
+          Contact
+        </Link>
+      </MenuItemSmall>
     </LandingpageMenu>
   );
 };

@@ -193,19 +193,20 @@ const BusinessCard = ({ headline, copy }) => {
     <BusinessCard>
       <Portrait src="./img/Identity/PortraitProSE.png" />
       <BusinessCardParagraph>
-        <Overline>Startup Coach & Advisor</Overline>
-        <BusinessCardHeadline>
-          I’m Alexandros Shomper, <br />
-          and I’m here to help.
-        </BusinessCardHeadline>
+        <Overline>Product Lead & Startup Advisor</Overline>
+        <BusinessCardHeadline>Hi, I’m Alexandros Shomper.</BusinessCardHeadline>
         <BusinessCardCopy>
           My super power is making <b>customer-centric and data-driven</b>{" "}
           product decisions–fast.
         </BusinessCardCopy>
 
         <BusinessCardCopy>
-          Working on countless products I’ve learned first hand how{" "}
-          <b>user onboarding and activation can make or break your startup</b>.{" "}
+          Working on countless products I’ve learned first hand how design is
+          not just how a product looks or works.
+        </BusinessCardCopy>
+
+        <BusinessCardCopy>
+          <b>Design is how your business works</b>.{" "}
         </BusinessCardCopy>
       </BusinessCardParagraph>
     </BusinessCard>
