@@ -51,47 +51,6 @@ function FadeInWhenVisible({ children }) {
   );
 }
 
-function MoveUpWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.6 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+100%",
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function RevealWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -316,30 +275,7 @@ const Content = (props) => {
       width: 1152px;
     }
   `;
-  const Polaroids = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: flex-start;
-    column-gap: 16px;
-    row-gap: 24px;
 
-    ${Devices.tabletS} {
-      width: 576px;
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
   const CaseBlockImage = styled.img`
     width: 100%;
     height: 100%;
