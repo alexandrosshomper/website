@@ -13,7 +13,7 @@ import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 
 //import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
-//import Home from "./components/Pages/Home/Home";
+const HomeJob = lazy(() => import("./components/Pages/Home/HomeJob"));
 const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
 const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
 const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
@@ -129,9 +129,10 @@ function App() {
         </Helmet>
         <Suspense fallback={renderLoader()}>
           <Navigation />
-          {isSticky && <NavigationSticky />}
+          <NavigationSticky style={{ top: isSticky ? "0px" : "-60px" }} />
 
           <Switch>
+            <Route exact path="/job" component={HomeJob} />
             <Route exact path="/about" component={Profile} />
             <Route exact path="/" component={Portfolio} />
             <Route exact path="/contact" component={Contact} />

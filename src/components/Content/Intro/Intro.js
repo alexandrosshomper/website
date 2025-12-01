@@ -1,83 +1,130 @@
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import styled from "@emotion/styled";
 import Typewriter from "typewriter-effect";
 
-import { Devices } from "../../DesignSystem";
+import { Devices, Colors } from "../../DesignSystem";
 
-const Intro = (props) => {
-  const Intro = styled.h1`
-    margin: 0px auto;
-    margin-bottom: 160px;
+const IntroHeading = styled.h1`
+  margin: 0px auto;
+  margin-bottom: 160px;
 
-    font-style: normal;
-    font-weight: bold;
-    line-height: 142%;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 142%;
 
+  text-align: left;
+  margin-left: 24px;
+  margin-right: 24px;
+
+  color: #000a12;
+  ${Devices.tabletS} {
+    margin: 0 auto;
+    width: 563px;
+    height: 188px;
+    font-size: 44px;
+    line-height: 107%;
     text-align: left;
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-bottom: 320px;
+  }
+  ${Devices.tabletM} {
+    width: 707px;
+    height: 208px;
+    font-size: 52px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+    height: 292px;
+    font-size: 60px;
+    line-height: 122%;
+  }
+  ${Devices.laptopM} {
+    width: 1141px;
+    height: 336px;
+    font-size: 80px;
+    line-height: 105%;
+  }
+`;
+const Subline = styled.p`
+  margin: 0px auto;
+  margin-bottom: 160px;
 
-    color: #000a12;
-    ${Devices.tabletS} {
-      margin: 0 auto;
-      width: 563px;
-      height: 188px;
-      font-size: 44px;
-      line-height: 107%;
-      text-align: left;
-      margin-bottom: 320px;
-    }
-    ${Devices.tabletM} {
-      width: 707px;
-      height: 208px;
-      font-size: 52px;
-      line-height: 100%;
-      letter-spacing: -0.02em;
-    }
-    ${Devices.laptopS} {
-      width: 852px;
-      height: 292px;
-      font-size: 60px;
-      line-height: 122%;
-    }
-    ${Devices.laptopM} {
-      width: 1141px;
-      height: 336px;
-      font-size: 80px;
-      line-height: 105%;
-    }
-  `;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+
+  text-align: left;
+  margin-left: 24px;
+  margin-right: 24px;
+
+  color: ${Colors.primaryText.mediumEmphasis};
+  ${Devices.tabletS} {
+    margin: 0 auto;
+    width: 563px;
+    height: 188px;
+    font-size: 36px;
+    line-height: 109%;
+    text-align: left;
+    margin-bottom: 320px;
+  }
+  ${Devices.tabletM} {
+    width: 707px;
+    height: 208px;
+
+    letter-spacing: -0.02em;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+    height: 292px;
+  }
+  ${Devices.laptopM} {
+    width: 1141px;
+    height: 336px;
+  }
+`;
+
+const Intro = () => {
+  const typewriterOptions = useMemo(
+    () => ({
+      autoStart: true,
+      loop: true,
+    }),
+    []
+  );
+
+  const handleTypewriterInit = useCallback((typewriter) => {
+    typewriter
+      .typeString(
+        "<span>Product</span> <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>Lead</span>"
+      )
+      .pauseFor(1000)
+      .deleteChars(4)
+      .typeString(
+        "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>Manager</span>"
+      )
+      .pauseFor(1000)
+      .deleteChars(8)
+      .typeString(
+        "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>Designer</span>"
+      )
+
+      .pauseFor(1500)
+      .start();
+  }, []);
 
   return (
-    <Intro>
-      Hi! I'm a product
-      <Typewriter
-        options={{
-          autoStart: true,
-          loop: true,
-        }}
-        onInit={(typewriter) => {
-          typewriter
-            .typeString(
-              " <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>lead</span>"
-            )
-            .pauseFor(2000)
-            .deleteChars(4)
-            .typeString(
-              "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>consultant</span>"
-            )
-            .pauseFor(2000)
-            .deleteChars(10)
-            .typeString(
-              "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>designer</span>"
-            )
-
-            .pauseFor(2500)
-            .start();
-        }}
-      />
-      <br />I help you make customer-centric & data-driven product decisions.
-    </Intro>
+    <IntroHeading>
+      Alexandros Shomper
+      <Typewriter options={typewriterOptions} onInit={handleTypewriterInit} />
+      <br />
+      <Subline>
+        Now seeking a{" "}
+        <span style={{ color: "black" }}>Product Design Manager</span> role in a
+        high-growth environment where strategic leadership and hands-on
+        execution accelerate product maturity and user value.
+      </Subline>
+    </IntroHeading>
   );
 };
 

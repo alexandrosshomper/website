@@ -1,22 +1,117 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
+import { motion, useAnimation } from "framer-motion";
 import styled from "@emotion/styled";
 import { Helmet } from "react-helmet";
+import { mdiEmail, mdiLinkedin } from "@mdi/js";
 
 import { Colors, Devices } from "../../DesignSystem";
+import Intro from "../../Content/Intro/Intro";
 
-const PageWrapper = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 120px 24px 160px 24px;
-  gap: 64px;
+import SectionHead from "../../Content/Section/SectionHead";
+import SectionCopy from "../../Content/Section/SectionCopy";
+import SectionDivider from "../../Content/Section/SectionDivider";
+import BusinessCard from "../../Content/BusinessCard/BusinessCard";
+import Button from "../../Button/Button";
+
+function RevealWhenVisible({ children }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      transition={{ duration: 0.9 }}
+      variants={{
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.3,
+          },
+        },
+        hidden: {
+          opacity: 0,
+          x: "5%",
+          transition: {
+            when: "afterChildren",
+          },
+        },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+const Annotation = styled.p`
+  max-width: 280px;
 
   ${Devices.tabletS} {
-    padding: 160px 0 200px 0;
+    max-width: 280px;
+  }
+  ${Devices.tabletM} {
+    max-width: 280px;
+  }
+  ${Devices.laptopS} {
+    max-width: 42%;
+  }
+  ${Devices.laptopM} {
+    max-width: 33%;
+  }
+`;
+const AnnotationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0px 24px 24px 24px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    flex-direction: row;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
   }
 `;
 
-const Hero = styled.header`
+const PageWrapper = styled.main`
+  text-align: left;
+  margin-top: 72px;
+  margin-bottom: 200px;
+`;
+const CVWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px 120px 24px;
+  gap: 64px;
+
+  ${Devices.tabletS} {
+    padding: 0px 0 120px 0;
+  }
+`;
+
+const Hero = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,33 +151,46 @@ const Subline = styled.p`
     width: 600px;
   }
 `;
-
-const Section = styled.section`
+const CVSection = styled.section`
+  /* Auto Layout */
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: center;
   width: 100%;
-  max-width: 720px;
 
-  margin-right: 24px;
-  margin-left: 24px;
+  /* Inside Auto Layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  align-items: stretch;
+  flex-grow: 0;
+  margin-bottom: 60px;
   ${Devices.tabletS} {
-    margin: 0 auto;
-    width: 564px;
+    align-items: center;
   }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
+`;
+const Section = styled.section`
+  /* Auto Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  align-items: stretch;
+  flex-grow: 0;
+  margin-bottom: 200px;
+  ${Devices.tabletS} {
+    align-items: center;
   }
 `;
 
-const SectionTitle = styled.h2`
-  margin: 0;
+const CVEyebrow = styled.h2`
+  margin: 0px;
+  margin-bottom: 8px;
   font-size: 12px;
   font-weight: 600;
   line-height: 120%;
@@ -243,39 +351,6 @@ const sections = [
     ],
   },
   {
-    title: "Startups coached",
-    items: [
-      {
-        name: "Muvn",
-        subline: "Pre-Seed",
-        label: "Visit",
-        url: "https://www.muvn.de",
-        logo: "/img/company-logos/muvn.jpeg",
-      },
-      {
-        name: "Norizon",
-        subline: "Pre-Seed",
-        label: "Visit",
-        url: "https://norizon.de",
-        logo: "/img/company-logos/norizon.jpeg",
-      },
-      {
-        name: "Codressing",
-        subline: "Pre-Seed",
-        label: "Visit",
-        url: "https://www.co-dressing.com",
-        logo: "/img/company-logos/codressing.jpeg",
-      },
-      {
-        name: "FamilyMindAI",
-        subline: "Pre-Seed",
-        label: "Visit",
-        url: "https://familymind.ai",
-        logo: "/img/company-logos/familymindai.jpeg",
-      },
-    ],
-  },
-  {
     title: "Past Work",
     items: [
       {
@@ -341,56 +416,138 @@ const Profile = () => {
           content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
         />
       </Helmet>
+      <Intro></Intro>
 
-      <Hero>
-        <NameBlock>
-          <Name>Alexandros Shomper</Name>
-          <Subline>
-            <b>Product Design Leader & Startup Advisor</b>
-          </Subline>
-        </NameBlock>
-
-        <Subline>
-          Now seeking a Product Design Manager role in a high-growth environment
-          where strategic leadership and hands-on execution accelerate product
-          maturity and user value.
-        </Subline>
+      <Section>
+        <SectionHead headline="A little bit about me" />
+        <BusinessCard
+          headline={"Alexandros Shomper"}
+          copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
+        />
+        <RevealWhenVisible>
+          <SectionDivider text={"Here’s a TL;DR of my career:"} />
+        </RevealWhenVisible>
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={"Education in Arts & Marketing, and self-taught developer 👨🏻‍💻"}
+          />
+        </RevealWhenVisible>
         <br />
-      </Hero>
-
-      {sections.map((section) => (
-        <Section key={section.title}>
-          <SectionTitle>{section.title}</SectionTitle>
-          <CompanyList>
-            {section.items.map((company, index) => (
-              <CompanyItem key={company.name}>
-                <CompanyDetails>
-                  <CompanyIcon
-                    $background={company.logo}
-                    aria-hidden="true"
-                  ></CompanyIcon>
-                  <CompanyText>
-                    <CompanyName>{company.name}</CompanyName>
-                    <CompanySubline>{company.subline}</CompanySubline>
-                  </CompanyText>
-                </CompanyDetails>
-                {company.url && (
-                  <VisitButton
-                    as="a"
-                    href={company.url}
-                    {...(company.url.startsWith("http")
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                    aria-label={`Visit ${company.name}`}
-                  >
-                    {company.label}
-                  </VisitButton>
-                )}
-              </CompanyItem>
-            ))}
-          </CompanyList>
-        </Section>
-      ))}
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "Successful career in advertising and marketing, creating global marketing campaigns and brand experiences"
+            }
+          />
+        </RevealWhenVisible>
+        <br />
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
+            }
+          />
+        </RevealWhenVisible>
+        <br />
+        <RevealWhenVisible>
+          <SectionCopy
+            copy={
+              "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
+            }
+          />
+        </RevealWhenVisible>
+        <br />
+        <RevealWhenVisible>
+          <AnnotationWrapper
+            style={{ color: Colors.primaryText.mediumEmphasis }}
+          >
+            <Annotation>
+              There’s a bunch more detail below, but you can also view a summary
+              on{" "}
+              <a
+                href="https://www.linkedin.com/in/alexshomper/"
+                style={{ color: Colors.turkish }}
+              >
+                LinkedIn
+              </a>{" "}
+              and take a look at my{" "}
+              <a
+                href="https://github.com/alexandrosshomper"
+                style={{ color: Colors.turkish }}
+              >
+                Manager README on Github
+              </a>
+              . If you like side projects, check out my{" "}
+              <a href="https://cookcook.it" style={{ color: Colors.turkish }}>
+                Cooking Social Network
+              </a>
+              .
+            </Annotation>
+          </AnnotationWrapper>
+          <AnnotationWrapper
+            style={{ color: Colors.primaryText.mediumEmphasis }}
+          >
+            <Button
+              href="mailto:alexandros@alexandrosshomper.de"
+              text="Email Me"
+              gradient={{ from: Colors.black, to: Colors.greyDark }}
+              icon={mdiEmail}
+            />
+            <Button
+              size="medium"
+              variant="primary"
+              href="https://www.linkedin.com/in/alexshomper/"
+              text="LinkedIn"
+              gradient={{ from: Colors.blue, to: Colors.blueLight }}
+              icon={mdiLinkedin}
+            />
+          </AnnotationWrapper>
+        </RevealWhenVisible>
+      </Section>
+      <CVWrapper>
+        <Hero>
+          <NameBlock>
+            <Name>Curriculum Vitae</Name>
+            <Subline>
+              <b>Product Design Leader & Startup Advisor</b>
+            </Subline>
+          </NameBlock>
+          <br />
+        </Hero>
+        {sections.map((section) => (
+          <CVSection key={section.title}>
+            <CVEyebrow>{section.title}</CVEyebrow>
+            <CompanyList>
+              {section.items.map((company, index) => (
+                <CompanyItem key={company.name}>
+                  <CompanyDetails>
+                    <CompanyIcon
+                      $background={company.logo}
+                      aria-hidden="true"
+                    ></CompanyIcon>
+                    <CompanyText>
+                      <CompanyName>{company.name}</CompanyName>
+                      <CompanySubline>{company.subline}</CompanySubline>
+                    </CompanyText>
+                  </CompanyDetails>
+                  {company.url && (
+                    <VisitButton
+                      as="a"
+                      href={company.url}
+                      {...(company.url.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      aria-label={`Visit ${company.name}`}
+                    >
+                      {company.label}
+                    </VisitButton>
+                  )}
+                </CompanyItem>
+              ))}
+            </CompanyList>
+          </CVSection>
+        ))}
+      </CVWrapper>
     </PageWrapper>
   );
 };
