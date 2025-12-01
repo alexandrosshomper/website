@@ -23,6 +23,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
     border-bottom: 1px solid ${Colors.primaryText.lowEmphasis};
     ${Devices.tabletS} {
       width: 100%;
+      max-width: 100%;
     }
     ${Devices.tabletM} {
       margin-left: 0px;
@@ -139,9 +140,13 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
     width: 80px;
     height: 53px;
     margin-left: 24px;
-
-    ${Devices.tabletM} {
+    ${Devices.tabletS} {
       width: 160px;
+      height: auto;
+      margin-left: 56px;
+    }
+    ${Devices.tabletM} {
+      width: 300px;
       height: auto;
       margin-left: 56px;
     }

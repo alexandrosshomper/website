@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 
 //Components
-import { Colors } from "../../DesignSystem";
+import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import Article from "../../Content/Article/Article";
 import Button from "../../Button/Button";
@@ -29,6 +29,43 @@ const Content = () => {
     flex-grow: 0;
     margin-bottom: 200px;
   `;
+  const ArticleList = styled.div`
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0px;
+
+    position: static;
+
+    left: 0px;
+    top: 0px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 24px 40px 24px;
+    ${Devices.tabletS} {
+      margin: 0px 0px 60px 0px;
+      width: 576px;
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+    ${Devices.tabletM} {
+      width: 720px;
+      margin: 0px 0px 60px 0px;
+    }
+    ${Devices.laptopS} {
+      width: 864px;
+      margin: 0px 0px 60px 0px;
+    }
+    ${Devices.laptopM} {
+      width: 1152px;
+      margin: 0px 0px 60px 0px;
+    }
+  `;
 
   return (
     <Content>
@@ -50,107 +87,108 @@ const Content = () => {
           subline="Sharing articles, insights, and frameworks with the product community."
         />
         <SectionOverline subline="My playbooks about PLG" />
+        <ArticleList>
+          <Article
+            headline="Onboarding Friction Playbook"
+            subline="This workbook covers all the relevant aspects to identify, quantify, and remove onboarding friction so new users reach value fast and activate reliably."
+            meta="Alexandros Shomper - PLG Playbooks"
+            link="https://store.alexandrosshomper.de/l/onboarding-playbook?layout=profile"
+            imgURL="https://public-files.gumroad.com/gsm5tgpavsj447antai1j4m903h8"
+          />
+          <Article
+            headline="Lifecycle Nudges Playbook"
+            subline="This workbook covers all the relevant aspects to design, orchestrate, and iterate lifecycle nudges across channels so more users reach Aha! fast, adopt key behaviors, form habits, expand, and recover when they lapse."
+            meta="Alexandros Shomper - PLG Playbooks"
+            link="https://store.alexandrosshomper.de/l/lifecycle-nudges-playbook?layout=profile"
+            imgURL="https://public-files.gumroad.com/0kn4t816lalki7d7zfbfv6uo9tr3"
+          />
+          <Article
+            headline="Segmentation Questions Playbook"
+            subline="This workbook covers how you define your segments, create the right questions to identify them, and use that insight to provide personalized experiences, and analyze user behaviour better."
+            meta="Alexandros Shomper - PLG Playbooks"
+            link="https://store.alexandrosshomper.de/l/segmentation-questions-playbook?layout=profile"
+            imgURL="https://public-files.gumroad.com/h5csduao9u8b31v1x3shl6jsg9pf"
+          />
+          <br />
+          <Button
+            size="medium"
+            variant="primary"
+            href="https://store.alexandrosshomper.de/"
+            text="See all my PLG playbooks"
+            gradient={{ from: Colors.greyDark, to: Colors.black }}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <SectionOverline subline="My articles on Medium.com" />
 
-        <Article
-          headline="Onboarding Friction Playbook"
-          subline="This workbook covers all the relevant aspects to identify, quantify, and remove onboarding friction so new users reach value fast and activate reliably."
-          meta="Alexandros Shomper - PLG Playbooks"
-          link="https://store.alexandrosshomper.de/l/onboarding-playbook?layout=profile"
-          imgURL="https://public-files.gumroad.com/gsm5tgpavsj447antai1j4m903h8"
-        />
-        <Article
-          headline="Lifecycle Nudges Playbook"
-          subline="This workbook covers all the relevant aspects to design, orchestrate, and iterate lifecycle nudges across channels so more users reach Aha! fast, adopt key behaviors, form habits, expand, and recover when they lapse."
-          meta="Alexandros Shomper - PLG Playbooks"
-          link="https://store.alexandrosshomper.de/l/lifecycle-nudges-playbook?layout=profile"
-          imgURL="https://public-files.gumroad.com/0kn4t816lalki7d7zfbfv6uo9tr3"
-        />
-        <Article
-          headline="Segmentation Questions Playbook"
-          subline="This workbook covers how you define your segments, create the right questions to identify them, and use that insight to provide personalized experiences, and analyze user behaviour better."
-          meta="Alexandros Shomper - PLG Playbooks"
-          link="https://store.alexandrosshomper.de/l/segmentation-questions-playbook?layout=profile"
-          imgURL="https://public-files.gumroad.com/h5csduao9u8b31v1x3shl6jsg9pf"
-        />
-        <br />
-        <Button
-          size="medium"
-          variant="primary"
-          href="https://store.alexandrosshomper.de/"
-          text="See all my PLG playbooks"
-          gradient={{ from: Colors.greyDark, to: Colors.black }}
-        />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <SectionOverline subline="My articles on Medium.com" />
-
-        <Article
-          headline="Is the Customer always right? It depends …"
-          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
-          meta="Alexandros Shomper for Bootcamp @ Medium.com"
-          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
-          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
-        />
-        <Article
-          headline="Change Aversion and what now?"
-          subline="Users hate when products are a changing: Overcoming Change Aversion in Digital Product Design and Development."
-          meta="Alexandros Shomper for Bootcamp @ Medium.com"
-          link="https://bootcamp.uxdesign.cc/change-aversion-and-what-now-55024604096a"
-          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*Xd_nD0ZaWHnDvhViZfxDng.png"
-        />
-        <Article
-          headline="Redundancy is not your enemy"
-          subline="How Redundancy Helps You Cater to Different Customers."
-          meta="Alexandros Shomper for Bootcamp @ Medium.com"
-          link="https://bootcamp.uxdesign.cc/redundancy-is-not-your-enemy-892226f87271"
-          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*03GSdQoQns5lgSpW30J_bw.png"
-        />
-        <br />
-        <Button
-          size="medium"
-          variant="primary"
-          href="https://medium.com/@alexandrosshomper"
-          text="See all my articles on Medium"
-          gradient={{ from: Colors.greyDark, to: Colors.black }}
-        />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <SectionOverline subline="My artifacts on Reforge.com" />
-        <Article
-          headline="UX explainer presentation"
-          subline="An explainer presentation meant to introduce actionable concepts around UX and what it means for our organization."
-          meta="Alexandros Shomper for Reforge @ Reforge.com"
-          link="https://www.reforge.com/artifacts/ux-explainer-presentation-at-knauf"
-          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/6787514e3743e00c0e414a4e1775b903887238b4-528x343.png?w=2200&q=80&fit=max&auto=format"
-        />
-        <Article
-          headline="UX maturity assessment workshop"
-          subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
-          meta="Alexandros Shomper for Reforge @ Reforge.com"
-          link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
-          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
-        />
-        <Article
-          headline="Use case marketing messaging map"
-          subline="A use case marketing messaging map and product marketing map we use to help inform our efforts and align messaging and marketing."
-          meta="Alexandros Shomper for Reforge @ Reforge.com"
-          link="https://www.reforge.com/artifacts/use-case-marketing-messaging-map"
-          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/7d8cb395214411450f7d051f6bfae06e83788459-528x343.png?w=2200&q=80&fit=max&auto=format"
-        />
-        <br />
-        <Button
-          size="medium"
-          variant="primary"
-          href="https://www.reforge.com/profiles/alexandros-shomper"
-          text="See all my artifacts on Reforge"
-          gradient={{ from: Colors.greyDark, to: Colors.black }}
-        />
+          <Article
+            headline="Is the Customer always right? It depends …"
+            subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
+            meta="Alexandros Shomper for Bootcamp @ Medium.com"
+            link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
+            imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
+          />
+          <Article
+            headline="Change Aversion and what now?"
+            subline="Users hate when products are a changing: Overcoming Change Aversion in Digital Product Design and Development."
+            meta="Alexandros Shomper for Bootcamp @ Medium.com"
+            link="https://bootcamp.uxdesign.cc/change-aversion-and-what-now-55024604096a"
+            imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*Xd_nD0ZaWHnDvhViZfxDng.png"
+          />
+          <Article
+            headline="Redundancy is not your enemy"
+            subline="How Redundancy Helps You Cater to Different Customers."
+            meta="Alexandros Shomper for Bootcamp @ Medium.com"
+            link="https://bootcamp.uxdesign.cc/redundancy-is-not-your-enemy-892226f87271"
+            imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*03GSdQoQns5lgSpW30J_bw.png"
+          />
+          <br />
+          <Button
+            size="medium"
+            variant="primary"
+            href="https://medium.com/@alexandrosshomper"
+            text="See all my articles on Medium"
+            gradient={{ from: Colors.greyDark, to: Colors.black }}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <SectionOverline subline="My artifacts on Reforge.com" />
+          <Article
+            headline="UX explainer presentation"
+            subline="An explainer presentation meant to introduce actionable concepts around UX and what it means for our organization."
+            meta="Alexandros Shomper for Reforge @ Reforge.com"
+            link="https://www.reforge.com/artifacts/ux-explainer-presentation-at-knauf"
+            imgURL="https://cdn.sanity.io/images/pghoxh0e/production/6787514e3743e00c0e414a4e1775b903887238b4-528x343.png?w=2200&q=80&fit=max&auto=format"
+          />
+          <Article
+            headline="UX maturity assessment workshop"
+            subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
+            meta="Alexandros Shomper for Reforge @ Reforge.com"
+            link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
+            imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
+          />
+          <Article
+            headline="Use case marketing messaging map"
+            subline="A use case marketing messaging map and product marketing map we use to help inform our efforts and align messaging and marketing."
+            meta="Alexandros Shomper for Reforge @ Reforge.com"
+            link="https://www.reforge.com/artifacts/use-case-marketing-messaging-map"
+            imgURL="https://cdn.sanity.io/images/pghoxh0e/production/7d8cb395214411450f7d051f6bfae06e83788459-528x343.png?w=2200&q=80&fit=max&auto=format"
+          />
+          <br />
+          <Button
+            size="medium"
+            variant="primary"
+            href="https://www.reforge.com/profiles/alexandros-shomper"
+            text="See all my artifacts on Reforge"
+            gradient={{ from: Colors.greyDark, to: Colors.black }}
+          />
+        </ArticleList>
       </Section>
     </Content>
   );
