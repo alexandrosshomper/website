@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
-import { mdiLinkedin, mdiAccountBox, mdiFilePdfBox } from "@mdi/js";
+import { mdiLinkedin, mdiAccountBox } from "@mdi/js";
 
 import { Devices, Colors } from "../../DesignSystem";
 import Button from "../../Button/Button";
@@ -236,16 +236,8 @@ const Contact = (props) => {
             variant="primary"
             href="../vCard/AlexandrosShomper.vcf"
             text="vCard"
-            gradient={{ from: Colors.orange, to: Colors.orangeLight }}
-            icon={mdiAccountBox}
-          />
-          <Button
-            size="medium"
-            variant="primary"
-            href="../cv/AlexandrosShomper–CirriculumVitae.pdf"
-            text="Curriculum Vitae"
             gradient={{ from: Colors.black, to: Colors.greyDark }}
-            icon={mdiFilePdfBox}
+            icon={mdiAccountBox}
           />
         </ButtonRow>
       </ButtonContainer>
