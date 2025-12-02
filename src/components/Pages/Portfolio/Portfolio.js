@@ -11,7 +11,6 @@ import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
 import ListPanel from "../../Content/List/ListPanel/ListPanel";
-
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 function FadeInWhenVisible({ children }) {
@@ -131,7 +130,7 @@ const ButtonRow = styled.div`
   color: rgb(29, 29, 31);
   direction: ltr;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: center;
@@ -146,7 +145,6 @@ const ButtonRow = styled.div`
   text-align: center;
   text-size-adjust: 100%;
 
-  width: 100%;
   height: 200px;
 
   /* Inside Auto Layout */
@@ -165,6 +163,8 @@ const ButtonRow = styled.div`
     margin-bottom: calc(2 * var(--gap));
   }
   ${Devices.tabletS} {
+    flex-direction: row;
+
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -194,7 +194,7 @@ const ButtonContainer = styled.div`
   margin-top: 40px;
   margin-left: 24px;
   margin-right: 24px;
-
+  width: 400px;
   /* Inside Auto Layout */
   flex: none;
   order: 3;
@@ -308,13 +308,13 @@ const Content = (props) => {
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-    margin: 0px 0px 24px 0px;
+    margin: 0px auto 24px auto;
     cursor: pointer;
     ${Devices.tabletS} {
       width: 564px;
     }
     ${Devices.tabletM} {
-      margin: 0px 0px 48px 0px;
+      margin: 0px auto 48px auto;
       width: 708px;
       flex-direction: row;
       align-items: center;
@@ -433,7 +433,10 @@ const Content = (props) => {
         />
       </Section>
       <Section>
-        <SectionHead subline="Work" copy="Selected projects" />
+        <SectionHead
+          headline="Work"
+          subline="Selected projects. My work spans from product design, product management, and growth."
+        />
 
         {filteredCaseStudies.length > 0 ? (
           filteredCaseStudies.map((caseStudy) => (

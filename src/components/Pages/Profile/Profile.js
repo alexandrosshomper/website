@@ -70,6 +70,29 @@ const Annotation = styled.p`
     max-width: 33%;
   }
 `;
+const Summary = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0px 24px 24px 24px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    flex-direction: row;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
 const AnnotationWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -191,15 +214,11 @@ const Section = styled.section`
 const CVEyebrow = styled.h2`
   margin: 0px;
   margin-bottom: 8px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 120%;
   color: ${Colors.primaryText.mediumEmphasis};
   text-align: left;
-
-  ${Devices.tabletS} {
-    font-size: 16px;
-  }
 `;
 
 const CompanyList = styled.ul`
@@ -424,38 +443,44 @@ const Profile = () => {
           headline={"Alexandros Shomper"}
           copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
         />
-        <RevealWhenVisible>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Summary>
           <SectionDivider text={"Here’s a TL;DR of my career:"} />
-        </RevealWhenVisible>
-        <RevealWhenVisible>
-          <SectionCopy
-            copy={"Education in Arts & Marketing, and self-taught developer 👨🏻‍💻"}
-          />
-        </RevealWhenVisible>
-        <br />
-        <RevealWhenVisible>
-          <SectionCopy
-            copy={
-              "Successful career in advertising and marketing, creating global marketing campaigns and brand experiences"
-            }
-          />
-        </RevealWhenVisible>
-        <br />
-        <RevealWhenVisible>
-          <SectionCopy
-            copy={
-              "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
-            }
-          />
-        </RevealWhenVisible>
-        <br />
-        <RevealWhenVisible>
-          <SectionCopy
-            copy={
-              "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
-            }
-          />
-        </RevealWhenVisible>
+          <RevealWhenVisible>
+            <SectionCopy
+              copy={
+                "Education in Arts & Marketing, and self-taught developer 👨🏻‍💻"
+              }
+            />
+          </RevealWhenVisible>
+          <br />
+          <RevealWhenVisible>
+            <SectionCopy
+              copy={
+                "Successful career in advertising and marketing, creating global marketing campaigns and brand experiences"
+              }
+            />
+          </RevealWhenVisible>
+          <br />
+          <RevealWhenVisible>
+            <SectionCopy
+              copy={
+                "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
+              }
+            />
+          </RevealWhenVisible>
+          <br />
+          <RevealWhenVisible>
+            <SectionCopy
+              copy={
+                "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
+              }
+            />
+          </RevealWhenVisible>
+        </Summary>
         <br />
         <RevealWhenVisible>
           <AnnotationWrapper

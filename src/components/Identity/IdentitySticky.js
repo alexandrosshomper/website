@@ -5,7 +5,7 @@ import { Devices } from "../DesignSystem";
 import Wortmarke from "./WortmarkeLang";
 
 const Identity = (props) => {
-  const Identity = styled.a`
+  const Identity = styled.div`
     float: left;
     display: flex;
     flex-direction: row;
@@ -14,7 +14,6 @@ const Identity = (props) => {
 
     margin-top: 15px;
 
-    width: 140px;
     gap: 14px;
     ${Devices.tabletS} {
     }

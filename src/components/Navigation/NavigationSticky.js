@@ -1,10 +1,10 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
-import IdentitySticky from "../Identity/IdentitySticky";
+import Wortmarke from "../Identity/WortmarkeLang";
 import { X, Menu } from "lucide-react";
 
 const NavigationWrapper = styled.header`
@@ -14,7 +14,7 @@ const NavigationWrapper = styled.header`
   right: 0;
   margin: 0 auto;
   height: 52px;
-  width: 100%;
+
   border-bottom: 1px solid;
   border-color: ${Colors.primaryText.highEmphasis};
   background-color: ${Colors.background}dd;
@@ -23,6 +23,10 @@ const NavigationWrapper = styled.header`
 `;
 
 const StickyBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +34,7 @@ const StickyBar = styled.div`
   margin: 0 auto;
   height: 52px;
   border-bottom: 1px solid;
-
+  width: 382px;
   z-index: 1000;
   margin-right: 24px;
   margin-left: 24px;
@@ -80,44 +84,38 @@ const NavigationMenuMobile = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  height: 52px;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 13px 24px;
+  box-sizing: border-box;
+  overflow: hidden;
   z-index: 9999;
-  margin-right: 24px;
-  margin-left: 24px;
-  ${Devices.tabletS} {
-    margin: 0 auto;
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
-  }
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const CTA = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-top: 13px;
+  gap: 12px;
+  z-index: 9999;
+`;
+const Closer = styled.div`
+  display: flex;
+  justify-content: flex-end;
   gap: 12px;
   z-index: 9999;
 `;
 
 const MenuList = styled.ul`
-  position: fixed;
-  top: 48px;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0px 24px 0 24px;
+  padding: 0px;
   gap: 16px;
   z-index: 9999;
 `;
@@ -157,6 +155,16 @@ const NavigationSticky = ({ style }) => {
   const currentPath = location.pathname;
 
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
   const menuButtonClick = (e) => {
     e.preventDefault();
     setMenuOpen(true);
@@ -176,15 +184,15 @@ const NavigationSticky = ({ style }) => {
     []
   );
   return (
-    <NavigationWrapper data-navigation="sticky" style={style}>
+    <>
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CTA onClick={closeButtonClick}>
+          <Closer onClick={closeButtonClick}>
             <MenuButton>
               {" "}
               <X size={24} strokeWidth={1} onClick={closeButtonClick} />
             </MenuButton>
-          </CTA>
+          </Closer>
           <MenuList>
             {navigationLinks.map((link) => {
               const isActive = currentPath === link.to;
@@ -207,19 +215,21 @@ const NavigationSticky = ({ style }) => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <StickyBar style={style}>
-          <IdentitySticky />
-          <CTA>
-            <LandingpageMenu style={{ marginTop: "4px;" }} />
+        <NavigationWrapper data-navigation="sticky" style={style}>
+          <StickyBar style={style}>
+            <Wortmarke />
+            <CTA>
+              <LandingpageMenu />
 
-            <MenuButton onClick={menuButtonClick}>
-              <Menu size={24} strokeWidth={1} />
-            </MenuButton>
-          </CTA>
-        </StickyBar>
+              <MenuButton onClick={menuButtonClick}>
+                <Menu size={24} strokeWidth={1} />
+              </MenuButton>
+            </CTA>
+          </StickyBar>{" "}
+        </NavigationWrapper>
       )}
       {menuOpen && <GlobalNavCurtain />}
-    </NavigationWrapper>
+    </>
   );
 };
 
