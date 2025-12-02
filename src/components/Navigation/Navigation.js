@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
@@ -68,31 +68,29 @@ const NavigationMenuMobile = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  height: 52px;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 13px 24px;
+  box-sizing: border-box;
+  overflow: hidden;
   z-index: 9999;
-  margin-right: 24px;
-  margin-left: 24px;
 
-  ${Devices.tabletS} {
-    margin: 0 auto;
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
-  }
+  display: flex;
+  flex-direction: column;
 `;
 
 const CallToAction = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 13px;
+  gap: 12px;
+  z-index: 9999;
+`;
+const Closer = styled.div`
+  display: flex;
+  justify-content: flex-end;
   gap: 12px;
   z-index: 9999;
 `;
@@ -122,7 +120,7 @@ const MenuItem = styled.li`
   text-decoration: none;
 `;
 
-const MenuLinkStyled = styled(Link)`
+const MenuLink = styled(Link)`
   font-size: 28px;
   line-height: 1.1428571429;
   font-weight: 600;
@@ -141,6 +139,7 @@ const MenuButtonWrapper = styled.div`
     align-items: center;
   }
 `;
+
 const Navigation = (props) => {
   const location = useLocation();
   const currentPath = location.pathname;
@@ -161,60 +160,45 @@ const Navigation = (props) => {
     e.preventDefault();
     setMenuOpen(false);
   };
+  const navigationLinks = useMemo(
+    () => [
+      { label: "Home", to: "/" },
+      { label: "About", to: "/about" },
+      { label: "Writing", to: "/writing" },
+      { label: "Contact", to: "/contact" },
+    ],
+    []
+  );
 
   return (
     <NavigationWrapper data-navigation="primary">
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CallToAction>
+          <Closer>
             <MenuButtonWrapper onClick={closeButtonClick}>
               {" "}
               <X size={24} strokeWidth={1} />
             </MenuButtonWrapper>
-          </CallToAction>
+          </Closer>
           <MenuList>
-            <MenuItem>
-              <MenuLinkStyled
-                to="/profile"
-                style={{
-                  color:
-                    currentPath === "/profile"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Profile
-              </MenuLinkStyled>
-            </MenuItem>
-            <MenuItem>
-              <MenuLinkStyled
-                to="/portfolio"
-                style={{
-                  color:
-                    currentPath === "/portfolio"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Portfolio
-              </MenuLinkStyled>
-            </MenuItem>
-            <MenuItem>
-              <MenuLinkStyled
-                to="/writing"
-                style={{
-                  color:
-                    currentPath === "/writing"
-                      ? Colors.primaryText.highEmphasis
-                      : Colors.primaryText.mediumEmphasis,
-                  textDecoration: "none",
-                }}
-              >
-                Writing
-              </MenuLinkStyled>
-            </MenuItem>
+            {navigationLinks.map((link) => {
+              const isActive = currentPath === link.to;
+              return (
+                <MenuItem key={link.to}>
+                  <MenuLink
+                    to={link.to}
+                    style={{
+                      color: isActive
+                        ? Colors.primaryText.highEmphasis
+                        : Colors.primaryText.mediumEmphasis,
+                      textDecoration: "none",
+                    }}
+                  >
+                    {link.label}
+                  </MenuLink>
+                </MenuItem>
+              );
+            })}
           </MenuList>
         </NavigationMenuMobile>
       ) : (

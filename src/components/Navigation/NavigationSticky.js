@@ -1,10 +1,9 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
-import IdentitySticky from "../Identity/IdentitySticky";
 import Wortmarke from "../Identity/WortmarkeLang";
 import { X, Menu } from "lucide-react";
 
@@ -89,7 +88,7 @@ const NavigationMenuMobile = styled.div`
   width: 100vw;
   height: 100vh;
   margin: 0;
-  padding: 24px;
+  padding: 13px 24px;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 9999;
@@ -156,6 +155,16 @@ const NavigationSticky = ({ style }) => {
   const currentPath = location.pathname;
 
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
   const menuButtonClick = (e) => {
     e.preventDefault();
     setMenuOpen(true);
