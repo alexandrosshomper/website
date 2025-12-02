@@ -445,9 +445,10 @@ const Profile = () => {
         />
         <br />
         <br />
-        <SectionDivider text={"Here’s a TL;DR of my career:"} />
-
+        <br />
+        <br />
         <Summary>
+          <SectionDivider text={"Here’s a TL;DR of my career:"} />
           <RevealWhenVisible>
             <SectionCopy
               copy={
