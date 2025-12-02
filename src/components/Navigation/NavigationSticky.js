@@ -85,25 +85,17 @@ const NavigationMenuMobile = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  height: 52px;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
   z-index: 9999;
-  margin-top: 24px;
-  margin-right: 24px;
-  margin-left: 24px;
-  ${Devices.tabletS} {
-    margin: 0 auto;
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
-  }
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const CTA = styled.div`
@@ -112,17 +104,19 @@ const CTA = styled.div`
   gap: 12px;
   z-index: 9999;
 `;
+const Closer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  z-index: 9999;
+`;
 
 const MenuList = styled.ul`
-  position: fixed;
-  top: 48px;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0px 24px 0 24px;
+  padding: 0px;
   gap: 16px;
   z-index: 9999;
 `;
@@ -184,12 +178,12 @@ const NavigationSticky = ({ style }) => {
     <>
       {menuOpen ? (
         <NavigationMenuMobile>
-          <CTA onClick={closeButtonClick}>
+          <Closer onClick={closeButtonClick}>
             <MenuButton>
               {" "}
               <X size={24} strokeWidth={1} onClick={closeButtonClick} />
             </MenuButton>
-          </CTA>
+          </Closer>
           <MenuList>
             {navigationLinks.map((link) => {
               const isActive = currentPath === link.to;
