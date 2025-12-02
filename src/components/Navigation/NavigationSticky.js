@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
 import IdentitySticky from "../Identity/IdentitySticky";
+import Wortmarke from "../Identity/WortmarkeLang";
 import { X, Menu } from "lucide-react";
 
 const NavigationWrapper = styled.header`
@@ -14,7 +15,7 @@ const NavigationWrapper = styled.header`
   right: 0;
   margin: 0 auto;
   height: 52px;
-  width: 100%;
+
   border-bottom: 1px solid;
   border-color: ${Colors.primaryText.highEmphasis};
   background-color: ${Colors.background}dd;
@@ -23,6 +24,10 @@ const NavigationWrapper = styled.header`
 `;
 
 const StickyBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +35,7 @@ const StickyBar = styled.div`
   margin: 0 auto;
   height: 52px;
   border-bottom: 1px solid;
-
+  width: 382px;
   z-index: 1000;
   margin-right: 24px;
   margin-left: 24px;
@@ -83,6 +88,7 @@ const NavigationMenuMobile = styled.div`
   margin: 0 auto;
   height: 52px;
   z-index: 9999;
+  margin-top: 24px;
   margin-right: 24px;
   margin-left: 24px;
   ${Devices.tabletS} {
@@ -103,7 +109,6 @@ const NavigationMenuMobile = styled.div`
 const CTA = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-top: 13px;
   gap: 12px;
   z-index: 9999;
 `;
@@ -176,7 +181,7 @@ const NavigationSticky = ({ style }) => {
     []
   );
   return (
-    <NavigationWrapper data-navigation="sticky" style={style}>
+    <>
       {menuOpen ? (
         <NavigationMenuMobile>
           <CTA onClick={closeButtonClick}>
@@ -207,19 +212,21 @@ const NavigationSticky = ({ style }) => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <StickyBar style={style}>
-          <IdentitySticky />
-          <CTA>
-            <LandingpageMenu style={{ marginTop: "4px;" }} />
+        <NavigationWrapper data-navigation="sticky" style={style}>
+          <StickyBar style={style}>
+            <Wortmarke />
+            <CTA>
+              <LandingpageMenu />
 
-            <MenuButton onClick={menuButtonClick}>
-              <Menu size={24} strokeWidth={1} />
-            </MenuButton>
-          </CTA>
-        </StickyBar>
+              <MenuButton onClick={menuButtonClick}>
+                <Menu size={24} strokeWidth={1} />
+              </MenuButton>
+            </CTA>
+          </StickyBar>{" "}
+        </NavigationWrapper>
       )}
       {menuOpen && <GlobalNavCurtain />}
-    </NavigationWrapper>
+    </>
   );
 };
 

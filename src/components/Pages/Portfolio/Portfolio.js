@@ -11,7 +11,6 @@ import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
 import ListPanel from "../../Content/List/ListPanel/ListPanel";
-
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 function FadeInWhenVisible({ children }) {

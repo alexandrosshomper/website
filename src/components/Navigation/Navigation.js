@@ -14,7 +14,7 @@ const NavigationWrapper = styled.header`
   z-index: 1000;
 `;
 
-const NavigationContainer = styled.header`
+const NavigationContainer = styled.div`
   height: 132px;
   padding-bottom: 72px;
   border-bottom: 1px solid;
