@@ -77,10 +77,7 @@ const renderContent = () => (
           subline="Transforming Occhio’s digital presence through a new website and integrated online shopping experience."
           overline="Overview"
         />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/plasterboards.png"
-          size="L"
-        />
+
         <CaseSublineTwo subline="About Occhio" />
         <p>
           Occhio is a German luxury lighting design brand renowned for its
