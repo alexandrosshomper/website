@@ -7,7 +7,6 @@ import { Helmet } from "react-helmet";
 import { mdiEmail, mdiLinkedin } from "@mdi/js";
 
 import { Colors, Devices } from "../../DesignSystem";
-import Intro from "../../Content/Intro/Intro";
 
 import SectionHead from "../../Content/Section/SectionHead";
 import SectionCopy from "../../Content/Section/SectionCopy";
@@ -84,7 +83,6 @@ const Summary = styled.div`
   }
   ${Devices.tabletM} {
     width: 720px;
-    flex-direction: row;
   }
   ${Devices.laptopS} {
     width: 864px;
