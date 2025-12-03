@@ -14,6 +14,7 @@ import ListPanel from "../../Content/List/ListPanel/ListPanel";
 import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
+import FlipCard from "../../Content/FlipCard/FlipCard";
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -127,6 +128,38 @@ const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
     keyResults: caseStudy.keyResults,
   };
 });
+const FlipCardPanels = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: auto;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  --gap: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: calc(1 * var(--gap));
+
+  ${Devices.tabletS} {
+    width: 576px;
+
+    margin-bottom: calc(-1 * var(--gap));
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    margin-left: calc(1.6 * var(--gap));
+    margin-right: calc(1.6 * var(--gap));
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
 const ButtonRow = styled.div`
   color: rgb(29, 29, 31);
   direction: ltr;
@@ -477,6 +510,68 @@ const Content = (props) => {
             soon.
           </EmptyState>
         )}
+      </Section>
+      <Section>
+        <SectionHead
+          headline="Key strengths"
+          subline="I have worked in hybrid roles of product design, product management, and product growth"
+        />
+        <FlipCardPanels>
+          <FlipCard
+            eyebrow="Product Design"
+            eyebrowColor="#231768"
+            eyebrowBackColor="#10D5F5"
+            backgroundColor="#231768"
+            colorBack="white"
+            copy={[
+              "Create meaningful & useful products your customers will love.",
+            ]}
+            copyBack={[
+              "I can help you enhance your product effectively by increasing task success rates, customer satisfaction, and adoption.",
+              "Develop and improve a workflow to validate, design, develop, and distribute core product improvements.",
+              "Assess and track usability and product performance on your core features and value proposition.",
+            ]}
+            webp="./img/PanelTestImages/square.webp"
+            png="./img/PanelTestImages/square.png"
+            jpg="./img/PanelTestImages/square.jpg"
+          />
+          <FlipCard
+            eyebrow="Product Management"
+            eyebrowColor="#206405"
+            eyebrowBackColor="#D9EDCA"
+            backgroundColor="#206405"
+            colorBack="white"
+            copy={[
+              "Acquire more customers, get them engaged, and keep them longer.",
+            ]}
+            copyBack={[
+              "I can help you scale your product quickly and efficiently with PLG by increasing acquisition, activation, and retention.",
+              "Develop and improve a workflow to analyze, define, and execute growth strategies. ",
+              "Leverage user data, user behavior and user psychology.",
+            ]}
+            webp="./img/PanelTestImages/triangle.webp"
+            png="./img/PanelTestImages/triangle.png"
+            jpg="./img/PanelTestImages/triangle.jpg"
+          />
+          <FlipCard
+            eyebrow="Product Growth"
+            eyebrowColor="#6A210D"
+            eyebrowBackColor="#FFB700"
+            backgroundColor="#6A210D"
+            colorBack="white"
+            copy={[
+              "Acquire more customers, get them engaged, and keep them longer.",
+            ]}
+            copyBack={[
+              "I can help you scale your product quickly and efficiently with PLG by increasing acquisition, activation, and retention.",
+              "Develop and improve a workflow to analyze, define, and execute growth strategies. ",
+              "Leverage user data, user behavior and user psychology.",
+            ]}
+            webp="./img/PanelTestImages/triangle.webp"
+            png="./img/PanelTestImages/triangle.png"
+            jpg="./img/PanelTestImages/triangle.jpg"
+          />
+        </FlipCardPanels>
       </Section>
       <Section>
         <SectionHead

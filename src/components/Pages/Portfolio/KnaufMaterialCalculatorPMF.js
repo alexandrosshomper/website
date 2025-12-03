@@ -117,13 +117,12 @@ const renderContent = () => (
         />
         <CaseSublineTwo subline="About Knauf" />
         <p>
-          <b>Knauf</b> is a €15B global building materials manufacturer
-          operating in more than 90 countries with various brands and companies.
-          <br />
-          <b>Knauf Digital</b> is the technology and innovation unit driving the
-          digital transformation at scale; building digital ecosystems that
-          connect contractors, dealers, and Knauf brands across markets. This is
-          were I worked.
+          <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
+          15+B global building materials leader with 43,500+ employees,
+          operating in 90+ countries). The unit focuses on developing B2B
+          digital products for the construction industry. The mandate was to
+          scale a portfolio of digital solutions across global markets while
+          driving a user-centric transformation.
         </p>
 
         <CaseSublineTwo subline="Customer Type" />

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Devices, Colors } from "../../DesignSystem";
 
-const FlipCardCopy = ({ textArray }) => {
+const FlipCardCopy = ({ textArray, color }) => {
   console.log(textArray);
   const FlipCardCopyWrapper = styled.div`
     text-align: left;
@@ -21,7 +21,7 @@ const FlipCardCopy = ({ textArray }) => {
     line-height: 130%;
 
     text-align: left;
-    color: ${Colors.primaryText.highEmphasis};
+    color: ${color};
 
     margin-top: 0px;
     margin-bottom: 0px;

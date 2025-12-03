@@ -77,13 +77,26 @@
   {
     "id": 4,
     "slug": "/portfolio/occhio",
-    "name": "Occhio Website & eCommerce",
-    "desc": "A premium user experience",
+    "company": "Occhio",
+    "name": "Website & eCommerce",
+    "desc": "From a static brochure site to a dynamic online storefront, translating Occhio’s luxury lighting experience into a seamless digital journey.",
+    "sub": "A premium user experience",
     "cover": "/img/portfolio/occhio-website/cover.png",
     "thumbnail": "/img/portfolio/occhio/thumbnail.png",
     "type": "Product Market Fit",
     "coming": false,
+    "role": "Product Design Manager, 12 markets",
+    "team": "30 Marketing (CRM, Social Media, Campaign), Sales, IT, Design Agency, Dev Agency",
+    "product": "Website, eCommerce, product configurator, and partner finder",
+    "stage": "0→1",
+    "timeline": "6 months",
+    "keyResults": [
+      "Activation ↑ across all connected apps",
+      "Support tickets ↓ significantly",
+      "CRM data quality ↑",
+      "Team onboarding time ↓ drastically"
+    ],
     "bg": "#fff",
-    "color": "#000"
+    "color": "#171c91"
   }
 ]

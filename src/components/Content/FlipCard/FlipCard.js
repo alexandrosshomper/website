@@ -12,11 +12,12 @@ import InViewMotion from "../../animation/InViewMotion";
 
 const FlipCard = ({
   eyebrow,
-  eyebrowColor1,
-  eyebrowColor2,
+  eyebrowColor,
+  eyebrowBackColor,
   backgroundColor,
   copy,
   copyBack,
+  colorBack,
   jpg,
   png,
   webp,
@@ -137,8 +138,8 @@ const FlipCard = ({
         {eyebrow && (
           <FlipCardEyebrow
             text={eyebrow}
-            color1={eyebrowColor1}
-            color2={eyebrowColor2}
+            color1={eyebrowColor}
+            color2={eyebrowColor}
           />
         )}
         {copy && <FlipCardCopy textArray={[copy]} />}
@@ -148,14 +149,14 @@ const FlipCard = ({
         {eyebrow && (
           <FlipCardEyebrow
             text={eyebrow}
-            color1={eyebrowColor1}
-            color2={eyebrowColor1}
+            color1={eyebrowBackColor}
+            color2={eyebrowBackColor}
           />
         )}
         <br />
         {copy && (
           <InViewMotion>
-            <FlipCardCopy textArray={copyBack} />{" "}
+            <FlipCardCopy textArray={copyBack} color={colorBack} />{" "}
           </InViewMotion>
         )}
         {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}

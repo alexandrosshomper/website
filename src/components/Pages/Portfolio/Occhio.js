@@ -1,27 +1,29 @@
 import React from "react";
 
 import createCasePage from "../CaseStudies/createCasePage";
-import {
-  ArticleSection,
-  ArticleSectionContent,
-  Colors,
-} from "../../DesignSystem";
+import { ArticleSection, ArticleSectionContent } from "../../DesignSystem";
 import CaseCopy from "../../Content/Case/CaseCopy";
 import CaseCover from "../../Content/Case/CaseCover";
-import CaseHeadlineThree from "../../Content/Case/CaseHeadlineThree";
 import CaseSectionHead from "../../Content/Case/CaseSectionHead";
-import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
-import CaseVideo from "../../Content/Case/CaseVideo";
+import CaseCitations from "../../Content/Case/CaseCitations";
 import Drawer from "../../Content/Drawer/Drawer";
+import CaseSubline from "../../Content/Case/CaseSubline";
+import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
+import CaseImage from "../../Content/Case/CaseImage";
+import CaseImageBlank from "../../Content/Case/CaseImageBlank";
+import CaseHighlight from "../../Content/Case/CaseHighlight";
+import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
+import CaseVideo from "../../Content/Case/CaseVideo";
+import Article from "../../Content/Article/Article";
 
-const metaTitle = "Occhio | Alexandros Shomper";
+const metaTitle = "Occhio website & eCommerce | Alexandros Shomper";
 
 const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
 const hero = () => <CaseCover imgURL="/img/Occhio/Occhio-Website.png" />;
 
-const galleryItems = [
+const galleryItemsDiscover = [
   {
     id: 1,
     imgURL: "/img/Occhio/Personae.jpg",
@@ -58,120 +60,455 @@ const galleryItems = [
     copy: "Implemented interactive components and animations to educate users about product features, making the process entertaining and informative. Introduced WebAR to help users visualize products in their own homes, addressing concerns about fit and placement, and reducing fear of making wrong decisions.",
   },
 ];
-
-const greenArrowStyle = {
-  color: Colors.green,
-  fontWeight: "bold",
-};
-
-const linkStyle = {
-  color: Colors.primaryText.highEmphasis,
-};
+const galleryItemsDesign = [
+  {
+    id: 1,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-sketch-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-sketch-mobile.png",
+    headline: "First Sketches",
+    copy: "With quick sketches I made, I was able to align with stakeholders and customers on the best concept to continue.",
+  },
+  {
+    id: 2,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-sitemap-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-sitemap-mobile.png",
+    headline: "Sitemap",
+    copy: "I designed a sitemap that not only organizes the screens, but the actual workflow of the users.",
+  },
+  {
+    id: 3,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-wireframes-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-wireframes-mobile.png",
+    headline: "Wireframes",
+    copy: "Wireframes and flows, even if very high-level, helped us allocate the screen-real-estate for these information dense screens and complex workflows.",
+  },
+  {
+    id: 4,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-design-system-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-design-system-mobile.png",
+    headline: "Design System",
+    copy: "I analyzed the wireframes from this and all other products to destill the most common design artifacts. From that I built an atomic design system that keeps consistency and provides scalability.",
+  },
+  {
+    id: 5,
+    imgURL:
+      "/img/portfolio/knauf-material-calculator/detail-template-desktop.png",
+    imgMobileURL:
+      "/img/portfolio/knauf-material-calculator/detail-template-mobile.png",
+    headline: "Templates",
+    copy: "Also, I defined base templates for common use cases across all prodcuts, and specifically for each product themselves.",
+  },
+];
 
 const renderContent = () => (
   <>
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseSublineTwo subline="I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Occhio." />
+        <CaseSectionHead
+          headline="B2B SaaS platform for construction applicators"
+          subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
+          overline="Overview"
+        />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/plasterboards.png"
+          size="L"
+        />
+        <CaseSublineTwo subline="About Occhio" />
+        <p>
+          Occhio is a leading German luxury lighting brand known for perfection
+          in design and quality. By 2019, the company embarked on a major brand
+          redefinition, which highlighted a gap in its digital presence. <br />
+        </p>
+
+        <CaseCitations
+          role="Product Owner & UX Manager, European Market"
+          team="Marketing (CRM, Social Media, Campaign), Sales, IT, Design Agency, Dev Agency"
+          product="Website, eCommerce, product configurator, and partner finder"
+          stage="0 →1"
+          timeline="6 months"
+          keyResults={[
+            "Activation ↑ 25%",
+            "Retention ↑ 30%",
+            "Time-to-Value ↓ 40%",
+            "NPS ↑ 15",
+          ]}
+        />
+        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
+          size="L"
+        />
       </ArticleSectionContent>
     </ArticleSection>
 
     <ArticleSection>
       <ArticleSectionContent>
-        <CaseHeadlineThree headline="Situation" />
         <CaseSectionHead
-          headline="Occhio's Digital Overhaul"
-          subline="Occhio needed a website relaunch and e-commerce launch for their brand redefinition"
+          overline="Challenge"
+          headline="Delays led to quote errors costing millions in lost bids. "
+          subline="The existing website was primarily a static catalog and lacked an
+        e-commerce channel. Occhio needed a full digital overhaul: a complete
+        website relaunch alongside the launch of its first online store."
         />
-        <CaseCopy copy="In 2019, Occhio, a leading luxury interior and lighting brand in Germany, embarked on a brand redefinition and digitization journey." />
-        <CaseCopy copy="As part of this initiative, the company needed to relaunch its website and introduce an e-commerce platform. Occhio's reputation for perfection, highest quality, and pure design posed a significant challenge: balancing these high standards with user experience and website performance." />
-        <CaseCopy copy="I served as the UX/UI Manager and Product Owner for this project, collaborating with stakeholders including the CEO, CMO, and CTO, and leading a team comprising development, design, CRM, and social media experts." />
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Task" />
-        <CaseSectionHead
-          headline="Mission Impossible: Perfecting Brand, UX, and Performance"
-          subline="Led website and e-commerce relaunch to enhance digital presence and improve product discoverability"
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
+          size="L"
         />
-        <CaseCopy copy="My primary task was to lead the relaunch of Occhio's website and the launch of its e-commerce platform." />
-        <CaseCopy copy="The goals were to enhance the digital brand presence, align with the new brand direction, improve product discoverability, and integrate various products from different tech stacks seamlessly." />
-        <CaseCopy copy="Additionally, the website needed to support a broad set of initiatives across the customer journey and cater to Occhio's extensive range of modular and configurable products." />
-      </ArticleSectionContent>
-    </ArticleSection>
+        <br />
 
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Action" />
-        <CaseSectionHead
-          headline="From Blank Canvas to Digital Masterpiece"
-          subline="Partnered with top agencies, adopted agile methods, conducted research, and redefined Occhio's digital brand experience"
-        />
-        <CaseCopy copy="In Munich stores, I engaged with customers and sales teams to identify key personas, uncovering insights about Social Climbers and the Established. Mapping their user journeys, I addressed pain points like visualizing products at home and decision-making anxiety." />
-        <CaseCopy copy="Partnered with the award-winning Brand Consultancy & Design Agency Martin et Karzinski for design and Tech Consultancy & Agency Inviqa for development. Adopted an agile product development approach to ensure flexibility and responsiveness throughout the project." />
-        <CaseCopy copy="I developed a comprehensive sitemap and intuitive navigation, and pivoted our product detail pages from lavish renderings to a functional design featuring a mini-configurator. Interactive features and WebAR were introduced to educate users and help them visualize products in their homes. Collaborating with Martin et Karzinski for design and Inviqa for development, we used an agile approach to ensure flexibility and responsiveness." />
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection $width="wide">
-      <ArticleSectionContent>
-        <Drawer items={galleryItems} />
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseHeadlineThree headline="Results" />
-        <CaseSectionHead
-          headline="A Bright Future: Awards and Engagement Soar"
-          subline="Created an engaging, stunning website, boosting conversion rates, engagement, visitors, and newsletter sign-ups, winning awards"
-        />
-        <CaseCopy copy="The relaunch resulted in a highly engaging and visually appealing website that seamlessly integrated Occhio's new brand direction with an enhanced user experience." />
-        <CaseCopy copy="The new e-commerce platform significantly improved product discoverability and consultancy, leading to e-commerce gaining a significant revenue-share, and:" />
-        <CaseSublineTwo subline="Awards" />
+        <CaseSubline subline="The Problem" />
+        <CaseCopy copy="Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and calls, leading to:" />
         <ul>
-          <li>
-            🏅{" "}
-            <a
-              href="https://www.horizont.net/schweiz/nachrichten/annual-multimedia-award-martin-et-karczinski-holt-gold-und-zweimal-silber-178283"
-              style={linkStyle}
-            >
-              Gold, Annual Multimedia Award 2020
-            </a>
-          </li>
-          <li>
-            🏅{" "}
-            <a href="https://www.acquia.com/fr/node/114276" style={linkStyle}>
-              Winner, Splash Award 2020
-            </a>
-          </li>
+          <li>Error-prone manual calculations</li>
+          <li>Re-entry of data across fragmented tools</li>
+          <li>Lack of visibility on profitability</li>
+          <li>Low trust in “digital tools made for construction”</li>
         </ul>
-        <CaseSublineTwo subline="KPI (Numbers confidential)" />
+        <CaseSubline subline="The Goal" />
+        <CaseCopy
+          copy="This initiative aimed to mirror the brand’s ultra-premium in-store
+        experience in the digital realm."
+        />
         <ul>
-          <li>
-            <span style={greenArrowStyle}> ↑ </span>
-            Conversion Rate
-          </li>
-          <li>
-            <span style={greenArrowStyle}> ↑ </span>
-            User Engagement
-          </li>
-          <li>
-            <span style={greenArrowStyle}> ↑ </span>
-            Visitors
-          </li>
-          <li>
-            <span style={greenArrowStyle}> ↑ </span>
-            Newsletter Sign-Ups
-          </li>
+          <li>Helps users reach value (first quote sent) within 15 minutes</li>
+          <li>Bridges quote → plan → order seamlessly</li>
+          <li>Builds trust through precision and reliability</li>
         </ul>
+      </ArticleSectionContent>
+    </ArticleSection>
+
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Research"
+          headline="Discover the essential workflow that defines value."
+          subline="Before designing, we needed to understand what “value” actually meant for our users."
+        />
+        <p>
+          I led field visits and interviews across 12 countries — observing how
+          crews plan, measure, and order. We combined JTBD analysis, expert
+          interviews, and a survey with 53 applicators in Germany.
+          <br />
+          <i>
+            Field shadowing • Expert interviews (12 countries) • JTBD analysis •
+            UX surveys (n=53 DE).
+          </i>
+        </p>
+        <br />
+        <CaseImageBlank
+          imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
+          size="L"
+        />
+        <br />
+        <br />
+        <CaseSubline subline="Key Insights" />
+        <ul>
+          <li>“Trustable numbers” mattered more than UI polish.</li>
+          <li>
+            Applicators didn’t want more tools, they wanted one place that just
+            works.
+          </li>
+          <li>Offline-first and minimal input were must-haves.</li>
+        </ul>
+        <CaseSubline subline="PMF Hypothesis" />
+        <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
+        <br />
+        <br />
+        <Drawer
+          items={galleryItemsDiscover}
+          label="Research Process Deepdive"
+        />{" "}
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Solution"
+          headline="Designing for Activation"
+          subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
+        />
+
         <CaseVideo
-          mp4="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2FOcchioWebsite.mp4?alt=media&token=729e66b2-0dbf-48b0-8550-0f37ff183980"
-          ogg="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2FOcchioWebsite.ogv?alt=media&token=7cee14a3-2fa4-4798-a739-7557828ba986"
-          img="https://firebasestorage.googleapis.com/v0/b/alexandrosshomper-11a20.appspot.com/o/Occhio%2FWebsite%2F%20OcchioWebsite.png?alt=media&token=c9328dce-65ad-445a-98ad-ce2201060ae1"
-          url="https://vimeo.com/517036386"
+          img="/img/portfolio/knauf-material-calculator/KMC.png"
+          url="https://vimeo.com/1138645247"
+          size="L"
+        />
+
+        <p>
+          <b>Scope decisions</b> Desktop-first; all-in-one app; design system
+          prioritized to accelerate delivery across 4 apps.
+          <ul>
+            <li>
+              <b>Tender Capture</b> Read, capture, & translate tenders of any
+              format into structured inputs
+            </li>
+            <li>
+              <b>In-Plan Measurement</b> Determine masses & quantities on plans
+              & to tender positions.
+            </li>
+            <li>
+              <b>Material Order & Tracking</b> Order by floor, wall type, phase,
+              or element; track ordering status.
+            </li>
+            <li>
+              <b>Project KPIs & Documentation</b> Proof of acceptance,
+              certificates, and project health.
+            </li>
+          </ul>
+        </p>
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-mobile-screens.png"
+          size="L"
+        />
+        <br />
+        <br />
+        <Drawer items={galleryItemsDesign} label="Design Process Deepdive" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <CaseSubline subline="Key Feature 1: Tender Capture" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+          size="L"
+        />
+
+        <CaseCopy
+          copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
+I built a guided import flow that parses items and matches them to Knauf’s product systems."
+        />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Highlights" />
+        <p>
+          Tenders arrive in every format imaginable. I built a structured
+          quoting interface that can parse tender items and maps them to Knauf
+          systems, so downstream steps inherit clean, linked data.
+        </p>
+        <CaseHighlight
+          headline="Quote Tracking"
+          copy="An overview of the quotes sent, but even more important, an overview of quote drafts with highlighted due-dates. Helping you find the most urgent actions on the screen."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-overview.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Tender to Quote"
+          copy="New business starts with a tender, and providing a quote asap. Instead of manually transfering each position, customers can import the tender directly in seconds."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-import-tender.png"
+          direction="RTL"
+        />
+        <CaseHighlight
+          headline="Quote to Project"
+          copy="After a Tender has been won and approved, it can be converted into a construction project in one click. Users can import all existing information and offering to add new resources like floor-plans."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-to-project.png"
+          direction="LTR"
+        />
+        <CaseSublineTwo subline="Impact" />
+        <p>
+          Early trust increased: users saw reliable, structured data from the
+          start
+        </p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "60%", subline: "faster quote creation" },
+            {
+              impact: "3x",
+              subline: "higher quoting rate",
+            },
+            {
+              impact: "85%",
+              subline: "reduction in errors",
+              quote:
+                "This is the tool I was looking for. Finally everything in one place.",
+              size: "L",
+            },
+          ]}
+        />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <CaseSubline subline="Key Feature 2: In-Plan Measurement" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
+          size="L"
+        />
+        <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions. From site measurements → plan → exact quantities → approved order in minutes." />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Highlights" />
+        <p>
+          Take-offs & ordering happens across PDFs, spreadsheets, & calls;
+          fragmented, error-prone, and slow. I bring them together: users can
+          measure in plans, link elements to a tender position & turn those
+          results into orders.
+        </p>
+        <CaseHighlight
+          headline="Plan Measurement tools"
+          copy="Users can plan mm-exact measurements and directly assign positions from the quote. Intuitive usage with immediate results."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-measurement.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Real-time quantity calculation"
+          copy="By making mm-exact measurements on the plan, the quantities of the matching positions get calculated in real-time; per wall, floor, or phase"
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-calculations.png"
+          direction="RTL"
+        />
+        <CaseSublineTwo subline="Impact" />
+        <p>Major confidence boost among early users</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "3x", subline: "quantity calculation speed" },
+            {
+              impact: "0",
+              subline: "re-entries between planning and ordering",
+            },
+            {
+              impact: "40%",
+              subline: "reduction in communication",
+              quote:
+                "With this system, there is no guessworking anymore, no blackspots between the team. We all know, what has been planned, what material do we need mm-exact.",
+              size: "L",
+            },
+          ]}
+        />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <CaseSubline subline="Key Feature 3: Material Order & Tracking" />
+        <CaseImage
+          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
+          size="L"
+        />
+        <CaseCopy
+          copy="Ordering materials used to happen over phone calls and guesswork.
+We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
+        />
+        <br />
+        <br />
+        <CaseSublineTwo subline="Highlights" />
+        <CaseHighlight
+          headline="Split orders by date or project phase"
+          copy="Order material according to need. By floor, wall type, construction phase, element. Whatever the user needs."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-orders.png"
+          direction="LTR"
+        />
+        <CaseHighlight
+          headline="Built-in delivery scheduling"
+          copy="Tracking orders & deliveries on a construction is complex, messy, and time-sensitive. Our order tracking provides real-time status that can be filtered down to any phase, section, floor, wall-type, etc. to give users the ETA they need."
+          imgURL="/img/portfolio/knauf-material-calculator/closeup-order-scheduling.png"
+          direction="RTL"
+        />
+        <CaseSublineTwo subline="Impact" />
+        <p>Trust built between Knauf, dealers, and applicators</p>
+        <ImpactBoxGrid
+          items={[
+            { impact: "60%", subline: "cut in order mistakes" },
+            {
+              impact: "30%",
+              subline: "reduction of delivery status update calls",
+            },
+            {
+              impact: "20%",
+              subline: "improved logistics efficiency",
+              quote:
+                "Now I finally have a clear picture of my orders and deliveries.",
+              size: "L",
+            },
+          ]}
+        />
+      </ArticleSectionContent>
+    </ArticleSection>
+
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Results"
+          headline="Success in numbers"
+          subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
+        />
+        <p>
+          A product that turned analog workflows into a digital growth engine —
+          and a design-led transformation that shaped how Knauf builds all
+          future tools.
+        </p>
+        <ul>
+          <li>
+            Scaled design system across 4 apps, cutting delivery time by 40%.
+          </li>
+          <li>Mentored designers in hypothesis-driven experimentation.</li>
+          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
+          <li>Introduced UX Maturity Assessments company-wide.</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <th>Metric</th>
+              <th>Δ</th>
+            </tr>
+            <tr>
+              <td>Activation (Aha ≤15m)</td>
+              <td>+25%</td>
+            </tr>
+            <tr>
+              <td>7-Day Retention</td>
+              <td>+30%</td>
+            </tr>
+            <tr>
+              <td>Plan→Order Conversion</td>
+              <td>+18pp</td>
+            </tr>
+            <tr>
+              <td>NPS</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+      </ArticleSectionContent>
+    </ArticleSection>
+
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead headline="Related Articles" />
+        <Article
+          headline="Is the Customer always right? It depends …"
+          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
+        />
+        <Article
+          headline="Problem/Solution Fit vs Product/Market Fit"
+          subline="Or: The difference between “good enough” and “awesome”"
+          meta="Alexandros Shomper for Bootcamp @ Medium.com"
+          link="https://medium.com/design-bootcamp/problem-solution-fit-vs-product-market-fit-bcfb7f8edfdc"
+          imgURL="https://miro.medium.com/v2/resize:fill:320:214/0*JrB0_hChqOG3mFwj.png"
+        />
+        <Article
+          headline="UX maturity assessment workshop"
+          subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
+          meta="Alexandros Shomper for Reforge @ Reforge.com"
+          link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
+          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
         />
       </ArticleSectionContent>
     </ArticleSection>
@@ -181,7 +518,12 @@ const renderContent = () => (
 export default createCasePage({
   metaTitle,
   metaDescription,
-  title: "Occhio Website Relaunch & eCommerce Launch",
+  eyebrow: "Occhio Website & eCommerce",
+  eyebrowColor1: "#666677",
+  eyebrowColor2: "#444455",
+  title: "A premium user experience",
+  subline:
+    "From a static brochure site to a dynamic online storefront, translating Occhio’s luxury lighting experience into a seamless digital journey.",
   hero,
   renderContent,
 });

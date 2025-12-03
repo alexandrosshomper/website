@@ -59,7 +59,8 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
 
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
-
+    object-fit: cover;
+    width: 100%;
     // ${csscolorbackground};
     ${Devices.tabletS} {
     }
