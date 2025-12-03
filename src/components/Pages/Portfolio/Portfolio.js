@@ -14,6 +14,7 @@ import ListPanel from "../../Content/List/ListPanel/ListPanel";
 import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
+import FlipCard from "../../Content/FlipCard/FlipCard";
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -127,6 +128,38 @@ const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
     keyResults: caseStudy.keyResults,
   };
 });
+const FlipCardPanels = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: auto;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  --gap: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: calc(1 * var(--gap));
+
+  ${Devices.tabletS} {
+    width: 576px;
+
+    margin-bottom: calc(-1 * var(--gap));
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    margin-left: calc(1.6 * var(--gap));
+    margin-right: calc(1.6 * var(--gap));
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
 const ButtonRow = styled.div`
   color: rgb(29, 29, 31);
   direction: ltr;
@@ -477,6 +510,68 @@ const Content = (props) => {
             soon.
           </EmptyState>
         )}
+      </Section>
+      <Section>
+        <SectionHead
+          headline="Key strengths"
+          subline="I have worked in hybrid roles of product design, product management, and product growth"
+        />
+        <FlipCardPanels>
+          <FlipCard
+            eyebrow="Product Design"
+            eyebrowColor="#231768"
+            eyebrowBackColor="#10D5F5"
+            backgroundColor="#231768"
+            colorBack="white"
+            copy={[
+              "I create intuitive, meaningful, and usable experiences that solve real customer problems and make the product feel valuable from the first interaction.",
+            ]}
+            copyBack={[
+              "I can help you create intuitive, elegant product experiences that increase task success, customer satisfaction, and long-term adoption.",
+              "I design and refine workflows that validate user needs, reduce friction, and turn complex problems into simple, usable interfaces.",
+              "I assess and optimize the usability and performance of your core features to ensure customers immediately feel the value your product promises.",
+            ]}
+            webp="./img/PanelTestImages/square.webp"
+            png="./img/PanelTestImages/square.png"
+            jpg="./img/PanelTestImages/square.jpg"
+          />
+          <FlipCard
+            eyebrow="Product Management"
+            eyebrowColor="#206405"
+            eyebrowBackColor="#D9EDCA"
+            backgroundColor="#206405"
+            colorBack="white"
+            copy={[
+              "I align customer needs and business goals to define what should be built, why it matters, and how to deliver the right product at the right time.",
+            ]}
+            copyBack={[
+              "I can help you define what to build, why it matters, and how to deliver it in a repeatable, evidence-driven way.",
+              "I establish and improve product workflows that connect research, strategy, prioritization, and delivery; ensuring teams ship impactful features, not noise.",
+              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product’s core value proposition.",
+            ]}
+            webp="./img/PanelTestImages/triangle.webp"
+            png="./img/PanelTestImages/triangle.png"
+            jpg="./img/PanelTestImages/triangle.jpg"
+          />
+          <FlipCard
+            eyebrow="Product Growth"
+            eyebrowColor="#6A210D"
+            eyebrowBackColor="#FFB700"
+            backgroundColor="#6A210D"
+            colorBack="white"
+            copy={[
+              "I acquire the right users, activate them quickly, and keep them engaged longer by systematically removing friction and amplifying value.",
+            ]}
+            copyBack={[
+              "I can help you scale your product efficiently with PLG by increasing acquisition, activation, and retention.",
+              "I build and optimize growth workflows that analyze user behavior, identify friction, and validate high-leverage opportunities across the entire funnel.",
+              "I use data, psychology, and experiment-driven iteration to help you turn more new users into engaged, long-term customers.",
+            ]}
+            webp="./img/PanelTestImages/triangle.webp"
+            png="./img/PanelTestImages/triangle.png"
+            jpg="./img/PanelTestImages/triangle.jpg"
+          />
+        </FlipCardPanels>
       </Section>
       <Section>
         <SectionHead
