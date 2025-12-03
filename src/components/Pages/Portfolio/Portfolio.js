@@ -11,6 +11,7 @@ import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
 import ListPanel from "../../Content/List/ListPanel/ListPanel";
+import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 function FadeInWhenVisible({ children }) {
@@ -427,10 +428,7 @@ const Content = (props) => {
         </description>
       </Helmet>
       <Section>
-        <SectionHead
-          headline="Product Designer / Manager with 15+ years experience in various products"
-          subline="Now seeking a Product Design Manager role in a high-growth environment."
-        />
+        <Intro />
       </Section>
       <Section>
         <SectionHead

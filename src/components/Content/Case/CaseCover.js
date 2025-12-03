@@ -17,8 +17,6 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
 
     width: 100%;
 
-    border-radius: 10px;
-
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -41,6 +39,7 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
     ${Devices.laptopS} {
     }
     ${Devices.desktopS} {
+      border-radius: 10px;
       max-width: 80%;
     }
   `;
@@ -48,7 +47,6 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
     direction: ltr;
     display: block;
 
-    height: 400px;
     margin: 0px;
 
     list-style-image: none;
@@ -64,7 +62,6 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
 
     // ${csscolorbackground};
     ${Devices.tabletS} {
-      max-width: 100%;
     }
     ${Devices.tabletM} {
     }
