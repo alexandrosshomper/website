@@ -524,12 +524,12 @@ const Content = (props) => {
             backgroundColor="#231768"
             colorBack="white"
             copy={[
-              "Create meaningful & useful products your customers will love.",
+              "I create intuitive, meaningful, and usable experiences that solve real customer problems and make the product feel valuable from the first interaction.",
             ]}
             copyBack={[
-              "I can help you enhance your product effectively by increasing task success rates, customer satisfaction, and adoption.",
-              "Develop and improve a workflow to validate, design, develop, and distribute core product improvements.",
-              "Assess and track usability and product performance on your core features and value proposition.",
+              "I can help you create intuitive, elegant product experiences that increase task success, customer satisfaction, and long-term adoption.",
+              "I design and refine workflows that validate user needs, reduce friction, and turn complex problems into simple, usable interfaces.",
+              "I assess and optimize the usability and performance of your core features to ensure customers immediately feel the value your product promises.",
             ]}
             webp="./img/PanelTestImages/square.webp"
             png="./img/PanelTestImages/square.png"
@@ -542,12 +542,12 @@ const Content = (props) => {
             backgroundColor="#206405"
             colorBack="white"
             copy={[
-              "Acquire more customers, get them engaged, and keep them longer.",
+              "I align customer needs and business goals to define what should be built, why it matters, and how to deliver the right product at the right time.",
             ]}
             copyBack={[
-              "I can help you scale your product quickly and efficiently with PLG by increasing acquisition, activation, and retention.",
-              "Develop and improve a workflow to analyze, define, and execute growth strategies. ",
-              "Leverage user data, user behavior and user psychology.",
+              "I can help you define what to build, why it matters, and how to deliver it in a repeatable, evidence-driven way.",
+              "I establish and improve product workflows that connect research, strategy, prioritization, and delivery; ensuring teams ship impactful features, not noise.",
+              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product’s core value proposition.",
             ]}
             webp="./img/PanelTestImages/triangle.webp"
             png="./img/PanelTestImages/triangle.png"
@@ -560,12 +560,12 @@ const Content = (props) => {
             backgroundColor="#6A210D"
             colorBack="white"
             copy={[
-              "Acquire more customers, get them engaged, and keep them longer.",
+              "I acquire the right users, activates them quickly, and keeps them engaged longer by systematically removing friction and amplifying value.",
             ]}
             copyBack={[
-              "I can help you scale your product quickly and efficiently with PLG by increasing acquisition, activation, and retention.",
-              "Develop and improve a workflow to analyze, define, and execute growth strategies. ",
-              "Leverage user data, user behavior and user psychology.",
+              "I can help you scale your product efficiently with PLG by increasing acquisition, activation, and retention.",
+              "I build and optimize growth workflows that analyze user behavior, identify friction, and validate high-leverage opportunities across the entire funnel.",
+              "I use data, psychology, and experiment-driven iteration to help you turn more new users into engaged, long-term customers.",
             ]}
             webp="./img/PanelTestImages/triangle.webp"
             png="./img/PanelTestImages/triangle.png"

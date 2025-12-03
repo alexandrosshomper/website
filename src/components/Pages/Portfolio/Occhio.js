@@ -113,8 +113,8 @@ const renderContent = () => (
     <ArticleSection>
       <ArticleSectionContent>
         <CaseSectionHead
-          headline="B2B SaaS platform for construction applicators"
-          subline="Knauf Material Calculator is a B2B SaaS platform helping construction applicators quote, plan, and order materials in minutes instead of hours."
+          headline="Bringing a Luxury Lighting Brand Online"
+          subline="Transforming Occhio’s digital presence through a new website and integrated online shopping experience."
           overline="Overview"
         />
         <CaseImage
@@ -123,9 +123,19 @@ const renderContent = () => (
         />
         <CaseSublineTwo subline="About Occhio" />
         <p>
-          Occhio is a leading German luxury lighting brand known for perfection
-          in design and quality. By 2019, the company embarked on a major brand
-          redefinition, which highlighted a gap in its digital presence. <br />
+          Occhio is a German luxury lighting design brand renowned for its
+          perfectionism, high quality, and pure design aesthetic. Prior to this
+          project, Occhio had an inspirational web presence but no direct online
+          sales channel, relying on showrooms and partners for sales.
+          <br />
+        </p>
+        <CaseSublineTwo subline="About the Customers" />
+        <p>
+          Through research, we identified two primary customer personas. One
+          group values superior quality and distinctive design, while the other
+          is status-driven and eager to showcase success. Despite their
+          differences, both personas seek inspiration and confidence before
+          purchasing high-end lighting solutions.
         </p>
 
         <CaseCitations

@@ -28,9 +28,13 @@ const FlipCard = ({
     text-align: left;
     border-radius: 30px;
     margin-bottom: 12px;
-    float: left;
     background-color: ${isFlipped ? backgroundColor : Colors.back};
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    min-width: 0;
 
     ${Devices.tabletS} {
     }
