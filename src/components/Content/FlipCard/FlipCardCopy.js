@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Devices, Colors } from "../../DesignSystem";
+import { Devices } from "../../DesignSystem";
 
 const FlipCardCopy = ({ textArray, color }) => {
   console.log(textArray);
