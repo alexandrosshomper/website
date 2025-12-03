@@ -140,12 +140,12 @@ const Intro = () => {
       .pauseFor(1000)
       .deleteChars(4)
       .typeString(
-        "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>Manager</span>"
+        "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>Designer</span>"
       )
       .pauseFor(1000)
       .deleteChars(8)
       .typeString(
-        "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>Designer</span>"
+        "<span style='color: transparent; background-image: linear-gradient(to right, #ff6d00, #ff1744); -webkit-background-clip: text; background-clip: text;'>Manager</span>"
       )
 
       .pauseFor(1500)
@@ -157,6 +157,9 @@ const Intro = () => {
       <IntroHeading>
         Alexandros Shomper
         <Typewriter options={typewriterOptions} onInit={handleTypewriterInit} />
+        <span style={{ fontWeight: 400 }}>
+          with 15+ years experience in various products
+        </span>
         <br />
       </IntroHeading>
       <Subline>

@@ -435,7 +435,12 @@ const Profile = () => {
           content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
         />
       </Helmet>
-      <Intro></Intro>
+      <Section>
+        <SectionHead
+          headline="Product Designer / Manager with 15+ years experience in various products"
+          subline="Now seeking a Product Design Manager role in a high-growth environment."
+        />
+      </Section>
 
       <Section>
         <SectionHead headline="A little bit about me" />
