@@ -26,18 +26,27 @@ const hero = () => <CaseCover imgURL="/img/Occhio/Occhio-Website.png" />;
 const galleryItemsDiscover = [
   {
     id: 1,
-    imgURL: "/img/Occhio/Personae.jpg",
-    imgMobileURL: "/img/Occhio/Personae-mobile.png",
-    headline: "Research and Persona Development",
-    copy: "Conducted extensive market and brand equity research, including secondary research in Munich stores, speaking directly with customers and sales teams. Identified key personas based on Sigma Milieus of Social Climbers and the Established, understanding their values, needs, and behaviors.",
+    imgURL: "/img/portfolio/occhio-website/Sigma.png",
+    imgMobileURL: "/img/portfolio/occhio-website/Sigma.png",
+    headline: "Market Research",
+    copy: "We conducted a market research and used the Sigma Milieus as a framework to define our positioning and how to approach them.",
   },
   {
     id: 2,
+    imgURL: "/img/Occhio/Personae.jpg",
+    imgMobileURL: "/img/Occhio/Personae-mobile.png",
+    headline: "Persona Development",
+    copy: "Based on the market research and speaking directly with customers and sales teams I identified key personas based on Sigma Milieus of Social Climbers and the Established, understanding their values, needs, and behaviors.",
+  },
+  {
+    id: 3,
     imgURL: "/img/Occhio/CustomerJourney.png",
     imgMobileURL: "/img/Occhio/CustomerJourney-mobile.png",
     headline: "User Journey Mapping",
     copy: "Visualized and prioritized user needs throughout their journey, addressing pain points such as difficulty in imagining products at home, getting an overview of available product variants, and fear of making wrong decisions.",
   },
+];
+const galleryItemsDesign = [
   {
     id: 3,
     imgURL: "/img/Occhio/Sitemap.png",
@@ -58,53 +67,6 @@ const galleryItemsDiscover = [
     imgMobileURL: "/img/Occhio/AR-mobile.png",
     headline: "Interactive Features and AR",
     copy: "Implemented interactive components and animations to educate users about product features, making the process entertaining and informative. Introduced WebAR to help users visualize products in their own homes, addressing concerns about fit and placement, and reducing fear of making wrong decisions.",
-  },
-];
-const galleryItemsDesign = [
-  {
-    id: 1,
-    imgURL:
-      "/img/portfolio/knauf-material-calculator/detail-sketch-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/detail-sketch-mobile.png",
-    headline: "First Sketches",
-    copy: "With quick sketches I made, I was able to align with stakeholders and customers on the best concept to continue.",
-  },
-  {
-    id: 2,
-    imgURL:
-      "/img/portfolio/knauf-material-calculator/detail-sitemap-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/detail-sitemap-mobile.png",
-    headline: "Sitemap",
-    copy: "I designed a sitemap that not only organizes the screens, but the actual workflow of the users.",
-  },
-  {
-    id: 3,
-    imgURL:
-      "/img/portfolio/knauf-material-calculator/detail-wireframes-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/detail-wireframes-mobile.png",
-    headline: "Wireframes",
-    copy: "Wireframes and flows, even if very high-level, helped us allocate the screen-real-estate for these information dense screens and complex workflows.",
-  },
-  {
-    id: 4,
-    imgURL:
-      "/img/portfolio/knauf-material-calculator/detail-design-system-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/detail-design-system-mobile.png",
-    headline: "Design System",
-    copy: "I analyzed the wireframes from this and all other products to destill the most common design artifacts. From that I built an atomic design system that keeps consistency and provides scalability.",
-  },
-  {
-    id: 5,
-    imgURL:
-      "/img/portfolio/knauf-material-calculator/detail-template-desktop.png",
-    imgMobileURL:
-      "/img/portfolio/knauf-material-calculator/detail-template-mobile.png",
-    headline: "Templates",
-    copy: "Also, I defined base templates for common use cases across all prodcuts, and specifically for each product themselves.",
   },
 ];
 
@@ -145,16 +107,11 @@ const renderContent = () => (
           stage="0 →1"
           timeline="6 months"
           keyResults={[
-            "Activation ↑ 25%",
-            "Retention ↑ 30%",
-            "Time-to-Value ↓ 40%",
-            "NPS ↑ 15",
+            "Increased web traffic & engagement ↑",
+            "Higher conversion rates ↑",
+            "First-ever online revenue stream",
+            "Multiple digital awards",
           ]}
-        />
-        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
-          size="L"
         />
       </ArticleSectionContent>
     </ArticleSection>
@@ -163,34 +120,67 @@ const renderContent = () => (
       <ArticleSectionContent>
         <CaseSectionHead
           overline="Challenge"
-          headline="Delays led to quote errors costing millions in lost bids. "
-          subline="The existing website was primarily a static catalog and lacked an
-        e-commerce channel. Occhio needed a full digital overhaul: a complete
-        website relaunch alongside the launch of its first online store."
+          headline="Occhio’s Digital Transformation Challenge"
+          subline="How might we translate Occhio’s premium brand experience into a high-performing online platform?"
         />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
+          imgURL="/img/portfolio/occhio-website/Editorial.png"
           size="L"
         />
         <br />
 
         <CaseSubline subline="The Problem" />
-        <CaseCopy copy="Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and calls, leading to:" />
+        <CaseCopy copy="No Online Shopping & Lofty Brand Expectations – Occhio’s existing website did not allow direct purchasing, leading to customer frustration and lost sales. At the same time, the company’s redefined brand demanded an exceptional digital experience, setting a high bar for design, content, and performance." />
         <ul>
-          <li>Error-prone manual calculations</li>
-          <li>Re-entry of data across fragmented tools</li>
-          <li>Lack of visibility on profitability</li>
-          <li>Low trust in “digital tools made for construction”</li>
+          <li>
+            <b>No E-Commerce</b> Occhio had no direct online shop. Interested
+            customers could not buy online, causing drop-offs and missed revenue
+            opportunities.
+          </li>
+          <li>
+            <b>Outdated Web Presence</b> The old website no longer aligned with
+            Occhio’s new brand identity and luxury positioning, offering a
+            subpar user experience.
+          </li>
+          <li>
+            <b>High Brand Standards</b> The brand’s insistence on perfection and
+            stunning visuals had to be balanced with usability and web
+            performance; a difficult trade-off between form and function.
+          </li>
+          <li>
+            <b>Complex Product Catalog</b> Occhio offers a wide range of
+            modular, configurable lighting products spread across different
+            systems. This made product discovery and understanding difficult for
+            users on the old site.
+          </li>
         </ul>
         <CaseSubline subline="The Goal" />
-        <CaseCopy
-          copy="This initiative aimed to mirror the brand’s ultra-premium in-store
-        experience in the digital realm."
-        />
+        <CaseCopy copy="Launch a World-Class Online Experience – Our mission was to build an engaging new Occhio website with e-commerce capabilities that meets business goals and delights users, without compromising the brand’s luxury image." />
         <ul>
-          <li>Helps users reach value (first quote sent) within 15 minutes</li>
-          <li>Bridges quote → plan → order seamlessly</li>
-          <li>Builds trust through precision and reliability</li>
+          <li>
+            <b>Align with New Brand Identity</b> Relaunch the website to reflect
+            Occhio’s refreshed brand vision and premium design language.
+          </li>
+          <li>
+            <b>Enable Online Sales</b> Introduce a full e-commerce platform to
+            allow customers to explore and purchase Occhio products directly
+            online.
+          </li>
+          <li>
+            <b>Improve Discoverability</b> Make it easy for customers to find
+            the right product by providing intuitive navigation and inspiring
+            content that guides them in their buyer journey.
+          </li>
+          <li>
+            <b>Unified Platform</b> Seamlessly integrate content and product
+            data from multiple legacy systems into one smooth experience,
+            especially for configuring Occhio’s modular products.
+          </li>
+          <li>
+            <b>Optimize UX & Performance</b> Meet Occhio’s high aesthetic
+            standards while ensuring the site is user-friendly and fast,
+            providing rich visuals and features without sacrificing performance.
+          </li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
@@ -199,37 +189,59 @@ const renderContent = () => (
       <ArticleSectionContent>
         <CaseSectionHead
           overline="Research"
-          headline="Discover the essential workflow that defines value."
-          subline="Before designing, we needed to understand what “value” actually meant for our users."
+          headline="Understanding the Users & Market"
+          subline="We grounded our design in research, uncovering who Occhio’s customers are and what they need from a digital experience."
         />
         <p>
-          I led field visits and interviews across 12 countries — observing how
-          crews plan, measure, and order. We combined JTBD analysis, expert
-          interviews, and a survey with 53 applicators in Germany.
+          In the discovery phase, we conducted extensive market research and
+          on-site user studies to inform our direction. I visited Occhio’s
+          Munich flagship stores to observe and interview customers and sales
+          staff. This hands-on research helped us empathize with our luxury
+          lighting buyers and validate our assumptions.
           <br />
           <i>
-            Field shadowing • Expert interviews (12 countries) • JTBD analysis •
-            UX surveys (n=53 DE).
+            We discovered clear patterns in customer motivations and pain
+            points, which directly shaped our design strategy.
           </i>
         </p>
         <br />
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-material-calculator/cover-flow.png"
-          size="L"
-        />
         <br />
         <br />
         <CaseSubline subline="Key Insights" />
         <ul>
-          <li>“Trustable numbers” mattered more than UI polish.</li>
           <li>
-            Applicators didn’t want more tools, they wanted one place that just
-            works.
+            <b>Two Core Personas</b> We identified two key customer types – one
+            being a design-conscious connoisseur who values quality and timeless
+            design, and the other a status-driven achiever who wants to showcase
+            success. Both personas expect a premium experience; they want to
+            feel inspired and informed before committing to a purchase.
           </li>
-          <li>Offline-first and minimal input were must-haves.</li>
+          <li>
+            <b>Need for Inspiration</b> Customers often start with vague ideas.
+            They crave inspirational content (e.g. beautiful room photos, style
+            guidance) to envision how Occhio’s products could fit into their
+            lives. This inspiration builds the emotional confidence needed to
+            buy luxury items.
+          </li>
+          <li>
+            <b>Visualization Challenges</b> A major pain point was that shoppers
+            struggled to imagine the products in their own space. Without seeing
+            a fixture in context or at scale, they felt uncertain. This gap
+            often kept them from moving forward in the funnel.
+          </li>
+          <li>
+            <b>Information Overload</b> Occhio’s catalog is expansive – many
+            product variants, configurations, and technical details. Customers
+            found it hard to get an overview of available options and compare
+            them. This could lead to decision paralysis.
+          </li>
+          <li>
+            <b>Fear of Wrong Decisions</b> Given the high price point, customers
+            feared making a mistake (choosing the wrong product or
+            configuration). They desired guidance and reassurance during the
+            buying process to feel secure in their choice.
+          </li>
         </ul>
-        <CaseSubline subline="PMF Hypothesis" />
-        <CaseSubline subline="“If applicators can quote, plan, and order in one workspace, they’ll make fewer mistakes and be more profitable; returning within one month to create another quote.”" />
         <br />
         <br />
         <Drawer
@@ -242,37 +254,40 @@ const renderContent = () => (
       <ArticleSectionContent>
         <CaseSectionHead
           overline="Solution"
-          headline="Designing for Activation"
-          subline="Once the problem was clear, we focused on time-to-value, helping users reach their “aha moment” (sending the first quote) within 15 minutes."
+          headline="Design & Implementation"
+          subline="We adopted an agile, collaborative approach to craft a digital experience that marries Occhio’s high-end brand with user-centered functionality."
         />
 
         <CaseVideo
           img="/img/portfolio/knauf-material-calculator/KMC.png"
-          url="https://vimeo.com/1138645247"
+          url="https://vimeo.com/517069531?share=copy&fl=sv&fe=ci"
           size="L"
         />
-
+        <CaseSubline subline="Approach" />
         <p>
-          <b>Scope decisions</b> Desktop-first; all-in-one app; design system
-          prioritized to accelerate delivery across 4 apps.
-          <ul>
-            <li>
-              <b>Tender Capture</b> Read, capture, & translate tenders of any
-              format into structured inputs
-            </li>
-            <li>
-              <b>In-Plan Measurement</b> Determine masses & quantities on plans
-              & to tender positions.
-            </li>
-            <li>
-              <b>Material Order & Tracking</b> Order by floor, wall type, phase,
-              or element; track ordering status.
-            </li>
-            <li>
-              <b>Project KPIs & Documentation</b> Proof of acceptance,
-              certificates, and project health.
-            </li>
-          </ul>
+          From the outset, we partnered with specialized agencies to ensure
+          top-quality execution. I coordinated closely with Martin et Karczinski
+          (Occhio’s brand design agency) to translate the refreshed brand
+          identity into the digital space, and with Inviqa (technology
+          consultants) to implement a robust platform. We embraced an agile
+          methodology – working in sprints, iterating on feedback, and
+          continuously aligning the design with technical feasibility. This
+          approach allowed us to remain flexible and responsive to insights
+          throughout the project.
+        </p>
+        <CaseSubline subline="Scope & Key Decisions" />
+        <p>
+          Given the ambitious 6-month timeline, we focused on high-impact
+          deliverables. Early in the design phase, we decided to pivot away from
+          an overly ornamental approach – replacing heavy full-screen renderings
+          with a more functional yet elegant design that improved performance.
+          We prioritized building out critical features: a new navigation
+          scheme, a configurable product detail page, and interactive tools like
+          AR. These choices ensured we delivered a polished experience that was
+          both beautiful and effective. Every feature was evaluated against
+          Occhio’s core question: “Does it inspire confidence and delight for
+          our luxury customer?” If not, we refined or cut it to keep the
+          experience streamlined.
         </p>
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-mobile-screens.png"
@@ -288,63 +303,14 @@ const renderContent = () => (
         <br />
         <br />
         <br />
-        <CaseSubline subline="Key Feature 1: Tender Capture" />
-        <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-homepage.png"
+        <CaseSubline subline="Key Feature 1: Inspirational, User-Centric Navigation" />
+        <CaseImageBlank
+          imgURL="/img/portfolio/occhio-website/Navigation-Tablet.png"
           size="L"
         />
 
-        <CaseCopy
-          copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
-I built a guided import flow that parses items and matches them to Knauf’s product systems."
-        />
-        <br />
-        <br />
-        <CaseSublineTwo subline="Highlights" />
-        <p>
-          Tenders arrive in every format imaginable. I built a structured
-          quoting interface that can parse tender items and maps them to Knauf
-          systems, so downstream steps inherit clean, linked data.
-        </p>
-        <CaseHighlight
-          headline="Quote Tracking"
-          copy="An overview of the quotes sent, but even more important, an overview of quote drafts with highlighted due-dates. Helping you find the most urgent actions on the screen."
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-overview.png"
-          direction="LTR"
-        />
-        <CaseHighlight
-          headline="Tender to Quote"
-          copy="New business starts with a tender, and providing a quote asap. Instead of manually transfering each position, customers can import the tender directly in seconds."
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-import-tender.png"
-          direction="RTL"
-        />
-        <CaseHighlight
-          headline="Quote to Project"
-          copy="After a Tender has been won and approved, it can be converted into a construction project in one click. Users can import all existing information and offering to add new resources like floor-plans."
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-quote-to-project.png"
-          direction="LTR"
-        />
-        <CaseSublineTwo subline="Impact" />
-        <p>
-          Early trust increased: users saw reliable, structured data from the
-          start
-        </p>
-        <ImpactBoxGrid
-          items={[
-            { impact: "60%", subline: "faster quote creation" },
-            {
-              impact: "3x",
-              subline: "higher quoting rate",
-            },
-            {
-              impact: "85%",
-              subline: "reduction in errors",
-              quote:
-                "This is the tool I was looking for. Finally everything in one place.",
-              size: "L",
-            },
-          ]}
-        />
+        <CaseCopy copy="An intuitive navigation system catering to different user approaches (browse by room, by product type, or directly search). This feature helps both the design-savvy user and the goal-oriented shopper find what they need easily, greatly improving product discoverability." />
+
         <br />
         <br />
         <br />
@@ -352,51 +318,13 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
         <br />
         <br />
         <br />
-        <CaseSubline subline="Key Feature 2: In-Plan Measurement" />
+        <CaseSubline subline="Key Feature 2: Modular Product Configurator" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-plan-measurement.png"
+          imgURL="/img/portfolio/occhio-website/Configurator.png"
           size="L"
         />
-        <CaseCopy copy="Applicators could now measure directly on their digital plans, and link results to tender positions. From site measurements → plan → exact quantities → approved order in minutes." />
-        <br />
-        <br />
-        <CaseSublineTwo subline="Highlights" />
-        <p>
-          Take-offs & ordering happens across PDFs, spreadsheets, & calls;
-          fragmented, error-prone, and slow. I bring them together: users can
-          measure in plans, link elements to a tender position & turn those
-          results into orders.
-        </p>
-        <CaseHighlight
-          headline="Plan Measurement tools"
-          copy="Users can plan mm-exact measurements and directly assign positions from the quote. Intuitive usage with immediate results."
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-measurement.png"
-          direction="LTR"
-        />
-        <CaseHighlight
-          headline="Real-time quantity calculation"
-          copy="By making mm-exact measurements on the plan, the quantities of the matching positions get calculated in real-time; per wall, floor, or phase"
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-plan-calculations.png"
-          direction="RTL"
-        />
-        <CaseSublineTwo subline="Impact" />
-        <p>Major confidence boost among early users</p>
-        <ImpactBoxGrid
-          items={[
-            { impact: "3x", subline: "quantity calculation speed" },
-            {
-              impact: "0",
-              subline: "re-entries between planning and ordering",
-            },
-            {
-              impact: "40%",
-              subline: "reduction in communication",
-              quote:
-                "With this system, there is no guessworking anymore, no blackspots between the team. We all know, what has been planned, what material do we need mm-exact.",
-              size: "L",
-            },
-          ]}
-        />
+        <CaseCopy copy="On each product page, users can customize their chosen light (e.g. select finishes, sizes, configurations) and see the result in real-time. This interactive configurator simplifies complex product options and makes the selection process engaging – leading to more confident buying decisions and fewer surprises after purchase." />
+
         <br />
         <br />
         <br />
@@ -404,48 +332,12 @@ I built a guided import flow that parses items and matches them to Knauf’s pro
         <br />
         <br />
         <br />
-        <CaseSubline subline="Key Feature 3: Material Order & Tracking" />
+        <CaseSubline subline="Key Feature 3: Integrated Online Store" />
         <CaseImage
-          imgURL="/img/portfolio/knauf-material-calculator/cover-order-list.png"
+          imgURL="/img/portfolio/occhio-website/PDP-Performance.png"
           size="L"
         />
-        <CaseCopy
-          copy="Ordering materials used to happen over phone calls and guesswork.
-We introduced structured, flexible ordering, by floor, phase, or wall type; plus real-time delivery tracking."
-        />
-        <br />
-        <br />
-        <CaseSublineTwo subline="Highlights" />
-        <CaseHighlight
-          headline="Split orders by date or project phase"
-          copy="Order material according to need. By floor, wall type, construction phase, element. Whatever the user needs."
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-orders.png"
-          direction="LTR"
-        />
-        <CaseHighlight
-          headline="Built-in delivery scheduling"
-          copy="Tracking orders & deliveries on a construction is complex, messy, and time-sensitive. Our order tracking provides real-time status that can be filtered down to any phase, section, floor, wall-type, etc. to give users the ETA they need."
-          imgURL="/img/portfolio/knauf-material-calculator/closeup-order-scheduling.png"
-          direction="RTL"
-        />
-        <CaseSublineTwo subline="Impact" />
-        <p>Trust built between Knauf, dealers, and applicators</p>
-        <ImpactBoxGrid
-          items={[
-            { impact: "60%", subline: "cut in order mistakes" },
-            {
-              impact: "30%",
-              subline: "reduction of delivery status update calls",
-            },
-            {
-              impact: "20%",
-              subline: "improved logistics efficiency",
-              quote:
-                "Now I finally have a clear picture of my orders and deliveries.",
-              size: "L",
-            },
-          ]}
-        />
+        <CaseCopy copy="We implemented Occhio’s first end-to-end e-commerce functionality. Users can seamlessly go from inspiration and product discovery to checkout on the same site. The shopping cart, wishlist, and checkout processes were designed to be straightforward and reassuring for luxury shoppers (including options for consulting with an Occhio specialist). This new online sales channel started capturing revenue that was previously untapped – within the first year, online orders comprised around 5% of Occhio’s total revenue, with significant potential to grow." />
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -453,73 +345,68 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
       <ArticleSectionContent>
         <CaseSectionHead
           overline="Results"
-          headline="Success in numbers"
-          subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
+          headline="A Bright Future: Awards and Engagement Soar"
+          subline="The relaunch created an immersive digital showcase for Occhio, delighting customers and earning industry acclaim."
         />
         <p>
-          A product that turned analog workflows into a digital growth engine —
-          and a design-led transformation that shaped how Knauf builds all
-          future tools.
+          The new Occhio website and online shop have been a resounding success.
+          The relaunch resulted in a highly engaging, visually stunning website
+          that seamlessly merges Occhio’s refined brand aesthetic with a modern
+          user experience. Customers responded enthusiastically to the richer
+          content and features – they now spend more time exploring products and
+          feel more confident in making purchases online. The addition of
+          e-commerce not only filled a critical gap in the customer journey, but
+          it also unlocked a new revenue stream for the company. Importantly,
+          all these improvements were achieved without sacrificing Occhio’s
+          brand values; in fact, the digital experience has only strengthened
+          the brand’s reputation for innovation and quality.
         </p>
         <ul>
           <li>
-            Scaled design system across 4 apps, cutting delivery time by 40%.
+            <b>Industry Recognition</b> The project earned top industry awards,
+            including a Gold – Annual Multimedia Award 2020 and a Splash Award
+            2020 for digital excellence.
           </li>
-          <li>Mentored designers in hypothesis-driven experimentation.</li>
-          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
-          <li>Introduced UX Maturity Assessments company-wide.</li>
+          <li>
+            <b>Higher Conversion Rate</b> More website visitors are converting
+            into customers than before, thanks to easier shopping and
+            better-informed users (exact figures are confidential, but
+            conversion saw a significant uplift).
+          </li>
+          <li>
+            <b>Increased User Engagement</b> Users interact with the site’s
+            content and features at a much higher rate. Time-on-site and product
+            page views per session have grown, indicating that the experience is
+            both captivating and informative.
+          </li>
+          <li>
+            <b>Growth in Visitors</b> The website has attracted significantly
+            more traffic post-relaunch, driven by improved SEO from the new site
+            structure and an uptick in organic sharing of Occhio’s inspiring
+            content.
+          </li>
+          <li>
+            <b>Newsletter Sign-ups Up</b> More visitors are signing up for the
+            Occhio newsletter and product updates, boosting the brand’s CRM and
+            remarketing efforts (a sign that the site is effective in building
+            ongoing interest).
+          </li>
+          <li>
+            <b>New Revenue Channel</b> Online sales now account for roughly 5%
+            of Occhio’s total revenue, where previously it was virtually 0%.
+            This share is continuing to grow, demonstrating the long-term
+            business value of the e-commerce launch.
+          </li>
         </ul>
-        <table>
-          <tbody>
-            <tr>
-              <th>Metric</th>
-              <th>Δ</th>
-            </tr>
-            <tr>
-              <td>Activation (Aha ≤15m)</td>
-              <td>+25%</td>
-            </tr>
-            <tr>
-              <td>7-Day Retention</td>
-              <td>+30%</td>
-            </tr>
-            <tr>
-              <td>Plan→Order Conversion</td>
-              <td>+18pp</td>
-            </tr>
-            <tr>
-              <td>NPS</td>
-              <td>15</td>
-            </tr>
-          </tbody>
-        </table>
-      </ArticleSectionContent>
-    </ArticleSection>
-
-    <ArticleSection>
-      <ArticleSectionContent>
-        <CaseSectionHead headline="Related Articles" />
-        <Article
-          headline="Is the Customer always right? It depends …"
-          subline="The phrase >the customer is always right< has been a staple in customer service for decades and has been influential as it has been…"
-          meta="Alexandros Shomper for Bootcamp @ Medium.com"
-          link="https://medium.com/design-bootcamp/is-the-customer-always-right-it-depends-e875f37a6786"
-          imgURL="https://miro.medium.com/v2/resize:fill:320:214/1*gSIDo1Rac8EDR0fhsraNeA.png"
-        />
-        <Article
-          headline="Problem/Solution Fit vs Product/Market Fit"
-          subline="Or: The difference between “good enough” and “awesome”"
-          meta="Alexandros Shomper for Bootcamp @ Medium.com"
-          link="https://medium.com/design-bootcamp/problem-solution-fit-vs-product-market-fit-bcfb7f8edfdc"
-          imgURL="https://miro.medium.com/v2/resize:fill:320:214/0*JrB0_hChqOG3mFwj.png"
-        />
-        <Article
-          headline="UX maturity assessment workshop"
-          subline="A template version of a workshop we conducted to assess our team’s UX maturity, based on Nielsen Nelson’s UX Maturity Assessment."
-          meta="Alexandros Shomper for Reforge @ Reforge.com"
-          link="https://www.reforge.com/artifacts/ux-maturity-assessment-workshop"
-          imgURL="https://cdn.sanity.io/images/pghoxh0e/production/b16f344e0d2c019f51295172b73cbccafe82e55d-528x343.png?w=2200&q=80&fit=max&auto=format"
-        />
+        <p>
+          With this relaunch, Occhio successfully transitioned into the digital
+          commerce space while elevating its brand. The company now provides the
+          same level of excellence online as it does in-store, setting a strong
+          foundation for future growth in an omnichannel world. The case study
+          stands as an example of how thoughtful research, user-centric design,
+          and cross-team collaboration can transform a luxury brand’s digital
+          fortunes.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
   </>
