@@ -560,7 +560,7 @@ const Content = (props) => {
             backgroundColor="#6A210D"
             colorBack="white"
             copy={[
-              "I acquire the right users, activates them quickly, and keeps them engaged longer by systematically removing friction and amplifying value.",
+              "I acquire the right users, activate them quickly, and keep them engaged longer by systematically removing friction and amplifying value.",
             ]}
             copyBack={[
               "I can help you scale your product efficiently with PLG by increasing acquisition, activation, and retention.",
