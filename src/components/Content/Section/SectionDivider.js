@@ -10,7 +10,7 @@ const SectionDivider = ({ text }) => {
     font-style: normal;
 
     color: ${Colors.primaryText.lowEmphasis};
-    margin: 0px 24px 8px 24px;
+    margin: 0px 0px 8px 0px;
 
     font-size: 20px;
     line-height: 112%;

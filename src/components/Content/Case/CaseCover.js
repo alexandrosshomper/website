@@ -15,8 +15,7 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
 
     direction: ltr;
 
-    max-width: 90%;
-    border-radius: 10px;
+    width: 100%;
 
     list-style-image: none;
     list-style-position: outside;
@@ -33,21 +32,21 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
     -webkit-font-smoothing: antialiased;
 
     ${Devices.tabletS} {
-      max-width: 564px;
+      max-height: 800px;
     }
     ${Devices.tabletM} {
-      max-width: 80%;
     }
     ${Devices.laptopS} {
     }
-    ${Devices.laptopM} {
+    ${Devices.desktopS} {
+      border-radius: 10px;
+      max-width: 80%;
     }
   `;
   const Picture = styled.img`
     direction: ltr;
     display: block;
-    max-width: 100%;
-    height: auto;
+
     margin: 0px;
 
     list-style-image: none;
@@ -60,7 +59,8 @@ const CaseCover = ({ imgURL, alt, color1, color2 }) => {
 
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
-
+    object-fit: cover;
+    width: 100%;
     // ${csscolorbackground};
     ${Devices.tabletS} {
     }
