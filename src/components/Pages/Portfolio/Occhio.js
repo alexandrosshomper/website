@@ -11,10 +11,8 @@ import CaseSubline from "../../Content/Case/CaseSubline";
 import CaseSublineTwo from "../../Content/Case/CaseSublineTwo";
 import CaseImage from "../../Content/Case/CaseImage";
 import CaseImageBlank from "../../Content/Case/CaseImageBlank";
-import CaseHighlight from "../../Content/Case/CaseHighlight";
-import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
+
 import CaseVideo from "../../Content/Case/CaseVideo";
-import Article from "../../Content/Article/Article";
 
 const metaTitle = "Occhio website & eCommerce | Alexandros Shomper";
 
