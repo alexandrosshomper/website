@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
+import Logo from "../Identity/Logo";
 import Wortmarke from "../Identity/WortmarkeLang";
 import { X, Menu } from "lucide-react";
 
@@ -87,6 +88,7 @@ const CTA = styled.div`
   height: 3rem;
   padding: 0 20px 0 20px;
   border-radius: 16px;
+  corner-shape: squircle;
 `;
 const Closer = styled.div`
   display: flex;
@@ -204,6 +206,7 @@ const NavigationSticky = () => {
         <NavigationWrapper data-navigation="sticky">
           <StickyBar>
             <CTA>
+              <Logo />
               <Wortmarke />
             </CTA>
             <CTA>

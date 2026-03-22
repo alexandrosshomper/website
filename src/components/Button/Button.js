@@ -12,14 +12,16 @@ const sizeStyles = {
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.02em;
-    border-radius: 100px;
+    border-radius: 20px;
+    corner-shape: squircle;
   `,
   small: `
     padding: 4px 10px;
     font-size: 12px;
     line-height: 133%;
     letter-spacing: 0.01em;
-    border-radius: 100px;
+    border-radius: 14px;
+    corner-shape: squircle;
   `,
 };
 
