@@ -31,6 +31,7 @@ function FadeInWhenVisible({ children }) {
       animate={controls}
       initial="hidden"
       transition={{ duration: 0.3 }}
+      style={{ width: "100%" }}
       variants={{
         visible: {
           opacity: 1,

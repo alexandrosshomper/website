@@ -11,12 +11,8 @@ const NavigationWrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  margin: 0 auto;
-  height: auto;
-  width: auto;
+  width: 100vw;
   background-color: transparent;
-
   z-index: 1000;
 `;
 
@@ -25,24 +21,11 @@ const StickyBar = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   margin: 12px;
   height: 52px;
-  width: auto;
-  z-index: 1000;
 
   ${Devices.tabletS} {
     margin: 14px;
-    width: auto;
-  }
-  ${Devices.tabletM} {
-  }
-  ${Devices.laptopS} {
-  }
-  ${Devices.laptopM} {
   }
 `;
 
@@ -153,7 +136,7 @@ const MenuButton = styled.div`
   }
 `;
 
-const NavigationSticky = ({ style }) => {
+const NavigationSticky = ({}) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -218,8 +201,8 @@ const NavigationSticky = ({ style }) => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <NavigationWrapper data-navigation="sticky" style={style}>
-          <StickyBar style={style}>
+        <NavigationWrapper data-navigation="sticky">
+          <StickyBar>
             <CTA>
               <Wortmarke />
             </CTA>
