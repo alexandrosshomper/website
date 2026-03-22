@@ -10,6 +10,8 @@
 | Instance | Branch | Focus | Status |
 |----------|--------|-------|--------|
 | A | `Page-Performance-Improvement` | Portfolio & index.html performance | In progress |
+| B | `seo/public-foundation` | public/ files foundation (no src/ touches) | Complete ✓ |
+| C | `seo/routes-and-sitemap` | Routes sync, sitemap, URL typo fix, 404 route | Complete ✓ |
 
 ---
 
@@ -270,7 +272,8 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 
 | Branch | What it does | PR # |
 |--------|-------------|------|
-| — | — | — |
+| `seo/public-foundation` | Fix meta description, add OG fallback tags, update manifest.json, add sitemap to robots.txt, create llms.txt | — |
+| `seo/routes-and-sitemap` | Sync routes.js with App.js, fix "indsutry" URL typo + 301 redirect, update sitemap priorities + lastmod, add 404 route | — |
 
 ---
 
