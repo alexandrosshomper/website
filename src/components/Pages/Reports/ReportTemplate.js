@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 import { Colors, Devices } from "../../DesignSystem";
 
@@ -97,14 +98,34 @@ const ReportTemplate = ({
   children,
   leadSuccessLink,
 }) => {
+  const { pathname } = useLocation();
+  const canonical = `https://www.alexandrosshomper.de${pathname}`;
+
   return (
     <ContentWrapper>
       <Helmet>
-        <meta charSet="utf-8" />
         {metaTitle && <title>{metaTitle}</title>}
         {metaDescription && (
           <meta name="description" content={metaDescription} />
         )}
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={metaTitle || "Alexandros Shomper"} />
+        {metaDescription && <meta property="og:description" content={metaDescription} />}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle || "Alexandros Shomper"} />
+        {metaDescription && <meta name="twitter:description" content={metaDescription} />}
+        {metaTitle && <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "@id": `${canonical}#article`,
+          "headline": metaTitle,
+          "description": metaDescription,
+          "author": { "@id": "https://www.alexandrosshomper.de/#person" },
+          "publisher": { "@id": "https://www.alexandrosshomper.de/#person" }
+        })}</script>}
       </Helmet>
       <Section data-article-container="true">
         <ArticleHeader data-article-header="true">

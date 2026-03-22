@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 import { motion, useAnimation } from "framer-motion";
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import SectionCopy from "../../Content/Section/SectionCopy";
@@ -429,11 +429,17 @@ const Profile = () => {
   return (
     <PageWrapper>
       <Helmet>
-        <title>Alexandros Shomper — Profile</title>
-        <meta
-          name="description"
-          content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
-        />
+        <title>About | Alexandros Shomper</title>
+        <meta name="description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/about" />
+        <meta property="og:title" content="About | Alexandros Shomper" />
+        <meta property="og:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About | Alexandros Shomper" />
+        <meta name="twitter:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
       </Helmet>
       <Section>
         <SectionHead

@@ -35,8 +35,7 @@ Wave 1 (parallel):
   Session D  →  seo/image-alt-text        ✓ MERGED
 
 Wave 2 (after all Wave 1 branches merged to master):
-  Session E  →  seo/meta-and-schema       ← READY TO START
-                                           ↑ depends on corrected URLs from Session C ✓
+  Session E  →  seo/meta-and-schema       ✓ COMPLETE — ready to merge
 
 Wave 3 (after Wave 2 merged):
   Session F  →  seo/pre-rendering
@@ -83,6 +82,7 @@ Wave 3 (after Wave 2 merged):
 | `seo/public-foundation` | Fix meta description, add OG fallback tags, update manifest.json, add Sitemap to robots.txt, create llms.txt | Merged ✓ |
 | `seo/routes-and-sitemap` | Sync routes.js with App.js, fix "indsutry" URL typo + 301 redirect, update sitemap priorities + lastmod, add 404 route | Merged ✓ |
 | `seo/image-alt-text` | Alt text for all img tags — 12 files updated, 0 logic changes. Note: `Portfolio.js:439 CaseBlockImage` left for Instance A | Merged ✓ |
+| `seo/meta-and-schema` | react-helmet→react-helmet-async migration; global Person+WebSite JSON-LD in App.js; per-page Helmet (title, description, canonical, OG, Twitter) on 5 pages; Article JSON-LD in ReportTemplate; BreadcrumbList JSON-LD in CaseTemplate + FlowPageTemplate; fix "Purpouse" typo | Ready to merge ✓ |
 
 ---
 
@@ -90,7 +90,7 @@ Wave 3 (after Wave 2 merged):
 
 - Instance A: Performance branch in progress — claims `Portfolio.js` and `public/index.html`
 - Session D note: `Portfolio.js:439` has `<CaseBlockImage>` missing `alt` — claimed by Instance A, left for them to add (e.g., `alt={caseStudy.name || ""}`) when they finish
-- `HomeJob.js`: typo "Purpouse" → "Purpose" (line 458) left for Session E to fix
+- `HomeJob.js`: typo "Purpouse" → "Purpose" fixed by Session E ✓
 
 ---
 
