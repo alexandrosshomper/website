@@ -438,6 +438,7 @@ const Content = (props) => {
               <CaseBlockImageWrapper>
                 <CaseBlockImage
                   src={caseStudy.imgURL}
+                  alt={caseStudy.headline}
                   loading="lazy"
                   decoding="async"
                 />
