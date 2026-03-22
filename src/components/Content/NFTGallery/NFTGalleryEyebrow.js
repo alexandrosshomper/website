@@ -33,7 +33,7 @@ const NFTGalleryEyebrow = ({ text, color1, color2 }) => {
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
 
-    font-weight: 700;
+    font-weight: 500;
     font-size: 12px;
     line-height: 120%;
 

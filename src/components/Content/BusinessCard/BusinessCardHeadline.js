@@ -7,9 +7,9 @@ const BusinessCardHeadline = ({ headline }) => {
   const BusinessCardHeadline = styled.h3`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
 
     color: rgba(0, 169, 157, 1);
 

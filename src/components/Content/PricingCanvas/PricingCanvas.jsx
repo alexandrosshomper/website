@@ -23,7 +23,9 @@ export const PlayOverlayButton = styled.div`
   justify-content: center;
   pointer-events: auto;
   z-index: 1;
-  transition: background-color 120ms ease, box-shadow 120ms ease;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease;
   will-change: backdrop-filter;
   animation: blurPulse 2.4s ease-in-out infinite;
   &:hover {
@@ -143,9 +145,9 @@ const PricingCanvas = ({ roiCalcAction }) => {
   const PricingCanvasHeadline2 = styled.h2`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
 
     color: rgba(0, 169, 157, 1);
 
@@ -181,9 +183,9 @@ const PricingCanvas = ({ roiCalcAction }) => {
   const PricingCanvasHeadline3 = styled.h3`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
 
     color: ${Colors.primaryText.highEmphasis};
 
@@ -236,7 +238,7 @@ const PricingCanvas = ({ roiCalcAction }) => {
     ${Devices.laptopS} {
     }
     ${Devices.laptopM} {
-      font-weight: 700;
+      font-weight: 500;
       font-size: 24px;
       line-height: 120%;
     }
@@ -321,9 +323,9 @@ const PricingCanvas = ({ roiCalcAction }) => {
   const PanelHeadline = styled.p`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
 
     color: ${Colors.primaryText.highEmphasis};
 
@@ -457,7 +459,9 @@ const PricingCanvas = ({ roiCalcAction }) => {
     justify-content: center;
     padding: 0;
     z-index: 2;
-    transition: transform 120ms ease, background-color 120ms ease;
+    transition:
+      transform 120ms ease,
+      background-color 120ms ease;
 
     &:hover {
       background: #101010;
@@ -479,7 +483,9 @@ const PricingCanvas = ({ roiCalcAction }) => {
     }
     padding: 0;
     z-index: 2;
-    transition: transform 120ms ease, background-color 120ms ease;
+    transition:
+      transform 120ms ease,
+      background-color 120ms ease;
 
     &:hover {
       background: #101010;

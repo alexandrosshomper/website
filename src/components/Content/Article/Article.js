@@ -37,7 +37,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
 
   const ArticleHeadline = styled.h4`
     font-family: "Roboto", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
 
     color: ${Colors.primaryText.highEmphasis};
@@ -54,7 +54,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
     overflow: hidden;
     ${Devices.tabletM} {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 109%;
     }
   `;
@@ -62,7 +62,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
   const ArticleSubline = styled.span`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
     font-weight: 400;
 
@@ -84,7 +84,6 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
   const ArticleMeta = styled.span`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
     font-style: normal;
     font-weight: 400;
 

@@ -12,7 +12,7 @@ import SectionOverline from "../../Content/Section/SectionOverline";
 const Content = () => {
   const Content = styled.div`
     text-align: left;
-    margin-top: 72px;
+    margin-top: 120px;
   `;
 
   const Section = styled.section`

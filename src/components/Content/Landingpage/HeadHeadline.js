@@ -6,7 +6,7 @@ import { Devices, Colors } from "../../DesignSystem";
 const HeadHeadline = ({ headline }) => {
   const HeadHeadline = styled.h1`
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
 
     color: ${Colors.primaryText.highEmphasis};
