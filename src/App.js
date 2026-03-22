@@ -61,6 +61,12 @@ const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 
+const NotFound = () => (
+  <div style={{ textAlign: "center", padding: "120px 24px" }}>
+    <h1>404 — Page not found</h1>
+  </div>
+);
+
 /*const MiniNavigation = lazy(() =>
   import("./components/Navigation/MiniNavigation/MiniNavigation")
 );*/
@@ -130,7 +136,7 @@ function App() {
             />
             <Route
               exact
-              path="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
+              path="/reports/four-industry-shifts-making-onboarding-and-activation-indispensable"
               component={FourIndustryShifts}
             />
             {/*CASE STUDIES*/}
@@ -171,6 +177,7 @@ function App() {
             />
             <Route exact path="/portfolio/myknauf" component={MyKnauf} />
             <Route exact path="/heraklit" component={Heraklit} />
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </Suspense>

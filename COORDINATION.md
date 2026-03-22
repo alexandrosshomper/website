@@ -7,11 +7,11 @@
 
 ## Active Instances
 
-| Instance | Branch | Focus | Status |
-|----------|--------|-------|--------|
-| A | `Page-Performance-Improvement` | Portfolio & index.html performance | In progress |
-| B | `seo/public-foundation` | public/ files foundation (no src/ touches) | Complete ✓ |
-| C | `seo/routes-and-sitemap` | Routes sync, sitemap, URL typo fix, 404 route | Complete ✓ |
+| Instance | Branch                         | Focus                                         | Status      |
+| -------- | ------------------------------ | --------------------------------------------- | ----------- |
+| A        | `Page-Performance-Improvement` | Portfolio & index.html performance            | In progress |
+| B        | `seo/public-foundation`        | public/ files foundation (no src/ touches)    | Complete ✓  |
+| C        | `seo/routes-and-sitemap`       | Routes sync, sitemap, URL typo fix, 404 route | Complete ✓  |
 
 ---
 
@@ -19,10 +19,10 @@
 
 > List every file you are actively editing. Others must not touch claimed files.
 
-| File | Claimed by | Since |
-|------|------------|-------|
+| File                                          | Claimed by | Since      |
+| --------------------------------------------- | ---------- | ---------- |
 | `src/components/Pages/Portfolio/Portfolio.js` | Instance A | 2026-03-22 |
-| `public/index.html` | Instance A | 2026-03-22 |
+| `public/index.html`                           | Instance A | 2026-03-22 |
 
 ---
 
@@ -50,13 +50,15 @@ Wave 3 (after Wave 2 merged):
 ---
 
 ### WAVE 1 — SESSION B: Public Files Foundation
+
 **Branch:** `seo/public-foundation`
 **Effort:** Small — no logic changes, config/content only
 **Files claimed:**
+
 - `public/index.html`
 - `public/manifest.json`
 - `public/robots.txt`
-- `public/llms.txt` *(new file)*
+- `public/llms.txt` _(new file)_
 
 **Do NOT touch:** Any file in `src/`
 
@@ -73,13 +75,15 @@ Wave 3 (after Wave 2 merged):
    - Add `"description"` field
 
 3. `public/robots.txt` — add Sitemap directive:
+
    ```
    User-agent: *
    Disallow:
    Sitemap: https://www.alexandrosshomper.de/sitemap.xml
    ```
 
-4. `public/llms.txt` *(create new file)* — AI crawler guidance:
+4. `public/llms.txt` _(create new file)_ — AI crawler guidance:
+
    ```
    # Alexandros Shomper — alexandrosshomper.de
 
@@ -110,12 +114,14 @@ Coordinate with Instance A before starting — merge their branch first OR confi
 ---
 
 ### WAVE 1 — SESSION C: Routes & Sitemap
+
 **Branch:** `seo/routes-and-sitemap`
 **Effort:** Medium — URL changes require redirect setup. Take care.
 **Files claimed:**
+
 - `src/routes.js`
-- `src/App.js` *(route path strings only — do not touch Helmet or component logic)*
-- `src/components/Pages/Reports/FourIndustryShifts.js` *(slug reference only)*
+- `src/App.js` _(route path strings only — do not touch Helmet or component logic)_
+- `src/components/Pages/Reports/FourIndustryShifts.js` _(slug reference only)_
 - `public/sitemap.xml`
 
 **Do NOT touch:** Any Helmet tags, any styling, any component logic
@@ -147,6 +153,7 @@ Coordinate with Instance A before starting — merge their branch first OR confi
 ---
 
 ### WAVE 1 — SESSION D: Image Alt Text
+
 **Branch:** `seo/image-alt-text`
 **Effort:** Small-medium — repetitive but low risk
 **Files claimed:** All component files containing `<img>` tags (identify with grep first)
@@ -161,6 +168,7 @@ Coordinate with Instance A before starting — merge their branch first OR confi
 5. For profile/identity images: use `"Alexandros Shomper — Product Lead"`
 
 **Start by running:**
+
 ```bash
 grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 ```
@@ -168,13 +176,15 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 ---
 
 ### WAVE 2 — SESSION E: Per-Page Meta + Structured Data
+
 **Branch:** `seo/meta-and-schema`
 **Effort:** Large — touches every page component
 **WAIT FOR:** Sessions B and C to be merged to master first
 **Why:** OG canonical URLs and JSON-LD `@id` fields must use the corrected slugs from Session C
 
 **Files claimed:**
-- `src/App.js` *(Helmet global schema only)*
+
+- `src/App.js` _(Helmet global schema only)_
 - `src/components/Pages/Home/HomeJob.js`
 - `src/components/Pages/Profile/Profile.js`
 - `src/components/Pages/Portfolio/Portfolio.js`
@@ -196,6 +206,7 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
    - Update all `import { Helmet } from 'react-helmet'` → `import { Helmet } from 'react-helmet-async'`
 
 2. **Add OG + Twitter + canonical to every page** via Helmet. Minimum per page:
+
    ```jsx
    <Helmet>
      <title>Page Title | Alexandros Shomper</title>
@@ -203,9 +214,15 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
      <link rel="canonical" href="https://www.alexandrosshomper.de/[path]" />
      <meta property="og:title" content="Page Title | Alexandros Shomper" />
      <meta property="og:description" content="Unique description" />
-     <meta property="og:url" content="https://www.alexandrosshomper.de/[path]" />
+     <meta
+       property="og:url"
+       content="https://www.alexandrosshomper.de/[path]"
+     />
      <meta property="og:type" content="website" />
-     <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+     <meta
+       property="og:image"
+       content="https://www.alexandrosshomper.de/img/social/og-default.jpg"
+     />
      <meta name="twitter:card" content="summary_large_image" />
    </Helmet>
    ```
@@ -213,6 +230,7 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 3. **Fix homepage canonical** — both `/` and `/portfolio` render `Portfolio.js`. Add `canonical` pointing to `/` on the homepage route, and `/portfolio` on the portfolio route.
 
 4. **Add JSON-LD structured data** in `src/App.js` (global, always present):
+
    ```json
    {
      "@context": "https://schema.org",
@@ -245,6 +263,7 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 ---
 
 ### WAVE 3 — SESSION F: Pre-Rendering
+
 **Branch:** `seo/pre-rendering`
 **Effort:** Large — architectural change
 **WAIT FOR:** Session E to be merged to master first
@@ -268,12 +287,12 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 
 ## Completed / Ready to Merge
 
-*(move entries here when your branch is ready for PR)*
+_(move entries here when your branch is ready for PR)_
 
-| Branch | What it does | PR # |
-|--------|-------------|------|
-| `seo/public-foundation` | Fix meta description, add OG fallback tags, update manifest.json, add sitemap to robots.txt, create llms.txt | — |
-| `seo/routes-and-sitemap` | Sync routes.js with App.js, fix "indsutry" URL typo + 301 redirect, update sitemap priorities + lastmod, add 404 route | — |
+| Branch                   | What it does                                                                                                           | PR # |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------- | ---- |
+| `seo/public-foundation`  | Fix meta description, add OG fallback tags, update manifest.json, add sitemap to robots.txt, create llms.txt           | —    |
+| `seo/routes-and-sitemap` | Sync routes.js with App.js, fix "indsutry" URL typo + 301 redirect, update sitemap priorities + lastmod, add 404 route | —    |
 
 ---
 
@@ -288,16 +307,19 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 ## How to Use This File
 
 **Starting work:**
+
 1. Read the full task brief for your session above
 2. Add a row to "Active Instances" at the top
 3. Add rows to "File Claims" for every file you plan to edit
 4. Update your status as you progress
 
 **Finishing work:**
+
 1. Remove your file claims
 2. Move your branch to "Completed / Ready to Merge"
 3. Remove yourself from "Active Instances"
 
 **Conflicts:**
+
 - If two instances need the same file, coordinate via git (one finishes and merges first, the other rebases)
 - All Wave 1 branches off `master`. Wave 2 branches off `master` after Wave 1 merges. Wave 3 same.
