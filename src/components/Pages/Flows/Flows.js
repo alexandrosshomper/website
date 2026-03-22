@@ -61,15 +61,17 @@ const Content = (props) => {
   return (
     <Content>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Gallery | Alexandros Shomper</title>
-        <description>
-          Digital Anthopologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
-        </description>
+        <title>Flows | Alexandros Shomper</title>
+        <meta name="description" content="UX flow galleries for Asana, Linear, Wrike, and Trello — detailed product flow documentation and onboarding analysis." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/flows" />
+        <meta property="og:title" content="Flows | Alexandros Shomper" />
+        <meta property="og:description" content="UX flow galleries for Asana, Linear, Wrike, and Trello — detailed product flow documentation and onboarding analysis." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/flows" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Flows | Alexandros Shomper" />
+        <meta name="twitter:description" content="UX flow galleries for Asana, Linear, Wrike, and Trello — detailed product flow documentation and onboarding analysis." />
       </Helmet>
       <Section>
         <SectionHead
