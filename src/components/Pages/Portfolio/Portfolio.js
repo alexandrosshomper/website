@@ -16,44 +16,6 @@ import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 
-function RevealWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.9 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          x: "5%",
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
   ONBOARDING: "Onboarding Case Studies",
