@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Shomper",
+  "name": "Alexandros Shomper",
+  "description": "Product Lead & Designer — portfolio, case studies, and reports.",
   "icons": [
     {
       "src": "favicon.ico",

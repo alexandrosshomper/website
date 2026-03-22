@@ -1,0 +1,27 @@
+# Alexandros Shomper — alexandrosshomper.de
+
+> Product Lead and Designer with 15+ years of experience in B2B and B2C.
+> Specialising in product-led growth, user onboarding, activation, and design systems.
+
+## About
+Alexandros Shomper is a remote-first, outcome-oriented product lead with experience
+ranging from early-stage startups to corporate environments. Background in advertising,
+marketing, and self-taught development.
+
+## Key pages
+- Homepage / Portfolio: https://www.alexandrosshomper.de/
+- About: https://www.alexandrosshomper.de/about
+- Case Studies: https://www.alexandrosshomper.de/case-studies
+- Reports: https://www.alexandrosshomper.de/reports
+- Writing: https://www.alexandrosshomper.de/writing
+- Contact: https://www.alexandrosshomper.de/contact
+- Flows: https://www.alexandrosshomper.de/flows
+
+## Reports (long-form, ungated summaries)
+- Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth:
+  https://www.alexandrosshomper.de/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth
+- Four Industry Shifts Making Onboarding and Activation Indispensable:
+  https://www.alexandrosshomper.de/reports/four-industry-shifts-making-onboarding-and-activation-indispensable
+
+## Case Studies
+- Asana Onboarding Case Study: https://www.alexandrosshomper.de/case-studies/asana
