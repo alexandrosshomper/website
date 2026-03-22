@@ -136,7 +136,7 @@ const MenuButton = styled.div`
   }
 `;
 
-const NavigationSticky = ({}) => {
+const NavigationSticky = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 

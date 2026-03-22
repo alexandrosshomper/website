@@ -15,19 +15,6 @@ import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
-function FadeInWhenVisible({ children }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      style={{ width: "100%" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 function RevealWhenVisible({ children }) {
   const controls = useAnimation();

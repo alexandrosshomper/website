@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect, useCallback } from "react";
+import React, { lazy, Suspense } from "react";
 import Spinner from "react-spinner-material";
 //import React from "react";
 import styled from "@emotion/styled";
@@ -61,8 +61,6 @@ const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 
-//import Navigation from "./components/Navigation/Navigation";
-const Navigation = lazy(() => import("./components/Navigation/Navigation"));
 /*const MiniNavigation = lazy(() =>
   import("./components/Navigation/MiniNavigation/MiniNavigation")
 );*/
@@ -101,19 +99,6 @@ const renderLoader = () => (
 ReactGA.initialize("G-6BNG13DFW0"); // Replace with your Google Analytics tracking ID
 
 function App() {
-  const [isSticky, setIsSticky] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    setIsSticky(window.pageYOffset > 152);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
   return (
     <Router>
       <ScrollToTop />
