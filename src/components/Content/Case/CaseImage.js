@@ -72,7 +72,7 @@ const Picture = styled.img`
 const CaseImage = ({ imgURL, alt = "", size }) => {
   return (
     <CaseImageWrapper $size={size}>
-      <Picture src={imgURL} alt={alt} />
+      <Picture src={imgURL} alt={alt} loading="lazy" decoding="async" />
     </CaseImageWrapper>
   );
 };

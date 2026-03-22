@@ -1,10 +1,7 @@
 import React, { useMemo, useState } from "react";
-
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 import { ArrowRight } from "lucide-react";
-import { mdiLinkedin, mdiEmail } from "@mdi/js";
-//Components
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
 import BlackQuote from "../../Content/BlackQuote/BlackQuote";
@@ -13,6 +10,10 @@ import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
+
+// Inlined SVG paths to avoid loading the full @mdi/js library (2.6MB bundle)
+const mdiLinkedin = "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
+const mdiEmail = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -52,6 +53,206 @@ const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
     keyResults: caseStudy.keyResults,
   };
 });
+
+const PageWrapper = styled.div`
+  text-align: left;
+  margin-top: 200px;
+`;
+
+const Section = styled.section`
+  /* Auto Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+  margin-bottom: 200px;
+`;
+
+const CardPanels = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: auto;
+  justify-content: space-between;
+  align-content: center;
+  align-items: stretch;
+  --gap: 12px;
+
+  margin-bottom: calc(1 * var(--gap));
+  margin-right: 12px;
+  margin-left: 12px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+    margin: 0 auto;
+    margin-bottom: calc(-1 * var(--gap));
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    flex-direction: row;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
+
+const CaseBlockImage = styled.img`
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  transform: scale(1);
+  flex: 1;
+`;
+
+const CaseBlockImageWrapper = styled.div`
+  flex: 1;
+  margin: 0px;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  align-self: stretch;
+`;
+
+const CaseBlock = styled.a`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
+  background-color: white;
+  color: ${Colors.primaryText.mediumEmphasis};
+  font-size: 16px;
+  line-height: 150%;
+  width: 90%;
+  min-height: 400px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin: 0px auto 24px auto;
+  cursor: pointer;
+  ${Devices.tabletS} {
+    width: 564px;
+  }
+  ${Devices.tabletM} {
+    margin: 0px auto 48px auto;
+    width: 708px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+  &:hover img {
+    transform: scale(1.2);
+  }
+`;
+
+const CaseBlockDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  color: ${Colors.primaryText.mediumEmphasis};
+  font-size: 16px;
+  line-height: 150%;
+  margin: 8px 14px 14px 14px;
+
+  min-height: 400px;
+  order: 1;
+  text-align: left;
+  ${Devices.tabletS} {
+    margin: 32px 0px 24px 24px;
+    order: 0;
+    width: 40%;
+  }
+`;
+
+const CaseBlockDetailsText = styled.div`
+  margin: 0px 0px 0px 0px;
+`;
+
+const CaseBlockEyebrow = styled.p`
+  color: ${Colors.primaryText.highEmphasis};
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 110%;
+
+  text-align: left;
+  margin: 0px 0px 4px 0px;
+`;
+
+const CaseBlockHeadline = styled.h3`
+  color: ${Colors.primaryText.highEmphasis};
+  font-size: 32px;
+  line-height: 110%;
+  font-weight: 400;
+
+  text-align: left;
+  margin: 0px 0px 0px 0px;
+`;
+
+const CaseBlockSubline = styled.p`
+  color: ${Colors.primaryText.highEmphasis};
+  font-size: 24px;
+  line-height: 110%;
+
+  text-align: left;
+  margin: 0px 0px 24px 0px;
+`;
+
+const CaseBlockCopy = styled.p`
+  color: ${Colors.primaryText.mediumEmphasis};
+  font-size: 18px;
+  line-height: 110%;
+
+  text-align: left;
+  margin: 0px 0px 0px 0px;
+`;
+
+const KeyResultsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  margin-top: 8px;
+  list-style: none;
+`;
+
+const KeyResultItem = styled.div`
+  background: ${Colors.back};
+  border: 1px solid rgba(8, 8, 8, 0.08);
+  color: ${Colors.primaryText.highEmphasis};
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 1.3;
+`;
+
+const EmptyState = styled.p`
+  color: ${Colors.primaryText.mediumEmphasis};
+  font-size: 16px;
+  line-height: 150%;
+  margin: 48px 0;
+  max-width: 420px;
+  text-align: center;
+`;
+
 const FlipCardPanels = styled.section`
   display: flex;
   flex-direction: row;
@@ -84,6 +285,7 @@ const FlipCardPanels = styled.section`
     width: 1152px;
   }
 `;
+
 const ButtonRow = styled.div`
   color: rgb(29, 29, 31);
   direction: ltr;
@@ -99,7 +301,7 @@ const ButtonRow = styled.div`
   line-height: 25px;
 
   padding-top: 12px;
-  quotes: "“" "”";
+  quotes: """ """;
   text-align: center;
   text-size-adjust: 100%;
 
@@ -183,197 +385,8 @@ const Content = (props) => {
     return CASE_STUDIES.filter((caseStudy) => caseStudy.type === selectedType);
   }, [selectedType]);
 
-  const Content = styled.div`
-    text-align: left;
-    margin-top: 200px;
-  `;
-
-  const Section = styled.section`
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin-bottom: 200px;
-  `;
-  const CardPanels = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: auto;
-    justify-content: space-between;
-    align-content: center;
-    align-items: stretch;
-    --gap: 12px;
-
-    margin-bottom: calc(1 * var(--gap));
-    margin-right: 12px;
-    margin-left: 12px;
-
-    ${Devices.tabletS} {
-      width: 576px;
-      margin-right: 0px;
-      margin-left: 0px;
-      margin-bottom: calc(-1 * var(--gap));
-    }
-    ${Devices.tabletM} {
-      width: 720px;
-      flex-direction: row;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-  `;
-
-  const CaseBlockImage = styled.img`
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    transform: scale(1);
-    flex: 1;
-  `;
-  const CaseBlockImageWrapper = styled.div`
-    flex: 1;
-    margin: 0px;
-    min-width: 0;
-    overflow: hidden;
-    display: flex;
-    align-self: stretch;
-  `;
-  const CaseBlock = styled.a`
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    overflow: hidden;
-    background-color: white;
-    color: ${Colors.primaryText.mediumEmphasis};
-    font-size: 16px;
-    line-height: 150%;
-    width: 90%;
-    min-height: 400px;
-    border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-    margin: 0px auto 24px auto;
-    cursor: pointer;
-    ${Devices.tabletS} {
-      width: 564px;
-    }
-    ${Devices.tabletM} {
-      margin: 0px auto 48px auto;
-      width: 708px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    ${Devices.laptopS} {
-      width: 864px;
-    }
-    ${Devices.laptopM} {
-      width: 1152px;
-    }
-    &:hover img {
-      transform: scale(1.2);
-    }
-  `;
-  const CaseBlockDetails = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 24px;
-    color: ${Colors.primaryText.mediumEmphasis};
-    font-size: 16px;
-    line-height: 150%;
-    margin: 8px 14px 14px 14px;
-
-    min-height: 400px;
-    order: 1;
-    text-align: left;
-    ${Devices.tabletS} {
-      margin: 32px 0px 24px 24px;
-      order: 0;
-      width: 40%;
-    }
-  `;
-  const CaseBlockDetailsText = styled.div`
-    margin: 0px 0px 0px 0px;
-  `;
-  const CaseBlockEyebrow = styled.p`
-    color: ${Colors.primaryText.highEmphasis};
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 110%;
-
-    text-align: left;
-    margin: 0px 0px 4px 0px;
-  `;
-  const CaseBlockHeadline = styled.h3`
-    color: ${Colors.primaryText.highEmphasis};
-    font-size: 32px;
-    line-height: 110%;
-    font-weight: 400;
-
-    text-align: left;
-    margin: 0px 0px 0px 0px;
-  `;
-  const CaseBlockSubline = styled.p`
-    color: ${Colors.primaryText.highEmphasis};
-    font-size: 24px;
-    line-height: 110%;
-
-    text-align: left;
-    margin: 0px 0px 24px 0px;
-  `;
-  const CaseBlockCopy = styled.p`
-    color: ${Colors.primaryText.mediumEmphasis};
-    font-size: 18px;
-    line-height: 110%;
-
-    text-align: left;
-    margin: 0px 0px 0px 0px;
-  `;
-  const KeyResultsList = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 0;
-    margin: 0;
-    margin-top: 8px;
-    !list-style: none;
-  `;
-
-  const KeyResultItem = styled.div`
-    background: ${Colors.back};
-    border: 1px solid rgba(8, 8, 8, 0.08);
-    color: ${Colors.primaryText.highEmphasis};
-    border-radius: 999px;
-    padding: 10px 16px;
-    font-size: 15px;
-    line-height: 1.3;
-  `;
-  const EmptyState = styled.p`
-    color: ${Colors.primaryText.mediumEmphasis};
-    font-size: 16px;
-    line-height: 150%;
-    margin: 48px 0;
-    max-width: 420px;
-    text-align: center;
-  `;
-
   return (
-    <Content>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Portfolio | Alexandros Shomper</title>
@@ -423,7 +436,11 @@ const Content = (props) => {
                 />
               </CaseBlockDetails>
               <CaseBlockImageWrapper>
-                <CaseBlockImage src={caseStudy.imgURL} />
+                <CaseBlockImage
+                  src={caseStudy.imgURL}
+                  loading="lazy"
+                  decoding="async"
+                />
               </CaseBlockImageWrapper>
             </CaseBlock>
           ))
@@ -441,7 +458,7 @@ const Content = (props) => {
         />
         <FlipCardPanels>
           <FlipCard
-            eyebrow="Product Design"
+            eyebrow="Product Architecture"
             eyebrowColor="#231768"
             eyebrowBackColor="#10D5F5"
             backgroundColor="#231768"
@@ -470,7 +487,7 @@ const Content = (props) => {
             copyBack={[
               "I can help you define what to build, why it matters, and how to deliver it in a repeatable, evidence-driven way.",
               "I establish and improve product workflows that connect research, strategy, prioritization, and delivery; ensuring teams ship impactful features, not noise.",
-              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product’s core value proposition.",
+              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product's core value proposition.",
             ]}
             webp="./img/PanelTestImages/triangle.webp"
             png="./img/PanelTestImages/triangle.png"
@@ -508,7 +525,6 @@ const Content = (props) => {
             eyebrowColor1={Colors.green}
             eyebrowColor2={Colors.greenLight}
             copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
 
           <ListPanel
@@ -516,7 +532,6 @@ const Content = (props) => {
             eyebrowColor1={Colors.green}
             eyebrowColor2={Colors.greenLight}
             copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
 
           <ListPanel
@@ -524,14 +539,12 @@ const Content = (props) => {
             eyebrowColor1={Colors.green}
             eyebrowColor2={Colors.greenLight}
             copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
         </CardPanels>
       </Section>{" "}
       <Section>
         <BlackQuote
-          //quote="I want to use technological developments, a solid company purpose, and a strong brand to elevate experiences and give meaning to actions and ideas."
-          quote="Building tools, communicating complex ideas, 
+          quote="Building tools, communicating complex ideas,
           and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
         />
       </Section>
@@ -545,37 +558,31 @@ const Content = (props) => {
           <ListPanel
             eyebrow="Data Driven/Informed"
             copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-            //imgURL="./img/PanelTestImages/one.jpg"
           />
 
           <ListPanel
             eyebrow="Aesthetics"
             copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
 
           <ListPanel
             eyebrow="Quality"
             copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
 
           <ListPanel
             eyebrow="Holistic"
             copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
 
           <ListPanel
             eyebrow="Innovative & Brave"
             copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
 
           <ListPanel
             eyebrow="Long Term"
             copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-            //imgURL="./img/PanelTestImages/two.jpg"
           />
         </CardPanels>
       </Section>
@@ -599,7 +606,7 @@ const Content = (props) => {
           </ButtonRow>
         </ButtonContainer>
       </Section>
-    </Content>
+    </PageWrapper>
   );
 };
 

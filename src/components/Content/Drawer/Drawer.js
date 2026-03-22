@@ -3,12 +3,13 @@ import styled from "@emotion/styled";
 
 import { Colors, Devices } from "../../DesignSystem";
 
-import { mdiPlus, mdiClose } from "@mdi/js";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 import Button from "../../Button/Button";
 import { FLOATING_TOC_GUARD_EVENT } from "../../../utils/floatingToc";
 import { PlayOverlayButton } from "../PricingCanvas/PricingCanvas";
+
+const mdiPlus = "M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z";
+const mdiClose = "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z";
 
 const Drawer = ({ items, color1, color2, label }) => {
   const [open, setOpen] = useState(false);
