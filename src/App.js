@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import Spinner from "react-spinner-material";
 //import React from "react";
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Colors, Devices } from "../src/components/DesignSystem";
 import ReactGA from "react-ga4";
@@ -112,11 +112,35 @@ function App() {
       <StyledApp className="App">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Alexandros Shomper</title>
+          <title>Alexandros Shomper — Product Lead &amp; Designer</title>
           <meta
             name="description"
-            content="Experienced in core and growth initiatives from acquisition to retention & engagement. Bridging business, design, and tech to create awesome solutions people love."
+            content="Product Lead &amp; Designer with 15+ years experience in B2B and B2C. Specialising in product-led growth, user onboarding, and design systems."
           />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://www.alexandrosshomper.de/#person",
+                "name": "Alexandros Shomper",
+                "url": "https://www.alexandrosshomper.de",
+                "jobTitle": "Product Lead",
+                "description": "Product Lead and Designer with 15+ years experience in B2B and B2C, specialising in product-led growth, onboarding, activation, and design systems.",
+                "sameAs": [
+                  "https://www.linkedin.com/in/alexshomper/",
+                  "https://github.com/alexandrosshomper"
+                ]
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.alexandrosshomper.de/#website",
+                "url": "https://www.alexandrosshomper.de",
+                "name": "Alexandros Shomper",
+                "author": { "@id": "https://www.alexandrosshomper.de/#person" }
+              }
+            ]
+          })}</script>
         </Helmet>
         <Suspense fallback={renderLoader()}>
           <NavigationSticky />

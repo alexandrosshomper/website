@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import Trend from "react-trend";
 
@@ -296,13 +296,17 @@ const Content = (props) => {
   return (
     <Content>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Alexandros Shomper</title>
-        <description>
-          Experienced in core and growth initiatives from acquisition to
-          retention & engagement. Bridging business, design, and tech to create
-          awesome solutions people love.
-        </description>
+        <title>Alexandros Shomper — Product Lead &amp; Designer</title>
+        <meta name="description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/" />
+        <meta property="og:title" content="Alexandros Shomper — Product Lead &amp; Designer" />
+        <meta property="og:description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Alexandros Shomper — Product Lead &amp; Designer" />
+        <meta name="twitter:description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
       </Helmet>
       <Intro></Intro>
 
@@ -455,7 +459,7 @@ const Content = (props) => {
             />
 
             <ListPanel
-              eyebrow="Purpouse"
+              eyebrow="Purpose"
               eyebrowColor1={Colors.green}
               eyebrowColor2={Colors.greenLight}
               copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."

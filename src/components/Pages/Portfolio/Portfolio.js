@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
 import { ArrowRight } from "lucide-react";
 import { Colors, Devices } from "../../DesignSystem";
@@ -375,6 +376,11 @@ const ButtonContainer = styled.div`
 
 const Content = (props) => {
   const [selectedType, setSelectedType] = useState(CASE_STUDY_TYPES.ALL);
+  const { pathname } = useLocation();
+  const canonical =
+    pathname === "/"
+      ? "https://www.alexandrosshomper.de/"
+      : "https://www.alexandrosshomper.de/portfolio";
 
   const filteredCaseStudies = useMemo(() => {
     if (selectedType === CASE_STUDY_TYPES.ALL) {
@@ -388,15 +394,17 @@ const Content = (props) => {
   return (
     <PageWrapper>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Portfolio | Alexandros Shomper</title>
-        <description>
-          Digital Anthopologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
-        </description>
+        <meta name="description" content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C." />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content="Portfolio | Alexandros Shomper" />
+        <meta property="og:description" content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C." />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Portfolio | Alexandros Shomper" />
+        <meta name="twitter:description" content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C." />
       </Helmet>
       <Section>
         <Intro />
