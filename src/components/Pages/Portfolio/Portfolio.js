@@ -620,26 +620,24 @@ const Content = (props) => {
         </CardPanels>
       </Section>
       <Section>
-        <RevealWhenVisible>
-          <ButtonContainer>
-            <ButtonRow>
-              <Button
-                size="medium"
-                variant="primary"
-                href="https://www.linkedin.com/in/alexshomper/"
-                text="LinkedIn"
-                gradient={{ from: Colors.blue, to: Colors.blueLight }}
-                icon={mdiLinkedin}
-              />
-              <Button
-                href="mailto:alexandros@alexandrosshomper.de"
-                text="Email Me"
-                gradient={{ from: Colors.black, to: Colors.greyDark }}
-                icon={mdiEmail}
-              />
-            </ButtonRow>
-          </ButtonContainer>
-        </RevealWhenVisible>
+        <ButtonContainer>
+          <ButtonRow>
+            <Button
+              size="medium"
+              variant="primary"
+              href="https://www.linkedin.com/in/alexshomper/"
+              text="LinkedIn"
+              gradient={{ from: Colors.blue, to: Colors.blueLight }}
+              icon={mdiLinkedin}
+            />
+            <Button
+              href="mailto:alexandros@alexandrosshomper.de"
+              text="Email Me"
+              gradient={{ from: Colors.black, to: Colors.greyDark }}
+              icon={mdiEmail}
+            />
+          </ButtonRow>
+        </ButtonContainer>
       </Section>
     </Content>
   );
