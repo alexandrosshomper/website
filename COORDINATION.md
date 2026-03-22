@@ -10,6 +10,7 @@
 | Instance | Branch | Focus | Status |
 |----------|--------|-------|--------|
 | A | `Page-Performance-Improvement` | Portfolio & index.html performance | In progress |
+| D | `seo/image-alt-text` | Image alt text — GalleryItem.js + asanaCaseStudy.json | In progress |
 
 ---
 
@@ -21,6 +22,8 @@
 |------|------------|-------|
 | `src/components/Pages/Portfolio/Portfolio.js` | Instance A | 2026-03-22 |
 | `public/index.html` | Instance A | 2026-03-22 |
+| `src/components/Gallery/GalleryItem.js` | Instance D | 2026-03-22 |
+| `src/data/casestudies/asanaCaseStudy.json` | Instance D | 2026-03-22 |
 
 ---
 
