@@ -21,19 +21,19 @@ const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
 
 //REPORTS
 const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
-const OASaasGrowth = lazy(() =>
-  import("./components/Pages/Reports/OASaasGrowth.js")
+const OASaasGrowth = lazy(
+  () => import("./components/Pages/Reports/OASaasGrowth.js"),
 );
-const FourIndustryShifts = lazy(() =>
-  import("./components/Pages/Reports/FourIndustryShifts.js")
+const FourIndustryShifts = lazy(
+  () => import("./components/Pages/Reports/FourIndustryShifts.js"),
 );
 
 //CASE STUDIES
-const CaseStudies = lazy(() =>
-  import("./components/Pages/CaseStudies/CaseStudies")
+const CaseStudies = lazy(
+  () => import("./components/Pages/CaseStudies/CaseStudies"),
 );
-const AsanaCaseStudy = lazy(() =>
-  import("./components/Pages/CaseStudies/AsanaCaseStudy")
+const AsanaCaseStudy = lazy(
+  () => import("./components/Pages/CaseStudies/AsanaCaseStudy"),
 );
 
 //FLOW GALLERY
@@ -45,17 +45,17 @@ const TrelloFlow = lazy(() => import("./components/Pages/Flows/TrelloFlow.js"));
 
 //PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
-const KnaufExplorations = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufExplorations")
+const KnaufExplorations = lazy(
+  () => import("./components/Pages/Portfolio/KnaufExplorations"),
 );
-const KnaufAccount = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufAccount")
+const KnaufAccount = lazy(
+  () => import("./components/Pages/Portfolio/KnaufAccount"),
 );
-const KnaufOrderOverview = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufOrderOverview")
+const KnaufOrderOverview = lazy(
+  () => import("./components/Pages/Portfolio/KnaufOrderOverview"),
 );
-const KnaufMaterialCalculatorPMF = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufMaterialCalculatorPMF")
+const KnaufMaterialCalculatorPMF = lazy(
+  () => import("./components/Pages/Portfolio/KnaufMaterialCalculatorPMF"),
 );
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
@@ -128,8 +128,7 @@ function App() {
           />
         </Helmet>
         <Suspense fallback={renderLoader()}>
-          <Navigation />
-          <NavigationSticky style={{ top: isSticky ? "0px" : "-60px" }} />
+          <NavigationSticky />
 
           <Switch>
             <Route exact path="/job" component={HomeJob} />

@@ -22,6 +22,7 @@ const LandingpageMenu = (props) => {
 
       flex-direction: row;
       align-items: center;
+      gap: 24px;
 
       visibility: visible;
     }
@@ -32,10 +33,8 @@ const LandingpageMenu = (props) => {
   `;
   const MenuItemSmall = styled.div`
     font-family: "Noto Sans", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 137%;
-
-    margin-left: 24px;
 
     text-decoration: none;
 
