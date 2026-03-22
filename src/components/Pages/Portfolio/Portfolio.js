@@ -1,6 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useMemo, useState } from "react";
 
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
