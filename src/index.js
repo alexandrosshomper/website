@@ -3,19 +3,24 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { HelmetProvider } from "react-helmet-async";
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
   ReactDOM.hydrate(
     <React.StrictMode>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </React.StrictMode>,
     rootElement
   );
 } else {
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </React.StrictMode>,
     rootElement
   );
