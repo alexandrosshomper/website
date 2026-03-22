@@ -83,6 +83,7 @@ Wave 3 (after Wave 2 merged):
 | `seo/public-foundation` | Fix meta description, add OG fallback tags, update manifest.json, add Sitemap to robots.txt, create llms.txt | Merged ✓ |
 | `seo/routes-and-sitemap` | Sync routes.js with App.js, fix "indsutry" URL typo + 301 redirect, update sitemap priorities + lastmod, add 404 route | Merged ✓ |
 | `seo/image-alt-text` | Alt text for all img tags — 12 files updated, 0 logic changes. Note: `Portfolio.js:439 CaseBlockImage` left for Instance A | Merged ✓ |
+| `seo/pre-rendering` | react-snap pre-rendering: 21/21 routes, hydration in index.js, patch for react-snap pageerror bug, `crawl:false` + `waitFor:500` | Ready to merge — merge AFTER seo/meta-and-schema ✓ |
 
 ---
 
