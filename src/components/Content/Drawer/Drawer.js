@@ -374,8 +374,8 @@ const Drawer = ({ items, color1, color2, label }) => {
                   <GalleryItem key={item.id}>
                     <CardItem>
                       <CardHero>
-                        <Picture src={`${item.imgURL}`} />
-                        <PictureMobile src={`${item.imgMobileURL}`} />
+                        <Picture src={`${item.imgURL}`} alt={item.headline || ""} />
+                        <PictureMobile src={`${item.imgMobileURL}`} alt={item.headline || ""} />
                       </CardHero>
                       <CardCopy>
                         <b style={{ color: "white" }}>{item.headline}</b>{" "}

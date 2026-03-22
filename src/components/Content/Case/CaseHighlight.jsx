@@ -95,7 +95,7 @@ const CaseHighlight = ({ imgURL, headline, copy, direction }) => {
         <CaseHighlightHeadline>{headline}</CaseHighlightHeadline>
         <CaseHighlightCopy>{copy}</CaseHighlightCopy>
       </CaseHighlightText>
-      <Picture src={imgURL} />
+      <Picture src={imgURL} alt={headline || ""} />
     </CaseHighlightWrapper>
   );
 };

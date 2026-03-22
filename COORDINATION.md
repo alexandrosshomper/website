@@ -7,11 +7,22 @@
 
 ## Active Instances
 
+<<<<<<< HEAD
 | Instance | Branch                         | Focus                                         | Status      |
 | -------- | ------------------------------ | --------------------------------------------- | ----------- |
 | A        | `Page-Performance-Improvement` | Portfolio & index.html performance            | In progress |
 | B        | `seo/public-foundation`        | public/ files foundation (no src/ touches)    | Complete ✓  |
 | C        | `seo/routes-and-sitemap`       | Routes sync, sitemap, URL typo fix, 404 route | Complete ✓  |
+||||||| 2116239
+| Instance | Branch | Focus | Status |
+|----------|--------|-------|--------|
+| A | `Page-Performance-Improvement` | Portfolio & index.html performance | In progress |
+=======
+| Instance | Branch | Focus | Status |
+|----------|--------|-------|--------|
+| A | `Page-Performance-Improvement` | Portfolio & index.html performance | In progress |
+| D | `seo/image-alt-text` | Image alt text — 12 files updated | Complete |
+>>>>>>> seo/image-alt-text
 
 ---
 
@@ -289,10 +300,20 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 
 _(move entries here when your branch is ready for PR)_
 
+<<<<<<< HEAD
 | Branch                   | What it does                                                                                                           | PR # |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------- | ---- |
 | `seo/public-foundation`  | Fix meta description, add OG fallback tags, update manifest.json, add sitemap to robots.txt, create llms.txt           | —    |
 | `seo/routes-and-sitemap` | Sync routes.js with App.js, fix "indsutry" URL typo + 301 redirect, update sitemap priorities + lastmod, add 404 route | —    |
+||||||| 2116239
+| Branch | What it does | PR # |
+|--------|-------------|------|
+| — | — | — |
+=======
+| Branch | What it does | PR # |
+|--------|-------------|------|
+| `seo/image-alt-text` | Alt text for all img tags in src/components — 12 files, 0 logic changes | — |
+>>>>>>> seo/image-alt-text
 
 ---
 
@@ -301,6 +322,7 @@ _(move entries here when your branch is ready for PR)_
 - Instance A: Performance branch in progress — claims `Portfolio.js` and `public/index.html`
 - Session B cannot start until Instance A releases `public/index.html` (or A confirms they're not touching `<head>`)
 - All SEO sessions must branch off `master`, not off each other
+- Session D note: `Portfolio.js:439` has `<CaseBlockImage>` missing `alt` — claimed by Instance A, left for them to add (e.g., `alt={caseStudy.name || ""}`) when they finish
 
 ---
 
