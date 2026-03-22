@@ -191,7 +191,7 @@ const BusinessCard = ({ headline, copy }) => {
 
   return (
     <BusinessCard>
-      <Portrait src="./img/Identity/PortraitProSE.png" />
+      <Portrait src="./img/Identity/PortraitProSE.png" alt="Alexandros Shomper — Product Lead" />
       <BusinessCardParagraph>
         <Overline>Product Lead & Startup Advisor</Overline>
         <BusinessCardHeadline>Hi, I’m Alexandros Shomper.</BusinessCardHeadline>

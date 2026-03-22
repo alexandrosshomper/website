@@ -10,7 +10,7 @@
 | Instance | Branch | Focus | Status |
 |----------|--------|-------|--------|
 | A | `Page-Performance-Improvement` | Portfolio & index.html performance | In progress |
-| D | `seo/image-alt-text` | Image alt text — GalleryItem.js + asanaCaseStudy.json | In progress |
+| D | `seo/image-alt-text` | Image alt text — 12 files updated | Complete |
 
 ---
 
@@ -22,8 +22,6 @@
 |------|------------|-------|
 | `src/components/Pages/Portfolio/Portfolio.js` | Instance A | 2026-03-22 |
 | `public/index.html` | Instance A | 2026-03-22 |
-| `src/components/Gallery/GalleryItem.js` | Instance D | 2026-03-22 |
-| `src/data/casestudies/asanaCaseStudy.json` | Instance D | 2026-03-22 |
 
 ---
 
@@ -273,7 +271,7 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 
 | Branch | What it does | PR # |
 |--------|-------------|------|
-| — | — | — |
+| `seo/image-alt-text` | Alt text for all img tags in src/components — 12 files, 0 logic changes | — |
 
 ---
 
@@ -282,6 +280,7 @@ grep -rn "<img" src/components --include="*.js" | grep -v 'alt='
 - Instance A: Performance branch in progress — claims `Portfolio.js` and `public/index.html`
 - Session B cannot start until Instance A releases `public/index.html` (or A confirms they're not touching `<head>`)
 - All SEO sessions must branch off `master`, not off each other
+- Session D note: `Portfolio.js:439` has `<CaseBlockImage>` missing `alt` — claimed by Instance A, left for them to add (e.g., `alt={caseStudy.name || ""}`) when they finish
 
 ---
 

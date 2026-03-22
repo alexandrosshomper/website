@@ -47,7 +47,7 @@ const NFTPrice = ({ price }) => {
   return (
     <NFTPrice>
       <Amount>{price}</Amount>
-      <ETH src="./img/NFT/ether.svg" />
+      <ETH src="./img/NFT/ether.svg" alt="" />
     </NFTPrice>
   );
 };

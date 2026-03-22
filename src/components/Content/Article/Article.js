@@ -161,7 +161,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
         <ArticleSubline>{subline}</ArticleSubline>
         <ArticleMeta>{meta}</ArticleMeta>
       </ArticleHead>
-      <ArticleCover src={imgURL} size="S" />
+      <ArticleCover src={imgURL} size="S" alt={headline || ""} />
     </Article>
   );
 };

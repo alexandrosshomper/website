@@ -127,7 +127,7 @@ const DeliverablesCard = ({ headline, color1, color2, copy, img }) => {
           <DeliverablesCardHeadline>{headline}</DeliverablesCardHeadline>
         )}
         {copy && <DeliverablesCardCopy>{copy}</DeliverablesCardCopy>}
-        <DeliverablesCardImg src={img} />
+        <DeliverablesCardImg src={img} alt={headline || ""} />
       </CardContent>
     </DeliverablesCard>
   );

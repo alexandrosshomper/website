@@ -121,6 +121,7 @@ const FlowCarousel = ({ data, appname, url }) => {
                     key={item.id}
                     {...item}
                     image={item.image}
+                    alt={appname ? `${appname} — screen ${index + 1}` : ""}
                     snapAlignment={
                       isFirst ? "start" : isLast ? "end" : "center"
                     }

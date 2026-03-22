@@ -1676,7 +1676,7 @@ const Content = (props) => {
                     .
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPicture src="./img/Landingpage/Solutions/Notes.png" />
+                <SolutionPicture src="./img/Landingpage/Solutions/Notes.png" alt="Onboarding audit notes — user drop-off and value moment analysis" />
               </SolutionBody>
             </SolutionCard>
           </InViewMotion>
@@ -1706,7 +1706,7 @@ const Content = (props) => {
                     .
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPicture src="./img/Landingpage/Solutions/Week2.png" />
+                <SolutionPicture src="./img/Landingpage/Solutions/Week2.png" alt="Onboarding flow wireframes — week 2 design and development" />
               </SolutionBody>
             </SolutionCard>
           </InViewMotion>
@@ -1738,7 +1738,7 @@ const Content = (props) => {
                     .
                   </SolutionCopy>
                 </SolutionParagraph>
-                <SolutionPictureBig src="./img/Landingpage/Solutions/Assessment1.png" />
+                <SolutionPictureBig src="./img/Landingpage/Solutions/Assessment1.png" alt="Onboarding redesign assessment — ready-to-implement activation flow" />
               </SolutionBodyMac>
             </SolutionCard>
           </InViewMotion>
