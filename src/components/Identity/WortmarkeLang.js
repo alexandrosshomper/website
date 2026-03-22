@@ -4,20 +4,20 @@ import { Devices } from "../DesignSystem";
 
 const Wortmarke = (props) => {
   const Wortmarke = styled.div`
-    width: 237.16px;
-    height: 19.7px;
+    width: 194.64px;
+    height: 21.6px;
     visibility: visible;
-    background-image: url(/img/Identity/Wortmarke/wortmarke-kurz.svg);
+    background-image: url(/img/Identity/Wortmarke/wortmarke-lang.svg);
     background-repeat: no-repeat;
     ${Devices.tabletS} {
-      width: 359.63px;
+      width: 194.64px;
       background-image: url(/img/Identity/Wortmarke/wortmarke-lang.svg);
     }
   `;
 
   const Wrapper = styled.a`
-    width: 359.63px;
-    height: 19.7px;
+    width: 194.64px;
+    height: 21.6px;
   `;
 
   return (

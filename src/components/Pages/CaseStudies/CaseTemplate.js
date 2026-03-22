@@ -13,7 +13,7 @@ import CaseSectionHead from "../../Content/Case/CaseSectionHead";
 
 const ContentWrapper = styled.div`
   text-align: left;
-  margin-top: 72px;
+  margin-top: 220px;
 `;
 
 const Section = styled.section`

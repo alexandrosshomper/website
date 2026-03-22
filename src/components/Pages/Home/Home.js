@@ -36,7 +36,7 @@ const ROICalculatorTitle = styled.h3`
   line-height: 120%;
   color: ${Colors.primaryText.highEmphasis};
   text-align: left;
-  font-weight: 700;
+  font-weight: 500;
   ${Devices.tabletS} {
     font-size: 32px;
     line-height: 120%;
@@ -108,7 +108,7 @@ const ROIResults = styled.div`
 const ROIResultsTitle = styled.p`
   margin: 0 0 16px 0;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   color: ${Colors.primaryText.highEmphasis};
   ${Devices.tabletS} {
     font-size: 20px;
@@ -138,7 +138,7 @@ const ROIMetricLabel = styled.span`
 
 const ROIMetricValue = styled.span`
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   color: ${Colors.primaryText.highEmphasis};
   ${Devices.tabletS} {
     font-size: 18px;
@@ -157,7 +157,7 @@ const ROIImprovement = styled.div`
 const ROIImprovementTitle = styled.h5`
   margin: 0 0 8px 0;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   ${Devices.tabletS} {
     font-size: 18px;
   }
@@ -165,7 +165,7 @@ const ROIImprovementTitle = styled.h5`
 
 const ROIImprovementValue = styled.div`
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   ${Devices.tabletS} {
     font-size: 32px;
   }
@@ -211,7 +211,7 @@ const Hero = styled.div`
 `;
 const HeroHeadline = styled.h1`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.highEmphasis};
@@ -220,14 +220,14 @@ const HeroHeadline = styled.h1`
 
   font-size: 38px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.00028em;
 
   text-align: center;
   ${Devices.tabletS} {
     font-size: 64px;
     line-height: 1.0625;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.009em;
     text-align: center;
     width: 564px;
@@ -253,7 +253,7 @@ const HeroHeadline = styled.h1`
 
 const HeroSubline = styled.p`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -307,7 +307,7 @@ const ExperienceGradient = styled.span`
 
 const ProblemHeadline = styled.h2`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: transparent;
@@ -354,7 +354,7 @@ const ProblemHeadline = styled.h2`
 
 const ProblemSubline = styled.p`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -403,7 +403,7 @@ const ProblemList = styled.ul`
 `;
 const ProblemListItem = styled.li`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
   list-style-type: none;
 
@@ -413,13 +413,13 @@ const ProblemListItem = styled.li`
 
   font-size: 32px;
   line-height: 1.125;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.004em;
   text-align: center;
   ${Devices.tabletS} {
     font-size: 32px;
     line-height: 1.125;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.004em;
   }
   ${Devices.tabletM} {
@@ -452,7 +452,7 @@ const ProblemHighlight = styled.span`
 `;
 const SolutionHeadline = styled.h2`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: transparent;
@@ -500,7 +500,7 @@ const SolutionHeadline = styled.h2`
 
 const SolutionSubline = styled.p`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -539,7 +539,7 @@ const SolutionSubline = styled.p`
 
 const SolutionTitle = styled.h3`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: transparent;
@@ -580,7 +580,7 @@ const SolutionTitle = styled.h3`
 `;
 const SolutionCopy = styled.p`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -894,14 +894,14 @@ const PanelEyebrow = styled.p`
   ${Devices.laptopS} {
   }
   ${Devices.laptopM} {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 24px;
     line-height: 120%;
   }
 `;
 const PricePanelTitle = styled.div`
   min-height: 160px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
 
@@ -922,7 +922,7 @@ const PricePanelTitle = styled.div`
   }
   ${Devices.laptopM} {
     min-height: 180px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 40px;
   }
 `;
@@ -952,7 +952,7 @@ const PriceBullet = styled.div`
 
 const DeliverablesHeadline = styled.h2`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.mediumEmphasis};
@@ -1208,7 +1208,9 @@ const CloseLightboxButton = styled.button`
   justify-content: center;
   padding: 0;
   z-index: 2;
-  transition: transform 120ms ease, background-color 120ms ease;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease;
 
   &:hover {
     background: #101010;
@@ -1456,7 +1458,7 @@ const Content = (props) => {
                 handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "hero-section"
+                  "hero-section",
                 )
               }
               text={"Book intro call"}
@@ -1612,7 +1614,7 @@ const Content = (props) => {
                 handleClickActivationScore(
                   e,
                   "https://alexshomper.notion.site/26eadf77b88b80d0b73aca5b171c586c",
-                  "self-check"
+                  "self-check",
                 )
               }
               text="Calculate Activation Score"
@@ -1624,7 +1626,7 @@ const Content = (props) => {
                 handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "self-check"
+                  "self-check",
                 )
               }
               text="Book intro call"
@@ -1802,7 +1804,7 @@ const Content = (props) => {
                 <ROIMetricValue>
                   €
                   {Math.round(
-                    roiResults.current.monthlyRevenue
+                    roiResults.current.monthlyRevenue,
                   ).toLocaleString()}
                 </ROIMetricValue>
               </ROIMetric>
@@ -1812,7 +1814,7 @@ const Content = (props) => {
                 <ROIMetricValue>
                   €
                   {Math.round(
-                    roiResults.improved.monthlyRevenue
+                    roiResults.improved.monthlyRevenue,
                   ).toLocaleString()}
                 </ROIMetricValue>
               </ROIMetric>
@@ -1845,7 +1847,7 @@ const Content = (props) => {
                 handleBookAudit(
                   e,
                   "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                  "roi-calculator"
+                  "roi-calculator",
                 )
               }
               text="Book intro call"
@@ -1942,7 +1944,7 @@ const Content = (props) => {
                   handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                    "pricing-panel-early"
+                    "pricing-panel-early",
                   )
                 }
                 text={"Book intro call"}
@@ -2003,7 +2005,7 @@ const Content = (props) => {
                   handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                    "pricing-panel-growth"
+                    "pricing-panel-growth",
                   )
                 }
                 text={"Book intro call"}
@@ -2063,7 +2065,7 @@ const Content = (props) => {
                   handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                    "pricing-panel-scale"
+                    "pricing-panel-scale",
                   )
                 }
                 text={"Book intro call"}
@@ -2123,7 +2125,7 @@ const Content = (props) => {
                   handleBookAudit(
                     e,
                     "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                    "pricing-panel-mature"
+                    "pricing-panel-mature",
                   )
                 }
                 text={"Book intro call"}
@@ -2209,7 +2211,7 @@ Wireframe mockups with detailed recommendations for updating your onboarding scr
               handleBookAudit(
                 e,
                 "https://calendar.notion.so/meet/alexandros/onboarding-discovery",
-                "cta-section"
+                "cta-section",
               )
             }
             text={"Book intro call"}

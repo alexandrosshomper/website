@@ -155,6 +155,7 @@ const getArticleSectionVariant = (props) => {
 
 export const ArticleContent = styled.article`
   width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,7 +175,7 @@ const articleTypographyStyles = css`
   h6 {
     font-family: "Noto Sans", sans-serif;
     font-style: normal;
-    font-weight: 550;
+    font-weight: 400;
     color: ${Colors.primaryText.highEmphasis};
     text-align: left;
     margin-top: 0;
@@ -231,7 +232,7 @@ const articleTypographyStyles = css`
   p {
     font-family: "Noto Sans", sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 17px;
     line-height: 1.7499375rem;
     color: ${Colors.primaryText.highEmphasis};
@@ -244,7 +245,7 @@ const articleTypographyStyles = css`
   ol {
     font-family: "Noto Sans", sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 17px;
     line-height: 1.7499375rem;
     color: ${Colors.primaryText.highEmphasis};
@@ -272,7 +273,7 @@ const articleTypographyStyles = css`
   }
 
   strong {
-    font-weight: 700;
+    font-weight: 500;
   }
 
   em {
@@ -319,7 +320,7 @@ const articleTypographyStyles = css`
   }
 
   table td {
-    font-weight: 400;
+    font-weight: 200;
     padding: 12px;
   }
 
@@ -422,7 +423,7 @@ export const ArticleHeadline = styled.h1`
 
   text-align: center;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 36px;
   line-height: 120%;
   letter-spacing: -1.7px;
@@ -445,7 +446,7 @@ export const ArticleHeadline = styled.h1`
 `;
 export const ArticleSubtitle = styled.span`
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 124%;
   letter-spacing: -0.01em;
   margin-top: 24px;
@@ -468,7 +469,7 @@ export const ArticleSubtitle = styled.span`
 `;
 export const ArticleSubline = styled.span`
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 124%;
   letter-spacing: 0.01em;
   margin-bottom: 8px;
@@ -485,7 +486,7 @@ const OverviewPageHeadline = styled.h2`
 
   text-align: left;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 36px;
   line-height: 120%;
   letter-spacing: -1.7px;
@@ -506,7 +507,7 @@ const OverviewPageHeadline = styled.h2`
 
 const OverviewPageSubline = styled.p`
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 109%;
 
   letter-spacing: 0.01em;

@@ -1,6 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useMemo, useState } from "react";
 
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
@@ -15,81 +13,7 @@ import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
-function FadeInWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.3 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          scale: 0.8,
-          y: "+25%",
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function RevealWhenVisible({ children }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.9 }}
-      variants={{
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          x: "5%",
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
   ONBOARDING: "Onboarding Case Studies",
@@ -261,7 +185,7 @@ const Content = (props) => {
 
   const Content = styled.div`
     text-align: left;
-    margin-top: 72px;
+    margin-top: 200px;
   `;
 
   const Section = styled.section`
@@ -389,7 +313,7 @@ const Content = (props) => {
   const CaseBlockEyebrow = styled.p`
     color: ${Colors.primaryText.highEmphasis};
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 110%;
 
     text-align: left;
@@ -399,6 +323,7 @@ const Content = (props) => {
     color: ${Colors.primaryText.highEmphasis};
     font-size: 32px;
     line-height: 110%;
+    font-weight: 400;
 
     text-align: left;
     margin: 0px 0px 0px 0px;
@@ -471,38 +396,36 @@ const Content = (props) => {
 
         {filteredCaseStudies.length > 0 ? (
           filteredCaseStudies.map((caseStudy) => (
-            <FadeInWhenVisible>
-              <CaseBlock
-                key={caseStudy.id}
-                style={{ backgroundColor: caseStudy.bg }}
-                href={caseStudy.link}
-              >
-                <CaseBlockDetails>
-                  <CaseBlockDetailsText>
-                    <CaseBlockEyebrow style={{ color: caseStudy.color }}>
-                      {caseStudy.company}
-                    </CaseBlockEyebrow>
-                    <CaseBlockHeadline>{caseStudy.headline}</CaseBlockHeadline>
-                    <CaseBlockSubline>{caseStudy.subline}</CaseBlockSubline>
-                    <CaseBlockCopy>{caseStudy.copy}</CaseBlockCopy>
-                  </CaseBlockDetailsText>
-                  <KeyResultsList>
-                    {caseStudy.keyResults?.map((keyResult, index) => (
-                      <KeyResultItem key={index}>{keyResult}</KeyResultItem>
-                    ))}
-                  </KeyResultsList>
-                  <Button
-                    text="View Case Study"
-                    gradient="#000"
-                    href={caseStudy.link}
-                    icon={<ArrowRight size="21" />}
-                  />
-                </CaseBlockDetails>
-                <CaseBlockImageWrapper>
-                  <CaseBlockImage src={caseStudy.imgURL} />
-                </CaseBlockImageWrapper>
-              </CaseBlock>
-            </FadeInWhenVisible>
+            <CaseBlock
+              key={caseStudy.id}
+              style={{ backgroundColor: caseStudy.bg }}
+              href={caseStudy.link}
+            >
+              <CaseBlockDetails>
+                <CaseBlockDetailsText>
+                  <CaseBlockEyebrow style={{ color: caseStudy.color }}>
+                    {caseStudy.company}
+                  </CaseBlockEyebrow>
+                  <CaseBlockHeadline>{caseStudy.headline}</CaseBlockHeadline>
+                  <CaseBlockSubline>{caseStudy.subline}</CaseBlockSubline>
+                  <CaseBlockCopy>{caseStudy.copy}</CaseBlockCopy>
+                </CaseBlockDetailsText>
+                <KeyResultsList>
+                  {caseStudy.keyResults?.map((keyResult, index) => (
+                    <KeyResultItem key={index}>{keyResult}</KeyResultItem>
+                  ))}
+                </KeyResultsList>
+                <Button
+                  text="View Case Study"
+                  gradient="#000"
+                  href={caseStudy.link}
+                  icon={<ArrowRight size="21" />}
+                />
+              </CaseBlockDetails>
+              <CaseBlockImageWrapper>
+                <CaseBlockImage src={caseStudy.imgURL} />
+              </CaseBlockImageWrapper>
+            </CaseBlock>
           ))
         ) : (
           <EmptyState>
@@ -578,33 +501,32 @@ const Content = (props) => {
           headline="Human Centered Leadership"
           subline="I believe happy and healthy teams are the most productive, and innovative teams."
         />
-        <FadeInWhenVisible>
-          <CardPanels>
-            <ListPanel
-              eyebrow="Autonomy"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
 
-            <ListPanel
-              eyebrow="Mastery"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
+        <CardPanels>
+          <ListPanel
+            eyebrow="Autonomy"
+            eyebrowColor1={Colors.green}
+            eyebrowColor2={Colors.greenLight}
+            copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
 
-            <ListPanel
-              eyebrow="Purpouse"
-              eyebrowColor1={Colors.green}
-              eyebrowColor2={Colors.greenLight}
-              copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </CardPanels>
-        </FadeInWhenVisible>
+          <ListPanel
+            eyebrow="Mastery"
+            eyebrowColor1={Colors.green}
+            eyebrowColor2={Colors.greenLight}
+            copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
+
+          <ListPanel
+            eyebrow="Purpouse"
+            eyebrowColor1={Colors.green}
+            eyebrowColor2={Colors.greenLight}
+            copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
+        </CardPanels>
       </Section>{" "}
       <Section>
         <BlackQuote
@@ -618,67 +540,64 @@ const Content = (props) => {
           headline="My Principles"
           subline="Give meaning to actions and ideas."
         />
-        <FadeInWhenVisible>
-          <CardPanels>
-            <ListPanel
-              eyebrow="Data Driven/Informed"
-              copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-              //imgURL="./img/PanelTestImages/one.jpg"
-            />
 
-            <ListPanel
-              eyebrow="Aesthetics"
-              copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
+        <CardPanels>
+          <ListPanel
+            eyebrow="Data Driven/Informed"
+            copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
+            //imgURL="./img/PanelTestImages/one.jpg"
+          />
 
-            <ListPanel
-              eyebrow="Quality"
-              copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
+          <ListPanel
+            eyebrow="Aesthetics"
+            copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
 
-            <ListPanel
-              eyebrow="Holistic"
-              copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
+          <ListPanel
+            eyebrow="Quality"
+            copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
 
-            <ListPanel
-              eyebrow="Innovative & Brave"
-              copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
+          <ListPanel
+            eyebrow="Holistic"
+            copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
 
-            <ListPanel
-              eyebrow="Long Term"
-              copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-              //imgURL="./img/PanelTestImages/two.jpg"
-            />
-          </CardPanels>
-        </FadeInWhenVisible>
+          <ListPanel
+            eyebrow="Innovative & Brave"
+            copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
+
+          <ListPanel
+            eyebrow="Long Term"
+            copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
+            //imgURL="./img/PanelTestImages/two.jpg"
+          />
+        </CardPanels>
       </Section>
       <Section>
-        <RevealWhenVisible>
-          <ButtonContainer>
-            <ButtonRow>
-              <Button
-                size="medium"
-                variant="primary"
-                href="https://www.linkedin.com/in/alexshomper/"
-                text="LinkedIn"
-                gradient={{ from: Colors.blue, to: Colors.blueLight }}
-                icon={mdiLinkedin}
-              />
-              <Button
-                href="mailto:alexandros@alexandrosshomper.de"
-                text="Email Me"
-                gradient={{ from: Colors.black, to: Colors.greyDark }}
-                icon={mdiEmail}
-              />
-            </ButtonRow>
-          </ButtonContainer>
-        </RevealWhenVisible>
+        <ButtonContainer>
+          <ButtonRow>
+            <Button
+              size="medium"
+              variant="primary"
+              href="https://www.linkedin.com/in/alexshomper/"
+              text="LinkedIn"
+              gradient={{ from: Colors.blue, to: Colors.blueLight }}
+              icon={mdiLinkedin}
+            />
+            <Button
+              href="mailto:alexandros@alexandrosshomper.de"
+              text="Email Me"
+              gradient={{ from: Colors.black, to: Colors.greyDark }}
+              icon={mdiEmail}
+            />
+          </ButtonRow>
+        </ButtonContainer>
       </Section>
     </Content>
   );

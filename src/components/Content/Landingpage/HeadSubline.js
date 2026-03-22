@@ -6,7 +6,7 @@ import { Devices, Colors } from "../../DesignSystem";
 const HeadSubline = ({ subline }) => {
   const HeadSubline = styled.p`
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
 
     color: ${Colors.primaryText.mediumEmphasis};

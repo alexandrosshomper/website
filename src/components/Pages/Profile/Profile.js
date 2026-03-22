@@ -117,7 +117,7 @@ const AnnotationWrapper = styled.div`
 
 const PageWrapper = styled.main`
   text-align: left;
-  margin-top: 72px;
+  margin-top: 220px;
   margin-bottom: 200px;
 `;
 const CVWrapper = styled.div`
@@ -314,7 +314,9 @@ const VisitButton = styled.button`
   font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
   text-decoration: none;
 
   &:hover,

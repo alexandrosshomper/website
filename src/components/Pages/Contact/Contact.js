@@ -9,7 +9,7 @@ import Button from "../../Button/Button";
 const Contact = (props) => {
   const Contact = styled.div`
     text-align: left;
-    margin-top: 72px;
+    margin-top: 220px;
     margin-bottom: 200px;
   `;
 
@@ -18,7 +18,7 @@ const Contact = (props) => {
     margin-bottom: 24px;
 
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 28px;
     line-height: 130%;
 
@@ -68,7 +68,7 @@ const Contact = (props) => {
     margin-bottom: 0px;
 
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 16px;
     line-height: 130%;
 

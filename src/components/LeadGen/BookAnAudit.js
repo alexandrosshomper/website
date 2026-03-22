@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 
 const Headline = styled.h2`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.highEmphasis};
@@ -38,7 +38,7 @@ const Headline = styled.h2`
 `;
 const Subline = styled.p`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
 
   color: ${Colors.primaryText.mediumEmphasis};

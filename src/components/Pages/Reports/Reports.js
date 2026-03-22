@@ -12,7 +12,7 @@ import CaseSectionSummary from "../../Content/Case/CaseSectionSummary";
 const Content = (props) => {
   const Content = styled.div`
     text-align: left;
-    margin-top: 72px;
+    margin-top: 120px;
   `;
 
   const Section = styled.section`

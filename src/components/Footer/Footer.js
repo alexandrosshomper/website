@@ -13,6 +13,7 @@ const Footer = (props) => {
     border-color: ${Colors.primaryText.highEmphasis};
     margin-right: 24px;
     margin-left: 24px;
+    width: 430px;
     ${Devices.tabletS} {
       margin: 0 auto;
       width: 564px;
