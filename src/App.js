@@ -1,8 +1,6 @@
-import React, { lazy, Suspense, useState, useEffect, useCallback } from "react";
-import Spinner from "react-spinner-material";
-//import React from "react";
+import React, { lazy, Suspense } from "react";
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Colors, Devices } from "../src/components/DesignSystem";
 import ReactGA from "react-ga4";
@@ -11,29 +9,28 @@ import ReactGA from "react-ga4";
 import ScrollToTop from "./functions/ScrollToTop";
 import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 
-//import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 const HomeJob = lazy(() => import("./components/Pages/Home/HomeJob"));
-const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
-const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
-const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
-const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
+const Profile = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Profile/Profile"));
+const Contact = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Contact/Contact"));
+const Portfolio = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Portfolio/Portfolio"));
+const Writing = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Writing/Writing"));
 
 //REPORTS
 const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
-const OASaasGrowth = lazy(() =>
-  import("./components/Pages/Reports/OASaasGrowth.js")
+const OASaasGrowth = lazy(
+  () => import("./components/Pages/Reports/OASaasGrowth.js"),
 );
-const FourIndustryShifts = lazy(() =>
-  import("./components/Pages/Reports/FourIndustryShifts.js")
+const FourIndustryShifts = lazy(
+  () => import("./components/Pages/Reports/FourIndustryShifts.js"),
 );
 
 //CASE STUDIES
-const CaseStudies = lazy(() =>
-  import("./components/Pages/CaseStudies/CaseStudies")
+const CaseStudies = lazy(
+  () => import("./components/Pages/CaseStudies/CaseStudies"),
 );
-const AsanaCaseStudy = lazy(() =>
-  import("./components/Pages/CaseStudies/AsanaCaseStudy")
+const AsanaCaseStudy = lazy(
+  () => import("./components/Pages/CaseStudies/AsanaCaseStudy"),
 );
 
 //FLOW GALLERY
@@ -45,24 +42,28 @@ const TrelloFlow = lazy(() => import("./components/Pages/Flows/TrelloFlow.js"));
 
 //PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
-const KnaufExplorations = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufExplorations")
+const KnaufExplorations = lazy(
+  () => import("./components/Pages/Portfolio/KnaufExplorations"),
 );
-const KnaufAccount = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufAccount")
+const KnaufAccount = lazy(
+  () => import("./components/Pages/Portfolio/KnaufAccount"),
 );
-const KnaufOrderOverview = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufOrderOverview")
+const KnaufOrderOverview = lazy(
+  () => import("./components/Pages/Portfolio/KnaufOrderOverview"),
 );
-const KnaufMaterialCalculatorPMF = lazy(() =>
-  import("./components/Pages/Portfolio/KnaufMaterialCalculatorPMF")
+const KnaufMaterialCalculatorPMF = lazy(
+  () => import("./components/Pages/Portfolio/KnaufMaterialCalculatorPMF"),
 );
 const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 
-//import Navigation from "./components/Navigation/Navigation";
-const Navigation = lazy(() => import("./components/Navigation/Navigation"));
+const NotFound = () => (
+  <div style={{ textAlign: "center", padding: "120px 24px" }}>
+    <h1>404 — Page not found</h1>
+  </div>
+);
+
 /*const MiniNavigation = lazy(() =>
   import("./components/Navigation/MiniNavigation/MiniNavigation")
 );*/
@@ -83,17 +84,30 @@ const StyledApp = styled.div`
   }
 `;
 
+const LoadingSpinner = styled.div`
+  width: 80px;
+  height: 80px;
+  border: 3px solid transparent;
+  border-top-color: ${Colors.front};
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 const renderLoader = () => (
   <div
     style={{
-      position: "absolute",
+      position: "fixed",
       left: "50%",
       top: "50%",
-      translateY: "50%",
-      translateX: "50%",
+      transform: "translate(-50%, -50%)",
     }}
   >
-    <Spinner radius={120} color={Colors.front} stroke={2} visible={true} />
+    <LoadingSpinner />
   </div>
 );
 
@@ -101,19 +115,6 @@ const renderLoader = () => (
 ReactGA.initialize("G-6BNG13DFW0"); // Replace with your Google Analytics tracking ID
 
 function App() {
-  const [isSticky, setIsSticky] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    setIsSticky(window.pageYOffset > 152);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
   return (
     <Router>
       <ScrollToTop />
@@ -121,16 +122,38 @@ function App() {
       <StyledApp className="App">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Alexandros Shomper</title>
+          <title>Alexandros Shomper — Product Lead &amp; Designer</title>
           <meta
             name="description"
-            content="Experienced in core and growth initiatives from acquisition to retention & engagement. Bridging business, design, and tech to create awesome solutions people love."
+            content="Product Lead &amp; Designer with 15+ years experience in B2B and B2C. Specialising in product-led growth, user onboarding, and design systems."
           />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://www.alexandrosshomper.de/#person",
+                "name": "Alexandros Shomper",
+                "url": "https://www.alexandrosshomper.de",
+                "jobTitle": "Product Lead",
+                "description": "Product Lead and Designer with 15+ years experience in B2B and B2C, specialising in product-led growth, onboarding, activation, and design systems.",
+                "sameAs": [
+                  "https://www.linkedin.com/in/alexshomper/",
+                  "https://github.com/alexandrosshomper"
+                ]
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.alexandrosshomper.de/#website",
+                "url": "https://www.alexandrosshomper.de",
+                "name": "Alexandros Shomper",
+                "author": { "@id": "https://www.alexandrosshomper.de/#person" }
+              }
+            ]
+          })}</script>
         </Helmet>
+        <NavigationSticky />
         <Suspense fallback={renderLoader()}>
-          <Navigation />
-          <NavigationSticky style={{ top: isSticky ? "0px" : "-60px" }} />
-
           <Switch>
             <Route exact path="/job" component={HomeJob} />
             <Route exact path="/about" component={Profile} />
@@ -146,7 +169,7 @@ function App() {
             />
             <Route
               exact
-              path="/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible"
+              path="/reports/four-industry-shifts-making-onboarding-and-activation-indispensable"
               component={FourIndustryShifts}
             />
             {/*CASE STUDIES*/}
@@ -187,6 +210,7 @@ function App() {
             />
             <Route exact path="/portfolio/myknauf" component={MyKnauf} />
             <Route exact path="/heraklit" component={Heraklit} />
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </Suspense>

@@ -7,9 +7,8 @@ const ListBigTextHeadline = ({ headline }) => {
   const ListBigTextHeadline = styled.h3`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
 
     color: rgba(0, 169, 157, 1);
 

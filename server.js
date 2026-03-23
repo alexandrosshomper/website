@@ -7,6 +7,15 @@ const routes = require("./src/routes");
 
 const app = express();
 
+app.get(
+  "/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible",
+  (req, res) =>
+    res.redirect(
+      301,
+      "/reports/four-industry-shifts-making-onboarding-and-activation-indispensable",
+    ),
+);
+
 app.get("/sitemap.xml", async (req, res) => {
   try {
     const sitemap = new SitemapStream({

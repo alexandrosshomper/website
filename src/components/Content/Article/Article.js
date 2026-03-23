@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import React from "react";
 
 import { Colors, Devices } from "../../DesignSystem";
-import { mdiOpenInNew } from "@mdi/js";
 import Icon from "@mdi/react";
+
+const mdiOpenInNew = "M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z";
 
 const Article = ({ headline, subline, imgURL, meta, link }) => {
   const Article = styled.a`
@@ -37,7 +38,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
 
   const ArticleHeadline = styled.h4`
     font-family: "Roboto", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
 
     color: ${Colors.primaryText.highEmphasis};
@@ -54,7 +55,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
     overflow: hidden;
     ${Devices.tabletM} {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 109%;
     }
   `;
@@ -62,7 +63,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
   const ArticleSubline = styled.span`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
     font-weight: 400;
 
@@ -84,7 +85,6 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
   const ArticleMeta = styled.span`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
     font-style: normal;
     font-weight: 400;
 
@@ -161,7 +161,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
         <ArticleSubline>{subline}</ArticleSubline>
         <ArticleMeta>{meta}</ArticleMeta>
       </ArticleHead>
-      <ArticleCover src={imgURL} size="S" />
+      <ArticleCover src={imgURL} size="S" alt={headline || ""} />
     </Article>
   );
 };

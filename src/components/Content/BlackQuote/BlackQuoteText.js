@@ -7,7 +7,7 @@ const BlackQuoteText = ({ quote }) => {
   const BlackQuoteText = styled.h2`
     font-family: "Roboto", sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     text-align: center;
     color: rgba(242, 242, 242, 1);
     margin: 0 24px 16px 24px;

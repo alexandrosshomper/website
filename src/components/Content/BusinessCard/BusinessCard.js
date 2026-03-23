@@ -43,9 +43,9 @@ const BusinessCard = ({ headline, copy }) => {
   const Portrait = styled.img`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
 
     color: rgba(0, 169, 157, 1);
 
@@ -122,7 +122,7 @@ const BusinessCard = ({ headline, copy }) => {
 
   const Overline = styled.p`
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
 
     color: ${Colors.primaryText.lowEmphasis};
@@ -154,9 +154,9 @@ const BusinessCard = ({ headline, copy }) => {
   const BusinessCardHeadline = styled.h3`
     position: static;
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
 
     color: rgba(0, 169, 157, 1);
 
@@ -191,7 +191,7 @@ const BusinessCard = ({ headline, copy }) => {
 
   return (
     <BusinessCard>
-      <Portrait src="./img/Identity/PortraitProSE.png" />
+      <Portrait src="./img/Identity/PortraitProSE.png" alt="Alexandros Shomper — Product Lead" />
       <BusinessCardParagraph>
         <Overline>Product Lead & Startup Advisor</Overline>
         <BusinessCardHeadline>Hi, I’m Alexandros Shomper.</BusinessCardHeadline>

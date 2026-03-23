@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
+import Logo from "../Identity/Logo";
 import Wortmarke from "../Identity/WortmarkeLang";
 import { X, Menu } from "lucide-react";
 
@@ -11,14 +12,8 @@ const NavigationWrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  margin: 0 auto;
-  height: 52px;
-
-  border-bottom: 1px solid;
-  border-color: ${Colors.primaryText.highEmphasis};
-  background-color: ${Colors.background}dd;
-  backdrop-filter: blur(2.40437px);
+  width: 100vw;
+  background-color: transparent;
   z-index: 1000;
 `;
 
@@ -27,29 +22,11 @@ const StickyBar = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  margin: 12px;
   height: 52px;
-  border-bottom: 1px solid;
-  width: 382px;
-  z-index: 1000;
-  margin-right: 24px;
-  margin-left: 24px;
+
   ${Devices.tabletS} {
-    margin: 0 auto;
-    width: 564px;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-  ${Devices.laptopM} {
-    width: 1140px;
+    margin: 14px;
   }
 `;
 
@@ -67,14 +44,16 @@ const GlobalNavCurtain = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9998;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+  transition:
+    opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
     visibility 0.32s step-end 80ms;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background: rgba(255, 255, 255, 0.7);
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+  transition:
+    opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
     visibility 0.32s step-start 80ms;
   backdrop-filter: blur(20px);
 `;
@@ -97,11 +76,34 @@ const NavigationMenuMobile = styled.div`
   flex-direction: column;
 `;
 
+const Identity = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: ${Colors.background}dd;
+  backdrop-filter: blur(2.40437px);
+  z-index: 9999;
+  height: 3rem;
+  padding: 0 20px 0 18px;
+  border-radius: 16px;
+  corner-shape: squircle;
+`;
+
 const CTA = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   gap: 12px;
+  background-color: ${Colors.background}dd;
+  backdrop-filter: blur(2.40437px);
   z-index: 9999;
+  height: 3rem;
+  padding: 0 20px 0 20px;
+  border-radius: 16px;
+  corner-shape: squircle;
 `;
 const Closer = styled.div`
   display: flex;
@@ -141,7 +143,8 @@ const MenuLink = styled(Link)`
 
 const MenuButton = styled.div`
   visibility: visible;
-  display: block;
+  display: flex;
+  justify-content: center;
   ${Devices.tabletS} {
     visibility: hidden;
     display: none;
@@ -150,7 +153,7 @@ const MenuButton = styled.div`
   }
 `;
 
-const NavigationSticky = ({ style }) => {
+const NavigationSticky = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -181,7 +184,7 @@ const NavigationSticky = ({ style }) => {
       { label: "Writing", to: "/writing" },
       { label: "Contact", to: "/contact" },
     ],
-    []
+    [],
   );
   return (
     <>
@@ -215,9 +218,12 @@ const NavigationSticky = ({ style }) => {
           </MenuList>
         </NavigationMenuMobile>
       ) : (
-        <NavigationWrapper data-navigation="sticky" style={style}>
-          <StickyBar style={style}>
-            <Wortmarke />
+        <NavigationWrapper data-navigation="sticky">
+          <StickyBar>
+            <Identity>
+              <Logo />
+              <Wortmarke />
+            </Identity>
             <CTA>
               <LandingpageMenu />
 

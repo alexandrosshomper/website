@@ -11,7 +11,7 @@ const ListPanelEyebrow = ({ text, color1, color2 }) => {
     csscolor = `background-image: linear-gradient(to right, ${Colors.orange}, ${Colors.orangeLight});`;
   }
   const ListPanelEyebrow = styled.h3`
-    font-weight: 700;
+    font-weight: 500;
     font-size: 20px;
     line-height: 120%;
 

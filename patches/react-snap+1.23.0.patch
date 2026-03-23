@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-snap/src/puppeteer_utils.js b/node_modules/react-snap/src/puppeteer_utils.js
+index c4b7641..b99a019 100644
+--- a/node_modules/react-snap/src/puppeteer_utils.js
++++ b/node_modules/react-snap/src/puppeteer_utils.js
+@@ -221,7 +221,8 @@ const crawl = async opt => {
+           options,
+           route,
+           onError: () => {
+-            shuttingDown = true;
++            // Page errors (e.g. JS syntax errors in old Chromium) are non-fatal:
++            // we still capture whatever the page rendered before the error.
+           },
+           sourcemapStore
+         });

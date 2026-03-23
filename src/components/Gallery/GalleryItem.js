@@ -400,11 +400,11 @@ const GalleryItem = ({
         <GalleryItemContent>
           <GalleryCoverImage>
             {comingSoon && <ComingSoon>Coming Soon</ComingSoon>}
-            <Picture src={currentImage} alt={""} />
+            <Picture src={currentImage} alt={title || ""} />
           </GalleryCoverImage>
           <GalleryItemTitleContainer>
             <GalleryItemLogo>
-              <Picture src={logo ? logo : ""} alt={""} />
+              <Picture src={logo ? logo : ""} alt={title ? `${title} logo` : ""} />
             </GalleryItemLogo>
             <GalleryItemTitle>
               <GalleryItemName>{title ? title : "App Name"}</GalleryItemName>

@@ -1,15 +1,16 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
-import { mdiLinkedin, mdiAccountBox } from "@mdi/js";
-
 import { Devices, Colors } from "../../DesignSystem";
 import Button from "../../Button/Button";
+
+const mdiLinkedin = "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
+const mdiAccountBox = "M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z";
 
 const Contact = (props) => {
   const Contact = styled.div`
     text-align: left;
-    margin-top: 72px;
+    margin-top: 220px;
     margin-bottom: 200px;
   `;
 
@@ -18,7 +19,7 @@ const Contact = (props) => {
     margin-bottom: 24px;
 
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 28px;
     line-height: 130%;
 
@@ -68,7 +69,7 @@ const Contact = (props) => {
     margin-bottom: 0px;
 
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 16px;
     line-height: 130%;
 
@@ -200,15 +201,17 @@ const Contact = (props) => {
   return (
     <Contact>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Contact | Alexandros Shomper</title>
-        <description>
-          Digital Anthopologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
-        </description>
+        <meta name="description" content="Get in touch with Alexandros Shomper — available for product consulting, advisory, and freelance engagements." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/contact" />
+        <meta property="og:title" content="Contact | Alexandros Shomper" />
+        <meta property="og:description" content="Get in touch with Alexandros Shomper — available for product consulting, advisory, and freelance engagements." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact | Alexandros Shomper" />
+        <meta name="twitter:description" content="Get in touch with Alexandros Shomper — available for product consulting, advisory, and freelance engagements." />
       </Helmet>
       <Name>Alexandros Shomper</Name>
       <ContactInfo>

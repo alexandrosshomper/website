@@ -51,14 +51,16 @@ const GlobalNavCurtain = styled.div`
   width: 100%;
   height: 100%;
   z-index: 9998;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+  transition:
+    opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
     visibility 0.32s step-end 80ms;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background: rgba(255, 255, 255, 0.7);
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+  transition:
+    opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
     visibility 0.32s step-start 80ms;
   backdrop-filter: blur(20px);
 `;
@@ -167,7 +169,7 @@ const Navigation = (props) => {
       { label: "Writing", to: "/writing" },
       { label: "Contact", to: "/contact" },
     ],
-    []
+    [],
   );
 
   return (
@@ -204,7 +206,6 @@ const Navigation = (props) => {
       ) : (
         <NavigationContainer>
           <Identity />
-
           <CallToAction>
             <LandingpageMenu />
 

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import Trend from "react-trend";
 
@@ -18,9 +18,10 @@ import FlipCard from "../../Content/FlipCard/FlipCard";
 import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
 import Button from "../../Button/Button";
-import { mdiFilePdfBox } from "@mdi/js";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
-import { mdiEmail } from "@mdi/js";
+
+const mdiFilePdfBox = "M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19M10.59,10.08C10.57,10.13 10.3,11.84 8.5,14.77C8.5,14.77 5,16.58 5.83,17.94C6.5,19 8.15,17.9 9.56,15.27C9.56,15.27 11.38,14.63 13.79,14.45C13.79,14.45 17.65,16.19 18.17,14.34C18.69,12.5 15.12,12.9 14.5,13.09C14.5,13.09 12.46,11.75 12,9.89C12,9.89 13.13,5.95 11.38,6C9.63,6.05 10.29,9.12 10.59,10.08M11.4,11.13C11.43,11.13 11.87,12.33 13.29,13.58C13.29,13.58 10.96,14.04 9.9,14.5C9.9,14.5 10.9,12.75 11.4,11.13M15.32,13.84C15.9,13.69 17.64,14 17.58,14.32C17.5,14.65 15.32,13.84 15.32,13.84M8.26,15.7C7.73,16.91 6.83,17.68 6.6,17.67C6.37,17.66 7.3,16.07 8.26,15.7M11.4,8.76C11.39,8.71 11.03,6.57 11.4,6.61C11.94,6.67 11.4,8.71 11.4,8.76Z";
+const mdiEmail = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
 
 function FadeInWhenVisible({ children }) {
   const controls = useAnimation();
@@ -142,7 +143,7 @@ function RevealWhenVisible({ children }) {
 const Content = (props) => {
   const Content = styled.div`
     text-align: left;
-    margin-top: 72px;
+    margin-top: 120px;
   `;
 
   const Section = styled.section`
@@ -295,13 +296,17 @@ const Content = (props) => {
   return (
     <Content>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Alexandros Shomper</title>
-        <description>
-          Experienced in core and growth initiatives from acquisition to
-          retention & engagement. Bridging business, design, and tech to create
-          awesome solutions people love.
-        </description>
+        <title>Alexandros Shomper — Product Lead &amp; Designer</title>
+        <meta name="description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/" />
+        <meta property="og:title" content="Alexandros Shomper — Product Lead &amp; Designer" />
+        <meta property="og:description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Alexandros Shomper — Product Lead &amp; Designer" />
+        <meta name="twitter:description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
       </Helmet>
       <Intro></Intro>
 
@@ -454,7 +459,7 @@ const Content = (props) => {
             />
 
             <ListPanel
-              eyebrow="Purpouse"
+              eyebrow="Purpose"
               eyebrowColor1={Colors.green}
               eyebrowColor2={Colors.greenLight}
               copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
