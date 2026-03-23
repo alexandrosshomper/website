@@ -1,6 +1,4 @@
 import React, { lazy, Suspense } from "react";
-import Spinner from "react-spinner-material";
-//import React from "react";
 import styled from "@emotion/styled";
 import { Helmet } from "react-helmet-async";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
@@ -11,13 +9,12 @@ import ReactGA from "react-ga4";
 import ScrollToTop from "./functions/ScrollToTop";
 import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 
-//import Footer from "./components/Footer/Footer";
 const Footer = lazy(() => import("./components/Footer/Footer"));
 const HomeJob = lazy(() => import("./components/Pages/Home/HomeJob"));
-const Profile = lazy(() => import("./components/Pages/Profile/Profile"));
-const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
-const Portfolio = lazy(() => import("./components/Pages/Portfolio/Portfolio"));
-const Writing = lazy(() => import("./components/Pages/Writing/Writing"));
+const Profile = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Profile/Profile"));
+const Contact = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Contact/Contact"));
+const Portfolio = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Portfolio/Portfolio"));
+const Writing = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Writing/Writing"));
 
 //REPORTS
 const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
@@ -87,17 +84,30 @@ const StyledApp = styled.div`
   }
 `;
 
+const LoadingSpinner = styled.div`
+  width: 80px;
+  height: 80px;
+  border: 3px solid transparent;
+  border-top-color: ${Colors.front};
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 const renderLoader = () => (
   <div
     style={{
-      position: "absolute",
+      position: "fixed",
       left: "50%",
       top: "50%",
-      translateY: "50%",
-      translateX: "50%",
+      transform: "translate(-50%, -50%)",
     }}
   >
-    <Spinner radius={120} color={Colors.front} stroke={2} visible={true} />
+    <LoadingSpinner />
   </div>
 );
 
@@ -142,9 +152,8 @@ function App() {
             ]
           })}</script>
         </Helmet>
+        <NavigationSticky />
         <Suspense fallback={renderLoader()}>
-          <NavigationSticky />
-
           <Switch>
             <Route exact path="/job" component={HomeJob} />
             <Route exact path="/about" component={Profile} />
