@@ -4,7 +4,7 @@ const routes = [
     exact: true,
   },
   {
-    path: "/profile",
+    path: "/about",
     exact: true,
   },
   {
@@ -12,11 +12,35 @@ const routes = [
     exact: true,
   },
   {
+    path: "/writing",
+    exact: true,
+  },
+  {
     path: "/portfolio",
     exact: true,
   },
   {
-    path: "/writing",
+    path: "/portfolio/occhio",
+    exact: true,
+  },
+  {
+    path: "/portfolio/knauf-explorations",
+    exact: true,
+  },
+  {
+    path: "/portfolio/knauf-account",
+    exact: true,
+  },
+  {
+    path: "/portfolio/knauf-order-overview",
+    exact: true,
+  },
+  {
+    path: "/portfolio/knauf-material-calculator",
+    exact: true,
+  },
+  {
+    path: "/portfolio/myknauf",
     exact: true,
   },
   {
@@ -28,7 +52,7 @@ const routes = [
     exact: true,
   },
   {
-    path: "/reports/four-indsutry-shifts-making-onboarding-and-activation-indispensible",
+    path: "/reports/four-industry-shifts-making-onboarding-and-activation-indispensable",
     exact: true,
   },
   {
@@ -52,23 +76,11 @@ const routes = [
     exact: true,
   },
   {
-    path: "/occhio",
+    path: "/flows/wrike",
     exact: true,
   },
   {
-    path: "/knauf-explorations",
-    exact: true,
-  },
-  {
-    path: "/knauf-account",
-    exact: true,
-  },
-  {
-    path: "/knauf-orderoverview",
-    exact: true,
-  },
-  {
-    path: "/myknauf",
+    path: "/flows/trello",
     exact: true,
   },
 ];

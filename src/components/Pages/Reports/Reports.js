@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
 
 //Components
@@ -91,15 +91,17 @@ const Content = (props) => {
   return (
     <Content>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Reports | Alexandros Shomper</title>
-        <description>
-          Digital Anthopologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
-        </description>
+        <meta name="description" content="Research and reports on product-led growth, user onboarding, and activation. Practical insights for SaaS founders and product teams." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/reports" />
+        <meta property="og:title" content="Reports | Alexandros Shomper" />
+        <meta property="og:description" content="Research and reports on product-led growth, user onboarding, and activation. Practical insights for SaaS founders and product teams." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/reports" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Reports | Alexandros Shomper" />
+        <meta name="twitter:description" content="Research and reports on product-led growth, user onboarding, and activation." />
       </Helmet>
       <Section>
         <SectionHead

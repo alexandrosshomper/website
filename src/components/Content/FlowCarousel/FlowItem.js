@@ -75,7 +75,7 @@ const FlowItemPicture = styled.img`
   height: 100%;
 `;
 
-const FlowItem = ({ image, snapAlignment = "center" }) => {
+const FlowItem = ({ image, snapAlignment = "center", alt }) => {
   return (
     <FlowItemCard snapAlignment={snapAlignment}>
       <FlowItemWrapper>
@@ -85,7 +85,7 @@ const FlowItem = ({ image, snapAlignment = "center" }) => {
           rel={image ? "noopener noreferrer" : undefined}
         >
           <FlowItemImage>
-            <FlowItemPicture src={image} alt={""} />
+            <FlowItemPicture src={image} alt={alt || ""} />
           </FlowItemImage>
         </FlowItemLink>
       </FlowItemWrapper>

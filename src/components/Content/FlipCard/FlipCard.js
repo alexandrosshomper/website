@@ -5,10 +5,11 @@ import { Devices, Colors } from "../../DesignSystem";
 
 import FlipCardEyebrow from "./FlipCardEyebrow";
 import FlipCardCopy from "./FlipCardCopy";
-import { mdiPlus } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useState } from "react";
 import InViewMotion from "../../animation/InViewMotion";
+
+const mdiPlus = "M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z";
 
 const FlipCard = ({
   eyebrow,

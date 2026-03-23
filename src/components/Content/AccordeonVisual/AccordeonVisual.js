@@ -142,7 +142,7 @@ const AccordeonVisual = () => {
         </Option>
       </Accordeon>
       <VisualWrapper>
-        <Visual src="./img/Landingpage/HowItWorks.png" />
+        <Visual src="./img/Landingpage/HowItWorks.png" alt="How it works — process diagram" />
       </VisualWrapper>
     </AccordeonVisual>
   );

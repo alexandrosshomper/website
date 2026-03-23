@@ -3,16 +3,16 @@ import { useInView } from "react-intersection-observer";
 
 import { motion, useAnimation } from "framer-motion";
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
-import { mdiEmail, mdiLinkedin } from "@mdi/js";
-
+import { Helmet } from "react-helmet-async";
 import { Colors, Devices } from "../../DesignSystem";
-
 import SectionHead from "../../Content/Section/SectionHead";
 import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Button from "../../Button/Button";
+
+const mdiEmail = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
+const mdiLinkedin = "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
 
 function RevealWhenVisible({ children }) {
   const controls = useAnimation();
@@ -429,11 +429,17 @@ const Profile = () => {
   return (
     <PageWrapper>
       <Helmet>
-        <title>Alexandros Shomper — Profile</title>
-        <meta
-          name="description"
-          content="Profile of Alexandros Shomper, highlighting current engagements, coached startups, and past work."
-        />
+        <title>About | Alexandros Shomper</title>
+        <meta name="description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/about" />
+        <meta property="og:title" content="About | Alexandros Shomper" />
+        <meta property="og:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About | Alexandros Shomper" />
+        <meta name="twitter:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
       </Helmet>
       <Section>
         <SectionHead

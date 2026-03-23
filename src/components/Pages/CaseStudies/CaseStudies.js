@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
 
 //Components
@@ -277,15 +277,17 @@ const Content = (props) => {
   return (
     <Content>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Case Studies | Alexandros Shomper</title>
-        <description>
-          Digital Anthopologist. Experienced Product-, Service & Business
-          Designer with demonstrated track record of successfully developing
-          meaningful experiences that people love by using emerging technology,
-          solid company purpose, and a strong brand to elevate human experiences
-          and interactions.
-        </description>
+        <meta name="description" content="In-depth product and UX case studies — Asana onboarding, Knauf, and more. Real outcomes across B2B SaaS, PLG, and design system work." />
+        <link rel="canonical" href="https://www.alexandrosshomper.de/case-studies" />
+        <meta property="og:title" content="Case Studies | Alexandros Shomper" />
+        <meta property="og:description" content="In-depth product and UX case studies — Asana onboarding, Knauf, and more. Real outcomes across B2B SaaS, PLG, and design system work." />
+        <meta property="og:url" content="https://www.alexandrosshomper.de/case-studies" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Case Studies | Alexandros Shomper" />
+        <meta name="twitter:description" content="In-depth product and UX case studies — Asana onboarding, Knauf, and more. Real outcomes across B2B SaaS, PLG, and design system work." />
       </Helmet>
       <Section>
         <SectionHead

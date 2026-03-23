@@ -11,6 +11,7 @@ const sizeStyles = {
     line-height: 130%;
     letter-spacing: 0.02em;
     border-radius: 8px;
+    corner-shape: squircle;
   `,
   small: css`
     padding: 4px 10px;
@@ -18,6 +19,7 @@ const sizeStyles = {
     line-height: 133%;
     letter-spacing: 0.01em;
     border-radius: 4px;
+    corner-shape: squircle;
   `,
 };
 

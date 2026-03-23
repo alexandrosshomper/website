@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
+import Logo from "../Identity/Logo";
 import Wortmarke from "../Identity/WortmarkeLang";
 import { X, Menu } from "lucide-react";
 
@@ -75,6 +76,21 @@ const NavigationMenuMobile = styled.div`
   flex-direction: column;
 `;
 
+const Identity = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: ${Colors.background}dd;
+  backdrop-filter: blur(2.40437px);
+  z-index: 9999;
+  height: 3rem;
+  padding: 0 20px 0 18px;
+  border-radius: 16px;
+  corner-shape: squircle;
+`;
+
 const CTA = styled.div`
   display: flex;
   justify-content: center;
@@ -87,6 +103,7 @@ const CTA = styled.div`
   height: 3rem;
   padding: 0 20px 0 20px;
   border-radius: 16px;
+  corner-shape: squircle;
 `;
 const Closer = styled.div`
   display: flex;
@@ -203,9 +220,10 @@ const NavigationSticky = () => {
       ) : (
         <NavigationWrapper data-navigation="sticky">
           <StickyBar>
-            <CTA>
+            <Identity>
+              <Logo />
               <Wortmarke />
-            </CTA>
+            </Identity>
             <CTA>
               <LandingpageMenu />
 

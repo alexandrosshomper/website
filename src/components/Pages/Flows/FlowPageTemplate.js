@@ -1,5 +1,6 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 import { getFlowMeta } from "../../../data/flows";
 
@@ -44,6 +45,8 @@ const RelatedResourcesWrapper = ({ resources }) => {
 
 const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
   const flowMeta = getFlowMeta(flowSlug);
+  const { pathname } = useLocation();
+  const canonical = `https://www.alexandrosshomper.de${pathname}`;
 
   if (!flowMeta) {
     return null;
@@ -64,9 +67,26 @@ const FlowPageTemplate = ({ flowSlug, screens = [], relatedResources }) => {
   return (
     <PageContent>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.alexandrosshomper.de/" },
+            { "@type": "ListItem", "position": 2, "name": "Flows", "item": "https://www.alexandrosshomper.de/flows" },
+            { "@type": "ListItem", "position": 3, "name": flowMeta.name, "item": canonical }
+          ]
+        })}</script>
       </Helmet>
       <PageSection>
         <CaseTitleEyebrow text={"Flow"} color1="#00b8d4" color2="#62ebff" />
