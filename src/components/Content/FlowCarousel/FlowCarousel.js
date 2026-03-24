@@ -134,7 +134,7 @@ const FlowCarousel = ({ data, appname, url }) => {
         </CarouselViewport>
       </CarouselScroller>
       <TextWrapper>
-        <TitleLink to={url || "."}>
+        <TitleLink {...(url ? { to: url } : { as: "span" })}>
           {appname} <TitleAppendix>Onboarding & Activation Flow</TitleAppendix>
         </TitleLink>
         <CarouselSubline>{data.length} Screens</CarouselSubline>

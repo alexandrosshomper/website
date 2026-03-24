@@ -235,7 +235,7 @@ const CaseCard = ({
       animate="rest"
       variants={CaseCardMotion}
     >
-      <CaseCardLink to={link}>
+      <CaseCardLink {...(link ? { to: link } : { as: "div" })}>
         <CaseCardArticle>
           {imgURL && (
             <CaseCardImage
