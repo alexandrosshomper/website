@@ -8,7 +8,7 @@ const LogoImage = styled.div`
   background-size: contain;
   border-radius: 30px;
   cursor: grab;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
   &:active {
     cursor: grabbing;
