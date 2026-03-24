@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 import { Devices, Colors } from "../../DesignSystem";
 
@@ -74,7 +75,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const TitleLink = styled.a`
+const TitleLink = styled(Link)`
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 0;
@@ -133,7 +134,7 @@ const FlowCarousel = ({ data, appname, url }) => {
         </CarouselViewport>
       </CarouselScroller>
       <TextWrapper>
-        <TitleLink href={url || "#"}>
+        <TitleLink {...(url ? { to: url } : { as: "span" })}>
           {appname} <TitleAppendix>Onboarding & Activation Flow</TitleAppendix>
         </TitleLink>
         <CarouselSubline>{data.length} Screens</CarouselSubline>

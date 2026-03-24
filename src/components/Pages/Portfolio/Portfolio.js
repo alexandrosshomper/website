@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
 import { ArrowRight } from "lucide-react";
@@ -125,7 +125,7 @@ const CaseBlockImageWrapper = styled.div`
   align-self: stretch;
 `;
 
-const CaseBlock = styled.a`
+const CaseBlock = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -420,7 +420,7 @@ const Content = (props) => {
             <CaseBlock
               key={caseStudy.id}
               style={{ backgroundColor: caseStudy.bg }}
-              href={caseStudy.link}
+              to={caseStudy.link}
             >
               <CaseBlockDetails>
                 <CaseBlockDetailsText>
@@ -439,7 +439,6 @@ const Content = (props) => {
                 <Button
                   text="View Case Study"
                   gradient="#000"
-                  href={caseStudy.link}
                   icon={<ArrowRight size="21" />}
                 />
               </CaseBlockDetails>

@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { Link } from "react-router-dom";
 
 import { Colors, Devices } from "../DesignSystem";
 import { getFlowScreens } from "../../data/flows";
@@ -137,7 +138,7 @@ const GalleryItem = ({
     }
   `;
 
-  const GalleryItemLink = styled.a`
+  const GalleryItemLink = styled(Link)`
     cursor: ${comingSoon ? "wait" : "pointer"};
     pointer-events: ${comingSoon ? "none" : "auto"};
     pointer-events: ${comingSoon ? "none" : "auto"};
@@ -393,7 +394,7 @@ const GalleryItem = ({
   return (
     <GalleryItem>
       <GalleryItemLink
-        href={comingSoon ? undefined : path}
+        to={comingSoon ? "." : path}
         onMouseEnter={startRotation}
         onMouseLeave={stopRotation}
       >

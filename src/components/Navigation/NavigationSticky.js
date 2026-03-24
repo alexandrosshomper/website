@@ -86,7 +86,7 @@ const Identity = styled.div`
   backdrop-filter: blur(2.40437px);
   z-index: 9999;
   height: 3rem;
-  padding: 0 20px 0 18px;
+  padding: 0 20px 0 16px;
   border-radius: 16px;
   corner-shape: squircle;
 `;
