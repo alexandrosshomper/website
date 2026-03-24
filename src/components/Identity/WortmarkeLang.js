@@ -7,6 +7,7 @@ const Wortmarke = (props) => {
     width: 194.64px;
     height: 21.6px;
     visibility: visible;
+    margin-top: 1px;
     background-image: url(/img/Identity/Wortmarke/wortmarke-lang.svg);
     background-repeat: no-repeat;
     ${Devices.tabletS} {
