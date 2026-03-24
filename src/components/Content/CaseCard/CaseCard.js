@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Colors, Devices } from "../../DesignSystem";
 
@@ -77,7 +78,7 @@ const CaseCard = ({
     },
   };
 
-  const CaseCardLink = styled.a`
+  const CaseCardLink = styled(Link)`
     cursor: ${!comingSoon ?? "pointer"};
     cursor: ${comingSoon && "wait"};
     direction: ltr;
@@ -234,7 +235,7 @@ const CaseCard = ({
       animate="rest"
       variants={CaseCardMotion}
     >
-      <CaseCardLink href={link}>
+      <CaseCardLink to={link}>
         <CaseCardArticle>
           {imgURL && (
             <CaseCardImage
