@@ -198,6 +198,8 @@ const articleTypographyStyles = css`
   }
 
   h3 {
+    font-family: "Averia Serif Libre", "Noto Sans", sans-serif;
+
     font-size: 28px;
     font-weight: 500;
     line-height: 109%;

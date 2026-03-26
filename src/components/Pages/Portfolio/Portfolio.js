@@ -204,6 +204,8 @@ const CaseBlockEyebrow = styled.p`
 const CaseBlockHeadline = styled.h3`
   color: ${Colors.primaryText.highEmphasis};
   font-size: 32px;
+  font-family: "Averia Serif Libre", "Noto Sans", sans-serif;
+
   line-height: 110%;
   font-weight: 400;
 

@@ -88,6 +88,48 @@ const IntroHeading = styled.h1`
     line-height: 105%;
   }
 `;
+const IntroHeadingTwo = styled.span`
+  margin: 0px auto;
+  font-family: "Noto Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 142%;
+
+  text-align: left;
+  margin-left: 24px;
+  margin-right: 24px;
+
+  color: #000a12;
+  ${Devices.tabletS} {
+    margin: 0 auto;
+    width: 563px;
+    height: 188px;
+    font-size: 44px;
+    line-height: 107%;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+  ${Devices.tabletM} {
+    width: 707px;
+    height: 208px;
+    font-size: 52px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+  }
+  ${Devices.laptopS} {
+    width: 852px;
+    height: 292px;
+    font-size: 62px;
+    line-height: 122%;
+  }
+  ${Devices.laptopM} {
+    width: 1141px;
+    height: 336px;
+    font-size: 82px;
+    line-height: 105%;
+  }
+`;
 const Subline = styled.p`
   margin: 0px auto;
   margin-bottom: 160px;
@@ -160,9 +202,9 @@ const Intro = () => {
       <IntroHeading>
         Alexandros Shomper
         <Typewriter options={typewriterOptions} onInit={handleTypewriterInit} />
-        <span style={{ fontFamily: "Noto Sans", fontWeight: 300 }}>
+        <IntroHeadingTwo style={{ fontFamily: "Noto Sans", fontWeight: 300 }}>
           with 15+ years experience in various products
-        </span>
+        </IntroHeadingTwo>
         <br />
       </IntroHeading>
       <Subline>

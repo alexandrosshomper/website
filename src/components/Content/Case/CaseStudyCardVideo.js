@@ -3,25 +3,13 @@ import ReactPlayer from "react-player/lazy";
 import styled from "@emotion/styled";
 
 const VideoWrapper = styled.div`
-  display: block;
-
   position: relative;
   width: 100%;
-  max-width: 100%;
-  aspect-ratio: ${(props) => props.$aspectRatio};
-
-  object-fit: cover;
   flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
 `;
-
-const ReactPlayerStyle = {
-  overflowX: "hidden",
-  overflowY: "hidden",
-  margin: "0 auto",
-  borderRadius: "10px",
-  boxShadow: "1px 1px 20px rgba(0, 0, 0, 0.1)",
-  position: "static",
-};
 
 const DEFAULT_ASPECT_RATIO = 4 / 3;
 
@@ -31,6 +19,10 @@ const CaseVideo = ({ url, size = "M" }) => {
   const [videoAspectRatio, setVideoAspectRatio] =
     React.useState(DEFAULT_ASPECT_RATIO);
   const [isInViewport, setIsInViewport] = React.useState(false);
+  const [containerDims, setContainerDims] = React.useState({
+    width: 0,
+    height: 0,
+  });
   const playerRef = React.useRef(null);
   const containerRef = React.useRef(null);
 
@@ -82,6 +74,21 @@ const CaseVideo = ({ url, size = "M" }) => {
   }, [url]);
 
   React.useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (entry) {
+        setContainerDims({
+          width: entry.contentRect.width,
+          height: entry.contentRect.height,
+        });
+      }
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  React.useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
       setIsInViewport(true);
       return;
@@ -119,10 +126,32 @@ const CaseVideo = ({ url, size = "M" }) => {
     updateAspectRatio(player);
   };
 
+  const { width: cW, height: cH } = containerDims;
+  const containerAR = cH > 0 ? cW / cH : 0;
+  let playerWidth = "100%";
+  let playerHeight = "100%";
+  let playerStyle = {
+    position: "absolute",
+    borderRadius: "0px",
+  };
+
+  if (containerAR > 0 && videoAspectRatio > 0) {
+    if (containerAR > videoAspectRatio) {
+      const h = cW / videoAspectRatio;
+      const top = (cH - h) / 2;
+      playerHeight = `${h}px`;
+      playerStyle = { ...playerStyle, top, left: 0 };
+    } else {
+      const w = cH * videoAspectRatio;
+      const left = (cW - w) / 2;
+      playerWidth = `${w}px`;
+      playerStyle = { ...playerStyle, top: 0, left };
+    }
+  }
+
   return (
     <VideoWrapper
       ref={containerRef}
-      $aspectRatio={videoAspectRatio}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -134,11 +163,10 @@ const CaseVideo = ({ url, size = "M" }) => {
         muted
         playsinline
         playing={isPlaying && isInViewport}
-        width="100%"
-        height="100%"
-        style={ReactPlayerStyle}
+        width={playerWidth}
+        height={playerHeight}
+        style={playerStyle}
         onReady={handleReady}
-        borderRadius="8px"
       />
     </VideoWrapper>
   );
