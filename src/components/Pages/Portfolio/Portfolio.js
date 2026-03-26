@@ -265,7 +265,7 @@ const FlipCardPanels = styled.section`
   gap: auto;
   justify-content: flex-start;
   align-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   --gap: 12px;
   margin-left: 12px;
   margin-right: 12px;

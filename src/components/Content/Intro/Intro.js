@@ -7,7 +7,7 @@ import { Devices, Colors } from "../../DesignSystem";
 const IntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   margin: 0px auto;
   margin-bottom: 160px;
 

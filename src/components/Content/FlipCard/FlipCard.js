@@ -110,33 +110,35 @@ const FlipCard = ({
 
   return (
     <FlipCard>
-      <FrontContent>
-        {eyebrow && (
-          <FlipCardEyebrow
-            text={eyebrow}
-            color1={eyebrowColor}
-            color2={eyebrowColor}
-          />
-        )}
-        {copy && <FlipCardCopy textArray={[copy]} />}
-        {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
-      </FrontContent>
-      <BackContent>
-        {eyebrow && (
-          <FlipCardEyebrow
-            text={eyebrow}
-            color1={eyebrowBackColor}
-            color2={eyebrowBackColor}
-          />
-        )}
-        <br />
-        {copy && (
-          <InViewMotion>
-            <FlipCardCopy textArray={copyBack} color={colorBack} />{" "}
-          </InViewMotion>
-        )}
-        {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
-      </BackContent>
+      <div style={{ flex: 1 }}>
+        <FrontContent>
+          {eyebrow && (
+            <FlipCardEyebrow
+              text={eyebrow}
+              color1={eyebrowColor}
+              color2={eyebrowColor}
+            />
+          )}
+          {copy && <FlipCardCopy textArray={[copy]} />}
+          {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
+        </FrontContent>
+        <BackContent>
+          {eyebrow && (
+            <FlipCardEyebrow
+              text={eyebrow}
+              color1={eyebrowBackColor}
+              color2={eyebrowBackColor}
+            />
+          )}
+          <br />
+          {copy && (
+            <InViewMotion>
+              <FlipCardCopy textArray={copyBack} color={colorBack} />{" "}
+            </InViewMotion>
+          )}
+          {/*jpg && <FlipCardImage jpg={jpg} png={png} webp={webp} />*/}
+        </BackContent>
+      </div>
 
       <ButtonFooterRow>
         <FlipButton onClick={flipCard}>
