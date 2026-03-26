@@ -135,10 +135,10 @@ const Intro = () => {
   const handleTypewriterInit = useCallback((typewriter) => {
     typewriter
       .typeString(
-        "<span>Product</span> <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>Lead</span>",
+        "<span>AI first Product</span> <span style='color: transparent; background-image: linear-gradient(to right, #ff1744, #6200ea); -webkit-background-clip: text; background-clip: text;'>Architect</span>",
       )
       .pauseFor(1000)
-      .deleteChars(4)
+      .deleteChars(9)
       .typeString(
         "<span style='color: transparent; background-image: linear-gradient(to right, #6200ea, #00b8d4); -webkit-background-clip: text; background-clip: text;'>Designer</span>",
       )
@@ -157,7 +157,7 @@ const Intro = () => {
       <IntroHeading>
         Alexandros Shomper
         <Typewriter options={typewriterOptions} onInit={handleTypewriterInit} />
-        <span style={{ fontWeight: 300 }}>
+        <span style={{ fontFamily: "Noto Sans", fontWeight: 300 }}>
           with 15+ years experience in various products
         </span>
         <br />

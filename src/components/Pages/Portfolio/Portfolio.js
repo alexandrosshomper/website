@@ -11,10 +11,13 @@ import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
+import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 
 // Inlined SVG paths to avoid loading the full @mdi/js library (2.6MB bundle)
-const mdiLinkedin = "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
-const mdiEmail = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
+const mdiLinkedin =
+  "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
+const mdiEmail =
+  "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -47,6 +50,7 @@ const CASE_STUDIES = caseStudiesData.map((caseStudy) => {
     subline: caseStudy.sub,
     copy: caseStudy.desc,
     imgURL: caseStudy.cover,
+    videoURL: caseStudy.video,
     link: caseStudy.slug,
     comingSoon: caseStudy.coming,
     bg: caseStudy.bg,
@@ -302,7 +306,7 @@ const ButtonRow = styled.div`
   line-height: 25px;
 
   padding-top: 12px;
-  quotes: """ """;
+  quotes: "" " " "";
   text-align: center;
   text-size-adjust: 100%;
 
@@ -395,16 +399,28 @@ const Content = (props) => {
     <PageWrapper>
       <Helmet>
         <title>Portfolio | Alexandros Shomper</title>
-        <meta name="description" content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C." />
+        <meta
+          name="description"
+          content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C."
+        />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content="Portfolio | Alexandros Shomper" />
-        <meta property="og:description" content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C." />
+        <meta
+          property="og:description"
+          content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C."
+        />
         <meta property="og:url" content={canonical} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta
+          property="og:image"
+          content="https://www.alexandrosshomper.de/img/social/og-default.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portfolio | Alexandros Shomper" />
-        <meta name="twitter:description" content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C." />
+        <meta
+          name="twitter:description"
+          content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C."
+        />
       </Helmet>
       <Section>
         <Intro />
@@ -443,12 +459,7 @@ const Content = (props) => {
                 />
               </CaseBlockDetails>
               <CaseBlockImageWrapper>
-                <CaseBlockImage
-                  src={caseStudy.imgURL}
-                  alt={caseStudy.headline}
-                  loading="lazy"
-                  decoding="async"
-                />
+                <CaseStudyCardVideo url={caseStudy.videoURL} />
               </CaseBlockImageWrapper>
             </CaseBlock>
           ))

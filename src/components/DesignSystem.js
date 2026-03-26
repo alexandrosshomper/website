@@ -182,7 +182,9 @@ const articleTypographyStyles = css`
     margin-bottom: 16px;
     width: 100%;
   }
-
+  h1 {
+    font-family: "Averia Serif Libre", "Noto Sans", sans-serif;
+  }
   h2 {
     font-size: 30px;
     font-weight: 500;

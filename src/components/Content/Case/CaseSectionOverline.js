@@ -6,7 +6,7 @@ import { Devices, Colors } from "../../DesignSystem";
 const CaseSectionOverline = ({ text }) => {
   const CaseSectionOverline = styled.h2`
     position: static;
-    font-family: "Roboto", sans-serif;
+    font-family: "Averia Serif Libre", serif;
     font-weight: 400;
     font-style: normal;
     font-weight: 400;
