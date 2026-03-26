@@ -30,59 +30,31 @@ const FlipCard = ({
     border-radius: 30px;
     margin-bottom: 12px;
     background-color: ${isFlipped ? backgroundColor : Colors.back};
+    transition: background-color 0.4s ease;
     display: flex;
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
     flex: 1 1 100%;
     min-width: 0;
-
-    ${Devices.tabletS} {
-    }
-    ${Devices.tabletM} {
-    }
-    ${Devices.laptopS} {
-    }
-    ${Devices.laptopM} {
-    }
   `;
 
   const FrontContent = styled.div`
     text-align: left;
-    padding: 30px 30px 72px 30px;
-    visibility: ${!isFlipped ? "visible" : "hidden"};
-    display: ${!isFlipped ? "block" : "none"};
-
-    ${Devices.tabletS} {
-      padding: 30px 30px 72px 30px;
-    }
-    ${Devices.tabletM} {
-      padding: 30px 20px 72px 20px;
-    }
-    ${Devices.laptopS} {
-      padding: 30px 20px 72px 20px;
-    }
-    ${Devices.laptopM} {
-      padding: 30px 30px 71px 30px;
-    }
+    overflow: hidden;
+    max-height: ${!isFlipped ? "2000px" : "0"};
+    opacity: ${!isFlipped ? 1 : 0};
+    padding: ${!isFlipped ? "30px 30px 72px 30px" : "0 30px"};
+    transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.4s ease;
   `;
+
   const BackContent = styled.div`
     text-align: left;
-    padding: 30px 30px 72px 30px;
-    visibility: ${isFlipped ? "visible" : "hidden"};
-    display: ${isFlipped ? "block" : "none"};
-    ${Devices.tabletS} {
-      padding: 30px 30px 72px 30px;
-    }
-    ${Devices.tabletM} {
-      padding: 30px 20px 72px 20px;
-    }
-    ${Devices.laptopS} {
-      padding: 30px 20px 72px 20px;
-    }
-    ${Devices.laptopM} {
-      padding: 30px 30px 71px 30px;
-    }
+    overflow: hidden;
+    max-height: ${isFlipped ? "2000px" : "0"};
+    opacity: ${isFlipped ? 1 : 0};
+    padding: ${isFlipped ? "30px 30px 72px 30px" : "0 30px"};
+    transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.4s ease;
   `;
   const ButtonFooterRow = styled.div`
     display: flex;
@@ -119,7 +91,7 @@ const FlipCard = ({
     justify-content: center;
     align-items: center;
     transform: rotate(${isFlipped ? "45deg" : "0deg"});
-    transition: transform 3s;
+    transition: transform 0.4s ease, background-color 0.4s ease;
 
     ${Devices.tabletS} {
     }
@@ -134,7 +106,6 @@ const FlipCard = ({
   const flipCard = (e) => {
     e.preventDefault();
     setIsFlipped(!isFlipped);
-    console.log("CLick!!!");
   };
 
   return (

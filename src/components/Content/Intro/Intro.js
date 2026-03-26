@@ -5,6 +5,9 @@ import Typewriter from "typewriter-effect";
 import { Devices, Colors } from "../../DesignSystem";
 
 const IntroWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin: 0px auto;
   margin-bottom: 160px;
 
@@ -46,7 +49,7 @@ const IntroWrapper = styled.div`
 `;
 const IntroHeading = styled.h1`
   margin: 0px auto;
-  font-size: 32px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
   line-height: 142%;
@@ -60,7 +63,7 @@ const IntroHeading = styled.h1`
     margin: 0 auto;
     width: 563px;
     height: 188px;
-    font-size: 44px;
+    font-size: 48px;
     line-height: 107%;
     text-align: left;
     margin-bottom: 32px;
@@ -68,20 +71,20 @@ const IntroHeading = styled.h1`
   ${Devices.tabletM} {
     width: 707px;
     height: 208px;
-    font-size: 52px;
+    font-size: 56px;
     line-height: 100%;
     letter-spacing: -0.02em;
   }
   ${Devices.laptopS} {
     width: 852px;
     height: 292px;
-    font-size: 60px;
+    font-size: 66px;
     line-height: 122%;
   }
   ${Devices.laptopM} {
     width: 1141px;
     height: 336px;
-    font-size: 80px;
+    font-size: 88px;
     line-height: 105%;
   }
 `;
