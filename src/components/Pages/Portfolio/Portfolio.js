@@ -543,7 +543,7 @@ const Content = (props) => {
           />
 
           <ListPanel
-            eyebrow="Purpouse"
+            eyebrow="Purpose"
             eyebrowColor1={Colors.green}
             eyebrowColor2={Colors.greenLight}
             copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."

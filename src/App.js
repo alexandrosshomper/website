@@ -116,16 +116,16 @@ ReactGA.initialize("G-6BNG13DFW0"); // Replace with your Google Analytics tracki
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.REACT_APP_BASENAME || ""}>
       <ScrollToTop />
 
       <StyledApp className="App">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Alexandros Shomper — Product Lead &amp; Designer</title>
+          <title>Alexandros Shomper — Product Designer</title>
           <meta
             name="description"
-            content="Product Lead &amp; Designer with 15+ years experience in B2B and B2C. Specialising in product-led growth, user onboarding, and design systems."
+            content="Product Designer with 15+ years experience in B2B and B2C. Specialising in product-led growth, user onboarding, and design systems."
           />
           <script type="application/ld+json">{JSON.stringify({
             "@context": "https://schema.org",
@@ -135,8 +135,8 @@ function App() {
                 "@id": "https://www.alexandrosshomper.de/#person",
                 "name": "Alexandros Shomper",
                 "url": "https://www.alexandrosshomper.de",
-                "jobTitle": "Product Lead",
-                "description": "Product Lead and Designer with 15+ years experience in B2B and B2C, specialising in product-led growth, onboarding, activation, and design systems.",
+                "jobTitle": "Product Designer",
+                "description": "Product Designer with 15+ years experience in B2B and B2C, specialising in product-led growth, onboarding, activation, and design systems.",
                 "sameAs": [
                   "https://www.linkedin.com/in/alexshomper/",
                   "https://github.com/alexandrosshomper"
