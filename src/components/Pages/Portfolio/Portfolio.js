@@ -110,16 +110,6 @@ const CardPanels = styled.section`
   }
 `;
 
-const CaseBlockImage = styled.img`
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  transform: scale(1);
-  flex: 1;
-`;
-
 const CaseBlockImageWrapper = styled.div`
   flex: 1;
   margin: 0px;

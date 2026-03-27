@@ -1,14 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Colors, Devices } from "../../DesignSystem";
+import { Devices } from "../../DesignSystem";
 
-const CaseCover = ({ imgURL, alt, color1, color2 }) => {
-  let csscolorbackground = null;
-  if (color1 && color2) {
-    csscolorbackground = `background-image: linear-gradient(to right, ${color1}, ${color2});`;
-  } else {
-    csscolorbackground = `background-image: linear-gradient(to right, ${Colors.red}, ${Colors.redLight});`;
-  }
+const CaseCover = ({ imgURL, alt }) => {
   const CaseCover = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;

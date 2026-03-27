@@ -14,8 +14,8 @@ const VideoWrapper = styled.div`
 const DEFAULT_ASPECT_RATIO = 4 / 3;
 
 const CaseVideo = ({ url, size = "M" }) => {
-  const [isPlaying, setIsPlaying] = React.useState(true);
-  const [isHovered, setIsHovered] = React.useState(false);
+  const isPlaying = true;
+  const [, setIsHovered] = React.useState(false);
   const [videoAspectRatio, setVideoAspectRatio] =
     React.useState(DEFAULT_ASPECT_RATIO);
   const [isInViewport, setIsInViewport] = React.useState(false);
