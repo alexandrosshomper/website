@@ -19,7 +19,7 @@ const metaTitle = "Occhio website & eCommerce | Alexandros Shomper";
 const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
-const hero = () => <CaseCover imgURL="/img/Occhio/Occhio-Website.png" />;
+const hero = () => <CaseCover imgURL="/img/portfolio/occhio-website/occhio-bento.png" />;
 
 const galleryItemsDiscover = [
   {

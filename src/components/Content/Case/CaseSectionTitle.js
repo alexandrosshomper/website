@@ -5,7 +5,6 @@ import { Devices, Colors } from "../../DesignSystem";
 
 const CaseSectionTitle = ({ text }) => {
   const CaseSectionTitle = styled.h3`
-    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
 
