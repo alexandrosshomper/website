@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 import { Devices } from "../../DesignSystem";
+
+const float = keyframes`
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -43,6 +49,8 @@ const AppIcon = styled.img`
   border-radius: 22%;
   object-fit: cover;
   display: block;
+  animation: ${float} 4s ease-in-out infinite;
+  animation-delay: ${({ delay }) => delay || "0s"};
 
   ${Devices.tabletS} {
     width: 100px;
@@ -75,10 +83,10 @@ const AiTechStack = () => {
   return (
     <Wrapper>
       <IconRow>
-        <AppIcon src="/img/tech-stack/figma.png" alt="Figma" />
-        <AppIcon src="/img/tech-stack/spline.png" alt="Spline" />
-        <AppIcon src="/img/tech-stack/lasso.png" alt="Lasso" />
-        <AppIcon src="/img/tech-stack/claude.png" alt="Claude" />
+        <AppIcon src="/img/tech-stack/figma.png" alt="Figma" delay="0s" />
+        <AppIcon src="/img/tech-stack/spline.png" alt="Spline" delay="0.8s" />
+        <AppIcon src="/img/tech-stack/lasso.png" alt="Lasso" delay="1.6s" />
+        <AppIcon src="/img/tech-stack/claude.png" alt="Claude" delay="2.4s" />
       </IconRow>
       <Robot src="/img/tech-stack/robot.png" alt="" />
     </Wrapper>

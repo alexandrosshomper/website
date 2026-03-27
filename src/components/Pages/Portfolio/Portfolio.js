@@ -419,7 +419,7 @@ const Content = (props) => {
         <Intro />
       </Section>
       <Section>
-        <SectionHead headline="AI Native Tech Stack" />
+        <SectionHead headline="AI Native Tech Stack" subline="Fluent in the tools redefining how products are designed and built." />
         <AiTechStack />
       </Section>
       <Section>
