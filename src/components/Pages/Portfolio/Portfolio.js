@@ -12,6 +12,7 @@ import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
+import AiTechStack from "../../Content/AiTechStack/AiTechStack";
 
 // Inlined SVG paths to avoid loading the full @mdi/js library (2.6MB bundle)
 const mdiLinkedin =
@@ -416,6 +417,10 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <Intro />
+      </Section>
+      <Section>
+        <SectionHead headline="AI Native Tech Stack" subline="Fluent in the tools redefining how products are designed and built." />
+        <AiTechStack />
       </Section>
       <Section>
         <SectionHead
