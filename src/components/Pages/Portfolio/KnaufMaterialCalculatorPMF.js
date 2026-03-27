@@ -22,7 +22,7 @@ const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
 const hero = () => (
-  <CaseCover imgURL="/img/portfolio/knauf-material-calculator/cover.png" />
+  <CaseCover imgURL="/img/portfolio/knauf-material-calculator/material-calculator-bento.png" />
 );
 
 const galleryItemsDiscover = [

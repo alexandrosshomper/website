@@ -296,16 +296,16 @@ const Content = (props) => {
   return (
     <Content>
       <Helmet>
-        <title>Alexandros Shomper — Product Lead &amp; Designer</title>
+        <title>Alexandros Shomper — Product Designer</title>
         <meta name="description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
         <link rel="canonical" href="https://www.alexandrosshomper.de/" />
-        <meta property="og:title" content="Alexandros Shomper — Product Lead &amp; Designer" />
+        <meta property="og:title" content="Alexandros Shomper — Product Designer" />
         <meta property="og:description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
         <meta property="og:url" content="https://www.alexandrosshomper.de/" />
         <meta property="og:type" content="profile" />
         <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Alexandros Shomper — Product Lead &amp; Designer" />
+        <meta name="twitter:title" content="Alexandros Shomper — Product Designer" />
         <meta name="twitter:description" content="Outcome-oriented product lead with 15+ years in B2B and B2C. Specialising in product-led growth, onboarding, activation, and design systems." />
       </Helmet>
       <Intro></Intro>

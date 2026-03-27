@@ -6,8 +6,9 @@
     "name": "Material Calculator",
     "sub": "The Jira for construction professionals",
     "desc": "From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.",
-    "cover": "/img/portfolio/knauf-material-calculator/cover.png",
+    "cover": "/img/portfolio/knauf-material-calculator/material-calculator-bento.png",
     "thumbnail": "/img/portfolio/knauf-material-calculator/thumbnail.png",
+    "video": "https://vimeo.com/1169512548?share=copy&fl=sv&fe=ci",
     "type": "Product Market Fit",
     "coming": false,
     "role": "Product Design Manager, 12 markets",
@@ -33,6 +34,7 @@
     "desc": "The single source of truth for deliveries from all Knauf brands and subbrands.",
     "cover": "/img/portfolio/knauf-order-overview/cover.png",
     "thumbnail": "/img/portfolio/knauf-order-overview/thumbnail.png",
+    "video": "https://vimeo.com/1177261677?share=copy&fl=sv&fe=ci",
     "type": "Product Market Fit",
     "coming": false,
     "role": "Product Design Manager, 12 markets",
@@ -49,33 +51,9 @@
     "bg": "#fff",
     "color": "#231768"
   },
+ 
   {
     "id": 3,
-    "slug": "/portfolio/knauf-account",
-    "company": "Knauf",
-    "name": "Knauf Account",
-    "sub": "The Google Account for the construction industry",
-    "desc": "From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.",
-    "cover": "/img/portfolio/knauf-account/cover.png",
-    "thumbnail": "/img/portfolio/knauf-account/thumbnail.png",
-    "type": "Product Market Fit",
-    "coming": false,
-    "role": "Product Design Manager, 12 markets",
-    "team": "20 (PM, Eng, Data, CRM, Design)",
-    "product": "Unified Identity Platform (B2B/B2C + Enterprise teams)",
-    "stage": "0→1→n",
-    "timeline": "8 months",
-    "keyResults": [
-      "Activation ↑ across all connected apps",
-      "Support tickets ↓ significantly",
-      "CRM data quality ↑",
-      "Team onboarding time ↓ drastically"
-    ],
-    "bg": "#fff",
-    "color": "#171c91"
-  },
-  {
-    "id": 4,
     "slug": "/portfolio/occhio",
     "company": "Occhio",
     "name": "Website & eCommerce",
@@ -83,6 +61,7 @@
     "sub": "A premium user experience",
     "cover": "/img/Occhio/Occhio-Website.png",
     "thumbnail": "/img/portfolio/occhio/thumbnail.png",
+    "video": "https://vimeo.com/1177642169?share=copy&fl=sv&fe=ci",
     "type": "Product Market Fit",
     "coming": false,
     "role": "Product Design Manager, 12 markets",
@@ -100,3 +79,4 @@
     "color": "#171c91"
   }
 ]
+

@@ -205,7 +205,7 @@ const Footer = (props) => {
           {/*<LegalsItem href="/contact">Terms</LegalsItem>
           <LegalsItem href="/contact">Privacy</LegalsItem>
           <LegalsItem href="/contact">Cookies</LegalsItem>*/}
-          <Copyright>© 2025 Alexandros Shomper. All rights reserved.</Copyright>
+          <Copyright>© 2026 Alexandros Shomper. All rights reserved.</Copyright>
         </Legals>
       </FooterBody>
     </Footer>

@@ -70,7 +70,9 @@
       "--no-sandbox",
       "--disable-setuid-sandbox"
     ],
-    "waitFor": 500,
+    "waitFor": 2000,
+    "inlineCss": true,
+    "minifyHtml": false,
     "crawl": false
   },
   "eslintConfig": {
