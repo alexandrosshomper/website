@@ -118,6 +118,7 @@ const CaseBlockImageWrapper = styled.div`
   overflow: hidden;
   display: flex;
   align-self: stretch;
+  pointer-events: none;
 `;
 
 const CaseBlock = styled(Link)`
