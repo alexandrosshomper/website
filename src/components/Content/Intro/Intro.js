@@ -209,7 +209,7 @@ const Intro = () => {
       </IntroHeading>
       <Subline>
         Now seeking a{" "}
-        <span style={{ color: "black" }}>Product Design Manager</span> role in a
+        <span style={{ color: "black" }}>Product Designer / Manager</span> role in a
         high-growth environment where strategic leadership and hands-on
         execution accelerate product maturity and user value.
       </Subline>
