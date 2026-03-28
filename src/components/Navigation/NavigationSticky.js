@@ -6,7 +6,8 @@ import { Devices, Colors } from "../DesignSystem";
 import LandingpageMenu from "./LandingpageMenu";
 import Logo from "../Identity/Logo";
 import Wortmarke from "../Identity/WortmarkeLang";
-import { X, Menu } from "lucide-react";
+import { X, Plus } from "lucide-react";
+import Button from "../Button/Button";
 
 const NavigationWrapper = styled.header`
   position: fixed;
@@ -18,15 +19,28 @@ const NavigationWrapper = styled.header`
 `;
 
 const StickyBar = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   margin: 12px;
   height: 52px;
 
   ${Devices.tabletS} {
     margin: 14px;
+  }
+`;
+
+const CTAEnd = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 12px;
+  justify-self: end;
+  visibility: hidden;
+  ${Devices.tabletL} {
+    visibility: visible;
   }
 `;
 
@@ -76,12 +90,18 @@ const NavigationMenuMobile = styled.div`
   flex-direction: column;
 `;
 
-const Identity = styled.div`
+const Main = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   gap: 4px;
+  grid-column: 1 / -1;
+  ${Devices.tabletL} {
+    justify-content: center;
+    grid-column: auto;
+    justify-self: start;
+  }
   background-color: ${Colors.background}dd;
   backdrop-filter: blur(2.40437px);
   z-index: 9999;
@@ -89,6 +109,19 @@ const Identity = styled.div`
   padding: 0 20px 0 16px;
   border-radius: 16px;
   corner-shape: squircle;
+`;
+const Identity = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 4px;
+`;
+
+const NavButton = styled(Button)`
+  background-color: ${Colors.background}cc;
+  backdrop-filter: blur(2.40437px);
+  color: ${Colors.greyDark};
 `;
 
 const CTA = styled.div`
@@ -104,6 +137,10 @@ const CTA = styled.div`
   padding: 0 20px 0 20px;
   border-radius: 16px;
   corner-shape: squircle;
+  visibility: hidden;
+  ${Devices.tabletL} {
+    visibility: visible;
+  }
 `;
 const Closer = styled.div`
   display: flex;
@@ -145,7 +182,8 @@ const MenuButton = styled.div`
   visibility: visible;
   display: flex;
   justify-content: center;
-  ${Devices.tabletS} {
+  cursor: pointer;
+  ${Devices.tabletL} {
     visibility: hidden;
     display: none;
     flex-direction: row;
@@ -180,6 +218,7 @@ const NavigationSticky = () => {
   const navigationLinks = useMemo(
     () => [
       { label: "Home", to: "/" },
+      { label: "Work", to: "/portfolio" },
       { label: "About", to: "/about" },
       { label: "Writing", to: "/writing" },
       { label: "Contact", to: "/contact" },
@@ -216,21 +255,42 @@ const NavigationSticky = () => {
               );
             })}
           </MenuList>
+          <NavButton
+            as="a"
+            size="medium"
+            variant="primary"
+            href="mailto:alexandros@alexandrosshomper.de"
+            text="Get in touch"
+            gradient={{ from: Colors.greyLight, to: Colors.greyLight }}
+            color={Colors.greyDark}
+          />
         </NavigationMenuMobile>
       ) : (
         <NavigationWrapper data-navigation="sticky">
           <StickyBar>
-            <Identity>
-              <Logo />
-              <Wortmarke />
-            </Identity>
+            <Main>
+              <Identity>
+                <Logo />
+                <Wortmarke />
+              </Identity>
+              <MenuButton onClick={menuButtonClick}>
+                <Plus size={24} strokeWidth={1} />
+              </MenuButton>
+            </Main>
             <CTA>
               <LandingpageMenu />
-
-              <MenuButton onClick={menuButtonClick}>
-                <Menu size={24} strokeWidth={1} />
-              </MenuButton>
             </CTA>
+            <CTAEnd>
+              <NavButton
+                as="a"
+                size="medium"
+                variant="primary"
+                href="mailto:alexandros@alexandrosshomper.de"
+                text="Get in touch"
+                gradient={{ from: Colors.greyLight, to: Colors.greyLight }}
+                color={Colors.greyDark}
+              />
+            </CTAEnd>
           </StickyBar>{" "}
         </NavigationWrapper>
       )}

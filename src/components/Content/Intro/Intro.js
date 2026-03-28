@@ -203,15 +203,13 @@ const Intro = () => {
         Alexandros Shomper
         <Typewriter options={typewriterOptions} onInit={handleTypewriterInit} />
         <IntroHeadingTwo style={{ fontFamily: "Noto Sans", fontWeight: 300 }}>
-          with 15+ years experience in various products
+          specialising in growth, onboarding, and B2B SaaS
         </IntroHeadingTwo>
         <br />
       </IntroHeading>
       <Subline>
-        Now seeking a{" "}
-        <span style={{ color: "black" }}>Product Designer / Manager</span> role in a
-        high-growth environment where strategic leadership and hands-on
-        execution accelerate product maturity and user value.
+        I turn complex workflows into products people actually use. <br />
+        15+ years across product design, PLG, and B2B SaaS.
       </Subline>
     </IntroWrapper>
   );
