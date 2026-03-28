@@ -5,20 +5,11 @@ import styled from "@emotion/styled";
 import { ArrowRight } from "lucide-react";
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
-import BlackQuote from "../../Content/BlackQuote/BlackQuote";
-import ListPanel from "../../Content/List/ListPanel/ListPanel";
-import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
-import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 import AiTechStack from "../../Content/AiTechStack/AiTechStack";
 
-// Inlined SVG paths to avoid loading the full @mdi/js library (2.6MB bundle)
-const mdiLinkedin =
-  "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
-const mdiEmail =
-  "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -78,37 +69,6 @@ const Section = styled.section`
   align-self: stretch;
   flex-grow: 0;
   margin-bottom: 200px;
-`;
-
-const CardPanels = styled.section`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: space-between;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-
-  margin-bottom: calc(1 * var(--gap));
-  margin-right: 12px;
-  margin-left: 12px;
-
-  ${Devices.tabletS} {
-    width: 576px;
-    margin: 0 auto;
-    margin-bottom: calc(-1 * var(--gap));
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
 `;
 
 const CaseBlockImageWrapper = styled.div`
@@ -252,126 +212,6 @@ const EmptyState = styled.p`
   text-align: center;
 `;
 
-const FlipCardPanels = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-bottom: calc(1 * var(--gap));
-
-  ${Devices.tabletS} {
-    width: 576px;
-
-    margin-bottom: calc(-1 * var(--gap));
-    flex-wrap: nowrap;
-    gap: 12px;
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    margin-left: calc(1.6 * var(--gap));
-    margin-right: calc(1.6 * var(--gap));
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
-
-const ButtonRow = styled.div`
-  color: rgb(29, 29, 31);
-  direction: ltr;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: flex-start;
-  gap: 12px;
-  height: 60px;
-  letter-spacing: -0.374px;
-  line-height: 25px;
-
-  padding-top: 12px;
-  quotes: "" " " "";
-  text-align: center;
-  text-size-adjust: 100%;
-
-  height: 200px;
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  flex-grow: 0;
-  -webkit-font-smoothing: antialiased;
-  --gap: 12px;
-  margin-left: calc(-1 * var(--gap));
-  margin-right: calc(-1 * var(--gap));
-  margin-bottom: calc(-1 * var(--gap));
-
-  & > * {
-    margin-left: var(--gap);
-    margin-bottom: calc(2 * var(--gap));
-  }
-  ${Devices.tabletS} {
-    flex-direction: row;
-
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 24px;
-  }
-  ${Devices.tabletM} {
-  }
-  ${Devices.laptopS} {
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-
-  position: static;
-
-  /* Inside Auto Layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-  margin: 0px auto;
-  margin-top: 40px;
-  margin-left: 24px;
-  margin-right: 24px;
-  width: 400px;
-  /* Inside Auto Layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  flex-grow: 0;
-  -webkit-font-smoothing: antialiased;
-  ${Devices.tabletS} {
-    width: 564px;
-    margin: 0px auto;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
-`;
-
 const Content = (props) => {
   const [selectedType, setSelectedType] = useState(CASE_STUDY_TYPES.ALL);
   const { pathname } = useLocation();
@@ -416,13 +256,6 @@ const Content = (props) => {
           content="Product design and growth case studies — Knauf, Asana, Occhio, and more. UX, PLG, and design system work across B2B and B2C."
         />
       </Helmet>
-      <Section>
-        <Intro />
-      </Section>
-      <Section>
-        <SectionHead headline="AI Native Tech Stack" subline="Fluent in the tools redefining how products are designed and built." centered />
-        <AiTechStack />
-      </Section>
       <Section>
         <SectionHead
           headline="Work"
@@ -470,158 +303,11 @@ const Content = (props) => {
       </Section>
       <Section>
         <SectionHead
-          headline="Key strengths"
-          subline="I have worked in hybrid roles of product design, product management, and product growth"
+          headline="AI Native Tech Stack"
+          subline="Fluent in the tools redefining how products are designed and built."
+          centered
         />
-        <FlipCardPanels>
-          <FlipCard
-            eyebrow="Product Architecture"
-            eyebrowColor="#231768"
-            eyebrowBackColor="#10D5F5"
-            backgroundColor="#231768"
-            colorBack="white"
-            copy={[
-              "I create intuitive, meaningful, and usable experiences that solve real customer problems and make the product feel valuable from the first interaction.",
-            ]}
-            copyBack={[
-              "I can help you create intuitive, elegant product experiences that increase task success, customer satisfaction, and long-term adoption.",
-              "I design and refine workflows that validate user needs, reduce friction, and turn complex problems into simple, usable interfaces.",
-              "I assess and optimize the usability and performance of your core features to ensure customers immediately feel the value your product promises.",
-            ]}
-            webp="./img/PanelTestImages/square.webp"
-            png="./img/PanelTestImages/square.png"
-            jpg="./img/PanelTestImages/square.jpg"
-          />
-          <FlipCard
-            eyebrow="Product Management"
-            eyebrowColor="#206405"
-            eyebrowBackColor="#D9EDCA"
-            backgroundColor="#206405"
-            colorBack="white"
-            copy={[
-              "I align customer needs and business goals to define what should be built, why it matters, and how to deliver the right product at the right time.",
-            ]}
-            copyBack={[
-              "I can help you define what to build, why it matters, and how to deliver it in a repeatable, evidence-driven way.",
-              "I establish and improve product workflows that connect research, strategy, prioritization, and delivery; ensuring teams ship impactful features, not noise.",
-              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product's core value proposition.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-          <FlipCard
-            eyebrow="Product Growth"
-            eyebrowColor="#6A210D"
-            eyebrowBackColor="#FFB700"
-            backgroundColor="#6A210D"
-            colorBack="white"
-            copy={[
-              "I acquire the right users, activate them quickly, and keep them engaged longer by systematically removing friction and amplifying value.",
-            ]}
-            copyBack={[
-              "I can help you scale your product efficiently with PLG by increasing acquisition, activation, and retention.",
-              "I build and optimize growth workflows that analyze user behavior, identify friction, and validate high-leverage opportunities across the entire funnel.",
-              "I use data, psychology, and experiment-driven iteration to help you turn more new users into engaged, long-term customers.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-        </FlipCardPanels>
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Human Centered Leadership"
-          subline="I believe happy and healthy teams are the most productive, and innovative teams."
-        />
-
-        <CardPanels>
-          <ListPanel
-            eyebrow="Autonomy"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
-          />
-
-          <ListPanel
-            eyebrow="Mastery"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
-          />
-
-          <ListPanel
-            eyebrow="Purpose"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
-          />
-        </CardPanels>
-      </Section>{" "}
-      <Section>
-        <BlackQuote
-          quote="Building tools, communicating complex ideas,
-          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-        />
-      </Section>
-      <Section>
-        <SectionHead
-          headline="My Principles"
-          subline="Give meaning to actions and ideas."
-        />
-
-        <CardPanels>
-          <ListPanel
-            eyebrow="Data Driven/Informed"
-            copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-          />
-
-          <ListPanel
-            eyebrow="Aesthetics"
-            copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-          />
-
-          <ListPanel
-            eyebrow="Quality"
-            copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-          />
-
-          <ListPanel
-            eyebrow="Holistic"
-            copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-          />
-
-          <ListPanel
-            eyebrow="Innovative & Brave"
-            copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-          />
-
-          <ListPanel
-            eyebrow="Long Term"
-            copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-          />
-        </CardPanels>
-      </Section>
-      <Section>
-        <ButtonContainer>
-          <ButtonRow>
-            <Button
-              size="medium"
-              variant="primary"
-              href="https://www.linkedin.com/in/alexshomper/"
-              text="LinkedIn"
-              gradient={{ from: Colors.blue, to: Colors.blueLight }}
-              icon={mdiLinkedin}
-            />
-            <Button
-              href="mailto:alexandros@alexandrosshomper.de"
-              text="Email Me"
-              gradient={{ from: Colors.black, to: Colors.greyDark }}
-              icon={mdiEmail}
-            />
-          </ButtonRow>
-        </ButtonContainer>
+        <AiTechStack />
       </Section>
     </PageWrapper>
   );

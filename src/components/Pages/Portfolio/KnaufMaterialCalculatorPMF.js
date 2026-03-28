@@ -149,7 +149,6 @@ const renderContent = () => (
           headline="Delays led to quote errors costing millions in lost bids. "
           subline="Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
         />
-        <CaseSublineTwo subline="Customer Type" />
         <p>
           <b>Applicator:</b> Contractors, on-site professionals who plan,
           measure, and execute installations.

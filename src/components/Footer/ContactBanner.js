@@ -1,8 +1,7 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
-import { Devices, Colors } from "../../DesignSystem";
-import Button from "../../Button/Button";
+import { Devices, Colors } from "../DesignSystem";
+import Button from "../Button/Button";
 import { mdiEmail } from "@mdi/js";
 
 const mdiLinkedin =
@@ -10,8 +9,8 @@ const mdiLinkedin =
 const Contact = (props) => {
   const Contact = styled.div`
     text-align: left;
-    margin-top: 220px;
-    margin-bottom: 200px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   `;
 
   const Name = styled.h1`
@@ -200,40 +199,7 @@ const Contact = (props) => {
 
   return (
     <Contact>
-      <Helmet>
-        <title>Contact | Alexandros Shomper</title>
-        <meta
-          name="description"
-          content="Get in touch with Alexandros Shomper — available for product consulting, advisory, and freelance engagements."
-        />
-        <link rel="canonical" href="https://www.alexandrosshomper.de/contact" />
-        <meta property="og:title" content="Contact | Alexandros Shomper" />
-        <meta
-          property="og:description"
-          content="Get in touch with Alexandros Shomper — available for product consulting, advisory, and freelance engagements."
-        />
-        <meta
-          property="og:url"
-          content="https://www.alexandrosshomper.de/contact"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://www.alexandrosshomper.de/img/social/og-default.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact | Alexandros Shomper" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with Alexandros Shomper — available for product consulting, advisory, and freelance engagements."
-        />
-      </Helmet>
       <Name>Alexandros Shomper</Name>
-      <ContactInfo>
-        <ContactInfoLink href="tel:+491608382263">
-          +49 160 838 22 63
-        </ContactInfoLink>
-      </ContactInfo>
       <ContactInfo>
         <ContactInfoLink href="mailto:alexandros@alexandrosshomper.de">
           alexandros@alexandrosshomper.de

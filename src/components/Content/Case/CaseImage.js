@@ -10,13 +10,13 @@ const sizeMap = {
   },
   S: {
     tabletS: "564px",
-    tabletM: "564px",
-    laptopS: "564px",
+    tabletM: "60%",
+    laptopS: "60%",
   },
   M: {
     tabletS: "564px",
-    tabletM: "708px",
-    laptopS: "740px",
+    tabletM: "80%",
+    laptopS: "80%",
   },
   L: {
     tabletS: "100%",
