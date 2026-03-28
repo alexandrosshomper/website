@@ -139,24 +139,13 @@ const Footer = (props) => {
         <Sitemap>
           <SitemapItem>
             <Link
-              to={`/about`}
-              style={{
-                color: Colors.primaryText.highEmphasis,
-                textDecoration: "none",
-              }}
-            >
-              About
-            </Link>
-          </SitemapItem>
-          <SitemapItem>
-            <Link
               to={`/portfolio`}
               style={{
                 color: Colors.primaryText.highEmphasis,
                 textDecoration: "none",
               }}
             >
-              Portfolio
+              Work
             </Link>
           </SitemapItem>
           <SitemapItem>
@@ -172,13 +161,13 @@ const Footer = (props) => {
           </SitemapItem>
           <SitemapItem>
             <Link
-              to={`/contact`}
+              to={`/about`}
               style={{
                 color: Colors.primaryText.highEmphasis,
                 textDecoration: "none",
               }}
             >
-              Contact
+              About
             </Link>
           </SitemapItem>
         </Sitemap>

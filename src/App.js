@@ -15,10 +15,7 @@ const Profile = lazy(
   () =>
     import(/* webpackPrefetch: true */ "./components/Pages/Profile/Profile"),
 );
-const Contact = lazy(
-  () =>
-    import(/* webpackPrefetch: true */ "./components/Pages/Contact/Contact"),
-);
+
 const Portfolio = lazy(
   () =>
     import(
@@ -151,7 +148,6 @@ function App() {
             <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/about" component={Profile} />
             <Route exact path="/" component={HomeJob} />
-            <Route exact path="/contact" component={Contact} />
             <Route exact path="/writing" component={Writing} />
             {/*REPORTS*/}
             <Route exact path="/portfolio/occhio" component={Occhio} />

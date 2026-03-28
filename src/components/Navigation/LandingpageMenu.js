@@ -79,20 +79,6 @@ const LandingpageMenu = (props) => {
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/about`}
-          style={{
-            color:
-              currentPath === "/about"
-                ? Colors.primaryText.highEmphasis
-                : Colors.primaryText.mediumEmphasis,
-            textDecoration: "none",
-          }}
-        >
-          About
-        </Link>
-      </MenuItemSmall>
-      <MenuItemSmall>
-        <Link
           to={`/writing`}
           style={{
             color:
@@ -107,16 +93,16 @@ const LandingpageMenu = (props) => {
       </MenuItemSmall>
       <MenuItemSmall>
         <Link
-          to={`/contact`}
+          to={`/about`}
           style={{
             color:
-              currentPath === "/contact"
+              currentPath === "/about"
                 ? Colors.primaryText.highEmphasis
                 : Colors.primaryText.mediumEmphasis,
             textDecoration: "none",
           }}
         >
-          Contact
+          About
         </Link>
       </MenuItemSmall>
     </MenuWrapper>
