@@ -47,12 +47,12 @@ const SectionHeadWrapper = styled.div`
   }
 `;
 
-const SectionHead = ({ divider, headline, subline, copy }) => {
+const SectionHead = ({ divider, headline, subline, copy, centered }) => {
   return (
-    <SectionHeadWrapper>
+    <SectionHeadWrapper style={centered ? { alignItems: "center" } : undefined}>
       {divider && <SectionDivider text={divider} />}
-      {headline && <SectionHeadline headline={headline} />}
-      {subline && <SectionSubline subline={subline} />}
+      {headline && <SectionHeadline headline={headline} style={centered ? { textAlign: "center" } : undefined} />}
+      {subline && <SectionSubline subline={subline} style={centered ? { textAlign: "center" } : undefined} />}
       {copy && <SectionCopy copy={copy} />}
     </SectionHeadWrapper>
   );
