@@ -48,11 +48,12 @@ See `COORDINATION.md` for current active work.
 
 ## URL & Routing Rules (DO NOT CHANGE)
 
-- `REACT_APP_BASENAME` MUST be empty/unset in `.env.production`
-- The `/production` in the deploy path (`/httpd.www/production/`) is the Apache **document root** — it is NOT a URL prefix
-- Clean URLs are intended: `alexandrosshomper.de/portfolio/knauf-material-calculator` (no `/production`)
-- react-snap include paths in `package.json` must NOT have a `/production` prefix
-- The `.htaccess` 301-redirects legacy `/production/*` → `/*` for backwards compatibility
+- `REACT_APP_BASENAME` MUST be empty/unset in `.env.production` — do NOT add it back
+- one.com document root is fixed at `/httpd.www/`; the build deploys directly there (not to `/production/`)
+- Clean URLs: `alexandrosshomper.de/portfolio/knauf-material-calculator` (no `/production/` prefix)
+- react-snap include paths in `package.json` must NOT have a `/production/` prefix
+- The `.htaccess` has a 301 redirect for legacy `/production/*` → `/*` links
+- Production deploy goes to `/httpd.www/` (root); staging to `/httpd.www/stage/` — see `.github/workflows/main.yml`
 
 ## Branch Strategy
 
