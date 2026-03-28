@@ -5,20 +5,11 @@ import styled from "@emotion/styled";
 import { ArrowRight } from "lucide-react";
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
-import BlackQuote from "../../Content/BlackQuote/BlackQuote";
-import ListPanel from "../../Content/List/ListPanel/ListPanel";
-import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio.json";
 import Button from "../../Button/Button";
-import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 import AiTechStack from "../../Content/AiTechStack/AiTechStack";
 
-// Inlined SVG paths to avoid loading the full @mdi/js library (2.6MB bundle)
-const mdiLinkedin =
-  "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
-const mdiEmail =
-  "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -78,37 +69,6 @@ const Section = styled.section`
   align-self: stretch;
   flex-grow: 0;
   margin-bottom: 200px;
-`;
-
-const CardPanels = styled.section`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: space-between;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-
-  margin-bottom: calc(1 * var(--gap));
-  margin-right: 12px;
-  margin-left: 12px;
-
-  ${Devices.tabletS} {
-    width: 576px;
-    margin: 0 auto;
-    margin-bottom: calc(-1 * var(--gap));
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
 `;
 
 const CaseBlockImageWrapper = styled.div`
@@ -250,126 +210,6 @@ const EmptyState = styled.p`
   margin: 48px 0;
   max-width: 420px;
   text-align: center;
-`;
-
-const FlipCardPanels = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-bottom: calc(1 * var(--gap));
-
-  ${Devices.tabletS} {
-    width: 576px;
-
-    margin-bottom: calc(-1 * var(--gap));
-    flex-wrap: nowrap;
-    gap: 12px;
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    margin-left: calc(1.6 * var(--gap));
-    margin-right: calc(1.6 * var(--gap));
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
-
-const ButtonRow = styled.div`
-  color: rgb(29, 29, 31);
-  direction: ltr;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: flex-start;
-  gap: 12px;
-  height: 60px;
-  letter-spacing: -0.374px;
-  line-height: 25px;
-
-  padding-top: 12px;
-  quotes: "" " " "";
-  text-align: center;
-  text-size-adjust: 100%;
-
-  height: 200px;
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  flex-grow: 0;
-  -webkit-font-smoothing: antialiased;
-  --gap: 12px;
-  margin-left: calc(-1 * var(--gap));
-  margin-right: calc(-1 * var(--gap));
-  margin-bottom: calc(-1 * var(--gap));
-
-  & > * {
-    margin-left: var(--gap);
-    margin-bottom: calc(2 * var(--gap));
-  }
-  ${Devices.tabletS} {
-    flex-direction: row;
-
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 24px;
-  }
-  ${Devices.tabletM} {
-  }
-  ${Devices.laptopS} {
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-
-  position: static;
-
-  /* Inside Auto Layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-  margin: 0px auto;
-  margin-top: 40px;
-  margin-left: 24px;
-  margin-right: 24px;
-  width: 400px;
-  /* Inside Auto Layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  flex-grow: 0;
-  -webkit-font-smoothing: antialiased;
-  ${Devices.tabletS} {
-    width: 564px;
-    margin: 0px auto;
-  }
-  ${Devices.tabletM} {
-    width: 708px;
-  }
-  ${Devices.laptopS} {
-    width: 852px;
-  }
 `;
 
 const Content = (props) => {

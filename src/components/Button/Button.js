@@ -8,14 +8,6 @@ const DEFAULT_SECONDARY_GRADIENT = [Colors.blue, Colors.blueDark];
 
 const sizeStyles = {
   medium: `
-    padding: 16px 32px;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.02em;
-    border-radius: 20px;
-    corner-shape: squircle;
-  `,
-  medium: `
     padding: 13px 32px;
     font-size: 16px;
     line-height: 137%;
