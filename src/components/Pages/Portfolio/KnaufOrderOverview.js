@@ -13,7 +13,6 @@ import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
-import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import Article from "../../Content/Article/Article";
 
 const metaTitle = "Knauf Order Overview | Alexandros Shomper";
@@ -119,7 +118,6 @@ const renderContent = () => (
           imgURL="/img/portfolio/knauf-order-overview/warehouse.png"
           size="L"
         />
-        <CaseSublineTwo subline="About Knauf" />
         <p>
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
@@ -128,11 +126,7 @@ const renderContent = () => (
           scale a portfolio of digital solutions across global markets while
           driving a user-centric transformation.
         </p>
-        <CaseSublineTwo subline="Customer Type" />
-        <p>
-          <b>Dealer:</b> B2B partners who sell Knauf materials to construction
-          companies and manage order logistics.
-        </p>
+        
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="14 (PM, Eng, Data, BA, Design)"
@@ -146,11 +140,7 @@ const renderContent = () => (
             "2h/week saved per dealer",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
-          size="L"
-        />{" "}
+       
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -162,6 +152,11 @@ const renderContent = () => (
           subline="Construction dealers manage thousands of orders across different Knauf entities.
 Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
         />
+        <CaseSublineTwo subline="Customer Type" />
+        <p>
+          <b>Dealer:</b> B2B partners who sell Knauf materials to construction
+          companies and manage order logistics.
+        </p>
         <CaseImage
           imgURL="/img/portfolio/knauf-order-overview/cover-problem.png"
           size="L"

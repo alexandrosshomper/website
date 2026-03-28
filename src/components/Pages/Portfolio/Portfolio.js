@@ -118,6 +118,7 @@ const CaseBlockImageWrapper = styled.div`
   overflow: hidden;
   display: flex;
   align-self: stretch;
+  pointer-events: none;
 `;
 
 const CaseBlock = styled(Link)`
@@ -419,7 +420,7 @@ const Content = (props) => {
         <Intro />
       </Section>
       <Section>
-        <SectionHead headline="AI Native Tech Stack" subline="Fluent in the tools redefining how products are designed and built." />
+        <SectionHead headline="AI Native Tech Stack" subline="Fluent in the tools redefining how products are designed and built." centered />
         <AiTechStack />
       </Section>
       <Section>

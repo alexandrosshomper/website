@@ -441,12 +441,7 @@ const Profile = () => {
         <meta name="twitter:title" content="About | Alexandros Shomper" />
         <meta name="twitter:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
       </Helmet>
-      <Section>
-        <SectionHead
-          headline="Product Designer / Manager with 15+ years experience in various products"
-          subline="Now seeking a Product Design Manager role in a high-growth environment."
-        />
-      </Section>
+
 
       <Section>
         <SectionHead headline="A little bit about me" />

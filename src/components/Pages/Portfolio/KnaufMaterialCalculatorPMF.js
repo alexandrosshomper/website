@@ -115,7 +115,6 @@ const renderContent = () => (
           imgURL="/img/portfolio/knauf-material-calculator/plasterboards.png"
           size="L"
         />
-        <CaseSublineTwo subline="About Knauf" />
         <p>
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
@@ -125,11 +124,7 @@ const renderContent = () => (
           driving a user-centric transformation.
         </p>
 
-        <CaseSublineTwo subline="Customer Type" />
-        <p>
-          <b>Applicator:</b> Contractors, on-site professionals who plan,
-          measure, and execute installations.
-        </p>
+      
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="PO, Eng, Data, Design"
@@ -143,11 +138,7 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
-          size="L"
-        />
+        
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -158,6 +149,11 @@ const renderContent = () => (
           headline="Delays led to quote errors costing millions in lost bids. "
           subline="Project leads and applicators were spending hours moving between Excel sheets, PDFs, and phone calls, trying to calculate quantities, submit tenders, and order materials."
         />
+        <CaseSublineTwo subline="Customer Type" />
+        <p>
+          <b>Applicator:</b> Contractors, on-site professionals who plan,
+          measure, and execute installations.
+        </p>
         <CaseImage
           imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
           size="L"
