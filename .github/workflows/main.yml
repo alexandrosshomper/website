@@ -58,9 +58,9 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: burnett01/rsync-deployments@7.1.0
         with:
-          switches: -avzr --delete # mirror contents; remove stale files inside target
+          switches: -avzr --delete --exclude=stage/ # mirror to root; preserve staging; remove stale files
           path: build/ # trailing slash = CONTENTS of build/
-          remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/production/
+          remote_path: /customers/3/6/f/alexandrosshomper.de/httpd.www/
           remote_host: ${{ secrets.FTP_SERVER }} # ssh.alexandrosshomper.de
           remote_user: ${{ secrets.FTP_USER }} # alexandrosshomper.de
           remote_key: ${{ secrets.SFTP_PRIVATE_KEY }} # gha_deploy_ed25519 (no passphrase)
