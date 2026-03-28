@@ -52,32 +52,6 @@
     "color": "#231768"
   },
   {
-    "id": 3,
-    "slug": "/portfolio/knauf-account",
-    "company": "Knauf",
-    "name": "Knauf Account",
-    "sub": "The Google Account for the construction industry",
-    "desc": "From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.",
-    "cover": "/img/portfolio/knauf-account/cover.png",
-    "thumbnail": "/img/portfolio/knauf-account/thumbnail.png",
-    "video": "https://vimeo.com/1177261921?share=copy&fl=sv&fe=ci",
-    "type": "Product Market Fit",
-    "coming": false,
-    "role": "Product Design Manager, 12 markets",
-    "team": "20 (PM, Eng, Data, CRM, Design)",
-    "product": "Unified Identity Platform (B2B/B2C + Enterprise teams)",
-    "stage": "0→1→n",
-    "timeline": "8 months",
-    "keyResults": [
-      "Activation ↑ across all connected apps",
-      "Support tickets ↓ significantly",
-      "CRM data quality ↑",
-      "Team onboarding time ↓ drastically"
-    ],
-    "bg": "#fff",
-    "color": "#171c91"
-  },
-  {
     "id": 4,
     "slug": "/portfolio/occhio",
     "company": "Occhio",

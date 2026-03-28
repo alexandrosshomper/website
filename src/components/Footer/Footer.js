@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 import { Devices, Colors } from "../DesignSystem";
+import Contact from "../Footer/ContactBanner";
 
 const Footer = (props) => {
   const Footer = styled.footer`
@@ -133,17 +134,18 @@ const Footer = (props) => {
   return (
     <Footer>
       <FooterHead></FooterHead>
+      <Contact />
       <FooterBody>
         <Sitemap>
           <SitemapItem>
             <Link
-              to={`/profile`}
+              to={`/about`}
               style={{
                 color: Colors.primaryText.highEmphasis,
                 textDecoration: "none",
               }}
             >
-              Profile
+              About
             </Link>
           </SitemapItem>
           <SitemapItem>

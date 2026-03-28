@@ -13,7 +13,7 @@ const MenuWrapper = styled.div`
   gap: 2px;
   visibility: hidden;
   display: none;
-  ${Devices.tabletS} {
+  ${Devices.tabletL} {
     display: flex;
 
     flex-direction: row;
@@ -61,6 +61,20 @@ const LandingpageMenu = (props) => {
           }}
         >
           Home
+        </Link>
+      </MenuItemSmall>
+      <MenuItemSmall>
+        <Link
+          to={`/portfolio`}
+          style={{
+            color:
+              currentPath === "/portfolio"
+                ? Colors.primaryText.highEmphasis
+                : Colors.primaryText.mediumEmphasis,
+            textDecoration: "none",
+          }}
+        >
+          Work
         </Link>
       </MenuItemSmall>
       <MenuItemSmall>

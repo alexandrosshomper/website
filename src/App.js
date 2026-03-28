@@ -11,34 +11,24 @@ import NavigationSticky from "./components/Navigation/NavigationSticky.js";
 
 const Footer = lazy(() => import("./components/Footer/Footer"));
 const HomeJob = lazy(() => import("./components/Pages/Home/HomeJob"));
-const Profile = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Profile/Profile"));
-const Contact = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Contact/Contact"));
-const Portfolio = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Portfolio/Portfolio"));
-const Writing = lazy(() => import(/* webpackPrefetch: true */ "./components/Pages/Writing/Writing"));
-
-//REPORTS
-const Reports = lazy(() => import("./components/Pages/Reports/Reports.js"));
-const OASaasGrowth = lazy(
-  () => import("./components/Pages/Reports/OASaasGrowth.js"),
+const Profile = lazy(
+  () =>
+    import(/* webpackPrefetch: true */ "./components/Pages/Profile/Profile"),
 );
-const FourIndustryShifts = lazy(
-  () => import("./components/Pages/Reports/FourIndustryShifts.js"),
+const Contact = lazy(
+  () =>
+    import(/* webpackPrefetch: true */ "./components/Pages/Contact/Contact"),
 );
-
-//CASE STUDIES
-const CaseStudies = lazy(
-  () => import("./components/Pages/CaseStudies/CaseStudies"),
+const Portfolio = lazy(
+  () =>
+    import(
+      /* webpackPrefetch: true */ "./components/Pages/Portfolio/Portfolio"
+    ),
 );
-const AsanaCaseStudy = lazy(
-  () => import("./components/Pages/CaseStudies/AsanaCaseStudy"),
+const Writing = lazy(
+  () =>
+    import(/* webpackPrefetch: true */ "./components/Pages/Writing/Writing"),
 );
-
-//FLOW GALLERY
-const Flows = lazy(() => import("./components/Pages/Flows/Flows"));
-const AsanaFlow = lazy(() => import("./components/Pages/Flows/AsanaFlow"));
-const LinearFlow = lazy(() => import("./components/Pages/Flows/LinearFlow"));
-const WrikeFlow = lazy(() => import("./components/Pages/Flows/WrikeFlow.js"));
-const TrelloFlow = lazy(() => import("./components/Pages/Flows/TrelloFlow.js"));
 
 //PORTFOLIO
 const Occhio = lazy(() => import("./components/Pages/Portfolio/Occhio"));
@@ -127,66 +117,43 @@ function App() {
             name="description"
             content="Product Designer with 15+ years experience in B2B and B2C. Specialising in product-led growth, user onboarding, and design systems."
           />
-          <script type="application/ld+json">{JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Person",
-                "@id": "https://www.alexandrosshomper.de/#person",
-                "name": "Alexandros Shomper",
-                "url": "https://www.alexandrosshomper.de",
-                "jobTitle": "Product Designer",
-                "description": "Product Designer with 15+ years experience in B2B and B2C, specialising in product-led growth, onboarding, activation, and design systems.",
-                "sameAs": [
-                  "https://www.linkedin.com/in/alexshomper/",
-                  "https://github.com/alexandrosshomper"
-                ]
-              },
-              {
-                "@type": "WebSite",
-                "@id": "https://www.alexandrosshomper.de/#website",
-                "url": "https://www.alexandrosshomper.de",
-                "name": "Alexandros Shomper",
-                "author": { "@id": "https://www.alexandrosshomper.de/#person" }
-              }
-            ]
-          })}</script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": "https://www.alexandrosshomper.de/#person",
+                  name: "Alexandros Shomper",
+                  url: "https://www.alexandrosshomper.de",
+                  jobTitle: "Product Designer",
+                  description:
+                    "Product Designer with 15+ years experience in B2B and B2C, specialising in product-led growth, onboarding, activation, and design systems.",
+                  sameAs: [
+                    "https://www.linkedin.com/in/alexshomper/",
+                    "https://github.com/alexandrosshomper",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.alexandrosshomper.de/#website",
+                  url: "https://www.alexandrosshomper.de",
+                  name: "Alexandros Shomper",
+                  author: { "@id": "https://www.alexandrosshomper.de/#person" },
+                },
+              ],
+            })}
+          </script>
         </Helmet>
         <NavigationSticky />
         <Suspense fallback={renderLoader()}>
           <Switch>
-            <Route exact path="/job" component={HomeJob} />
+            <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/about" component={Profile} />
-            <Route exact path="/" component={Portfolio} />
+            <Route exact path="/" component={HomeJob} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/writing" component={Writing} />
             {/*REPORTS*/}
-            <Route exact path="/reports" component={Reports} />
-            <Route
-              exact
-              path="/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth"
-              component={OASaasGrowth}
-            />
-            <Route
-              exact
-              path="/reports/four-industry-shifts-making-onboarding-and-activation-indispensable"
-              component={FourIndustryShifts}
-            />
-            {/*CASE STUDIES*/}
-            <Route exact path="/case-studies" component={CaseStudies} />
-            <Route
-              exact
-              path="/case-studies/asana"
-              component={AsanaCaseStudy}
-            />
-            {/*FLOWS*/}
-            <Route exact path="/flows" component={Flows} />
-            <Route exact path="/flows/asana" component={AsanaFlow} />
-            <Route exact path="/flows/linear" component={LinearFlow} />
-            <Route exact path="/flows/wrike" component={WrikeFlow} />
-            <Route exact path="/flows/trello" component={TrelloFlow} />
-            {/*PORTFOLIO*/}
-            <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/portfolio/occhio" component={Occhio} />
             <Route
               exact

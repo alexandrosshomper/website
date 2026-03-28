@@ -152,7 +152,6 @@ const renderContent = () => (
           subline="Construction dealers manage thousands of orders across different Knauf entities.
 Delivery ETAs change daily, and keeping applicators informed meant endless phone calls."
         />
-        <CaseSublineTwo subline="Customer Type" />
         <p>
           <b>Dealer:</b> B2B partners who sell Knauf materials to construction
           companies and manage order logistics.

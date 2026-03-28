@@ -416,13 +416,6 @@ const Content = (props) => {
         />
       </Helmet>
       <Section>
-        <Intro />
-      </Section>
-      <Section>
-        <SectionHead headline="AI Native Tech Stack" subline="Fluent in the tools redefining how products are designed and built." centered />
-        <AiTechStack />
-      </Section>
-      <Section>
         <SectionHead
           headline="Work"
           subline="Selected projects. My work spans from product design, product management, and growth."
@@ -469,158 +462,11 @@ const Content = (props) => {
       </Section>
       <Section>
         <SectionHead
-          headline="Key strengths"
-          subline="I have worked in hybrid roles of product design, product management, and product growth"
+          headline="AI Native Tech Stack"
+          subline="Fluent in the tools redefining how products are designed and built."
+          centered
         />
-        <FlipCardPanels>
-          <FlipCard
-            eyebrow="Product Architecture"
-            eyebrowColor="#231768"
-            eyebrowBackColor="#10D5F5"
-            backgroundColor="#231768"
-            colorBack="white"
-            copy={[
-              "I create intuitive, meaningful, and usable experiences that solve real customer problems and make the product feel valuable from the first interaction.",
-            ]}
-            copyBack={[
-              "I can help you create intuitive, elegant product experiences that increase task success, customer satisfaction, and long-term adoption.",
-              "I design and refine workflows that validate user needs, reduce friction, and turn complex problems into simple, usable interfaces.",
-              "I assess and optimize the usability and performance of your core features to ensure customers immediately feel the value your product promises.",
-            ]}
-            webp="./img/PanelTestImages/square.webp"
-            png="./img/PanelTestImages/square.png"
-            jpg="./img/PanelTestImages/square.jpg"
-          />
-          <FlipCard
-            eyebrow="Product Management"
-            eyebrowColor="#206405"
-            eyebrowBackColor="#D9EDCA"
-            backgroundColor="#206405"
-            colorBack="white"
-            copy={[
-              "I align customer needs and business goals to define what should be built, why it matters, and how to deliver the right product at the right time.",
-            ]}
-            copyBack={[
-              "I can help you define what to build, why it matters, and how to deliver it in a repeatable, evidence-driven way.",
-              "I establish and improve product workflows that connect research, strategy, prioritization, and delivery; ensuring teams ship impactful features, not noise.",
-              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product's core value proposition.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-          <FlipCard
-            eyebrow="Product Growth"
-            eyebrowColor="#6A210D"
-            eyebrowBackColor="#FFB700"
-            backgroundColor="#6A210D"
-            colorBack="white"
-            copy={[
-              "I acquire the right users, activate them quickly, and keep them engaged longer by systematically removing friction and amplifying value.",
-            ]}
-            copyBack={[
-              "I can help you scale your product efficiently with PLG by increasing acquisition, activation, and retention.",
-              "I build and optimize growth workflows that analyze user behavior, identify friction, and validate high-leverage opportunities across the entire funnel.",
-              "I use data, psychology, and experiment-driven iteration to help you turn more new users into engaged, long-term customers.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-        </FlipCardPanels>
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Human Centered Leadership"
-          subline="I believe happy and healthy teams are the most productive, and innovative teams."
-        />
-
-        <CardPanels>
-          <ListPanel
-            eyebrow="Autonomy"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
-          />
-
-          <ListPanel
-            eyebrow="Mastery"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
-          />
-
-          <ListPanel
-            eyebrow="Purpose"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
-          />
-        </CardPanels>
-      </Section>{" "}
-      <Section>
-        <BlackQuote
-          quote="Building tools, communicating complex ideas,
-          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-        />
-      </Section>
-      <Section>
-        <SectionHead
-          headline="My Principles"
-          subline="Give meaning to actions and ideas."
-        />
-
-        <CardPanels>
-          <ListPanel
-            eyebrow="Data Driven/Informed"
-            copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-          />
-
-          <ListPanel
-            eyebrow="Aesthetics"
-            copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-          />
-
-          <ListPanel
-            eyebrow="Quality"
-            copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-          />
-
-          <ListPanel
-            eyebrow="Holistic"
-            copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-          />
-
-          <ListPanel
-            eyebrow="Innovative & Brave"
-            copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-          />
-
-          <ListPanel
-            eyebrow="Long Term"
-            copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-          />
-        </CardPanels>
-      </Section>
-      <Section>
-        <ButtonContainer>
-          <ButtonRow>
-            <Button
-              size="medium"
-              variant="primary"
-              href="https://www.linkedin.com/in/alexshomper/"
-              text="LinkedIn"
-              gradient={{ from: Colors.blue, to: Colors.blueLight }}
-              icon={mdiLinkedin}
-            />
-            <Button
-              href="mailto:alexandros@alexandrosshomper.de"
-              text="Email Me"
-              gradient={{ from: Colors.black, to: Colors.greyDark }}
-              icon={mdiEmail}
-            />
-          </ButtonRow>
-        </ButtonContainer>
+        <AiTechStack />
       </Section>
     </PageWrapper>
   );

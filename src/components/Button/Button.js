@@ -15,6 +15,14 @@ const sizeStyles = {
     border-radius: 20px;
     corner-shape: squircle;
   `,
+  medium: `
+    padding: 13px 32px;
+    font-size: 16px;
+    line-height: 137%;
+    letter-spacing: 0.02em;
+    border-radius: 20px;
+    corner-shape: squircle;
+  `,
   small: `
     padding: 4px 10px;
     font-size: 12px;
