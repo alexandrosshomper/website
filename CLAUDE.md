@@ -48,11 +48,12 @@ See `COORDINATION.md` for current active work.
 
 ## URL & Routing Rules (DO NOT CHANGE)
 
-- `REACT_APP_BASENAME=/production` is REQUIRED in `.env.production` — do NOT remove it
-- The hosting server (one.com) maps `alexandrosshomper.de` to `/httpd.www/` as document root, then has a server-level rewrite adding the `/production/` prefix to all paths
-- This means live URLs are `alexandrosshomper.de/production/portfolio/...` — this is forced by the host
-- react-snap include paths in `package.json` MUST have the `/production/` prefix
-- To get clean URLs, the hosting document root would need to be changed from `/httpd.www/` to `/httpd.www/production/` — this requires a change in the one.com hosting control panel, not in code
+- `REACT_APP_BASENAME` MUST be empty/unset in `.env.production` — do NOT add it back
+- one.com document root is fixed at `/httpd.www/`; the build deploys directly there (not to `/production/`)
+- Clean URLs: `alexandrosshomper.de/portfolio/knauf-material-calculator` (no `/production/` prefix)
+- react-snap include paths in `package.json` must NOT have a `/production/` prefix
+- The `.htaccess` has a 301 redirect for legacy `/production/*` → `/*` links
+- Production deploy goes to `/httpd.www/` (root); staging to `/httpd.www/stage/` — see `.github/workflows/main.yml`
 
 ## Branch Strategy
 
