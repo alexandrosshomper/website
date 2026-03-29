@@ -191,13 +191,15 @@ const BusinessCard = ({ headline, copy }) => {
 
   return (
     <BusinessCard>
-      <Portrait src="./img/Identity/PortraitProSE.png" alt="Alexandros Shomper — Product Designer" />
+      <Portrait
+        src="./img/Identity/PortraitProSE.png"
+        alt="Alexandros Shomper — Product Designer"
+      />
       <BusinessCardParagraph>
-        <Overline>Product Designer & Startup Advisor</Overline>
+        <Overline>Product Designer</Overline>
         <BusinessCardHeadline>Hi, I’m Alexandros Shomper.</BusinessCardHeadline>
         <BusinessCardCopy>
-          My super power is making <b>customer-centric and data-driven</b>{" "}
-          product decisions–fast.
+          I make <b>customer-centric and data-driven</b> — fast.
         </BusinessCardCopy>
 
         <BusinessCardCopy>
