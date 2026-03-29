@@ -13,7 +13,6 @@ import CaseImage from "../../Content/Case/CaseImage";
 import CaseHighlight from "../../Content/Case/CaseHighlight";
 import { ImpactBoxGrid } from "../../Content/Case/ImpactBox";
 import CaseVideo from "../../Content/Case/CaseVideo";
-import CaseImageBlank from "../../Content/Case/CaseImageBlank";
 import Article from "../../Content/Article/Article";
 
 const metaTitle = "Knauf Account | Alexandros Shomper";
