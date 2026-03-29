@@ -19,7 +19,9 @@ const metaTitle = "Occhio website & eCommerce | Alexandros Shomper";
 const metaDescription =
   "Digital Anthropologist. Experienced Product-, Service & Business Designer with demonstrated track record of successfully developing meaningful experiences that people love by using emerging technology, solid company purpose, and a strong brand to elevate human experiences and interactions.";
 
-const hero = () => <CaseCover imgURL="/img/portfolio/occhio-website/occhio-bento.png" />;
+const hero = () => (
+  <CaseCover imgURL="/img/portfolio/occhio-website/occhio-bento.png" />
+);
 
 const galleryItemsDiscover = [
   {
@@ -123,7 +125,6 @@ const renderContent = () => (
           size="L"
         />
         <br />
-
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="No Online Shopping & Lofty Brand Expectations – Occhio’s existing website did not allow direct purchasing, leading to customer frustration and lost sales. At the same time, the company’s redefined brand demanded an exceptional digital experience, setting a high bar for design, content, and performance." />
         <ul>
@@ -175,6 +176,34 @@ const renderContent = () => (
             <b>Optimize UX & Performance</b> Meet Occhio’s high aesthetic
             standards while ensuring the site is user-friendly and fast,
             providing rich visuals and features without sacrificing performance.
+          </li>
+        </ul>
+        <br />
+        <CaseSubline subline="Contraints" />
+        <CaseSublineTwo subline="Three legacy systems, one brand obsessed with perfection, and a green button that caused weeks of negotiation." />
+        The hardest constraints weren't technical — they were aesthetic.
+        <ul>
+          <li>
+            The new site had to pull data from three separate systems: a legacy
+            Drupal CMS, an aging PIM with no modern API, and a newly implemented
+            Salesforce CRM. Keeping content, product data, and customer data in
+            sync across all three — without surfacing that complexity to the
+            user — was a significant technical constraint that shaped every
+            content design decision.
+          </li>
+          <li>
+            Occhio's brand team and CEO held exceptionally high aesthetic
+            standards. Functional UX patterns that contradicted the visual
+            direction — including standard e-commerce conventions like
+            high-contrast purchase buttons — required extensive diplomatic work
+            with the agency and C-suite before they could be implemented. The
+            green CTA button alone was months of conversation.
+          </li>
+          <li>
+            Performance and brand were in direct tension throughout. Occhio's
+            identity is built on rich, high-resolution imagery. Every
+            optimisation decision had to be negotiated against a brand standard
+            that treated compression as a compromise.
           </li>
         </ul>
       </ArticleSectionContent>
@@ -403,6 +432,40 @@ const renderContent = () => (
           fortunes.
         </p>
       </ArticleSectionContent>
+      <ArticleSection>
+        <ArticleSectionContent>
+          <CaseSectionHead
+            overline="Reflection"
+            headline="We defined success after the fact. That's not success measurement, it's storytelling."
+            subline="The project delivered real results — but without upfront baselines, we couldn't prove it as precisely as the work deserved."
+          />
+          <p>
+            The biggest structural miss on this project was not establishing
+            quantified success metrics before a single screen was designed.
+            <br />
+            Occhio's leadership measured success through awards, brand
+            sentiment, and traffic — all real, but none of them had a pre-launch
+            baseline we could point to. <br />
+            "Conversion increased significantly" is hard to defend in a
+            boardroom, and harder to defend in a portfolio. The 5% online
+            revenue figure is the one clean proof point we have — and it's
+            compelling precisely because it's specific. <br />
+            <br />
+            Next time I'd insist on a measurement framework signed off before
+            the design phase starts: traffic baseline, conversion baseline,
+            time-on-site baseline, newsletter sign-up rate. <br />
+            The WebAR feature was the right creative call for the brand story,
+            but adoption was lower than the engineering investment warranted —
+            in retrospect, that resource could have gone further on the
+            configurator, which drove actual purchase decisions more directly.
+            <br />
+            The pivot away from full-screen renderings mid-project was also
+            right, but it came late. Better performance benchmarking at the
+            wireframe stage would have caught that tradeoff before we'd built
+            the wrong thing.
+          </p>
+        </ArticleSectionContent>
+      </ArticleSection>
     </ArticleSection>
   </>
 );
