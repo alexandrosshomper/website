@@ -99,7 +99,6 @@ const renderContent = () => (
           subline="Knauf Account is the single sign-on and customer identity platform powering the entire Knauf digital ecosystem."
         />{" "}
         <CaseImage imgURL="/img/portfolio/knauf-account/table.png" size="L" />
-        <CaseSublineTwo subline="About Knauf" />
         <p>
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
@@ -119,10 +118,12 @@ const renderContent = () => (
             "Team onboarding time ↓ drastically",
           ]}
         />
-        As PDM, I personally led all discovery and research phases, crunched the
-        numbers, owned the design system and templates, and was directly
-        responsible for the onboarding flow and key feature design. The team
-        owned engineering, and delivery.
+        <p>
+          As PDM, I personally led all discovery and research phases, crunched
+          the numbers, owned the design system and templates, and was directly
+          responsible for the onboarding flow and key feature design. The team
+          owned engineering, and delivery.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
 
