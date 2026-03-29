@@ -12,7 +12,7 @@ import SectionOverline from "../../Content/Section/SectionOverline";
 const Content = () => {
   const Content = styled.div`
     text-align: left;
-    margin-top: 120px;
+    margin-top: 200px;
   `;
 
   const Section = styled.section`
@@ -99,8 +99,7 @@ const Content = () => {
       </Helmet>
       <Section>
         <SectionHead
-          divider="Community Service"
-          headline="Writing on Product, Marketing, Design, and Growth"
+          headline="Writing"
           subline="Sharing articles, insights, and frameworks with the product community."
         />
         <SectionOverline subline="My playbooks about PLG" />
