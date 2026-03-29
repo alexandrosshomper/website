@@ -105,20 +105,7 @@ const renderContent = () => (
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
           operating in 90+ countries). The unit focuses on developing B2B
-          digital products for the construction industry. The mandate was to
-          scale a portfolio of digital solutions across global markets while
-          driving a user-centric transformation.
-        </p>
-        <CaseSublineTwo subline="Customer Types" />
-        <p>
-          <b>Dealer:</b> B2B partners who sell Knauf materials to construction
-          companies and manage order logistics.
-          <br />
-          <b>Applicator:</b> Contractors, on-site professionals who plan,
-          measure, and execute installations.
-          <br />
-          <b>Specifier:</b> Architects, planners, and general contractors who
-          define material requirements.
+          digital products for the construction industry.
         </p>
         <CaseCitations
           role="Product Design Manager, 12 markets"
@@ -133,11 +120,10 @@ const renderContent = () => (
             "Team onboarding time ↓ drastically",
           ]}
         />
-        <CaseSublineTwo subline="As Product Design Manager, I led the design from product strategy, to concept, to growth across all products & product teams." />
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-material-calculator/design-management.png"
-          size="L"
-        />{" "}
+        As PDM, I personally led all discovery and research phases, crunched the
+        numbers, owned the design system and templates, and was directly
+        responsible for the onboarding flow and key feature design. The team
+        owned engineering, and delivery.
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -154,7 +140,6 @@ const renderContent = () => (
         />
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="The ecosystem couldn’t scale because identity wasn’t unified." />
-
         <p>
           Users had to remember multiple passwords, re-enter the same data for
           every country or app, and had no central place to manage teams, roles,
@@ -168,7 +153,6 @@ const renderContent = () => (
         </ul>
         <CaseSubline subline="The Goal" />
         <CaseCopy copy="Build a unified access platform that becomes the gateway to the entire Knauf ecosystem — and the foundation for cross-product growth." />
-
         <p>The Knauf Account had to:</p>
         <ul>
           <li>Replace all legacy accounts</li>
@@ -178,15 +162,37 @@ const renderContent = () => (
           <li>Enable personalized pricing, content, and experience</li>
           <li>Enable personalized pricing, content, and experience</li>
         </ul>
-
         <p>
           A platform designed not for one product but for every product Knauf
           will ever build.
         </p>
-        <CaseImageBlank
-          imgURL="/img/portfolio/knauf-account/master-key.png"
-          size="S"
-        />
+        <br />
+        <CaseSubline subline="Contraints" />
+        <CaseSublineTwo subline="A decade of legacy systems, a hacker attack, and a GDPR microscope." />
+        Unifying identity across Knauf meant inheriting every security and
+        compliance problem the organisation had accumulated.
+        <ul>
+          <li>
+            None of the legacy systems supported SSO. Most were built by
+            internal IT teams, some over a decade ago, with no interoperability
+            in mind. The migration path had to be designed around systems that
+            were never meant to be replaced — only extended.
+          </li>
+          <li>
+            Knauf suffered a significant hacker attack in 2020. This placed the
+            Knauf Account under intense security scrutiny, particularly in
+            Germany, and introduced hard requirements around authentication
+            standards, data residency, and audit trails that shaped the
+            platform's architecture from day one.
+          </li>
+          <li>
+            Country teams had genuine concerns about losing autonomy. Their
+            reliance on internally built systems wasn't just familiarity — it
+            was ownership. Designing a platform that centralised identity while
+            preserving the feeling of local control was one of the hardest
+            non-design problems on this project.
+          </li>
+        </ul>
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -468,10 +474,6 @@ and support workload will drop significantly."
           headline="A unified platform enabling ecosystem growth"
           subline="Knauf Account became the identity backbone for all digital products at Knauf."
         />
-        <p>
-          A foundation that unlocked personalization, efficiency, and
-          scalability across markets and brands.
-        </p>
         <table>
           <tbody>
             <tr>
@@ -480,26 +482,70 @@ and support workload will drop significantly."
             </tr>
             <tr>
               <td>Activation across apps</td>
-              <td>↓20%</td>
+              <td>+20%</td>
             </tr>
             <tr>
-              <td>Support tickets ↓ drastically</td>
+              <td>Support tickets</td>
               <td>-2h/week</td>
             </tr>
             <tr>
-              <td>Team onboarding time ↓ drastically</td>
+              <td>Team onboarding time</td>
               <td>+30%</td>
             </tr>
             <tr>
-              <td>CRM data accuracy ↑</td>
+              <td>CRM data accuracy</td>
               <td>+25%</td>
             </tr>
             <tr>
-              <td>Cross-app usage ↑</td>
+              <td>Cross-app usage</td>
               <td>9</td>
             </tr>
           </tbody>
         </table>
+        <p>
+          Because Knauf Account was infrastructure, its impact multiplied across
+          everything built after it. <br />
+          <br />
+          The design system scaled to all four products, cutting delivery time
+          by 40%. Identity solved once meant every downstream team could focus
+          on value, not access. I used this project to formalise the Knauf
+          Growth Guild and introduce UX Maturity Assessments across markets.{" "}
+          <br />
+          <br />
+          Knauf Account didn't just unlock better products — it unlocked a
+          better organisation.
+        </p>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflection"
+          headline="We designed the new account experience. We underdesigned the exit from the old one."
+          subline="SSO is only as good as your migration path — and ours was an afterthought."
+        />
+        <p>
+          The architecture of the Knauf Account was right: one identity, one
+          source of truth, one onboarding flow adaptable to every customer type.
+          <br />
+          What we didn't invest enough in early was the migration experience for
+          users who already had 5–12 existing accounts. For them, the "new
+          account" wasn't a fresh start — it was yet another system asking them
+          to do something. <br />
+          <br />
+          We designed the migration as a technical handoff rather than a user
+          experience in its own right, and support tickets in the first eight
+          weeks reflected that.
+          <br />
+          <br />
+          I'd dedicate a full design sprint to the migration flow before launch.
+          The other lesson: team management was scoped as a secondary feature
+          and it became the reason enterprise clients adopted the platform at
+          all.
+          <br />
+          We got lucky that the initial version was good enough — but we should
+          have validated enterprise team workflows much earlier in discovery.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
 

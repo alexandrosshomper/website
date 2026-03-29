@@ -13,6 +13,7 @@ import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 import AiTechStack from "../../Content/AiTechStack/AiTechStack";
+import LogoWall from "../../Content/LogoWall/LogoWall";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -314,6 +315,7 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <Intro />
+        <LogoWall></LogoWall>
       </Section>
       <Section>
         <SectionHead

@@ -138,6 +138,12 @@ const renderContent = () => (
             "2h/week saved per dealer",
           ]}
         />
+        <p>
+          As PDM, I personally led all discovery and research phases, crunched
+          the numbers, owned the design system and templates, and was directly
+          responsible for the onboarding flow and key feature design. The team
+          owned engineering, and delivery.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -174,6 +180,32 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           </li>
           <li>Give transparency to the deliveries on material level</li>
           <li>Help our customers work more seamlessly togehter</li>
+        </ul>
+        <br />
+        <CaseSubline subline="Contraints" />
+        <CaseSublineTwo subline="Every brand. Every country. A completely different system." />
+        Unifying order data across Knauf's brands wasn't a data architecture
+        problem — it was a political one.
+        <ul>
+          <li>
+            Each Knauf brand operated independently, and each brand ran
+            different systems in each country. A brand wasn't just a sub-brand —
+            in another market it was effectively a separate company.
+            Consolidating that into a single order view required constant
+            tradeoffs between technical feasibility and user-centricity.
+          </li>
+          <li>
+            Scope changed frequently due to HQ reprioritisation and markets that
+            weren't ready to adopt the new requirements on schedule. The roadmap
+            was live and shifting throughout the 12-month build.
+          </li>
+          <li>
+            Several markets had spent years building their own internal tools
+            that served their needs well. Asking them to adopt a pan-European
+            solution that was necessarily a compromise — optimised for the
+            majority, not the exception — required months of political
+            groundwork to even get a fair hearing.
+          </li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
@@ -272,10 +304,7 @@ Delivery ETAs change daily, and keeping applicators informed meant endless phone
           imgURL="/img/portfolio/knauf-order-overview/cover-home.png"
           size="L"
         />
-        <CaseCopy
-          copy="Every tender arrived in a different format — Excel, PDF, or even hand-written.
-We built a guided import flow that parses items and matches them to Knauf’s product systems."
-        />
+        <CaseCopy copy="I created a single source-of-truth order table that consolidates all delivery information, replacing what used to require several calls or systems." />
         <CaseCopy copy="The single source of truth for all deliveries." />
         <br />
         <br />
@@ -446,19 +475,6 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
           headline="Success in numbers"
           subline="Knauf Order Overview became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
         />
-        <p>
-          A product that turned analog workflows into a digital growth engine —
-          and a design-led transformation that shaped how Knauf builds all
-          future tools.
-        </p>
-        <ul>
-          <li>
-            Scaled design system across 4 apps, cutting delivery time by 40%.
-          </li>
-          <li>Mentored designers in hypothesis-driven experimentation.</li>
-          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
-          <li>Introduced UX Maturity Assessments company-wide.</li>
-        </ul>
         <table>
           <tbody>
             <tr>
@@ -467,7 +483,7 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
             </tr>
             <tr>
               <td>Inquiry Calls</td>
-              <td>↓20%</td>
+              <td>-20%</td>
             </tr>
             <tr>
               <td>Dealer Admin Work</td>
@@ -487,6 +503,46 @@ We built a guided import flow that parses items and matches them to Knauf’s pr
             </tr>
           </tbody>
         </table>
+        <p>
+          Order Overview also accelerated how the whole team shipped. Components
+          I built for the order table and calendar view were adopted across all
+          four Knauf products, cutting delivery time by 40% portfolio-wide.
+          <br />
+          <br />
+          Seeing a well-validated product move faster than a sprawling one
+          shaped how I structured the team going forward — formalised into the
+          Knauf Growth Guild and company-wide UX Maturity Assessments. <br />
+          <br />
+          <br />
+          Order Overview proved that transparency, done with precision, scales.
+        </p>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflection"
+          headline="The calendar view should have been the starting point, not the second feature."
+          subline="We validated the wrong hypothesis first — tables felt safe, but time was what dealers actually thought in."
+        />
+        <p>
+          Our initial scope centred on the order table, which was the logical
+          data structure. But in post-launch interviews, dealers consistently
+          said the calendar view changed how they planned their week — not the
+          table. <br />
+          In hindsight, the mental model we mapped clearly showed that logistics
+          is time-first, not data-first. We saw it in the research and still
+          built the table first. I'd flip that sequence if I ran this project
+          again. <br />
+          <br />
+          On notification settings: we gave users maximum configurability from
+          day one because interviews showed highly varied preferences. <br />
+          That was right, but we underestimated how much that choice paralysis
+          delayed time-to-first-value — many dealers didn't customise at all
+          initially, which suppressed our day-7 retention numbers in the first
+          month. Smarter defaults with opt-in customisation would have served
+          both goals better.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
 
