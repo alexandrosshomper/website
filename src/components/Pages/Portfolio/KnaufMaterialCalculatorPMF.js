@@ -135,6 +135,12 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
+        <p>
+          As PDM, I personally led all discovery and research phases, crunched
+          the numbers, owned the design system and templates, and was directly
+          responsible for the onboarding flow and key feature design. The team
+          owned engineering, and delivery.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
 
