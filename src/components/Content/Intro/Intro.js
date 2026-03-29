@@ -209,7 +209,7 @@ const Intro = () => {
       </IntroHeading>
       <Subline>
         I turn complex workflows into products people actually use. <br />
-        15+ years across product design, PLG, and B2B SaaS.
+        15+ years across product management, design, PLG, and B2B SaaS.
       </Subline>
     </IntroWrapper>
   );

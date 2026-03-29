@@ -13,7 +13,7 @@ import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 import AiTechStack from "../../Content/AiTechStack/AiTechStack";
-
+import LogoWall from "../../Content/LogoWall/LogoWall";
 
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
@@ -167,7 +167,7 @@ const CaseBlockDetails = styled.div`
   order: 1;
   text-align: left;
   ${Devices.tabletS} {
-    margin: 32px 0px 24px 24px;
+    margin: 24px 0px 24px 24px;
     order: 0;
     width: 40%;
   }
@@ -175,16 +175,6 @@ const CaseBlockDetails = styled.div`
 
 const CaseBlockDetailsText = styled.div`
   margin: 0px 0px 0px 0px;
-`;
-
-const CaseBlockEyebrow = styled.p`
-  color: ${Colors.primaryText.highEmphasis};
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 110%;
-
-  text-align: left;
-  margin: 0px 0px 4px 0px;
 `;
 
 const CaseBlockHeadline = styled.h3`
@@ -325,6 +315,7 @@ const Content = (props) => {
       </Helmet>
       <Section>
         <Intro />
+        <LogoWall></LogoWall>
       </Section>
       <Section>
         <SectionHead
@@ -349,10 +340,9 @@ const Content = (props) => {
             >
               <CaseBlockDetails>
                 <CaseBlockDetailsText>
-                  <CaseBlockEyebrow style={{ color: caseStudy.color }}>
-                    {caseStudy.company}
-                  </CaseBlockEyebrow>
-                  <CaseBlockHeadline>{caseStudy.headline}</CaseBlockHeadline>
+                  <CaseBlockHeadline>
+                    {caseStudy.company} {caseStudy.headline}
+                  </CaseBlockHeadline>
                   <CaseBlockSubline>{caseStudy.subline}</CaseBlockSubline>
                   <CaseBlockCopy>{caseStudy.copy}</CaseBlockCopy>
                 </CaseBlockDetailsText>

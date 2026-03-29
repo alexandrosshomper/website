@@ -33,7 +33,7 @@ const galleryItemsDiscover = [
     imgMobileURL:
       "/img/portfolio/knauf-material-calculator/detail-field-research-mobile.png",
     headline: "Foundational Research",
-    copy: "I spend the whole year of 2020 to do nothing else but research. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
+    copy: "I invested a whole year into user research, interviews, field visits, etc. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const galleryItemsDiscover = [
     imgMobileURL:
       "/img/portfolio/knauf-material-calculator/detail-project-journey-mobile.png",
     headline: "Construction Project Journey",
-    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
+    copy: "I mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. This became our roadmap.",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const galleryItemsDiscover = [
     imgMobileURL:
       "/img/portfolio/knauf-material-calculator/detail-scalability-mobile.png",
     headline: "Scalability Assessment",
-    copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
+    copy: "For each initiative we assessed the scalability of each initiative. How big is the problem globally that we are aiming to solve.",
   },
 ];
 const galleryItemsDesign = [
@@ -119,12 +119,9 @@ const renderContent = () => (
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
           operating in 90+ countries). The unit focuses on developing B2B
-          digital products for the construction industry. The mandate was to
-          scale a portfolio of digital solutions across global markets while
-          driving a user-centric transformation.
+          digital products for the construction industry.
         </p>
 
-      
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="PO, Eng, Data, Design"
@@ -138,7 +135,6 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
-        
       </ArticleSectionContent>
     </ArticleSection>
 
@@ -157,7 +153,6 @@ const renderContent = () => (
           imgURL="/img/portfolio/knauf-material-calculator/cover-problem.png"
           size="L"
         />
-
         <CaseSubline subline="The Problem" />
         <CaseCopy copy="Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and calls, leading to:" />
         <ul>
@@ -172,6 +167,31 @@ const renderContent = () => (
           <li>Helps users reach value (first quote sent) within 15 minutes</li>
           <li>Bridges quote → plan → order seamlessly</li>
           <li>Builds trust through precision and reliability</li>
+        </ul>
+        <br />
+        <CaseSubline subline="Contraints" />
+        <CaseSublineTwo subline="One product, five legacy schemas, twelve markets." />
+        The technical and political landscape was as fragmented as the workflows
+        we were replacing.
+        <ul>
+          <li>
+            Every Knauf entity ran its own ERP, SAP, and order systems — each
+            with a different data schema. I had to design for two realities
+            simultaneously: a compatibility layer for legacy systems still in
+            operation, and a forward-compatible schema for the new
+            infrastructure being rolled out. Some countries required
+            country-specific variations of both.
+          </li>
+          <li>
+            Digital leaders and entity heads across markets had conflicting
+            requirements and strong opinions on product direction. Aligning them
+            without designing by committee was a constant negotiation.
+          </li>
+          <li>
+            There was no central authority that could mandate adoption. Buy-in
+            had to be earned market by market, which meant scope decisions were
+            always political as well as design decisions.
+          </li>
         </ul>
       </ArticleSectionContent>
     </ArticleSection>
@@ -437,19 +457,7 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
           headline="Success in numbers"
           subline="Knauf Material Calculator became the core product in Knauf’s digital ecosystem, adopted across 12 European markets."
         />
-        <p>
-          A product that turned analog workflows into a digital growth engine —
-          and a design-led transformation that shaped how Knauf builds all
-          future tools.
-        </p>
-        <ul>
-          <li>
-            Scaled design system across 4 apps, cutting delivery time by 40%.
-          </li>
-          <li>Mentored designers in hypothesis-driven experimentation.</li>
-          <li>Built “Growth Guild” (Design + PM + Data + Engineering).</li>
-          <li>Introduced UX Maturity Assessments company-wide.</li>
-        </ul>
+
         <table>
           <tbody>
             <tr>
@@ -474,6 +482,47 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
             </tr>
           </tbody>
         </table>
+        <p>
+          The Material Calculator didn't just ship — it became the template for
+          how Knauf Digital builds. The design system I created for this product
+          scaled across all four Knauf apps, cutting design-to-delivery time by
+          40%. <br />
+          <br />
+          The research rigour I introduced here — field research, JTBD framing,
+          PMF hypotheses — became the team's standard operating model,
+          formalised into a cross-functional Growth Guild and company-wide UX
+          Maturity Assessments. <br />
+          <br />
+          What started as a quoting tool for construction sites became the
+          foundation for how an entire innovation unit works.
+        </p>
+      </ArticleSectionContent>
+    </ArticleSection>
+    <ArticleSection>
+      <ArticleSectionContent>
+        <CaseSectionHead
+          overline="Reflection"
+          headline="We were right to go slow — but slow in the wrong direction."
+          subline="Spending a full year on research before designing was the right instinct. Spending it without defining success metrics upfront was the mistake."
+        />
+        <p>
+          We knew what "value" looked like qualitatively before we started
+          building — a quote sent, a plan linked, an order placed. <br />
+          What we didn't define early enough was how we'd measure whether users
+          reached it. We instrumented the product about six weeks post-launch,
+          which meant we lost an entire cohort of early adopters whose drop-off
+          patterns could have shaped the onboarding flow before it scaled to 12
+          markets. <br />
+          If I were doing this again, I'd write the measurement plan on day one
+          of design, not day one after launch. <br />
+          <br />
+          The design system was the right call — it cut delivery time across all
+          four products — but the early atomisation created some rigidity in
+          product-specific edge cases that the teams had to work around later.
+          <br />
+          That's a tradeoff I'd make again, but I'd budget one dedicated sprint
+          at the three-month mark to review what the system wasn't covering.
+        </p>
       </ArticleSectionContent>
     </ArticleSection>
 

@@ -71,21 +71,36 @@ const Content = () => {
     <Content>
       <Helmet>
         <title>Writing | Alexandros Shomper</title>
-        <meta name="description" content="Articles and essays on product-led growth, user onboarding, design systems, and product management." />
+        <meta
+          name="description"
+          content="Articles and essays on product-led growth, user onboarding, design systems, and product management."
+        />
         <link rel="canonical" href="https://www.alexandrosshomper.de/writing" />
         <meta property="og:title" content="Writing | Alexandros Shomper" />
-        <meta property="og:description" content="Articles and essays on product-led growth, user onboarding, design systems, and product management." />
-        <meta property="og:url" content="https://www.alexandrosshomper.de/writing" />
+        <meta
+          property="og:description"
+          content="Articles and essays on product-led growth, user onboarding, design systems, and product management."
+        />
+        <meta
+          property="og:url"
+          content="https://www.alexandrosshomper.de/writing"
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta
+          property="og:image"
+          content="https://www.alexandrosshomper.de/img/social/og-default.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Writing | Alexandros Shomper" />
-        <meta name="twitter:description" content="Articles and essays on product-led growth, user onboarding, design systems, and product management." />
+        <meta
+          name="twitter:description"
+          content="Articles and essays on product-led growth, user onboarding, design systems, and product management."
+        />
       </Helmet>
       <Section>
         <SectionHead
           divider="Community Service"
-          headline="Writing on Product, Design, Marketing and Growth"
+          headline="Writing on Product, Marketing, Design, and Growth"
           subline="Sharing articles, insights, and frameworks with the product community."
         />
         <SectionOverline subline="My playbooks about PLG" />
