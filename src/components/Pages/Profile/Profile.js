@@ -10,9 +10,14 @@ import SectionCopy from "../../Content/Section/SectionCopy";
 import SectionDivider from "../../Content/Section/SectionDivider";
 import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Button from "../../Button/Button";
+import FlipCard from "../../Content/FlipCard/FlipCard";
+import ListPanel from "../../Content/List/ListPanel/ListPanel";
+import BlackQuote from "../../Content/BlackQuote/BlackQuote";
 
-const mdiEmail = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
-const mdiLinkedin = "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
+const mdiEmail =
+  "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
+const mdiLinkedin =
+  "M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z";
 
 function RevealWhenVisible({ children }) {
   const controls = useAnimation();
@@ -117,8 +122,8 @@ const AnnotationWrapper = styled.div`
 
 const PageWrapper = styled.main`
   text-align: left;
-  margin-top: 220px;
-  margin-bottom: 200px;
+  margin-top: 200px;
+  margin-bottom: 100px;
 `;
 const CVWrapper = styled.div`
   display: flex;
@@ -334,6 +339,68 @@ const VisitButton = styled.button`
     outline-offset: 2px;
   }
 `;
+const CardPanels = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: auto;
+  justify-content: space-between;
+  align-content: center;
+  align-items: stretch;
+  --gap: 12px;
+
+  margin-bottom: calc(1 * var(--gap));
+  margin-right: 12px;
+  margin-left: 12px;
+
+  ${Devices.tabletS} {
+    width: 576px;
+    margin: 0 auto;
+    margin-bottom: calc(-1 * var(--gap));
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    flex-direction: row;
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
+const FlipCardPanels = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: auto;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  --gap: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: calc(1 * var(--gap));
+
+  ${Devices.tabletS} {
+    width: 576px;
+
+    margin-bottom: calc(-1 * var(--gap));
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  ${Devices.tabletM} {
+    width: 720px;
+    margin-left: calc(1.6 * var(--gap));
+    margin-right: calc(1.6 * var(--gap));
+  }
+  ${Devices.laptopS} {
+    width: 864px;
+  }
+  ${Devices.laptopM} {
+    width: 1152px;
+  }
+`;
 
 const sections = [
   {
@@ -430,19 +497,32 @@ const Profile = () => {
     <PageWrapper>
       <Helmet>
         <title>About | Alexandros Shomper</title>
-        <meta name="description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
+        <meta
+          name="description"
+          content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership."
+        />
         <link rel="canonical" href="https://www.alexandrosshomper.de/about" />
         <meta property="og:title" content="About | Alexandros Shomper" />
-        <meta property="og:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
-        <meta property="og:url" content="https://www.alexandrosshomper.de/about" />
+        <meta
+          property="og:description"
+          content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership."
+        />
+        <meta
+          property="og:url"
+          content="https://www.alexandrosshomper.de/about"
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.alexandrosshomper.de/img/social/og-default.jpg" />
+        <meta
+          property="og:image"
+          content="https://www.alexandrosshomper.de/img/social/og-default.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About | Alexandros Shomper" />
-        <meta name="twitter:description" content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership." />
+        <meta
+          name="twitter:description"
+          content="15+ years in product, design, and growth. From advertising and brand to SaaS product management, PLG, and design leadership."
+        />
       </Helmet>
-
-
       <Section>
         <SectionHead headline="A little bit about me" />
         <BusinessCard
@@ -534,6 +614,103 @@ const Profile = () => {
             />
           </AnnotationWrapper>
         </RevealWhenVisible>
+      </Section>
+      <Section>
+        <SectionHead
+          headline="Key strengths"
+          subline="I have worked in hybrid roles of product design, product management, and product growth"
+        />
+        <FlipCardPanels>
+          <FlipCard
+            eyebrow="Product Design"
+            eyebrowColor="#231768"
+            eyebrowBackColor="#10D5F5"
+            backgroundColor="#231768"
+            colorBack="white"
+            copy={[""]}
+            copyBack={[
+              "I turn complex workflows into products people actually use. My focus is always time-to-value — getting users to their first meaningful moment as fast as possible, then designing the experience that keeps them.",
+            ]}
+          />
+          <FlipCard
+            eyebrow="Product Thinking"
+            eyebrowColor="#206405"
+            eyebrowBackColor="#D9EDCA"
+            backgroundColor="#206405"
+            colorBack="white"
+            copy={[""]}
+            copyBack={[
+              "I bring PM instincts to design. I understand what to build and why before I decide how it should look. That means I can drive scope decisions, challenge briefs, and connect design choices directly to business outcomes.",
+            ]}
+          />
+          <FlipCard
+            eyebrow="Product Growth"
+            eyebrowColor="#6A210D"
+            eyebrowBackColor="#FFB700"
+            backgroundColor="#6A210D"
+            colorBack="white"
+            copy={[""]}
+            copyBack={[
+              "I design for activation and retention, not just for launch. I work with data, run experiments, and build the growth loops that turn new users into long-term ones. PLG is not a strategy I apply after the fact — it shapes the product from the first screen.",
+            ]}
+          />
+        </FlipCardPanels>
+      </Section>
+      <Section>
+        <SectionHead
+          headline="Human Centered Leadership"
+          subline="I believe happy and healthy teams are the most productive, and innovative teams."
+        />
+
+        <CardPanels>
+          <ListPanel
+            eyebrow="Autonomy"
+            eyebrowColor1={Colors.green}
+            eyebrowColor2={Colors.greenLight}
+            copy="The best work comes from people who own their decisions. I set direction clearly, then get out of the way. Micromanagement kills the creative risk-taking that produces anything worth shipping."
+          />
+
+          <ListPanel
+            eyebrow="Mastery"
+            eyebrowColor1={Colors.green}
+            eyebrowColor2={Colors.greenLight}
+            copy="I invest in the people I work with. That means design critiques with real feedback, pairing on hard problems, and creating the space to try things that might not work. Growth doesn't happen in comfort zones."
+          />
+
+          <ListPanel
+            eyebrow="Purpose"
+            eyebrowColor1={Colors.green}
+            eyebrowColor2={Colors.greenLight}
+            copy="Teams do their best work when they understand why it matters — not just to the business, but to the people using what they're building. I make that connection explicit, and I revisit it when it gets lost."
+          />
+        </CardPanels>
+      </Section>{" "}
+      <Section>
+        <SectionHead
+          headline="My Principles"
+          subline="Give meaning to actions and ideas."
+        />
+
+        <CardPanels>
+          <ListPanel
+            eyebrow="Aesthetics"
+            copy="Beautiful products are more useful. Craft is not decoration — it's how you signal to users that the product deserves their trust."
+          />
+          <ListPanel
+            eyebrow="Data Driven/Informed"
+            copy="Data tells you what is happening. Research tells you why. You need both before you design anything. I never treat a metric as a conclusion — only as the beginning of a question."
+          />
+          <ListPanel
+            eyebrow="Quality"
+            copy="Outcome beats output. No one remembers a late launch. Everyone remembers a bad product."
+          />
+        </CardPanels>
+      </Section>
+      <Section>
+        <BlackQuote
+          quote="Building tools, communicating complex ideas,
+          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
+        />
       </Section>
       <CVWrapper>
         <Hero>

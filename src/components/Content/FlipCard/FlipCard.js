@@ -45,7 +45,10 @@ const FlipCard = ({
     max-height: ${!isFlipped ? "2000px" : "0"};
     opacity: ${!isFlipped ? 1 : 0};
     padding: ${!isFlipped ? "30px 30px 72px 30px" : "0 30px"};
-    transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.4s ease;
+    transition:
+      max-height 0.45s ease,
+      opacity 0.3s ease,
+      padding 0.4s ease;
   `;
 
   const BackContent = styled.div`
@@ -54,7 +57,10 @@ const FlipCard = ({
     max-height: ${isFlipped ? "2000px" : "0"};
     opacity: ${isFlipped ? 1 : 0};
     padding: ${isFlipped ? "30px 30px 72px 30px" : "0 30px"};
-    transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.4s ease;
+    transition:
+      max-height 0.45s ease,
+      opacity 0.3s ease,
+      padding 0.4s ease;
   `;
   const ButtonFooterRow = styled.div`
     display: flex;
@@ -91,7 +97,9 @@ const FlipCard = ({
     justify-content: center;
     align-items: center;
     transform: rotate(${isFlipped ? "45deg" : "0deg"});
-    transition: transform 0.4s ease, background-color 0.4s ease;
+    transition:
+      transform 0.4s ease,
+      background-color 0.4s ease;
 
     ${Devices.tabletS} {
     }
