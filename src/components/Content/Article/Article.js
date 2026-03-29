@@ -4,7 +4,8 @@ import React from "react";
 import { Colors, Devices } from "../../DesignSystem";
 import Icon from "@mdi/react";
 
-const mdiOpenInNew = "M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z";
+const mdiOpenInNew =
+  "M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z";
 
 const Article = ({ headline, subline, imgURL, meta, link }) => {
   const Article = styled.a`
@@ -136,6 +137,7 @@ const Article = ({ headline, subline, imgURL, meta, link }) => {
 
     -webkit-box-direction: normal;
     -webkit-font-smoothing: antialiased;
+    border-radius: 0.38rem;
 
     width: 80px;
     height: 53px;

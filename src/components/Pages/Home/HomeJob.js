@@ -5,12 +5,9 @@ import styled from "@emotion/styled";
 import { ArrowRight } from "lucide-react";
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
-import BlackQuote from "../../Content/BlackQuote/BlackQuote";
-import ListPanel from "../../Content/List/ListPanel/ListPanel";
 import Intro from "../../Content/Intro/Intro";
 import caseStudiesData from "../../../data/portfolio/portfolio-homepage.json";
 import Button from "../../Button/Button";
-import FlipCard from "../../Content/FlipCard/FlipCard";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 import AiTechStack from "../../Content/AiTechStack/AiTechStack";
 import LogoWall from "../../Content/LogoWall/LogoWall";
@@ -73,37 +70,6 @@ const Section = styled.section`
   align-self: stretch;
   flex-grow: 0;
   margin-bottom: 200px;
-`;
-
-const CardPanels = styled.section`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: space-between;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-
-  margin-bottom: calc(1 * var(--gap));
-  margin-right: 12px;
-  margin-left: 12px;
-
-  ${Devices.tabletS} {
-    width: 576px;
-    margin: 0 auto;
-    margin-bottom: calc(-1 * var(--gap));
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    flex-direction: row;
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
 `;
 
 const CaseBlockImageWrapper = styled.div`
@@ -236,39 +202,6 @@ const EmptyState = styled.p`
   text-align: center;
 `;
 
-const FlipCardPanels = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: auto;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: stretch;
-  --gap: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-bottom: calc(1 * var(--gap));
-
-  ${Devices.tabletS} {
-    width: 576px;
-
-    margin-bottom: calc(-1 * var(--gap));
-    flex-wrap: nowrap;
-    gap: 12px;
-  }
-  ${Devices.tabletM} {
-    width: 720px;
-    margin-left: calc(1.6 * var(--gap));
-    margin-right: calc(1.6 * var(--gap));
-  }
-  ${Devices.laptopS} {
-    width: 864px;
-  }
-  ${Devices.laptopM} {
-    width: 1152px;
-  }
-`;
-
 const Content = (props) => {
   const [selectedType, setSelectedType] = useState(CASE_STUDY_TYPES.ALL);
   const { pathname } = useLocation();
@@ -327,8 +260,8 @@ const Content = (props) => {
       </Section>
       <Section>
         <SectionHead
-          headline="Work"
-          subline="Selected projects. My work spans from product design, product management, and growth."
+          headline="Selected Work"
+          subline="My work spans from product design, product management, and growth."
         />
 
         {filteredCaseStudies.length > 0 ? (
@@ -368,141 +301,6 @@ const Content = (props) => {
             soon.
           </EmptyState>
         )}
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Key strengths"
-          subline="I have worked in hybrid roles of product design, product management, and product growth"
-        />
-        <FlipCardPanels>
-          <FlipCard
-            eyebrow="Product Architecture"
-            eyebrowColor="#231768"
-            eyebrowBackColor="#10D5F5"
-            backgroundColor="#231768"
-            colorBack="white"
-            copy={[
-              "I create intuitive, meaningful, and usable experiences that solve real customer problems and make the product feel valuable from the first interaction.",
-            ]}
-            copyBack={[
-              "I can help you create intuitive, elegant product experiences that increase task success, customer satisfaction, and long-term adoption.",
-              "I design and refine workflows that validate user needs, reduce friction, and turn complex problems into simple, usable interfaces.",
-              "I assess and optimize the usability and performance of your core features to ensure customers immediately feel the value your product promises.",
-            ]}
-            webp="./img/PanelTestImages/square.webp"
-            png="./img/PanelTestImages/square.png"
-            jpg="./img/PanelTestImages/square.jpg"
-          />
-          <FlipCard
-            eyebrow="Product Management"
-            eyebrowColor="#206405"
-            eyebrowBackColor="#D9EDCA"
-            backgroundColor="#206405"
-            colorBack="white"
-            copy={[
-              "I align customer needs and business goals to define what should be built, why it matters, and how to deliver the right product at the right time.",
-            ]}
-            copyBack={[
-              "I can help you define what to build, why it matters, and how to deliver it in a repeatable, evidence-driven way.",
-              "I establish and improve product workflows that connect research, strategy, prioritization, and delivery; ensuring teams ship impactful features, not noise.",
-              "I analyze product performance, align cross-functional teams, and drive clarity around goals, success metrics, and the product's core value proposition.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-          <FlipCard
-            eyebrow="Product Growth"
-            eyebrowColor="#6A210D"
-            eyebrowBackColor="#FFB700"
-            backgroundColor="#6A210D"
-            colorBack="white"
-            copy={[
-              "I acquire the right users, activate them quickly, and keep them engaged longer by systematically removing friction and amplifying value.",
-            ]}
-            copyBack={[
-              "I can help you scale your product efficiently with PLG by increasing acquisition, activation, and retention.",
-              "I build and optimize growth workflows that analyze user behavior, identify friction, and validate high-leverage opportunities across the entire funnel.",
-              "I use data, psychology, and experiment-driven iteration to help you turn more new users into engaged, long-term customers.",
-            ]}
-            webp="./img/PanelTestImages/triangle.webp"
-            png="./img/PanelTestImages/triangle.png"
-            jpg="./img/PanelTestImages/triangle.jpg"
-          />
-        </FlipCardPanels>
-      </Section>
-      <Section>
-        <SectionHead
-          headline="Human Centered Leadership"
-          subline="I believe happy and healthy teams are the most productive, and innovative teams."
-        />
-
-        <CardPanels>
-          <ListPanel
-            eyebrow="Autonomy"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Foster motivation and satisfaction by believing in and respecting an individuals's ability to make decisions."
-          />
-
-          <ListPanel
-            eyebrow="Mastery"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Enable personal and team development by supporting the individuals urge to progress and excel in what drives them."
-          />
-
-          <ListPanel
-            eyebrow="Purpose"
-            eyebrowColor1={Colors.green}
-            eyebrowColor2={Colors.greenLight}
-            copy="Connect personal and business goals of individuals by developing a meaningful and shared vision for the team."
-          />
-        </CardPanels>
-      </Section>{" "}
-      <Section>
-        <BlackQuote
-          quote="Building tools, communicating complex ideas,
-          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-        />
-      </Section>
-      <Section>
-        <SectionHead
-          headline="My Principles"
-          subline="Give meaning to actions and ideas."
-        />
-
-        <CardPanels>
-          <ListPanel
-            eyebrow="Data Driven/Informed"
-            copy="Uncovering the human in the machine is becoming the key for delivering useful experiences to the customer."
-          />
-
-          <ListPanel
-            eyebrow="Aesthetics"
-            copy="Beautiful products are more useful. They attract more customers, and have more loyal customers."
-          />
-
-          <ListPanel
-            eyebrow="Quality"
-            copy="Outcome beats Output. No one remembers a late launch. But everyone remembers a bad product."
-          />
-
-          <ListPanel
-            eyebrow="Holistic"
-            copy="The whole is more than the sum of its parts. You want your product to be great? Every part has to be great!"
-          />
-
-          <ListPanel
-            eyebrow="Innovative & Brave"
-            copy="Free your mind. If you only focus on what is already there, you will never build something new to the world."
-          />
-
-          <ListPanel
-            eyebrow="Long Term"
-            copy="Keep an eye on what is happening around you, but also on emerging trends and long term possibilities."
-          />
-        </CardPanels>
       </Section>
     </PageWrapper>
   );
