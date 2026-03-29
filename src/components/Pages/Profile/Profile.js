@@ -524,7 +524,7 @@ const Profile = () => {
         />
       </Helmet>
       <Section>
-        <SectionHead headline="A little bit about me" />
+        <SectionHead headline="About Alexandros" />
         <BusinessCard
           headline={"Alexandros Shomper"}
           copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
@@ -679,7 +679,7 @@ const Profile = () => {
       <Section>
         <SectionHead
           headline="My Principles"
-          subline="Give meaning to actions and ideas."
+          subline="I work with the outcome in mind first, then work backwards to the interface."
         />
 
         <CardPanels>
