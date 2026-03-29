@@ -10,7 +10,6 @@ import Button from "../../Button/Button";
 import CaseStudyCardVideo from "../../Content/Case/CaseStudyCardVideo";
 import AiTechStack from "../../Content/AiTechStack/AiTechStack";
 
-
 const CASE_STUDY_TYPES = {
   ALL: "All Case Studies",
   ONBOARDING: "Onboarding Case Studies",
@@ -259,7 +258,7 @@ const Content = (props) => {
       <Section>
         <SectionHead
           headline="Work"
-          subline="Selected projects. My work spans from product design, product management, and growth."
+          subline="Product design, growth, and B2B SaaS, built for real users, measured with real data."
         />
 
         {filteredCaseStudies.length > 0 ? (

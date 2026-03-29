@@ -261,7 +261,7 @@ const Content = (props) => {
       <Section>
         <SectionHead
           headline="Selected Work"
-          subline="My work spans from product design, product management, and growth."
+          subline="Product design, growth, and B2B SaaS, built for real users, measured with real data."
         />
 
         {filteredCaseStudies.length > 0 ? (

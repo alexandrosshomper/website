@@ -12,7 +12,6 @@ import BusinessCard from "../../Content/BusinessCard/BusinessCard";
 import Button from "../../Button/Button";
 import FlipCard from "../../Content/FlipCard/FlipCard";
 import ListPanel from "../../Content/List/ListPanel/ListPanel";
-import BlackQuote from "../../Content/BlackQuote/BlackQuote";
 
 const mdiEmail =
   "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z";
@@ -524,7 +523,7 @@ const Profile = () => {
         />
       </Helmet>
       <Section>
-        <SectionHead headline="A little bit about me" />
+        <SectionHead headline="About Alexandros" />
         <BusinessCard
           headline={"Alexandros Shomper"}
           copy="I’m an outcome oriented, remote-first product lead with 15+ years of experience in a variety of B2B and B2C industries - from Startup environment to Corporate."
@@ -537,9 +536,7 @@ const Profile = () => {
           <SectionDivider text={"Here’s a TL;DR of my career:"} />
           <RevealWhenVisible>
             <SectionCopy
-              copy={
-                "Education in Arts & Marketing, and self-taught developer 👨🏻‍💻"
-              }
+              copy={"Education in Arts & Marketing, and self-taught developer"}
             />
           </RevealWhenVisible>
           <br />
@@ -554,18 +551,11 @@ const Profile = () => {
           <RevealWhenVisible>
             <SectionCopy
               copy={
-                "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
+                "Extensive experience growing products and teams in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
               }
             />
           </RevealWhenVisible>
           <br />
-          <RevealWhenVisible>
-            <SectionCopy
-              copy={
-                "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
-              }
-            />
-          </RevealWhenVisible>
         </Summary>
         <br />
         <RevealWhenVisible>
@@ -688,7 +678,7 @@ const Profile = () => {
       <Section>
         <SectionHead
           headline="My Principles"
-          subline="Give meaning to actions and ideas."
+          subline="I work with the outcome in mind first, then work backwards to the interface."
         />
 
         <CardPanels>
@@ -705,12 +695,6 @@ const Profile = () => {
             copy="Outcome beats output. No one remembers a late launch. Everyone remembers a bad product."
           />
         </CardPanels>
-      </Section>
-      <Section>
-        <BlackQuote
-          quote="Building tools, communicating complex ideas,
-          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-        />
       </Section>
       <CVWrapper>
         <Hero>
