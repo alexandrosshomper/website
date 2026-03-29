@@ -537,9 +537,7 @@ const Profile = () => {
           <SectionDivider text={"Here’s a TL;DR of my career:"} />
           <RevealWhenVisible>
             <SectionCopy
-              copy={
-                "Education in Arts & Marketing, and self-taught developer 👨🏻‍💻"
-              }
+              copy={"Education in Arts & Marketing, and self-taught developer"}
             />
           </RevealWhenVisible>
           <br />
@@ -554,18 +552,11 @@ const Profile = () => {
           <RevealWhenVisible>
             <SectionCopy
               copy={
-                "Extensive experience growing products and teams 🚀 in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
+                "Extensive experience growing products and teams in all stages of enterprises from Product-Market-Fit, to Product Led Growth to Core Product Work"
               }
             />
           </RevealWhenVisible>
           <br />
-          <RevealWhenVisible>
-            <SectionCopy
-              copy={
-                "I have a passion for outcome 🎯 by developing and enhancing data-driven and customer-centric processes and culture"
-              }
-            />
-          </RevealWhenVisible>
         </Summary>
         <br />
         <RevealWhenVisible>
@@ -705,12 +696,6 @@ const Profile = () => {
             copy="Outcome beats output. No one remembers a late launch. Everyone remembers a bad product."
           />
         </CardPanels>
-      </Section>
-      <Section>
-        <BlackQuote
-          quote="Building tools, communicating complex ideas,
-          and forming flexible cooperations are the essence of human nature in order to solve problems bigger than oneself."
-        />
       </Section>
       <CVWrapper>
         <Hero>
