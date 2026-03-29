@@ -122,11 +122,9 @@ const renderContent = () => (
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
           operating in 90+ countries). The unit focuses on developing B2B
-          digital products for the construction industry. The mandate was to
-          scale a portfolio of digital solutions across global markets while
-          driving a user-centric transformation.
+          digital products for the construction industry.
         </p>
-        
+
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="14 (PM, Eng, Data, BA, Design)"
@@ -140,7 +138,6 @@ const renderContent = () => (
             "2h/week saved per dealer",
           ]}
         />
-       
       </ArticleSectionContent>
     </ArticleSection>
 

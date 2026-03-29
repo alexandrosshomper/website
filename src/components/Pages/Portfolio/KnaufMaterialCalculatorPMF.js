@@ -33,7 +33,7 @@ const galleryItemsDiscover = [
     imgMobileURL:
       "/img/portfolio/knauf-material-calculator/detail-field-research-mobile.png",
     headline: "Foundational Research",
-    copy: "I spend the whole year of 2020 to do nothing else but research. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
+    copy: "I invested a whole year into user research, interviews, field visits, etc. This is an excerpt from one of our Interviews I made. There was no clear understanding of our customers in the company. Their daily tasks, their problems, their needs.",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const galleryItemsDiscover = [
     imgMobileURL:
       "/img/portfolio/knauf-material-calculator/detail-project-journey-mobile.png",
     headline: "Construction Project Journey",
-    copy: "I then mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. ",
+    copy: "I mapped everything onto something I called the “project Journey” which shows how a construction projects flows through all our customer types. This became our roadmap.",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const galleryItemsDiscover = [
     imgMobileURL:
       "/img/portfolio/knauf-material-calculator/detail-scalability-mobile.png",
     headline: "Scalability Assessment",
-    copy: "That 7% of users that used the Delivery Notification turned out to have 30%+ Retention Rate over three months.",
+    copy: "For each initiative we assessed the scalability of each initiative. How big is the problem globally that we are aiming to solve.",
   },
 ];
 const galleryItemsDesign = [
@@ -119,12 +119,9 @@ const renderContent = () => (
           <b>Knauf Digital</b> is the innovation arm of <b>Knauf Group</b> (a
           15+B global building materials leader with 43,500+ employees,
           operating in 90+ countries). The unit focuses on developing B2B
-          digital products for the construction industry. The mandate was to
-          scale a portfolio of digital solutions across global markets while
-          driving a user-centric transformation.
+          digital products for the construction industry.
         </p>
 
-      
         <CaseCitations
           role="Product Design Manager, 12 markets"
           team="PO, Eng, Data, Design"
@@ -138,7 +135,6 @@ const renderContent = () => (
             "NPS ↑ 15",
           ]}
         />
-        
       </ArticleSectionContent>
     </ArticleSection>
 
