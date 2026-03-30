@@ -7,14 +7,12 @@ import Contact from "../Footer/ContactBanner";
 
 const Footer = (props) => {
   const Footer = styled.footer`
-    margin: 0px 24px 0px 24px;
-    height: 132px;
     padding-top: 12px;
     border-top: 1px solid;
     border-color: ${Colors.primaryText.highEmphasis};
-    margin-right: 24px;
-    margin-left: 24px;
-    width: 430px;
+
+    margin: 0px 24px 0px 24px;
+    box-sizing: border-box;
     ${Devices.tabletS} {
       margin: 0 auto;
       width: 564px;
@@ -32,12 +30,13 @@ const Footer = (props) => {
 
   const Sitemap = styled.ul`
     text-align: left;
-    width: 132px;
     list-style-type: none;
     padding: 0px;
-    float: left;
-    margin: 0px;
-    margin-bottom: 12px;
+    margin: 0px 0px 12px 0px;
+    ${Devices.tabletS} {
+      width: 132px;
+      float: left;
+    }
   `;
 
   const SitemapItem = styled.li`
@@ -57,15 +56,11 @@ const Footer = (props) => {
   const Legals = styled.div`
     margin: 0px;
     text-align: left;
-    width: 276px;
     list-style-type: none;
     padding: 0px;
-
-    margin-left: 0px;
     margin-top: 2px;
-
-    float: left;
     ${Devices.tabletS} {
+      width: 276px;
       float: right;
     }
   `;
@@ -107,7 +102,7 @@ const Footer = (props) => {
 
   const FooterBody = styled.div`
     width: 100%;
-    height: 60px;
+    overflow: hidden;
     margin-bottom: 36px;
   `;
 

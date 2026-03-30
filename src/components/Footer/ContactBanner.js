@@ -15,16 +15,15 @@ const Contact = (props) => {
 
   const Name = styled.h1`
     margin: 0px auto;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 130%;
+    width: auto;
+    text-align: center;
 
-    text-align: left;
-    margin-left: 24px;
-    margin-right: 24px;
     color: transparent;
     background-image: linear-gradient(
       to right,
@@ -72,10 +71,9 @@ const Contact = (props) => {
     font-size: 16px;
     line-height: 130%;
 
-    text-align: left;
-    margin-left: 24px;
-    margin-right: 24px;
+    text-align: center;
 
+    width: auto;
     color: #000a12;
     ${Devices.tabletS} {
       margin: 0 auto;
@@ -117,9 +115,9 @@ const Contact = (props) => {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
     height: 60px;
     letter-spacing: -0.374px;
@@ -131,28 +129,17 @@ const Contact = (props) => {
     text-size-adjust: 100%;
 
     width: 100%;
-    height: 200px;
+    height: 100px;
 
     /* Inside Auto Layout */
     flex: none;
     order: 3;
     align-self: stretch;
     flex-grow: 0;
-    -webkit-font-smoothing: antialiased;
-    --gap: 12px;
-    margin-left: calc(-1 * var(--gap));
-    margin-right: calc(-1 * var(--gap));
-    margin-bottom: calc(-1 * var(--gap));
 
-    & > * {
-      margin-left: var(--gap);
-      margin-bottom: calc(2 * var(--gap));
-    }
     ${Devices.tabletS} {
-      justify-content: center;
-      align-content: center;
-      align-items: center;
       gap: 24px;
+      height: 200px;
     }
     ${Devices.tabletM} {
     }
@@ -176,9 +163,7 @@ const Contact = (props) => {
     flex-grow: 0;
     margin: 0px auto;
     margin-top: 40px;
-    margin-left: 24px;
-    margin-right: 24px;
-
+    width: auto;
     /* Inside Auto Layout */
     flex: none;
     order: 3;

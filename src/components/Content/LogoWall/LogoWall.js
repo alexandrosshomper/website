@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
+import { Devices } from "../../DesignSystem";
 
 const scroll = keyframes`
   from { transform: translateX(0); }
@@ -42,8 +43,11 @@ const LogoSet = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 160px;
+  gap: 80px;
   padding: 16px 80px;
+  ${Devices.tabletM} {
+    gap: 160px;
+  }
 `;
 
 const LogoImg = styled.img`
@@ -71,7 +75,7 @@ const logos = [
 // Tile logos enough times so one half of the track always exceeds the widest screen.
 // 7 logos × ~150px avg ≈ 1060px per pass; 4 passes = ~4240px — covers any viewport.
 const tiledLogos = Array.from({ length: 4 }, (_, i) =>
-  logos.map((logo) => ({ ...logo, key: `${logo.alt}-${i}` }))
+  logos.map((logo) => ({ ...logo, key: `${logo.alt}-${i}` })),
 ).flat();
 
 const LogoWall = () => (
