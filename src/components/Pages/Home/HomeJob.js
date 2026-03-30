@@ -127,7 +127,7 @@ const CaseBlockDetails = styled.div`
   color: ${Colors.primaryText.mediumEmphasis};
   font-size: 16px;
   line-height: 150%;
-  margin: 8px 14px 14px 14px;
+  margin: 8px 24px 28px 24px;
 
   min-height: 400px;
   order: 1;
@@ -167,10 +167,13 @@ const CaseBlockSubline = styled.p`
 const CaseBlockCopy = styled.p`
   color: ${Colors.primaryText.mediumEmphasis};
   font-size: 18px;
-  line-height: 110%;
+  line-height: 130%;
 
   text-align: left;
   margin: 0px 0px 0px 0px;
+  ${Devices.tabletS} {
+    line-height: 120%;
+  }
 `;
 
 const KeyResultsList = styled.div`
@@ -301,6 +304,15 @@ const Content = (props) => {
             soon.
           </EmptyState>
         )}
+
+        <Button
+          as="a"
+          size="large"
+          variant="primary"
+          href="/portfolio"
+          text="See All Work"
+          gradient={{ from: Colors.blueDark, to: Colors.purpleDark }}
+        />
       </Section>
     </PageWrapper>
   );
