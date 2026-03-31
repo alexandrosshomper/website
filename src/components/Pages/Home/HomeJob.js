@@ -196,6 +196,65 @@ const KeyResultItem = styled.div`
   line-height: 1.3;
 `;
 
+const ProcessContainer = styled.div`
+  position: relative;
+  width: min(700px, 92vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  cursor: arrow;
+`;
+
+const ProcessGlow = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(208, 0, 255, 1) 0%,
+    rgba(208, 0, 255, 0.85) 10%,
+    rgba(208, 0, 255, 0.5) 22%,
+    rgba(180, 0, 255, 0.22) 38%,
+    rgba(160, 0, 240, 0.1) 52%,
+    rgba(140, 0, 220, 0.05) 65%,
+    transparent 78%
+  );
+  filter: blur(22px);
+  pointer-events: none;
+`;
+
+const ProcessBubble = styled.div`
+  position: absolute;
+  width: 41.4%;
+  height: 41.4%;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2px;
+`;
+
+const ProcessNumber = styled.p`
+  color: #d000ff;
+  font-size: clamp(22px, 5.6vw, 80px);
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  font-family: "Averia Serif Libre", serif;
+`;
+
+const ProcessLabel = styled.p`
+  color: white;
+  font-size: clamp(13px, 2.8vw, 28px);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
+`;
+
 const EmptyState = styled.p`
   color: ${Colors.primaryText.mediumEmphasis};
   font-size: 16px;
@@ -313,6 +372,31 @@ const Content = (props) => {
           text="See All Work"
           gradient={{ from: Colors.blueDark, to: Colors.purpleDark }}
         />
+      </Section>
+      <Section>
+        <SectionHead
+          headline="How I work"
+          subline="A repeatable process to make data-driven and customer centric product decisions."
+        />
+        <ProcessContainer>
+          <ProcessGlow />
+          <ProcessBubble style={{ left: 0, top: "29.3%" }}>
+            <ProcessNumber>1</ProcessNumber>
+            <ProcessLabel>Validate</ProcessLabel>
+          </ProcessBubble>
+          <ProcessBubble style={{ left: "29.3%", top: 0 }}>
+            <ProcessNumber>2</ProcessNumber>
+            <ProcessLabel>Design</ProcessLabel>
+          </ProcessBubble>
+          <ProcessBubble style={{ left: "58.6%", top: "29.3%" }}>
+            <ProcessNumber>3</ProcessNumber>
+            <ProcessLabel>Develop</ProcessLabel>
+          </ProcessBubble>
+          <ProcessBubble style={{ left: "29.3%", top: "58.6%" }}>
+            <ProcessNumber>4</ProcessNumber>
+            <ProcessLabel>Distribute</ProcessLabel>
+          </ProcessBubble>
+        </ProcessContainer>
       </Section>
     </PageWrapper>
   );
