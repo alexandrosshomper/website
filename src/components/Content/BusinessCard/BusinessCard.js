@@ -199,12 +199,12 @@ const BusinessCard = ({ headline, copy }) => {
         <Overline>Product Designer</Overline>
         <BusinessCardHeadline>Hi, I’m Alexandros Shomper.</BusinessCardHeadline>
         <BusinessCardCopy>
-          I make <b>customer-centric and data-driven</b> — fast.
+          I make <b>customer-centric and data-driven decisions</b> — fast.
         </BusinessCardCopy>
 
         <BusinessCardCopy>
-          Working on countless products I’ve learned first hand how design is
-          not just how a product looks or works.
+          I combine research rigor with product strategy to deliver designs that
+          not only delight users but also move business metrics.
         </BusinessCardCopy>
 
         <BusinessCardCopy>
