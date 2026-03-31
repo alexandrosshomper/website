@@ -609,6 +609,7 @@ const Profile = () => {
         <SectionHead
           headline="Key strengths"
           subline="I have worked in hybrid roles of product design, product management, and product growth"
+          centered
         />
         <FlipCardPanels>
           <FlipCard
@@ -650,6 +651,7 @@ const Profile = () => {
         <SectionHead
           headline="Human Centered Leadership"
           subline="I believe happy and healthy teams are the most productive, and innovative teams."
+          centered
         />
 
         <CardPanels>
@@ -679,6 +681,7 @@ const Profile = () => {
         <SectionHead
           headline="My Principles"
           subline="I work with the outcome in mind first, then work backwards to the interface."
+          centered
         />
 
         <CardPanels>

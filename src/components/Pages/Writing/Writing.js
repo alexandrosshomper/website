@@ -101,6 +101,7 @@ const Content = () => {
         <SectionHead
           headline="Writing"
           subline="Sharing articles, insights, and frameworks with the product community."
+          centered
         />
         <ArticleList>
           <SectionOverline subline="My articles on Medium.com" />
