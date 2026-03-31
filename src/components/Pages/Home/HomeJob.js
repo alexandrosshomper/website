@@ -228,7 +228,7 @@ const _G = "100, 220, 100"; // green
 const _B = "0, 0, 255"; // blue
 
 const _gr = (c0, c1, c2, c3, c4, c5) =>
-  `radial-gradient(ellipse at 50% 50%, rgba(${c0},1) 0%, rgba(${c1},0.85) 10%, rgba(${c2},0.5) 22%, rgba(${c3},0.22) 38%, rgba(${c4},0.1) 52%, rgba(${c5},0.05) 65%, transparent 78%)`;
+  `radial-gradient(ellipse at 50% 50%, rgba(${c0},1) 0%, rgba(${c1},0.85) 20%, rgba(${c2},0.5) 22%, rgba(${c3},0.22) 38%, rgba(${c4},0.1) 52%, rgba(${c5},0.05) 65%, transparent 78%)`;
 
 const glowPulse = keyframes`
   0%     { background: ${_gr(_P, _P, _P, _P, _P, _P)}; }
@@ -267,7 +267,7 @@ const ProcessBubble = styled.div`
   width: 41.4%;
   height: 41.4%;
   border-radius: 50%;
-  background: #000;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -286,7 +286,7 @@ const ProcessNumber = styled.p`
 `;
 
 const ProcessLabel = styled.p`
-  color: white;
+  color: black;
   font-size: clamp(13px, 2.8vw, 28px);
   font-weight: 500;
   line-height: 1.15;
