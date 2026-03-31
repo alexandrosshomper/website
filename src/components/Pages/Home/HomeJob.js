@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 import { ArrowRight } from "lucide-react";
 import { Colors, Devices } from "../../DesignSystem";
 import SectionHead from "../../Content/Section/SectionHead";
@@ -214,24 +215,51 @@ const ProcessContainer = styled.div`
   }
 `;
 
+// Glow pulse animation
+// Idle: purple for 5s. Wave: all 6 colors sweep center→edge over 1s. Total: 6s.
+// Diagonal model — at each step the "front" advances by one ring while each
+// ring behind it shows the previous color. 11 wave steps × (1s/11) ≈ 91ms each.
+// Step positions = 83.33% + n × 1.5152% (n = 0..11)
+const _P = "208, 0, 255"; // purple
+const _R = "255, 0, 60"; // red
+const _O = "255, 128, 0"; // orange
+const _Y = "255, 220, 100"; // yellow
+const _G = "100, 220, 100"; // green
+const _B = "0, 0, 255"; // blue
+
+const _gr = (c0, c1, c2, c3, c4, c5) =>
+  `radial-gradient(ellipse at 50% 50%, rgba(${c0},1) 0%, rgba(${c1},0.85) 10%, rgba(${c2},0.5) 22%, rgba(${c3},0.22) 38%, rgba(${c4},0.1) 52%, rgba(${c5},0.05) 65%, transparent 78%)`;
+
+const glowPulse = keyframes`
+  0%     { background: ${_gr(_P, _P, _P, _P, _P, _P)}; }
+  83.33% { background: ${_gr(_P, _P, _P, _P, _P, _P)}; }
+  84.85% { background: ${_gr(_B, _P, _P, _P, _P, _P)}; }
+  86.36% { background: ${_gr(_G, _B, _P, _P, _P, _P)}; }
+  87.88% { background: ${_gr(_Y, _G, _B, _P, _P, _P)}; }
+  89.39% { background: ${_gr(_O, _Y, _O, _B, _P, _P)}; }
+  90.91% { background: ${_gr(_R, _O, _Y, _G, _B, _P)}; }
+  92.42% { background: ${_gr(_P, _R, _O, _Y, _G, _B)}; }
+  93.94% { background: ${_gr(_P, _P, _R, _O, _Y, _G)}; }
+  95.45% { background: ${_gr(_P, _P, _P, _R, _O, _Y)}; }
+  96.97% { background: ${_gr(_P, _P, _P, _P, _R, _O)}; }
+  98.48% { background: ${_gr(_P, _P, _P, _P, _P, _R)}; }
+  100%   { background: ${_gr(_P, _P, _P, _P, _P, _P)}; }
+`;
+
 const ProcessGlow = styled.div`
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    ellipse at 50% 50%,
-    rgba(208, 0, 255, 1) 0%,
-    rgba(208, 0, 255, 0.85) 10%,
-    rgba(208, 0, 255, 0.5) 22%,
-    rgba(180, 0, 255, 0.22) 38%,
-    rgba(160, 0, 240, 0.1) 52%,
-    rgba(140, 0, 220, 0.05) 65%,
-    transparent 78%
-  );
   filter: blur(22px);
   pointer-events: none;
+  animation: ${glowPulse} 6s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background: ${_gr(_P, _P, _P, _P, _P, _P)};
+  }
 `;
 
 const ProcessBubble = styled.div`
@@ -333,7 +361,8 @@ const Content = (props) => {
       <Section>
         <SectionHead
           headline="Selected Work"
-          subline="Product design, growth, and B2B SaaS, built for real users, measured with real data."
+          subline="Product design, growth, and B2B SaaS, built for real users."
+          centered
         />
 
         {filteredCaseStudies.length > 0 ? (
@@ -387,6 +416,7 @@ const Content = (props) => {
         <SectionHead
           headline="How I work"
           subline="A repeatable process to make data-driven and customer centric product decisions."
+          centered
         />
         <ProcessContainer>
           <ProcessGlow />
