@@ -471,8 +471,12 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
               <th>Δ</th>
             </tr>
             <tr>
-              <td>Activation (Aha ≤15m)</td>
-              <td>+25%</td>
+              <td>Activation</td>
+              <td>+18%</td>
+            </tr>
+            <tr>
+              <td>Time to Aha</td>
+              <td>-35% (from 43 min to 10 min)</td>
             </tr>
             <tr>
               <td>7-Day Retention</td>
@@ -481,6 +485,14 @@ We introduced structured, flexible ordering, by floor, phase, or wall type; plus
             <tr>
               <td>Plan→Order Conversion</td>
               <td>+18pp</td>
+            </tr>
+            <tr>
+              <td>Customer Admin Work</td>
+              <td>-20h/week</td>
+            </tr>
+            <tr>
+              <td>Service Calls</td>
+              <td>-20%</td>
             </tr>
             <tr>
               <td>NPS</td>
