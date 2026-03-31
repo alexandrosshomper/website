@@ -1,14 +1,33 @@
-# Alexandros Shomper — alexandrosshomper.de
+# Alexandros Shomper — Product Designer & Growth Advisor
 
-> Product Lead and Designer with 15+ years of experience in B2B and B2C.
-> Specialising in product-led growth, user onboarding, activation, and design systems.
+> Product Designer with 15+ years across B2B SaaS, PLG, and complex workflow design.
+> Based in Munich. Available for freelance contracts (€90/hr) and full-time PM/design roles.
 
 ## About
-Alexandros Shomper is a remote-first, outcome-oriented product lead with experience
-ranging from early-stage startups to corporate environments. Background in advertising,
-marketing, and self-taught development.
+Alexandros Shomper is a remote-first, outcome-oriented product lead and designer with
+experience ranging from early-stage startups to corporate digital transformation. Background
+in advertising, marketing, and self-taught development.
 
-## Key pages
+- Contact: alexandros@alexandrosshomper.de
+- LinkedIn: https://www.linkedin.com/in/alexshomper/
+- CV (PDF): https://www.alexandrosshomper.de/cv/AlexandrosShomper–CurriculumVitae.pdf
+
+## Experience
+- Product Design Manager & Chapter Lead — Knauf Digital (2019–2024)
+- Startup Advisor — UnternehmerTUM, Start2 Group, Werk1
+- Freelance Product Designer & Consultant (2024–present)
+
+## Certifications
+- Reforge: Retention & Engagement
+- IDEO: Design Thinking
+- AJ&Smart: Design Sprint
+- scrum.org: Professional Scrum with Design (PSD)
+
+## Skills
+Product Design, PLG, B2B SaaS, Design Systems, User Onboarding & Activation,
+Figma, Mixpanel, PostHog, React (foundational), JTBD, Interaction Design, UX Research
+
+## Key Pages
 - Homepage / Portfolio: https://www.alexandrosshomper.de/
 - About: https://www.alexandrosshomper.de/about
 - Case Studies: https://www.alexandrosshomper.de/case-studies
@@ -17,11 +36,17 @@ marketing, and self-taught development.
 - Contact: https://www.alexandrosshomper.de/contact
 - Flows: https://www.alexandrosshomper.de/flows
 
-## Reports (long-form, ungated summaries)
-- Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth:
-  https://www.alexandrosshomper.de/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth
-- Four Industry Shifts Making Onboarding and Activation Indispensable:
-  https://www.alexandrosshomper.de/reports/four-industry-shifts-making-onboarding-and-activation-indispensable
-
 ## Case Studies
-- Asana Onboarding Case Study: https://www.alexandrosshomper.de/case-studies/asana
+- [Knauf Material Calculator](https://www.alexandrosshomper.de/portfolio/knauf-material-calculator):
+  B2B SaaS for construction professionals. Activation +25%, Retention +30%, NPS +15.
+  12 markets, 18 months, 0→1→n.
+- [Knauf Order Overview](https://www.alexandrosshomper.de/portfolio/knauf-order-overview):
+  Unified order tracking platform. -20% service calls, +30% activation, 2h/week saved per dealer.
+- [Occhio Website & eCommerce](https://www.alexandrosshomper.de/portfolio/occhio):
+  Digital transformation of premium lighting brand. First-ever online revenue stream.
+- [Asana Onboarding Case Study](https://www.alexandrosshomper.de/case-studies/asana):
+  Redesign analysis of Asana's onboarding flow.
+
+## Reports (long-form, ungated)
+- [Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth](https://www.alexandrosshomper.de/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth)
+- [Four Industry Shifts Making Onboarding and Activation Indispensable](https://www.alexandrosshomper.de/reports/four-industry-shifts-making-onboarding-and-activation-indispensable)

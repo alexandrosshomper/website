@@ -372,6 +372,22 @@ const renderContent = () => (
           headline="A Bright Future: Awards and Engagement Soar"
           subline="The relaunch created an immersive digital showcase for Occhio, delighting customers and earning industry acclaim."
         />
+        <table>
+          <tbody>
+            <tr>
+              <th>Metric</th>
+              <th>Δ</th>
+            </tr>
+            <tr>
+              <td>Bounce Rate</td>
+              <td>-15%</td>
+            </tr>
+            <tr>
+              <td>Conversion Rate</td>
+              <td>1% (indsutry standard for luxury interior eCommerce)</td>
+            </tr>
+          </tbody>
+        </table>
         <p>
           The new Occhio website and online shop have been a resounding success.
           The relaunch resulted in a highly engaging, visually stunning website
