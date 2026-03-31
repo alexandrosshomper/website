@@ -198,10 +198,20 @@ const KeyResultItem = styled.div`
 
 const ProcessContainer = styled.div`
   position: relative;
-  width: min(700px, 92vw);
-  aspect-ratio: 1;
+  width: 92vw;
+  height: 92vw;
   margin: 0 auto;
-  cursor: arrow;
+
+  ${Devices.tabletM} {
+    width: 700px;
+    height: 700px;
+  }
+
+  @supports (aspect-ratio: 1) {
+    width: min(700px, 92vw);
+    height: auto;
+    aspect-ratio: 1;
+  }
 `;
 
 const ProcessGlow = styled.div`
