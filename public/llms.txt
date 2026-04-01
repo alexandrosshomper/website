@@ -37,15 +37,28 @@ Figma, Mixpanel, PostHog, React (foundational), JTBD, Interaction Design, UX Res
 - Flows: https://www.alexandrosshomper.de/flows
 
 ## Case Studies
+
+Each case study has a dedicated LLM-readable file with full detail.
+
 - [Knauf Material Calculator](https://www.alexandrosshomper.de/portfolio/knauf-material-calculator):
-  B2B SaaS for construction professionals. Activation +25%, Retention +30%, NPS +15.
-  12 markets, 18 months, 0→1→n.
+  B2B SaaS for construction professionals. Activation +18%, Retention +30%, Time-to-Aha -35%.
+  12 markets, 18 months, 0→1→n. Full detail: https://www.alexandrosshomper.de/llms-knauf-material-calculator.txt
+
 - [Knauf Order Overview](https://www.alexandrosshomper.de/portfolio/knauf-order-overview):
-  Unified order tracking platform. -20% service calls, +30% activation, 2h/week saved per dealer.
+  Unified order tracking platform for all Knauf brands. -20% service calls, +30% activation, 2h/week saved per dealer.
+  12 months, 9 markets. Full detail: https://www.alexandrosshomper.de/llms-knauf-order-overview.txt
+
+- [Knauf Account](https://www.alexandrosshomper.de/portfolio/knauf-account):
+  Unified identity & SSO platform — the "Google Account for construction." +50% activation, -45% team onboarding time.
+  8 months, 20-person team. Full detail: https://www.alexandrosshomper.de/llms-knauf-account.txt
+
 - [Occhio Website & eCommerce](https://www.alexandrosshomper.de/portfolio/occhio):
-  Digital transformation of premium lighting brand. First-ever online revenue stream.
+  Digital transformation of premium luxury lighting brand. First-ever online revenue stream (~5% of total revenue).
+  Gold — Annual Multimedia Award 2020. Full detail: https://www.alexandrosshomper.de/llms-occhio.txt
+
 - [Asana Onboarding Case Study](https://www.alexandrosshomper.de/case-studies/asana):
-  Redesign analysis of Asana's onboarding flow.
+  Independent UX audit of Asana's onboarding and activation flow. Analysis of team vs. personal user bias,
+  segmentation, plan selection, and activation loops. Full detail: https://www.alexandrosshomper.de/llms-asana-case-study.txt
 
 ## Reports (long-form, ungated)
 - [Why Onboarding & Activation Are The Ultimate Levers for SaaS Growth](https://www.alexandrosshomper.de/reports/why-onboarding-and-activation-are-the-ultimate-levers-for-saas-growth)

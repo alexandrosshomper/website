@@ -1,0 +1,98 @@
+# Knauf Material Calculator — Case Study
+> By Alexandros Shomper | https://www.alexandrosshomper.de/portfolio/knauf-material-calculator
+
+## The Jira for construction professionals
+
+From fragmented workflows to a unified product, helping construction applicators quote, plan, and order 3× faster.
+
+## Overview
+
+- **Company:** Knauf Digital — innovation arm of Knauf Group (€15B+ global building materials leader, 43,500+ employees, 90+ countries)
+- **Product:** B2B SaaS platform for construction applicators (contractors and on-site professionals who plan, measure, and execute installations)
+- **Role:** Product Design Manager, 12 markets
+- **Team:** PO, Engineering, Data, Design
+- **Timeline:** 18 months
+- **Stage:** 0 → 1 → n
+
+## Key Results
+
+- Activation +18%
+- Time to Aha: -35% (from 43 min to 10 min)
+- 7-Day Retention +30%
+- Plan → Order Conversion +18pp
+- Customer Admin Work -20h/week
+- Service Calls -20%
+- NPS: 15
+
+## The Problem
+
+Construction professionals managed tenders, calculations, and orders across Excel sheets, PDFs, and phone calls. This led to:
+
+- Error-prone manual calculations
+- Re-entry of data across fragmented tools
+- Lack of visibility on profitability
+- Low trust in "digital tools made for construction"
+
+Delays caused quote errors costing millions in lost bids.
+
+**Constraints:** One product, five legacy ERP/SAP schemas, twelve markets. Every Knauf entity ran its own systems with different data schemas. Digital leaders across markets had conflicting requirements. There was no central authority that could mandate adoption — buy-in had to be earned market by market.
+
+## Goal
+
+Build a unified, end-to-end platform that helps applicators:
+- Reach value (first quote sent) within 15 minutes
+- Bridge quote → plan → order seamlessly
+- Build trust through precision and reliability
+
+## Research
+
+Led field visits and interviews across 12 countries. Combined JTBD analysis, expert interviews, and a survey with 53 applicators in Germany.
+
+**Key insights:**
+- "Trustable numbers" mattered more than UI polish
+- Applicators didn't want more tools — they wanted one place that just works
+- Offline-first and minimal input were must-haves
+
+**PMF Hypothesis:** "If applicators can quote, plan, and order in one workspace, they'll make fewer mistakes and be more profitable; returning within one month to create another quote."
+
+## Solution — Key Features
+
+### Feature 1: Tender Capture
+Every tender arrived in a different format — Excel, PDF, or hand-written. Built a guided import flow that parses items and matches them to Knauf's product systems.
+
+- Quote Tracking: Overview of sent quotes and drafts with highlighted due-dates
+- Tender to Quote: Import tender directly to skip manual data entry
+- Quote to Project: Convert won tenders to construction projects in one click
+
+**Impact:** 60% faster quote creation · 3x higher quoting rate · 85% reduction in errors
+
+### Feature 2: In-Plan Measurement
+Applicators can measure directly on digital plans and link results to tender positions. From site measurements → plan → exact quantities → approved order in minutes.
+
+- Plan measurement tools with mm-exact precision
+- Real-time quantity calculation per wall, floor, or phase
+
+**Impact:** 3x quantity calculation speed · 0 re-entries between planning and ordering · 40% reduction in communication
+
+### Feature 3: Material Order & Tracking
+Structured, flexible ordering by floor, phase, or wall type. Real-time delivery tracking replacing phone calls and guesswork.
+
+- Split orders by date or project phase
+- Built-in delivery scheduling with real-time status filtering
+
+**Impact:** 60% cut in order mistakes · 30% reduction in delivery status update calls · 20% improved logistics efficiency
+
+## Broader Impact
+
+The Material Calculator became the template for how Knauf Digital builds. The design system created here scaled across all four Knauf apps, cutting design-to-delivery time by 40%. The research rigour introduced here — field research, JTBD framing, PMF hypotheses — became the team's standard operating model, formalised into a cross-functional Growth Guild and company-wide UX Maturity Assessments.
+
+## Reflection
+
+Spending a full year on research before designing was correct. The mistake was not defining success metrics upfront. The product was instrumented about six weeks post-launch, losing an entire cohort of early adopters whose drop-off patterns could have shaped the onboarding flow.
+
+The design system was the right call, but early atomisation created some rigidity in product-specific edge cases.
+
+## Related
+
+- Portfolio: https://www.alexandrosshomper.de/portfolio/knauf-material-calculator
+- Contact: alexandros@alexandrosshomper.de

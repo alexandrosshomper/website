@@ -1,0 +1,113 @@
+# Knauf Account — Case Study
+> By Alexandros Shomper | https://www.alexandrosshomper.de/portfolio/knauf-account
+
+## The Google Account for the construction industry
+
+From fragmented identities to a unified access platform powering activation across the Knauf ecosystem.
+
+## Overview
+
+- **Company:** Knauf Digital — innovation arm of Knauf Group (€15B+ global building materials leader, 43,500+ employees, 90+ countries)
+- **Product:** Unified Identity Platform (B2B/B2C + Enterprise teams)
+- **Role:** Product Design Manager, 12 markets
+- **Team:** 20 (PM, Engineering, Data, CRM, Design)
+- **Timeline:** 8 months
+- **Stage:** 0 → 1 → n
+
+## Key Results
+
+- Activation across apps +20%
+- Support tickets -30% (reduced significantly)
+- Team onboarding time -45%
+- CRM data accuracy +25%
+- SSO activation: +50% account activation across connected apps
+- Cross-app usage: 9 connected apps
+
+## The Problem
+
+For decades, Knauf operated as a federation of brands with fragmented identity solutions:
+
+- Users had to remember multiple passwords — one customer had up to 5–12 accounts
+- Re-enter the same data for every country or app
+- No central place to manage teams, roles, or account information
+- No cross-app retention loops
+- Fragmented CRM made global sales operations nearly impossible
+- No single view of customers or companies
+- No way to provide personalized pricing or content
+- Onboarding dropped at the "create account" step across apps
+
+"A fragmented identity landscape blocking activation and scalability."
+
+**Constraints:** None of the legacy systems supported SSO. Knauf suffered a significant hacker attack in 2020, placing intense security scrutiny on the project — hard requirements around authentication standards, data residency, and audit trails. Country teams had genuine concerns about losing autonomy. GDPR compliance requirements throughout.
+
+## Goal
+
+Build a unified access platform that becomes the gateway to the entire Knauf ecosystem:
+
+- Replace all legacy accounts
+- Provide frictionless onboarding
+- Give teams the ability to manage users and permissions
+- Connect to CRM as a single source of truth
+- Enable personalized pricing, content, and experiences
+- A platform designed not for one product but for every product Knauf will ever build
+
+## Research
+
+Conducted deep research across markets, brands, and teams. Cross-country stakeholder interviews (Brands, Sales, CRM), technical audits of all legacy access systems, UX research with applicators, contractors, architects, and CRM data analysis.
+
+**Key insights:**
+- One customer had up to 5–12 accounts across different countries, apps, and portals
+- Onboarding dropped at the "create account" step across apps — access friction blocked activation everywhere
+- No team-level management meant zero visibility for enterprise clients
+- Pricing, content, and permissions were misaligned — users got wrong prices, wrong content, or wrong access
+- CRM data was fragmented and incomplete — sales teams couldn't trust customer information
+
+**PMF Hypothesis:** "If Knauf customers can access all tools with one account, and if that account becomes the single source of truth, then activation will increase across all apps, CRM data will improve, and support workload will drop significantly."
+
+## Solution — Key Features
+
+### Feature 1: One Account for All Knauf (SSO)
+The core of the platform: One login. One profile. One company. One identity.
+
+- Single sign-on across all Knauf apps
+- Consolidation of dozens of legacy accounts
+- Migration path for old country-based systems
+- Stronger authentication + enterprise-grade security
+- Unified customer and company profiles
+
+**Impact:** 50% improved account activation across all connected apps · 30% reduced support requests
+
+### Feature 2: Team Management & Permissions
+Enterprise-grade IAM (Identity and Access Management) layer.
+
+- Create and manage teams based on function, project, and location
+- Invite users or approve join requests
+- Define roles and permissions per app, on project level, location level, and app level
+
+**Impact:** 45% reduced team onboarding time · 2x higher cross-app activation
+
+### Feature 3: Personalized Experiences & Pricing
+With unified identity, personalization becomes possible at scale.
+
+- Customer type → tailored experience (specifier, applicator, dealer)
+- Country → localized content, products, regulations
+- Company → personalized pricing negotiated per project
+
+**Impact:** 3x better CRM data quality enabling better personalization · 20% less service calls
+
+## Broader Impact
+
+Because Knauf Account was infrastructure, its impact multiplied across everything built after it. Identity solved once meant every downstream team could focus on value, not access. Used this project to formalise the Knauf Growth Guild and introduce UX Maturity Assessments across markets.
+
+Knauf Account didn't just unlock better products — it unlocked a better organisation.
+
+## Reflection
+
+The architecture was correct. What was underinvested in early was the migration experience for users who already had 5–12 existing accounts. The migration was designed as a technical handoff rather than a user experience in its own right — support tickets in the first eight weeks reflected that.
+
+Team management was scoped as a secondary feature and became the reason enterprise clients adopted the platform at all. Should have validated enterprise team workflows much earlier in discovery.
+
+## Related
+
+- Portfolio: https://www.alexandrosshomper.de/portfolio/knauf-account
+- Contact: alexandros@alexandrosshomper.de

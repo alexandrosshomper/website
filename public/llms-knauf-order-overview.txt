@@ -1,0 +1,106 @@
+# Knauf Order Overview — Case Study
+> By Alexandros Shomper | https://www.alexandrosshomper.de/portfolio/knauf-order-overview
+
+## A unified platform for all Knauf orders
+
+The single source of truth for deliveries from all Knauf brands and subbrands.
+
+## Overview
+
+- **Company:** Knauf Digital — innovation arm of Knauf Group (€15B+ global building materials leader, 43,500+ employees, 90+ countries)
+- **Product:** Centralized track-n-trace platform for a fragmented conglomerate
+- **Role:** Product Design Manager, 12 markets
+- **Team:** 14 (PM, Engineering, Data, BA, Design)
+- **Timeline:** 12 months
+- **Stage:** 0 → 1 → n
+
+## Key Results
+
+- Inquiry Calls -20%
+- Dealer Admin Work -2h/week
+- Activation +30%
+- Retention +25%
+- Markets Rolled Out: 9
+
+## The Problem
+
+Construction dealers (B2B partners who sell Knauf materials and manage order logistics) managed thousands of orders across different Knauf entities. Delivery ETAs changed daily.
+
+- Constantly changing ETAs
+- No unified tracking platform
+- Different contact points per Knauf entity
+- Manual customer updates consuming hours weekly
+
+"We spent more time chasing delivery info than selling materials."
+
+**Constraints:** Every Knauf brand operated independently with different systems in each country. A brand wasn't just a sub-brand — in another market it was effectively a separate company. Scope changed frequently due to HQ reprioritisation. Several markets had built their own internal tools they relied on.
+
+## Goal
+
+Design a unified, easy-to-use order management platform that:
+- Provides a unified overview of all orders' live status and changes
+- Gives transparency to deliveries at material level
+- Helps customers work more seamlessly together
+
+## Research
+
+Led field visits and interviews across 9 countries. Combined JTBD analysis, expert interviews, and a survey with 20 dealers in Europe.
+
+**Key insights:**
+- Changes in ETA = #1 priority
+- Dealers' notification preferences vary widely
+- Users needed fast setup (Day 1 value)
+
+**PMF Hypothesis:** "If dealers have transparency about their deliveries, they will be able to better manage their customers, delivery points, and construction sites; returning daily."
+
+## Solution — Key Features
+
+### Feature 1: Unified Order Table
+Single source-of-truth consolidating all delivery information across all Knauf entities.
+
+- All Knauf entities in one view (10+ brands previously requiring separate contacts)
+- Customizable columns so every customer sees what matters to them
+- Simplified visual status system: standardized and color/icon-coded across all entities
+
+**Impact:** 2h average saved per week · 20% reduction in service calls · 3x less back-to-back calls
+
+### Feature 2: Calendar View
+Bird's-eye view of upcoming deliveries displayed as calendar events.
+
+- Visual timeline of the week
+- Easy day planning for warehouse teams
+- Helps manage fleet, warehouse, and logistics without clicking through orders
+
+**Impact:** 25% reduction of logistics chokepoints · 2x warehouse planning efficiency
+
+### Feature 3: Notification Settings
+Personalized, granular update preferences.
+
+- Choose specific events to be notified about
+- Select channel per event: email, app, or SMS alerts
+- Each customer has different preferences — maximum configurability
+
+**Impact:** 2x improved change response time
+
+### Feature 4: Share Order Details
+Allow dealers to share live delivery info directly with applicators.
+
+- One link, always up to date
+- Reduced double communication
+
+**Impact:** 45% less "where's my order?" calls from clients
+
+## Broader Impact
+
+Components built for the order table and calendar view were adopted across all four Knauf products, cutting delivery time by 40% portfolio-wide. Order Overview proved that transparency, done with precision, scales.
+
+## Reflection
+
+The calendar view should have been the starting point, not the second feature. Mental models clearly showed that logistics is time-first, not data-first — yet the order table was built first because it was the logical data structure.
+
+On notification settings: maximum configurability from day one was right in principle, but choice paralysis delayed time-to-first-value. Smarter defaults with opt-in customisation would have served both goals better.
+
+## Related
+
+- Portfolio: https://www.alexandrosshomper.de/portfolio/knauf-order-overview
+- Contact: alexandros@alexandrosshomper.de
