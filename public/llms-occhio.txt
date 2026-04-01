@@ -1,0 +1,105 @@
+# Occhio Website & eCommerce — Case Study
+> By Alexandros Shomper | https://www.alexandrosshomper.de/portfolio/occhio
+
+## A premium user experience
+
+From a static brochure site to a dynamic online storefront, translating Occhio's luxury lighting experience into a seamless digital journey.
+
+## Overview
+
+- **Company:** Occhio — German luxury lighting design brand renowned for perfectionism, high quality, and pure design aesthetic
+- **Product:** Website, eCommerce, product configurator, and partner finder
+- **Role:** Product Owner & UX Manager, European Market
+- **Team:** Marketing (CRM, Social Media, Campaign), Sales, IT, Design Agency (Martin et Karczinski), Dev Agency (Inviqa)
+- **Timeline:** 6 months
+- **Stage:** 0 → 1
+
+## Key Results
+
+- Bounce Rate -15%
+- Conversion Rate: 1% (industry standard for luxury interior eCommerce, up from near zero)
+- Online sales: ~5% of Occhio's total revenue (up from virtually 0%)
+- Industry Recognition: Gold — Annual Multimedia Award 2020, Splash Award 2020
+- Increased user engagement: higher time-on-site and product page views per session
+- More organic traffic from improved SEO and content sharing
+- Newsletter sign-ups increased significantly
+
+## The Problem
+
+Prior to this project, Occhio had an inspirational web presence but no direct online sales channel. Customers could not buy online.
+
+- **No E-Commerce:** Interested customers could not buy online, causing drop-offs and missed revenue opportunities
+- **Outdated Web Presence:** The old website no longer aligned with Occhio's new brand identity and luxury positioning
+- **High Brand Standards:** The brand's insistence on perfection had to be balanced with usability and web performance — a difficult trade-off between form and function
+- **Complex Product Catalog:** Wide range of modular, configurable lighting products made discovery and comparison difficult
+
+**Constraints:** The new site had to pull data from three separate systems: a legacy Drupal CMS, an aging PIM with no modern API, and a newly implemented Salesforce CRM. Occhio's brand team and CEO held exceptionally high aesthetic standards — functional UX patterns (including standard e-commerce conventions like high-contrast buttons) required extensive negotiation. The green CTA button alone was months of conversation. Performance and brand were in direct tension throughout — Occhio's identity is built on rich, high-resolution imagery.
+
+## Goal
+
+Launch a world-class online experience that:
+- Aligns with Occhio's new brand identity
+- Enables online sales for the first time
+- Improves product discoverability
+- Integrates content and product data from multiple legacy systems
+- Meets Occhio's high aesthetic standards while ensuring usability and performance
+
+## Research
+
+Visited Occhio's Munich flagship stores to observe and interview customers and sales staff. Conducted market research using Sigma Milieus as a positioning framework. Developed personas through direct customer conversations.
+
+**Two core personas:**
+1. Design-conscious connoisseur — values superior quality and distinctive, timeless design
+2. Status-driven achiever — wants to showcase success and feel aspirational
+
+**Key insights:**
+- **Need for Inspiration:** Customers start with vague ideas and need inspirational content (beautiful room photos, style guidance) to build emotional confidence to buy luxury items
+- **Visualization Challenges:** Shoppers struggled to imagine products in their own space — without seeing a fixture in context or at scale, they felt uncertain and didn't move forward
+- **Information Overload:** Many product variants, configurations, and technical details caused decision paralysis
+- **Fear of Wrong Decisions:** Given the high price point, customers feared making mistakes and desired guidance and reassurance during the buying process
+
+## Solution — Key Features
+
+### Feature 1: Inspirational, User-Centric Navigation
+Multiple browsing approaches catering to different mental models:
+
+- Browse by room, by product type, or direct search
+- Caters to both design-savvy users and goal-oriented shoppers
+- Greatly improved product discoverability
+
+### Feature 2: Modular Product Configurator
+Real-time product customization on every product page:
+
+- Customize finishes, sizes, configurations
+- See results in real-time
+- Simplifies complex product options
+- Makes the selection process engaging — more confident buying decisions, fewer post-purchase surprises
+
+### Feature 3: Integrated Online Store
+Occhio's first end-to-end e-commerce functionality:
+
+- Seamless journey from inspiration to checkout
+- Shopping cart, wishlist, and checkout designed for luxury shoppers
+- Option to consult with an Occhio specialist
+- Within the first year, online orders comprised ~5% of Occhio's total revenue (up from virtually 0%)
+
+## Approach
+
+Partnered with specialized agencies: Martin et Karczinski (Occhio's brand design agency) and Inviqa (technology consultants). Embraced agile methodology — working in sprints, iterating on feedback, and continuously aligning design with technical feasibility. Pivoted away from heavy full-screen renderings in favour of a more functional yet elegant design that improved performance.
+
+## Broader Impact
+
+The project earned top industry awards: Gold — Annual Multimedia Award 2020, Splash Award 2020. The case study demonstrates how thoughtful research, user-centric design, and cross-team collaboration can transform a luxury brand's digital presence.
+
+## Reflection
+
+The biggest structural miss was not establishing quantified success metrics before design started. "Conversion increased significantly" is hard to defend. The 5% online revenue figure is the one clean proof point — and it's compelling precisely because it's specific.
+
+WebAR had lower adoption than the engineering investment warranted — in retrospect, that resource could have gone further on the configurator, which drove actual purchase decisions more directly.
+
+The pivot away from full-screen renderings was right, but came late. Better performance benchmarking at the wireframe stage would have caught that tradeoff earlier.
+
+## Related
+
+- Portfolio: https://www.alexandrosshomper.de/portfolio/occhio
+- Contact: alexandros@alexandrosshomper.de

@@ -1,0 +1,80 @@
+# Asana – Onboarding and Activation — Case Study
+> By Alexandros Shomper | https://www.alexandrosshomper.de/case-studies/asana
+
+## Asana – Onboarding and Activation
+
+How positioning for teams & enterprise impacts your segmentation, setup, and plan selection.
+
+## Overview
+
+This case study analyses Asana's onboarding and activation flow. It examines two use cases (Personal Task Management and Team Collaboration) and reveals a strong bias towards the team use case, occasionally at the expense of individual users.
+
+Asana has clearly positioned itself towards enterprise and team collaboration, which is reflected throughout their user onboarding journey. This strategic focus impacts everything from landing page messaging to signup to activation metrics.
+
+## Key Takeaways
+
+- Strong team-oriented setup flow with emphasis on collaboration features
+- Complex but thorough segmentation process during onboarding
+- Activation heavily dependent on team participation
+- Personal users may feel overwhelmed by enterprise-focused features
+
+## Onboarding Flow Evaluation
+
+### Strengths
+
+- Well-designed project setup with visual workspace representation
+- Strong targeting for team collaboration use case
+- Comprehensive feature introduction
+- Flexible trial period approach
+
+### Areas for Improvement
+
+- Segmentation data not effectively utilized for personalization
+- Unclear messaging about trial period and feature availability
+- Complex first experience that may overwhelm new users
+- Limited support for personal use case activation
+
+## Recommendations
+
+### Landing Page
+
+Asana positions itself as a tool to connect any type of work — mainly focused on the buyer (the exec). But the exec comes in very late in the funnel. Most likely a low-to-mid level employee is the driving force, researching tools and advocating to their managers.
+
+Asana provides many landing pages for different corporate functions (Marketing, Sales, Dev, HR, etc.) — multi-positioning they can now afford because they've scaled. However:
+
+- The above-the-fold design is monotone; the CTA blends in
+- Asana could leverage multi-positioning for personalization — e.g. reiterating the USP for marketing on the first signup screen when the user arrived from the marketing landing page
+
+### Segmentation & Profiling
+
+Move certain profiling questions to post-commitment phase to reduce early friction.
+
+### Personalization
+
+Leverage segmentation data collected during onboarding to offer personalized templates and experiences that align with the user's stated use case.
+
+### Plan Selection
+
+Provide clearer communication about what the trial period includes and what features are locked. The current flow creates confusion about feature availability.
+
+### Persona & Product Market Fit
+
+Create a more streamlined experience for personal users while maintaining team functionality. The current flow is optimized for team activation in ways that alienate solo users.
+
+### First Experience
+
+The first screen is overloaded. Personal users are confronted with enterprise-focused features immediately, creating cognitive overload for users with simpler needs.
+
+### Activation
+
+Activation is heavily dependent on team participation — if a user joins without teammates, their path to the "aha moment" is unclear. The activation loop needs a viable single-user path.
+
+## Context
+
+This is an independent UX audit conducted by Alexandros Shomper as part of his case study series analyzing onboarding and activation flows of major SaaS products.
+
+## Related
+
+- Case Study: https://www.alexandrosshomper.de/case-studies/asana
+- All Case Studies: https://www.alexandrosshomper.de/case-studies
+- Contact: alexandros@alexandrosshomper.de
