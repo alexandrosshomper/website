@@ -179,7 +179,7 @@ const renderContent = () => (
           </li>
         </ul>
         <br />
-        <CaseSubline subline="Contraints" />
+        <CaseSubline subline="Constraints" />
         <CaseSublineTwo subline="Three legacy systems, one brand obsessed with perfection, and a green button that caused weeks of negotiation." />
         The hardest constraints weren't technical — they were aesthetic.
         <ul>
@@ -384,7 +384,7 @@ const renderContent = () => (
             </tr>
             <tr>
               <td>Conversion Rate</td>
-              <td>1% (indsutry standard for luxury interior eCommerce)</td>
+              <td>1% (industry standard for luxury interior eCommerce)</td>
             </tr>
           </tbody>
         </table>
