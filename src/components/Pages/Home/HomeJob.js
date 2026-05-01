@@ -293,6 +293,12 @@ const ProcessLabel = styled.p`
   margin: 0;
 `;
 
+const ProcessCtaWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+`;
+
 const EmptyState = styled.p`
   color: ${Colors.primaryText.mediumEmphasis};
   font-size: 16px;
@@ -437,6 +443,16 @@ const Content = (props) => {
             <ProcessLabel>Distribute</ProcessLabel>
           </ProcessBubble>
         </ProcessContainer>
+        <ProcessCtaWrapper>
+          <Button
+            as="a"
+            size="large"
+            variant="primary"
+            href="/how-i-work"
+            text="Learn more"
+            gradient={{ from: Colors.blueDark, to: Colors.purpleDark }}
+          />
+        </ProcessCtaWrapper>
       </Section>
     </PageWrapper>
   );

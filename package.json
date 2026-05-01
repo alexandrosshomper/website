@@ -64,7 +64,8 @@
       "/portfolio/knauf-account",
       "/portfolio/knauf-order-overview",
       "/portfolio/knauf-material-calculator",
-      "/portfolio/myknauf"
+      "/portfolio/myknauf",
+      "/how-i-work"
     ],
     "puppeteerArgs": [
       "--no-sandbox",

@@ -45,6 +45,8 @@ const MyKnauf = lazy(() => import("./components/Pages/Portfolio/MyKnauf"));
 
 const Heraklit = lazy(() => import("./components/Pages/Heraklit/Heraklit"));
 
+const HowIWork = lazy(() => import("./components/Pages/HowIWork/HowIWork"));
+
 const NotFound = () => (
   <div style={{ textAlign: "center", padding: "120px 24px" }}>
     <h1>404 — Page not found</h1>
@@ -173,6 +175,7 @@ function App() {
             />
             <Route exact path="/portfolio/myknauf" component={MyKnauf} />
             <Route exact path="/heraklit" component={Heraklit} />
+            <Route exact path="/how-i-work" component={HowIWork} />
             <Route component={NotFound} />
           </Switch>
           <Footer />

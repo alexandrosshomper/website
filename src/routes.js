@@ -83,6 +83,10 @@ const routes = [
     path: "/flows/trello",
     exact: true,
   },
+  {
+    path: "/how-i-work",
+    exact: true,
+  },
 ];
 
 module.exports = routes;
